@@ -17,16 +17,44 @@ page structure is stable:
 from __future__ import annotations
 
 import argparse
+from datetime import date
 import re
 import sys
 from pathlib import Path
 
 REPORT_RE = re.compile(r'<article class="report">.*?</article>', re.DOTALL)
+EYEBROW_RE = re.compile(r'<div class="eyebrow[^"]*">\s*([^<]+?)\s*</div>')
+DATE_RE = re.compile(r'(\d{4}-\d{2}-\d{2})')
+NEWS_ITEM_RE = re.compile(r'<li class="news-item">', re.DOTALL)
+
+
+def extract_report_dates(html: str) -> list[date]:
+    dates: list[date] = []
+    for article in REPORT_RE.finditer(html):
+        eyebrow_match = EYEBROW_RE.search(article.group(0))
+        if not eyebrow_match:
+            continue
+        date_match = DATE_RE.search(eyebrow_match.group(1))
+        if not date_match:
+            continue
+        dates.append(date.fromisoformat(date_match.group(1)))
+    return dates
+
+
+def extract_briefing_articles(html: str) -> list[re.Match[str]]:
+    dated_articles: list[re.Match[str]] = []
+    for article in REPORT_RE.finditer(html):
+        eyebrow_match = EYEBROW_RE.search(article.group(0))
+        if not eyebrow_match:
+            continue
+        if DATE_RE.search(eyebrow_match.group(1)):
+            dated_articles.append(article)
+    return dated_articles
 
 
 def trim_latest_two(path: Path) -> int:
     html = path.read_text(encoding="utf-8")
-    articles = list(REPORT_RE.finditer(html))
+    articles = extract_briefing_articles(html)
 
     if len(articles) <= 2:
         print(f"ok: found {len(articles)} report sections; nothing to trim")
@@ -49,8 +77,23 @@ def trim_latest_two(path: Path) -> int:
 
 def check_latest_two(path: Path) -> int:
     html = path.read_text(encoding="utf-8")
-    articles = list(REPORT_RE.finditer(html))
+    articles = extract_briefing_articles(html)
     if len(articles) <= 2:
+        dates = extract_report_dates(html)
+        if len(dates) >= 2 and dates[0] < dates[1]:
+            print(
+                "error: latest report is not rendered first; keep newest briefing above older one",
+                file=sys.stderr,
+            )
+            return 1
+        for idx, article in enumerate(articles, start=1):
+            news_count = len(NEWS_ITEM_RE.findall(article.group(0)))
+            if news_count != 5:
+                print(
+                    f"error: report section {idx} contains {news_count} related news items; expected exactly 5",
+                    file=sys.stderr,
+                )
+                return 1
         print(f"ok: found {len(articles)} report sections")
         return 0
 
