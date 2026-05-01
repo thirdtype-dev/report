@@ -1,12 +1,577 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thirdtype Developer Site</title>
-</head>
-<body>
-  <h1>Thirdtype Apps</h1>
-  <p>Developer website for mobile apps.</p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>4/30 장마감 브리핑 · 리딩방</title>
+    <style>
+      :root { color-scheme: dark; scroll-behavior: smooth; }
+      body {
+        font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+        line-height: 1.72;
+        margin: 0;
+        padding: 0;
+        color: #f3f4f6;
+        background:
+          linear-gradient(180deg, #172033 0%, #1a2130 120px, #1a2130 100%);
+      }
+      .page {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 760px;
+        padding-bottom: 32px;
+      }
+      .room-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(12px);
+        background: rgba(23, 32, 51, 0.92);
+        border-bottom: 1px solid #2b3446;
+        padding: 16px 16px 12px;
+      }
+      .room-title {
+        margin: 0 0 6px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #f8fafc;
+      }
+      .room-subtitle {
+        margin: 0 0 12px;
+        color: #94a3b8;
+        font-size: 0.92rem;
+      }
+      .room-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .room-tab {
+        appearance: none;
+        border: 1px solid #334155;
+        border-radius: 999px;
+        padding: 10px 12px;
+        background: #202634;
+        color: #cbd5e1;
+        font-weight: 700;
+        font-size: 0.94rem;
+        cursor: pointer;
+      }
+      .room-tab.is-active {
+        border-color: #60a5fa;
+        background: #1e3a5f;
+        color: #dbeafe;
+      }
+      h1, h2, h3 { line-height: 1.22; }
+      .meta { color: #94a3b8; margin-top: 0; }
+      ul { padding-left: 1.25rem; }
+      .note {
+        background: #202634;
+        border-left: 4px solid #60a5fa;
+        padding: 12px 16px;
+        border-radius: 8px;
+      }
+      .section { margin-top: 1.25rem; }
+      .report {
+        border: 1px solid #334155;
+        border-radius: 22px;
+        padding: 22px 18px 22px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+        margin: 12px 12px 0;
+        background: #202634;
+      }
+      .report + .report { margin-top: 14px; }
+      .report::before {
+        content: "오늘장 브리핑 | Thirdtype Report";
+        display: block;
+        margin-bottom: 12px;
+        color: #94a3b8;
+        font-size: 0.84rem;
+        letter-spacing: 0.02em;
+      }
+      .report > h1 {
+        margin: 2px 0 12px;
+        font-size: clamp(1.4rem, 1.8vw, 1.85rem);
+        letter-spacing: -0.02em;
+        color: #ffffff;
+      }
+      .report h2 {
+        display: inline-flex;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding: 5px 9px;
+        color: #7dd3fc;
+        background: rgba(96, 165, 250, 0.16);
+        border-radius: 8px;
+        font-size: 0.98rem;
+      }
+      .report p, .report li { color: #dbe4f0; }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 11px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin-bottom: 12px;
+      }
+      .eyebrow.published { background: rgba(34,197,94,.16); color: #86efac; }
+      .eyebrow.draft { background: rgba(245,158,11,.16); color: #fcd34d; }
+      .small { font-size: 0.95rem; color: #cbd5e1; }
+      code { background: #111827; padding: 0 4px; border-radius: 4px; }
+      a { color: #93c5fd; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .news-section {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid #2b3446;
+      }
+      .page > .disclaimer {
+        margin: 16px 0 0;
+        border-radius: 18px;
+      }
+      .news-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        display: grid;
+        gap: 8px;
+      }
+      .news-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 13px;
+        border-radius: 12px;
+        background: #1b2230;
+        border: 1px solid #334155;
+      }
+      .news-link {
+        color: #bfdbfe;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .news-link:hover { text-decoration: underline; }
+      .news-source {
+        font-size: 0.88rem;
+        color: #94a3b8;
+      }
+      .disclaimer {
+        margin: 20px 12px 0;
+        padding: 18px 18px;
+        border: 1px solid #334155;
+        border-radius: 18px;
+        background: #111827;
+        color: #cbd5e1;
+        font-size: 0.92rem;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+      }
+      .lead {
+        margin: 0 0 16px;
+        color: #dbe4f0;
+        font-size: 1.02rem;
+      }
+      .bullet-grid {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+      }
+      .bullet-grid li {
+        padding: 10px 12px;
+        border: 1px solid #334155;
+        border-radius: 14px;
+        background: #1b2230;
+        list-style: none;
+      }
+      .tight p { margin: 0 0 10px; }
+      .policy-strip {
+        margin: 10px 12px 0;
+        padding: 12px 14px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(30, 58, 95, 1) 0%, rgba(32, 38, 52, 1) 100%);
+        color: #dbeafe;
+        border: 1px solid #334155;
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+      @media (max-width: 640px) {
+        .report {
+          margin: 12px 10px 0;
+          padding: 20px 16px;
+          border-radius: 18px;
+        }
+        .policy-strip,
+        .disclaimer {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="room-header">
+        <h1 class="room-title">리딩방</h1>
+        <p class="room-subtitle">장 열리는 날 기준 장시작 08:30, 장마감 15:30 발행</p>
+        <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
+          <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
+          <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간급등</button>
+        </div>
+      </section>
+
+      <section class="policy-strip">최신 브리핑 2건만 표시합니다. 최신 발행본이 항상 상단에 노출됩니다.</section>
+
+      <section id="briefing-pane">
+        <article class="report">
+                <div class="eyebrow published">장 종료 · 2026-04-30</div>
+                <h1>KOSPI 6,700선 턱걸이, 차익실현과 변동성 확대 경계</h1>
+                <p class="meta">2026-04-30 16:05 KST · Analyst Desk</p>
+                <p class="lead">오늘 장 마감은 KOSPI가 6,700선 부근에서 등락을 거듭하며 사흘 연속 최고치 경신 시도를 이어갔으나, 신용융자 잔고 사상 최대치 기록으로 변동성 확대 우려가 커졌습니다. 외국인 매도세와 프로그램 매물이 유입되며 지수 상단이 얇아진 상태로 마감했습니다.</p>
+        
+                <h2>장 마감 수급 체크</h2>
+                <ul class="bullet-grid">
+                  <li><strong>외국인:</strong> 장중 순매도 전환하며 차익실현 매물이 출회, 지수 상단 지지력 약화.</li>
+                  <li><strong>기관/개인:</strong> 기관은 차익실현, 개인은 저가 매수 유입. 프로그램 매매는 매도 우위.</li>
+                  <li><strong>환율/금리:</strong> 원/달러 1,480원대 하회 시도, 미국채 금리 소폭 상승으로 하락 압력.</li>
+                </ul>
+        
+                <h2>섹터별 전망</h2>
+                <ul class="bullet-grid">
+                  <li><strong>반도체/AI:</strong> AI 메모리 수요 기대감은 견조하나, 신용융자 잔고 급증으로 단기 변동성 확대 가능성.</li>
+                  <li><strong>KOSDAQ/중소형:</strong> 다음날 코스모로보틱스 상장 IR 이벤트로 관련 테마 주목, 거래대금 모니터링 필요.</li>
+                  <li><strong>자동차/2차전지:</strong> 글로벌 금리 변동성에 따른 수출주 약세, 단기 차익실현 압력.</li>
+                </ul>
+        
+                <h2>주요 종목 마감 브리핑</h2>
+                <ul class="bullet-grid">
+                  <li><strong>삼성전자:</strong> AI 메모리 수요 기대에도 외국인 매도세로 약세 마감. 5월 초 실적 발표 전까지 관망.</li>
+                  <li><strong>SK하이닉스:</strong> HBM 수요 지속에도 차익실현 물량 출회. 하락 시 저가 매수 관점 유효.</li>
+                  <li><strong>코스모로보틱스:</strong> KOSDAQ 상장 후 시장 반응 확인, 5월 12일 IR 행사로 단기 모멘텀 지속 여부 판단.</li>
+                </ul>
+        
+                <h2>내일 시장 리스크</h2>
+                <ul class="bullet-grid">
+                  <li>신용융자 잔고 사상 최대에 따른 반대매매 리스크, 지수 변동성 확대 가능성.</li>
+                  <li>FOMC 앞둔 관망 심리로 외국인 수급 방향성 불확실.</li>
+                  <li>미국채 금리 상승 시 외국인 매도 확대 및 원화 약세 압력.</li>
+                  <li>AI 테마주 고점 부담에 따른 개별 종목 급락 변동성.</li>
+                </ul>
+        
+                <section class="news-section">
+                  <h2>관련 뉴스 5개</h2>
+                  <ul class="news-list">
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5GWWZyZl9LSEp4VEFVM1JWWnUxUDJuOUJGWXF6aXBjR2I0S2JfX1V3bUhjTXYwUkNhR1pXVE5xbW5Tc25xbzF3RUlnVHkxTGQ3MHpkNG1EU0VwQkZ0WWtDS2Zzb2VvbUtyekRwMHRR0gFuQVVfeXFMTkZZZnJmX0tISnhUQVUzUlZadTFQMm45QkZZcXppcGNHYjRLYl9fVXdtSGNNdjBSQ2FHWldUTnFtblNzbnFvMXdFSWdUeTFMZDcwemQ0bURTRXBCRnRZa0NLZnNvZW9tS3J6RHAwdFE?oc=5" target="_blank" rel="noopener">KOSPI Rally Drives Margin Debt to Record High, Raising Volatility Concerns - 알파경제</a><span class="news-source">알파경제 · 2026-04-30 06:50 KST</span></li>
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMibEFVX3lxTFBBZDBVM0NIX0tHRFRncy1nLTBiaWhOMEtucE03VmxFNVN4VE9FY2sxSUdDTE9TTl9vanRiNTJRbXBXbGpnNjgtYmludFBmWGN0Z2VxeDlhQ010QVAyMm1JbkwwM09yWE1Xb3ViNg?oc=5" target="_blank" rel="noopener">코스모로보틱스, 코스닥 상장 다음날인 5월 12일 고객소통 IR 행사 연다 - 로봇신문</a><span class="news-source">로봇신문 · 2026-04-30 14:51 KST</span></li>
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9mdVhPcXlJanBDTWs1OUpHYzNzNE1FOVBxVDRvQ19pSHo1OGduN3lUelNBZmp3Y1VINWZ4R1dCRHVHanA5b2dwZ0hvbzBfMndWWHBv?oc=5" target="_blank" rel="noopener">KOSPI tests 6,700 milestone amid heavy tug-of-war - 네이트</a><span class="news-source">네이트 · 2026-04-30 11:27 KST</span></li>
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1PX0xvQkJJUVl0SWE3Q2Rpc0ZJY0NOWGhvcWZTTzA4Y0dYSTZXcnhodE5wZ0ZJSkJHR05Lcmg4c2tadzRZYjdvZTJNUjh4aHJ4NnF0Rm9xdE5QYjUtYlE?oc=5" target="_blank" rel="noopener">KOSPI tops 6,690… sets record high for a third straight day - 경향신문</a><span class="news-source">경향신문 · 2026-04-29 18:42 KST</span></li>
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE80RDNCNXE0QTVaa1RtRkR1Z3NpTGtsU1pnMVhtZWxrbzRYWHF3NVBHVHQ5LTJSSnRVMld6OV9hWmdfS1BIS20yWjA4enR5dXB5Vm1PVWpENFA2VWJJRHQ3dTNB?oc=5" target="_blank" rel="noopener">코스피, 나흘째 상승세…장중 최고치 경신 - 아시아경제</a><span class="news-source">아시아경제 · 2026-04-30 09:17 KST</span></li>
+                  </ul>
+                </section>
+              </article>
+        <article class="report">
+                <div class="eyebrow published">장 시작 · 2026-04-30</div>
+                <h1>6700선 부담 속, 개장 초 수급 확인이 우선입니다</h1>
+                <p class="meta">2026-04-30 08:45 KST · Analyst Desk</p>
+                <p class="lead">오늘 장시작은 코스피 고점 부담과 FOMC·실적 대기감이 동시에 걸려 있습니다. 지수가 6700선 근처까지 올라온 만큼 추격 매수보다 외국인 수급, 원달러·금리, 반도체·AI 관련주의 실제 체결 강도를 먼저 확인해야 합니다.</p>
+        
+                <h2>오늘 국내 증시</h2>
+                <p>국내 증시는 사흘 연속 최고치 흐름 이후 피로도가 커진 상태입니다. 개장 초에는 지수의 추가 상승 여부보다 상승 종목 수, 대형 반도체의 호가 유지력, 선물 흐름이 같이 맞는지를 보는 편이 안전합니다.</p>
+        
+                <h2>수급 관점</h2>
+                <ul class="bullet-grid">
+                  <li><strong>외국인:</strong> 기사 제목만으로는 외국인 순매수 방향이 확인되지 않았습니다. 장 초반 삼성전자·SK하이닉스와 지수 선물의 동시 매수 여부가 핵심 확인 지점입니다.</li>
+                  <li><strong>기관:</strong> 기관 수급도 정량 신호가 부족합니다. 프로그램 매수가 지수만 끌어올리는지, 업종 전반으로 확산되는지 구분해야 합니다.</li>
+                  <li><strong>환율·금리:</strong> FOMC와 실적 이벤트를 앞둔 제한적 상승장이라는 신호가 있어, 원달러와 미국채 금리가 안정되지 않으면 고점권 추격은 부담입니다.</li>
+                </ul>
+        
+                <h2>업종 포인트</h2>
+                <ul class="bullet-grid">
+                  <li><strong>반도체·AI:</strong> AI 투자 지속성 논란이 남아 있어 단순 테마 확산보다 실적·수주 확인 종목 중심으로 압축될 가능성이 큽니다.</li>
+                  <li><strong>지수 대형주:</strong> 코스피 6700선 헤드라인은 긍정적이지만, 고점권에서는 대형주가 지수를 받쳐도 중소형주는 빠르게 흔들릴 수 있습니다.</li>
+                  <li><strong>개별 모멘텀:</strong> 나노엔텍·지놈앤컴퍼니처럼 개별 급등주가 부각될 수 있으나, 장 초반 거래대금 유지 여부 없이는 단기 과열로 봐야 합니다.</li>
+                </ul>
+        
+                <h2>주요 종목 브리핑</h2>
+                <ul class="bullet-grid">
+                  <li><strong>삼성전자:</strong> 지수 방어 역할을 할 수 있지만, 외국인 매수와 반도체 대형주 동반 강세가 확인돼야 추세 신뢰도가 올라갑니다.</li>
+                  <li><strong>SK하이닉스:</strong> AI 메모리 기대가 살아 있는 동안 시장 중심축이지만, AI 투자 지속성 의문이 커질 경우 변동성이 가장 먼저 확대될 수 있습니다.</li>
+                  <li><strong>AI·바이오 개별주:</strong> 급등 종목은 시초가 이후 15~30분 거래대금이 끊기면 추격보다 리스크 관리가 우선입니다.</li>
+                </ul>
+        
+                <h2>오늘의 리스크</h2>
+                <ul class="bullet-grid">
+                  <li>FOMC·실적 이벤트를 앞둔 관망 심리가 강해지면 고점권 지수 상승폭이 빠르게 줄어들 수 있습니다.</li>
+                  <li>AI 투자 지속성 논란이 커지면 반도체·AI 테마의 종목별 차별화가 심해질 수 있습니다.</li>
+                  <li>코스피 6700선 근접 이후 차익실현이 나오면 개별 급등주는 지수보다 더 크게 흔들릴 수 있습니다.</li>
+                  <li>환율·금리가 안정되지 않으면 외국인 수급이 개장 초반부터 방어적으로 변할 수 있습니다.</li>
+                </ul>
+        
+                <h2>오늘 확인할 것</h2>
+                <ul class="bullet-grid">
+                  <li>09:00~09:30 삼성전자·SK하이닉스와 코스피 선물이 같은 방향인지 확인</li>
+                  <li>코스피 6700선 부근에서 상승 종목 수가 유지되는지 확인</li>
+                  <li>원달러와 미국채 금리 변동이 외국인 매매에 즉시 반영되는지 점검</li>
+                  <li>AI·반도체 후속주가 거래대금으로 따라오는지, 단순 갭상승에 그치는지 구분</li>
+                  <li>개별 급등주는 첫 눌림에서 체결이 유지되는지 확인</li>
+                </ul>
+        
+                <section class="news-section">
+                  <h2>관련 뉴스 5개</h2>
+                  <ul class="news-list">
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1PX0xvQkJJUVl0SWE3Q2Rpc0ZJY0NOWGhvcWZTTzA4Y0dYSTZXcnhodE5wZ0ZJSkJHR05Lcmg4c2tadzRZYjdvZTJNUjh4aHJ4NnF0Rm9xdE5QYjUtYlE?oc=5" target="_blank" rel="noopener">KOSPI tops 6,690… sets record high for a third straight day - 경향신문</a><span class="news-source">경향신문 · 2026-04-29 18:42 KST</span></li>
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMibEFVX3lxTE0wMVNVeE9UdjNYcnYyeFFPcVAydGh4Qkt0ZXROVG02TGFac0djTXEzTXFCbEdqOFBiN0RqTlBLOXQyN1F4al9kR2JjZzFXOEg5aVU4UnVQY3Ryamxxb1VaTTdxWTFSR1hhSU9pMA?oc=5" target="_blank" rel="noopener">FOMC·실적 앞둔 제한적 상승장 - KB Think</a><span class="news-source">KB Think · 2026-04-29 16:17 KST</span></li>
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMib0FVX3lxTFA1QWFkMVhNdUlZQjdGSS03Q0tpVUoza19ib2c4dFdJbVdadzBkT09VR0h2bVpoR3VjdjI2UmRCa0ZhX2xrYlRpcjY2Q2xuU0gyN2lqc2JCNnRtbWxjaHNJNC0wNktaV2RxeEtCblViMA?oc=5" target="_blank" rel="noopener">‘6700’ 코스피 시장의 민낯 - 뉴스톱</a><span class="news-source">뉴스톱 · 2026-04-30 06:45 KST</span></li>
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE50MUl2c3lXSUsxVHpRVUNTVndaTjg2ZHNKa3JRMjA3cjRsb3puaTJIYVR4c0tVTkMyR3NySU5JaEpfelVtU05QS3VsMEk5eE9oRXV5eWo5OVdtUdIBVEFVX3lxTE1JX0VPMzlqRjFLRnptdHRnOHBlVW90a2UydklOSnNwT2tPRTEtSVpXQ3JnNTF1S1gzQkxwN3lVMDhTSWdUMm5QR2pOLUt6dGw0dkpvYw?oc=5" target="_blank" rel="noopener">AI 투자 지속 의문…경제적 변동성 고려할 때 - 한국경제</a><span class="news-source">한국경제 · 2026-04-29 16:30 KST</span></li>
+                    <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9hZDM0YWxwRmZ3NkNQNEFWbEl0WmFnaHhkNk94VlpuUkRXVV9HTkFGa0N5ZHlvOWRQUkNJY2Z1S2FrbHpUR0t0emhjaEdyOExlRjU0T1FoQlZpQ0VQLW5IbW9FQ0dVbW1QQXZV?oc=5" target="_blank" rel="noopener">[주식] &#x27;6700&#x27; 목전, 사흘 연속 최고치 코스피 속 나노엔텍·지놈앤컴퍼니 껑충 - 히트뉴스</a><span class="news-source">히트뉴스 · 2026-04-29 16:40 KST</span></li>
+                  </ul>
+                </section>
+              </article>
+      </section>
+
+      <section id="realtime-pane" hidden>
+        <article class="report">
+          <div class="eyebrow draft">실시간급등</div>
+          <p class="lead">프리미엄 사용자 전용 탭입니다.</p>
+        </article>
+      </section>
+
+      <section class="disclaimer">
+        <strong>꼭 읽어보세요</strong><br />
+        본 브리핑은 투자 판단을 돕기 위한 참고 자료이며, 특정 종목 매수·매도를 권유하지 않습니다.
+        시장 해석과 종목 언급은 작성 시점의 공개 정보와 가격 흐름을 바탕으로 정리한 것이며,
+        최종 투자 판단과 책임은 투자자 본인에게 있습니다.
+      </section>
+    </main>
+
+    <script>
+      (() => {
+        const briefingPane = document.getElementById('briefing-pane');
+        const realtimePane = document.getElementById('realtime-pane');
+        const tabs = document.querySelectorAll('[data-room-tab]');
+        const isPremiumUser = window.__isPremiumUser === true;
+        const realtimeSurgeUrl = (window.__REALTIME_SURGE_URL || '').trim();
+        const realtimeSurgeDeploy = {
+          repository: (window.__REALTIME_SURGE_REPO || '').trim(),
+          pagePath: (window.__REALTIME_SURGE_PATH || '').trim(),
+          deployment: (window.__REALTIME_SURGE_DEPLOY || '').trim()
+        };
+
+        const getRealtimeSurgeBlockers = () => Object.entries(realtimeSurgeDeploy)
+          .filter(([, value]) => !value)
+          .map(([key]) => key);
+
+        const openRealtimeSurgePage = () => {
+          if (!realtimeSurgeUrl) {
+            const unresolved = getRealtimeSurgeBlockers();
+            window.__REALTIME_SURGE_BLOCKERS = unresolved;
+            if (typeof console !== 'undefined' && typeof console.warn === 'function') {
+              console.warn('[realtime-surge] placeholder_active_missing_url', {
+                blockers: unresolved,
+                note: 'set __REALTIME_SURGE_URL once repo/path/deploy are finalized'
+              });
+            }
+            return false;
+          }
+          window.open(realtimeSurgeUrl, '_blank', 'noopener,noreferrer');
+          return true;
+        };
+
+        const activateTab = (tabName) => {
+          tabs.forEach((tab) => {
+            const isActive = tab.dataset.roomTab === tabName;
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+          briefingPane.hidden = tabName !== 'briefing';
+          realtimePane.hidden = tabName !== 'realtime';
+
+          // Restore ad rendering path when user returns to briefing tab.
+          // This covers cases where ad SDK attached late or slot content was reset while hidden.
+          if (tabName === 'briefing' && typeof restoreBriefingAdPath === 'function') {
+            restoreBriefingAdPath();
+          }
+        };
+
+        const restoreBriefingAdPath = () => {
+          if (!briefingPane) return;
+
+          const existingAdSlot = briefingPane.querySelector('#briefing-ad-slot');
+          const adSlot = existingAdSlot || document.createElement('section');
+
+          if (!existingAdSlot) {
+            adSlot.id = 'briefing-ad-slot';
+            adSlot.setAttribute('aria-label', '광고');
+            adSlot.style.marginBottom = '12px';
+            adSlot.style.minHeight = '40px';
+            briefingPane.insertBefore(adSlot, briefingPane.firstElementChild);
+          } else if (briefingPane.firstElementChild !== adSlot) {
+            // Keep ad slot at top even when pre-mounted elsewhere so exposure path is restored.
+            briefingPane.insertBefore(adSlot, briefingPane.firstElementChild);
+          }
+
+          // Restore exposure path when a reused slot stayed hidden by previous render state.
+          adSlot.hidden = false;
+          adSlot.removeAttribute('hidden');
+          adSlot.style.visibility = 'visible';
+          if (adSlot.style.display === 'none') {
+            adSlot.style.display = 'block';
+          }
+          const computedDisplay = typeof window.getComputedStyle === 'function'
+            ? window.getComputedStyle(adSlot).display
+            : '';
+          if (computedDisplay === 'none') {
+            adSlot.style.display = 'block';
+          }
+
+          const renderStartedAtMs = typeof performance !== 'undefined' && typeof performance.now === 'function'
+            ? performance.now()
+            : Date.now();
+          let hasLoggedRenderMs = false;
+
+          const hasRenderedCreative = () => {
+            if (adSlot.childElementCount > 0) return true;
+            if ((adSlot.innerHTML || '').trim()) return true;
+            return false;
+          };
+
+          const logRenderMs = () => {
+            if (hasLoggedRenderMs || !hasRenderedCreative()) return;
+            hasLoggedRenderMs = true;
+            const nowMs = typeof performance !== 'undefined' && typeof performance.now === 'function'
+              ? performance.now()
+              : Date.now();
+            const elapsedMs = Math.max(0, Math.round(nowMs - renderStartedAtMs));
+            if (typeof console !== 'undefined' && typeof console.info === 'function') {
+              console.info(`[market-ad] briefing_ad_render_ms=${elapsedMs}`);
+            }
+          };
+
+          const tryRender = () => {
+            const renderers = [
+              window.renderMarketBannerAd,
+              window.renderAdBanner,
+              window.__renderMarketAd,
+              window.adfit?.render,
+              window.kakao?.adfit?.render,
+              window.daum?.AdFit?.render
+            ];
+
+            for (const render of renderers) {
+              if (typeof render !== 'function') continue;
+
+              const invokeRender = (arg) => {
+                try {
+                  render(arg);
+                } catch (_) {
+                  // ignore and continue with other signatures
+                }
+              };
+
+              // Some ad SDK adapters accept HTMLElement, some accept selector,
+              // and some expect an options object. Try all known signatures independently.
+              invokeRender(adSlot);
+
+              if (!hasRenderedCreative()) {
+                invokeRender('#briefing-ad-slot');
+              }
+
+              if (!hasRenderedCreative()) {
+                invokeRender({ element: adSlot, selector: '#briefing-ad-slot' });
+              }
+
+              // Some adapters use container/slot keys instead of element/selector.
+              if (!hasRenderedCreative()) {
+                invokeRender({ container: adSlot, slot: 'briefing-ad-slot' });
+              }
+
+              if (hasRenderedCreative()) {
+                logRenderMs();
+                return true;
+              }
+            }
+
+            const fallbackHtml = window.__MARKET_BANNER_AD_HTML || window.__marketBannerAdHtml;
+            if (typeof fallbackHtml === 'string' && fallbackHtml.trim()) {
+              adSlot.innerHTML = fallbackHtml;
+              logRenderMs();
+              return true;
+            }
+
+            logRenderMs();
+            return hasRenderedCreative();
+          };
+
+          const retryIntervalMs = 300;
+          const maxRetryCount = 10;
+          let retryCount = 0;
+
+          const scheduleRetry = (callback, immediate = false) => {
+            if (typeof window.requestAnimationFrame === 'function') {
+              if (immediate) {
+                window.requestAnimationFrame(callback);
+                return;
+              }
+              window.setTimeout(() => window.requestAnimationFrame(callback), retryIntervalMs);
+              return;
+            }
+            window.setTimeout(callback, immediate ? 0 : retryIntervalMs);
+          };
+
+          const retryRender = () => {
+            if (tryRender()) {
+              return;
+            }
+            retryCount += 1;
+            if (retryCount >= maxRetryCount) {
+              if (typeof console !== 'undefined' && typeof console.warn === 'function') {
+                const nowMs = typeof performance !== 'undefined' && typeof performance.now === 'function'
+                  ? performance.now()
+                  : Date.now();
+                const elapsedMs = Math.max(0, Math.round(nowMs - renderStartedAtMs));
+                console.warn(`[market-ad] briefing_ad_render_timeout_ms=${elapsedMs}`);
+              }
+              return;
+            }
+            scheduleRetry(retryRender);
+          };
+
+          // Live-like fast path: attempt once immediately, then fall back to frame-based retries.
+          if (!tryRender()) {
+            scheduleRetry(retryRender, true);
+          }
+
+          // Late SDK path: ad renderer may attach after initial retries (slow script/load race).
+          const lateRetryDelaysMs = [1500, 4000];
+          lateRetryDelaysMs.forEach((delayMs) => {
+            window.setTimeout(() => {
+              if (hasRenderedCreative()) {
+                logRenderMs();
+                return;
+              }
+              tryRender();
+            }, delayMs);
+          });
+        };
+
+        restoreBriefingAdPath();
+
+        tabs.forEach((tab) => {
+          tab.addEventListener('click', () => {
+            if (tab.dataset.roomTab === 'realtime' && !isPremiumUser) {
+              alert('프리미엄 사용자에게만 제공됩니다.');
+              activateTab('briefing');
+              return;
+            }
+            if (tab.dataset.roomTab === 'realtime' && isPremiumUser && openRealtimeSurgePage()) {
+              activateTab('briefing');
+              return;
+            }
+            activateTab(tab.dataset.roomTab);
+          });
+        });
+      })();
+    </script>
+  </body>
 </html>
