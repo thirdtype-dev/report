@@ -1,59 +1,589 @@
-<html><head><meta charset='utf-8'><title>Market Report</title></head><body><main><html><head><meta charset='utf-8'><title>Market Report</title></head><body><main>
-<article class="report">
-<div class="eyebrow">2026-05-11 Market Open Briefing</div>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>5/11 장시작 브리핑 · 리딩방</title>
+    <style>
+      :root { color-scheme: dark; scroll-behavior: smooth; }
+      body {
+        font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+        line-height: 1.72;
+        margin: 0;
+        padding: 0;
+        color: #f3f4f6;
+        background:
+          linear-gradient(180deg, #172033 0%, #1a2130 120px, #1a2130 100%);
+      }
+      .page {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 760px;
+        padding-bottom: 32px;
+      }
+      .room-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(12px);
+        background: rgba(23, 32, 51, 0.92);
+        border-bottom: 1px solid #2b3446;
+        padding: 16px 16px 12px;
+      }
+      .room-title {
+        margin: 0 0 6px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #f8fafc;
+      }
+      .room-subtitle {
+        margin: 0 0 12px;
+        color: #94a3b8;
+        font-size: 0.92rem;
+      }
+      .room-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .room-tab {
+        appearance: none;
+        border: 1px solid #334155;
+        border-radius: 999px;
+        padding: 10px 12px;
+        background: #202634;
+        color: #cbd5e1;
+        font-weight: 700;
+        font-size: 0.94rem;
+        cursor: pointer;
+      }
+      .room-tab.is-active {
+        border-color: #60a5fa;
+        background: #1e3a5f;
+        color: #dbeafe;
+      }
+      h1, h2, h3 { line-height: 1.22; }
+      .meta { color: #94a3b8; margin-top: 0; }
+      ul { padding-left: 1.25rem; }
+      .note {
+        background: #202634;
+        border-left: 4px solid #60a5fa;
+        padding: 12px 16px;
+        border-radius: 8px;
+      }
+      .section { margin-top: 1.25rem; }
+      .report {
+        border: 1px solid #334155;
+        border-radius: 22px;
+        padding: 22px 18px 22px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+        margin: 12px 12px 0;
+        background: #202634;
+      }
+      .report + .report { margin-top: 14px; }
+      .report::before {
+        content: "오늘장 브리핑 | Thirdtype Report";
+        display: block;
+        margin-bottom: 12px;
+        color: #94a3b8;
+        font-size: 0.84rem;
+        letter-spacing: 0.02em;
+      }
+      .report > h1 {
+        margin: 2px 0 12px;
+        font-size: clamp(1.4rem, 1.8vw, 1.85rem);
+        letter-spacing: -0.02em;
+        color: #ffffff;
+      }
+      .report h2 {
+        display: inline-flex;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding: 5px 9px;
+        color: #7dd3fc;
+        background: rgba(96, 165, 250, 0.16);
+        border-radius: 8px;
+        font-size: 0.98rem;
+      }
+      .report p, .report li { color: #dbe4f0; }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 11px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin-bottom: 12px;
+      }
+      .eyebrow.published { background: rgba(34,197,94,.16); color: #86efac; }
+      .eyebrow.draft { background: rgba(245,158,11,.16); color: #fcd34d; }
+      .small { font-size: 0.95rem; color: #cbd5e1; }
+      code { background: #111827; padding: 0 4px; border-radius: 4px; }
+      a { color: #93c5fd; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .news-section {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid #2b3446;
+      }
+      .page > .disclaimer {
+        margin: 16px 0 0;
+        border-radius: 18px;
+      }
+      .news-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        display: grid;
+        gap: 8px;
+      }
+      .news-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 13px;
+        border-radius: 12px;
+        background: #1b2230;
+        border: 1px solid #334155;
+      }
+      .news-link {
+        color: #bfdbfe;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .news-link:hover { text-decoration: underline; }
+      .news-source {
+        font-size: 0.88rem;
+        color: #94a3b8;
+      }
+      .disclaimer {
+        margin: 20px 12px 0;
+        padding: 18px 18px;
+        border: 1px solid #334155;
+        border-radius: 18px;
+        background: #111827;
+        color: #cbd5e1;
+        font-size: 0.92rem;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+      }
+      .lead {
+        margin: 0 0 16px;
+        color: #dbe4f0;
+        font-size: 1.02rem;
+      }
+      .bullet-grid {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+      }
+      .bullet-grid li {
+        padding: 10px 12px;
+        border: 1px solid #334155;
+        border-radius: 14px;
+        background: #1b2230;
+        list-style: none;
+      }
+      .tight p { margin: 0 0 10px; }
+      .policy-strip {
+        margin: 10px 12px 0;
+        padding: 12px 14px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(30, 58, 95, 1) 0%, rgba(32, 38, 52, 1) 100%);
+        color: #dbeafe;
+        border: 1px solid #334155;
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+      @media (max-width: 640px) {
+        .report {
+          margin: 12px 10px 0;
+          padding: 20px 16px;
+          border-radius: 18px;
+        }
+        .policy-strip,
+        .disclaimer {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="room-header">
+        <h1 class="room-title">리딩방</h1>
+        <p class="room-subtitle">장 열리는 날 기준 장시작 08:30, 장마감 15:30 발행</p>
+        <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
+          <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
+          <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간급등</button>
+        </div>
+      </section>
 
-## Pre-Market Briefing: KOSPI 7천 시대 개턱, ETF 기록순유출 신호
+      <section class="policy-strip">최신 브리핑 2건만 표시합니다. 최신 발행본이 항상 상단에 노출됩니다.</section>
 
-### 핵심 촉매
-- **KOSPI 7천 시대 개턱**: 코스피가 ‘7천 시대’를 넘어섰으나, 동반 성장 신호는 제한적이다.
-- **ETF 기록순유출**: K-ETF가 기록적 순유출을 기록하며, 상승은 이미 가격에 반영된 상태로 보인다.
-- **국민 투자 열풍**: 대구경북 지역 증권계좌가 큰 폭 증가하며 개인 투자 열기가 점점 떨어지는 양상.
+      <section id="briefing-pane">
+        <article class="report">
+          <div class="eyebrow published">장 시작 · 2026-05-11</div>
+          <h1>KOSPI 7천선 돌파 뒤 과열 경계, ETF 유출과 개인 열기를 같이 봐야 합니다</h1>
+          <p class="meta">2026-05-11 08:30 KST · Analyst Desk</p>
+          <p class="lead">오늘 장시작은 코스피 7천선 돌파의 상징성과 동시에 차익실현 신호가 겹친 구간입니다. 자동 수집 기사 묶음은 개인 투자 열기와 ETF 순유출을 함께 보여주고 있어, 지수 숫자보다 개장 직후 수급 지속성과 추격 매수 강도를 우선 점검해야 하는 장입니다.</p>
 
-### 투자 심리 전망
-- 7천 돌파는 기술적 정수이나, 실물 흐름과는 괴리가 있다. 외국인 및 ETF 순유출이 동시에 나타나면서, “이미 매집이 끝났다”는 해석이 강해진다.
-- 개인 투자자 수가 급증하더라도, 실제 자금은 외국인·기관 중심으로 움직이고 있다.
+          <h2>오늘 국내 증시</h2>
+          <p>국내 증시는 7천선 시대 진입 자체가 뉴스가 되는 구간이지만, headline 흐름은 실적 개선보다 가격 선반영과 군중 심리 쪽에 더 가깝습니다. 오늘 장은 고점 돌파 서사보다 상승 폭이 시장 전반으로 확산되는지, 아니면 지수와 일부 대형주에만 집중되는지를 구분해서 봐야 합니다.</p>
 
-### 관련 뉴스 5건
-<ul>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5teGFYSU9pOUdCWjlHVXRsWW9SSGhRczNwb1lsVGhOdkpIMW53TlZUWWd4MndfakxOUTczZjhPNHpFRDFBUnJNYlhWdzkycDFLZ291b21uRmxnYlFVaVpGS0dfbkxGT0Y5T3NZ?oc=5">코스피 ‘7천 시대’ 너도나도 투자대열 합류…대구경북 증권계좌 큰 폭 증가 - 영남일보</a> (2026-05-10 21:00 KST)</li>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9XUzN0a3hfV3FnMTBkaFZNMklCQmRMOHF2ek5tSnZBS0pNM2QyYlVzVHJHeXFMMF9jaWxxMWNwRUdyRGZvd2Fabm1TV3F0VWRvQ1Zn?oc=5">Record Outflows Hit Korea ETF Amid KOSPI Rally, Signaling Profit-Taking - 네이트</a> (2026-05-11 06:50 KST)</li>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE1BVDdBYk1SQzVXdHctU2x2Yk9UMTh0cXV0Qk84Y3JXOWNTWVJtaG5nUzd0UjViV1FURExpZ2Vlc0VpZzQzQTQ3MzJ3aTJZbFNLWURMWFdySlY4c19CVlRyZzdVRFFSRWtFaGVJWWZFdVJVTVZRdngtb9IBeEFVX3lxTE1BVDdBYk1SQzVXdHctU2x2Yk9UMTh0cXV0Qk84Y3JXOWNTWVJtaG5nUzd0UjViV1FURExpZ2Vlc0VpZzQzQTQ3MzJ3aTJZbFNLWURMWFdySlY4c19CVlRyZzdVRFFSRWtFaGVJWWZFdVJVTVZRdngtbw?oc=5">'7500피' 덕?…건설근로자 퇴직공제금, 국내주식 수익률 85% - newsis.com</a> (2026-05-11 06:00 KST)</li>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE01c3Y2UGM2SjZXdktpZ2Q5dnZaWnlNMjZmU0wxaHp3cTRTUHVWREE3WXI2aXRYejZySlY5TGpLUGhyMXRFM2pQcFR0NEt0Wk0xUE5CLWJJQm5EWXUwTFU3bdIBYEFVX3lxTE01c3Y2UGM2SjZXdktpZ2Q5dnZaWnlNMjZmU0wxaHp3cTRTUHVWREE3WXI2aXRYejZySlY5TGpLUGhyMXRFM2pQcFR0NEt0Wk0xUE5CLWJJQm5EWXUwTFU3bQ?oc=5">건설노동자 퇴직공제금, 주식투자로 2천782억 벌어…역대 최대 - 연합뉴스</a> (2026-05-11 06:00 KST)</li>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE9pZTg0Y3BsSXNYa2tucjQ0LWVuaWVVTDFHa3ZHS0VsMXhra1YwRjY3dW00X3U3R01ZbHFfYzFxYzRpRUpqd0hIZnJKYXlCRVJXcHRrZ0wxQjhnUDJZ?oc=5">건설노동자 퇴직공제금 역대 최대 수익…국내주식이 견인 - 뉴스핌</a> (2026-05-11 06:00 KST)</li>
-</ul>
+          <h2>수급 관점</h2>
+          <ul class="bullet-grid">
+            <li><strong>외국인:</strong> ETF 순유출 기사 때문에 외국인 자금이 현물 상승을 그대로 추종하지 않을 가능성이 있습니다. 개장 초 외국인 선물 방향이 흔들리면 지수는 빠르게 탄력을 잃을 수 있습니다.</li>
+            <li><strong>기관/개인:</strong> 대구경북 증권계좌 증가 같은 개인 열기 신호는 강하지만, 개인 참여 확대만으로 지수 레벨이 유지되기는 어렵습니다. 기관이 프로그램 매수로 받쳐주는지 확인이 필요합니다.</li>
+            <li><strong>환율/금리:</strong> 기사 묶음에 직접 수치는 없어서 원달러와 미국채 금리 확인이 필수입니다. 환율이 다시 위로 튀면 장 초반 심리는 바로 보수적으로 바뀔 수 있습니다.</li>
+          </ul>
 
-### 리스크 체크포인트
-- **환율/금리**: USD/KRW 현재 1448.5; 미국 10년물 금리 변화 주목
-- **수급 신호**: KRX 기관투자자 순매수/매도 현황 실시간 모니터
-- **섹터 리스크**: 반도체/AI 업종은 个별 리스크ometry 확인 필요
-</article>
+          <h2>업종 포인트</h2>
+          <ul class="bullet-grid">
+            <li><strong>지수 대형주:</strong> 오늘은 업종 확산보다 지수 상징성이 더 크게 부각되는 장입니다. 대형주 몇 종목이 지수 체력을 버티는 구조인지 먼저 확인해야 합니다.</li>
+            <li><strong>금융상품/ETF:</strong> ETF 순유출이 계속되면 현물 랠리와 체감 수익률 사이 괴리가 커질 수 있습니다. 레버리지 추격보다 기존 보유분 회전이 우세한지 봐야 합니다.</li>
+            <li><strong>내수·정책주:</strong> 개인 투자 열풍이 강한 날은 정책 수혜주나 중소형 테마가 단기 과열되기 쉽습니다. 거래대금이 따라오지 않으면 후반 변동성이 커질 수 있습니다.</li>
+          </ul>
 
-<article class="report">
-<div class="eyebrow">2026-05-08 Market Open Briefing</div>
+          <h2>주요 종목 브리핑</h2>
+          <ul class="bullet-grid">
+            <li><strong>삼성전자:</strong> 직접 헤드라인 언급은 없지만, 오늘 지수 체력은 결국 대형 반도체가 버텨주는지에 달려 있습니다. 장 초반 거래대금이 약하면 지수 선전도 체감이 약해질 수 있습니다.</li>
+            <li><strong>SK하이닉스:</strong> 반도체 대표주가 동반 강세를 만들지 못하면 7천선 돌파의 신뢰도는 낮아집니다. 선물과 현물 동행 여부를 같이 봐야 합니다.</li>
+            <li><strong>증권·지수 ETF:</strong> 계좌 증가와 투자 열기가 증권주 거래대금으로 이어지는지 확인이 필요합니다. 다만 ETF 순유출이 맞물리면 추격보다는 차익실현 압력이 더 크게 작동할 수 있습니다.</li>
+          </ul>
 
-## Pre-Market Briefing: KOSPI 7천 돌파, 코스닥 활성화 전환기
+          <h2>오늘의 리스크</h2>
+          <ul class="bullet-grid">
+            <li>지수 돌파 뉴스가 강할수록 오히려 후행 매수만 남는 구간이 될 수 있습니다.</li>
+            <li>ETF 순유출이 하루 이벤트가 아니라면 장중 고점에서 매물이 계속 나올 수 있습니다.</li>
+            <li>개인 자금 유입이 강한 날은 중소형주와 테마주의 장중 변동성도 동시에 확대됩니다.</li>
+            <li>환율과 미국채 금리 확인 없이 지수 headline만 따라가면 개장 직후 되돌림에 노출될 수 있습니다.</li>
+          </ul>
 
-### 핵심 촉매
-- **KOSPI 7천 돌파**: KBS 보도에 따라 코스피가 7,500을 기록하며 기술적 정수 달성.
-- **코스닥 활성화**: IBK기업은행이 코스닥 활성화를 위한 ‘IBK-KOSDAQ 붐업 데이’를 개최예정.
-- **환율 안정**: 환율 1448.5 수준 유지되며 금리 부담 완화.
+          <h2>오늘 확인할 것</h2>
+          <ul class="bullet-grid">
+            <li>09:00~09:30 외국인 선물 방향과 코스피 현물이 같은 방향인지 확인</li>
+            <li>7천선 위에서 상승 종목 수가 늘어나는지, 대형주만 버티는지 확인</li>
+            <li>ETF 유출 기사 이후 실제 거래대금이 증권·지수상품에서 둔화되는지 점검</li>
+            <li>원달러와 미국채 금리 변화가 고점 추격 심리를 꺾는지 확인</li>
+            <li>개인 과열 심리가 중소형 테마주 급등락으로 번지는지 체크</li>
+          </ul>
 
-### 투자 심리 전망
-- 7천 돌파는 투자자심리 부활 신호로 작용했으나, 실물 자금은 외국인 중심으로 흐르고 있다.
-- 코스닥 활성화 정책 기대감이 시장을 부르mwose하게 만들고 있지만, 수익률은 개별 종목에 달려있음.
+          <section class="news-section">
+            <h2>관련 뉴스 5개</h2>
+            <ul class="news-list">
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5teGFYSU9pOUdCWjlHVXRsWW9SSGhRczNwb1lsVGhOdkpIMW53TlZUWWd4MndfakxOUTczZjhPNHpFRDFBUnJNYlhWdzkycDFLZ291b21uRmxnYlFVaVpGS0dfbkxGT0Y5T3NZ?oc=5" target="_blank" rel="noopener">코스피 ‘7천 시대’ 너도나도 투자대열 합류…대구경북 증권계좌 큰 폭 증가 - 영남일보</a><span class="news-source">영남일보 · 2026-05-10 21:00 KST</span></li>
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9XUzN0a3hfV3FnMTBkaFZNMklCQmRMOHF2ek5tSnZBS0pNM2QyYlVzVHJHeXFMMF9jaWxxMWNwRUdyRGZvd2Fabm1TV3F0VWRvQ1Zn?oc=5" target="_blank" rel="noopener">Record Outflows Hit Korea ETF Amid KOSPI Rally, Signaling Profit-Taking - 네이트</a><span class="news-source">네이트 · 2026-05-11 06:50 KST</span></li>
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMieEFVX3lxTE1BVDdBYk1SQzVXdHctU2x2Yk9UMTh0cXV0Qk84Y3JXOWNTWVJtaG5nUzd0UjViV1FURExpZ2Vlc0VpZzQzQTQ3MzJ3aTJZbFNLWURMWFdySlY4c19CVlRyZzdVRFFSRWtFaGVJWWZFdVJVTVZRdngtb9IBeEFVX3lxTE1BVDdBYk1SQzVXdHctU2x2Yk9UMTh0cXV0Qk84Y3JXOWNTWVJtaG5nUzd0UjViV1FURExpZ2Vlc0VpZzQzQTQ3MzJ3aTJZbFNLWURMWFdySlY4c19CVlRyZzdVRFFSRWtFaGVJWWZFdVJVTVZRdngtbw?oc=5" target="_blank" rel="noopener">'7500피' 덕?…건설근로자 퇴직공제금, 국내주식 수익률 85% - newsis.com</a><span class="news-source">newsis.com · 2026-05-11 06:00 KST</span></li>
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE01c3Y2UGM2SjZXdktpZ2Q5dnZaWnlNMjZmU0wxaHp3cTRTUHVWREE3WXI2aXRYejZySlY5TGpLUGhyMXRFM2pQcFR0NEt0Wk0xUE5CLWJJQm5EWXUwTFU3bdIBYEFVX3lxTE01c3Y2UGM2SjZXdktpZ2Q5dnZaWnlNMjZmU0wxaHp3cTRTUHVWREE3WXI2aXRYejZySlY5TGpLUGhyMXRFM2pQcFR0NEt0Wk0xUE5CLWJJQm5EWXUwTFU3bQ?oc=5" target="_blank" rel="noopener">건설노동자 퇴직공제금, 주식투자로 2천782억 벌어…역대 최대 - 연합뉴스</a><span class="news-source">연합뉴스 · 2026-05-11 06:00 KST</span></li>
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE9pZTg0Y3BsSXNYa2tucjQ0LWVuaWVVTDFHa3ZHS0VsMXhra1YwRjY3dW00X3U3R01ZbHFfYzFxYzRpRUpqd0hIZnJKYXlCRVJXcHRrZ0wxQjhnUDJZ?oc=5" target="_blank" rel="noopener">건설노동자 퇴직공제금 역대 최대 수익…국내주식이 견인 - 뉴스핌</a><span class="news-source">뉴스핌 · 2026-05-11 06:00 KST</span></li>
+            </ul>
+          </section>
+        </article>
+        <article class="report">
+          <div class="eyebrow published">장 시작 · 2026-05-08</div>
+          <h1>KOSPI 7,500 돌파 이후 코스닥 순환매 점검, 정책 기대보다 외인 흐름이 우선입니다</h1>
+          <p class="meta">2026-05-08 08:30 KST · Analyst Desk</p>
+          <p class="lead">5월 8일 장시작은 코스피 7,500 돌파라는 강한 상징성과 함께 코스닥 활성화 정책 이벤트 기대가 겹친 날이었습니다. 다만 외국인 매도와 장 초반 2%대 약세 가능성 기사도 같이 나와 있었기 때문에, 당시에도 headline 강세만으로 추격하기보다 수급과 순환매 확인이 우선인 장이었습니다.</p>
 
-### 관련 뉴스 5건
-<ul>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTFBhRFloYXZFX0FEYWxPcDQtTFRSdjdRaG56ZTJycjYtOUQ0RmlTMy1FbDFsSXFnSVJhX2ptNEY1QUhfeGctZ1lfNnczOWZkcTJOZ3VVaVdRb3Naa3M?oc=5">Kospi tops 7,500 - KBS 뉴스</a> (2026-05-08 00:48 KST)</li>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1ORk8tX3B3WWJRZ2NTSWMxMHZlOHYyd3RDRkFfN0JjY2NEVE5zZkZ6WmdPUkVKVE1HR1ByZndQeWdlb2t0VWZWSzZkRVZtTzhCRlhoMVVqTlJjalJhQ3hPZVhDQ1lINldKUS1Dc21n?oc=5">IBK기업은행, 코스닥 활성화 본격화…12일 ‘IBK-KOSDAQ 붜업 데이’ 개최 - 퍼블릭타임스</a> (2026-05-08 07:30 KST)</li>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE40Z2k4dXB5Ty0ySFZoZDZFc21iN2M5eUw5QkEtc1BMU21GRkJ2dHd5MTZfMEVacG9CTkhld2N1ZkhpcWZkeHNvb2REYzYxSGJNbjZkWXh3N3dJblh2Q19GeDk5cE4zWF9NZU5V?oc=5">[주식] 국내 첫 CAR-T 치료제 '큐로셀' 주가는 4거래일 연속 하락 - 히트뉴스</a> (2026-05-07 17:42 KST)</li>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE0wNWdqMEs5SVkzczd2ZDE4TVpDQ01PUHk2X2NsMlNkdG44aXRVd0FKajBuT09nV1BReWUzaW1lNnR3ZWI2LTJhblhUelJ6dEVwVEtyMDFfc3dvb1FCWEQ4V3l2ajR5WjJvaFE?oc=5">하모닉 감속기 공급…에스비비테크, 로봇 타고 반등할까 [줌인e종목] - 뉴스1</a> (2026-05-08 06:30 KST)</li>
-<li class="news-item"><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE1ORk8tX3B3WWJRZ2NTSWMxMHZlOHYyd3RDRkFfN0JjY2NEVE5zZkZ6WmdPUkVKVE1HR1ByZndQeWdlb2t0VWZWSzZkRVZtTzhCRlhoMVVqTlJjalJhQ3hPZVhDQ1lINldKUS1Dc21n?oc=5">코스피 7490.05-코스닥 1199.18-환율 1448.5 - 더리포트</a> (2026-05-07 17:36 KST)</li>
-</ul>
+          <h2>오늘 국내 증시</h2>
+          <p>지수 레벨만 보면 공격적으로 보일 수 있지만, 실제 해석은 코스피 강세와 코스닥 순환매 기대가 동시에 살아나는지 확인하는 쪽이었습니다. 정책 이벤트가 부각될수록 단기 테마 과열이 빨라지기 때문에, 장 초반에는 지수보다 거래대금 분산 여부가 더 중요한 날이었습니다.</p>
 
-### 리스크 체크포인트
-- **환율/금리**: USD/KRW 1448.5; 미국 10년물 금리 하락 압력
-- **수급 신호**: KRX 기관투자자 동향 주목
-- **섹터 리스크**: 반도체 업종 개별 실적 리스크
-</article>
-</main></body></html></main></body></html>
+          <h2>수급 관점</h2>
+          <ul class="bullet-grid">
+            <li><strong>외국인:</strong> KB Think 기사처럼 외국인 매도 신호가 이미 한 번 확인된 상태였습니다. 코스피 숫자와 별개로 외국인이 다시 매수로 돌아서는지 확인이 핵심이었습니다.</li>
+            <li><strong>기관/개인:</strong> 코스닥 활성화 기대는 개인 수급을 끌어들이기 쉬운 재료입니다. 기관이 코스닥 중소형주까지 따라붙지 않으면 랠리는 짧아질 수 있습니다.</li>
+            <li><strong>환율/금리:</strong> 기사 내 직접 수치는 제한적이라 원달러와 미국 금리의 안정 여부를 별도 확인해야 했습니다. 금리 변동성이 커지면 성장주와 테마주가 먼저 흔들릴 수 있습니다.</li>
+          </ul>
+
+          <h2>업종 포인트</h2>
+          <ul class="bullet-grid">
+            <li><strong>코스닥 정책 수혜주:</strong> IBK-KOSDAQ 붐업 데이 기대감이 코스닥 거래대금으로 이어지는지가 포인트였습니다. 이벤트형 기대만으로는 하루 이상 이어지기 어렵습니다.</li>
+            <li><strong>대형 지수주:</strong> 코스피 7,500 돌파가 유지되려면 대형주 체력이 계속 필요했습니다. 지수만 강하고 개별 종목이 약하면 체감 수익률은 빠르게 낮아집니다.</li>
+            <li><strong>개별 이슈주:</strong> 큐로셀, 로봇 관련 종목처럼 개별 기사 주도주가 산발적으로 튀는 날이어서, 순환매 속도가 빠를 가능성이 컸습니다.</li>
+          </ul>
+
+          <h2>주요 종목 브리핑</h2>
+          <ul class="bullet-grid">
+            <li><strong>삼성전자:</strong> 지수 강세 지속 여부를 확인하는 대표 바로미터였습니다. 외국인 수급이 따라오지 않으면 지수 상단 유지가 어려운 구조였습니다.</li>
+            <li><strong>SK하이닉스:</strong> 직접 headline은 약했지만 반도체 동조화 여부는 여전히 중요했습니다. 대형주가 빠지면 코스닥 활성화 기대도 쉽게 힘을 잃습니다.</li>
+            <li><strong>코스닥 중소형주:</strong> 정책 이벤트 기대감으로 단기 탄력이 나올 수 있었지만, 거래대금 없이 테마만 강한 경우 급격한 변동성에 노출되기 쉬웠습니다.</li>
+          </ul>
+
+          <h2>오늘의 리스크</h2>
+          <ul class="bullet-grid">
+            <li>지수 상징성에 비해 외국인 수급이 약하면 고점 피로가 빠르게 커질 수 있습니다.</li>
+            <li>코스닥 활성화 기대가 실제 수급 유입 없이 뉴스로만 소비되면 장중 변동성이 확대됩니다.</li>
+            <li>성장주와 중소형주는 금리 민감도가 높아 환율·채권 변동에 더 크게 흔들릴 수 있습니다.</li>
+            <li>주도 업종이 좁으면 지수 랠리와 체감 수익률의 괴리가 벌어질 수 있습니다.</li>
+          </ul>
+
+          <h2>오늘 확인할 것</h2>
+          <ul class="bullet-grid">
+            <li>코스피 7,500 위에서 외국인 수급이 재유입되는지 확인</li>
+            <li>코스닥 거래대금이 정책 이벤트 기대를 실제로 반영하는지 점검</li>
+            <li>지수 강세가 반도체와 금융주까지 넓어지는지 확인</li>
+            <li>개별 이슈주 급등락이 전체 위험선호를 왜곡하는지 체크</li>
+            <li>원달러와 미국채 금리 변화가 성장주 밸류에이션을 누르는지 확인</li>
+          </ul>
+
+          <section class="news-section">
+            <h2>관련 뉴스 5개</h2>
+            <ul class="news-list">
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiW0FVX3lxTFBhRFloYXZFX0FEYWxPcDQtTFRSdjdRaG56ZTJycjYtOUQ0RmlTMy1FbDFsSXFnSVJhX2ptNEY1QUhfeGctZ1lfNnczOWZkcTJOZ3VVaVdRb3Naa3M?oc=5" target="_blank" rel="noopener">Kospi tops 7,500 - KBS 뉴스</a><span class="news-source">KBS 뉴스 · 2026-05-08 00:48 KST</span></li>
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBVY0JKMGEzYnI0WERqNDZ2b1B0d3JvaGY0UzVMaWZmWnRFa25mc0w0MWl6Wlp6SFhJLTI0NlVTVC1ZaldKM09zUFVueWpXcDdYVWdWekY1eVlYSEZsRGtQc0Q5RG4yeTVLMHfSAW5BVV95cUxPMXhzR0FkQTY0LW5QcEI5RlZlMEJ1aE9DbmF1M2hEUnFGSDRFbE1ESkp2RWNsN2IydXYyemtxQVFGTUhPNVJUV2ZfX1FwSjhDOXoxWVpkRk9SczZrWHljdTBrdmFNT2lWT2xIZmxDUQ?oc=5" target="_blank" rel="noopener">IBK기업은행, 코스닥 활성화 본격화…12일 ‘IBK-KOSDAQ 붐업 데이’ 개최 - 퍼블릭타임스</a><span class="news-source">퍼블릭타임스 · 2026-05-08 07:30 KST</span></li>
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMibEFVX3lxTFAtcVFlRU5kd2ZYZUNZQURHTGJwVGZUYlBiTHNCamFXLTJibHRYaEJfRl9JMjVzMUFxejFvb3UyUlNjQkxZakY5dWNYMW5SdXBmTjNEV2tKaEhjMW0yMGhyQ0ViUDcwQmRoUWJqMQ?oc=5" target="_blank" rel="noopener">외인 매도 뚫고 코스피 7,490 마감 - KB Think</a><span class="news-source">KB Think · 2026-05-07 16:07 KST</span></li>
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE1YTG1TN294SjRFUW82YmtpcC1kZDV0OU1wOWtBZEw3ZmE4czZUVjRqMWtqTjF4b3VydXltRlQtZmJOdDFrd0E2UENOSDZIRUdsMHlFR2RxMDBpUm5tQnVqM0x3?oc=5" target="_blank" rel="noopener">'종전 기대감 후퇴' 코스피, 장초반 2%대 약세…코스닥은 상승세 - 아시아경제</a><span class="news-source">아시아경제 · 2026-05-08 09:25 KST</span></li>
+              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE40Z2k4dXB5Ty0ySFZoZDZFc21iN2M5eUw5QkEtc1BMU21GRkJ2dHd5MTZfMEVacG9CTkhld2N1ZkhpcWZkeHNvb2REYzYxSGJNbjZkWXh3N3dJblh2Q19GeDk5cE4zWF9NZU5V?oc=5" target="_blank" rel="noopener">[주식] 국내 첫 CAR-T 치료제 '큐로셀' 주가는 4거래일 연속 하락 - 히트뉴스</a><span class="news-source">히트뉴스 · 2026-05-07 17:42 KST</span></li>
+            </ul>
+          </section>
+        </article>
+      </section>
+
+      <section id="realtime-pane" hidden>
+        <article class="report">
+          <div class="eyebrow draft">실시간급등</div>
+          <p class="lead">프리미엄 사용자 전용 탭입니다.</p>
+        </article>
+      </section>
+
+      <section class="disclaimer">
+        <strong>꼭 읽어보세요</strong><br />
+        본 브리핑은 투자 판단을 돕기 위한 참고 자료이며, 특정 종목 매수·매도를 권유하지 않습니다.
+        시장 해석과 종목 언급은 작성 시점의 공개 정보와 가격 흐름을 바탕으로 정리한 것이며,
+        최종 투자 판단과 책임은 투자자 본인에게 있습니다.
+      </section>
+    </main>
+
+    <script>
+      (() => {
+        const briefingPane = document.getElementById('briefing-pane');
+        const realtimePane = document.getElementById('realtime-pane');
+        const tabs = document.querySelectorAll('[data-room-tab]');
+        const isPremiumUser = window.__isPremiumUser === true;
+        const realtimeSurgeUrl = (window.__REALTIME_SURGE_URL || '').trim();
+        const realtimeSurgeDeploy = {
+          repository: (window.__REALTIME_SURGE_REPO || '').trim(),
+          pagePath: (window.__REALTIME_SURGE_PATH || '').trim(),
+          deployment: (window.__REALTIME_SURGE_DEPLOY || '').trim()
+        };
+
+        const getRealtimeSurgeBlockers = () => Object.entries(realtimeSurgeDeploy)
+          .filter(([, value]) => !value)
+          .map(([key]) => key);
+
+        const openRealtimeSurgePage = () => {
+          if (!realtimeSurgeUrl) {
+            const unresolved = getRealtimeSurgeBlockers();
+            window.__REALTIME_SURGE_BLOCKERS = unresolved;
+            if (typeof console !== 'undefined' && typeof console.warn === 'function') {
+              console.warn('[realtime-surge] placeholder_active_missing_url', {
+                blockers: unresolved,
+                note: 'set __REALTIME_SURGE_URL once repo/path/deploy are finalized'
+              });
+            }
+            return false;
+          }
+          window.open(realtimeSurgeUrl, '_blank', 'noopener,noreferrer');
+          return true;
+        };
+
+        const activateTab = (tabName) => {
+          tabs.forEach((tab) => {
+            const isActive = tab.dataset.roomTab === tabName;
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+          briefingPane.hidden = tabName !== 'briefing';
+          realtimePane.hidden = tabName !== 'realtime';
+
+          // Restore ad rendering path when user returns to briefing tab.
+          // This covers cases where ad SDK attached late or slot content was reset while hidden.
+          if (tabName === 'briefing' && typeof restoreBriefingAdPath === 'function') {
+            restoreBriefingAdPath();
+          }
+        };
+
+        const restoreBriefingAdPath = () => {
+          if (!briefingPane) return;
+
+          const existingAdSlot = briefingPane.querySelector('#briefing-ad-slot');
+          const adSlot = existingAdSlot || document.createElement('section');
+
+          if (!existingAdSlot) {
+            adSlot.id = 'briefing-ad-slot';
+            adSlot.setAttribute('aria-label', '광고');
+            adSlot.style.marginBottom = '12px';
+            adSlot.style.minHeight = '40px';
+            briefingPane.insertBefore(adSlot, briefingPane.firstElementChild);
+          } else if (briefingPane.firstElementChild !== adSlot) {
+            // Keep ad slot at top even when pre-mounted elsewhere so exposure path is restored.
+            briefingPane.insertBefore(adSlot, briefingPane.firstElementChild);
+          }
+
+          // Restore exposure path when a reused slot stayed hidden by previous render state.
+          adSlot.hidden = false;
+          adSlot.removeAttribute('hidden');
+          adSlot.style.visibility = 'visible';
+          if (adSlot.style.display === 'none') {
+            adSlot.style.display = 'block';
+          }
+          const computedDisplay = typeof window.getComputedStyle === 'function'
+            ? window.getComputedStyle(adSlot).display
+            : '';
+          if (computedDisplay === 'none') {
+            adSlot.style.display = 'block';
+          }
+
+          const renderStartedAtMs = typeof performance !== 'undefined' && typeof performance.now === 'function'
+            ? performance.now()
+            : Date.now();
+          let hasLoggedRenderMs = false;
+
+          const hasRenderedCreative = () => {
+            if (adSlot.childElementCount > 0) return true;
+            if ((adSlot.innerHTML || '').trim()) return true;
+            return false;
+          };
+
+          const logRenderMs = () => {
+            if (hasLoggedRenderMs || !hasRenderedCreative()) return;
+            hasLoggedRenderMs = true;
+            const nowMs = typeof performance !== 'undefined' && typeof performance.now === 'function'
+              ? performance.now()
+              : Date.now();
+            const elapsedMs = Math.max(0, Math.round(nowMs - renderStartedAtMs));
+            if (typeof console !== 'undefined' && typeof console.info === 'function') {
+              console.info(`[market-ad] briefing_ad_render_ms=${elapsedMs}`);
+            }
+          };
+
+          const tryRender = () => {
+            const renderers = [
+              window.renderMarketBannerAd,
+              window.renderAdBanner,
+              window.__renderMarketAd,
+              window.adfit?.render,
+              window.kakao?.adfit?.render,
+              window.daum?.AdFit?.render
+            ];
+
+            for (const render of renderers) {
+              if (typeof render !== 'function') continue;
+
+              const invokeRender = (arg) => {
+                try {
+                  render(arg);
+                } catch (_) {
+                  // ignore and continue with other signatures
+                }
+              };
+
+              // Some ad SDK adapters accept HTMLElement, some accept selector,
+              // and some expect an options object. Try all known signatures independently.
+              invokeRender(adSlot);
+
+              if (!hasRenderedCreative()) {
+                invokeRender('#briefing-ad-slot');
+              }
+
+              if (!hasRenderedCreative()) {
+                invokeRender({ element: adSlot, selector: '#briefing-ad-slot' });
+              }
+
+              // Some adapters use container/slot keys instead of element/selector.
+              if (!hasRenderedCreative()) {
+                invokeRender({ container: adSlot, slot: 'briefing-ad-slot' });
+              }
+
+              if (hasRenderedCreative()) {
+                logRenderMs();
+                return true;
+              }
+            }
+
+            const fallbackHtml = window.__MARKET_BANNER_AD_HTML || window.__marketBannerAdHtml;
+            if (typeof fallbackHtml === 'string' && fallbackHtml.trim()) {
+              adSlot.innerHTML = fallbackHtml;
+              logRenderMs();
+              return true;
+            }
+
+            logRenderMs();
+            return hasRenderedCreative();
+          };
+
+          const retryIntervalMs = 300;
+          const maxRetryCount = 10;
+          let retryCount = 0;
+
+          const scheduleRetry = (callback, immediate = false) => {
+            if (typeof window.requestAnimationFrame === 'function') {
+              if (immediate) {
+                window.requestAnimationFrame(callback);
+                return;
+              }
+              window.setTimeout(() => window.requestAnimationFrame(callback), retryIntervalMs);
+              return;
+            }
+            window.setTimeout(callback, immediate ? 0 : retryIntervalMs);
+          };
+
+          const retryRender = () => {
+            if (tryRender()) {
+              return;
+            }
+            retryCount += 1;
+            if (retryCount >= maxRetryCount) {
+              if (typeof console !== 'undefined' && typeof console.warn === 'function') {
+                const nowMs = typeof performance !== 'undefined' && typeof performance.now === 'function'
+                  ? performance.now()
+                  : Date.now();
+                const elapsedMs = Math.max(0, Math.round(nowMs - renderStartedAtMs));
+                console.warn(`[market-ad] briefing_ad_render_timeout_ms=${elapsedMs}`);
+              }
+              return;
+            }
+            scheduleRetry(retryRender);
+          };
+
+          // Live-like fast path: attempt once immediately, then fall back to frame-based retries.
+          if (!tryRender()) {
+            scheduleRetry(retryRender, true);
+          }
+
+          // Late SDK path: ad renderer may attach after initial retries (slow script/load race).
+          const lateRetryDelaysMs = [1500, 4000];
+          lateRetryDelaysMs.forEach((delayMs) => {
+            window.setTimeout(() => {
+              if (hasRenderedCreative()) {
+                logRenderMs();
+                return;
+              }
+              tryRender();
+            }, delayMs);
+          });
+        };
+
+        restoreBriefingAdPath();
+
+        tabs.forEach((tab) => {
+          tab.addEventListener('click', () => {
+            if (tab.dataset.roomTab === 'realtime' && !isPremiumUser) {
+              alert('프리미엄 사용자에게만 제공됩니다.');
+              activateTab('briefing');
+              return;
+            }
+            if (tab.dataset.roomTab === 'realtime' && isPremiumUser && openRealtimeSurgePage()) {
+              activateTab('briefing');
+              return;
+            }
+            activateTab(tab.dataset.roomTab);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
