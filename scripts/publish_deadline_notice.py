@@ -17,7 +17,7 @@ BRIEFING_SECTION_RE = re.compile(
 )
 TITLE_RE = re.compile(r"(<title>)(.*?)(</title>)", re.DOTALL)
 NOTICE_RE = re.compile(
-    r'\s*<article class="report notice-card" data-briefing-notice="[^"]+">.*?</article>\s*',
+    r'\s*<article class="report notice-card" data-(?:briefing|deadline)-notice="[^"]+">.*?</article>\s*',
     re.DOTALL,
 )
 FORBIDDEN_PUBLIC_TERMS = (
