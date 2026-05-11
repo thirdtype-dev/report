@@ -17,8 +17,19 @@ BRIEFING_SECTION_RE = re.compile(
 )
 TITLE_RE = re.compile(r"(<title>)(.*?)(</title>)", re.DOTALL)
 NOTICE_RE = re.compile(
-    r'\s*<article class="report notice-card" data-deadline-notice="[^"]+">.*?</article>\s*',
+    r'\s*<article class="report notice-card" data-briefing-notice="[^"]+">.*?</article>\s*',
     re.DOTALL,
+)
+FORBIDDEN_PUBLIC_TERMS = (
+    "08:30",
+    "16:00",
+    "KST",
+    "deadline",
+    "publish proof",
+    "publish_url",
+    "EXPIRED",
+    "expired",
+    "운영 실패",
 )
 
 
@@ -34,10 +45,6 @@ def phase_label(phase: str) -> str:
     return "장 시작" if phase == "pre_market" else "장 종료"
 
 
-def deadline_label(phase: str) -> str:
-    return "08:30 KST" if phase == "pre_market" else "16:00 KST"
-
-
 def title_text(day: date, phase: str) -> str:
     return f"{day.month}/{day.day} {'장시작' if phase == 'pre_market' else '장종료'} 브리핑 · 리딩방"
 
@@ -45,31 +52,33 @@ def title_text(day: date, phase: str) -> str:
 def build_notice_article(day: date, phase: str) -> str:
     marker = f"{phase}:{day.isoformat()}"
     label = phase_label(phase)
-    deadline = deadline_label(phase)
-    return f"""        <article class="report notice-card" data-deadline-notice="{marker}">
+    customer_label = "장시작" if phase == "pre_market" else "장마감"
+    return f"""        <article class="report notice-card" data-briefing-notice="{marker}">
           <div class="eyebrow draft">{label} · {day.isoformat()}</div>
-          <h1>금일 {label} 브리핑은 {deadline}까지 발행되지 않았습니다</h1>
-          <p class="meta">{day.isoformat()} {deadline} · System Notice</p>
-          <p class="lead">정해진 시각까지 live publish proof 가 확인되지 않아 고객면을 stale 상태로 두지 않기 위한 운영 공지로 대체합니다. 정상 브리핑은 정시 발행본만 유효하며, 지연 반영은 별도 수동 공지 없이는 정상 발행으로 취급하지 않습니다.</p>
-
-          <h2>현재 상태</h2>
-          <ul class="bullet-grid">
-            <li><strong>발행 결과:</strong> 해당 시각까지 고객용 브리핑 본문이 공개 URL에 반영되지 않았습니다.</li>
-            <li><strong>운영 처리:</strong> 동일 날짜/단계 브리핑 이슈는 deadline miss 기준으로 종료됩니다.</li>
-            <li><strong>고객면 정책:</strong> 이전 브리핑을 계속 보여주지 않도록 현재 단계의 미발행 사실을 상단에 고지합니다.</li>
-          </ul>
+          <h1>오늘 {customer_label} 브리핑은 제공되지 않습니다</h1>
+          <p class="meta">{day.isoformat()} · Service Notice</p>
+          <p class="lead">오늘 {customer_label} 브리핑은 제공되지 않습니다. 마지막 정상 발행 브리핑은 아래에서 확인할 수 있으며, 다음 정규 브리핑에서 필요한 변화만 이어서 정리합니다.</p>
 
           <h2>안내</h2>
           <ul class="bullet-grid">
-            <li>이 카드는 stale 브리핑 방치 방지를 위한 deadline notice 입니다.</li>
-            <li>정상 브리핑이 이후 별도로 필요하면 수동 예외 발행과 별도 기록이 필요합니다.</li>
-            <li>다음 정규 브리핑부터는 deadline-aware publish 경로만 허용됩니다.</li>
+            <li><strong>오늘 브리핑:</strong> 금일 {customer_label} 브리핑은 제공되지 않습니다.</li>
+            <li><strong>마지막 정상 발행본:</strong> 바로 아래 최신 브리핑 카드에서 이어서 확인할 수 있습니다.</li>
+            <li><strong>다음 업데이트:</strong> 다음 정규 브리핑에서 필요한 핵심 변화만 이어서 정리합니다.</li>
           </ul>
         </article>"""
 
 
+def assert_customer_safe_notice(notice_html: str) -> None:
+    visible_text = re.sub(r"<[^>]+>", " ", notice_html)
+    lowered = re.sub(r"\s+", " ", visible_text).lower()
+    for term in FORBIDDEN_PUBLIC_TERMS:
+        if term.lower() in lowered:
+            raise ValueError(f"forbidden public term leaked into notice copy: {term}")
+
+
 def update_index(html: str, day: date, phase: str) -> str:
     notice = build_notice_article(day, phase)
+    assert_customer_safe_notice(notice)
 
     def replace_section(match: re.Match[str]) -> str:
         prefix, body, suffix = match.groups()
