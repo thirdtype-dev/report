@@ -29,7 +29,7 @@ verify_canonical_root() {
     exit 1
   fi
 
-  if perl -0ne 'exit((/service\s+notice|점검|공지/i) ? 0 : 1)' "$ROOT_INDEX"; then
+  if perl -0ne 'exit((/service\s+notice|운영\s*공지|브리핑은\s+제공되지\s+않습니다|오늘\s+장(?:시작|마감)\s+브리핑은\s+제공되지\s+않습니다/i) ? 0 : 1)' "$ROOT_INDEX"; then
     echo "Canonical root verification failed: notice-like surface detected in $ROOT_INDEX" >&2
     exit 1
   fi
