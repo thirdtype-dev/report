@@ -4,7 +4,6 @@ from __future__ import annotations
 import argparse
 import re
 import subprocess
-from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,93 +19,67 @@ NOTICE_RE = re.compile(
     r'\s*<article class="report notice-card" data-(?:briefing|deadline)-notice="[^"]+">.*?</article>\s*',
     re.DOTALL,
 )
-FORBIDDEN_PUBLIC_TERMS = (
-    "08:30",
-    "16:00",
-    "KST",
-    "deadline",
-    "publish proof",
-    "publish_url",
-    "EXPIRED",
-    "expired",
-    "운영 실패",
+FIRST_REPORT_RE = re.compile(
+    r'<article class="report"[^>]*>.*?<div class="eyebrow[^"]*">\s*([^<]+?)\s*</div>.*?<h1>(.*?)</h1>',
+    re.DOTALL,
 )
+EYEBROW_RE = re.compile(r"장\s*(시작|종료)\s*·\s*(\d{4})-(\d{2})-(\d{2})")
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--phase", required=True, choices=("pre_market", "post_market"))
-    parser.add_argument("--date", required=True, help="YYYY-MM-DD")
+    parser.add_argument("--phase", required=False, choices=("pre_market", "post_market"))
+    parser.add_argument("--date", required=False, help="YYYY-MM-DD")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
 
-def phase_label(phase: str) -> str:
-    return "장 시작" if phase == "pre_market" else "장 종료"
+def title_from_eyebrow(eyebrow: str) -> str | None:
+    match = EYEBROW_RE.search(eyebrow)
+    if not match:
+        return None
+    phase, _year, month, day = match.groups()
+    label = "장시작" if phase == "시작" else "장종료"
+    return f"{int(month)}/{int(day)} {label} 브리핑 · 리딩방"
 
 
-def title_text(day: date, phase: str) -> str:
-    return f"{day.month}/{day.day} {'장시작' if phase == 'pre_market' else '장종료'} 브리핑 · 리딩방"
-
-
-def build_notice_article(day: date, phase: str) -> str:
-    marker = f"{phase}:{day.isoformat()}"
-    label = phase_label(phase)
-    customer_label = "장시작" if phase == "pre_market" else "장마감"
-    return f"""        <article class="report notice-card" data-briefing-notice="{marker}">
-          <div class="eyebrow draft">{label} · {day.isoformat()}</div>
-          <h1>오늘 {customer_label} 브리핑은 제공되지 않습니다</h1>
-          <p class="meta">{day.isoformat()} · Service Notice</p>
-          <p class="lead">오늘 {customer_label} 브리핑은 제공되지 않습니다. 마지막 정상 발행 브리핑은 아래에서 확인할 수 있으며, 다음 정규 브리핑에서 필요한 변화만 이어서 정리합니다.</p>
-
-          <h2>안내</h2>
-          <ul class="bullet-grid">
-            <li><strong>오늘 브리핑:</strong> 금일 {customer_label} 브리핑은 제공되지 않습니다.</li>
-            <li><strong>마지막 정상 발행본:</strong> 바로 아래 최신 브리핑 카드에서 이어서 확인할 수 있습니다.</li>
-            <li><strong>다음 업데이트:</strong> 다음 정규 브리핑에서 필요한 핵심 변화만 이어서 정리합니다.</li>
-          </ul>
-        </article>"""
-
-
-def assert_customer_safe_notice(notice_html: str) -> None:
-    visible_text = re.sub(r"<[^>]+>", " ", notice_html)
-    lowered = re.sub(r"\s+", " ", visible_text).lower()
-    for term in FORBIDDEN_PUBLIC_TERMS:
-        if term.lower() in lowered:
-            raise ValueError(f"forbidden public term leaked into notice copy: {term}")
-
-
-def update_index(html: str, day: date, phase: str) -> str:
-    notice = build_notice_article(day, phase)
-    assert_customer_safe_notice(notice)
-
+def remove_notice_articles(html: str) -> str:
     def replace_section(match: re.Match[str]) -> str:
         prefix, body, suffix = match.groups()
-        cleaned = NOTICE_RE.sub("", body).strip()
+        cleaned = NOTICE_RE.sub("", body)
+        cleaned = cleaned.strip()
         if cleaned:
-            cleaned = "\n" + cleaned + "\n      "
+            cleaned = "\n" + cleaned + "\n"
         else:
             cleaned = "\n"
-        return f"{prefix}{notice}{cleaned}{suffix}"
+        return f"{prefix}{cleaned}{suffix}"
 
     updated = BRIEFING_SECTION_RE.sub(replace_section, html, count=1)
-    return TITLE_RE.sub(lambda match: f"{match.group(1)}{title_text(day, phase)}{match.group(3)}", updated, count=1)
+    first_report = FIRST_REPORT_RE.search(updated)
+    if first_report:
+        eyebrow = re.sub(r"\s+", " ", first_report.group(1)).strip()
+        next_title = title_from_eyebrow(eyebrow)
+        if next_title:
+            updated = TITLE_RE.sub(
+                lambda title_match: f"{title_match.group(1)}{next_title}{title_match.group(3)}",
+                updated,
+                count=1,
+            )
+    return updated
 
 
 def main() -> int:
     args = parse_args()
-    day = date.fromisoformat(args.date)
     original = INDEX_HTML.read_text(encoding="utf-8")
-    updated = update_index(original, day, args.phase)
+    updated = remove_notice_articles(original)
 
     if args.dry_run:
-        print("dry_run=ok")
-        print(f"title={title_text(day, args.phase)}")
-        print(f"marker={phase_label(args.phase)} · {day.isoformat()}")
+        print("deadline_notice_cleanup=dry_run")
+        print("changed=yes" if updated != original else "changed=no")
         return 0
 
     if updated == original:
-        print("notice_publish=noop")
+        print("deadline_notice_cleanup=noop")
         return 0
 
     INDEX_HTML.write_text(updated, encoding="utf-8")
@@ -115,14 +88,14 @@ def main() -> int:
 
     subprocess.run(["git", "-C", str(ROOT), "add", "index.html", "report/index.html"], check=True)
     commit = subprocess.run(
-        ["git", "-C", str(ROOT), "commit", "-m", f"Publish {args.phase} deadline notice {args.date}"],
+        ["git", "-C", str(ROOT), "commit", "-m", "Remove deadline notice shell"],
         capture_output=True,
         text=True,
     )
     if commit.returncode != 0 and "nothing to commit" not in (commit.stdout + commit.stderr).lower():
         raise SystemExit(commit.stderr.strip() or commit.stdout.strip() or commit.returncode)
     subprocess.run(["git", "-C", str(ROOT), "push", "origin", "main"], check=True)
-    print("notice_publish=published")
+    print("deadline_notice_cleanup=published")
     return 0
 
 

@@ -16,41 +16,26 @@ if [[ ! -f "$TRIMMER" ]]; then
   exit 1
 fi
 
-extract_publish_deadline() {
-  perl -0ne '
-    if (/<section id="briefing-pane">.*?<div class="eyebrow[^"]*">\s*([^<]+?)\s*<\/div>/s) {
-      print $1;
-    }
-  ' "$ROOT_INDEX"
-}
-
-enforce_publish_deadline() {
-  if [[ "${ALLOW_LATE_PUBLISH:-0}" == "1" ]]; then
-    return 0
+verify_canonical_root() {
+  local marker_count
+  if [[ ! -s "$ROOT_INDEX" ]]; then
+    echo "Canonical root index is missing or empty: $ROOT_INDEX" >&2
+    exit 1
   fi
 
-  local eyebrow today_kst now_hm issue_date deadline_hm
-  eyebrow=$(extract_publish_deadline)
-  today_kst=$(TZ=Asia/Seoul date +%F)
-  now_hm=$(TZ=Asia/Seoul date +%H%M)
-
-  if [[ "$eyebrow" =~ 장[[:space:]]시작[[:space:]]·[[:space:]]([0-9]{4}-[0-9]{2}-[0-9]{2}) ]]; then
-    issue_date="${BASH_REMATCH[1]}"
-    deadline_hm="0830"
-  elif [[ "$eyebrow" =~ 장[[:space:]]종료[[:space:]]·[[:space:]]([0-9]{4}-[0-9]{2}-[0-9]{2}) ]]; then
-    issue_date="${BASH_REMATCH[1]}"
-    deadline_hm="1600"
-  else
-    return 0
+  marker_count=$(perl -0ne 'my $c = () = /장\s*(?:시작|종료)\s*·\s*\d{4}-\d{2}-\d{2}/g; print $c;' "$ROOT_INDEX")
+  if [[ "${marker_count:-0}" -lt 1 ]]; then
+    echo "Canonical root verification failed: no dated phase marker found in $ROOT_INDEX" >&2
+    exit 1
   fi
 
-  if [[ "$issue_date" == "$today_kst" ]] && ((10#$now_hm > 10#$deadline_hm)); then
-    echo "Refusing late publish for $eyebrow at $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'). Set ALLOW_LATE_PUBLISH=1 to override." >&2
-    exit 2
+  if perl -0ne 'exit((/service\s+notice|점검|공지/i) ? 0 : 1)' "$ROOT_INDEX"; then
+    echo "Canonical root verification failed: notice-like surface detected in $ROOT_INDEX" >&2
+    exit 1
   fi
 }
 
-enforce_publish_deadline
+verify_canonical_root
 
 mkdir -p "$ROOT_DIR/report"
 python3 "$TRIMMER" "$ROOT_INDEX"
