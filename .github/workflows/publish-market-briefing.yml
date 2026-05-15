@@ -1,0 +1,69 @@
+name: Publish Market Briefing
+
+on:
+  schedule:
+    - cron: '20 23 * * 0-4'
+    - cron: '50 6 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: Briefing phase
+        required: false
+        default: pre_market
+        type: choice
+        options:
+          - pre_market
+          - post_market
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-briefing-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate briefing
+        env:
+          BRIEFING_PHASE: ${{ inputs.phase || (github.event.schedule == '50 6 * * 1-5' && 'post_market' || 'pre_market') }}
+          ANALYST_PROVIDER: openrouter
+          ANALYST_MODEL: openrouter/free
+          ANALYST_FALLBACK_PROVIDER: gemini
+          ANALYST_FALLBACK_MODEL: gemini-2.5-flash
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/generate-market-briefing.mjs
+
+      - name: Publish generated HTML
+        run: |
+          cp public/report/index.html index.html
+          mkdir -p report
+          cp public/report/index.html report/index.html
+          mkdir -p report/data
+          cp public/report/data/market-research.json report/data/market-research.json
+          cp public/report/data/report.json report/data/report.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html report/index.html report/data/market-research.json report/data/report.json
+          if git diff --cached --quiet; then
+            echo "No briefing changes to publish."
+            exit 0
+          fi
+          git commit -m "Publish market briefing"
+          git push

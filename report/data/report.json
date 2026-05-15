@@ -1,0 +1,34 @@
+{
+  "report": {
+    "openingStrategy": {
+      "keywords": "KOSPI 하락, 코스닥 하락, USD/KRW 상승, Nasdaq Futures 하락",
+      "oneLineStrategy": "주요 지수가 하락세이며, 달러 강세와 미국 나스닥 선물 약세가 혼재된 상황입니다.",
+      "expectedOpen": "시가 하락세 지속 예상"
+    },
+    "investorFlowWatch": {
+      "continuity": "투자자별 수급 데이터가 unavailable 상태이며, 확인이 필요합니다.",
+      "keyInvestor": "데이터가 제공되지 않아 주요 투자자 흐름 파악이 어려운 상황입니다.",
+      "checkPoint": "KRX 투자자별 수급 정보를 별도 확인하시기 바랍니다."
+    },
+    "sectorWeather": {
+      "sunny": "반도체·2차전지 섹터가 연속 상승세를 보이며 강세를 유지하고 있습니다.",
+      "cloudy": "자동차·조선 섹터는 혼조세로 주의가 필요합니다.",
+      "rainy": "특별히 약세가 두드러지는 섹터는 현재 확인되지 않았습니다."
+    },
+    "disclosuresAndNews": {
+      "corporateDisclosure": "공시 데이터가 unavailable 상태이며, 추가 확인이 필요합니다.",
+      "majorNews": "코스피가 사상 최고치를 경신하며 7,000선·6,300선 등을 돌파했다는 보도가 다수 나오고, 반도체·2차전지 랠리가 재개되었습니다.",
+      "schedule": "특별 일정은 현재 확인되지 않았습니다."
+    },
+    "watchlist": {
+      "leaders": "반도체 및 2차전지 관련 종목이 상승 주도 가능성이 높습니다.",
+      "technicals": "KOSPI는 -5.51% 하락 중이며, 저항선과 지지선을 주시해야 합니다.",
+      "eventDriven": "Nasdaq Futures가 -0.89% 하락한 점과 코스피 7,500 안착 시험대 논의가 이벤트 요인으로 작용할 수 있습니다."
+    }
+  },
+  "writer": {
+    "provider": "openrouter",
+    "model": "openrouter/free",
+    "fallbackReason": null
+  }
+}
