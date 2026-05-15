@@ -48,7 +48,19 @@ jobs:
       - name: Install market data dependencies
         run: python -m pip install --upgrade pykrx==1.2.8
 
+      - name: Evaluate KRX trading day
+        id: trading_day
+        run: node scripts/krx-business-day.mjs >> "$GITHUB_OUTPUT"
+
+      - name: Skip on KRX holiday
+        if: steps.trading_day.outputs.is_trading_day != 'true'
+        run: |
+          echo "Skipping market briefing publish."
+          echo "KST date: ${{ steps.trading_day.outputs.trading_date }}"
+          echo "Reason: ${{ steps.trading_day.outputs.skip_reason }}"
+
       - name: Generate briefing
+        if: steps.trading_day.outputs.is_trading_day == 'true'
         env:
           BRIEFING_PHASE: ${{ inputs.phase || ((github.event.schedule == '50 6 * * 1-5' || github.event.schedule == '55 6 * * 1-5' || github.event.schedule == '0 7 * * 1-5') && 'post_market' || 'pre_market') }}
           ANALYST_PROVIDER: openrouter
@@ -62,6 +74,7 @@ jobs:
         run: node scripts/generate-market-briefing.mjs
 
       - name: Publish generated HTML
+        if: steps.trading_day.outputs.is_trading_day == 'true'
         run: |
           cp public/report/index.html index.html
           mkdir -p report
@@ -71,6 +84,7 @@ jobs:
           cp public/report/data/report.json report/data/report.json
 
       - name: Commit and push
+        if: steps.trading_day.outputs.is_trading_day == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -19,6 +19,8 @@
   - 데이터 수집, LLM 호출, HTML 생성의 핵심 스크립트.
 - `scripts/fetch_investor_flows.py`
   - `pykrx/KRX` 기반 투자자별 수급 수집 헬퍼.
+- `scripts/krx-business-day.mjs`
+  - KST 기준 KRX 거래일 여부를 판정하는 휴장일 게이트.
 - `index.html`
   - GitHub Pages 루트 발행본.
 - `report/index.html`
@@ -47,7 +49,29 @@ GitHub Actions `schedule`은 UTC 기준이다. 현재 KST 기준 스케줄은 �
 - 그 외 정기 스케줄은 `pre_market`.
 - 수동 실행 시 `workflow_dispatch.inputs.phase`로 `pre_market` 또는 `post_market`을 직접 지정한다.
 
+휴장일 게이트:
+
+- 워크플로는 생성 전에 `scripts/krx-business-day.mjs`를 실행한다.
+- 거래일이 아니면 생성/배포/커밋 단계를 모두 건너뛴다.
+- 수동 실행도 같은 기준으로 스킵된다.
+
 주의: GitHub Actions scheduled workflow는 정시 보장형 스케줄러가 아니다. GitHub 부하에 따라 지연되거나 트리거가 누락될 수 있다. 그래서 같은 발행 구간에 백업 스케줄을 여러 개 둔다.
+
+## 휴장일 기준
+
+현재 자동발행의 휴장일 판정은 앱 쪽 기준을 따른다.
+
+- 주말
+- 2026년 KRX 휴장일 목록
+- `2026-05-01` 노동절
+- `2026-12-31` 연말 휴장
+- 해당 연도 `12/31`이 토요일이면 `12/30`, 일요일이면 `12/29`도 연말 휴장
+- 운영자가 `KRX_HOLIDAYS=YYYY-MM-DD,YYYYMMDD` 형식으로 수동 휴장일 추가 가능
+
+주의:
+
+- 연도별 휴장일 목록은 현재 `2026`만 코드에 반영돼 있다.
+- 새해 운영 전에는 `scripts/krx-business-day.mjs`의 `HOLIDAYS_BY_YEAR`를 갱신해야 한다.
 
 ## LLM provider
 
