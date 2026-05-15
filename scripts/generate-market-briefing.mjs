@@ -36,6 +36,34 @@ const NOTABLE_STOCK_QUERIES = [
   '오늘의 특징주 종목 상승 하락',
   '시간외 특징주 급등 급락'
 ];
+const INVESTOR_FLOW_NEWS_QUERIES = [
+  '코스피 외국인 기관 순매수 순매도',
+  '코스닥 외국인 기관 순매수 순매도',
+  '증시 수급 외국인 기관 개인 순매수',
+  '외국인 선물 순매수 프로그램 매매',
+  '연기금 투신 금융투자 순매수 증시'
+];
+const DISCLOSURE_NEWS_QUERIES = [
+  '장 마감 후 주요 공시 실적 유상증자 무상증자',
+  '한국 증시 주요 공시 계약 수주 공급계약',
+  '주식 주요 공시 자사주 취득 소각 배당',
+  '상장사 주요 공시 합병 인수 분할',
+  'DART 주요 공시 실적 전망 정정'
+];
+const MARKET_SCHEDULE_QUERIES = [
+  '오늘 증시 일정 신규상장 보호예수 해제',
+  '오늘 공모주 상장 청약 보호예수 해제',
+  '증시 주요 일정 주주총회 배당 기준일',
+  '오늘 경제지표 발표 증시 일정 한국 미국',
+  '오늘 상장폐지 거래정지 변경상장 일정'
+];
+const SECTOR_THEME_QUERIES = [
+  '오늘 강세 업종 약세 업종 코스피 코스닥',
+  '증시 마감 업종별 등락률 테마 강세 약세',
+  '반도체 2차전지 바이오 자동차 조선 업종 흐름',
+  '오늘 테마주 강세 약세 시장 마감',
+  '코스피 코스닥 업종별 흐름 마감'
+];
 const REPORT_STYLE = String.raw`
     :root {
       color-scheme: dark;
@@ -425,9 +453,14 @@ function buildPrompt(marketResearch) {
     '아래 JSON에 포함된 수치와 문장만 근거로 사용한다.',
     '입력 JSON은 공개 데이터 소스(Yahoo Finance chart, Google News RSS, pykrx/KRX 투자자별 거래대금)를 정규화한 것이다.',
     'status가 unavailable인 항목은 확인 필요로 처리하고, 수치나 사실을 추정해 채우지 않는다.',
-    '각 문장의 근거는 sources, marketNews, stockNewsCandidates, investorFlows 범위 안에서만 사용한다.',
-    '장시작 수급 코멘트는 investorFlows의 직전/최근 거래일 연속성만 사용하고, 당일 수급처럼 표현하지 않는다.',
-    '장마감 수급 코멘트는 investorFlows.latestDate가 당일 또는 최신 거래일일 때만 해당 날짜 기준이라고 명시한다.',
+    '각 문장의 근거는 sources, marketNews, investorFlows, investorFlowNewsCandidates, disclosureNewsCandidates, scheduleNewsCandidates, sectorThemeNewsCandidates, stockNewsCandidates 범위 안에서만 사용한다.',
+    '장시작 외국인/기관 수급 관전 포인트는 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 수급/선물/프로그램 매매 흐름을 추출해 작성한다.',
+    '장마감 투자자별 수급 동향은 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 외국인/기관/개인 흐름을 추출해 작성한다.',
+    '수급 코멘트가 뉴스 기반일 때는 정확한 순매수 금액을 만들지 말고 "뉴스 기준", "보도 기준" 같은 표현으로 근거 수준을 표시한다.',
+    '장시작 기업 공시는 disclosureNewsCandidates에서 실적, 유상증자, 무상증자, 계약, 자사주, 배당, M&A 관련 뉴스를 추출해 작성한다.',
+    '장시작 주요 일정은 scheduleNewsCandidates에서 신규상장, 청약, 보호예수, 주총, 경제지표, 거래정지/변경상장 일정을 추출해 작성한다.',
+    '장마감 업종별/테마별 흐름은 sectorThemeNewsCandidates와 marketNews에서 강세/약세 업종과 테마를 반드시 분리해 작성한다.',
+    '장시작/장마감의 수급, 공시, 일정, 업종/테마 섹션에서 "확인 필요", "없음", "데이터 부족", "수집 실패" 같은 회피 문구는 금지한다.',
     '장마감 주요 특징주는 stockNewsCandidates에서 뉴스 제목/요약에 직접 언급된 종목만 사용한다.',
     '장마감 notableStocks.surging과 notableStocks.plunging은 각각 최소 2개 이상 작성한다.',
     '등락률은 뉴스 제목/요약에 수치가 있을 때만 쓰고, 없으면 등락률 없이 상승/하락 사유만 쓴다.',
@@ -461,6 +494,10 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
     majorIndices: Array.isArray(raw.majorIndices) ? raw.majorIndices : [],
     marketNews: Array.isArray(raw.marketNews) ? raw.marketNews : [],
     stockNewsCandidates: Array.isArray(raw.stockNewsCandidates) ? raw.stockNewsCandidates : [],
+    investorFlowNewsCandidates: Array.isArray(raw.investorFlowNewsCandidates) ? raw.investorFlowNewsCandidates : [],
+    disclosureNewsCandidates: Array.isArray(raw.disclosureNewsCandidates) ? raw.disclosureNewsCandidates : [],
+    scheduleNewsCandidates: Array.isArray(raw.scheduleNewsCandidates) ? raw.scheduleNewsCandidates : [],
+    sectorThemeNewsCandidates: Array.isArray(raw.sectorThemeNewsCandidates) ? raw.sectorThemeNewsCandidates : [],
     investorFlows: raw.investorFlows ?? { status: 'unavailable', reason: 'not_collected' },
     sourceStatus: raw.sourceStatus ?? {},
     dataQuality: raw.dataQuality ?? '공개 무키 데이터 소스 기반으로 생성되었습니다. unavailable 항목은 추정하지 않습니다.',
@@ -546,6 +583,14 @@ function signalFromChangePercent(value) {
   return 'yellow';
 }
 
+function summarizeNewsCandidates(items, limit = 4) {
+  if (!Array.isArray(items) || items.length === 0) return null;
+  return items
+    .slice(0, limit)
+    .map((item) => `${item.title}${item.source ? ` (${item.source})` : ''}`)
+    .join(' / ');
+}
+
 async function fetchYahooIndex({ key, title, symbol }) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=1d`;
   const json = await fetchJson(url);
@@ -611,6 +656,17 @@ async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10) {
     seen.add(key);
     return true;
   }).slice(0, limit);
+}
+
+async function fetchNewsCandidateGroup(queries, limit, statusKey, sourceStatus) {
+  try {
+    const items = await fetchGoogleNews(queries, limit);
+    sourceStatus[statusKey] = items.some((item) => item.status === 'unavailable') ? 'partial' : 'ok';
+    return items;
+  } catch (error) {
+    sourceStatus[statusKey] = `unavailable:${error.message}`;
+    return [];
+  }
 }
 
 function unavailableInvestorFlows(reason) {
@@ -695,23 +751,12 @@ async function collectPublicMarketResearch() {
     }
   }
 
-  let marketNews = [];
-  try {
-    marketNews = await fetchGoogleNews(NEWS_QUERIES, 10);
-    sourceStatus.googleNews = marketNews.some((item) => item.status === 'unavailable') ? 'partial' : 'ok';
-  } catch (error) {
-    marketNews = [];
-    sourceStatus.googleNews = `unavailable:${error.message}`;
-  }
-
-  let stockNewsCandidates = [];
-  try {
-    stockNewsCandidates = await fetchGoogleNews(NOTABLE_STOCK_QUERIES, 18);
-    sourceStatus.stockNewsCandidates = stockNewsCandidates.some((item) => item.status === 'unavailable') ? 'partial' : 'ok';
-  } catch (error) {
-    stockNewsCandidates = [];
-    sourceStatus.stockNewsCandidates = `unavailable:${error.message}`;
-  }
+  const marketNews = await fetchNewsCandidateGroup(NEWS_QUERIES, 10, 'googleNews', sourceStatus);
+  const stockNewsCandidates = await fetchNewsCandidateGroup(NOTABLE_STOCK_QUERIES, 18, 'stockNewsCandidates', sourceStatus);
+  const investorFlowNewsCandidates = await fetchNewsCandidateGroup(INVESTOR_FLOW_NEWS_QUERIES, 12, 'investorFlowNewsCandidates', sourceStatus);
+  const disclosureNewsCandidates = await fetchNewsCandidateGroup(DISCLOSURE_NEWS_QUERIES, 12, 'disclosureNewsCandidates', sourceStatus);
+  const scheduleNewsCandidates = await fetchNewsCandidateGroup(MARKET_SCHEDULE_QUERIES, 12, 'scheduleNewsCandidates', sourceStatus);
+  const sectorThemeNewsCandidates = await fetchNewsCandidateGroup(SECTOR_THEME_QUERIES, 14, 'sectorThemeNewsCandidates', sourceStatus);
 
   const investorFlows = await fetchInvestorFlows();
   sourceStatus.investorFlows = isInvestorFlowsAvailable(investorFlows)
@@ -742,19 +787,21 @@ async function collectPublicMarketResearch() {
       updatedAt: investorFlows.generatedAt ?? null,
       reason: isInvestorFlowsAvailable(investorFlows)
         ? 'pykrx를 통해 KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.'
-        : `pykrx/KRX 투자자별 수급 수집 실패: ${investorFlows.reason ?? 'unknown'}`,
+        : `pykrx/KRX 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: ${summarizeNewsCandidates(investorFlowNewsCandidates, 3) ?? investorFlows.reason ?? 'unknown'}`,
       sourceUrl: 'https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd'
     },
     {
       key: 'disclosures',
       title: '공시',
-      value: null,
+      value: summarizeNewsCandidates(disclosureNewsCandidates, 4),
       change: null,
       signal: 'yellow',
-      status: 'unavailable',
-      updatedAt: null,
-      reason: 'OpenDART/KIND 키 없이 안정 수집하지 못했습니다. Google News RSS 헤드라인만 보조 근거로 사용합니다.',
-      sourceUrl: null
+      status: disclosureNewsCandidates.length > 0 ? 'news_based' : 'unavailable',
+      updatedAt: new Date().toISOString(),
+      reason: disclosureNewsCandidates.length > 0
+        ? 'Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.'
+        : '공시 전용 뉴스 후보를 수집하지 못했습니다.',
+      sourceUrl: 'https://news.google.com/rss'
     }
   );
 
@@ -772,10 +819,14 @@ async function collectPublicMarketResearch() {
     majorIndices: indices,
     marketNews,
     stockNewsCandidates,
+    investorFlowNewsCandidates,
+    disclosureNewsCandidates,
+    scheduleNewsCandidates,
+    sectorThemeNewsCandidates,
     investorFlows,
     dataQuality: isInvestorFlowsAvailable(investorFlows)
-      ? '공개 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급은 pykrx/KRX 최신 완료 거래일 기준입니다. 공시는 키 없는 안정 수집이 제한되어 unavailable로 넘깁니다.'
-      : '공개 무키 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급/공시는 수집 실패 시 unavailable로 넘깁니다.',
+      ? '공개 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급은 pykrx/KRX 최신 완료 거래일 기준입니다. 공시/일정/업종테마/특징주는 전용 뉴스 후보를 보조 근거로 사용합니다.'
+      : '공개 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 정형 수급 실패 시 투자자 수급 뉴스 후보를 보조 근거로 사용합니다. 공시/일정/업종테마/특징주는 전용 뉴스 후보를 근거로 작성합니다.',
     sourceStatus,
     sources: [
       { title: 'Yahoo Finance chart API', url: 'https://query1.finance.yahoo.com/v8/finance/chart/', date: null },
@@ -838,6 +889,22 @@ function mockMarketResearch() {
       { title: 'SK하이닉스, AI 반도체 수요 기대에 강세', summary: 'AI 서버 투자 확대 기대가 반영됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/stock-2', query: 'mock 특징주' },
       { title: 'HDC현대산업개발, 부동산 PF 우려에 약세', summary: '건설 업종 투자심리가 위축됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/stock-3', query: 'mock 특징주' },
       { title: '한화시스템, 우주항공 테마 차익실현에 하락', summary: '테마 과열 부담으로 매물이 출회됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/stock-4', query: 'mock 특징주' }
+    ],
+    investorFlowNewsCandidates: [
+      { title: '외국인, 반도체 대형주 중심 순매수 지속', summary: '기관은 금융투자 중심으로 차익 실현 매물이 나왔습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/flow-1', query: 'mock 수급' },
+      { title: '연기금, 코스피 대형주 매수 전환 여부 주목', summary: '선물 시장 외국인 포지션 변화가 장중 변수로 거론됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/flow-2', query: 'mock 수급' }
+    ],
+    disclosureNewsCandidates: [
+      { title: 'A사, 대규모 공급계약 체결 공시', summary: '전일 장 마감 후 수주 공시가 확인됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/disclosure-1', query: 'mock 공시' },
+      { title: 'B사, 자사주 취득 결정', summary: '주주환원 정책 강화 공시가 부각됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/disclosure-2', query: 'mock 공시' }
+    ],
+    scheduleNewsCandidates: [
+      { title: '오늘 신규상장 및 보호예수 해제 일정', summary: '신규 상장주와 일부 보호예수 해제 물량이 예정돼 있습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/schedule-1', query: 'mock 일정' },
+      { title: '미국 경제지표 발표 앞두고 관망세', summary: '장 시작 전 해외 지표 확인이 필요합니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/schedule-2', query: 'mock 일정' }
+    ],
+    sectorThemeNewsCandidates: [
+      { title: '반도체 업종 강세, 메모리 가격 반등 기대', summary: '대형 반도체주가 지수 방어를 주도했습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/theme-1', query: 'mock 업종' },
+      { title: '건설 업종 약세, 부동산 PF 우려 부각', summary: '금리 부담과 부실채권 우려가 투자심리를 제한했습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/theme-2', query: 'mock 업종' }
     ],
     dataQuality: 'mock 데이터입니다.',
     sources: [{ title: 'Mock market source', url: 'https://example.com/news', date: null }],
