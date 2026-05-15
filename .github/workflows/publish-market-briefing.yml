@@ -36,6 +36,14 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install market data dependencies
+        run: python -m pip install --upgrade pykrx==1.2.8
+
       - name: Generate briefing
         env:
           BRIEFING_PHASE: ${{ inputs.phase || (github.event.schedule == '50 6 * * 1-5' && 'post_market' || 'pre_market') }}
@@ -45,6 +53,8 @@ jobs:
           ANALYST_FALLBACK_MODEL: gemini-2.5-flash
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
         run: node scripts/generate-market-briefing.mjs
 
       - name: Publish generated HTML

@@ -1,14 +1,18 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { execFile } from 'node:child_process';
 import { resolve } from 'node:path';
+import { promisify } from 'node:util';
 
 const OUTPUT_DIR = resolve(process.cwd(), 'public/report');
 const DATA_DIR = resolve(OUTPUT_DIR, 'data');
+const execFileAsync = promisify(execFile);
 const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
 const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'openrouter/free';
 const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
+const INVESTOR_FLOW_TIMEOUT_MS = Number.parseInt(process.env.INVESTOR_FLOW_TIMEOUT_MS ?? '45000', 10);
 const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*">[\s\S]*?<\/article>/g;
 const YAHOO_SYMBOLS = [
   { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
@@ -411,9 +415,11 @@ function buildPrompt(marketResearch) {
     '너는 한국 증시 일일 브리핑을 작성하는 애널리스트다.',
     `브리핑 단계는 ${config.sessionLabel}이다.`,
     '아래 JSON에 포함된 수치와 문장만 근거로 사용한다.',
-    '입력 JSON은 공개 무키 데이터 소스(Yahoo Finance chart, Google News RSS)를 정규화한 것이다.',
+    '입력 JSON은 공개 데이터 소스(Yahoo Finance chart, Google News RSS, pykrx/KRX 투자자별 거래대금)를 정규화한 것이다.',
     'status가 unavailable인 항목은 확인 필요로 처리하고, 수치나 사실을 추정해 채우지 않는다.',
-    '각 문장의 근거는 sources와 marketNews 범위 안에서만 사용한다.',
+    '각 문장의 근거는 sources, marketNews, investorFlows 범위 안에서만 사용한다.',
+    '장시작 수급 코멘트는 investorFlows의 직전/최근 거래일 연속성만 사용하고, 당일 수급처럼 표현하지 않는다.',
+    '장마감 수급 코멘트는 investorFlows.latestDate가 당일 또는 최신 거래일일 때만 해당 날짜 기준이라고 명시한다.',
     '투자 권유, 매수/매도 지시, 확정적 수익 표현은 금지한다.',
     '사용자에게 노출되는 문장은 한국어 존댓말로 작성한다.',
     `아래 ${config.sessionLabel} 전용 섹션 구조와 라벨을 유지한다.`,
@@ -442,6 +448,7 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
     indicators: Array.isArray(raw.indicators) ? raw.indicators : [],
     majorIndices: Array.isArray(raw.majorIndices) ? raw.majorIndices : [],
     marketNews: Array.isArray(raw.marketNews) ? raw.marketNews : [],
+    investorFlows: raw.investorFlows ?? { status: 'unavailable', reason: 'not_collected' },
     sourceStatus: raw.sourceStatus ?? {},
     dataQuality: raw.dataQuality ?? '공개 무키 데이터 소스 기반으로 생성되었습니다. unavailable 항목은 추정하지 않습니다.',
     sources,
@@ -593,6 +600,64 @@ async function fetchGoogleNews() {
   }).slice(0, 10);
 }
 
+function unavailableInvestorFlows(reason) {
+  return {
+    status: 'unavailable',
+    generatedAt: new Date().toISOString(),
+    source: 'pykrx/KRX',
+    reason,
+    markets: []
+  };
+}
+
+async function fetchInvestorFlows() {
+  if (process.env.INVESTOR_FLOW_DISABLED === '1') {
+    return unavailableInvestorFlows('disabled_by_env');
+  }
+
+  try {
+    const { stdout } = await execFileAsync(
+      process.env.PYTHON_BIN ?? 'python3',
+      ['scripts/fetch_investor_flows.py'],
+      {
+        timeout: INVESTOR_FLOW_TIMEOUT_MS,
+        maxBuffer: 1024 * 1024
+      }
+    );
+    const parsed = JSON.parse(stdout);
+    return parsed?.status ? parsed : unavailableInvestorFlows('invalid_pykrx_payload');
+  } catch (error) {
+    const stderr = error?.stderr ? ` ${String(error.stderr).slice(0, 500)}` : '';
+    return unavailableInvestorFlows(`${error?.message ?? 'pykrx_failed'}${stderr}`.trim());
+  }
+}
+
+function isInvestorFlowsAvailable(investorFlows) {
+  return ['ok', 'partial'].includes(investorFlows?.status) && Array.isArray(investorFlows.markets) && investorFlows.markets.length > 0;
+}
+
+function formatFlowAmount(value) {
+  if (!Number.isFinite(value)) return null;
+  const absEok = Math.abs(value) / 100000000;
+  const formatted = new Intl.NumberFormat('ko-KR', {
+    maximumFractionDigits: absEok >= 100 ? 0 : 1
+  }).format(absEok);
+  return `${value >= 0 ? '순매수' : '순매도'} ${formatted}억원`;
+}
+
+function summarizeInvestorFlows(investorFlows) {
+  if (!isInvestorFlowsAvailable(investorFlows)) return null;
+
+  const summaries = investorFlows.markets.map((market) => {
+    const foreign = formatFlowAmount(market?.netBuy?.foreign);
+    const institution = formatFlowAmount(market?.netBuy?.institution);
+    const retail = formatFlowAmount(market?.netBuy?.retail);
+    return `${market.market} ${market.latestDate}: 외국인 ${foreign ?? '확인 불가'}, 기관 ${institution ?? '확인 불가'}, 개인 ${retail ?? '확인 불가'}`;
+  });
+
+  return summaries.join(' / ');
+}
+
 async function collectPublicMarketResearch() {
   const indices = [];
   const sourceStatus = {};
@@ -626,6 +691,12 @@ async function collectPublicMarketResearch() {
     sourceStatus.googleNews = `unavailable:${error.message}`;
   }
 
+  const investorFlows = await fetchInvestorFlows();
+  sourceStatus.investorFlows = isInvestorFlowsAvailable(investorFlows)
+    ? investorFlows.status
+    : `unavailable:${investorFlows.reason ?? 'unknown'}`;
+  const investorFlowSummary = summarizeInvestorFlows(investorFlows);
+
   const indicators = indices.map((item) => ({
     key: item.key,
     title: item.title,
@@ -642,13 +713,15 @@ async function collectPublicMarketResearch() {
     {
       key: 'investor_flow',
       title: '투자자별 수급',
-      value: null,
+      value: investorFlowSummary,
       change: null,
       signal: 'yellow',
-      status: 'unavailable',
-      updatedAt: null,
-      reason: 'KRX 투자자별 수급은 무키 안정 API가 없어 자동 확인 대상에서 제외했습니다.',
-      sourceUrl: null
+      status: isInvestorFlowsAvailable(investorFlows) ? 'delayed' : 'unavailable',
+      updatedAt: investorFlows.generatedAt ?? null,
+      reason: isInvestorFlowsAvailable(investorFlows)
+        ? 'pykrx를 통해 KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.'
+        : `pykrx/KRX 투자자별 수급 수집 실패: ${investorFlows.reason ?? 'unknown'}`,
+      sourceUrl: 'https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd'
     },
     {
       key: 'disclosures',
@@ -676,11 +749,15 @@ async function collectPublicMarketResearch() {
     indicators,
     majorIndices: indices,
     marketNews,
-    dataQuality: '공개 무키 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급/공시는 키 없는 안정 수집이 제한되어 unavailable로 넘깁니다.',
+    investorFlows,
+    dataQuality: isInvestorFlowsAvailable(investorFlows)
+      ? '공개 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급은 pykrx/KRX 최신 완료 거래일 기준입니다. 공시는 키 없는 안정 수집이 제한되어 unavailable로 넘깁니다.'
+      : '공개 무키 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급/공시는 수집 실패 시 unavailable로 넘깁니다.',
     sourceStatus,
     sources: [
       { title: 'Yahoo Finance chart API', url: 'https://query1.finance.yahoo.com/v8/finance/chart/', date: null },
-      { title: 'Google News RSS', url: 'https://news.google.com/rss', date: null }
+      { title: 'Google News RSS', url: 'https://news.google.com/rss', date: null },
+      { title: 'KRX investor trading value via pykrx', url: 'https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd', date: null }
     ],
     citations: [],
     searchResults: []
