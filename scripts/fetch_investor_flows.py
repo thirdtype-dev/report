@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 
 
 MARKETS = ("KOSPI", "KOSDAQ")
-LOOKBACK_DAYS = 540
+LOOKBACK_DAYS = 14
 INVESTOR_COLUMNS = {
     "foreign": ("외국인합계", "외국인"),
     "institution": ("기관합계", "기관"),
