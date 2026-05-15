@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>브리핑</title>
     <style>
-
     :root {
       color-scheme: dark;
       scroll-behavior: smooth;
@@ -52,16 +51,11 @@
       backdrop-filter: blur(18px);
     }
     .room-title {
-      margin: 0;
+      margin: 0 0 14px;
       color: #ffffff;
       font-size: clamp(1.7rem, 6vw, 2.5rem);
       font-weight: 900;
       letter-spacing: -0.06em;
-    }
-    .room-subtitle {
-      margin: 4px 0 14px;
-      color: var(--muted);
-      font-size: 0.92rem;
     }
     .room-tabs {
       display: grid;
@@ -91,19 +85,6 @@
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       box-shadow: 0 10px 26px rgba(73, 209, 154, 0.22);
     }
-    .policy-strip {
-      margin: 0 0 18px;
-      padding: 12px 14px;
-      border: 1px solid rgba(125, 211, 252, 0.2);
-      border-radius: 18px;
-      background:
-        linear-gradient(135deg, rgba(73, 209, 154, 0.11), rgba(125, 211, 252, 0.1)),
-        rgba(8, 16, 29, 0.46);
-      color: #dbeafe;
-      font-size: 0.92rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
     h1, h2, h3 { line-height: 1.25; }
     .meta { color: var(--muted); margin-top: 0; }
     ul { padding-left: 0; }
@@ -128,6 +109,24 @@
       inset: 0 0 auto;
       height: 5px;
       background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--warn));
+    }
+    .report.report-pre-market {
+      border-color: rgba(125, 211, 252, 0.32);
+      background:
+        linear-gradient(160deg, rgba(14, 165, 233, 0.18), rgba(20, 184, 166, 0.08) 42%, rgba(255,255,255,0.018)),
+        var(--panel);
+    }
+    .report.report-pre-market::before {
+      background: linear-gradient(90deg, #38bdf8, #2dd4bf, #a7f3d0);
+    }
+    .report.report-post-market {
+      border-color: rgba(251, 146, 60, 0.34);
+      background:
+        linear-gradient(160deg, rgba(251, 146, 60, 0.18), rgba(244, 63, 94, 0.09) 44%, rgba(255,255,255,0.018)),
+        rgba(25, 21, 33, 0.92);
+    }
+    .report.report-post-market::before {
+      background: linear-gradient(90deg, #fb923c, #f43f5e, #fde68a);
     }
     .report + .report { margin-top: 18px; }
     .report > h1 {
@@ -159,6 +158,8 @@
       text-transform: uppercase;
     }
     .eyebrow.published { background: rgba(73, 209, 154, 0.16); color: #a7f3d0; border: 1px solid rgba(73, 209, 154, 0.24); }
+    .report-pre-market .eyebrow.published { background: rgba(56, 189, 248, 0.16); color: #bae6fd; border-color: rgba(56, 189, 248, 0.28); }
+    .report-post-market .eyebrow.published { background: rgba(251, 146, 60, 0.16); color: #fed7aa; border-color: rgba(251, 146, 60, 0.3); }
     .eyebrow.draft { background: rgba(248, 212, 119, 0.16); color: #fde68a; }
     .small { font-size: 0.95rem; color: var(--muted); }
     code { background: #111827; padding: 0 4px; border-radius: 4px; }
@@ -205,6 +206,8 @@
       letter-spacing: -0.02em;
       word-break: keep-all;
     }
+    .report-pre-market .item-label { color: #93e7ff; }
+    .report-post-market .item-label { color: #fdba74; }
     .item-value {
       color: #e5eefc;
       font-size: 0.98rem;
@@ -256,31 +259,50 @@
       color: var(--muted);
       font-size: 0.92rem;
     }
+    .room-toast {
+      position: fixed;
+      left: 50%;
+      bottom: max(22px, env(safe-area-inset-bottom));
+      z-index: 30;
+      transform: translate(-50%, 12px);
+      opacity: 0;
+      pointer-events: none;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 146, 60, 0.32);
+      background: rgba(8, 16, 29, 0.92);
+      color: #fff7ed;
+      font-size: 0.94rem;
+      font-weight: 900;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+      transition: opacity 160ms ease, transform 160ms ease;
+      backdrop-filter: blur(14px);
+    }
+    .room-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
     @media (max-width: 640px) {
       .page { padding: 10px; }
       .room-header { margin: -10px -10px 14px; padding: 14px 10px 12px; }
-      .room-subtitle { font-size: 0.86rem; }
       .room-tab { padding: 9px 10px; font-size: 0.9rem; }
       .report { border-radius: 22px; padding: 18px 14px; }
       .brief-list li { grid-template-columns: 1fr; gap: 4px; }
       .item-label { font-size: 0.82rem; }
     }
-
     </style>
   </head>
   <body>
     <main class="page" data-published-at="2026-05-15T05:29:20.189Z" data-writer-provider="openrouter" data-writer-model="openrouter/free" data-fallback-reason="">
       <section class="room-header">
         <h1 class="room-title">리딩방</h1>
-        <p class="room-subtitle">장 열리는 날 기준 장시작·장마감 브리핑 자동 발행</p>
         <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
           <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
           <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간급등</button>
         </div>
       </section>
-      <section class="policy-strip">최신 브리핑 2건만 표시합니다. 최신 발행본이 항상 상단에 노출됩니다.</section>
       <section id="briefing-pane">
-<article class="report">
+<article class="report report-pre-market">
       <div class="eyebrow published">장시작</div>
       <h1>2026-05-15 장시작 브리핑</h1>
 <h2>① 오늘의 증시 키워드 &amp; 개장 전략</h2>
@@ -294,7 +316,7 @@
 <h2>⑤ 금일의 전략 종목 (Watchlist)</h2>
 <ul class="brief-list"><li><span class="item-label">주도주 후보</span><span class="item-value">반도체 및 2차전지 관련 종목이 상승 주도 가능성이 높습니다.</span></li><li><span class="item-label">기술적 관심주</span><span class="item-value">KOSPI는 -5.51% 하락 중이며, 저항선과 지지선을 주시해야 합니다.</span></li><li><span class="item-label">이슈 종목</span><span class="item-value">Nasdaq Futures가 -0.89% 하락한 점과 코스피 7,500 안착 시험대 논의가 이벤트 요인으로 작용할 수 있습니다.</span></li></ul>
     </article>
-<article class="report">
+<article class="report report-post-market">
       <div class="eyebrow published">장마감</div>
       <h1>2026-05-15 장마감 브리핑</h1>
 <h2>① 시장 총평</h2>
@@ -309,28 +331,34 @@
 <ul class="brief-list"><li><span class="item-label">시장 전망</span><span class="item-value">지수는 박스권 상단 확인 구간이며, 주도 업종의 거래대금 유지 여부가 다음 거래일 방향성을 가를 가능성이 큽니다.</span></li><li><span class="item-label">체크리스트</span><span class="item-value">미국 나스닥 선물과 필라델피아 반도체 지수 흐름 / 원/달러 환율의 1차 저항선 돌파 여부 / 외국인 선물 포지션과 프로그램 매매 방향</span></li></ul>
     </article>
       </section>
-      <section id="realtime-pane" hidden>
-        <article class="report">
-          <div class="eyebrow draft">준비중</div>
-          <h1>실시간급등</h1>
-          <p class="small">실시간급등 페이지가 연결되면 이 탭에서 표시됩니다.</p>
-        </article>
-      </section>
       <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 최종적인 투자 결정과 그에 따른 책임은 투자자 본인에게 있음을 알려드립니다</section>
     </main>
+    <div id="room-toast" class="room-toast" role="status" aria-live="polite">준비중 입니다</div>
     <script>
     (() => {
       const briefingPane = document.getElementById('briefing-pane');
-      const realtimePane = document.getElementById('realtime-pane');
+      const toast = document.getElementById('room-toast');
       const tabs = document.querySelectorAll('[data-room-tab]');
+      let toastTimer;
+      const showToast = () => {
+        if (!toast) return;
+        toast.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('is-visible');
+        }, 1800);
+      };
       const activateTab = (tabName) => {
+        if (tabName === 'realtime') {
+          showToast();
+          return;
+        }
         tabs.forEach((tab) => {
           const isActive = tab.dataset.roomTab === tabName;
           tab.classList.toggle('is-active', isActive);
           tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
         if (briefingPane) briefingPane.hidden = tabName !== 'briefing';
-        if (realtimePane) realtimePane.hidden = tabName !== 'realtime';
       };
       tabs.forEach((tab) => {
         tab.addEventListener('click', () => activateTab(tab.dataset.roomTab));

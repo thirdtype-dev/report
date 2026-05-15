@@ -9,7 +9,7 @@ const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
-const ARTICLE_RE = /<article class="report">[\s\S]*?<\/article>/g;
+const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*">[\s\S]*?<\/article>/g;
 const YAHOO_SYMBOLS = [
   { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
   { key: 'kosdaq', title: 'KOSDAQ', symbol: '^KQ11' },
@@ -71,16 +71,11 @@ const REPORT_STYLE = String.raw`
       backdrop-filter: blur(18px);
     }
     .room-title {
-      margin: 0;
+      margin: 0 0 14px;
       color: #ffffff;
       font-size: clamp(1.7rem, 6vw, 2.5rem);
       font-weight: 900;
       letter-spacing: -0.06em;
-    }
-    .room-subtitle {
-      margin: 4px 0 14px;
-      color: var(--muted);
-      font-size: 0.92rem;
     }
     .room-tabs {
       display: grid;
@@ -110,19 +105,6 @@ const REPORT_STYLE = String.raw`
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       box-shadow: 0 10px 26px rgba(73, 209, 154, 0.22);
     }
-    .policy-strip {
-      margin: 0 0 18px;
-      padding: 12px 14px;
-      border: 1px solid rgba(125, 211, 252, 0.2);
-      border-radius: 18px;
-      background:
-        linear-gradient(135deg, rgba(73, 209, 154, 0.11), rgba(125, 211, 252, 0.1)),
-        rgba(8, 16, 29, 0.46);
-      color: #dbeafe;
-      font-size: 0.92rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
     h1, h2, h3 { line-height: 1.25; }
     .meta { color: var(--muted); margin-top: 0; }
     ul { padding-left: 0; }
@@ -147,6 +129,24 @@ const REPORT_STYLE = String.raw`
       inset: 0 0 auto;
       height: 5px;
       background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--warn));
+    }
+    .report.report-pre-market {
+      border-color: rgba(125, 211, 252, 0.32);
+      background:
+        linear-gradient(160deg, rgba(14, 165, 233, 0.18), rgba(20, 184, 166, 0.08) 42%, rgba(255,255,255,0.018)),
+        var(--panel);
+    }
+    .report.report-pre-market::before {
+      background: linear-gradient(90deg, #38bdf8, #2dd4bf, #a7f3d0);
+    }
+    .report.report-post-market {
+      border-color: rgba(251, 146, 60, 0.34);
+      background:
+        linear-gradient(160deg, rgba(251, 146, 60, 0.18), rgba(244, 63, 94, 0.09) 44%, rgba(255,255,255,0.018)),
+        rgba(25, 21, 33, 0.92);
+    }
+    .report.report-post-market::before {
+      background: linear-gradient(90deg, #fb923c, #f43f5e, #fde68a);
     }
     .report + .report { margin-top: 18px; }
     .report > h1 {
@@ -178,6 +178,8 @@ const REPORT_STYLE = String.raw`
       text-transform: uppercase;
     }
     .eyebrow.published { background: rgba(73, 209, 154, 0.16); color: #a7f3d0; border: 1px solid rgba(73, 209, 154, 0.24); }
+    .report-pre-market .eyebrow.published { background: rgba(56, 189, 248, 0.16); color: #bae6fd; border-color: rgba(56, 189, 248, 0.28); }
+    .report-post-market .eyebrow.published { background: rgba(251, 146, 60, 0.16); color: #fed7aa; border-color: rgba(251, 146, 60, 0.3); }
     .eyebrow.draft { background: rgba(248, 212, 119, 0.16); color: #fde68a; }
     .small { font-size: 0.95rem; color: var(--muted); }
     code { background: #111827; padding: 0 4px; border-radius: 4px; }
@@ -224,6 +226,8 @@ const REPORT_STYLE = String.raw`
       letter-spacing: -0.02em;
       word-break: keep-all;
     }
+    .report-pre-market .item-label { color: #93e7ff; }
+    .report-post-market .item-label { color: #fdba74; }
     .item-value {
       color: #e5eefc;
       font-size: 0.98rem;
@@ -275,10 +279,32 @@ const REPORT_STYLE = String.raw`
       color: var(--muted);
       font-size: 0.92rem;
     }
+    .room-toast {
+      position: fixed;
+      left: 50%;
+      bottom: max(22px, env(safe-area-inset-bottom));
+      z-index: 30;
+      transform: translate(-50%, 12px);
+      opacity: 0;
+      pointer-events: none;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 146, 60, 0.32);
+      background: rgba(8, 16, 29, 0.92);
+      color: #fff7ed;
+      font-size: 0.94rem;
+      font-weight: 900;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+      transition: opacity 160ms ease, transform 160ms ease;
+      backdrop-filter: blur(14px);
+    }
+    .room-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
     @media (max-width: 640px) {
       .page { padding: 10px; }
       .room-header { margin: -10px -10px 14px; padding: 14px 10px 12px; }
-      .room-subtitle { font-size: 0.86rem; }
       .room-tab { padding: 9px 10px; font-size: 0.9rem; }
       .report { border-radius: 22px; padding: 18px 14px; }
       .brief-list li { grid-template-columns: 1fr; gap: 4px; }
@@ -900,8 +926,9 @@ function dateKey(value = new Date()) {
 function renderArticle(report) {
   const config = PHASE_CONFIG[PHASE];
   const body = PHASE === 'post_market' ? renderPostMarketReport(report) : renderPreMarketReport(report);
+  const articleClass = PHASE === 'post_market' ? 'report-post-market' : 'report-pre-market';
 
-  return `<article class="report">
+  return `<article class="report ${articleClass}">
       <div class="eyebrow published">${escapeHtml(config.eyebrow)}</div>
       <h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>
 ${body}
@@ -975,22 +1002,42 @@ function renderRoomScript() {
   return `<script>
     (() => {
       const briefingPane = document.getElementById('briefing-pane');
-      const realtimePane = document.getElementById('realtime-pane');
+      const toast = document.getElementById('room-toast');
       const tabs = document.querySelectorAll('[data-room-tab]');
+      let toastTimer;
+      const showToast = () => {
+        if (!toast) return;
+        toast.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('is-visible');
+        }, 1800);
+      };
       const activateTab = (tabName) => {
+        if (tabName === 'realtime') {
+          showToast();
+          return;
+        }
         tabs.forEach((tab) => {
           const isActive = tab.dataset.roomTab === tabName;
           tab.classList.toggle('is-active', isActive);
           tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
         if (briefingPane) briefingPane.hidden = tabName !== 'briefing';
-        if (realtimePane) realtimePane.hidden = tabName !== 'realtime';
       };
       tabs.forEach((tab) => {
         tab.addEventListener('click', () => activateTab(tab.dataset.roomTab));
       });
     })();
   </script>`;
+}
+
+function decorateArticlePhase(article) {
+  if (article.includes('report-pre-market') || article.includes('report-post-market')) return article;
+  if (article.includes('장마감') || article.includes('장종료')) {
+    return article.replace('<article class="report"', '<article class="report report-post-market"');
+  }
+  return article.replace('<article class="report"', '<article class="report report-pre-market"');
 }
 
 function shouldPreserveExistingReports() {
@@ -1050,7 +1097,10 @@ async function legacyArticles(currentArticle) {
 async function renderHtml(_marketResearch, report, writer) {
   const publishedAt = new Date().toISOString();
   const currentArticle = renderArticle(report);
-  const articles = [currentArticle, ...(await legacyArticles(currentArticle))].slice(0, 2).join('\n');
+  const articles = [currentArticle, ...(await legacyArticles(currentArticle))]
+    .slice(0, 2)
+    .map(decorateArticlePhase)
+    .join('\n');
 
   return `<!doctype html>
 <html lang="ko">
@@ -1066,25 +1116,17 @@ ${REPORT_STYLE}
     <main class="page" data-published-at="${escapeHtml(publishedAt)}" data-writer-provider="${escapeHtml(writer.provider)}" data-writer-model="${escapeHtml(writer.model)}" data-fallback-reason="${escapeHtml(writer.fallbackReason ?? '')}">
       <section class="room-header">
         <h1 class="room-title">리딩방</h1>
-        <p class="room-subtitle">장 열리는 날 기준 장시작·장마감 브리핑 자동 발행</p>
         <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
           <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
           <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간급등</button>
         </div>
       </section>
-      <section class="policy-strip">최신 브리핑 2건만 표시합니다. 최신 발행본이 항상 상단에 노출됩니다.</section>
       <section id="briefing-pane">
 ${articles}
       </section>
-      <section id="realtime-pane" hidden>
-        <article class="report">
-          <div class="eyebrow draft">준비중</div>
-          <h1>실시간급등</h1>
-          <p class="small">실시간급등 페이지가 연결되면 이 탭에서 표시됩니다.</p>
-        </article>
-      </section>
       <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 최종적인 투자 결정과 그에 따른 책임은 투자자 본인에게 있음을 알려드립니다</section>
     </main>
+    <div id="room-toast" class="room-toast" role="status" aria-live="polite">준비중 입니다</div>
     ${renderRoomScript()}
   </body>
 </html>
