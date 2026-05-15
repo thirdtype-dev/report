@@ -58,6 +58,71 @@ const REPORT_STYLE = String.raw`
       padding: 18px;
       box-sizing: border-box;
     }
+    .room-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: -18px -18px 18px;
+      padding: 16px 18px 14px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(9, 17, 31, 0.96), rgba(9, 17, 31, 0.82)),
+        rgba(9, 17, 31, 0.9);
+      backdrop-filter: blur(18px);
+    }
+    .room-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.7rem, 6vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+    .room-subtitle {
+      margin: 4px 0 14px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .room-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(8, 16, 29, 0.68);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+    .room-tab {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 12px;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      cursor: pointer;
+    }
+    .room-tab.is-active {
+      color: #06111e;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 26px rgba(73, 209, 154, 0.22);
+    }
+    .policy-strip {
+      margin: 0 0 18px;
+      padding: 12px 14px;
+      border: 1px solid rgba(125, 211, 252, 0.2);
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(73, 209, 154, 0.11), rgba(125, 211, 252, 0.1)),
+        rgba(8, 16, 29, 0.46);
+      color: #dbeafe;
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
     h1, h2, h3 { line-height: 1.25; }
     .meta { color: var(--muted); margin-top: 0; }
     ul { padding-left: 0; }
@@ -212,6 +277,9 @@ const REPORT_STYLE = String.raw`
     }
     @media (max-width: 640px) {
       .page { padding: 10px; }
+      .room-header { margin: -10px -10px 14px; padding: 14px 10px 12px; }
+      .room-subtitle { font-size: 0.86rem; }
+      .room-tab { padding: 9px 10px; font-size: 0.9rem; }
       .report { border-radius: 22px; padding: 18px 14px; }
       .brief-list li { grid-template-columns: 1fr; gap: 4px; }
       .item-label { font-size: 0.82rem; }
@@ -903,6 +971,28 @@ ${labeledList([
 ])}`;
 }
 
+function renderRoomScript() {
+  return `<script>
+    (() => {
+      const briefingPane = document.getElementById('briefing-pane');
+      const realtimePane = document.getElementById('realtime-pane');
+      const tabs = document.querySelectorAll('[data-room-tab]');
+      const activateTab = (tabName) => {
+        tabs.forEach((tab) => {
+          const isActive = tab.dataset.roomTab === tabName;
+          tab.classList.toggle('is-active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        if (briefingPane) briefingPane.hidden = tabName !== 'briefing';
+        if (realtimePane) realtimePane.hidden = tabName !== 'realtime';
+      };
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => activateTab(tab.dataset.roomTab));
+      });
+    })();
+  </script>`;
+}
+
 function shouldPreserveExistingReports() {
   return process.env.PRESERVE_EXISTING_REPORTS !== '0';
 }
@@ -974,9 +1064,28 @@ ${REPORT_STYLE}
   </head>
   <body>
     <main class="page" data-published-at="${escapeHtml(publishedAt)}" data-writer-provider="${escapeHtml(writer.provider)}" data-writer-model="${escapeHtml(writer.model)}" data-fallback-reason="${escapeHtml(writer.fallbackReason ?? '')}">
-    ${articles}
+      <section class="room-header">
+        <h1 class="room-title">리딩방</h1>
+        <p class="room-subtitle">장 열리는 날 기준 장시작·장마감 브리핑 자동 발행</p>
+        <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
+          <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
+          <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간급등</button>
+        </div>
+      </section>
+      <section class="policy-strip">최신 브리핑 2건만 표시합니다. 최신 발행본이 항상 상단에 노출됩니다.</section>
+      <section id="briefing-pane">
+${articles}
+      </section>
+      <section id="realtime-pane" hidden>
+        <article class="report">
+          <div class="eyebrow draft">준비중</div>
+          <h1>실시간급등</h1>
+          <p class="small">실시간급등 페이지가 연결되면 이 탭에서 표시됩니다.</p>
+        </article>
+      </section>
       <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 최종적인 투자 결정과 그에 따른 책임은 투자자 본인에게 있음을 알려드립니다</section>
     </main>
+    ${renderRoomScript()}
   </body>
 </html>
 `;
