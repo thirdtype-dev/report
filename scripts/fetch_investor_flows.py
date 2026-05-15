@@ -8,6 +8,7 @@ from zoneinfo import ZoneInfo
 
 
 MARKETS = ("KOSPI", "KOSDAQ")
+LOOKBACK_DAYS = 540
 INVESTOR_COLUMNS = {
     "foreign": ("외국인합계", "외국인"),
     "institution": ("기관합계", "기관"),
@@ -90,7 +91,7 @@ def streak(rows, key):
     return {"direction": latest_direction or "flat", "count": count}
 
 
-def fetch_market(stock, market, start_date, end_date):
+def fetch_market_window(stock, market, start_date, end_date):
     df = stock.get_market_trading_value_by_date(
         start_date,
         end_date,
@@ -139,6 +140,22 @@ def fetch_market(stock, market, start_date, end_date):
     }
 
 
+def fetch_market(stock, market, end_day):
+    current_end = end_day
+    oldest_day = end_day - timedelta(days=LOOKBACK_DAYS)
+    last_error = None
+
+    while current_end >= oldest_day:
+        current_start = max(oldest_day, current_end - timedelta(days=20))
+        try:
+            return fetch_market_window(stock, market, ymd(current_start), ymd(current_end))
+        except Exception as error:
+            last_error = error
+            current_end = current_start - timedelta(days=1)
+
+    raise RuntimeError(f"no_investor_flow_data_within_{LOOKBACK_DAYS}_days:{last_error}")
+
+
 def main():
     try:
         with redirect_stdout(sys.stderr):
@@ -159,19 +176,18 @@ def main():
         return 0
 
     today = now_kst().date()
-    end_date = ymd(today)
-    start_date = ymd(today - timedelta(days=14))
     markets = []
     errors = {}
 
     for market in MARKETS:
         try:
             with redirect_stdout(sys.stderr):
-                markets.append(fetch_market(stock, market, start_date, end_date))
+                markets.append(fetch_market(stock, market, today))
         except Exception as error:
             errors[market] = str(error)
 
     status = "ok" if len(markets) == len(MARKETS) else "partial" if markets else "unavailable"
+    reason = None if markets else "; ".join(f"{market}:{error}" for market, error in errors.items()) or "no_market_data"
     print(
         json.dumps(
             {
@@ -179,11 +195,12 @@ def main():
                 "generatedAt": now_kst().isoformat(),
                 "source": "pykrx/KRX",
                 "collectionWindow": {
-                    "start": iso_date(start_date),
-                    "end": iso_date(end_date),
+                    "lookbackDays": LOOKBACK_DAYS,
+                    "end": iso_date(ymd(today)),
                 },
                 "markets": markets,
                 "errors": errors,
+                "reason": reason,
             },
             ensure_ascii=False,
         )
