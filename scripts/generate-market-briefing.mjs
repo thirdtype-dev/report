@@ -28,6 +28,14 @@ const NEWS_QUERIES = [
   '한국 주식시장 공시 실적 유상증자 M&A',
   '한국 증시 신규상장 보호예수 주주총회'
 ];
+const NOTABLE_STOCK_QUERIES = [
+  '오늘 특징주 급등 급락 코스피 코스닥',
+  '증시 마감 특징주 상한가 하한가',
+  '코스피 특징주 급등 상승 이유',
+  '코스닥 특징주 급락 하락 이유',
+  '오늘의 특징주 종목 상승 하락',
+  '시간외 특징주 급등 급락'
+];
 const REPORT_STYLE = String.raw`
     :root {
       color-scheme: dark;
@@ -417,9 +425,13 @@ function buildPrompt(marketResearch) {
     '아래 JSON에 포함된 수치와 문장만 근거로 사용한다.',
     '입력 JSON은 공개 데이터 소스(Yahoo Finance chart, Google News RSS, pykrx/KRX 투자자별 거래대금)를 정규화한 것이다.',
     'status가 unavailable인 항목은 확인 필요로 처리하고, 수치나 사실을 추정해 채우지 않는다.',
-    '각 문장의 근거는 sources, marketNews, investorFlows 범위 안에서만 사용한다.',
+    '각 문장의 근거는 sources, marketNews, stockNewsCandidates, investorFlows 범위 안에서만 사용한다.',
     '장시작 수급 코멘트는 investorFlows의 직전/최근 거래일 연속성만 사용하고, 당일 수급처럼 표현하지 않는다.',
     '장마감 수급 코멘트는 investorFlows.latestDate가 당일 또는 최신 거래일일 때만 해당 날짜 기준이라고 명시한다.',
+    '장마감 주요 특징주는 stockNewsCandidates에서 뉴스 제목/요약에 직접 언급된 종목만 사용한다.',
+    '장마감 notableStocks.surging과 notableStocks.plunging은 각각 최소 2개 이상 작성한다.',
+    '등락률은 뉴스 제목/요약에 수치가 있을 때만 쓰고, 없으면 등락률 없이 상승/하락 사유만 쓴다.',
+    '주요 특징주 섹션에서 "확인 필요", "없음", "데이터 부족" 같은 회피 문구는 금지한다.',
     '투자 권유, 매수/매도 지시, 확정적 수익 표현은 금지한다.',
     '사용자에게 노출되는 문장은 한국어 존댓말로 작성한다.',
     `아래 ${config.sessionLabel} 전용 섹션 구조와 라벨을 유지한다.`,
@@ -448,6 +460,7 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
     indicators: Array.isArray(raw.indicators) ? raw.indicators : [],
     majorIndices: Array.isArray(raw.majorIndices) ? raw.majorIndices : [],
     marketNews: Array.isArray(raw.marketNews) ? raw.marketNews : [],
+    stockNewsCandidates: Array.isArray(raw.stockNewsCandidates) ? raw.stockNewsCandidates : [],
     investorFlows: raw.investorFlows ?? { status: 'unavailable', reason: 'not_collected' },
     sourceStatus: raw.sourceStatus ?? {},
     dataQuality: raw.dataQuality ?? '공개 무키 데이터 소스 기반으로 생성되었습니다. unavailable 항목은 추정하지 않습니다.',
@@ -572,12 +585,12 @@ function parseGoogleNewsRss(xml) {
   }).filter((item) => item.title && item.sourceUrl);
 }
 
-async function fetchGoogleNews() {
+async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10) {
   const collected = [];
-  for (const query of NEWS_QUERIES) {
+  for (const query of queries) {
     const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
     try {
-      const items = parseGoogleNewsRss(await fetchText(url));
+      const items = parseGoogleNewsRss(await fetchText(url)).map((item) => ({ ...item, query }));
       collected.push(...items);
     } catch (error) {
       collected.push({
@@ -597,7 +610,7 @@ async function fetchGoogleNews() {
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
-  }).slice(0, 10);
+  }).slice(0, limit);
 }
 
 function unavailableInvestorFlows(reason) {
@@ -684,11 +697,20 @@ async function collectPublicMarketResearch() {
 
   let marketNews = [];
   try {
-    marketNews = await fetchGoogleNews();
+    marketNews = await fetchGoogleNews(NEWS_QUERIES, 10);
     sourceStatus.googleNews = marketNews.some((item) => item.status === 'unavailable') ? 'partial' : 'ok';
   } catch (error) {
     marketNews = [];
     sourceStatus.googleNews = `unavailable:${error.message}`;
+  }
+
+  let stockNewsCandidates = [];
+  try {
+    stockNewsCandidates = await fetchGoogleNews(NOTABLE_STOCK_QUERIES, 18);
+    sourceStatus.stockNewsCandidates = stockNewsCandidates.some((item) => item.status === 'unavailable') ? 'partial' : 'ok';
+  } catch (error) {
+    stockNewsCandidates = [];
+    sourceStatus.stockNewsCandidates = `unavailable:${error.message}`;
   }
 
   const investorFlows = await fetchInvestorFlows();
@@ -749,6 +771,7 @@ async function collectPublicMarketResearch() {
     indicators,
     majorIndices: indices,
     marketNews,
+    stockNewsCandidates,
     investorFlows,
     dataQuality: isInvestorFlowsAvailable(investorFlows)
       ? '공개 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급은 pykrx/KRX 최신 완료 거래일 기준입니다. 공시는 키 없는 안정 수집이 제한되어 unavailable로 넘깁니다.'
@@ -809,6 +832,12 @@ function mockMarketResearch() {
       { title: '미국 기술주 선물 약세', summary: '국내 성장주 투자심리에 부담을 줄 수 있습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/news-3' },
       { title: '2차전지 업종 변동성 확대', summary: '테마 내 종목별 차별화가 필요합니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/news-4' },
       { title: '기관 수급 업종별 편차', summary: '대형주와 중소형주의 체감 흐름이 다를 수 있습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/news-5' }
+    ],
+    stockNewsCandidates: [
+      { title: '삼성전자, 반도체 업황 기대에 상승', summary: '메모리 가격 회복 기대와 외국인 매수세가 부각됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/stock-1', query: 'mock 특징주' },
+      { title: 'SK하이닉스, AI 반도체 수요 기대에 강세', summary: 'AI 서버 투자 확대 기대가 반영됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/stock-2', query: 'mock 특징주' },
+      { title: 'HDC현대산업개발, 부동산 PF 우려에 약세', summary: '건설 업종 투자심리가 위축됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/stock-3', query: 'mock 특징주' },
+      { title: '한화시스템, 우주항공 테마 차익실현에 하락', summary: '테마 과열 부담으로 매물이 출회됐습니다.', source: 'Mock News', publishedAt: 'mock', sourceUrl: 'https://example.com/stock-4', query: 'mock 특징주' }
     ],
     dataQuality: 'mock 데이터입니다.',
     sources: [{ title: 'Mock market source', url: 'https://example.com/news', date: null }],
@@ -1046,6 +1075,13 @@ ${labeledList([
 }
 
 function renderPostMarketReport(report) {
+  const surging = Array.isArray(report.notableStocks?.surging) && report.notableStocks.surging.length > 0
+    ? report.notableStocks.surging.join(' / ')
+    : '특징주 뉴스 후보에서 상승 종목을 재분류해야 합니다.';
+  const plunging = Array.isArray(report.notableStocks?.plunging) && report.notableStocks.plunging.length > 0
+    ? report.notableStocks.plunging.join(' / ')
+    : '특징주 뉴스 후보에서 하락 종목을 재분류해야 합니다.';
+
   return `<h2>① 시장 총평</h2>
 ${labeledList([
   ['KOSPI', report.marketSummary?.kospi],
@@ -1065,8 +1101,8 @@ ${labeledList([
 ])}
 <h2>④ 주요 특징주</h2>
 ${labeledList([
-  ['급등 종목', (report.notableStocks?.surging ?? []).join(' / ')],
-  ['급락 종목', (report.notableStocks?.plunging ?? []).join(' / ')]
+  ['급등 종목', surging],
+  ['급락 종목', plunging]
 ])}
 <h2>⑤ 내일의 투자 전략</h2>
 ${labeledList([
