@@ -1,136 +1,112 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>5/13 장종료 브리핑 · 리딩방</title>
-  <style>
-    :root { color-scheme: dark; scroll-behavior: smooth; }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>브리핑</title>
+    <style>
+
+    :root {
+      color-scheme: dark;
+      scroll-behavior: smooth;
+      --bg: #09111f;
+      --panel: rgba(15, 24, 39, 0.92);
+      --panel-2: rgba(20, 33, 52, 0.9);
+      --line: rgba(148, 163, 184, 0.18);
+      --text: #eef5ff;
+      --muted: #aab8cc;
+      --soft: #d7e4f7;
+      --accent: #49d19a;
+      --accent-2: #7dd3fc;
+      --warn: #f8d477;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+    }
     body {
-      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-      line-height: 1.72;
+      font-family: "Pretendard", "SUIT", "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
-      color: #f3f4f6;
+      color: var(--text);
       background:
-        linear-gradient(180deg, #172033 0%, #1a2130 120px, #1a2130 100%);
+        radial-gradient(circle at 12% -10%, rgba(73, 209, 154, 0.22), transparent 34rem),
+        radial-gradient(circle at 92% 2%, rgba(125, 211, 252, 0.18), transparent 30rem),
+        linear-gradient(145deg, #08101d 0%, #101827 44%, #172035 100%);
+      min-height: 100vh;
     }
     .page {
-      width: 100%;
+      width: min(920px, 100%);
       margin: 0 auto;
-      max-width: 760px;
-      padding-bottom: 32px;
+      padding: 18px;
+      box-sizing: border-box;
     }
-    .room-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-      background: rgba(23, 32, 51, 0.92);
-      border-bottom: 1px solid #2b3446;
-      padding: 16px 16px 12px;
-    }
-    .room-title {
-      margin: 0 0 6px;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #f8fafc;
-    }
-    .room-subtitle {
-      margin: 0 0 12px;
-      color: #94a3b8;
-      font-size: 0.92rem;
-    }
-    .room-tabs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    .room-tab {
-      appearance: none;
-      border: 1px solid #334155;
-      border-radius: 999px;
-      padding: 10px 12px;
-      background: #202634;
-      color: #cbd5e1;
-      font-weight: 700;
-      font-size: 0.94rem;
-      cursor: pointer;
-    }
-    .room-tab.is-active {
-      border-color: #60a5fa;
-      background: #1e3a5f;
-      color: #dbeafe;
-    }
-    h1, h2, h3 { line-height: 1.22; }
-    .meta { color: #94a3b8; margin-top: 0; }
-    ul { padding-left: 1.25rem; }
-    .note {
-      background: #202634;
-      border-left: 4px solid #60a5fa;
-      padding: 12px 16px;
-      border-radius: 8px;
-    }
-    .section { margin-top: 1.25rem; }
+    h1, h2, h3 { line-height: 1.25; }
+    .meta { color: var(--muted); margin-top: 0; }
+    ul { padding-left: 0; }
+    .note { background: var(--panel-2); border-left: 4px solid var(--accent-2); padding: 12px 16px; border-radius: 16px; }
+    .section { margin-top: 1.5rem; }
     .report {
-      border: 1px solid #334155;
-      border-radius: 22px;
-      padding: 22px 18px 22px;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
-      margin: 12px 12px 0;
-      background: #202634;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018)),
+        var(--panel);
+      backdrop-filter: blur(16px);
     }
-    .report + .report { margin-top: 14px; }
     .report::before {
-      content: "오늘장 브리핑 | Thirdtype Report";
-      display: block;
-      margin-bottom: 12px;
-      color: #94a3b8;
-      font-size: 0.84rem;
-      letter-spacing: 0.02em;
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--warn));
     }
+    .report + .report { margin-top: 18px; }
     .report > h1 {
-      margin: 2px 0 12px;
-      font-size: clamp(1.4rem, 1.8vw, 1.85rem);
-      letter-spacing: -0.02em;
+      margin: 8px 0 20px;
+      font-size: clamp(1.65rem, 5vw, 2.45rem);
+      letter-spacing: -0.055em;
       color: #ffffff;
     }
     .report h2 {
-      display: inline-flex;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      padding: 5px 9px;
-      color: #7dd3fc;
-      background: rgba(96, 165, 250, 0.16);
-      border-radius: 8px;
-      font-size: 0.98rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0 10px;
+      color: #f8fbff;
+      font-size: clamp(1.03rem, 3vw, 1.2rem);
+      letter-spacing: -0.035em;
     }
-    .report p, .report li { color: #dbe4f0; }
+    .report p, .report li { color: var(--soft); }
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 5px 11px;
+      padding: 7px 13px;
       border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 12px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
     }
-    .eyebrow.published { background: rgba(34,197,94,.16); color: #86efac; }
-    .eyebrow.draft { background: rgba(245,158,11,.16); color: #fcd34d; }
-    .small { font-size: 0.95rem; color: #cbd5e1; }
+    .eyebrow.published { background: rgba(73, 209, 154, 0.16); color: #a7f3d0; border: 1px solid rgba(73, 209, 154, 0.24); }
+    .eyebrow.draft { background: rgba(248, 212, 119, 0.16); color: #fde68a; }
+    .small { font-size: 0.95rem; color: var(--muted); }
     code { background: #111827; padding: 0 4px; border-radius: 4px; }
-    a { color: #93c5fd; text-decoration: none; }
+    a { color: #9bdcff; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .news-section {
-      margin-top: 20px;
-      padding-top: 16px;
-      border-top: 1px solid #2b3446;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
     }
     .page > .disclaimer {
       margin: 16px 0 0;
-      border-radius: 18px;
+      border-radius: 20px;
     }
     .news-list {
       list-style: none;
@@ -139,183 +115,122 @@
       display: grid;
       gap: 8px;
     }
+    .brief-list {
+      list-style: none;
+      margin: 0;
+      display: grid;
+      gap: 9px;
+    }
+    .brief-list li {
+      display: grid;
+      grid-template-columns: minmax(106px, 0.28fr) 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 13px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018)),
+        rgba(8, 16, 29, 0.36);
+    }
+    .item-label {
+      color: #9ee7c4;
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+    }
+    .item-value {
+      color: #e5eefc;
+      font-size: 0.98rem;
+      letter-spacing: -0.015em;
+    }
     .news-item {
       display: flex;
       flex-direction: column;
       gap: 4px;
-      padding: 12px 13px;
-      border-radius: 12px;
-      background: #1b2230;
-      border: 1px solid #334155;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: var(--panel-2);
+      border: 1px solid var(--line);
     }
     .news-link {
-      color: #bfdbfe;
+      color: #c8edff;
       font-weight: 600;
       text-decoration: none;
     }
     .news-link:hover { text-decoration: underline; }
     .news-source {
       font-size: 0.88rem;
-      color: #94a3b8;
+      color: var(--muted);
+    }
+    .news-body {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+    .news-article {
+      margin-top: 12px;
+      padding: 14px 14px 16px;
+      border-radius: 12px;
+      background: rgba(8, 16, 29, 0.48);
+      border: 1px solid var(--line);
+      scroll-margin-top: 8px;
+    }
+    .news-article h2 {
+      margin: 0 0 6px;
+      color: #ffffff;
+      font-size: 1rem;
     }
     .disclaimer {
-      margin: 20px 12px 0;
-      padding: 18px 18px;
-      border: 1px solid #334155;
+      margin-top: 16px;
+      padding: 14px 14px;
+      border: 1px solid var(--line);
       border-radius: 18px;
-      background: #111827;
-      color: #cbd5e1;
+      background: rgba(8, 16, 29, 0.72);
+      color: var(--muted);
       font-size: 0.92rem;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
-    }
-    .lead {
-      margin: 0 0 16px;
-      color: #dbe4f0;
-      font-size: 1.02rem;
-    }
-    .bullet-grid {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-    }
-    .bullet-grid li {
-      padding: 10px 12px;
-      border: 1px solid #334155;
-      border-radius: 14px;
-      background: #1b2230;
-      list-style: none;
-    }
-    .tight p { margin: 0 0 10px; }
-    .policy-strip {
-      margin: 10px 12px 0;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(30, 58, 95, 1) 0%, rgba(32, 38, 52, 1) 100%);
-      color: #dbeafe;
-      border: 1px solid #334155;
-      font-size: 0.92rem;
-      font-weight: 600;
     }
     @media (max-width: 640px) {
-      .report {
-        margin: 12px 10px 0;
-        padding: 20px 16px;
-        border-radius: 18px;
-      }
-      .policy-strip,
-      .disclaimer {
-        margin-left: 10px;
-        margin-right: 10px;
-      }
+      .page { padding: 10px; }
+      .report { border-radius: 22px; padding: 18px 14px; }
+      .brief-list li { grid-template-columns: 1fr; gap: 4px; }
+      .item-label { font-size: 0.82rem; }
     }
-  </style>
-</head>
-<body>
-<main class="page">
-  <section class="room-header">
-    <h1 class="room-title">리딩방</h1>
-    <p class="room-subtitle">장 열리는 날 기준 장시작 08:30, 장마감 15:30 발행</p>
-    <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
-      <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
-      <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간급등</button>
-    </div>
-  </section>
-  <section class="policy-strip">최신 브리핑 2건만 표시합니다. 최신 발행본이 항상 상단에 노출됩니다.</section>
-  <section id="briefing-pane">
-<article class="report">
-      <div class="eyebrow published">장 종료 · 2026-05-13</div>
-      <h1>코스피 사상 최고치 기록, 대형주 반등이 관건</h1>
-      <p class="meta">2026-05-13 17:22 KST · Analyst Desk</p>
-      <p class="lead">코스피는 장 초반 2% 하락에서 반등해 7,844.01P(2.63%)로 사상 최고치를 기록했다. 외국인 대규모 매도가 장 초반 투자 심리를 흔들었으나, 대형주 중심 매수세 유입으로 지수 반등에 성공했다. 코스닥은 0.20% 하락하며 지수 간 차별화가 지속되었다.</p>
-      <h2>핵심 시장 흐름</h2>
-      <ul class="bullet-grid">
-        <li><strong>코스피 강세:</strong> 대형주 중심 반등으로 사상 최고치 달성</li>
-        <li><strong>외국인 매도:</strong> 장 초반 대규모 매도, 기관·개인 매수로 상쇄</li>
-        <li><strong>코스닥 약세:</strong> 소폭 하락, 지수 간 온도차 확대</li>
-      </ul>
-      <h2>다음 거래일 체크포인트</h2>
-      <ul class="bullet-grid">
-        <li>외국인 선물 시장 방향</li>
-        <li>대형주 수익률 지속성</li>
-        <li>환율 및 미국채 금리</li>
-        <li>코스닥 회복 여부</li>
-      </ul>
-    <section class="news-section">
-      <h2>관련 뉴스 5개</h2>
-      <ul class="news-list">
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE5PWjAteFZQb1AxM0wyMXpaTVlLTzlDSXpiV19NT2dXXzB5QWY2OERzVlh2WkdtSWRfNDRJQ0I2dDFfOUtxQ0ZwRGdWZ0VOcUN2Nnc?oc=5" target="_blank" rel="noopener">코스피 마감, 7,844.01P (2.63%↑) 현대차, SK하이닉스등 상승세 - 매일경제 마켓</a><span class="news-source">매일경제 마켓 · 2026-05-13 15:36 KST</span></li>
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1XZ2JHUmFuQkk4el90RFVpVTVQa21RdzctcmxkaV9fSjhQdFpBMHlHZEFWOW95b3ZwYjFmVzIydWR0UWdoS2Y3SWk0Y2Qza0lZdThfLUtSS2lhaGFYUWQ2c0ZuSWZWNWJrQXc?oc=5" target="_blank" rel="noopener">[코스피 마감] 200.86P(2.63%) 오른 7844.01 - 서울파이낸스</a><span class="news-source">서울파이낸스 · 2026-05-13 15:36 KST</span></li>
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE5qT25UZDhZYmItcDlRYTliSGpoMFk2Yms3aF9QdzBNT0RFdm5Uc3VsV09CZ0hXU3hFZndGMlBDTlA5dkFlSkdzdmN6ODdPTktHR2M5TVJiZENOMXN0dG1zWXNHYW9VUko3M3c?oc=5" target="_blank" rel="noopener">[코스닥 마감] 2.36P(0.20%) 내린 1176.93 - 서울파이낸스</a><span class="news-source">서울파이낸스 · 2026-05-13 15:36 KST</span></li>
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5aSzc4QjUzQ2tMbzBuNnNLMHJTaW5zU2tDS3c5TTlZck9WTE9WbkViY1dJNW5aZVBPblRQUTZpRVd6Z29FLXNiTjJRUVhsY2FLWWxkRFNTenFyN0JHb3VSNVNyZ21xVjZFLWc1QTVR0gFuQVVfeXFMTlpLNzhCNTNDa0xvMG42c0swclNpbnNTa0NLdzlNOVlyT1ZMT1ZuRWJjV0k1blplUE9uVFBRNmlFV3pnb0Utc2JOMlFRWGxjYUtZbGREU1N6cXI3QkdvdVI1U3JnbXFWNkUtZzVBNVE?oc=5" target="_blank" rel="noopener">[스팟] 코스닥, 2.36포인트(0.20%) 내린 1176.93 마감 - 머니투데이</a><span class="news-source">머니투데이 · 2026-05-13 15:36 KST</span></li>
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9HdUUtZ3VLX0k4dEhNeW5Pcm5LVlJSZmFFOU5rcXF4bjY0Y3FEU2RnbWU5ai1DRjNfZ3lpcWljOFI1ZlhxRi1yUkpnTUhhMEVPVVVjMlpLaFh3WjltemFMVUxSYWVYMmtVWUE?oc=5" target="_blank" rel="noopener">[코스피] 200.86p(2.63%) 오른 7844.01 마감 - 네이트</a><span class="news-source">네이트 · 2026-05-13 15:35 KST</span></li>
-      </ul>
-    </section>
-    </article>
+
+    </style>
+  </head>
+  <body>
+    <main class="page" data-published-at="2026-05-15T04:52:32.491Z" data-writer-provider="mock" data-writer-model="mock" data-fallback-reason="">
     <article class="report">
-      <div class="eyebrow published">장 시작 · 2026-05-11</div>
-      <h1>KOSPI 7천선 돌파, ETF 유출과 개인 열기 동시</h1>
-      <p class="meta">2026-05-11 08:30 KST · Analyst Desk</p>
-      <p class="lead">코스피가 7천선을 돌파하며 개장 직후 상승세가 관측됐지만, 차익 실현 매도와 ETF 순유출이 동시에 나타나 수급이 혼조되었습니다. 투자자는 초기 매수세와 유출 흐름을 동시에 모니터링해야 합니다.</p>
-      <h2>관련 뉴스 5개</h2>
-      <ul class="news-list">
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE5PWjAteFZQb1AxM0wyMXpaTVlLTzlDSXpiV19NT2dXXzB5QWY2OERzVlh2WkdtSWRfNDRJQ0I2dDFfOUtxQ0ZwRGdWZ0VOcUN2Nnc?oc=5" target="_blank" rel="noopener">코스피 마감, 7,844.01P (2.63%↑) 현대차, SK하이닉스등 상승세 - 매일경제 마켓</a><span class="news-source">매일경제 마켓 · 2026-05-13 15:36 KST</span></li>
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1XZ2JHUmFuQkk4el90RFVpVTVQa21RdzctcmxkaV9fSjhQdFpBMHlHZEFWOW95b3ZwYjFmVzIydWR0UWdoS2Y3SWk0Y2Qza0lZdThfLUtSS2lhaGFYUWQ2c0ZuSWZWNWJrQXc?oc=5" target="_blank" rel="noopener">[코스피 마감] 200.86P(2.63%) 오른 7844.01 - 서울파이낸스</a><span class="news-source">서울파이낸스 · 2026-05-13 15:36 KST</span></li>
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE5qT25UZDhZYmItcDlRYTliSGpoMFk2Yms3aF9QdzBNT0RFdm5Uc3VsV09CZ0hXU3hFZndGMlBDTlA5dkFlSkdzdmN6ODdPTktHR2M5TVJiZENOMXN0dG1zWXNHYW9VUko3M3c?oc=5" target="_blank" rel="noopener">[코스닥 마감] 2.36P(0.20%) 내린 1176.93 - 서울파이낸스</a><span class="news-source">서울파이낸스 · 2026-05-13 15:36 KST</span></li>
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5aSzc4QjUzQ2tMbzBuNnNLMHJTaW5zU2tDS3c5TTlZck9WTE9WbkViY1dJNW5aZVBPblRQUTZpRVd6Z29FLXNiTjJRUVhsY2FLWWxkRFNTenFyN0JHb3VSNVNyZ21xVjZFLWc1QTVR0gFuQVVfeXFMTlpLNzhCNTNDa0xvMG42c0swclNpbnNTa0NLdzlNOVlyT1ZMT1ZuRWJjV0k1blplUE9uVFBRNmlFV3pnb0Utc2JOMlFRWGxjYUtZbGREU1N6cXI3QkdvdVI1U3JnbXFWNkUtZzVBNVE?oc=5" target="_blank" rel="noopener">[스팟] 코스닥, 2.36포인트(0.20%) 내린 1176.93 마감 - 머니투데이</a><span class="news-source">머니투데이 · 2026-05-13 15:36 KST</span></li>
-        <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9HdUUtZ3VLX0k4dEhNeW5Pcm5LVlJSZmFFOU5rcXF4bjY0Y3FEU2RnbWU5ai1DRjNfZ3lpcWljOFI1ZlhxRi1yUkpnTUhhMEVPVVVjMlpLaFh3WjltemFMVUxSYWVYMmtVWUE?oc=5" target="_blank" rel="noopener">[코스피] 200.86p(2.63%) 오른 7844.01 마감 - 네이트</a><span class="news-source">네이트 · 2026-05-13 15:35 KST</span></li>
-      </ul>
+      <div class="eyebrow published">장마감</div>
+      <h1>2026-05-15 장마감 브리핑</h1>
+<h2>① 시장 총평</h2>
+<ul class="brief-list"><li><span class="item-label">KOSPI</span><span class="item-value">2,745.12 (▼ 0.30%)</span></li><li><span class="item-label">KOSDAQ</span><span class="item-value">852.44 (▲ 0.25%)</span></li><li><span class="item-label">요약</span><span class="item-value">미국 기술주 선물 약세에도 반도체 대형주 수급이 지수를 방어했고, 코스닥은 일부 성장주 반등으로 상대적으로 견조했습니다.</span></li></ul>
+<h2>② 투자자별 수급 동향</h2>
+<ul class="brief-list"><li><span class="item-label">외국인</span><span class="item-value">순매수 우위. 반도체와 자동차 대형주 중심으로 매수세가 유입됐습니다.</span></li><li><span class="item-label">기관</span><span class="item-value">프로그램 매매 영향으로 업종별 편차가 컸고, 금융과 배당주는 일부 차익 실현이 확인됐습니다.</span></li><li><span class="item-label">개인</span><span class="item-value">코스닥 중소형 테마주와 2차전지 반등 구간에서 단기 매매 비중이 높았습니다.</span></li></ul>
+<h2>③ 업종별/테마별 흐름</h2>
+<ul class="brief-list"><li><span class="item-label">✅ 강세 업종</span><span class="item-value">반도체 - 메모리 가격 반등 기대와 대형주 실적 개선 기대가 동시에 반영됐습니다.</span></li><li><span class="item-label">❌ 약세 업종</span><span class="item-value">건설/부동산 - 금리 부담과 부실 채권 우려가 투자심리를 제한했습니다.</span></li></ul>
+<h2>④ 주요 특징주</h2>
+<ul class="brief-list"><li><span class="item-label">급등 종목</span><span class="item-value">삼성전자, +1.8%, 외국인 순매수와 메모리 업황 개선 기대 / 에코프로비엠, +3.2%, 2차전지 소재주 반등 흐름</span></li><li><span class="item-label">급락 종목</span><span class="item-value">HDC현대산업개발, -2.4%, 부동산 PF 우려 재부각 / 한화시스템, -1.9%, 우주/방산 테마 차익 실현</span></li></ul>
+<h2>⑤ 내일의 투자 전략</h2>
+<ul class="brief-list"><li><span class="item-label">시장 전망</span><span class="item-value">지수는 박스권 상단 확인 구간이며, 주도 업종의 거래대금 유지 여부가 다음 거래일 방향성을 가를 가능성이 큽니다.</span></li><li><span class="item-label">체크리스트</span><span class="item-value">미국 나스닥 선물과 필라델피아 반도체 지수 흐름 / 원/달러 환율의 1차 저항선 돌파 여부 / 외국인 선물 포지션과 프로그램 매매 방향</span></li></ul>
     </article>
-  </section>
-  <section class="disclaimer">
-    <strong>꼭 읽어보세요</strong><br />
-    본 브리핑은 투자 판단을 돕기 위한 참고 자료이며, 특정 종목 매수·매도를 권유하지 않습니다.
-    시장 해석과 종목 언급은 작성 시점의 공개 정보와 가격 흐름을 사진 basis로 정리한 것이며
-    최종 투자 판단과 책임은 투자자 본인에게 있습니다.
-  </section>
-</main>
-<script>
-  (() => {
-    const briefingPane = document.getElementById('briefing-pane');
-    const realtimePane = document.getElementById('realtime-pane');
-    const tabs = document.querySelectorAll('[data-room-tab]');
-    const isPremiumUser = window.__isPremiumUser === true;
-    const realtimeSurgeUrl = (window.__REALTIME_SURGE_URL || '').trim();
-    const realtimeSurgeDeploy = {
-      repository: (window.__REALTIME_SURGE_REPO || '').trim(),
-      pagePath: (window.__REALTIME_SURGE_PATH || '').trim(),
-      deployment: (window.__REALTIME_SURGE_DEPLOY || '').trim()
-    };
-    const getRealtimeSurgeBlockers = () => Object.entries(realtimeSurgeDeploy)
-      .filter(([, value]) => !value)
-      .map(([key]) => key);
-    const openRealtimeSurgePage = () => {
-      if (!realtimeSurgeUrl) {
-        const unresolved = getRealtimeSurgeBlockers();
-        window.__REALTIME_SURGE_BLOCKERS = unresolved;
-        if (typeof console !== 'undefined' && typeof console.warn === 'function') {
-          console.warn('[realtime-surge] placeholder_active_missing_url', {
-            blockers: unresolved,
-            note: 'set __REALTIME_SURGE_URL once repo/path/deploy are finalized'
-          });
-        }
-        return false;
-      }
-      window.open(realtimeSurgeUrl, '_blank', 'noopener,noreferrer');
-      return true;
-    };
-    const activateTab = (tabName) => {
-      tabs.forEach((tab) => {
-        const isActive = tab.dataset.roomTab === tabName;
-        tab.classList.toggle('is-active', isActive);
-        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-      });
-      briefingPane.hidden = tabName !== 'briefing';
-      realtimePane.hidden = tabName !== 'realtime';
-    };
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => activateTab(tab.dataset.roomTab));
-    });
-  })();
-</script>
-</body>
+<article class="report">
+      <div class="eyebrow published">장시작</div>
+      <h1>2026-05-15 장시작 브리핑</h1>
+<h2>① 오늘의 증시 키워드 &amp; 개장 전략</h2>
+<ul class="brief-list"><li><span class="item-label">핵심 키워드</span><span class="item-value">반도체 실적 랠리, 원/달러 환율 경계, 2차전지 반등 시도</span></li><li><span class="item-label">한줄 전략</span><span class="item-value">지수 추격보다 장 초반 거래대금이 붙는 주도 업종 중심으로 눌림목 대응이 유리합니다.</span></li><li><span class="item-label">개장 예상</span><span class="item-value">전일 미국 기술주 혼조와 환율 부담을 함께 반영해 강보합 출발 후 업종별 차별화가 예상됩니다.</span></li></ul>
+<h2>② 외국인/기관 수급 관전 포인트</h2>
+<ul class="brief-list"><li><span class="item-label">수급 연속성 체크</span><span class="item-value">외국인의 반도체 업종 3거래일 연속 매수세가 유지되는지 확인합니다.</span></li><li><span class="item-label">관심 주체</span><span class="item-value">최근 매도세를 보였던 연기금이 대형주로 복귀하는지 주목합니다.</span></li><li><span class="item-label">체크 사항</span><span class="item-value">선물 시장의 외국인 포지션 변화와 프로그램 매매 순매수 전환 여부를 함께 봅니다.</span></li></ul>
+<h2>③ 주요 업종별 기상도 (강세/약세 예보)</h2>
+<ul class="brief-list"><li><span class="item-label">☀️ 강세 예보</span><span class="item-value">이차전지 - 전일 테슬라 반등과 리튬 가격 안정 기대가 투자심리를 보완합니다.</span></li><li><span class="item-label">☁️ 중립 예보</span><span class="item-value">은행/금융 - 금리 변동성 확대 속 배당 매력과 차익 실현 압력이 공존합니다.</span></li><li><span class="item-label">☔ 약세 예보</span><span class="item-value">건설/부동산 - 부실 채권 우려와 금리 부담이 이어져 방어적 접근이 필요합니다.</span></li></ul>
+<h2>④ 당일 핵심 공시 및 뉴스 요약</h2>
+<ul class="brief-list"><li><span class="item-label">기업 공시</span><span class="item-value">전일 장 마감 후 반도체 부품주의 실적 가이던스 상향 공시가 확인됐습니다.</span></li><li><span class="item-label">주요 뉴스</span><span class="item-value">정부의 첨단산업 세제 지원 확대 논의가 반도체와 배터리 밸류체인에 영향을 줄 수 있습니다.</span></li><li><span class="item-label">주요 일정</span><span class="item-value">금일 신규 상장 종목과 일부 바이오주의 보호예수 해제 물량을 확인해야 합니다.</span></li></ul>
+<h2>⑤ 금일의 전략 종목 (Watchlist)</h2>
+<ul class="brief-list"><li><span class="item-label">주도주 후보</span><span class="item-value">삼성전자, SK하이닉스 - 반도체 대형주 수급 연속성 확인 대상</span></li><li><span class="item-label">기술적 관심주</span><span class="item-value">LG에너지솔루션 - 단기 이동평균선 회복 여부와 거래대금 증가 여부 확인</span></li><li><span class="item-label">이슈 종목</span><span class="item-value">전일 공시 및 정책 뉴스에 노출된 반도체 소재주 중심으로 변동성 확대 가능성</span></li></ul>
+    </article>
+      <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 최종적인 투자 결정과 그에 따른 책임은 투자자 본인에게 있음을 알려드립니다</section>
+    </main>
+  </body>
 </html>
