@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-15T06:27:51.258Z",
-  "phase": "pre_market",
-  "sessionLabel": "장시작 브리핑",
+  "generatedAt": "2026-05-15T07:06:17.423Z",
+  "phase": "post_market",
+  "sessionLabel": "장마감 브리핑",
   "summary": {
     "signal": "yellow",
     "totalScore": 0,
@@ -12,33 +12,33 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "value": "7,465.89",
-      "change": "-6.46%",
+      "value": "7,493.18",
+      "change": "-6.12%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-05-15T06:07:40.000Z",
+      "updatedAt": "2026-05-15T06:32:30.000Z",
       "reason": "KOSPI 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "value": "1,122.64",
-      "change": "-5.75%",
+      "value": "1,129.82",
+      "change": "-5.14%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-05-15T06:07:40.000Z",
+      "updatedAt": "2026-05-15T06:32:50.000Z",
       "reason": "KOSDAQ 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,501.48",
-      "change": "+0.78%",
+      "value": "1,499.38",
+      "change": "+0.64%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-05-15T06:27:44.000Z",
+      "updatedAt": "2026-05-15T07:06:11.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "29,329.75",
-      "change": "-1.21%",
+      "value": "29,396.25",
+      "change": "-0.98%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-05-15T06:17:43.000Z",
+      "updatedAt": "2026-05-15T06:56:10.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,8 +82,8 @@
       "change": null,
       "signal": "yellow",
       "status": "unavailable",
-      "updatedAt": "2026-05-15T15:27:51.155479+09:00",
-      "reason": "pykrx/KRX 투자자별 수급 수집 실패: unknown",
+      "updatedAt": "2026-05-15T16:06:17.320517+09:00",
+      "reason": "pykrx/KRX 투자자별 수급 수집 실패: KOSPI:no_investor_flow_data_within_14_days:empty_pykrx_dataframe; KOSDAQ:no_investor_flow_data_within_14_days:empty_pykrx_dataframe",
       "sourceUrl": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
     },
     {
@@ -102,34 +102,34 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "currentPrice": "7,465.89",
-      "change": "-515.52",
-      "changePercent": "-6.46%",
+      "currentPrice": "7,493.18",
+      "change": "-488.23",
+      "changePercent": "-6.12%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-05-15T06:07:40.000Z",
+      "updatedAt": "2026-05-15T06:32:30.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "currentPrice": "1,122.64",
-      "change": "-68.45",
-      "changePercent": "-5.75%",
+      "currentPrice": "1,129.82",
+      "change": "-61.27",
+      "changePercent": "-5.14%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-05-15T06:07:40.000Z",
+      "updatedAt": "2026-05-15T06:32:50.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,501.48",
-      "change": "+11.64",
-      "changePercent": "+0.78%",
+      "currentPrice": "1,499.38",
+      "change": "+9.54",
+      "changePercent": "+0.64%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-05-15T06:27:44.000Z",
+      "updatedAt": "2026-05-15T07:06:11.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "29,329.75",
-      "change": "-358.00",
-      "changePercent": "-1.21%",
+      "currentPrice": "29,396.25",
+      "change": "-291.50",
+      "changePercent": "-0.98%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-05-15T06:17:43.000Z",
+      "updatedAt": "2026-05-15T06:56:10.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -203,6 +203,13 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5mX3o1MzYyNHZERXhoR2w4YXBZZ09RNk5UUjNHUlFrWXNKaldTZ0NBdTlpeW5DMUtvaHk2eW8zaG9qWlhqcV9Tb1Rlc0tlYldxdDJLaEJsb0wySWNkY2NibUVpaUpDcGhia3I1RQ?oc=5"
     },
     {
+      "title": "코스피 7000 돌파…사상 최고치에 매수 사이드카 발동 - 시사통신",
+      "summary": "코스피 7000 돌파…사상 최고치에 매수 사이드카 발동&nbsp;&nbsp;시사통신",
+      "source": "시사통신",
+      "publishedAt": "Wed, 06 May 2026 05:30:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE15NXdCdU94YmpsZnVsYVg2ZktuTmRwX0RXdHR3TzR1LXRSaEYtbEIxMGxtRkJGY1N2ZHNxc3RIcDQ2RTVVUVd2X1pOemlWRThVcG5UTUdtODBwMHlBZzRIMW5TM1RYNEHSAWtBVV95cUxOVXZTWTU1R3E2UXVFQ0dGWklQbXpBVDVrd2t0a2E3aFIxVm1USnVvb25MR1hsOHQzYUdkM01PMUs3Nl9hSV9jV0dLblRnc2hoOTFRem5LUjBBV200SzRodHhJOUszdmNnWG5xTQ?oc=5"
+    },
+    {
       "title": "코스피, 반도체 혼조 속 자동차·조선 강세…코스닥은 2차전지 희비 - 네이트",
       "summary": "코스피, 반도체 혼조 속 자동차·조선 강세…코스닥은 2차전지 희비&nbsp;&nbsp;네이트",
       "source": "네이트",
@@ -229,28 +236,22 @@
       "source": "뉴스퀘스트",
       "publishedAt": "Wed, 22 Apr 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1lODlmb2xWX0Z2OEN6akcxdjRWRDNFeG1Rbnl0OVRTQWNUYVhwc0dVSG1pVnZKOHpra0VST1VMM2RnNkN6UjV2NlhUVzl1UnJxa0RfTzB0cjEtX190ZGI0SUxvQm1feDVKalpLMnNOWdIBc0FVX3lxTE5qM0E2TTg5M3Zzc2dtV2ZPQlFkWGJDMkQxSVZQNkEzRzBROEVYakNfRDQtNlVJZGViRThaMWZlQlVzRWZ0UXFpYWpuZFFSY1VlQ09rc0hoaVRUZkgxakdqYTFHcVh5N19HcWd1OWVXZFo2OGs?oc=5"
-    },
-    {
-      "title": "반도체·2차전지 '쌍끌이'…파죽지세 韓증시 - v.daum.net",
-      "summary": "반도체·2차전지 '쌍끌이'…파죽지세 韓증시&nbsp;&nbsp;v.daum.net",
-      "source": "v.daum.net",
-      "publishedAt": "Wed, 28 Jan 2026 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9LVXYxbG9ldE1HSDRCVkVkNnhuOG9lOGt5azZuSzQ3dlhhRHQyNTJZN2tXR2hsUXNyaDdlVVpYZUFkN1VfbFJtMVpXY21XSGM?oc=5"
     }
   ],
   "investorFlows": {
     "status": "unavailable",
-    "generatedAt": "2026-05-15T15:27:51.155479+09:00",
+    "generatedAt": "2026-05-15T16:06:17.320517+09:00",
     "source": "pykrx/KRX",
     "collectionWindow": {
-      "start": "2026-05-01",
+      "lookbackDays": 14,
       "end": "2026-05-15"
     },
     "markets": [],
     "errors": {
-      "KOSPI": "empty_pykrx_dataframe",
-      "KOSDAQ": "empty_pykrx_dataframe"
-    }
+      "KOSPI": "no_investor_flow_data_within_14_days:empty_pykrx_dataframe",
+      "KOSDAQ": "no_investor_flow_data_within_14_days:empty_pykrx_dataframe"
+    },
+    "reason": "KOSPI:no_investor_flow_data_within_14_days:empty_pykrx_dataframe; KOSDAQ:no_investor_flow_data_within_14_days:empty_pykrx_dataframe"
   },
   "sourceStatus": {
     "yahoo:kospi": "ok",
@@ -260,7 +261,7 @@
     "yahoo:sp500": "ok",
     "yahoo:nasdaq_futures": "ok",
     "googleNews": "ok",
-    "investorFlows": "unavailable:unknown"
+    "investorFlows": "unavailable:KOSPI:no_investor_flow_data_within_14_days:empty_pykrx_dataframe; KOSDAQ:no_investor_flow_data_within_14_days:empty_pykrx_dataframe"
   },
   "dataQuality": "공개 무키 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급/공시는 수집 실패 시 unavailable로 넘깁니다.",
   "sources": [
