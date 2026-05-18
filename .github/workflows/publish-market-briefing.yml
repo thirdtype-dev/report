@@ -86,12 +86,27 @@ jobs:
       - name: Commit and push
         if: steps.trading_day.outputs.is_trading_day == 'true'
         run: |
+          temp_dir="$(mktemp -d)"
+          cp index.html "$temp_dir/index.html"
+          cp report/index.html "$temp_dir/report-index.html"
+          cp report/data/market-research.json "$temp_dir/market-research.json"
+          cp report/data/report.json "$temp_dir/report.json"
+
+          git fetch origin main
+          git checkout -B main origin/main
+
+          mkdir -p report/data
+          cp "$temp_dir/index.html" index.html
+          cp "$temp_dir/report-index.html" report/index.html
+          cp "$temp_dir/market-research.json" report/data/market-research.json
+          cp "$temp_dir/report.json" report/data/report.json
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html report/index.html report/data/market-research.json report/data/report.json
           if git diff --cached --quiet; then
-            echo "No briefing changes to publish."
+            echo "Latest published briefing already matches remote main."
             exit 0
           fi
           git commit -m "Publish market briefing"
-          git push
+          git push origin main
