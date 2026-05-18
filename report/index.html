@@ -3,576 +3,641 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>5/7 장시작 브리핑 · 리딩방</title><!-- trigger rebuild -->
+    <title>브리핑</title>
     <style>
-      :root { color-scheme: dark; scroll-behavior: smooth; }
-      body {
-        font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-        line-height: 1.72;
-        margin: 0;
-        padding: 0;
-        color: #f3f4f6;
-        background:
-          linear-gradient(180deg, #172033 0%, #1a2130 120px, #1a2130 100%);
-      }
-      .page {
-        width: 100%;
-        margin: 0 auto;
-        max-width: 760px;
-        padding-bottom: 32px;
-      }
-      .room-header {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        backdrop-filter: blur(12px);
-        background: rgba(23, 32, 51, 0.92);
-        border-bottom: 1px solid #2b3446;
-        padding: 16px 16px 12px;
-      }
-      .room-title {
-        margin: 0 0 6px;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #f8fafc;
-      }
-      .room-subtitle {
-        margin: 0 0 12px;
-        color: #94a3b8;
-        font-size: 0.92rem;
-      }
-      .room-tabs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-      .room-tab {
-        appearance: none;
-        border: 1px solid #334155;
-        border-radius: 999px;
-        padding: 10px 12px;
-        background: #202634;
-        color: #cbd5e1;
-        font-weight: 700;
-        font-size: 0.94rem;
-        cursor: pointer;
-      }
-      .room-tab.is-active {
-        border-color: #60a5fa;
-        background: #1e3a5f;
-        color: #dbeafe;
-      }
-      h1, h2, h3 { line-height: 1.22; }
-      .meta { color: #94a3b8; margin-top: 0; }
-      ul { padding-left: 1.25rem; }
-      .note {
-        background: #202634;
-        border-left: 4px solid #60a5fa;
-        padding: 12px 16px;
-        border-radius: 8px;
-      }
-      .section { margin-top: 1.25rem; }
-      .report {
-        border: 1px solid #334155;
-        border-radius: 22px;
-        padding: 22px 18px 22px;
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
-        margin: 12px 12px 0;
-        background: #202634;
-      }
-      .report + .report { margin-top: 14px; }
-      .report::before {
-        content: "오늘장 브리핑 | Thirdtype Report";
-        display: block;
-        margin-bottom: 12px;
-        color: #94a3b8;
-        font-size: 0.84rem;
-        letter-spacing: 0.02em;
-      }
-      .report > h1 {
-        margin: 2px 0 12px;
-        font-size: clamp(1.4rem, 1.8vw, 1.85rem);
-        letter-spacing: -0.02em;
-        color: #ffffff;
-      }
-      .report h2 {
-        display: inline-flex;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        padding: 5px 9px;
-        color: #7dd3fc;
-        background: rgba(96, 165, 250, 0.16);
-        border-radius: 8px;
-        font-size: 0.98rem;
-      }
-      .report p, .report li { color: #dbe4f0; }
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 5px 11px;
-        border-radius: 999px;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        margin-bottom: 12px;
-      }
-      .eyebrow.published { background: rgba(34,197,94,.16); color: #86efac; }
-      .eyebrow.draft { background: rgba(245,158,11,.16); color: #fcd34d; }
-      .small { font-size: 0.95rem; color: #cbd5e1; }
-      code { background: #111827; padding: 0 4px; border-radius: 4px; }
-      a { color: #93c5fd; text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      .news-section {
-        margin-top: 20px;
-        padding-top: 16px;
-        border-top: 1px solid #2b3446;
-      }
-      .page > .disclaimer {
-        margin: 16px 0 0;
-        border-radius: 18px;
-      }
-      .news-list {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-        display: grid;
-        gap: 8px;
-      }
-      .news-item {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        padding: 12px 13px;
-        border-radius: 12px;
-        background: #1b2230;
-        border: 1px solid #334155;
-      }
-      .news-link {
-        color: #bfdbfe;
-        font-weight: 600;
-        text-decoration: none;
-      }
-      .news-link:hover { text-decoration: underline; }
-      .news-source {
-        font-size: 0.88rem;
-        color: #94a3b8;
-      }
-      .disclaimer {
-        margin: 20px 12px 0;
-        padding: 18px 18px;
-        border: 1px solid #334155;
-        border-radius: 18px;
-        background: #111827;
-        color: #cbd5e1;
-        font-size: 0.92rem;
-        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
-      }
-      .lead {
-        margin: 0 0 16px;
-        color: #dbe4f0;
-        font-size: 1.02rem;
-      }
-      .bullet-grid {
-        display: grid;
-        gap: 10px;
-        margin: 0;
-      }
-      .bullet-grid li {
-        padding: 10px 12px;
-        border: 1px solid #334155;
-        border-radius: 14px;
-        background: #1b2230;
-        list-style: none;
-      }
-      .tight p { margin: 0 0 10px; }
-      .policy-strip {
-        margin: 10px 12px 0;
-        padding: 12px 14px;
-        border-radius: 16px;
-        background: linear-gradient(135deg, rgba(30, 58, 95, 1) 0%, rgba(32, 38, 52, 1) 100%);
-        color: #dbeafe;
-        border: 1px solid #334155;
-        font-size: 0.92rem;
-        font-weight: 600;
-      }
-      @media (max-width: 640px) {
-        .report {
-          margin: 12px 10px 0;
-          padding: 20px 16px;
-          border-radius: 18px;
-        }
-        .policy-strip,
-        .disclaimer {
-          margin-left: 10px;
-          margin-right: 10px;
-        }
-      }
+
+    :root {
+      color-scheme: dark;
+      scroll-behavior: smooth;
+      --bg: #09111f;
+      --panel: rgba(15, 24, 39, 0.92);
+      --panel-2: rgba(20, 33, 52, 0.9);
+      --line: rgba(148, 163, 184, 0.18);
+      --text: #eef5ff;
+      --muted: #aab8cc;
+      --soft: #d7e4f7;
+      --accent: #49d19a;
+      --accent-2: #7dd3fc;
+      --warn: #f8d477;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+    }
+    body {
+      font-family: "Pretendard", "SUIT", "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% -10%, rgba(73, 209, 154, 0.22), transparent 34rem),
+        radial-gradient(circle at 92% 2%, rgba(125, 211, 252, 0.18), transparent 30rem),
+        linear-gradient(145deg, #08101d 0%, #101827 44%, #172035 100%);
+      min-height: 100vh;
+    }
+    .page {
+      width: min(920px, 100%);
+      margin: 0 auto;
+      padding: 18px;
+      box-sizing: border-box;
+    }
+    .room-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: -18px -18px 18px;
+      padding: 16px 18px 14px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(9, 17, 31, 0.96), rgba(9, 17, 31, 0.82)),
+        rgba(9, 17, 31, 0.9);
+      backdrop-filter: blur(18px);
+    }
+    .room-title {
+      margin: 0 0 14px;
+      color: #ffffff;
+      font-size: clamp(1.7rem, 6vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+    .room-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(8, 16, 29, 0.68);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+    .room-tab {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 12px;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      cursor: pointer;
+    }
+    .room-tab.is-active {
+      color: #06111e;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 26px rgba(73, 209, 154, 0.22);
+    }
+    h1, h2, h3 { line-height: 1.25; }
+    .meta { color: var(--muted); margin-top: 0; }
+    ul { padding-left: 0; }
+    .note { background: var(--panel-2); border-left: 4px solid var(--accent-2); padding: 12px 16px; border-radius: 16px; }
+    .section { margin-top: 1.5rem; }
+    .report {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018)),
+        var(--panel);
+      backdrop-filter: blur(16px);
+    }
+    .report::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--warn));
+    }
+    .report.report-pre-market {
+      border-color: rgba(125, 211, 252, 0.32);
+      background:
+        linear-gradient(160deg, rgba(14, 165, 233, 0.18), rgba(20, 184, 166, 0.08) 42%, rgba(255,255,255,0.018)),
+        var(--panel);
+    }
+    .report.report-pre-market::before {
+      background: linear-gradient(90deg, #38bdf8, #2dd4bf, #a7f3d0);
+    }
+    .report.report-post-market {
+      border-color: rgba(251, 146, 60, 0.34);
+      background:
+        linear-gradient(160deg, rgba(251, 146, 60, 0.18), rgba(244, 63, 94, 0.09) 44%, rgba(255,255,255,0.018)),
+        rgba(25, 21, 33, 0.92);
+    }
+    .report.report-post-market::before {
+      background: linear-gradient(90deg, #fb923c, #f43f5e, #fde68a);
+    }
+    .report + .report { margin-top: 18px; }
+    .report > h1 {
+      margin: 8px 0 20px;
+      font-size: clamp(1.65rem, 5vw, 2.45rem);
+      letter-spacing: -0.055em;
+      color: #ffffff;
+    }
+    .report h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0 10px;
+      color: #f8fbff;
+      font-size: clamp(1.03rem, 3vw, 1.2rem);
+      letter-spacing: -0.035em;
+    }
+    .report p, .report li { color: var(--soft); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .eyebrow.published { background: rgba(73, 209, 154, 0.16); color: #a7f3d0; border: 1px solid rgba(73, 209, 154, 0.24); }
+    .report-pre-market .eyebrow.published { background: rgba(56, 189, 248, 0.16); color: #bae6fd; border-color: rgba(56, 189, 248, 0.28); }
+    .report-post-market .eyebrow.published { background: rgba(251, 146, 60, 0.16); color: #fed7aa; border-color: rgba(251, 146, 60, 0.3); }
+    .eyebrow.draft { background: rgba(248, 212, 119, 0.16); color: #fde68a; }
+    .small { font-size: 0.95rem; color: var(--muted); }
+    code { background: #111827; padding: 0 4px; border-radius: 4px; }
+    a { color: #9bdcff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .news-section {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+    .page > .disclaimer {
+      margin: 16px 0 0;
+      border-radius: 20px;
+    }
+    .news-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+    .brief-list {
+      list-style: none;
+      margin: 0;
+      display: grid;
+      gap: 9px;
+    }
+    .brief-list li {
+      display: grid;
+      grid-template-columns: minmax(106px, 0.28fr) 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 13px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018)),
+        rgba(8, 16, 29, 0.36);
+    }
+    .item-label {
+      color: #9ee7c4;
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+    }
+    .report-pre-market .item-label { color: #93e7ff; }
+    .report-post-market .item-label { color: #fdba74; }
+    .item-value {
+      color: #e5eefc;
+      font-size: 0.98rem;
+      letter-spacing: -0.015em;
+    }
+    .news-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+    }
+    .news-link {
+      color: #c8edff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .news-link:hover { text-decoration: underline; }
+    .news-source {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .news-body {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+    .news-article {
+      margin-top: 12px;
+      padding: 14px 14px 16px;
+      border-radius: 12px;
+      background: rgba(8, 16, 29, 0.48);
+      border: 1px solid var(--line);
+      scroll-margin-top: 8px;
+    }
+    .news-article h2 {
+      margin: 0 0 6px;
+      color: #ffffff;
+      font-size: 1rem;
+    }
+    .disclaimer {
+      margin-top: 16px;
+      padding: 14px 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(8, 16, 29, 0.72);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .room-toast {
+      position: fixed;
+      left: 50%;
+      bottom: max(22px, env(safe-area-inset-bottom));
+      z-index: 30;
+      transform: translate(-50%, 12px);
+      opacity: 0;
+      pointer-events: none;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 146, 60, 0.32);
+      background: rgba(8, 16, 29, 0.92);
+      color: #fff7ed;
+      font-size: 0.94rem;
+      font-weight: 900;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+      transition: opacity 160ms ease, transform 160ms ease;
+      backdrop-filter: blur(14px);
+    }
+    .room-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    .realtime-pane[hidden] { display: none; }
+    .realtime-pane {
+      margin-top: 0;
+    }
+    .realtime-shell {
+      display: grid;
+      gap: 14px;
+    }
+    .realtime-head {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+    .realtime-kicker {
+      color: #bae6fd;
+      font-size: 0.86rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .realtime-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.35rem, 4.6vw, 2rem);
+      letter-spacing: -0.05em;
+    }
+    .realtime-subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .realtime-warning {
+      margin: 2px 0 0;
+      color: #fde68a;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+    .realtime-controls {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .realtime-control {
+      appearance: none;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 999px;
+      padding: 10px 10px;
+      background: rgba(8, 16, 29, 0.52);
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+    }
+    .realtime-control.is-active {
+      color: #06111e;
+      background: linear-gradient(135deg, #7dd3fc, #49d19a);
+      border-color: transparent;
+    }
+    .realtime-state {
+      display: none;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015)), rgba(8, 16, 29, 0.45);
+    }
+    .realtime-state.is-active { display: grid; }
+    .realtime-state-header {
+      display: grid;
+      gap: 8px;
+    }
+    .realtime-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(125, 211, 252, 0.16);
+      color: #bae6fd;
+      border: 1px solid rgba(125, 211, 252, 0.26);
+    }
+    .realtime-state-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.08rem, 3.2vw, 1.35rem);
+      letter-spacing: -0.04em;
+    }
+    .realtime-state-copy {
+      margin: 0;
+      color: var(--soft);
+    }
+    .realtime-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .realtime-fields {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .realtime-field {
+      display: grid;
+      gap: 5px;
+      padding: 12px 13px;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background: rgba(9, 17, 31, 0.64);
+    }
+    .realtime-field-label {
+      color: #9bdcff;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    .realtime-field-value {
+      color: #eef5ff;
+      font-size: 0.96rem;
+      letter-spacing: -0.02em;
+    }
+    .realtime-note {
+      padding: 12px 14px;
+      border-radius: 16px;
+      border-left: 4px solid #7dd3fc;
+      background: rgba(20, 33, 52, 0.88);
+      color: var(--soft);
+    }
+    .tone-loading .realtime-badge,
+    .tone-empty .realtime-badge,
+    .tone-error .realtime-badge,
+    .tone-pre .realtime-badge,
+    .tone-post .realtime-badge,
+    .tone-loaded .realtime-badge {
+      border-color: rgba(125, 211, 252, 0.26);
+    }
+    .tone-loading .realtime-badge { background: rgba(125, 211, 252, 0.15); color: #c8edff; }
+    .tone-empty .realtime-badge { background: rgba(248, 212, 119, 0.15); color: #fde68a; }
+    .tone-error .realtime-badge { background: rgba(248, 113, 113, 0.15); color: #fecaca; }
+    .tone-pre .realtime-badge { background: rgba(56, 189, 248, 0.15); color: #bae6fd; }
+    .tone-post .realtime-badge { background: rgba(251, 146, 60, 0.16); color: #fed7aa; }
+    .tone-loaded .realtime-badge { background: rgba(73, 209, 154, 0.16); color: #a7f3d0; }
+    @media (max-width: 640px) {
+      .page { padding: 10px; }
+      .room-header { margin: -10px -10px 14px; padding: 14px 10px 12px; }
+      .room-tab { padding: 9px 10px; font-size: 0.9rem; }
+      .report { border-radius: 22px; padding: 18px 14px; }
+      .brief-list li { grid-template-columns: 1fr; gap: 4px; }
+      .item-label { font-size: 0.82rem; }
+    }
+
     </style>
   </head>
   <body>
-    <main class="page">
+    <main class="page" data-published-at="2026-05-18T02:48:25.250Z" data-writer-provider="mock" data-writer-model="mock" data-fallback-reason="">
       <section class="room-header">
         <h1 class="room-title">리딩방</h1>
-        <p class="room-subtitle">장 열리는 날 기준 장시작 08:30, 장마감 15:30 발행</p>
-        <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
-          <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
-          <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간급등</button>
-        </div>
+         <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
+           <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
+           <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간 급등</button>
+         </div>
       </section>
-
-      <section class="policy-strip">최신 브리핑 2건만 표시합니다. 최신 발행본이 항상 상단에 노출됩니다.</section>
-
       <section id="briefing-pane">
-        <article class="report">
-          <div class="eyebrow published">장 시작 · 2026-05-07</div>
-          <h1>KOSPI 7,400선 안착 시험, AI 강세와 중동 리스크가 동시에 열려 있습니다</h1>
-          <p class="meta">2026-05-07 08:30 KST · Analyst Desk</p>
-          <p class="lead">오늘 장시작은 KOSPI가 7,384.56으로 전일 대비 15.23포인트, 0.21% 오른 상태에서 7,400선 안착을 시험하는 흐름입니다. 기사 헤드라인은 사상 최고치와 AI 수요 강세를 가리키지만, 중동 긴장과 유럽 약세가 함께 언급돼 있어 개장 초에는 지수 방향보다 수급 지속성 확인이 우선입니다.</p>
-
-          <h2>오늘 국내 증시</h2>
-          <p>국내 증시는 7,000선을 돌파한 뒤 다섯 번째 천포인트 구간 진입이라는 상징성이 강합니다. 다만 현재 근거는 제목 기반 회복팩 중심이므로, 상승 자체보다 개장 직후 대형 반도체와 지수 선물이 같은 방향으로 유지되는지 확인하는 편이 안전합니다.</p>
-
-          <h2>수급 관점</h2>
-          <ul class="bullet-grid">
-            <li><strong>외국인:</strong> 자동 수집 기사에는 외국인 순매수 숫자가 직접 나오지 않았습니다. 삼성전자·SK하이닉스와 코스피 선물의 동시 강세가 확인돼야 7,400선 안착 신뢰도가 높아집니다.</li>
-            <li><strong>기관/개인:</strong> 기관 수급도 정량 신호가 부족합니다. 프로그램 매수가 지수 대형주에만 몰리는지, 업종 전반으로 퍼지는지 구분이 필요합니다.</li>
-            <li><strong>환율/금리:</strong> 기사 제목에는 환율·금리 수치가 없습니다. 원달러와 미국채 금리가 흔들리면 장 초반 고점 추격은 빠르게 부담으로 바뀔 수 있습니다.</li>
-          </ul>
-
-          <h2>업종 포인트</h2>
-          <ul class="bullet-grid">
-            <li><strong>반도체·AI:</strong> 한국공공정책신문 헤드라인이 AI 수요를 사상 최고치 배경으로 지목하고 있어, 오늘도 반도체가 시장 중심축일 가능성이 큽니다.</li>
-            <li><strong>지수 대형주:</strong> 경향신문과 환경감시일보 헤드라인은 지수 레벨 자체에 초점을 두고 있습니다. 대형주가 지수를 끌어도 종목 확산이 약하면 체감 강도는 낮을 수 있습니다.</li>
-            <li><strong>글로벌 민감주:</strong> 브랜드경제신문 헤드라인처럼 유럽 약세와 엇갈린 흐름이 같이 언급돼 있어, 개장 후 글로벌 매크로 뉴스가 나오면 수출주 변동성이 커질 수 있습니다.</li>
-          </ul>
-
-          <h2>주요 종목 브리핑</h2>
-          <ul class="bullet-grid">
-            <li><strong>삼성전자:</strong> 기사 제목 수준에서는 직접 언급이 없지만, 오늘 지수 유지력은 삼성전자 같은 대형 반도체의 초반 체결 강도에 가장 크게 좌우될 가능성이 큽니다.</li>
-            <li><strong>SK하이닉스:</strong> AI 수요 헤드라인의 직접 수혜 축으로 해석할 수 있습니다. 장 초반 거래대금이 따라붙지 않으면 지수만 강한 장세로 바뀔 수 있습니다.</li>
-            <li><strong>지수 ETF·대형주 바스켓:</strong> 개별 재료보다 지수 상징성이 큰 날이라, 종목 추격보다 대형주 바스켓 흐름을 먼저 보는 편이 리스크 관리에 유리합니다.</li>
-          </ul>
-
-          <h2>오늘의 리스크</h2>
-          <ul class="bullet-grid">
-            <li>중동 긴장이 재확대되면 기사 제목에서 드러난 사상 최고치 심리가 빠르게 훼손될 수 있습니다.</li>
-            <li>환율·금리 확인 없이 고점권 추격이 붙으면 장 초반 되돌림 폭이 예상보다 커질 수 있습니다.</li>
-            <li>반도체·AI 쏠림이 심해지면 지수는 강해도 개별 종목 체감은 오히려 약해질 수 있습니다.</li>
-            <li>유럽 약세와 국내 최고치가 엇갈린 구조라, 해외 선물 반전이 나오면 개장 후 변동성이 즉시 확대될 수 있습니다.</li>
-          </ul>
-
-          <h2>오늘 확인할 것</h2>
-          <ul class="bullet-grid">
-            <li>09:00~09:30 삼성전자·SK하이닉스와 코스피 선물이 같은 방향으로 유지되는지 확인</li>
-            <li>7,400선 부근에서 상승 종목 수가 따라오는지, 지수만 버티는지 확인</li>
-            <li>원달러와 미국채 금리 변화가 외국인 수급에 즉시 반영되는지 점검</li>
-            <li>AI 수요 기대가 후속 반도체·장비주로 확산되는지 확인</li>
-            <li>중동 관련 속보가 나오면 수출주와 대형주가 먼저 흔들리는지 체크</li>
-          </ul>
-
-          <section class="news-section">
-            <h2>관련 뉴스 5개</h2>
-            <ul class="news-list">
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBXN3Z0THdoUVhaUXA3b0hkZnJ1ZEZjdU1zNE9DUkNWZzY0OFFPaU50U1lvU1lmS2xNdVozQ2NPRFgtUW5oWW1zUnBfX1F3VTBZM2J3d2xjak1IR3RjaHc?oc=5" target="_blank" rel="noopener">KOSPI reaches the ‘7000’ mark after breaking through five 1,000-point thresholds in a year - 경향신문</a><span class="news-source">경향신문 · 2026-05-06 17:41 KST</span></li>
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE5tMXd2WEQxMDJQOGl0TU1NNnFVQjlLaUFUdUtFLXZTdkVBUlpTUElGaVM3WTcwVmhJWmV2UHJrR2dQdlhBck1HUGdWN20zakk?oc=5" target="_blank" rel="noopener">중동 긴장 속 KOSPI 사상 최고치…한국 경제의 차별화된 경쟁력 - 환경감시일보</a><span class="news-source">환경감시일보 · 2026-05-07 03:21 KST</span></li>
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiTEFVX3lxTE9NeTFNSEx6WnVKNE5FVktGcTA5NVFsWGtzekNObUhNZ3dCb1RtcGluRkt4OExVQ084UFVSTjdDZW5kdklKb096c2t2eHc?oc=5" target="_blank" rel="noopener">중동 갈등과 글로벌 시장의 회복력 — KOSPI 최고치 vs. 유럽 하락, 엇갈린 시장의 해법 - 브랜드경제신문</a><span class="news-source">브랜드경제신문 · 2026-05-07 03:08 KST</span></li>
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMickFVX3lxTE43OGpCRzU0VC02Z2RmLXdUUnNaZ1U0a0QyUTJFVmpmSUstQ2xjbDlwX2VXcmZIZ05QbGxMNzRBd3JwS2UwWGxXd3JzZkVlN1gycjF1M1N3ZjV5bzQwbFB5TDhnd2x6VWh5eGt6bHN3NXlSdw?oc=5" target="_blank" rel="noopener">[포토뉴스] KOSPI 7000 시대 개막!!! - 프레스뉴스</a><span class="news-source">프레스뉴스 · 2026-05-06 18:45 KST</span></li>
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiQ0FVX3lxTE95bGVhRHk0VHFOS3FHaHhYbE9lX1Y4NUZLNVdLWkNRZm84TWRBcks3TG1aaWFFVzJ1LTZ6OS1hX3FkMFk?oc=5" target="_blank" rel="noopener">중동 위기에도 KOSPI 사상 최고치…AI 수요가 갈라놓은 글로벌 증시 - 한국공공정책신문</a><span class="news-source">한국공공정책신문 · 2026-05-07 03:19 KST</span></li>
-            </ul>
-          </section>
-        </article>
-        <article class="report">
-          <div class="eyebrow published">장 종료 · 2026-04-30</div>
-          <h1>KOSPI 6,700선 턱걸이, 차익실현과 변동성 확대 경계</h1>
-          <p class="meta">2026-04-30 16:05 KST · Analyst Desk</p>
-          <p class="lead">오늘 장 마감은 KOSPI가 6,700선 부근에서 등락을 거듭하며 사흘 연속 최고치 경신 시도를 이어갔으나, 신용융자 잔고 사상 최대치 기록으로 변동성 확대 우려가 커졌습니다. 외국인 매도세와 프로그램 매물이 유입되며 지수 상단이 얇아진 상태로 마감했습니다.</p>
-
-          <h2>장 마감 수급 체크</h2>
-          <ul class="bullet-grid">
-            <li><strong>외국인:</strong> 장중 순매도 전환하며 차익실현 매물이 출회, 지수 상단 지지력 약화.</li>
-            <li><strong>기관/개인:</strong> 기관은 차익실현, 개인은 저가 매수 유입. 프로그램 매매는 매도 우위.</li>
-            <li><strong>환율/금리:</strong> 원/달러 1,480원대 하회 시도, 미국채 금리 소폭 상승으로 하락 압력.</li>
-          </ul>
-
-          <h2>섹터별 전망</h2>
-          <ul class="bullet-grid">
-            <li><strong>반도체/AI:</strong> AI 메모리 수요 기대감은 견조하나, 신용융자 잔고 급증으로 단기 변동성 확대 가능성.</li>
-            <li><strong>KOSDAQ/중소형:</strong> 다음날 코스모로보틱스 상장 IR 이벤트로 관련 테마 주목, 거래대금 모니터링 필요.</li>
-            <li><strong>자동차/2차전지:</strong> 글로벌 금리 변동성에 따른 수출주 약세, 단기 차익실현 압력.</li>
-          </ul>
-
-          <h2>주요 종목 마감 브리핑</h2>
-          <ul class="bullet-grid">
-            <li><strong>삼성전자:</strong> AI 메모리 수요 기대에도 외국인 매도세로 약세 마감. 5월 초 실적 발표 전까지 관망.</li>
-            <li><strong>SK하이닉스:</strong> HBM 수요 지속에도 차익실현 물량 출회. 하락 시 저가 매수 관점 유효.</li>
-            <li><strong>코스모로보틱스:</strong> KOSDAQ 상장 후 시장 반응 확인, 5월 12일 IR 행사로 단기 모멘텀 지속 여부 판단.</li>
-          </ul>
-
-          <h2>내일 시장 리스크</h2>
-          <ul class="bullet-grid">
-            <li>신용융자 잔고 사상 최대에 따른 반대매매 리스크, 지수 변동성 확대 가능성.</li>
-            <li>FOMC 앞둔 관망 심리로 외국인 수급 방향성 불확실.</li>
-            <li>미국채 금리 상승 시 외국인 매도 확대 및 원화 약세 압력.</li>
-            <li>AI 테마주 고점 부담에 따른 개별 종목 급락 변동성.</li>
-          </ul>
-
-          <section class="news-section">
-            <h2>관련 뉴스 5개</h2>
-            <ul class="news-list">
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5GWWZyZl9LSEp4VEFVM1JWWnUxUDJuOUJGWXF6aXBjR2I0S2JfX1V3bUhjTXYwUkNhR1pXVE5xbW5Tc25xbzF3RUlnVHkxTGQ3MHpkNG1EU0VwQkZ0WWtDS2Zzb2VvbUtyekRwMHRR0gFuQVVfeXFMTkZZZnJmX0tISnhUQVUzUlZadTFQMm45QkZZcXppcGNHYjRLYl9fVXdtSGNNdjBSQ2FHWldUTnFtblNzbnFvMXdFSWdUeTFMZDcwemQ0bURTRXBCRnRZa0NLZnNvZW9tS3J6RHAwdFE?oc=5" target="_blank" rel="noopener">KOSPI Rally Drives Margin Debt to Record High, Raising Volatility Concerns - 알파경제</a><span class="news-source">알파경제 · 2026-04-30 06:50 KST</span></li>
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMibEFVX3lxTFBBZDBVM0NIX0tHRFRncy1nLTBiaWhOMEtucE03VmxFNVN4VE9FY2sxSUdDTE9TTl9vanRiNTJRbXBXbGpnNjgtYmludFBmWGN0Z2VxeDlhQ010QVAyMm1JbkwwM09yWE1Xb3ViNg?oc=5" target="_blank" rel="noopener">코스모로보틱스, 코스닥 상장 다음날인 5월 12일 고객소통 IR 행사 연다 - 로봇신문</a><span class="news-source">로봇신문 · 2026-04-30 14:51 KST</span></li>
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9mdVhPcXlJanBDTWs1OUpHYzNzNE1FOVBxVDRvQ19pSHo1OGduN3lUelNBZmp3Y1VINWZ4R1dCRHVHanA5b2dwZ0hvbzBfMndWWHBv?oc=5" target="_blank" rel="noopener">KOSPI tests 6,700 milestone amid heavy tug-of-war - 네이트</a><span class="news-source">네이트 · 2026-04-30 11:27 KST</span></li>
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1PX0xvQkJJUVl0SWE3Q2Rpc0ZJY0NOWGhvcWZTTzA4Y0dYSTZXcnhodE5wZ0ZJSkJHR05Lcmg4c2tadzRZYjdvZTJNUjh4aHJ4NnF0Rm9xdE5QYjUtYlE?oc=5" target="_blank" rel="noopener">KOSPI tops 6,690… sets record high for a third straight day - 경향신문</a><span class="news-source">경향신문 · 2026-04-29 18:42 KST</span></li>
-              <li class="news-item"><a class="news-link" href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE80RDNCNXE0QTVaa1RtRkR1Z3NpTGtsU1pnMVhtZWxrbzRYWHF3NVBHVHQ5LTJSSnRVMld6OV9hWmdfS1BIS20yWjA4enR5dXB5Vm1PVWpENFA2VWJJRHQ3dTNB?oc=5" target="_blank" rel="noopener">코스피, 나흘째 상승세…장중 최고치 경신 - 아시아경제</a><span class="news-source">아시아경제 · 2026-04-30 09:17 KST</span></li>
-            </ul>
-          </section>
-        </article>
+<article class="report report-post-market">
+      <div class="eyebrow published">장마감</div>
+      <h1>2026-05-18 장마감 브리핑</h1>
+<h2>① 시장 총평</h2>
+<ul class="brief-list"><li><span class="item-label">KOSPI</span><span class="item-value">2,745.12 (▼ 0.30%)</span></li><li><span class="item-label">KOSDAQ</span><span class="item-value">852.44 (▲ 0.25%)</span></li><li><span class="item-label">요약</span><span class="item-value">미국 기술주 선물 약세에도 반도체 대형주 수급이 지수를 방어했고, 코스닥은 일부 성장주 반등으로 상대적으로 견조했습니다.</span></li></ul>
+<h2>② 투자자별 수급 동향</h2>
+<ul class="brief-list"><li><span class="item-label">외국인</span><span class="item-value">순매수 우위. 반도체와 자동차 대형주 중심으로 매수세가 유입됐습니다.</span></li><li><span class="item-label">기관</span><span class="item-value">프로그램 매매 영향으로 업종별 편차가 컸고, 금융과 배당주는 일부 차익 실현이 확인됐습니다.</span></li><li><span class="item-label">개인</span><span class="item-value">코스닥 중소형 테마주와 2차전지 반등 구간에서 단기 매매 비중이 높았습니다.</span></li></ul>
+<h2>③ 업종별/테마별 흐름</h2>
+<ul class="brief-list"><li><span class="item-label">✅ 강세 업종</span><span class="item-value">반도체 - 메모리 가격 반등 기대와 대형주 실적 개선 기대가 동시에 반영됐습니다.</span></li><li><span class="item-label">❌ 약세 업종</span><span class="item-value">건설/부동산 - 금리 부담과 부실 채권 우려가 투자심리를 제한했습니다.</span></li></ul>
+<h2>④ 주요 특징주</h2>
+<ul class="brief-list"><li><span class="item-label">급등 종목</span><span class="item-value">삼성전자, +1.8%, 외국인 순매수와 메모리 업황 개선 기대 / 에코프로비엠, +3.2%, 2차전지 소재주 반등 흐름</span></li><li><span class="item-label">급락 종목</span><span class="item-value">HDC현대산업개발, -2.4%, 부동산 PF 우려 재부각 / 한화시스템, -1.9%, 우주/방산 테마 차익 실현</span></li></ul>
+<h2>⑤ 내일의 투자 전략</h2>
+<ul class="brief-list"><li><span class="item-label">시장 전망</span><span class="item-value">지수는 박스권 상단 확인 구간이며, 주도 업종의 거래대금 유지 여부가 다음 거래일 방향성을 가를 가능성이 큽니다.</span></li><li><span class="item-label">체크리스트</span><span class="item-value">미국 나스닥 선물과 필라델피아 반도체 지수 흐름 / 원/달러 환율의 1차 저항선 돌파 여부 / 외국인 선물 포지션과 프로그램 매매 방향</span></li></ul>
+    </article>
       </section>
-
-      <section id="realtime-pane" hidden>
-        <article class="report">
-          <div class="eyebrow draft">실시간급등</div>
-          <p class="lead">프리미엄 사용자 전용 탭입니다.</p>
-        </article>
-      </section>
-
-      <section class="disclaimer">
-        <strong>꼭 읽어보세요</strong><br />
-        본 브리핑은 투자 판단을 돕기 위한 참고 자료이며, 특정 종목 매수·매도를 권유하지 않습니다.
-        시장 해석과 종목 언급은 작성 시점의 공개 정보와 가격 흐름을 바탕으로 정리한 것이며,
-        최종 투자 판단과 책임은 투자자 본인에게 있습니다.
-      </section>
+      <section id="realtime-pane" class="realtime-pane" hidden>
+      <article class="report realtime-shell">
+        <div class="realtime-head">
+          <div class="realtime-kicker">실시간 급등</div>
+          <h1 class="realtime-title">실시간 급등</h1>
+          <p class="realtime-subtitle">웹 상세 shell에서 loading / empty / error / loaded 상태를 모두 검증할 수 있도록 정적 상태 패널을 제공합니다.</p>
+          <p class="realtime-warning">장중 10:00~15:00 KST 1시간 슬롯 기준 payload를 사용하며, publish proof와 실제 데이터 바인딩은 후행 leaf에서 검증합니다.</p>
+        </div>
+        <div class="realtime-controls" role="tablist" aria-label="실시간 급등 상태 선택">
+          <button type="button" class="realtime-control " data-realtime-state-control="loading" aria-selected="false">loading</button><button type="button" class="realtime-control " data-realtime-state-control="empty" aria-selected="false">empty</button><button type="button" class="realtime-control " data-realtime-state-control="error" aria-selected="false">error</button><button type="button" class="realtime-control " data-realtime-state-control="pre-market" aria-selected="false">pre-market</button><button type="button" class="realtime-control is-active" data-realtime-state-control="market-open" aria-selected="true">market-open</button><button type="button" class="realtime-control " data-realtime-state-control="post-market" aria-selected="false">post-market</button>
+        </div>
+        <section class="realtime-state  tone-loading" data-realtime-panel="loading">
+      <div class="realtime-state-header">
+        <div class="realtime-badge">loading</div>
+        <h2 class="realtime-state-title">실시간 급등</h2>
+        <p class="realtime-state-copy">데이터 수집 중입니다. 첫 슬롯 생성 전 또는 새 payload 반영 전 상태를 점검합니다.</p>
+        <div class="realtime-meta">
+          <span>업데이트 시각 2026. 05. 18. 오전 11:48</span>
+          <span>상태 loading</span>
+        </div>
+      </div>
+      <div class="realtime-fields"><div class="realtime-field"><div class="realtime-field-label">현재 상태</div><div class="realtime-field-value">데이터 수집 중</div></div><div class="realtime-field"><div class="realtime-field-label">업데이트 시각</div><div class="realtime-field-value">-</div></div><div class="realtime-field"><div class="realtime-field-label">다음 확인 슬롯</div><div class="realtime-field-value">10:00 KST</div></div><div class="realtime-field"><div class="realtime-field-label">업데이트 기준</div><div class="realtime-field-value">장중 1시간 단위 업데이트 기준</div></div></div>
+      <div class="realtime-note">장 시작 전에는 업데이트 시각 대신 시작 전 대기 상태를 표기합니다.</div>
+    </section><section class="realtime-state  tone-empty" data-realtime-panel="empty">
+      <div class="realtime-state-header">
+        <div class="realtime-badge">empty</div>
+        <h2 class="realtime-state-title">실시간 급등</h2>
+        <p class="realtime-state-copy">현재 슬롯 데이터가 비어 있어도 상태 영역과 문구 위치가 유지되어야 합니다.</p>
+        <div class="realtime-meta">
+          <span>업데이트 시각 2026. 05. 18. 오전 11:48</span>
+          <span>상태 empty</span>
+        </div>
+      </div>
+      <div class="realtime-fields"><div class="realtime-field"><div class="realtime-field-label">현재 상태</div><div class="realtime-field-value">슬롯 데이터 없음</div></div><div class="realtime-field"><div class="realtime-field-label">갱신 상태</div><div class="realtime-field-value">갱신 대기 중</div></div><div class="realtime-field"><div class="realtime-field-label">최근 슬롯</div><div class="realtime-field-value">11:00</div></div><div class="realtime-field"><div class="realtime-field-label">업데이트 시각</div><div class="realtime-field-value">2026. 05. 18. 오전 11:48</div></div></div>
+      <div class="realtime-note">빈 상태에서도 최신 업데이트 시각과 갱신 대기 문구를 고정 표시합니다.</div>
+    </section><section class="realtime-state  tone-error" data-realtime-panel="error">
+      <div class="realtime-state-header">
+        <div class="realtime-badge">error</div>
+        <h2 class="realtime-state-title">실시간 급등</h2>
+        <p class="realtime-state-copy">오류 발생 시 사용자에게 데이터 처리 실패 사실과 후속 점검 필요성을 노출합니다.</p>
+        <div class="realtime-meta">
+          <span>업데이트 시각 2026. 05. 18. 오전 11:48</span>
+          <span>상태 error</span>
+        </div>
+      </div>
+      <div class="realtime-fields"><div class="realtime-field"><div class="realtime-field-label">현재 상태</div><div class="realtime-field-value">데이터 처리 실패</div></div><div class="realtime-field"><div class="realtime-field-label">오류 상세</div><div class="realtime-field-value">slot adapter 또는 publish payload readback 필요</div></div><div class="realtime-field"><div class="realtime-field-label">최근 슬롯</div><div class="realtime-field-value">11:00</div></div><div class="realtime-field"><div class="realtime-field-label">업데이트 시각</div><div class="realtime-field-value">2026. 05. 18. 오전 11:48</div></div></div>
+      <div class="realtime-note">오류 상태는 실제 stack trace 대신 운영자가 읽을 수 있는 짧은 안내 문구만 보여줍니다.</div>
+    </section><section class="realtime-state  tone-pre" data-realtime-panel="pre-market">
+      <div class="realtime-state-header">
+        <div class="realtime-badge">pre-market</div>
+        <h2 class="realtime-state-title">실시간 급등</h2>
+        <p class="realtime-state-copy">10:00 KST 첫 슬롯 생성 전 대기 상태를 안내합니다.</p>
+        <div class="realtime-meta">
+          <span>업데이트 시각 2026. 05. 18. 오전 11:48</span>
+          <span>상태 pre-market</span>
+        </div>
+      </div>
+      <div class="realtime-fields"><div class="realtime-field"><div class="realtime-field-label">대기 슬롯</div><div class="realtime-field-value">11:00</div></div><div class="realtime-field"><div class="realtime-field-label">시작 시간</div><div class="realtime-field-value">10:00 KST</div></div><div class="realtime-field"><div class="realtime-field-label">업데이트 시각</div><div class="realtime-field-value">2026. 05. 18. 오전 11:48</div></div><div class="realtime-field"><div class="realtime-field-label">업데이트 기준</div><div class="realtime-field-value">장중 1시간 단위 업데이트 기준</div></div></div>
+      <div class="realtime-note">개장 전 상태: 10:00 첫 슬롯 생성까지 대기합니다.</div>
+    </section><section class="realtime-state is-active tone-loaded" data-realtime-panel="market-open">
+      <div class="realtime-state-header">
+        <div class="realtime-badge">loaded</div>
+        <h2 class="realtime-state-title">실시간 급등</h2>
+        <p class="realtime-state-copy">11:00 기준 실시간 급등 상세 데이터 · KST_1100</p>
+        <div class="realtime-meta">
+          <span>업데이트 시각 2026. 05. 18. 오전 11:48</span>
+          <span>상태 market-open</span>
+        </div>
+      </div>
+      <div class="realtime-fields"><div class="realtime-field"><div class="realtime-field-label">현재 슬롯</div><div class="realtime-field-value">11:00</div></div><div class="realtime-field"><div class="realtime-field-label">상태 레이블</div><div class="realtime-field-value">market-open</div></div><div class="realtime-field"><div class="realtime-field-label">사이클 레이블</div><div class="realtime-field-value">KST_1100</div></div><div class="realtime-field"><div class="realtime-field-label">업데이트 시각</div><div class="realtime-field-value">2026. 05. 18. 오전 11:48</div></div><div class="realtime-field"><div class="realtime-field-label">차기 슬롯</div><div class="realtime-field-value">12:00</div></div></div>
+      <div class="realtime-note">KST_1100 기준 데이터가 실시간 급등 상세에 반영됩니다.</div>
+    </section><section class="realtime-state  tone-post" data-realtime-panel="post-market">
+      <div class="realtime-state-header">
+        <div class="realtime-badge">post-market</div>
+        <h2 class="realtime-state-title">실시간 급등</h2>
+        <p class="realtime-state-copy">장마감 후 마지막 슬롯을 유지하며 다음 거래일 전까지 같은 상세 shell을 제공합니다.</p>
+        <div class="realtime-meta">
+          <span>업데이트 시각 2026. 05. 18. 오전 11:48</span>
+          <span>상태 post-market</span>
+        </div>
+      </div>
+      <div class="realtime-fields"><div class="realtime-field"><div class="realtime-field-label">최종 슬롯</div><div class="realtime-field-value">11:00</div></div><div class="realtime-field"><div class="realtime-field-label">사이클</div><div class="realtime-field-value">KST_1100</div></div><div class="realtime-field"><div class="realtime-field-label">업데이트 시각</div><div class="realtime-field-value">2026. 05. 18. 오전 11:48</div></div><div class="realtime-field"><div class="realtime-field-label">상태</div><div class="realtime-field-value">장마감 유지</div></div></div>
+      <div class="realtime-note">15:00 최종 슬롯 유지 중입니다. 다음 거래일에 갱신됩니다.</div>
+    </section>
+      </article>
+    </section>
+      <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 최종적인 투자 결정과 그에 따른 책임은 투자자 본인에게 있음을 알려드립니다</section>
     </main>
 
     <script>
-      (() => {
-        const briefingPane = document.getElementById('briefing-pane');
-        const realtimePane = document.getElementById('realtime-pane');
-        const tabs = document.querySelectorAll('[data-room-tab]');
-        const isPremiumUser = window.__isPremiumUser === true;
-        const realtimeSurgeUrl = (window.__REALTIME_SURGE_URL || '').trim();
-        const realtimeSurgeDeploy = {
-          repository: (window.__REALTIME_SURGE_REPO || '').trim(),
-          pagePath: (window.__REALTIME_SURGE_PATH || '').trim(),
-          deployment: (window.__REALTIME_SURGE_DEPLOY || '').trim()
-        };
+    (() => {
+      const ROUTES = { BRIEFING: 'briefing', REALTIME: 'realtime' };
 
-        const getRealtimeSurgeBlockers = () => Object.entries(realtimeSurgeDeploy)
-          .filter(([, value]) => !value)
-          .map(([key]) => key);
+      const briefingPane = document.getElementById('briefing-pane');
+      const realtimePane = document.getElementById('realtime-pane');
+      const toast = document.getElementById('room-toast');
+      const tabs = document.querySelectorAll('[data-room-tab]');
+      const realtimeControls = document.querySelectorAll('[data-realtime-state-control]');
+      const realtimePanels = document.querySelectorAll('[data-realtime-panel]');
+      const initialRealtimeControl = document.querySelector('[data-realtime-state-control].is-active');
+      let toastTimer;
+      let activeRealtimeState = initialRealtimeControl?.dataset.realtimeStateControl ?? 'loading';
+      let suppressHashSync = false;
 
-        const openRealtimeSurgePage = () => {
-          if (!realtimeSurgeUrl) {
-            const unresolved = getRealtimeSurgeBlockers();
-            window.__REALTIME_SURGE_BLOCKERS = unresolved;
-            if (typeof console !== 'undefined' && typeof console.warn === 'function') {
-              console.warn('[realtime-surge] placeholder_active_missing_url', {
-                blockers: unresolved,
-                note: 'set __REALTIME_SURGE_URL once repo/path/deploy are finalized'
-              });
-            }
-            return false;
-          }
-          window.open(realtimeSurgeUrl, '_blank', 'noopener,noreferrer');
-          return true;
-        };
+      const showToast = () => {
+        if (!toast) return;
+        toast.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('is-visible');
+        }, 1800);
+      };
 
-        const activateTab = (tabName) => {
-          tabs.forEach((tab) => {
-            const isActive = tab.dataset.roomTab === tabName;
-            tab.classList.toggle('is-active', isActive);
-            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-          });
-          briefingPane.hidden = tabName !== 'briefing';
-          realtimePane.hidden = tabName !== 'realtime';
-
-          // Restore ad rendering path when user returns to briefing tab.
-          // This covers cases where ad SDK attached late or slot content was reset while hidden.
-          if (tabName === 'briefing' && typeof restoreBriefingAdPath === 'function') {
-            restoreBriefingAdPath();
-          }
-        };
-
-        const restoreBriefingAdPath = () => {
-          if (!briefingPane) return;
-
-          const existingAdSlot = briefingPane.querySelector('#briefing-ad-slot');
-          const adSlot = existingAdSlot || document.createElement('section');
-
-          if (!existingAdSlot) {
-            adSlot.id = 'briefing-ad-slot';
-            adSlot.setAttribute('aria-label', '광고');
-            adSlot.style.marginBottom = '12px';
-            adSlot.style.minHeight = '40px';
-            briefingPane.insertBefore(adSlot, briefingPane.firstElementChild);
-          } else if (briefingPane.firstElementChild !== adSlot) {
-            // Keep ad slot at top even when pre-mounted elsewhere so exposure path is restored.
-            briefingPane.insertBefore(adSlot, briefingPane.firstElementChild);
-          }
-
-          // Restore exposure path when a reused slot stayed hidden by previous render state.
-          adSlot.hidden = false;
-          adSlot.removeAttribute('hidden');
-          adSlot.style.visibility = 'visible';
-          if (adSlot.style.display === 'none') {
-            adSlot.style.display = 'block';
-          }
-          const computedDisplay = typeof window.getComputedStyle === 'function'
-            ? window.getComputedStyle(adSlot).display
-            : '';
-          if (computedDisplay === 'none') {
-            adSlot.style.display = 'block';
-          }
-
-          const renderStartedAtMs = typeof performance !== 'undefined' && typeof performance.now === 'function'
-            ? performance.now()
-            : Date.now();
-          let hasLoggedRenderMs = false;
-
-          const hasRenderedCreative = () => {
-            if (adSlot.childElementCount > 0) return true;
-            if ((adSlot.innerHTML || '').trim()) return true;
-            return false;
-          };
-
-          const logRenderMs = () => {
-            if (hasLoggedRenderMs || !hasRenderedCreative()) return;
-            hasLoggedRenderMs = true;
-            const nowMs = typeof performance !== 'undefined' && typeof performance.now === 'function'
-              ? performance.now()
-              : Date.now();
-            const elapsedMs = Math.max(0, Math.round(nowMs - renderStartedAtMs));
-            if (typeof console !== 'undefined' && typeof console.info === 'function') {
-              console.info(`[market-ad] briefing_ad_render_ms=${elapsedMs}`);
-            }
-          };
-
-          const tryRender = () => {
-            const renderers = [
-              window.renderMarketBannerAd,
-              window.renderAdBanner,
-              window.__renderMarketAd,
-              window.adfit?.render,
-              window.kakao?.adfit?.render,
-              window.daum?.AdFit?.render
-            ];
-
-            for (const render of renderers) {
-              if (typeof render !== 'function') continue;
-
-              const invokeRender = (arg) => {
-                try {
-                  render(arg);
-                } catch (_) {
-                  // ignore and continue with other signatures
-                }
-              };
-
-              // Some ad SDK adapters accept HTMLElement, some accept selector,
-              // and some expect an options object. Try all known signatures independently.
-              invokeRender(adSlot);
-
-              if (!hasRenderedCreative()) {
-                invokeRender('#briefing-ad-slot');
-              }
-
-              if (!hasRenderedCreative()) {
-                invokeRender({ element: adSlot, selector: '#briefing-ad-slot' });
-              }
-
-              // Some adapters use container/slot keys instead of element/selector.
-              if (!hasRenderedCreative()) {
-                invokeRender({ container: adSlot, slot: 'briefing-ad-slot' });
-              }
-
-              if (hasRenderedCreative()) {
-                logRenderMs();
-                return true;
-              }
-            }
-
-            const fallbackHtml = window.__MARKET_BANNER_AD_HTML || window.__marketBannerAdHtml;
-            if (typeof fallbackHtml === 'string' && fallbackHtml.trim()) {
-              adSlot.innerHTML = fallbackHtml;
-              logRenderMs();
-              return true;
-            }
-
-            logRenderMs();
-            return hasRenderedCreative();
-          };
-
-          const retryIntervalMs = 300;
-          const maxRetryCount = 10;
-          let retryCount = 0;
-
-          const scheduleRetry = (callback, immediate = false) => {
-            if (typeof window.requestAnimationFrame === 'function') {
-              if (immediate) {
-                window.requestAnimationFrame(callback);
-                return;
-              }
-              window.setTimeout(() => window.requestAnimationFrame(callback), retryIntervalMs);
-              return;
-            }
-            window.setTimeout(callback, immediate ? 0 : retryIntervalMs);
-          };
-
-          const retryRender = () => {
-            if (tryRender()) {
-              return;
-            }
-            retryCount += 1;
-            if (retryCount >= maxRetryCount) {
-              if (typeof console !== 'undefined' && typeof console.warn === 'function') {
-                const nowMs = typeof performance !== 'undefined' && typeof performance.now === 'function'
-                  ? performance.now()
-                  : Date.now();
-                const elapsedMs = Math.max(0, Math.round(nowMs - renderStartedAtMs));
-                console.warn(`[market-ad] briefing_ad_render_timeout_ms=${elapsedMs}`);
-              }
-              return;
-            }
-            scheduleRetry(retryRender);
-          };
-
-          // Live-like fast path: attempt once immediately, then fall back to frame-based retries.
-          if (!tryRender()) {
-            scheduleRetry(retryRender, true);
-          }
-
-          // Late SDK path: ad renderer may attach after initial retries (slow script/load race).
-          const lateRetryDelaysMs = [1500, 4000];
-          lateRetryDelaysMs.forEach((delayMs) => {
-            window.setTimeout(() => {
-              if (hasRenderedCreative()) {
-                logRenderMs();
-                return;
-              }
-              tryRender();
-            }, delayMs);
-          });
-        };
-
-        restoreBriefingAdPath();
-
-        tabs.forEach((tab) => {
-          tab.addEventListener('click', () => {
-            if (tab.dataset.roomTab === 'realtime' && !isPremiumUser) {
-              alert('프리미엄 사용자에게만 제공됩니다.');
-              activateTab('briefing');
-              return;
-            }
-            if (tab.dataset.roomTab === 'realtime' && isPremiumUser && openRealtimeSurgePage()) {
-              activateTab('briefing');
-              return;
-            }
-            activateTab(tab.dataset.roomTab);
-          });
+      const activateRealtimeState = (stateName) => {
+        activeRealtimeState = stateName;
+        realtimeControls.forEach((control) => {
+          const isActive = control.dataset.realtimeStateControl === stateName;
+          control.classList.toggle('is-active', isActive);
+          control.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
-      })();
-    </script>
+        realtimePanels.forEach((panel) => {
+          panel.classList.toggle('is-active', panel.dataset.realtimePanel === stateName);
+        });
+      };
+
+      const activateTab = (tabName) => {
+        tabs.forEach((tab) => {
+          const isActive = tab.dataset.roomTab === tabName;
+          tab.classList.toggle('is-active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        if (tabName === ROUTES.REALTIME) {
+          if (briefingPane) briefingPane.hidden = true;
+          if (realtimePane) realtimePane.hidden = false;
+          activateRealtimeState(activeRealtimeState);
+        } else {
+          if (briefingPane) briefingPane.hidden = false;
+          if (realtimePane) realtimePane.hidden = true;
+        }
+        // Sync URL hash — no toast on standard route navigation
+        const currentHash = location.hash.replace('#', '');
+        if (currentHash !== tabName) {
+          suppressHashSync = true;
+          history.pushState(null, '', '#' + tabName);
+          suppressHashSync = false;
+        }
+      };
+
+      const routeFromHash = () => {
+        if (suppressHashSync) return;
+        const hash = location.hash.replace('#', '');
+        if (hash === ROUTES.BRIEFING || hash === ROUTES.REALTIME) {
+          activateTab(hash);
+        } else {
+          // Default to briefing when no valid hash
+          activateTab(ROUTES.BRIEFING);
+        }
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => activateTab(tab.dataset.roomTab));
+      });
+      realtimeControls.forEach((control) => {
+        control.addEventListener('click', () => activateRealtimeState(control.dataset.realtimeStateControl));
+      });
+
+      window.addEventListener('hashchange', routeFromHash);
+      activateRealtimeState(activeRealtimeState);
+      routeFromHash();
+    })();
+  </script>
   </body>
 </html>
-<!-- rebuild
