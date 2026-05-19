@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T10:28:29.567Z",
+  "generatedAt": "2026-05-19T10:37:55.544Z",
   "phase": "post_market",
   "sessionLabel": "장마감 브리핑",
   "summary": {
@@ -34,11 +34,11 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,507.03",
+      "value": "1,506.98",
       "change": "+0.66%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-05-19T10:28:10.000Z",
+      "updatedAt": "2026-05-19T10:37:38.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "28,903.25",
-      "change": "-0.66%",
+      "value": "28,896.75",
+      "change": "-0.68%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-05-19T10:18:11.000Z",
+      "updatedAt": "2026-05-19T10:27:39.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,7 +82,7 @@
       "change": null,
       "signal": "yellow",
       "status": "unavailable",
-      "updatedAt": "2026-05-19T19:28:29.463212+09:00",
+      "updatedAt": "2026-05-19T19:37:55.419269+09:00",
       "reason": "pykrx/KRX 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: [마감시황] 코스피 8000 찍고 6% 급락…외국인·기관 차익 매도 8조 던졌다 - 뉴스핌 (뉴스핌) / 외국인 '리밸런싱' vs 개인 '저가매수'…반도체 두고 갈린 포지션 - 네이트 (네이트) / [외국인 셀] 분위기 좋은데…코스피 20조 순매도 - 연합인포맥스 (연합인포맥스)",
       "sourceUrl": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-05-19T10:28:29.567Z",
+      "updatedAt": "2026-05-19T10:37:55.544Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -124,12 +124,12 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,507.03",
-      "change": "+9.88",
+      "currentPrice": "1,506.98",
+      "change": "+9.83",
       "changePercent": "+0.66%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-05-19T10:28:10.000Z",
+      "updatedAt": "2026-05-19T10:37:38.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "28,903.25",
-      "change": "-192.75",
-      "changePercent": "-0.66%",
+      "currentPrice": "28,896.75",
+      "change": "-199.25",
+      "changePercent": "-0.68%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-05-19T10:18:11.000Z",
+      "updatedAt": "2026-05-19T10:27:39.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -224,6 +224,14 @@
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     },
     {
+      "title": "코스피 7800 돌파…삼전 6%·SK하닉 10% 급등 - jabon.co.kr",
+      "summary": "코스피 7800 돌파…삼전 6%·SK하닉 10% 급등&nbsp;&nbsp;jabon.co.kr",
+      "source": "jabon.co.kr",
+      "publishedAt": "Mon, 11 May 2026 00:20:29 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1QRDVRRDFYR3JqNnY1OVRhVU9FVjhfT2FfOEtNYXNtMERQemVPWjM3WE1pc1FhZWZVd3pSNWpSZlVmMEhtUmdSMzVGWWVDUFRvelhSZ2ZVd0FybmpQeWtzdVFyenkyNDg?oc=5",
+      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
+    },
+    {
       "title": "[시황] 코스피 ‘사상 최고’…반도체·이차전지 랠리 재개 - 포쓰저널",
       "summary": "[시황] 코스피 ‘사상 최고’…반도체·이차전지 랠리 재개&nbsp;&nbsp;포쓰저널",
       "source": "포쓰저널",
@@ -237,14 +245,6 @@
       "source": "중소기업신문",
       "publishedAt": "Wed, 28 Jan 2026 08:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1FdFNqaUtuczhWWklxa3dwckxPV2M1U3FuSXIzeXJWRDB5MUVhd0doWHNIenA2RDlXdVd5VGo3c3EycGk1NXJVNFA5VUl1SWNVaEpDWkxaUUQ0N1JYdkNvT0EydmhvT0stblRPdHlR?oc=5",
-      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
-    },
-    {
-      "title": "코스피·코스닥 동반 급등…韓, 독일 제치고 시총 세계 10위 - 전자신문",
-      "summary": "코스피·코스닥 동반 급등…韓, 독일 제치고 시총 세계 10위&nbsp;&nbsp;전자신문",
-      "source": "전자신문",
-      "publishedAt": "Wed, 28 Jan 2026 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBRUDdKal9KU3N0bHJqYk9JZHExOUNJeldhR2pnVGxaOC1xd0Fid1JOX18wV184WmZVVmw5Q1l5bFl1dkdsUUEwV0NBMWkzQQ?oc=5",
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     }
   ],
@@ -804,7 +804,7 @@
   ],
   "investorFlows": {
     "status": "unavailable",
-    "generatedAt": "2026-05-19T19:28:29.463212+09:00",
+    "generatedAt": "2026-05-19T19:37:55.419269+09:00",
     "source": "pykrx/KRX",
     "collectionWindow": {
       "lookbackDays": 14,
