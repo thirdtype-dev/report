@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>실시간 급등 · 리딩방</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      line-height: 1.72;
+      color: #f3f4f6;
+      background: linear-gradient(180deg, #172033 0%, #1a2130 120px, #1a2130 100%);
+    }
+    .page {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 0 32px;
+    }
+
+    .room-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(23, 32, 51, 0.92);
+      border-bottom: 1px solid #2b3446;
+      padding: 16px 16px 12px;
+    }
+    .room-title {
+      margin: 0 0 6px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .room-subtitle {
+      margin: 0 0 12px;
+      color: #94a3b8;
+      font-size: 0.92rem;
+    }
+    .room-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .room-tab {
+      appearance: none;
+      border: 1px solid #334155;
+      border-radius: 999px;
+      padding: 10px 12px;
+      background: #202634;
+      color: #cbd5e1;
+      font-weight: 700;
+      font-size: 0.94rem;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+    .room-tab.is-active {
+      border-color: #60a5fa;
+      background: #1e3a5f;
+      color: #dbeafe;
+    }
+
+    .detail-shell {
+      margin: 14px 12px 0;
+      padding: 22px 18px;
+      border: 1px solid #334155;
+      border-radius: 22px;
+      background: #182030;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+    }
+    .detail-shell__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(96, 165, 250, 0.14);
+      color: #93c5fd;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .detail-shell__title {
+      margin: 0 0 10px;
+      font-size: clamp(1.5rem, 2vw, 1.9rem);
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+    .detail-shell__lead {
+      margin: 0 0 14px;
+      color: #dbe4f0;
+      font-size: 1rem;
+    }
+    .detail-shell__notice {
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid #334155;
+      background: #101826;
+      color: #bfdbfe;
+      font-weight: 600;
+    }
+    .detail-shell__meta {
+      margin: 12px 0 0;
+      color: #94a3b8;
+      font-size: 0.92rem;
+    }
+
+    .state-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .state-card {
+      padding: 14px 14px 15px;
+      border-radius: 16px;
+      border: 1px solid #334155;
+      background: #1b2230;
+    }
+    .state-card h3 {
+      margin: 0 0 6px;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .state-card p {
+      margin: 0;
+      color: #dbe4f0;
+      font-size: 0.94rem;
+    }
+    .state-card--loading h3 {
+      color: #7dd3fc;
+    }
+    .state-card--empty h3 {
+      color: #fcd34d;
+    }
+    .state-card--error h3 {
+      color: #fda4af;
+    }
+    .state-card--loaded h3 {
+      color: #86efac;
+    }
+
+    .detail-shell__footnote {
+      margin: 14px 0 0;
+      color: #94a3b8;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .detail-shell {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 20px 16px;
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="room-header">
+      <h1 class="room-title">리딩방</h1>
+      <p class="room-subtitle">장 열리는 날 기준 장시작 08:30, 장마감 15:30 발행</p>
+      <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
+        <a class="room-tab" href="../" aria-selected="false">브리핑</a>
+        <a class="room-tab is-active" href="./" aria-selected="true">실시간 급등</a>
+      </div>
+    </section>
+
+    <article class="detail-shell" aria-labelledby="realtime-shell-title">
+      <div class="detail-shell__eyebrow">실시간 급등 · detail shell</div>
+      <h2 id="realtime-shell-title" class="detail-shell__title">실시간 급등</h2>
+      <p class="detail-shell__lead">브리핑 상단 구조를 유지한 채, 장중 1시간 단위 업데이트를 위한 상세 shell만 먼저 고정합니다.</p>
+      <div class="detail-shell__notice">주의: 데이터 바인딩 전 단계이므로 실시간 수치 대신 상태별 UI 영역을 우선 검증합니다.</div>
+      <p class="detail-shell__meta">
+        최신 업데이트 시각: <time datetime="2026-05-17T20:00:00+09:00">2026-05-17 20:00 KST</time>
+      </p>
+
+      <div class="state-grid" aria-label="실시간 급등 상태 영역">
+        <section class="state-card state-card--loading">
+          <h3>loading</h3>
+          <p>로딩 중: 데이터 소스 연결을 기다리는 상태 문구가 노출됩니다.</p>
+        </section>
+        <section class="state-card state-card--empty">
+          <h3>empty</h3>
+          <p>빈 상태: 슬롯 데이터가 없을 때 기본 빈 화면과 설명이 렌더됩니다.</p>
+        </section>
+        <section class="state-card state-card--error">
+          <h3>error</h3>
+          <p>오류 상태: fetch 실패 또는 payload 파싱 실패 시 안내 메시지가 표시됩니다.</p>
+        </section>
+        <section class="state-card state-card--loaded">
+          <h3>loaded</h3>
+          <p>로딩 완료: 슬롯 데이터/요약/상세 블록이 바인딩되어 최종 화면이 구성됩니다.</p>
+        </section>
+      </div>
+
+      <p class="detail-shell__footnote">장중 1시간 단위 업데이트 안내: 09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00 KST</p>
+    </article>
+  </main>
+</body>
+</html>
