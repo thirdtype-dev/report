@@ -93,7 +93,7 @@ jobs:
           cp report/data/report.json "$temp_dir/report.json"
 
           git fetch origin main
-          git checkout -B main origin/main
+          git reset --hard origin/main
 
           mkdir -p report/data
           cp "$temp_dir/index.html" index.html
