@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T00:19:57.816Z",
+  "generatedAt": "2026-05-21T01:29:18.763Z",
   "phase": "pre_market",
   "sessionLabel": "장시작 브리핑",
   "summary": {
@@ -12,33 +12,33 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "value": "7,208.95",
-      "change": "-4.09%",
-      "signal": "red",
+      "value": "7,648.32",
+      "change": "+6.09%",
+      "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-05-20T09:05:30.000Z",
+      "updatedAt": "2026-05-21T01:09:00.000Z",
       "reason": "KOSPI 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "value": "1,056.07",
-      "change": "-4.95%",
-      "signal": "red",
+      "value": "1,113.93",
+      "change": "+5.48%",
+      "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-05-20T09:05:30.000Z",
+      "updatedAt": "2026-05-21T01:09:00.000Z",
       "reason": "KOSDAQ 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,499.65",
-      "change": "-0.54%",
+      "value": "1,499.58",
+      "change": "-0.55%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-05-21T00:19:41.000Z",
+      "updatedAt": "2026-05-21T01:29:01.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "29,197.50",
-      "change": "+0.94%",
-      "signal": "blue",
+      "value": "29,271.75",
+      "change": "-0.40%",
+      "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-05-21T00:09:41.000Z",
+      "updatedAt": "2026-05-21T01:19:02.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,7 +82,7 @@
       "change": null,
       "signal": "yellow",
       "status": "unavailable",
-      "updatedAt": "2026-05-21T09:19:57.701444+09:00",
+      "updatedAt": "2026-05-21T10:29:18.648960+09:00",
       "reason": "pykrx/KRX 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: [오늘의 시황] 장중 7000선 위협받은 코스피… 외국인 2.9조 순매도 - nbn 시사경제 (nbn 시사경제) / [마감시황] 코스피 8000 찍고 6% 급락…외국인·기관 차익 매도 8조 던졌다 - 뉴스핌 (뉴스핌) / 외국인 '리밸런싱' vs 개인 '저가매수'…반도체 두고 갈린 포지션 - 네이트 (네이트)",
       "sourceUrl": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-05-21T00:19:57.816Z",
+      "updatedAt": "2026-05-21T01:29:18.763Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -102,34 +102,34 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "currentPrice": "7,208.95",
-      "change": "-307.09",
-      "changePercent": "-4.09%",
-      "trend": "down",
+      "currentPrice": "7,648.32",
+      "change": "+439.37",
+      "changePercent": "+6.09%",
+      "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-05-20T09:05:30.000Z",
+      "updatedAt": "2026-05-21T01:09:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "currentPrice": "1,056.07",
-      "change": "-55.02",
-      "changePercent": "-4.95%",
-      "trend": "down",
+      "currentPrice": "1,113.93",
+      "change": "+57.86",
+      "changePercent": "+5.48%",
+      "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-05-20T09:05:30.000Z",
+      "updatedAt": "2026-05-21T01:09:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,499.65",
-      "change": "-8.20",
-      "changePercent": "-0.54%",
+      "currentPrice": "1,499.58",
+      "change": "-8.27",
+      "changePercent": "-0.55%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-05-21T00:19:41.000Z",
+      "updatedAt": "2026-05-21T01:29:01.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "29,197.50",
-      "change": "+273.25",
-      "changePercent": "+0.94%",
-      "trend": "up",
+      "currentPrice": "29,271.75",
+      "change": "-118.75",
+      "changePercent": "-0.40%",
+      "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-05-21T00:09:41.000Z",
+      "updatedAt": "2026-05-21T01:19:02.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -648,9 +648,9 @@
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
-      "title": "외국인 ‘셀코리아’로 코스피 약세…“2900대 밑으로 가지 않을 것” - 시사오늘",
-      "summary": "외국인 ‘셀코리아’로 코스피 약세…“2900대 밑으로 가지 않을 것”&nbsp;&nbsp;시사오늘",
-      "source": "시사오늘",
+      "title": "외국인 ‘셀코리아’로 코스피 약세…“2900대 밑으로 가지 않을 것” - sisaon.co.kr",
+      "summary": "외국인 ‘셀코리아’로 코스피 약세…“2900대 밑으로 가지 않을 것”&nbsp;&nbsp;sisaon.co.kr",
+      "source": "sisaon.co.kr",
       "publishedAt": "Tue, 09 Nov 2021 08:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9UaEh6ZkxuU2VsS2hPbXlzQXdVVjJFR3I0T0hGTDFDcTNpUzZNelU1STN4cU1PT2FUR1pHU3dUT2xGMGdiNEk5YkZZdEVza1o0aHlpOFNJQ0lIZ1I3QVh6Z3RMTTBXQ0c0X0dj?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
@@ -804,7 +804,7 @@
   ],
   "investorFlows": {
     "status": "unavailable",
-    "generatedAt": "2026-05-21T09:19:57.701444+09:00",
+    "generatedAt": "2026-05-21T10:29:18.648960+09:00",
     "source": "pykrx/KRX",
     "collectionWindow": {
       "lookbackDays": 14,
