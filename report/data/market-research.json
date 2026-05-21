@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T10:27:58.046Z",
+  "generatedAt": "2026-05-21T10:40:11.986Z",
   "phase": "post_market",
   "sessionLabel": "장마감 브리핑",
   "summary": {
@@ -34,11 +34,11 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,507.68",
-      "change": "-0.01%",
+      "value": "1,509.26",
+      "change": "+0.09%",
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-05-21T10:27:44.000Z",
+      "updatedAt": "2026-05-21T10:39:58.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "29,387.00",
-      "change": "-0.01%",
-      "signal": "yellow",
+      "value": "29,272.00",
+      "change": "-0.40%",
+      "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-05-21T10:17:43.000Z",
+      "updatedAt": "2026-05-21T10:29:59.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,7 +82,7 @@
       "change": null,
       "signal": "yellow",
       "status": "unavailable",
-      "updatedAt": "2026-05-21T19:27:57.940770+09:00",
+      "updatedAt": "2026-05-21T19:40:11.868340+09:00",
       "reason": "pykrx/KRX 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: [오늘의 시황] 장중 7000선 위협받은 코스피… 외국인 2.9조 순매도 - nbn 시사경제 (nbn 시사경제) / [마감시황] 코스피 8000 찍고 6% 급락…외국인·기관 차익 매도 8조 던졌다 - 뉴스핌 (뉴스핌) / 외국인 '리밸런싱' vs 개인 '저가매수'…반도체 두고 갈린 포지션 - 네이트 (네이트)",
       "sourceUrl": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-05-21T10:27:58.046Z",
+      "updatedAt": "2026-05-21T10:40:11.986Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -124,12 +124,12 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,507.68",
-      "change": "-0.17",
-      "changePercent": "-0.01%",
-      "trend": "down",
+      "currentPrice": "1,509.26",
+      "change": "+1.41",
+      "changePercent": "+0.09%",
+      "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-05-21T10:27:44.000Z",
+      "updatedAt": "2026-05-21T10:39:58.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "29,387.00",
-      "change": "-3.50",
-      "changePercent": "-0.01%",
+      "currentPrice": "29,272.00",
+      "change": "-118.50",
+      "changePercent": "-0.40%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-05-21T10:17:43.000Z",
+      "updatedAt": "2026-05-21T10:29:59.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -616,14 +616,6 @@
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
-      "title": "시프트업 2대주주 지분 매각제한 풀린다 - v.daum.net",
-      "summary": "시프트업 2대주주 지분 매각제한 풀린다&nbsp;&nbsp;v.daum.net",
-      "source": "v.daum.net",
-      "publishedAt": "Thu, 02 Jan 2025 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5IVmFrSWtuUFNNSEpRVWxlQzdjV1hnWTA2bG9VMzhkSDhMSTBPTksyLTFQMmpWbXVwU0d6aTR1SkN0MEtiZWJ6MURZT1hyYW8?oc=5",
-      "query": "오늘 증시 일정 신규상장 보호예수 해제"
-    },
-    {
       "title": "SK證 \"한라캐스트, 보호예수 해제 영향 불가피…장기 수주 실적 봐야\" - 뉴시스",
       "summary": "SK證 \"한라캐스트, 보호예수 해제 영향 불가피…장기 수주 실적 봐야\"&nbsp;&nbsp;뉴시스",
       "source": "뉴시스",
@@ -632,19 +624,19 @@
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
+      "title": "[공시학개론] 락업 해제는 왜 주가에 영향을 미칠까요?…의무보유 공시 보는 법 - 아주경제",
+      "summary": "[공시학개론] 락업 해제는 왜 주가에 영향을 미칠까요?…의무보유 공시 보는 법&nbsp;&nbsp;아주경제",
+      "source": "아주경제",
+      "publishedAt": "Tue, 01 Jul 2025 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9KX2xVa0F3RGFHV09qbjZ1emVTVmM2Qk1iU0FNVGVlZWFOV1R3ckZDc1VQSHRCVzdJeG1UTHJCOUh4Q25BTjRJUWFCOVpZN3kxLVE1dmg2QWtxd9IBWEFVX3lxTE93dDJ3ZUxkeXhkZG1MbWJOSGh6YmpmdV9wYm9JWlV4NHg2ZUFabkQ3dzlZZWtBbGpRWXBKNTYtQThad0o1eUJZMjJYbzA0UktYdWRqT2lhUEw?oc=5",
+      "query": "오늘 증시 일정 신규상장 보호예수 해제"
+    },
+    {
       "title": "[카드 TMI] 카드사도 '주식매입자금대출' 취급합니다 - fetv.co.kr",
       "summary": "[카드 TMI] 카드사도 '주식매입자금대출' 취급합니다&nbsp;&nbsp;fetv.co.kr",
       "source": "fetv.co.kr",
       "publishedAt": "Fri, 28 Jun 2024 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE96U3Rra1JfWUlaZHdMWVZzdFB5eUhxMXBCN29fMWxmSUFVajd3WVd4NkpPZEVONWlXeXRaTUsybVlCZEZ6RjN3cTJBNk9MR0NxbWxVZ0ZwbnJOeVZwV0xUUEJ3UkJuSnlu?oc=5",
-      "query": "오늘 증시 일정 신규상장 보호예수 해제"
-    },
-    {
-      "title": "[공시학개론] 락업 해제는 왜 주가에 영향을 미칠까요?…'의무보유' 공시 보는 법 - 네이트",
-      "summary": "[공시학개론] 락업 해제는 왜 주가에 영향을 미칠까요?…'의무보유' 공시 보는 법&nbsp;&nbsp;네이트",
-      "source": "네이트",
-      "publishedAt": "Tue, 01 Jul 2025 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBpdEtCSXhHM052RExZR0lQNV82VW5TZlh1aGJHeE9ISUxrRVplb2hvbWpldHdYOVB2T3NHZEE1NXFXTUxzS1RJS2hIV3FRTlRPNnRB?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
@@ -685,6 +677,14 @@
       "source": "v.daum.net",
       "publishedAt": "Sun, 15 Mar 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1UQjJzTi1fQWZYYjNPcXpMMjBZRHVJM2lnQ1VnMzB0UWVqU0RGdFpCRHpCWjJmbF94VXJmZVAwNHFJREVhVUlldWVRSUV5cFE?oc=5",
+      "query": "오늘 공모주 상장 청약 보호예수 해제"
+    },
+    {
+      "title": "12월 공모주 '3개월 락업' 해제 본격화… 3월 '오버행' 주의보 - 뉴스톱",
+      "summary": "12월 공모주 '3개월 락업' 해제 본격화… 3월 '오버행' 주의보&nbsp;&nbsp;뉴스톱",
+      "source": "뉴스톱",
+      "publishedAt": "Wed, 18 Mar 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBHZ21PMzMxLUJ2U29YR2lEZkdqTVZJd1hzekVWNV81NFJPWjlRNHBTSkJfM1E2UF9UdjJYR1lzMmU4dl9KUXVLbXFJRU5LQTQxdTE4ZFZabkhxV1JnbHh3TlA3SXNXaE15a0FfcUJOWQ?oc=5",
       "query": "오늘 공모주 상장 청약 보호예수 해제"
     }
   ],
@@ -804,7 +804,7 @@
   ],
   "investorFlows": {
     "status": "unavailable",
-    "generatedAt": "2026-05-21T19:27:57.940770+09:00",
+    "generatedAt": "2026-05-21T19:40:11.868340+09:00",
     "source": "pykrx/KRX",
     "collectionWindow": {
       "lookbackDays": 14,
