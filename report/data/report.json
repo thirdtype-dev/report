@@ -1,15 +1,37 @@
 {
   "report": {
-    "investorFlows": "KOSPI",
-    "sectorThemeNewsCandidates": [
-      "AI",
-      "Green Energy",
-      "Financial Tech"
-    ],
-    "marketAnalysis": "Strong momentum in renewable energy sectors",
-    "disclosures": "Recent regulatory updates on market transparency",
-    "sectorThemes": "Sustainable Tech, Digital Finance",
-    "disclosureNotes": "Increased disclosure requirements for ESG metrics"
+    "marketSummary": {
+      "kospi": "7,815.59 (▲ 8.42%)",
+      "kosdaq": "1,105.97 (▲ 4.73%)",
+      "summary": "코스피와 코스닥이 모두 상승세를 이어갔으며, 외국인 순매도에도 상승을 유지했습니다."
+    },
+    "investorFlows": {
+      "foreign": "외국인 순매도 2.9조(뉴스 기준)",
+      "institution": "기관 차익매도 8조(뉴스 기준)",
+      "retail": "개인 방어세(뉴스 기준)"
+    },
+    "sectorThemes": {
+      "strong": "반도체·2차전지",
+      "weak": "에너지·방산"
+    },
+    "notableStocks": {
+      "surging": [
+        "LG전자, +8%대, 피지컬AI 상한가로 급등",
+        "마키나락스, 상장 첫날 급등, 12%대 상승"
+      ],
+      "plunging": [
+        "소룩스, -25%, 아리바이오 소식에 급락",
+        "티엘비, -3%대, 1200억 유증 발표 후 급락"
+      ]
+    },
+    "tomorrowStrategy": {
+      "outlook": "코스피는 상승세를 유지할 전망입니다.",
+      "checklist": [
+        "외국인 순매도 흐름을 주시합니다.",
+        "반도체·2차전지 주식의 변동성을 확인합니다.",
+        "개인 방어세가 지속되는지 확인합니다."
+      ]
+    }
   },
   "writer": {
     "provider": "openrouter",
