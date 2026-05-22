@@ -388,6 +388,64 @@ function extractJson(text) {
   return JSON.parse(body);
 }
 
+function isNonEmptyString(value) {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+function isNonEmptyStringArray(value, minimum = 1) {
+  return Array.isArray(value) && value.length >= minimum && value.every((entry) => isNonEmptyString(entry));
+}
+
+function validateReportShape(report) {
+  const requiredFields = PHASE === 'post_market'
+    ? [
+        ['marketSummary.kospi', report.marketSummary?.kospi],
+        ['marketSummary.kosdaq', report.marketSummary?.kosdaq],
+        ['marketSummary.summary', report.marketSummary?.summary],
+        ['investorFlows.foreign', report.investorFlows?.foreign],
+        ['investorFlows.institution', report.investorFlows?.institution],
+        ['investorFlows.retail', report.investorFlows?.retail],
+        ['sectorThemes.strong', report.sectorThemes?.strong],
+        ['sectorThemes.weak', report.sectorThemes?.weak],
+        ['tomorrowStrategy.outlook', report.tomorrowStrategy?.outlook]
+      ]
+    : [
+        ['openingStrategy.keywords', report.openingStrategy?.keywords],
+        ['openingStrategy.oneLineStrategy', report.openingStrategy?.oneLineStrategy],
+        ['openingStrategy.expectedOpen', report.openingStrategy?.expectedOpen],
+        ['investorFlowWatch.continuity', report.investorFlowWatch?.continuity],
+        ['investorFlowWatch.keyInvestor', report.investorFlowWatch?.keyInvestor],
+        ['investorFlowWatch.checkPoint', report.investorFlowWatch?.checkPoint],
+        ['sectorWeather.sunny', report.sectorWeather?.sunny],
+        ['sectorWeather.cloudy', report.sectorWeather?.cloudy],
+        ['sectorWeather.rainy', report.sectorWeather?.rainy],
+        ['disclosuresAndNews.corporateDisclosure', report.disclosuresAndNews?.corporateDisclosure],
+        ['disclosuresAndNews.majorNews', report.disclosuresAndNews?.majorNews],
+        ['disclosuresAndNews.schedule', report.disclosuresAndNews?.schedule],
+        ['watchlist.leaders', report.watchlist?.leaders],
+        ['watchlist.technicals', report.watchlist?.technicals],
+        ['watchlist.eventDriven', report.watchlist?.eventDriven]
+      ];
+
+  const missing = requiredFields
+    .filter(([, value]) => !isNonEmptyString(value))
+    .map(([label]) => label);
+
+  if (PHASE === 'post_market') {
+    if (!isNonEmptyStringArray(report.notableStocks?.surging, 2)) missing.push('notableStocks.surging');
+    if (!isNonEmptyStringArray(report.notableStocks?.plunging, 2)) missing.push('notableStocks.plunging');
+    if (!isNonEmptyStringArray(report.tomorrowStrategy?.checklist, 3)) missing.push('tomorrowStrategy.checklist');
+  }
+
+  if (missing.length > 0) {
+    const error = new Error(`invalid_report_shape:${missing.slice(0, 8).join(',')}`);
+    error.report = report;
+    throw error;
+  }
+
+  return report;
+}
+
 function reportSchema() {
   if (PHASE === 'post_market') {
     return {
@@ -947,7 +1005,7 @@ async function callOpenRouter(prompt) {
   }
 
   const json = JSON.parse(body);
-  return extractJson(json?.choices?.[0]?.message?.content ?? '');
+  return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
 }
 
 async function callGemini(prompt) {
@@ -977,7 +1035,7 @@ async function callGemini(prompt) {
     throw error;
   }
 
-  return extractJson(extractTextFromGemini(JSON.parse(body)));
+  return validateReportShape(extractJson(extractTextFromGemini(JSON.parse(body))));
 }
 
 function mockReport(marketResearch) {
