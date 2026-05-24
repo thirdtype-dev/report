@@ -162,6 +162,28 @@
     .report-pre-market .eyebrow.published { background: rgba(56, 189, 248, 0.16); color: #bae6fd; border-color: rgba(56, 189, 248, 0.28); }
     .report-post-market .eyebrow.published { background: rgba(251, 146, 60, 0.16); color: #fed7aa; border-color: rgba(251, 146, 60, 0.3); }
     .eyebrow.draft { background: rgba(248, 212, 119, 0.16); color: #fde68a; }
+    .issue-time {
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #d1e9ff;
+      opacity: 0.95;
+    }
+    .banner-ad {
+      display: block;
+      margin: 14px 0;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .banner-ad img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      background: rgba(8, 16, 29, 0.72);
+    }
     .small { font-size: 0.95rem; color: var(--muted); }
     code { background: #111827; padding: 0 4px; border-radius: 4px; }
     a { color: #9bdcff; text-decoration: none; }
@@ -300,12 +322,15 @@
         <h1 class="room-title">리딩방</h1>
         <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
           <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
-          <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간급등</button>
+          <button type="button" class="room-tab" data-room-tab="realtime" data-room-link="./realtime.html" aria-selected="false">실시간 급등</button>
         </div>
       </section>
       <section id="briefing-pane">
+<a class="banner-ad" href="#" aria-label="광고 배너 1">
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='220' viewBox='0 0 1200 220'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%232bc48a'/><stop offset='1' stop-color='%234db5ff'/></linearGradient></defs><rect width='1200' height='220' fill='url(%23g)'/><text x='60' y='122' fill='white' font-family='Arial, sans-serif' font-size='56' font-weight='700'>SPONSORED BANNER</text><text x='64' y='166' fill='white' font-family='Arial, sans-serif' font-size='30'>광고 · 지금 확인해보세요</text></svg>" alt="상단 광고 배너" />
+    </a>
 <article class="report report-pre-market">
-      <div class="eyebrow published">장시작</div>
+      <div class="eyebrow published">장시작 <span class="issue-time">08:30</span></div>
       <h1>2026-05-26 장시작 브리핑</h1>
 <h2>① 오늘의 증시 키워드 &amp; 개장 전략</h2>
 <ul class="brief-list"><li><span class="item-label">핵심 키워드</span><span class="item-value">KOSPI 8,096.29 (+3.17%), KOSDAQ 1,184.66 (+2.03%), 외국인 순매도, 반도체 강세</span></li><li><span class="item-label">한줄 전략</span><span class="item-value">외국인 순매도에도 강보합 출발, 반도체·2차전지 주도 상승</span></li><li><span class="item-label">개장 예상</span><span class="item-value">KOSPI 8,100선, KOSDAQ 1,180선 출발 예상</span></li></ul>
@@ -318,8 +343,11 @@
 <h2>⑤ 금일의 전략 종목 (Watchlist)</h2>
 <ul class="brief-list"><li><span class="item-label">주도주 후보</span><span class="item-value">LG전자 &#39;피지컬AI 기대&#39;로 상한가, 엔에이치스팩33호 코스닥 상장 첫날 208% 급등</span></li><li><span class="item-label">기술적 관심주</span><span class="item-value">KOSPI 8,000선 돌파 시도, 삼성전자 30만원 돌파</span></li><li><span class="item-label">이슈 종목</span><span class="item-value">미·이란 협상 기대·유가 급락에 코스피 6000 안착 시험대, 스페이스X 상장 기대로 미래에셋증권 15%대 상승</span></li></ul>
     </article>
+<a class="banner-ad" href="#" aria-label="광고 배너 2">
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='220' viewBox='0 0 1200 220'><defs><linearGradient id='g2' x1='0' y1='1' x2='1' y2='0'><stop offset='0' stop-color='%236f5cff'/><stop offset='1' stop-color='%23ff8abf'/></linearGradient></defs><rect width='1200' height='220' fill='url(%23g2)'/><text x='60' y='122' fill='white' font-family='Arial, sans-serif' font-size='56' font-weight='700'>SPONSORED BANNER</text><text x='64' y='166' fill='white' font-family='Arial, sans-serif' font-size='30'>광고 · 이벤트 진행 중</text></svg>" alt="중간 광고 배너" />
+    </a>
 <article class="report report-post-market">
-      <div class="eyebrow published">장마감</div>
+      <div class="eyebrow published">장마감 <span class="issue-time">16:00</span></div>
       <h1>2026-05-22 장마감 브리핑</h1>
 <h2>① 시장 총평</h2>
 <ul class="brief-list"><li><span class="item-label">KOSPI</span><span class="item-value">7,847.71 (▲ 0.41%)</span></li><li><span class="item-label">KOSDAQ</span><span class="item-value">1,161.13 (▲ 4.99%)</span></li><li><span class="item-label">요약</span><span class="item-value">오늘 코스피는 강보합으로 출발하여 7800선을 돌파하며 0.41% 상승 마감했습니다. 코스닥은 4.99% 급등하며 1160선을 넘어섰습니다. 전반적으로 반도체와 2차전지 업종이 시장을 견인하며 파죽지세의 흐름을 보였습니다. 특히 코스닥에서는 양자, 2차전지, 태양광 테마가 강세를 나타냈습니다.</span></li></ul>
@@ -335,35 +363,14 @@
       </section>
       <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 최종적인 투자 결정과 그에 따른 책임은 투자자 본인에게 있음을 알려드립니다</section>
     </main>
-    <div id="room-toast" class="room-toast" role="status" aria-live="polite">준비중 입니다</div>
     <script>
     (() => {
-      const briefingPane = document.getElementById('briefing-pane');
-      const toast = document.getElementById('room-toast');
       const tabs = document.querySelectorAll('[data-room-tab]');
-      let toastTimer;
-      const showToast = () => {
-        if (!toast) return;
-        toast.classList.add('is-visible');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => {
-          toast.classList.remove('is-visible');
-        }, 1800);
-      };
-      const activateTab = (tabName) => {
-        if (tabName === 'realtime') {
-          showToast();
-          return;
-        }
-        tabs.forEach((tab) => {
-          const isActive = tab.dataset.roomTab === tabName;
-          tab.classList.toggle('is-active', isActive);
-          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-        if (briefingPane) briefingPane.hidden = tabName !== 'briefing';
-      };
       tabs.forEach((tab) => {
-        tab.addEventListener('click', () => activateTab(tab.dataset.roomTab));
+        tab.addEventListener('click', () => {
+          const href = tab.getAttribute('data-room-link');
+          if (href) window.location.href = href;
+        });
       });
     })();
   </script>

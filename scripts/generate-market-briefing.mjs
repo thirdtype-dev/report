@@ -13,7 +13,7 @@ const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
 const INVESTOR_FLOW_TIMEOUT_MS = Number.parseInt(process.env.INVESTOR_FLOW_TIMEOUT_MS ?? '45000', 10);
-const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*">[\s\S]*?<\/article>/g;
+const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*\breport-(?:pre|post)-market\b[^"]*">[\s\S]*?<\/article>/g;
 const YAHOO_SYMBOLS = [
   { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
   { key: 'kosdaq', title: 'KOSDAQ', symbol: '^KQ11' },
@@ -189,6 +189,27 @@ const REPORT_STYLE = String.raw`
       background: linear-gradient(90deg, #fb923c, #f43f5e, #fde68a);
     }
     .report + .report { margin-top: 18px; }
+    .banner-ad {
+      display: block;
+      margin: 0 0 18px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.26);
+      box-shadow: var(--shadow);
+      line-height: 0;
+    }
+    .banner-ad + .report { margin-top: 0; }
+    .report + .banner-ad { margin-top: 18px; }
+    .banner-ad img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .issue-time {
+      font-weight: 900;
+      letter-spacing: 0;
+      color: inherit;
+    }
     .report > h1 {
       margin: 8px 0 20px;
       font-size: clamp(1.65rem, 5vw, 2.45rem);
@@ -355,13 +376,15 @@ const REPORT_STYLE = String.raw`
 const PHASE_CONFIG = {
   pre_market: {
     eyebrow: '장시작',
+    issueTime: '08:30',
     sessionLabel: '장시작 브리핑',
-    promptFocus: '개장 전 핵심 키워드, 개장 전략, 외국인/기관 수급 관전 포인트, 업종별 강약 예보, 당일 공시/뉴스/일정, 전략 종목 후보를 정리한다.'
+    reportPath: resolve(REPORT_DIR, `${dateKey()}-pre-market-briefing.md`)
   },
   post_market: {
     eyebrow: '장마감',
+    issueTime: '16:00',
     sessionLabel: '장마감 브리핑',
-    promptFocus: '장 마감 지수 총평, 투자자별 수급 동향, 업종/테마 흐름, 주요 특징주, 다음 거래일 투자 전략을 정리한다.'
+    reportPath: resolve(REPORT_DIR, `${dateKey()}-post-market-briefing.md`)
   }
 };
 
@@ -1160,7 +1183,7 @@ function renderArticle(report) {
   const articleClass = PHASE === 'post_market' ? 'report-post-market' : 'report-pre-market';
 
   return `<article class="report ${articleClass}">
-      <div class="eyebrow published">${escapeHtml(config.eyebrow)}</div>
+      <div class="eyebrow published">${escapeHtml(config.eyebrow)} <span class="issue-time">${escapeHtml(config.issueTime)}</span></div>
       <h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>
 ${body}
     </article>`;
@@ -1239,32 +1262,12 @@ ${labeledList([
 function renderRoomScript() {
   return `<script>
     (() => {
-      const briefingPane = document.getElementById('briefing-pane');
-      const toast = document.getElementById('room-toast');
       const tabs = document.querySelectorAll('[data-room-tab]');
-      let toastTimer;
-      const showToast = () => {
-        if (!toast) return;
-        toast.classList.add('is-visible');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => {
-          toast.classList.remove('is-visible');
-        }, 1800);
-      };
-      const activateTab = (tabName) => {
-        if (tabName === 'realtime') {
-          showToast();
-          return;
-        }
-        tabs.forEach((tab) => {
-          const isActive = tab.dataset.roomTab === tabName;
-          tab.classList.toggle('is-active', isActive);
-          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-        if (briefingPane) briefingPane.hidden = tabName !== 'briefing';
-      };
       tabs.forEach((tab) => {
-        tab.addEventListener('click', () => activateTab(tab.dataset.roomTab));
+        tab.addEventListener('click', () => {
+          const href = tab.getAttribute('data-room-link');
+          if (href) window.location.href = href;
+        });
       });
     })();
   </script>`;
@@ -1315,7 +1318,7 @@ async function legacyArticles(currentArticle) {
 
   const config = PHASE_CONFIG[PHASE];
   const currentMarkers = [
-    `<div class="eyebrow published">${escapeHtml(config.eyebrow)}</div>`,
+    `<div class="eyebrow published">${escapeHtml(config.eyebrow)} <span class="issue-time">${escapeHtml(config.issueTime)}</span></div>`,
     `<h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>`
   ];
   const articles = [
@@ -1356,7 +1359,7 @@ ${REPORT_STYLE}
         <h1 class="room-title">리딩방</h1>
         <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
           <button type="button" class="room-tab is-active" data-room-tab="briefing" aria-selected="true">브리핑</button>
-          <button type="button" class="room-tab" data-room-tab="realtime" aria-selected="false">실시간급등</button>
+          <button type="button" class="room-tab" data-room-tab="realtime" data-room-link="./realtime.html" aria-selected="false">실시간 급등</button>
         </div>
       </section>
       <section id="briefing-pane">
@@ -1364,7 +1367,6 @@ ${articles}
       </section>
       <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 최종적인 투자 결정과 그에 따른 책임은 투자자 본인에게 있음을 알려드립니다</section>
     </main>
-    <div id="room-toast" class="room-toast" role="status" aria-live="polite">준비중 입니다</div>
     ${renderRoomScript()}
   </body>
 </html>
