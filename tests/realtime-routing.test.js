@@ -19,12 +19,16 @@ function excludes(html, needle) {
 
 test('generator renders separate-page realtime navigation', () => {
   const source = read('scripts/generate-market-briefing.mjs');
+  includes(source, "const ADSENSE_CLIENT = 'ca-pub-3518959293552717'");
+  includes(source, 'google-adsense-account');
+  includes(source, 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}');
   includes(source, 'data-room-link="./realtime.html"');
   includes(source, "if (href) window.location.href = href;");
   includes(source, "eyebrow: '장시작 브리핑'");
   includes(source, "sessionLabel: '08:30'");
   includes(source, "eyebrow: '장마감 브리핑'");
   includes(source, "sessionLabel: '16:00'");
+  excludes(source, 'SPONSORED BANNER');
   excludes(source, 'showToast()');
   excludes(source, '.room-toast');
 });
@@ -32,12 +36,17 @@ test('generator renders separate-page realtime navigation', () => {
 test('briefing entry pages route realtime button to a separate page', () => {
   for (const relativePath of ['index.html', 'report/index.html']) {
     const html = read(relativePath);
+    includes(html, 'google-adsense-account');
+    includes(html, 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3518959293552717');
     includes(html, 'data-room-link="./realtime.html"');
     includes(html, "if (href) window.location.href = href;");
     assert.match(html, /<div class="eyebrow published">장시작 브리핑<\/div>/);
     assert.match(html, /<div class="eyebrow published">장마감 브리핑<\/div>/);
     assert.match(html, /<h1>\d{4}-\d{2}-\d{2} 08:30<\/h1>/);
     assert.match(html, /<h1>\d{4}-\d{2}-\d{2} 16:00<\/h1>/);
+    excludes(html, 'SPONSORED BANNER');
+    excludes(html, '광고 배너 1');
+    excludes(html, '광고 배너 2');
     excludes(html, 'showToast()');
     excludes(html, '.room-toast');
     excludes(html, 'id="room-toast"');
@@ -63,4 +72,9 @@ test('operations doc describes realtime as a separate page, not a toast placehol
   const doc = read('docs/market-briefing-automation.md');
   includes(doc, '`실시간급등` 버튼은 `realtime.html`과 `report/realtime.html` 별도 페이지로 이동한다.');
   excludes(doc, '클릭 시 `준비중 입니다` 토스트만 표시한다.');
+});
+
+test('ads.txt exposes the publisher id for site review', () => {
+  const ads = read('ads.txt').trim();
+  assert.equal(ads, 'google.com, pub-3518959293552717, DIRECT, f08c47fec0942fa0');
 });

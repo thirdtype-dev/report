@@ -12,6 +12,7 @@ const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
+const ADSENSE_CLIENT = 'ca-pub-3518959293552717';
 const INVESTOR_FLOW_TIMEOUT_MS = Number.parseInt(process.env.INVESTOR_FLOW_TIMEOUT_MS ?? '45000', 10);
 const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*\breport-(?:pre|post)-market\b[^"]*">[\s\S]*?<\/article>/g;
 const YAHOO_SYMBOLS = [
@@ -189,22 +190,6 @@ const REPORT_STYLE = String.raw`
       background: linear-gradient(90deg, #fb923c, #f43f5e, #fde68a);
     }
     .report + .report { margin-top: 18px; }
-    .banner-ad {
-      display: block;
-      margin: 0 0 18px;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.26);
-      box-shadow: var(--shadow);
-      line-height: 0;
-    }
-    .banner-ad + .report { margin-top: 0; }
-    .report + .banner-ad { margin-top: 18px; }
-    .banner-ad img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
     .issue-time {
       font-weight: 900;
       letter-spacing: 0;
@@ -1323,7 +1308,9 @@ async function renderHtml(_marketResearch, report, writer) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-adsense-account" content="${ADSENSE_CLIENT}" />
     <title>브리핑</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}" crossorigin="anonymous"></script>
     <style>
 ${REPORT_STYLE}
     </style>
