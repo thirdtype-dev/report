@@ -7,8 +7,9 @@
 - GitHub Actions 클라우드에서 장시작/장마감 브리핑을 자동 생성한다.
 - 생성된 HTML은 GitHub Pages의 루트 `index.html`과 `/report/index.html`에 발행한다.
 - 로컬 PC가 꺼져 있어도 발행은 GitHub Actions runner에서 수행된다.
-- 브리핑 페이지는 상단 `리딩방` 제목과 `브리핑 / 실시간급등` 탭 구조를 유지한다.
-- `실시간급등` 탭은 아직 별도 데이터 파이프라인이 없으므로 클릭 시 `준비중 입니다` 토스트만 표시한다.
+- 브리핑 페이지는 상단 `리딩방` 제목과 `브리핑 / 실시간급등` 버튼형 탭 구조를 유지한다.
+- `실시간급등` 버튼은 `realtime.html`과 `report/realtime.html` 별도 페이지로 이동한다.
+- 별도 페이지는 브리핑 상단 chrome을 유지하되, 유료 회원 전용 shell과 상태 영역만 먼저 고정한다.
 
 ## 주요 파일
 
@@ -25,6 +26,10 @@
   - GitHub Pages 루트 발행본.
 - `report/index.html`
   - `/report/` 경로 발행본.
+- `realtime.html`
+  - 루트 separate-page 실시간급등 shell.
+- `report/realtime.html`
+  - `/report/` 경로 separate-page 실시간급등 shell.
 - `report/data/market-research.json`
   - 수집된 정규화 데이터.
 - `report/data/report.json`
@@ -224,7 +229,8 @@ LLM 규칙:
 - `section#briefing-pane`
   - 최신 브리핑 카드 최대 2건
 - `section.disclaimer`
-- `div#room-toast`
+- `realtime.html`, `report/realtime.html`
+  - 버튼형 상단 탭을 유지한 separate-page 실시간급등 shell
 
 카드 색상:
 
@@ -234,6 +240,7 @@ LLM 규칙:
 주의:
 
 - 페이지 템플릿은 생성기에서 만들어지므로, `index.html`만 직접 고치면 다음 자동 발행 때 덮어써진다.
+- 브리핑 버튼이 separate-page 계약을 유지하려면 `scripts/generate-market-briefing.mjs`의 `renderHtml()`/`renderRoomScript()`와 정적 `realtime.html`/`report/realtime.html`을 함께 맞춰야 한다.
 - 디자인 변경은 반드시 `scripts/generate-market-briefing.mjs`의 `REPORT_STYLE`, `renderHtml()`, 관련 렌더 함수에 반영한다.
 
 ## 수동 발행 방법

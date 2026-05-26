@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>실시간 급등</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --line: rgba(148, 163, 184, 0.18);
+        --muted: #aab8cc;
+        --text: #eef5ff;
+        --soft: #d7e4f7;
+        --panel: rgba(15, 24, 39, 0.92);
+        --panel-2: rgba(20, 33, 52, 0.9);
+        --accent: #49d19a;
+        --accent-2: #7dd3fc;
+        --warn: #f8d477;
+      }
+      body {
+        margin: 0;
+        font-family: "Pretendard", "SUIT", "Apple SD Gothic Neo", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 12% -10%, rgba(73, 209, 154, 0.22), transparent 34rem),
+          radial-gradient(circle at 92% 2%, rgba(125, 211, 252, 0.18), transparent 30rem),
+          linear-gradient(145deg, #08101d 0%, #101827 44%, #172035 100%);
+        min-height: 100vh;
+      }
+      .page {
+        width: min(920px, 100%);
+        margin: 0 auto;
+        padding: 18px;
+        box-sizing: border-box;
+      }
+      .room-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        margin: -18px -18px 18px;
+        padding: 16px 18px 14px;
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(180deg, rgba(9, 17, 31, 0.96), rgba(9, 17, 31, 0.82)),
+          rgba(9, 17, 31, 0.9);
+        backdrop-filter: blur(18px);
+      }
+      .room-title {
+        margin: 0 0 8px;
+        color: #ffffff;
+        font-size: clamp(1.7rem, 6vw, 2.5rem);
+        font-weight: 900;
+        letter-spacing: -0.06em;
+      }
+      .room-crumb {
+        margin: 0 0 14px;
+        color: #9bdcff;
+        font-size: 0.88rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+      .room-tabs {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding: 5px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(8, 16, 29, 0.68);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      }
+      .room-tab {
+        appearance: none;
+        border: 0;
+        border-radius: 999px;
+        padding: 10px 12px;
+        color: var(--muted);
+        background: transparent;
+        font: inherit;
+        font-size: 0.95rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        cursor: pointer;
+      }
+      .room-tab.is-active {
+        color: #06111e;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        box-shadow: 0 10px 26px rgba(73, 209, 154, 0.22);
+      }
+      .report {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 22px;
+        background: var(--panel);
+      }
+      .report::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 5px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--warn));
+      }
+      .kicker {
+        color: #bae6fd;
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .report h1 {
+        margin: 8px 0 14px;
+        font-size: clamp(1.55rem, 5vw, 2.25rem);
+        letter-spacing: -0.05em;
+      }
+      .report p, .state-card p, .state-card li { color: var(--soft); }
+      .state-shell {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+      .state-shell h2 {
+        margin: 0 0 12px;
+        font-size: 1.05rem;
+        letter-spacing: -0.03em;
+      }
+      .state-grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .state-card {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+      }
+      .state-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 10px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .state-label.is-loading { color: #bae6fd; background: rgba(56, 189, 248, 0.12); }
+      .state-label.is-empty { color: #fde68a; background: rgba(248, 212, 119, 0.12); }
+      .state-label.is-error { color: #fecaca; background: rgba(248, 113, 113, 0.12); }
+      .state-label.is-loaded { color: #a7f3d0; background: rgba(73, 209, 154, 0.12); }
+      .state-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 8px;
+        padding: 6px 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--soft);
+        font-size: 0.82rem;
+      }
+      .state-card ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+      }
+      .state-card li + li { margin-top: 6px; }
+      .state-stream {
+        display: grid;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .state-stream-item {
+        padding: 10px 12px;
+        border: 1px solid rgba(148, 163, 184, 0.16);
+        border-radius: 14px;
+        background: rgba(8, 16, 29, 0.38);
+      }
+      .state-stream-item strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #fff;
+      }
+      .disclaimer {
+        margin-top: 16px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        color: var(--muted);
+      }
+      @media (max-width: 640px) {
+        .page { padding: 10px; }
+        .room-header { margin: -10px -10px 14px; padding: 14px 10px 12px; }
+        .room-tab { padding: 9px 10px; font-size: 0.9rem; }
+        .report { border-radius: 22px; padding: 18px 14px; }
+        .state-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="room-header">
+        <h1 class="room-title">리딩방</h1>
+        <p class="room-crumb">브리핑 / 실시간 급등</p>
+        <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
+          <button type="button" class="room-tab" data-room-link="./index.html" aria-selected="false">브리핑</button>
+          <button type="button" class="room-tab is-active" aria-selected="true">실시간 급등</button>
+        </div>
+      </section>
+      <article class="report">
+        <div class="kicker">유료 회원 전용</div>
+        <h1>실시간 급등</h1>
+        <p>브리핑 페이지에서 버튼으로 열리는 별도 페이지이며, 상단 chrome과 상태 shell을 유지한 채 실시간 데이터만 교체하도록 설계했습니다.</p>
+
+        <section class="state-shell" aria-labelledby="state-shell-title">
+          <h2 id="state-shell-title">상태 shell</h2>
+          <div class="state-grid">
+            <section class="state-card" aria-label="loading state">
+              <div class="state-label is-loading">loading</div>
+              <div class="state-badge">연결 대기</div>
+              <p>실시간 급등 시세를 불러오는 중입니다. 초기 연결, 재시도, 폴링 대기 상태를 모두 포함하는 기본 셸입니다.</p>
+              <div class="state-stream">
+                <div class="state-stream-item"><strong>진행</strong>브리핑 버튼에서 이동 후 데이터 채널을 초기화합니다.</div>
+                <div class="state-stream-item"><strong>보호</strong>최초 로딩 실패 시 자동으로 오류 상태로 전환됩니다.</div>
+              </div>
+            </section>
+            <section class="state-card" aria-label="empty state">
+              <div class="state-label is-empty">empty</div>
+              <div class="state-badge">표시 없음</div>
+              <p>아직 급등 후보가 없을 때 보여줄 빈 화면입니다. 회원 전용 프레임과 안내 문구만 남기고 리스트를 비워둡니다.</p>
+              <ul>
+                <li>조건 미충족 종목 없음</li>
+                <li>다음 갱신 시점 예약</li>
+              </ul>
+            </section>
+            <section class="state-card" aria-label="error state">
+              <div class="state-label is-error">error</div>
+              <div class="state-badge">복구 필요</div>
+              <p>네트워크 끊김, 파싱 오류, 서버 응답 지연 같은 문제를 별도 상태로 드러내는 오류 패널입니다.</p>
+              <ul>
+                <li>재시도 버튼 표시</li>
+                <li>마지막 정상 갱신 시각 유지</li>
+              </ul>
+            </section>
+            <section class="state-card" aria-label="loaded state">
+              <div class="state-label is-loaded">loaded</div>
+              <div class="state-badge">실데이터</div>
+              <p>데이터가 들어오면 종목명, 변동률, 거래대금, 사유를 카드 형태로 렌더링합니다. 아래 항목은 실제 로딩 후 교체될 구조입니다.</p>
+              <div class="state-stream">
+                <div class="state-stream-item"><strong>후보 A</strong>급등 사유 · 거래량 급증 · 장중 뉴스 반응</div>
+                <div class="state-stream-item"><strong>후보 B</strong>급등 사유 · 체결 강도 · 시세 추적</div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </article>
+      <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 브리핑에서 열리는 별도 페이지이므로 상단 버튼으로만 이동합니다.</section>
+    </main>
+    <script>
+      document.querySelectorAll('[data-room-link]').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const href = tab.getAttribute('data-room-link');
+          if (href) window.location.href = href;
+        });
+      });
+    </script>
+  </body>
+</html>
