@@ -338,13 +338,11 @@ const REPORT_STYLE = String.raw`
 const PHASE_CONFIG = {
   pre_market: {
     eyebrow: '장시작 브리핑',
-    sessionLabel: '08:30',
-    reportPath: resolve(REPORT_DIR, `${dateKey()}-pre-market-briefing.md`)
+    sessionLabel: '08:30'
   },
   post_market: {
     eyebrow: '장마감 브리핑',
-    sessionLabel: '16:00',
-    reportPath: resolve(REPORT_DIR, `${dateKey()}-post-market-briefing.md`)
+    sessionLabel: '16:00'
   }
 };
 
