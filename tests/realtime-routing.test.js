@@ -21,6 +21,10 @@ test('generator renders separate-page realtime navigation', () => {
   const source = read('scripts/generate-market-briefing.mjs');
   includes(source, 'data-room-link="./realtime.html"');
   includes(source, "if (href) window.location.href = href;");
+  includes(source, "eyebrow: '장시작 브리핑'");
+  includes(source, "sessionLabel: '08:30'");
+  includes(source, "eyebrow: '장마감 브리핑'");
+  includes(source, "sessionLabel: '16:00'");
   excludes(source, 'showToast()');
   excludes(source, '.room-toast');
 });
@@ -30,10 +34,18 @@ test('briefing entry pages route realtime button to a separate page', () => {
     const html = read(relativePath);
     includes(html, 'data-room-link="./realtime.html"');
     includes(html, "if (href) window.location.href = href;");
+    assert.match(html, /<div class="eyebrow published">장시작 브리핑<\/div>/);
+    assert.match(html, /<div class="eyebrow published">장마감 브리핑<\/div>/);
+    assert.match(html, /<h1>\d{4}-\d{2}-\d{2} 08:30<\/h1>/);
+    assert.match(html, /<h1>\d{4}-\d{2}-\d{2} 16:00<\/h1>/);
     excludes(html, 'showToast()');
     excludes(html, '.room-toast');
     excludes(html, 'id="room-toast"');
     excludes(html, '준비중 입니다');
+    excludes(html, '장시작 <span class="issue-time">08:30</span>');
+    excludes(html, '장마감 <span class="issue-time">16:00</span>');
+    excludes(html, '장시작 브리핑</h1>');
+    excludes(html, '장마감 브리핑</h1>');
   }
 });
 

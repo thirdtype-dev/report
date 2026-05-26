@@ -352,15 +352,13 @@ const REPORT_STYLE = String.raw`
 
 const PHASE_CONFIG = {
   pre_market: {
-    eyebrow: '장시작',
-    issueTime: '08:30',
-    sessionLabel: '장시작 브리핑',
+    eyebrow: '장시작 브리핑',
+    sessionLabel: '08:30',
     reportPath: resolve(REPORT_DIR, `${dateKey()}-pre-market-briefing.md`)
   },
   post_market: {
-    eyebrow: '장마감',
-    issueTime: '16:00',
-    sessionLabel: '장마감 브리핑',
+    eyebrow: '장마감 브리핑',
+    sessionLabel: '16:00',
     reportPath: resolve(REPORT_DIR, `${dateKey()}-post-market-briefing.md`)
   }
 };
@@ -1160,7 +1158,7 @@ function renderArticle(report) {
   const articleClass = PHASE === 'post_market' ? 'report-post-market' : 'report-pre-market';
 
   return `<article class="report ${articleClass}">
-      <div class="eyebrow published">${escapeHtml(config.eyebrow)} <span class="issue-time">${escapeHtml(config.issueTime)}</span></div>
+      <div class="eyebrow published">${escapeHtml(config.eyebrow)}</div>
       <h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>
 ${body}
     </article>`;
@@ -1295,7 +1293,7 @@ async function legacyArticles(currentArticle) {
 
   const config = PHASE_CONFIG[PHASE];
   const currentMarkers = [
-    `<div class="eyebrow published">${escapeHtml(config.eyebrow)} <span class="issue-time">${escapeHtml(config.issueTime)}</span></div>`,
+    `<div class="eyebrow published">${escapeHtml(config.eyebrow)}</div>`,
     `<h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>`
   ];
   const articles = [
