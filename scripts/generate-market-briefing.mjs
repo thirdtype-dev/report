@@ -14,6 +14,7 @@ const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
 const ADSENSE_CLIENT = 'ca-pub-3518959293552717';
 const INVESTOR_FLOW_TIMEOUT_MS = Number.parseInt(process.env.INVESTOR_FLOW_TIMEOUT_MS ?? '45000', 10);
+const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
 const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*\breport-(?:pre|post)-market\b[^"]*">[\s\S]*?<\/article>/g;
 const YAHOO_SYMBOLS = [
   { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
@@ -958,6 +959,7 @@ async function callOpenRouter(prompt) {
 
   const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
+    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
     headers: {
       authorization: `Bearer ${apiKey}`,
       'content-type': 'application/json',
@@ -995,6 +997,7 @@ async function callGemini(prompt) {
 
   const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(FALLBACK_MODEL)}:generateContent`, {
     method: 'POST',
+    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
     headers: {
       'content-type': 'application/json',
       'x-goog-api-key': apiKey
