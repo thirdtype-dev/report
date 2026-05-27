@@ -62,9 +62,22 @@ const TELEGRAM_PUBLIC_CHANNELS = [
   'hogniel'
 ];
 const STOCK_CODE_OVERRIDES = new Map([
+  ['삼성전자', '005930'],
+  ['SK하이닉스', '000660'],
+  ['삼성화재', '000810'],
+  ['서울보증보험', '031210'],
+  ['ISC', '095340'],
+  ['현대차', '005380'],
+  ['LG전자', '066570'],
+  ['삼성전기', '009150'],
+  ['삼성물산', '028260'],
+  ['고려아연', '010130'],
+  ['SK스퀘어', '402340'],
+  ['네패스아크', '330860'],
+  ['녹십자', '006280'],
+  ['성호전자', '043260'],
   ['마키나락스', '377480'],
   ['소룩스', '290690'],
-  ['LG전자', '066570'],
   ['미래에셋증권', '006800'],
   ['엔에이치스팩33호', '0130H0']
 ]);
@@ -78,6 +91,13 @@ const COMPANY_STOPWORDS = new Set([
   '소식에', '우려', '기대', '열풍', '회복', '안착', '시험대', '직행', '역봉쇄', '호르무즈',
   '강세', '약세', '급등', '급락', '상승', '하락', '상한가', '하한가', '반등', '랠리', '완판',
   '국민성장펀드', '뉴스핌', '비즈니스포스트', '조선비즈', 'Chosunbiz', 'KB', 'Think', '주가'
+]);
+
+const NON_COMPANY_TOKENS = new Set([
+  '기술주', '반도체주', '증시', '코스피', '코스닥', '기관', '외국인', '개인', '수급',
+  '소폭', '급등주', '급락주', '상승세', '하락세', '상승', '하락', '반등', '급등', '급락',
+  '쇼크', '매수', '휘청', '지수', '일제히', '엔비디아',
+  '이란', '미국', '중국', '일본', '홍콩', '유럽', '호르무즈', '협상', '기대', '시험대'
 ]);
 
 function getKstParts(date = new Date()) {
@@ -202,9 +222,12 @@ function inferChangeRate(text, direction) {
 function isPlausibleCompanyToken(token) {
   if (!token) return false;
   if (COMPANY_STOPWORDS.has(token)) return false;
+  if (NON_COMPANY_TOKENS.has(token)) return false;
   if (token.length < 2 || token.length > 20) return false;
   if (!/[가-힣A-Za-z]/u.test(token)) return false;
   if (/^\d{1,5}$/u.test(token)) return false;
+  if (/^\d+(?:\.\d+)?[가-힣]+$/u.test(token)) return false;
+  if (/\d/u.test(token) && /(선|대|%|조|억)$/u.test(token)) return false;
   if (/^[A-Z]{1,2}$/u.test(token)) return false;
   if (/^(오늘|특징주|마감|증시|기관|외국인|코스피|코스닥)$/u.test(token)) return false;
   return true;
@@ -214,8 +237,21 @@ function normalizeCompanyName(token) {
   return cleanText(token)
     .replace(/[,'"“”‘’()\[\]]/gu, '')
     .replace(/^(주식회사|㈜)/u, '')
-    .replace(/(은|는|이|가|도)$/u, '')
+    .replace(/(은|는|이|가|도|을|를|에|서|로|과|와|만)$/u, '')
     .trim();
+}
+
+function getPreferredStockCode(stockName, currentCode = null) {
+  const existing = cleanText(currentCode);
+  if (existing) return existing;
+
+  const normalized = normalizeCompanyName(stockName);
+  if (!normalized) return null;
+
+  return STOCK_CODE_OVERRIDES.get(normalized)
+    ?? STOCK_CODE_OVERRIDES.get(normalized.replace(/\s+/gu, ''))
+    ?? STOCK_CODE_OVERRIDES.get(normalized.toUpperCase())
+    ?? null;
 }
 
 function extractCompanyName(headline) {
@@ -243,6 +279,9 @@ function extractCompanyName(headline) {
     .split(/[\s,·…:;!?/]+/u)
     .map(normalizeCompanyName)
     .filter(isPlausibleCompanyToken);
+
+  const mappedToken = tokens.find((token) => Boolean(getPreferredStockCode(token)));
+  if (mappedToken) return mappedToken;
 
   return tokens[0] ?? null;
 }
@@ -324,7 +363,10 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
 
   return {
     stockName: companyName,
-    stockCode: newest?.stockCode ?? articleGroup.find((item) => item.stockCode)?.stockCode ?? STOCK_CODE_OVERRIDES.get(companyName) ?? null,
+    stockCode: getPreferredStockCode(
+      companyName,
+      newest?.stockCode ?? articleGroup.find((item) => item.stockCode)?.stockCode ?? null
+    ),
     summary: supportingHeadline || headlineSummary,
     headline: newest?.headline ?? `${companyName} 관련 기사 흐름`,
     evidencePoints,
@@ -350,15 +392,38 @@ function getSignalKey(signal) {
   return `name:${cleanText(signal?.stockName).toLowerCase()}`;
 }
 
+function hydrateSignalMetadata(signal) {
+  if (!signal || typeof signal !== 'object') return signal;
+  const stockName = normalizeCompanyName(signal.stockName ?? '');
+  const stockCode = getPreferredStockCode(stockName, signal.stockCode);
+
+  return {
+    ...signal,
+    stockName,
+    stockCode
+  };
+}
+
+function isDisplayableSignal(signal) {
+  const stockName = normalizeCompanyName(signal?.stockName ?? '');
+  if (!isPlausibleCompanyToken(stockName)) return false;
+  if (NON_COMPANY_TOKENS.has(stockName)) return false;
+  if (!getPreferredStockCode(stockName, signal?.stockCode)) return false;
+  return true;
+}
+
 function mergeRealtimeSignals(newSignals, previousSignals, {
   freshBatchSize = REALTIME_FRESH_BATCH_SIZE,
   visibleLimit = REALTIME_VISIBLE_LIMIT
 } = {}) {
-  const previousList = Array.isArray(previousSignals) ? previousSignals : [];
-  const previousKeys = new Set(previousList.map(getSignalKey));
+  const previousList = Array.isArray(previousSignals) ? previousSignals.map(hydrateSignalMetadata) : [];
+  const hydratedNewSignals = Array.isArray(newSignals) ? newSignals.map(hydrateSignalMetadata) : [];
+  const filteredPreviousList = previousList.filter(isDisplayableSignal);
+  const previousKeys = new Set(filteredPreviousList.map(getSignalKey));
   const freshSignals = [];
 
-  for (const signal of newSignals) {
+  for (const signal of hydratedNewSignals) {
+    if (!isDisplayableSignal(signal)) continue;
     const key = getSignalKey(signal);
     if (previousKeys.has(key)) continue;
     if (freshSignals.some((item) => getSignalKey(item) === key)) continue;
@@ -369,14 +434,16 @@ function mergeRealtimeSignals(newSignals, previousSignals, {
   const freshKeys = new Set(freshSignals.map(getSignalKey));
   const mergedSignals = [
     ...freshSignals,
-    ...previousList.filter((signal) => !freshKeys.has(getSignalKey(signal)))
+    ...filteredPreviousList.filter((signal) => !freshKeys.has(getSignalKey(signal)))
   ].slice(0, visibleLimit);
 
   return { freshSignals, mergedSignals };
 }
 
 function buildItemsFromSignals(signals, generatedAt) {
-  return signals.map((signal) => ({
+  return signals.map((rawSignal) => {
+    const signal = hydrateSignalMetadata(rawSignal);
+    return ({
     timestamp: generatedAt,
     symbol: signal.stockCode,
     name: signal.stockName,
@@ -388,7 +455,8 @@ function buildItemsFromSignals(signals, generatedAt) {
     mentionScore: signal.mentionScore,
     evidencePoints: signal.evidencePoints,
     relatedPosts: signal.relatedPosts
-  }));
+    });
+  });
 }
 
 function buildFallbackPolish(signal) {
@@ -659,6 +727,7 @@ function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDat
 
   const signals = [...grouped.entries()]
     .map(([companyName, articleGroup]) => buildSignal(companyName, articleGroup, slotLabel, generatedAt))
+    .map(hydrateSignalMetadata)
     .sort((left, right) => {
       const leftPriority = left.hasTelegram ? 1 : 0;
       const rightPriority = right.hasTelegram ? 1 : 0;
@@ -743,7 +812,9 @@ async function main() {
   const polished = await polishSignals(freshSignals);
   const polishedFreshSignals = polished.signals;
   const polishedFreshByKey = new Map(polishedFreshSignals.map((signal) => [getSignalKey(signal), signal]));
-  const finalSignals = mergedSignals.map((signal) => polishedFreshByKey.get(getSignalKey(signal)) ?? signal);
+  const finalSignals = mergedSignals
+    .map((signal) => polishedFreshByKey.get(getSignalKey(signal)) ?? signal)
+    .map(hydrateSignalMetadata);
   const realtimePayload = {
     ...nextPayload,
     signals: finalSignals,
@@ -755,13 +826,19 @@ async function main() {
     },
     polishWriter: polished.writer
   };
+  const normalizedSignals = realtimePayload.signals.map(hydrateSignalMetadata);
+  const normalizedRealtimePayload = {
+    ...realtimePayload,
+    signals: normalizedSignals,
+    items: buildItemsFromSignals(normalizedSignals, generatedAt)
+  };
 
   const slotAdapter = {
     schema: 'urn:hermes:slot-adapter:v1',
     scheduleKey: schedule.key,
     cycleLabel: slotLabel.cycleLabel,
     slot: slotLabel.label,
-    state: realtimePayload.state === 'loaded' ? 'market-open' : realtimePayload.state,
+    state: normalizedRealtimePayload.state === 'loaded' ? 'market-open' : normalizedRealtimePayload.state,
     slotHour,
     title: `KST ${slotLabel.label} 슬롯`,
     subtitle: `${slotLabel.label} 기준 실시간 급등 상세 데이터`,
@@ -769,21 +846,21 @@ async function main() {
     generatedDate,
     kstGeneratedAt: formatKstHuman(now),
     reportRef: './realtime-surge.json',
-    itemCount: realtimePayload.signals.length,
+    itemCount: normalizedRealtimePayload.signals.length,
     writer,
     polishWriter: polished.writer
   };
 
   await fs.mkdir(publicDataDir, { recursive: true });
   await fs.writeFile(outputSlotAdapterPath, `${JSON.stringify(slotAdapter, null, 2)}\n`);
-  await fs.writeFile(outputRealtimePath, `${JSON.stringify(realtimePayload, null, 2)}\n`);
+  await fs.writeFile(outputRealtimePath, `${JSON.stringify(normalizedRealtimePayload, null, 2)}\n`);
 
   console.log(JSON.stringify({
     ok: true,
     slotHour,
     cycleLabel: slotLabel.cycleLabel,
     generatedAt,
-    signalCount: realtimePayload.signals.length
+    signalCount: normalizedRealtimePayload.signals.length
   }));
 }
 
