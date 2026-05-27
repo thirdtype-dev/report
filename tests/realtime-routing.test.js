@@ -64,12 +64,18 @@ test('realtime shell pages exist, are member-only, and route back to briefing', 
 
   assert.equal(rootRealtime, reportRealtime, 'root/report realtime shells must stay identical');
   includes(rootRealtime, 'data-room-link="./index.html"');
+  includes(rootRealtime, '<div class="eyebrow published">실시간 급등</div>');
+  includes(rootRealtime, 'id="realtime-title"');
+  includes(rootRealtime, 'function formatRealtimeTitle(slot)');
   includes(rootRealtime, "const dataBaseCandidates = window.location.pathname.includes('/report/')");
   includes(rootRealtime, "? ['./report/data', './data']");
   includes(rootRealtime, "async function resolveDataBase()");
   includes(rootRealtime, "const dataBase = await resolveDataBase();");
   includes(rootRealtime, 'function buildRelatedLinks(signal)');
   includes(rootRealtime, "signals.slice(0, 5).map(renderSignalCard).join('')");
+  includes(rootRealtime, "label: '긍정'");
+  includes(rootRealtime, "label: '우려'");
+  includes(rootRealtime, "return `${date} ${slotLabel} 기준`;");
   includes(rootRealtime, 'fetch(`${dataBase}/slot-adapter.json`');
   includes(rootRealtime, 'fetch(`${dataBase}/realtime-surge.json`');
   includes(rootRealtime, '관련기사1');

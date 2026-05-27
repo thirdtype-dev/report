@@ -102,6 +102,23 @@
         height: 5px;
         background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--warn));
       }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 13px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+      .eyebrow.published {
+        background: rgba(73, 209, 154, 0.16);
+        color: #a7f3d0;
+        border: 1px solid rgba(73, 209, 154, 0.24);
+      }
       .kicker {
         color: #bae6fd;
         font-size: 0.82rem;
@@ -282,7 +299,8 @@
         </div>
       </section>
       <article class="report">
-        <h1>실시간 급등</h1>
+        <div class="eyebrow published">실시간 급등</div>
+        <h1 id="realtime-title">실시간 슬롯 데이터 불러오는 중</h1>
         <section class="live-board" id="live-board" hidden>
           <div class="live-board-meta" id="live-board-meta">실시간 슬롯 데이터를 불러오는 중입니다.</div>
           <div class="signal-list" id="signal-list"></div>
@@ -291,6 +309,7 @@
       <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 브리핑에서 열리는 별도 페이지이므로 상단 버튼으로만 이동합니다.</section>
     </main>
     <script>
+      const realtimeTitle = document.getElementById('realtime-title');
       const liveBoard = document.getElementById('live-board');
       const liveBoardMeta = document.getElementById('live-board-meta');
       const signalList = document.getElementById('signal-list');
@@ -314,8 +333,8 @@
       }
 
       function formatBadge(signal) {
-        if (signal.direction === 'up') return { className: 'is-up', label: '급등' };
-        if (signal.direction === 'down') return { className: 'is-down', label: '급락' };
+        if (signal.direction === 'up') return { className: 'is-up', label: '긍정' };
+        if (signal.direction === 'down') return { className: 'is-down', label: '우려' };
         return { className: 'is-neutral', label: '중립' };
       }
 
@@ -329,6 +348,13 @@
           minute: '2-digit',
           hour12: false
         }).format(date);
+      }
+
+      function formatRealtimeTitle(slot) {
+        const date = String(slot.generatedDate || '').trim();
+        const slotLabel = String(slot.slot || '').trim();
+        if (date && slotLabel) return `${date} ${slotLabel} 기준`;
+        return slot.title || '실시간 급등';
       }
 
       function buildRelatedLinks(signal) {
@@ -356,8 +382,6 @@
       }
 
       function renderSignalCard(signal) {
-        const directionClass = signal.direction === 'up' ? 'is-up' : signal.direction === 'down' ? 'is-down' : 'is-neutral';
-        const directionLabel = signal.direction === 'up' ? '상승' : signal.direction === 'down' ? '하락' : '중립';
         const badge = formatBadge(signal);
         const relatedLinks = buildRelatedLinks(signal);
         const supportingText = buildSupportingText(signal);
@@ -377,7 +401,7 @@
                 <p class="signal-headline">${escapeHtml(signal.headline || signal.latestHeadline || signal.summary)}</p>
                 <p class="signal-summary">${escapeHtml(supportingText)}</p>
               </div>
-              <div class="signal-pill ${directionClass}">${escapeHtml(directionLabel)} ${escapeHtml(formatChangeRate(signal.changeRate))}</div>
+              <div class="signal-pill ${badge.className}">${escapeHtml(badge.label)} ${escapeHtml(formatChangeRate(signal.changeRate))}</div>
             </div>
             <div class="signal-footer">
               <div class="signal-links">
@@ -414,9 +438,11 @@
           const slot = await slotRes.json();
           const realtime = await realtimeRes.json();
           const signals = Array.isArray(realtime.signals) ? realtime.signals : [];
+          realtimeTitle.textContent = formatRealtimeTitle(slot);
           liveBoardMeta.textContent = `${slot.subtitle} / ${signals.length}개 후보 / ${slot.kstGeneratedAt}`;
 
           if (!signals.length) {
+            realtimeTitle.textContent = formatRealtimeTitle(slot);
             liveBoardMeta.textContent = '현재 조건을 충족하는 급등 후보가 없습니다.';
             signalList.innerHTML = '';
             liveBoard.hidden = false;
@@ -426,6 +452,7 @@
           signalList.innerHTML = signals.slice(0, 5).map(renderSignalCard).join('');
           liveBoard.hidden = false;
         } catch (error) {
+          realtimeTitle.textContent = '실시간 급등';
           liveBoardMeta.textContent = '실시간급등 데이터를 불러오지 못했습니다.';
           signalList.innerHTML = '';
           liveBoard.hidden = false;
