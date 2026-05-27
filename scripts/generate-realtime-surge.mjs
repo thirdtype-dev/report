@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SLOT_HOURS, SLOT_LABELS, SLOT_SCHEDULE } from './slot-constants.mjs';
+import { fetchTelegramPublicMessages, messagesToTelegramNewsCandidates } from './realtime-telegram-public.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,10 +13,15 @@ const outputSlotAdapterPath = path.join(publicDataDir, 'slot-adapter.json');
 const outputRealtimePath = path.join(publicDataDir, 'realtime-surge.json');
 
 const REPORT_TIMEZONE = 'Asia/Seoul';
-const WRITER = {
+const MARKET_RESEARCH_WRITER = {
   provider: 'market-research-news',
   model: 'rule-based-extractor-v1'
 };
+const TELEGRAM_PUBLIC_WRITER = {
+  provider: 'telegram-public-web',
+  model: 'rule-based-scraper-v1'
+};
+const TELEGRAM_PUBLIC_CHANNELS = ['YeouidoStory2', 'bumgore'];
 
 const COMPANY_STOPWORDS = new Set([
   '오늘의', '주목주', '특징주', '마감', '증시', '시장', '전망', '코스피', '코스닥', 'AI', 'MY',
@@ -121,6 +127,7 @@ function normalizeCompanyName(token) {
 function extractCompanyName(headline) {
   const cleanHeadline = stripPublisher(headline).replace(/^\[[^\]]+\]\s*/u, '').trim();
   const prioritizedPatterns = [
+    /([A-Za-z0-9가-힣&]+)\(\d{4,6}\)\s*(상한가|하한가|급등|급락|강세|약세|상승|하락|직행|내려)/u,
     /([A-Za-z0-9가-힣&]+)[^,·…]*따따블/u,
     /[“"'‘’][^“"'‘’]+[”"'‘’]\s*([A-Za-z0-9가-힣&]+)(?:\s+주가)?(?:은|는|도)?\s*(?:한때\s*)?(?:\d+(?:\.\d+)?%대?\s*)?(상한가|하한가|급등|급락|강세|약세|상승|하락|직행|내려)/u,
     /소식에[^\w가-힣A-Za-z0-9]*([A-Za-z0-9가-힣&]+)\s*(?:한때\s*)?(?:\d+(?:\.\d+)?%대?\s*)?(급등|급락|상승|하락)/u
@@ -148,7 +155,7 @@ function extractCompanyName(headline) {
 
 function toArticleCandidate(article, index) {
   const headline = stripPublisher(article.title);
-  const companyName = extractCompanyName(headline);
+  const companyName = normalizeCompanyName(article.companyName ?? '') || extractCompanyName(headline);
   if (!companyName) return null;
 
   const direction = inferDirection(headline);
@@ -229,9 +236,9 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
   };
 }
 
-function buildRealtimePayload(marketResearch, slotHour, generatedAt, generatedDate) {
+function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDate, options = {}) {
   const slotLabel = SLOT_LABELS[slotHour];
-  const candidates = (marketResearch.stockNewsCandidates ?? [])
+  const candidates = (articleSource.stockNewsCandidates ?? [])
     .map(toArticleCandidate)
     .filter(Boolean)
     .sort((left, right) => left.recencyHours - right.recencyHours);
@@ -270,13 +277,23 @@ function buildRealtimePayload(marketResearch, slotHour, generatedAt, generatedDa
     state: signals.length ? 'loaded' : 'empty',
     summary: {
       title: `KST ${slotLabel.label} 실시간 급등`,
-      subtitle: `시장 뉴스 기반 급등 후보 ${signals.length}건`,
-      basedOn: 'market-research stock news candidates'
+      subtitle: `${options.subtitlePrefix ?? '시장 뉴스 기반'} 급등 후보 ${signals.length}건`,
+      basedOn: options.basedOn ?? 'market-research stock news candidates'
     },
     signals,
     items,
-    writer: WRITER
+    writer: options.writer ?? MARKET_RESEARCH_WRITER
   };
+}
+
+async function loadTelegramSource() {
+  const fixtureDir = process.env.REALTIME_TELEGRAM_FIXTURE_DIR;
+  const results = await Promise.allSettled(
+    TELEGRAM_PUBLIC_CHANNELS.map((channel) => fetchTelegramPublicMessages(channel, { fixtureDir }))
+  );
+
+  const messages = results.flatMap((result) => result.status === 'fulfilled' ? result.value : []);
+  return messages.sort((left, right) => new Date(right.publishedAt).getTime() - new Date(left.publishedAt).getTime());
 }
 
 async function main() {
@@ -289,7 +306,21 @@ async function main() {
 
   const generatedAt = now.toISOString();
   const generatedDate = `${kst.year}-${kst.month}-${kst.day}`;
-  const realtimePayload = buildRealtimePayload(marketResearch, slotHour, generatedAt, generatedDate);
+  const telegramMessages = await loadTelegramSource();
+  const telegramCandidates = messagesToTelegramNewsCandidates(telegramMessages);
+  const usingTelegram = telegramCandidates.length > 0;
+  const writer = usingTelegram ? TELEGRAM_PUBLIC_WRITER : MARKET_RESEARCH_WRITER;
+  const realtimePayload = usingTelegram
+    ? buildRealtimePayload({ stockNewsCandidates: telegramCandidates }, slotHour, generatedAt, generatedDate, {
+      writer,
+      basedOn: 'public telegram channel mentions',
+      subtitlePrefix: '공개 텔레그램 채널 기반'
+    })
+    : buildRealtimePayload(marketResearch, slotHour, generatedAt, generatedDate, {
+      writer,
+      basedOn: 'market-research stock news candidates',
+      subtitlePrefix: '시장 뉴스 기반'
+    });
 
   const slotAdapter = {
     schema: 'urn:hermes:slot-adapter:v1',
@@ -305,7 +336,7 @@ async function main() {
     kstGeneratedAt: formatKstHuman(now),
     reportRef: './realtime-surge.json',
     itemCount: realtimePayload.signals.length,
-    writer: WRITER
+    writer
   };
 
   await fs.mkdir(publicDataDir, { recursive: true });
