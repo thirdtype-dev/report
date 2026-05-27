@@ -437,6 +437,33 @@ function chunkSignalsForPolish(signals, size = REALTIME_POLISH_BATCH_SIZE) {
   return chunks;
 }
 
+function buildRealtimePolishJsonSchema() {
+  return {
+    name: 'realtime_surge_polish',
+    strict: true,
+    schema: {
+      type: 'object',
+      properties: {
+        signals: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              stockName: { type: 'string', description: 'Exact stock name from the input row.' },
+              polishedHeadline: { type: 'string', description: 'Short Korean summary for the bold headline.' },
+              polishedBody: { type: 'string', description: 'Korean explanatory body using only provided facts.' }
+            },
+            required: ['stockName', 'polishedHeadline', 'polishedBody'],
+            additionalProperties: false
+          }
+        }
+      },
+      required: ['signals'],
+      additionalProperties: false
+    }
+  };
+}
+
 function extractGeminiText(body) {
   return body?.candidates?.[0]?.content?.parts?.map((part) => part?.text ?? '').join('') ?? '';
 }
@@ -475,6 +502,9 @@ async function callOpenRouterPolish(prompt, fallbackSignals) {
     },
     body: JSON.stringify({
       model: ANALYST_MODEL,
+      provider: {
+        require_parameters: true
+      },
       messages: [
         {
           role: 'system',
@@ -482,9 +512,13 @@ async function callOpenRouterPolish(prompt, fallbackSignals) {
         },
         { role: 'user', content: prompt }
       ],
-      temperature: 0.2,
+      temperature: 0,
       max_tokens: 2200,
-      response_format: { type: 'json_object' }
+      response_format: {
+        type: 'json_schema',
+        json_schema: buildRealtimePolishJsonSchema()
+      },
+      plugins: [{ id: 'response-healing' }]
     })
   });
 
