@@ -72,7 +72,7 @@ test('realtime shell pages exist, are member-only, and route back to briefing', 
   includes(rootRealtime, "async function resolveDataBase()");
   includes(rootRealtime, "const dataBase = await resolveDataBase();");
   includes(rootRealtime, 'function buildRelatedLinks(signal)');
-  includes(rootRealtime, "signals.slice(0, 5).map(renderSignalCard).join('')");
+  includes(rootRealtime, "signals.slice(0, 20).map(renderSignalCard).join('')");
   includes(rootRealtime, "label: '긍정'");
   includes(rootRealtime, "label: '우려'");
   includes(rootRealtime, "return `${date} ${slotLabel} 기준`;");

@@ -309,7 +309,7 @@ function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDat
       if (rightPriority !== leftPriority) return rightPriority - leftPriority;
       return right.mentionScore - left.mentionScore;
     })
-    .slice(0, options.maxSignals ?? 5);
+    .slice(0, options.maxSignals ?? 20);
 
   const items = signals.map((signal) => ({
     timestamp: generatedAt,
@@ -374,13 +374,13 @@ async function main() {
       writer,
       basedOn: 'public telegram channel mentions with market news backfill',
       subtitlePrefix: '공개 텔레그램 채널 기반',
-      maxSignals: 5
+      maxSignals: 20
     })
     : buildRealtimePayload(marketResearch, slotHour, generatedAt, generatedDate, {
       writer,
       basedOn: 'market-research stock news candidates',
       subtitlePrefix: '시장 뉴스 기반',
-      maxSignals: 5
+      maxSignals: 20
     });
 
   const slotAdapter = {
