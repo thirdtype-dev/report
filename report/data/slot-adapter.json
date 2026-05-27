@@ -1,19 +1,19 @@
 {
   "schema": "urn:hermes:slot-adapter:v1",
   "scheduleKey": "10:00-15:00",
-  "cycleLabel": "KST_1100",
-  "slot": "11:00",
+  "cycleLabel": "KST_1300",
+  "slot": "13:00",
   "state": "market-open",
-  "slotHour": 11,
-  "title": "KST 11:00 슬롯",
-  "subtitle": "11:00 기준 실시간 급등 상세 데이터",
-  "generatedAt": "2026-05-27T04:05:07.389Z",
+  "slotHour": 13,
+  "title": "KST 13:00 슬롯",
+  "subtitle": "13:00 기준 실시간 급등 상세 데이터",
+  "generatedAt": "2026-05-27T04:21:15.783Z",
   "generatedDate": "2026-05-27",
-  "kstGeneratedAt": "2026. 05. 27. 오후 1:05",
+  "kstGeneratedAt": "2026. 05. 27. 오후 1:21",
   "reportRef": "./realtime-surge.json",
   "itemCount": 5,
   "writer": {
-    "provider": "telegram-public-web",
-    "model": "rule-based-scraper-v1"
+    "provider": "market-research-news",
+    "model": "rule-based-extractor-v1"
   }
 }

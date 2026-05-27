@@ -22,6 +22,13 @@ const TELEGRAM_PUBLIC_WRITER = {
   model: 'rule-based-scraper-v1'
 };
 const TELEGRAM_PUBLIC_CHANNELS = ['YeouidoStory2', 'bumgore'];
+const STOCK_CODE_OVERRIDES = new Map([
+  ['마키나락스', '377480'],
+  ['소룩스', '290690'],
+  ['LG전자', '066570'],
+  ['미래에셋증권', '006800'],
+  ['엔에이치스팩33호', '0130H0']
+]);
 
 const COMPANY_STOPWORDS = new Set([
   '오늘의', '주목주', '특징주', '마감', '증시', '시장', '전망', '코스피', '코스닥', 'AI', 'MY',
@@ -230,7 +237,7 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
 
   return {
     stockName: companyName,
-    stockCode: newest?.stockCode ?? articleGroup.find((item) => item.stockCode)?.stockCode ?? null,
+    stockCode: newest?.stockCode ?? articleGroup.find((item) => item.stockCode)?.stockCode ?? STOCK_CODE_OVERRIDES.get(companyName) ?? null,
     summary: supportingHeadline || headlineSummary,
     headline: newest?.headline ?? `${companyName} 관련 기사 흐름`,
     evidencePoints,
