@@ -21,7 +21,37 @@ const TELEGRAM_PUBLIC_WRITER = {
   provider: 'telegram-public-web',
   model: 'rule-based-scraper-v1'
 };
-const TELEGRAM_PUBLIC_CHANNELS = ['YeouidoStory2', 'bumgore'];
+const TELEGRAM_PUBLIC_CHANNELS = [
+  'YeouidoStory2',
+  'bumgore',
+  'givme23',
+  'TNBfolio',
+  'Yeouido_Lab',
+  'JCxTB',
+  'Ten_level',
+  'lim_econ',
+  'hedgecat0301',
+  'huhpharm',
+  'capitalmosquito',
+  'JgrowthInv',
+  'ivy77788',
+  'DorisDD2033',
+  'fourgachi',
+  'bioksm',
+  'gatubang',
+  'free_life59',
+  'nje2e',
+  'silverman_sachs',
+  'jeilstock',
+  'investment_puzzle',
+  'd_ticker',
+  'merITz_tech',
+  'rafikiresearch',
+  'jake8lee',
+  'desperatestudycafe',
+  'habit4117',
+  'hogniel'
+];
 const STOCK_CODE_OVERRIDES = new Map([
   ['마키나락스', '377480'],
   ['소룩스', '290690'],
