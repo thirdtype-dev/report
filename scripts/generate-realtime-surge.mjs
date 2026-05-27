@@ -134,6 +134,38 @@ function trimBody(value) {
   return `${text.slice(0, POLISHED_BODY_MAX - 1).trimEnd()}…`;
 }
 
+function sanitizeNarrativeText(value) {
+  return cleanText(value)
+    .replace(/https?:\/\/\S+/giu, ' ')
+    .replace(/Telegram\s*@[\w_]+/giu, ' ')
+    .replace(/[📌📋🔔☞▶🔑🤖💰📈🏦🛡⚠️🌏]/gu, ' ')
+    .replace(/\b\d+️⃣/gu, ' ')
+    .replace(/\([^)]{0,24}\)/gu, (matched) => /\d{4,6}/u.test(matched) ? ' ' : matched)
+    .replace(/\s*[:：]\s*/gu, ' ')
+    .replace(/\s*[|/]\s*/gu, ' ')
+    .replace(/\s*-\s*/gu, '. ')
+    .replace(/\s+/gu, ' ')
+    .trim();
+}
+
+function splitNarrativeClauses(value) {
+  return sanitizeNarrativeText(value)
+    .split(/[.!?]\s+|▶|☞|(?:\s+\d+\.\s+)|(?:\s+[가-힣A-Za-z0-9]+(?:은|는|이|가)\s+)/u)
+    .map((part) => cleanText(part))
+    .filter((part) => part && part.length >= 12 && !/^https?/iu.test(part));
+}
+
+function pickLeadClause(value, stockName, maxLength = 90) {
+  const clauses = splitNarrativeClauses(value);
+  for (const clause of clauses) {
+    const normalized = clause.replace(new RegExp(`^${stockName}\\s*`, 'u'), '').trim();
+    if (!normalized) continue;
+    return truncateSentence(normalized, maxLength);
+  }
+  const fallback = sanitizeNarrativeText(value).replace(new RegExp(`^${stockName}\\s*`, 'u'), '').trim();
+  return truncateSentence(fallback, maxLength);
+}
+
 function stripPublisher(title) {
   return cleanText(title).replace(/\s+-\s+[^-]+$/u, '').trim();
 }
@@ -309,34 +341,46 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
 }
 
 function buildFallbackPolish(signal) {
-  const baseHeadline = truncateSentence(signal.headline || signal.latestHeadline || `${signal.stockName} 관련 흐름`, POLISHED_HEADLINE_MAX);
-  const bodyParts = [];
-  if (signal.summary) bodyParts.push(cleanText(signal.summary));
+  const lead = pickLeadClause(signal.headline || signal.latestHeadline || signal.summary, signal.stockName, POLISHED_HEADLINE_MAX - signal.stockName.length - 1);
+  const baseHeadline = truncateSentence(
+    lead ? `${signal.stockName} ${lead}`.trim() : `${signal.stockName} 관련 흐름`,
+    POLISHED_HEADLINE_MAX
+  );
 
-  const evidence = Array.isArray(signal.evidencePoints) ? signal.evidencePoints : [];
-  for (const point of evidence) {
-    const normalized = cleanText(point)
-      .replace(/^출처\s+/u, '')
-      .replace(/^제목 기준 변동률 단서\s*/u, '변동 단서 ')
-      .replace(/^상승\/강세 키워드 우세$/u, '상승 관련 키워드가 우세합니다.')
-      .replace(/^하락\/약세 키워드 우세$/u, '하락 관련 키워드가 우세합니다.');
-    if (!normalized) continue;
-    if (bodyParts.some((existing) => existing.includes(normalized) || normalized.includes(existing))) continue;
-    bodyParts.push(normalized);
-    if (bodyParts.length >= 4) break;
+  const sentences = [];
+  const summaryLead = pickLeadClause(signal.summary, signal.stockName, 120);
+  if (summaryLead) {
+    sentences.push(`${signal.stockName}는 ${summaryLead.replace(/\s+했다$/u, '한 상태입니다').replace(/\s+중$/u, ' 중입니다')}.`);
   }
 
-  let polishedBody = bodyParts.join(' ');
-  if (polishedBody.length < POLISHED_BODY_MIN && Array.isArray(signal.relatedPosts)) {
-    const relatedTitles = signal.relatedPosts
-      .map((item) => cleanText(item?.title))
-      .filter(Boolean)
-      .slice(0, 2);
-    for (const title of relatedTitles) {
-      if (polishedBody.includes(title)) continue;
-      polishedBody = `${polishedBody} ${title}`.trim();
-      if (polishedBody.length >= POLISHED_BODY_MIN) break;
-    }
+  const supportingLead = pickLeadClause(signal.headline, signal.stockName, 120);
+  if (supportingLead && !sentences.some((item) => item.includes(supportingLead.slice(0, 20)))) {
+    sentences.push(`${supportingLead}.`);
+  }
+
+  if (signal.channelCount > 0) {
+    sentences.push(`${signal.channelCount}개 채널 또는 기사에서 관련 언급이 겹쳤습니다.`);
+  }
+
+  if (typeof signal.changeRate === 'number' && !Number.isNaN(signal.changeRate)) {
+    const sign = signal.changeRate > 0 ? '+' : '';
+    sentences.push(`제목 기준 변동 단서는 ${sign}${signal.changeRate.toFixed(1)}%입니다.`);
+  }
+
+  const relatedTitles = Array.isArray(signal.relatedPosts)
+    ? signal.relatedPosts
+        .map((item) => pickLeadClause(item?.title, signal.stockName, 96))
+        .filter(Boolean)
+    : [];
+  for (const title of relatedTitles) {
+    if (sentences.some((item) => item.includes(title.slice(0, 18)))) continue;
+    sentences.push(`${title}.`);
+    if (sentences.length >= 4) break;
+  }
+
+  let polishedBody = sentences.join(' ');
+  if (polishedBody.length < POLISHED_BODY_MIN) {
+    polishedBody = `${polishedBody} 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다.`.trim();
   }
 
   return {
