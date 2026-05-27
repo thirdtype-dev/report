@@ -18,6 +18,7 @@ const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'openrouter/free';
 const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
+const REALTIME_POLISH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_POLISH_BATCH_SIZE ?? '5', 10);
 const MARKET_RESEARCH_WRITER = {
   provider: 'market-research-news',
   model: 'rule-based-extractor-v1'
@@ -427,6 +428,15 @@ function extractJsonBlock(raw) {
   return text;
 }
 
+function chunkSignalsForPolish(signals, size = REALTIME_POLISH_BATCH_SIZE) {
+  const batchSize = Math.max(1, size);
+  const chunks = [];
+  for (let index = 0; index < signals.length; index += batchSize) {
+    chunks.push(signals.slice(index, index + batchSize));
+  }
+  return chunks;
+}
+
 function extractGeminiText(body) {
   return body?.candidates?.[0]?.content?.parts?.map((part) => part?.text ?? '').join('') ?? '';
 }
@@ -473,7 +483,8 @@ async function callOpenRouterPolish(prompt, fallbackSignals) {
         { role: 'user', content: prompt }
       ],
       temperature: 0.2,
-      max_tokens: 2200
+      max_tokens: 2200,
+      response_format: { type: 'json_object' }
     })
   });
 
@@ -521,39 +532,62 @@ async function polishSignals(signals) {
     };
   }
 
-  const prompt = buildRealtimePolishPrompt(signals);
   const baseSignals = signals.map((signal) => ({ ...signal }));
+  const batches = chunkSignalsForPolish(baseSignals);
+  const mergedSignals = [];
+  const batchWriters = [];
 
-  try {
-    const polished = await callOpenRouterPolish(prompt, baseSignals);
-    return {
-      signals: baseSignals.map((signal, index) => ({ ...signal, ...polished[index] })),
-      writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
-    };
-  } catch (error) {
-    console.warn('[realtime-surge] openrouter polish failed; retrying gemini', {
-      provider: ANALYST_PROVIDER,
-      model: ANALYST_MODEL,
-      error: error?.message ?? String(error)
-    });
+  for (const [batchIndex, batchSignals] of batches.entries()) {
+    const prompt = buildRealtimePolishPrompt(batchSignals);
+
     try {
-      const polished = await callGeminiPolish(prompt, baseSignals);
-      return {
-        signals: baseSignals.map((signal, index) => ({ ...signal, ...polished[index] })),
-        writer: { provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason: 'primary_failed' }
-      };
+      const polished = await callOpenRouterPolish(prompt, batchSignals);
+      mergedSignals.push(...batchSignals.map((signal, index) => ({ ...signal, ...polished[index] })));
+      batchWriters.push({ provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null });
+      continue;
+    } catch (error) {
+      console.warn('[realtime-surge] openrouter polish failed; retrying gemini', {
+        provider: ANALYST_PROVIDER,
+        model: ANALYST_MODEL,
+        batchIndex: batchIndex + 1,
+        batchCount: batches.length,
+        batchSize: batchSignals.length,
+        error: error?.message ?? String(error)
+      });
+    }
+
+    try {
+      const polished = await callGeminiPolish(prompt, batchSignals);
+      mergedSignals.push(...batchSignals.map((signal, index) => ({ ...signal, ...polished[index] })));
+      batchWriters.push({ provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason: 'primary_failed' });
     } catch (fallbackError) {
       console.warn('[realtime-surge] gemini polish failed; using rule-based fallback', {
         provider: FALLBACK_PROVIDER,
         model: FALLBACK_MODEL,
+        batchIndex: batchIndex + 1,
+        batchCount: batches.length,
+        batchSize: batchSignals.length,
         error: fallbackError?.message ?? String(fallbackError)
       });
-      return {
-        signals: baseSignals.map((signal) => ({ ...signal, ...buildFallbackPolish(signal) })),
-        writer: { provider: 'rule-based-fallback', model: 'signal-polish-v1', fallbackReason: 'all_failed' }
-      };
+      mergedSignals.push(...batchSignals.map((signal) => ({ ...signal, ...buildFallbackPolish(signal) })));
+      batchWriters.push({ provider: 'rule-based-fallback', model: 'signal-polish-v1', fallbackReason: 'all_failed' });
     }
   }
+
+  const providers = [...new Set(batchWriters.map((writer) => writer.provider))];
+  if (providers.length === 1) {
+    return { signals: mergedSignals, writer: batchWriters[0] };
+  }
+
+  const fallbackReasons = [...new Set(batchWriters.map((writer) => writer.fallbackReason).filter(Boolean))];
+  return {
+    signals: mergedSignals,
+    writer: {
+      provider: 'mixed',
+      model: [...new Set(batchWriters.map((writer) => writer.model))].join(', '),
+      fallbackReason: fallbackReasons.includes('all_failed') ? 'mixed_with_fallback' : 'partial_primary_failed'
+    }
+  };
 }
 
 function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDate, options = {}) {
@@ -691,4 +725,8 @@ await main();
 
 export function __testBuildRealtimePolishPrompt(signals) {
   return buildRealtimePolishPrompt(signals);
+}
+
+export function __testChunkSignalsForPolish(signals, size) {
+  return chunkSignalsForPolish(signals, size);
 }

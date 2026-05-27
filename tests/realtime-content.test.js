@@ -124,3 +124,14 @@ test('realtime polish prompt stays compact and excludes raw evidence blobs', asy
   assert.ok(!prompt.includes('매우 긴 원문 블롭'));
   assert.ok(prompt.includes('"headline":"SK하이닉스 가 시총 1조 달러를 돌파했다"'));
 });
+
+test('realtime polish requests are chunked into stable batch sizes', async () => {
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const signals = Array.from({ length: 20 }, (_, index) => ({ stockName: `종목${index + 1}` }));
+  const batches = module.__testChunkSignalsForPolish(signals, 5);
+
+  assert.equal(batches.length, 4);
+  assert.deepEqual(batches.map((batch) => batch.length), [5, 5, 5, 5]);
+  assert.equal(batches[0][0].stockName, '종목1');
+  assert.equal(batches[3][4].stockName, '종목20');
+});
