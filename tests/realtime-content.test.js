@@ -191,3 +191,41 @@ test('realtime merge keeps 20 visible items and only prepends 5 new unique signa
   assert.ok(!merged.mergedSignals.some((signal, index) => index < 5 && signal.stockName.startsWith('기존')));
   assert.ok(merged.mergedSignals.some((signal) => signal.stockName === '기존3'));
 });
+
+test('realtime payload blocks unmapped stock candidates before accumulation', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const payload = module.__testBuildRealtimePayload({
+    stockNewsCandidates: [
+      {
+        companyName: '삼성전자',
+        title: '삼성전자 강세',
+        summary: '반도체 수요 기대감',
+        source: 'Telegram test',
+        sourceUrl: 'https://example.com/1',
+        publishedAt: '2026-05-27T01:00:00+00:00'
+      },
+      {
+        companyName: '견인',
+        title: '지수 견인',
+        summary: '비종목 토큰',
+        source: 'Telegram test',
+        sourceUrl: 'https://example.com/2',
+        publishedAt: '2026-05-27T01:01:00+00:00'
+      },
+      {
+        companyName: '미확인종목',
+        title: '미확인종목 강세',
+        summary: '코드 매핑 없음',
+        source: 'Telegram test',
+        sourceUrl: 'https://example.com/3',
+        publishedAt: '2026-05-27T01:02:00+00:00'
+      }
+    ]
+  }, 14, '2026-05-27T05:00:00.000Z', '2026-05-27', { maxSignals: 10 });
+
+  assert.deepEqual(
+    payload.signals.map((signal) => ({ name: signal.stockName, code: signal.stockCode })),
+    [{ name: '삼성전자', code: '005930' }]
+  );
+});

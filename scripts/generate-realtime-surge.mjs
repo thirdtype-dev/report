@@ -728,6 +728,7 @@ function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDat
   const signals = [...grouped.entries()]
     .map(([companyName, articleGroup]) => buildSignal(companyName, articleGroup, slotLabel, generatedAt))
     .map(hydrateSignalMetadata)
+    .filter(isDisplayableSignal)
     .sort((left, right) => {
       const leftPriority = left.hasTelegram ? 1 : 0;
       const rightPriority = right.hasTelegram ? 1 : 0;
@@ -876,4 +877,8 @@ export function __testChunkSignalsForPolish(signals, size) {
 
 export function __testMergeRealtimeSignals(newSignals, previousSignals, options) {
   return mergeRealtimeSignals(newSignals, previousSignals, options);
+}
+
+export function __testBuildRealtimePayload(articleSource, slotHour, generatedAt, generatedDate, options) {
+  return buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDate, options);
 }
