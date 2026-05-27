@@ -65,7 +65,10 @@ test('realtime shell pages exist, are member-only, and route back to briefing', 
   assert.equal(rootRealtime, reportRealtime, 'root/report realtime shells must stay identical');
   includes(rootRealtime, 'data-room-link="./index.html"');
   includes(rootRealtime, '브리핑 페이지에서 버튼으로 열리는 별도 페이지');
-  includes(rootRealtime, "window.location.pathname.includes('/report/') ? './data' : './report/data'");
+  includes(rootRealtime, "const dataBaseCandidates = window.location.pathname.includes('/report/')");
+  includes(rootRealtime, "? ['./report/data', './data']");
+  includes(rootRealtime, "async function resolveDataBase()");
+  includes(rootRealtime, "const dataBase = await resolveDataBase();");
   includes(rootRealtime, 'fetch(`${dataBase}/slot-adapter.json`');
   includes(rootRealtime, 'fetch(`${dataBase}/realtime-surge.json`');
   includes(rootRealtime, '슬롯별 급등 후보');

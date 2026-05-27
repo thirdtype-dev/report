@@ -357,12 +357,14 @@
       <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 브리핑에서 열리는 별도 페이지이므로 상단 버튼으로만 이동합니다.</section>
     </main>
     <script>
-      const dataBase = window.location.pathname.includes('/report/') ? './data' : './report/data';
       const loadedSummary = document.getElementById('loaded-summary');
       const loadedPreview = document.getElementById('loaded-preview');
       const liveBoard = document.getElementById('live-board');
       const liveBoardMeta = document.getElementById('live-board-meta');
       const signalList = document.getElementById('signal-list');
+      const dataBaseCandidates = window.location.pathname.includes('/report/')
+        ? ['./report/data', './data']
+        : ['./report/data', './data'];
 
       function escapeHtml(value) {
         return String(value ?? '')
@@ -413,8 +415,21 @@
         `;
       }
 
+      async function resolveDataBase() {
+        for (const candidate of dataBaseCandidates) {
+          try {
+            const slotRes = await fetch(`${candidate}/slot-adapter.json`, { cache: 'no-store' });
+            if (slotRes.ok) return candidate;
+          } catch (error) {
+            // Try the next known publication path.
+          }
+        }
+        throw new Error('data_base_not_found');
+      }
+
       async function loadRealtimeSurge() {
         try {
+          const dataBase = await resolveDataBase();
           const [slotRes, realtimeRes] = await Promise.all([
             fetch(`${dataBase}/slot-adapter.json`, { cache: 'no-store' }),
             fetch(`${dataBase}/realtime-surge.json`, { cache: 'no-store' })
