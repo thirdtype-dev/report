@@ -1,13 +1,6 @@
 name: Publish Market Briefing
 
 on:
-  schedule:
-    - cron: '30 23 * * 0-4'
-    - cron: '35 23 * * 0-4'
-    - cron: '40 23 * * 0-4'
-    - cron: '0 7 * * 1-5'
-    - cron: '5 7 * * 1-5'
-    - cron: '10 7 * * 1-5'
   workflow_dispatch:
     inputs:
       phase:
@@ -63,7 +56,7 @@ jobs:
       - name: Generate briefing
         if: steps.trading_day.outputs.is_trading_day == 'true'
         env:
-          BRIEFING_PHASE: ${{ inputs.phase || ((github.event.schedule == '0 7 * * 1-5' || github.event.schedule == '5 7 * * 1-5' || github.event.schedule == '10 7 * * 1-5') && 'post_market' || 'pre_market') }}
+          BRIEFING_PHASE: ${{ inputs.phase || 'pre_market' }}
           ANALYST_PROVIDER: openrouter
           ANALYST_MODEL: openrouter/free
           ANALYST_FALLBACK_PROVIDER: gemini

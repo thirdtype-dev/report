@@ -4,7 +4,7 @@
 
 ## 현재 운영 목표
 
-- GitHub Actions 클라우드에서 장시작/장마감 브리핑을 자동 생성한다.
+- GitHub Actions는 브리핑/실시간급등 생성 실행 엔진이고, 실제 스케줄 트리거는 외부 Cloud Scheduler가 담당한다.
 - 생성된 HTML은 GitHub Pages의 루트 `index.html`과 `/report/index.html`에 발행한다.
 - 로컬 PC가 꺼져 있어도 발행은 GitHub Actions runner에서 수행된다.
 - 브리핑 페이지는 상단 `리딩방` 제목과 `브리핑 / 실시간급등` 버튼형 탭 구조를 유지한다.
@@ -14,8 +14,11 @@
 ## 주요 파일
 
 - `.github/workflows/publish-market-briefing.yml`
-  - 정기/수동 발행 워크플로.
+  - 외부 scheduler가 `workflow_dispatch`로 호출하는 브리핑 발행 워크플로.
   - Node 22, Python 3.12, `pykrx==1.2.8` 설치 후 생성기를 실행한다.
+- `.github/workflows/publish-realtime-surge.yml`
+  - 외부 scheduler가 `workflow_dispatch`로 호출하는 실시간급등 슬롯 발행 워크플로.
+  - `slot_hour` 입력을 받아 `slot-adapter.json`과 `realtime-surge.json`을 갱신한다.
 - `scripts/generate-market-briefing.mjs`
   - 데이터 수집, LLM 호출, HTML 생성의 핵심 스크립트.
 - `scripts/fetch_investor_flows.py`
@@ -37,22 +40,22 @@
 
 ## 발행 스케줄
 
-GitHub Actions `schedule`은 UTC 기준이다. 현재 KST 기준 스케줄은 다음과 같다.
+실제 운영 스케줄은 GitHub Actions 내부 `schedule`이 아니라 외부 Cloud Scheduler 기준이다.
 
 | 구분 | KST | UTC cron | 역할 |
 | --- | --- | --- | --- |
-| 장시작 | 08:20 | `20 23 * * 0-4` | 1차 발행 |
-| 장시작 | 08:25 | `25 23 * * 0-4` | 백업 |
-| 장시작 | 08:30 | `30 23 * * 0-4` | 백업 |
-| 장마감 | 15:50 | `50 6 * * 1-5` | 1차 발행 |
-| 장마감 | 15:55 | `55 6 * * 1-5` | 백업 |
-| 장마감 | 16:00 | `0 7 * * 1-5` | 백업 |
+| 장시작 | 08:30 | `30 23 * * 0-4` | 1차 발행 |
+| 장시작 | 08:35 | `35 23 * * 0-4` | 백업 |
+| 장시작 | 08:40 | `40 23 * * 0-4` | 백업 |
+| 장마감 | 16:00 | `0 7 * * 1-5` | 1차 발행 |
+| 장마감 | 16:05 | `5 7 * * 1-5` | 백업 |
+| 장마감 | 16:10 | `10 7 * * 1-5` | 백업 |
+| 실시간급등 | 10:00~15:00 매시 정각 | `0 1-6 * * 1-5` | 장중 슬롯 갱신 |
 
-`BRIEFING_PHASE` 매핑:
+Cloud Scheduler는 Cloud Run relay를 호출하고, relay가 GitHub `workflow_dispatch`를 보낸다.
 
-- `15:50`, `15:55`, `16:00` 스케줄은 `post_market`.
-- 그 외 정기 스케줄은 `pre_market`.
-- 수동 실행 시 `workflow_dispatch.inputs.phase`로 `pre_market` 또는 `post_market`을 직접 지정한다.
+- 브리핑 수동 실행 시 `workflow_dispatch.inputs.phase`로 `pre_market` 또는 `post_market` 지정
+- 실시간급등 수동 실행 시 `workflow_dispatch.inputs.slot_hour`로 `10`~`15` 지정
 
 휴장일 게이트:
 
@@ -60,7 +63,7 @@ GitHub Actions `schedule`은 UTC 기준이다. 현재 KST 기준 스케줄은 �
 - 거래일이 아니면 생성/배포/커밋 단계를 모두 건너뛴다.
 - 수동 실행도 같은 기준으로 스킵된다.
 
-주의: GitHub Actions scheduled workflow는 정시 보장형 스케줄러가 아니다. GitHub 부하에 따라 지연되거나 트리거가 누락될 수 있다. 그래서 같은 발행 구간에 백업 스케줄을 여러 개 둔다.
+주의: GitHub Actions scheduled workflow는 정시 보장형 스케줄러가 아니므로 운영 스케줄은 GitHub 밖으로 뺐다. GitHub Actions는 dispatch-only로 유지한다.
 
 ## 휴장일 기준
 
