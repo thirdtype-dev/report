@@ -166,6 +166,7 @@ function toArticleCandidate(article, index) {
   return {
     id: `${companyName}-${index}`,
     companyName,
+    stockCode: article.stockCode ?? null,
     headline,
     summary: cleanText(article.summary),
     source: cleanText(article.source),
@@ -214,13 +215,24 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
   const direction = newest?.direction ?? 'neutral';
   const sentimentLabel = direction === 'up' ? 'positive' : direction === 'down' ? 'negative' : 'neutral';
   const headlineSummary = newest?.summary || newest?.headline || `${companyName} 관련 기사 흐름이 포착됐습니다.`;
+  const supportingHeadline = articleGroup.find((item) => item.headline && item.headline !== newest?.headline)?.headline ?? null;
   const evidencePoints = buildEvidence(articleGroup);
   const mentionScore = computeMentionScore(articleGroup);
+  const relatedPosts = articleGroup
+    .filter((item) => item.sourceUrl)
+    .slice(0, 3)
+    .map((item, index) => ({
+      label: `관련기사${index + 1}`,
+      title: item.headline,
+      source: item.source,
+      url: item.sourceUrl
+    }));
 
   return {
     stockName: companyName,
-    stockCode: null,
-    summary: `${companyName} 관련 기사 ${articleGroup.length}건을 묶은 슬롯 신호입니다. ${headlineSummary}`,
+    stockCode: newest?.stockCode ?? articleGroup.find((item) => item.stockCode)?.stockCode ?? null,
+    summary: supportingHeadline || headlineSummary,
+    headline: newest?.headline ?? `${companyName} 관련 기사 흐름`,
     evidencePoints,
     mentionScore,
     sentimentLabel,
@@ -232,7 +244,8 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
     latestHeadline: newest?.headline ?? null,
     source: newest?.source ?? null,
     sourceUrl: newest?.sourceUrl ?? null,
-    publishedAt: newest?.publishedAt ?? null
+    publishedAt: newest?.publishedAt ?? null,
+    relatedPosts
   };
 }
 
@@ -253,7 +266,7 @@ function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDat
   const signals = [...grouped.entries()]
     .map(([companyName, articleGroup]) => buildSignal(companyName, articleGroup, slotLabel, generatedAt))
     .sort((left, right) => right.mentionScore - left.mentionScore)
-    .slice(0, 6);
+    .slice(0, options.maxSignals ?? 5);
 
   const items = signals.map((signal) => ({
     timestamp: generatedAt,
@@ -264,9 +277,10 @@ function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDat
     summary: signal.summary,
     source: signal.source,
     sourceUrl: signal.sourceUrl,
-    mentionScore: signal.mentionScore,
-    evidencePoints: signal.evidencePoints
-  }));
+      mentionScore: signal.mentionScore,
+      evidencePoints: signal.evidencePoints,
+      relatedPosts: signal.relatedPosts
+    }));
 
   return {
     generated_at: generatedAt,
@@ -308,18 +322,22 @@ async function main() {
   const generatedDate = `${kst.year}-${kst.month}-${kst.day}`;
   const telegramMessages = await loadTelegramSource();
   const telegramCandidates = messagesToTelegramNewsCandidates(telegramMessages);
+  const marketResearchCandidates = Array.isArray(marketResearch.stockNewsCandidates) ? marketResearch.stockNewsCandidates : [];
+  const combinedCandidates = [...telegramCandidates, ...marketResearchCandidates];
   const usingTelegram = telegramCandidates.length > 0;
   const writer = usingTelegram ? TELEGRAM_PUBLIC_WRITER : MARKET_RESEARCH_WRITER;
   const realtimePayload = usingTelegram
-    ? buildRealtimePayload({ stockNewsCandidates: telegramCandidates }, slotHour, generatedAt, generatedDate, {
+    ? buildRealtimePayload({ stockNewsCandidates: combinedCandidates }, slotHour, generatedAt, generatedDate, {
       writer,
-      basedOn: 'public telegram channel mentions',
-      subtitlePrefix: '공개 텔레그램 채널 기반'
+      basedOn: 'public telegram channel mentions with market news backfill',
+      subtitlePrefix: '공개 텔레그램 채널 기반',
+      maxSignals: 5
     })
     : buildRealtimePayload(marketResearch, slotHour, generatedAt, generatedDate, {
       writer,
       basedOn: 'market-research stock news candidates',
-      subtitlePrefix: '시장 뉴스 기반'
+      subtitlePrefix: '시장 뉴스 기반',
+      maxSignals: 5
     });
 
   const slotAdapter = {

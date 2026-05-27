@@ -71,6 +71,11 @@ function extractTelegramCompanyName(text) {
   return null;
 }
 
+function extractTelegramStockCode(text) {
+  const matched = text.match(/\(([0-9]{4,6})(?:,[A-Z]{2})?\)/u);
+  return matched?.[1] ?? null;
+}
+
 function buildTelegramHeadline(text, companyName) {
   const normalized = cleanText(text)
     .replace(/\[[^\]]*\]/g, ' ')
@@ -102,6 +107,7 @@ export function messagesToTelegramNewsCandidates(messages) {
 
     return [{
       companyName,
+      stockCode: extractTelegramStockCode(text),
       title: buildTelegramHeadline(text, companyName),
       summary: `Telegram @${message.channel} 공개 채널 멘션`,
       source: `Telegram @${message.channel}`,

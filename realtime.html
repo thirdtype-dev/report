@@ -114,180 +114,161 @@
         font-size: clamp(1.55rem, 5vw, 2.25rem);
         letter-spacing: -0.05em;
       }
-      .report p, .state-card p, .state-card li { color: var(--soft); }
-      .state-shell {
-        margin-top: 18px;
-        padding-top: 16px;
-        border-top: 1px solid var(--line);
-      }
-      .state-shell h2 {
-        margin: 0 0 12px;
-        font-size: 1.05rem;
-        letter-spacing: -0.03em;
-      }
-      .state-grid {
-        display: grid;
-        gap: 12px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .state-card {
-        padding: 16px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
-      }
-      .state-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-bottom: 10px;
-        padding: 6px 10px;
-        border-radius: 999px;
-        font-size: 0.78rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-      .state-label.is-loading { color: #bae6fd; background: rgba(56, 189, 248, 0.12); }
-      .state-label.is-empty { color: #fde68a; background: rgba(248, 212, 119, 0.12); }
-      .state-label.is-error { color: #fecaca; background: rgba(248, 113, 113, 0.12); }
-      .state-label.is-loaded { color: #a7f3d0; background: rgba(73, 209, 154, 0.12); }
-      .state-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-bottom: 8px;
-        padding: 6px 10px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        color: var(--soft);
-        font-size: 0.82rem;
-      }
-      .state-card ul {
-        margin: 10px 0 0;
-        padding-left: 18px;
-      }
-      .state-card li + li { margin-top: 6px; }
-      .state-stream {
-        display: grid;
-        gap: 8px;
-        margin-top: 8px;
-      }
-      .state-stream-item {
-        padding: 10px 12px;
-        border: 1px solid rgba(148, 163, 184, 0.16);
-        border-radius: 14px;
-        background: rgba(8, 16, 29, 0.38);
-      }
-      .state-stream-item strong {
-        display: block;
-        margin-bottom: 4px;
-        color: #fff;
-      }
       .live-board {
-        margin-top: 18px;
-        padding-top: 18px;
-        border-top: 1px solid var(--line);
+        margin-top: 16px;
       }
       .live-board[hidden] { display: none; }
-      .live-board-header {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 10px;
-        margin-bottom: 14px;
-      }
-      .live-board-title {
-        margin: 0;
-        font-size: 1.08rem;
-        letter-spacing: -0.03em;
-      }
       .live-board-meta {
+        margin-bottom: 14px;
         color: var(--muted);
         font-size: 0.84rem;
       }
       .signal-list {
         display: grid;
-        gap: 12px;
+        gap: 14px;
       }
       .signal-card {
-        padding: 16px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+        padding: 20px 22px 16px;
+        border: 1px solid rgba(190, 210, 255, 0.34);
+        border-radius: 22px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 249, 255, 0.96));
+        box-shadow:
+          0 18px 32px rgba(4, 12, 24, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.65);
       }
       .signal-head {
         display: flex;
-        justify-content: space-between;
         align-items: flex-start;
         gap: 12px;
       }
+      .signal-head-main {
+        flex: 1;
+        min-width: 0;
+      }
+      .signal-topline {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .signal-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 24px;
+        padding: 0 10px;
+        border-radius: 999px;
+        font-size: 0.79rem;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+      }
+      .signal-badge.is-up {
+        color: #ffffff;
+        background: linear-gradient(135deg, #16a34a, #22c55e);
+      }
+      .signal-badge.is-down {
+        color: #ffffff;
+        background: linear-gradient(135deg, #dc2626, #fb7185);
+      }
+      .signal-badge.is-neutral {
+        color: #ffffff;
+        background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      }
+      .signal-name-row {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
       .signal-name {
         margin: 0;
-        color: #fff;
-        font-size: 1rem;
+        color: #111827;
+        font-size: 1.85rem;
         font-weight: 800;
+        letter-spacing: -0.05em;
+      }
+      .signal-code {
+        color: #94a3b8;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      .signal-headline {
+        margin: 0;
+        color: #1f2937;
+        font-size: 1.1rem;
+        font-weight: 800;
+        line-height: 1.45;
+        letter-spacing: -0.03em;
       }
       .signal-summary {
-        margin: 10px 0 0;
-        color: var(--soft);
+        margin: 8px 0 0;
+        color: #64748b;
+        font-size: 0.96rem;
         line-height: 1.55;
       }
       .signal-pill {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        padding: 7px 11px;
+        gap: 5px;
+        padding: 7px 10px;
         border-radius: 999px;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         font-weight: 900;
       }
       .signal-pill.is-up {
-        color: #052218;
-        background: linear-gradient(135deg, rgba(73, 209, 154, 0.96), rgba(134, 239, 172, 0.96));
+        color: #166534;
+        background: rgba(34, 197, 94, 0.12);
       }
       .signal-pill.is-down {
-        color: #fff1f2;
-        background: linear-gradient(135deg, rgba(244, 63, 94, 0.92), rgba(251, 113, 133, 0.92));
+        color: #be123c;
+        background: rgba(244, 63, 94, 0.12);
       }
       .signal-pill.is-neutral {
-        color: #dbeafe;
-        background: rgba(59, 130, 246, 0.24);
+        color: #b45309;
+        background: rgba(245, 158, 11, 0.14);
       }
-      .signal-meta {
+      .signal-footer {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 12px;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 14px;
       }
-      .signal-meta span {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 10px;
-        border: 1px solid rgba(148, 163, 184, 0.18);
-        border-radius: 999px;
-        color: var(--soft);
-        font-size: 0.79rem;
+      .signal-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
       }
-      .signal-evidence {
-        margin: 12px 0 0;
-        padding-left: 18px;
+      .signal-link {
+        color: #4f46e5;
+        font-size: 0.84rem;
+        font-weight: 700;
+        text-decoration: none;
       }
-      .signal-evidence li + li { margin-top: 6px; }
+      .signal-link:hover {
+        text-decoration: underline;
+      }
+      .signal-time {
+        color: #94a3b8;
+        font-size: 0.82rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
       .disclaimer {
         margin-top: 16px;
-        padding: 14px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
         color: var(--muted);
+        font-size: 0.82rem;
       }
       @media (max-width: 640px) {
         .page { padding: 10px; }
         .room-header { margin: -10px -10px 14px; padding: 14px 10px 12px; }
         .room-tab { padding: 9px 10px; font-size: 0.9rem; }
         .report { border-radius: 22px; padding: 18px 14px; }
-        .state-grid { grid-template-columns: 1fr; }
+        .signal-card { padding: 18px 16px 14px; }
+        .signal-name { font-size: 1.55rem; }
+        .signal-head { flex-direction: column; }
       }
     </style>
   </head>
@@ -302,63 +283,14 @@
       </section>
       <article class="report">
         <h1>실시간 급등</h1>
-        <p>브리핑 페이지에서 버튼으로 열리는 별도 페이지이며, 상단 chrome과 상태 shell을 유지한 채 실시간 데이터만 교체하도록 설계했습니다.</p>
-
-        <section class="state-shell" aria-labelledby="state-shell-title">
-          <h2 id="state-shell-title">상태 shell</h2>
-          <div class="state-grid">
-            <section class="state-card" aria-label="loading state">
-              <div class="state-label is-loading">loading</div>
-              <div class="state-badge">연결 대기</div>
-              <p>실시간 급등 시세를 불러오는 중입니다. 초기 연결, 재시도, 폴링 대기 상태를 모두 포함하는 기본 셸입니다.</p>
-              <div class="state-stream">
-                <div class="state-stream-item"><strong>진행</strong>브리핑 버튼에서 이동 후 데이터 채널을 초기화합니다.</div>
-                <div class="state-stream-item"><strong>보호</strong>최초 로딩 실패 시 자동으로 오류 상태로 전환됩니다.</div>
-              </div>
-            </section>
-            <section class="state-card" aria-label="empty state">
-              <div class="state-label is-empty">empty</div>
-              <div class="state-badge">표시 없음</div>
-              <p>아직 급등 후보가 없을 때 보여줄 빈 화면입니다. 회원 전용 프레임과 안내 문구만 남기고 리스트를 비워둡니다.</p>
-              <ul>
-                <li>조건 미충족 종목 없음</li>
-                <li>다음 갱신 시점 예약</li>
-              </ul>
-            </section>
-            <section class="state-card" aria-label="error state">
-              <div class="state-label is-error">error</div>
-              <div class="state-badge">복구 필요</div>
-              <p>네트워크 끊김, 파싱 오류, 서버 응답 지연 같은 문제를 별도 상태로 드러내는 오류 패널입니다.</p>
-              <ul>
-                <li>재시도 버튼 표시</li>
-                <li>마지막 정상 갱신 시각 유지</li>
-              </ul>
-            </section>
-            <section class="state-card" aria-label="loaded state">
-              <div class="state-label is-loaded">loaded</div>
-              <div class="state-badge">실데이터</div>
-              <p id="loaded-summary">슬롯 데이터를 읽는 즉시 종목명, 방향성, 근거, 출처를 카드 형태로 렌더링합니다.</p>
-              <div class="state-stream" id="loaded-preview">
-                <div class="state-stream-item"><strong>실데이터 대기</strong>공개 JSON을 불러오면 이 영역이 실제 종목 후보로 교체됩니다.</div>
-              </div>
-            </section>
-          </div>
-        </section>
         <section class="live-board" id="live-board" hidden>
-          <div class="live-board-header">
-            <div>
-              <h2 class="live-board-title">슬롯별 급등 후보</h2>
-              <div class="live-board-meta" id="live-board-meta">실시간 슬롯 데이터를 불러오는 중입니다.</div>
-            </div>
-          </div>
+          <div class="live-board-meta" id="live-board-meta">실시간 슬롯 데이터를 불러오는 중입니다.</div>
           <div class="signal-list" id="signal-list"></div>
         </section>
       </article>
       <section class="disclaimer">본 서비스의 투자 정보는 단순 참고용이며, 종목 추천이나 투자 권유가 아닙니다. 브리핑에서 열리는 별도 페이지이므로 상단 버튼으로만 이동합니다.</section>
     </main>
     <script>
-      const loadedSummary = document.getElementById('loaded-summary');
-      const loadedPreview = document.getElementById('loaded-preview');
       const liveBoard = document.getElementById('live-board');
       const liveBoardMeta = document.getElementById('live-board-meta');
       const signalList = document.getElementById('signal-list');
@@ -381,36 +313,78 @@
         return `${sign}${value.toFixed(1)}%`;
       }
 
-      function renderPreview(signals) {
-        loadedPreview.innerHTML = signals.slice(0, 2).map((signal) => `
-          <div class="state-stream-item">
-            <strong>${escapeHtml(signal.stockName)}</strong>
-            ${escapeHtml(signal.summary)}
-          </div>
-        `).join('');
+      function formatBadge(signal) {
+        if (signal.direction === 'up') return { className: 'is-up', label: '급등' };
+        if (signal.direction === 'down') return { className: 'is-down', label: '급락' };
+        return { className: 'is-neutral', label: '중립' };
+      }
+
+      function formatPublishedTime(value) {
+        if (!value) return '';
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return '';
+        return new Intl.DateTimeFormat('ko-KR', {
+          timeZone: 'Asia/Seoul',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        }).format(date);
+      }
+
+      function buildRelatedLinks(signal) {
+        const relatedPosts = Array.isArray(signal.relatedPosts) ? signal.relatedPosts : [];
+        const links = relatedPosts.filter((item) => item?.url).slice(0, 3);
+        if (!links.length && signal.sourceUrl) {
+          return [{
+            label: '관련기사1',
+            url: signal.sourceUrl
+          }];
+        }
+        return links.map((item, index) => ({
+          label: item.label || `관련기사${index + 1}`,
+          url: item.url
+        }));
+      }
+
+      function buildSupportingText(signal) {
+        const summary = String(signal.summary || '').trim();
+        if (summary && !/공개 채널 멘션|market research/i.test(summary)) return summary;
+        const relatedPosts = Array.isArray(signal.relatedPosts) ? signal.relatedPosts : [];
+        const secondary = relatedPosts.find((item) => item?.title && item.title !== signal.headline);
+        if (secondary?.title) return secondary.title;
+        return summary || '관련 포스트를 통해 추가 근거를 확인할 수 있습니다.';
       }
 
       function renderSignalCard(signal) {
         const directionClass = signal.direction === 'up' ? 'is-up' : signal.direction === 'down' ? 'is-down' : 'is-neutral';
         const directionLabel = signal.direction === 'up' ? '상승' : signal.direction === 'down' ? '하락' : '중립';
-        const evidence = Array.isArray(signal.evidencePoints) ? signal.evidencePoints : [];
+        const badge = formatBadge(signal);
+        const relatedLinks = buildRelatedLinks(signal);
+        const supportingText = buildSupportingText(signal);
+        const stockCode = signal.stockCode ? `${signal.stockCode}` : '';
+        const timeLabel = formatPublishedTime(signal.publishedAt || signal.updatedAt);
         return `
           <article class="signal-card">
             <div class="signal-head">
-              <div>
-                <h3 class="signal-name">${escapeHtml(signal.stockName)}</h3>
-                <p class="signal-summary">${escapeHtml(signal.summary)}</p>
+              <div class="signal-head-main">
+                <div class="signal-topline">
+                  <span class="signal-badge ${badge.className}">${escapeHtml(badge.label)}</span>
+                  <div class="signal-name-row">
+                    <h3 class="signal-name">${escapeHtml(signal.stockName)}</h3>
+                    ${stockCode ? `<span class="signal-code">${escapeHtml(stockCode)}</span>` : ''}
+                  </div>
+                </div>
+                <p class="signal-headline">${escapeHtml(signal.headline || signal.latestHeadline || signal.summary)}</p>
+                <p class="signal-summary">${escapeHtml(supportingText)}</p>
               </div>
               <div class="signal-pill ${directionClass}">${escapeHtml(directionLabel)} ${escapeHtml(formatChangeRate(signal.changeRate))}</div>
             </div>
-            <div class="signal-meta">
-              <span>점수 ${escapeHtml(signal.mentionScore)}</span>
-              <span>출처 ${escapeHtml(signal.source || 'market research')}</span>
-              <span>채널 ${escapeHtml(signal.channelCount || 1)}개</span>
+            <div class="signal-footer">
+              <div class="signal-links">
+                ${relatedLinks.map((item) => `<a class="signal-link" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)}</a>`).join('')}
+              </div>
+              <div class="signal-time">${escapeHtml(timeLabel)}</div>
             </div>
-            <ul class="signal-evidence">
-              ${evidence.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
-            </ul>
           </article>
         `;
       }
@@ -440,24 +414,21 @@
           const slot = await slotRes.json();
           const realtime = await realtimeRes.json();
           const signals = Array.isArray(realtime.signals) ? realtime.signals : [];
-
-          loadedSummary.textContent = `${slot.title} · ${slot.kstGeneratedAt} · ${signals.length}개 후보`;
           liveBoardMeta.textContent = `${slot.subtitle} / ${signals.length}개 후보 / ${slot.kstGeneratedAt}`;
 
           if (!signals.length) {
-            loadedPreview.innerHTML = '<div class="state-stream-item"><strong>빈 슬롯</strong>현재 조건을 충족하는 급등 후보가 없습니다.</div>';
+            liveBoardMeta.textContent = '현재 조건을 충족하는 급등 후보가 없습니다.';
             signalList.innerHTML = '';
-            liveBoard.hidden = true;
+            liveBoard.hidden = false;
             return;
           }
 
-          renderPreview(signals);
-          signalList.innerHTML = signals.map(renderSignalCard).join('');
+          signalList.innerHTML = signals.slice(0, 5).map(renderSignalCard).join('');
           liveBoard.hidden = false;
         } catch (error) {
-          loadedSummary.textContent = '슬롯 데이터를 불러오지 못했습니다. 마지막 정상 발행본을 확인해 주세요.';
-          loadedPreview.innerHTML = '<div class="state-stream-item"><strong>오류</strong>실시간급등 데이터 로드에 실패했습니다.</div>';
-          liveBoard.hidden = true;
+          liveBoardMeta.textContent = '실시간급등 데이터를 불러오지 못했습니다.';
+          signalList.innerHTML = '';
+          liveBoard.hidden = false;
         }
       }
 

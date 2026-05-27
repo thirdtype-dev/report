@@ -80,7 +80,13 @@ test('realtime generator prefers telegram public signals when fixtures are avail
   assert.equal(realtime.cycle_label, 'KST_1100');
   assert.ok(Array.isArray(realtime.signals[0].evidencePoints));
   assert.ok(realtime.signals[0].evidencePoints.length > 0);
-  assert.equal(realtime.summary.basedOn, 'public telegram channel mentions');
+  assert.equal(realtime.summary.basedOn, 'public telegram channel mentions with market news backfill');
   assert.equal(realtime.signals[0].stockName, '마키나락스');
   assert.ok(realtime.signals[0].channelCount >= 2);
+  assert.ok(realtime.signals.length <= 5);
+  assert.ok(realtime.signals.length >= 5);
+  assert.equal(realtime.signals[0].stockCode, '377480');
+  assert.ok(Array.isArray(realtime.signals[0].relatedPosts));
+  assert.ok(realtime.signals[0].relatedPosts.length >= 1);
+  assert.equal(realtime.signals[0].relatedPosts[0].label, '관련기사1');
 });
