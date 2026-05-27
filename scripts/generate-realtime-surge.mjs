@@ -393,11 +393,15 @@ function buildRealtimePolishPrompt(signals) {
   const payload = signals.map((signal) => ({
     stockName: signal.stockName,
     stockCode: signal.stockCode,
-    headline: signal.headline,
-    summary: signal.summary,
-    evidencePoints: signal.evidencePoints,
-    relatedPosts: signal.relatedPosts?.map((item) => ({ title: item.title, source: item.source })),
-    direction: signal.direction
+    headline: truncateSentence(signal.headline, 140),
+    summary: truncateSentence(signal.summary, 180),
+    relatedPosts: signal.relatedPosts?.slice(0, 2).map((item) => ({
+      title: truncateSentence(item.title, 100),
+      source: item.source
+    })),
+    direction: signal.direction,
+    changeRate: signal.changeRate,
+    channelCount: signal.channelCount
   }));
 
   return [
@@ -468,7 +472,8 @@ async function callOpenRouterPolish(prompt, fallbackSignals) {
         },
         { role: 'user', content: prompt }
       ],
-      temperature: 0.2
+      temperature: 0.2,
+      max_tokens: 2200
     })
   });
 
@@ -492,7 +497,8 @@ async function callGeminiPolish(prompt, fallbackSignals) {
       contents: [{ role: 'user', parts: [{ text: prompt }] }],
       generationConfig: {
         temperature: 0.2,
-        responseMimeType: 'application/json'
+        responseMimeType: 'application/json',
+        maxOutputTokens: 2200
       }
     })
   });
@@ -525,13 +531,23 @@ async function polishSignals(signals) {
       writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
     };
   } catch (error) {
+    console.warn('[realtime-surge] openrouter polish failed; retrying gemini', {
+      provider: ANALYST_PROVIDER,
+      model: ANALYST_MODEL,
+      error: error?.message ?? String(error)
+    });
     try {
       const polished = await callGeminiPolish(prompt, baseSignals);
       return {
         signals: baseSignals.map((signal, index) => ({ ...signal, ...polished[index] })),
         writer: { provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason: 'primary_failed' }
       };
-    } catch {
+    } catch (fallbackError) {
+      console.warn('[realtime-surge] gemini polish failed; using rule-based fallback', {
+        provider: FALLBACK_PROVIDER,
+        model: FALLBACK_MODEL,
+        error: fallbackError?.message ?? String(fallbackError)
+      });
       return {
         signals: baseSignals.map((signal) => ({ ...signal, ...buildFallbackPolish(signal) })),
         writer: { provider: 'rule-based-fallback', model: 'signal-polish-v1', fallbackReason: 'all_failed' }
@@ -672,3 +688,7 @@ async function main() {
 }
 
 await main();
+
+export function __testBuildRealtimePolishPrompt(signals) {
+  return buildRealtimePolishPrompt(signals);
+}

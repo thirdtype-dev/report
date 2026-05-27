@@ -96,3 +96,31 @@ test('realtime generator prefers telegram public signals when fixtures are avail
   assert.ok(realtime.signals[0].polishedBody.length >= 120);
   assert.ok(realtime.signals[0].polishedBody.length <= 360);
 });
+
+test('realtime polish prompt stays compact and excludes raw evidence blobs', async () => {
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const prompt = module.__testBuildRealtimePolishPrompt([
+    {
+      stockName: 'SK하이닉스',
+      stockCode: '000660',
+      headline: 'SK하이닉스 가 시총 1조 달러를 돌파했다',
+      summary: 'HBM 실적 개선과 목표주가 상향이 함께 부각됐다',
+      relatedPosts: [
+        { title: '미래에셋증권, SK하이닉스 목표주가 상향', source: '기사' },
+        { title: '외국인 순매수세 유입', source: '텔레그램' }
+      ],
+      evidencePoints: [
+        '출처 Telegram @investment_puzzle, 비즈니스포스트 기반 기사 3건',
+        '제목 기준 변동률 단서 +19.0%',
+        '매우 긴 원문 블롭 '.repeat(40)
+      ],
+      direction: 'up',
+      changeRate: 19,
+      channelCount: 2
+    }
+  ]);
+
+  assert.ok(prompt.length < 2500);
+  assert.ok(!prompt.includes('매우 긴 원문 블롭'));
+  assert.ok(prompt.includes('"headline":"SK하이닉스 가 시총 1조 달러를 돌파했다"'));
+});
