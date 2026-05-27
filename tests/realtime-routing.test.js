@@ -66,6 +66,10 @@ test('realtime shell pages exist, are member-only, and route back to briefing', 
   includes(rootRealtime, '유료 회원 전용');
   includes(rootRealtime, 'data-room-link="./index.html"');
   includes(rootRealtime, '브리핑 페이지에서 버튼으로 열리는 별도 페이지');
+  includes(rootRealtime, "window.location.pathname.includes('/report/') ? './data' : './report/data'");
+  includes(rootRealtime, 'fetch(`${dataBase}/slot-adapter.json`');
+  includes(rootRealtime, 'fetch(`${dataBase}/realtime-surge.json`');
+  includes(rootRealtime, '슬롯별 급등 후보');
 });
 
 test('operations doc describes realtime as a separate page, not a toast placeholder', () => {
