@@ -1,45 +1,135 @@
 {
-  "generated_at": "2026-05-27T03:58:11.311Z",
+  "generated_at": "2026-05-27T04:05:07.389Z",
   "generated_date": "2026-05-27",
-  "slot_hour": 12,
-  "cycle_label": "KST_1200",
-  "slot_label": "12:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 12:00 실시간 급등",
-    "subtitle": "시장 뉴스 기반 급등 후보 5건",
-    "basedOn": "market-research stock news candidates"
+    "title": "KST 11:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 5건",
+    "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
       "stockName": "마키나락스",
-      "stockCode": null,
-      "summary": "[증시 오늘(20일) 핵심 특징주] 마키나락스 상장 첫날 ‘따따블’ 직행…세아홀딩스·한성크린텍 급등 호재 만발 thefairnews.co.kr",
-      "headline": "[증시 오늘(20일) 핵심 특징주] 마키나락스 상장 첫날 ‘따따블’ 직행…세아홀딩스·한성크린텍 급등 호재 만발",
+      "stockCode": "377480",
+      "summary": "마키나락스 상한가 직행, AI 인프라 수혜 기대감 부각",
+      "headline": "마키나락스 기관 수급 재유입 확인",
       "evidencePoints": [
-        "출처 thefairnews.co.kr 기반 기사 1건",
-        "제목 기준 변동률 단서 +300.0%",
-        "[증시 오늘(20일) 핵심 특징주] 마키나락스 상장 첫날 ‘따따블’ 직행…세아홀딩스·한성크린텍 급등 호재 만발"
+        "출처 Telegram @bumgore, Telegram @YeouidoStory2, thefairnews.co.kr 기반 기사 3건",
+        "제목 기준 변동률 단서 +30.0%",
+        "마키나락스 기관 수급 재유입 확인",
+        "마키나락스 상한가 직행, AI 인프라 수혜 기대감 부각"
       ],
       "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-05-27T03:58:11.311Z",
-      "cycleLabel": "KST_1200",
-      "direction": "up",
-      "changeRate": 300,
-      "latestHeadline": "[증시 오늘(20일) 핵심 특징주] 마키나락스 상장 첫날 ‘따따블’ 직행…세아홀딩스·한성크린텍 급등 호재 만발",
-      "source": "thefairnews.co.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5QM3pmU05nX244ZXJMMGNVMU1EZUNkMzIycUtxYUNvYjdWRE80azlVS00zQ1FmNTBqUV93OUxZZW9rYlpQZE1IaFhoNTdYTmNvY1JFSE9PVzF3M0xYYjNraHBLWjJaQlpibEtJMFF2MWrSAXRBVV95cUxQSnFLQUJqMUMtVHVYZkJCQW5IWWNYV0F4TW1VMWk4UG9RLUtwTFNBMFV5OGc5N1M4aTFRSHh6VEN0NTBrSjluU1hxQkwzX2tzUU92b084UjJlcVZLNEw1bE1wbjFSU21md3J3eFRRRzFqQWlpQQ?oc=5",
-      "publishedAt": "Wed, 20 May 2026 01:37:06 GMT",
+      "sentimentLabel": "neutral",
+      "channelCount": 3,
+      "updatedAt": "2026-05-27T04:05:07.389Z",
+      "cycleLabel": "KST_1100",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "마키나락스 기관 수급 재유입 확인",
+      "source": "Telegram @bumgore",
+      "sourceUrl": "https://t.me/bumgore/88321",
+      "publishedAt": "2026-05-27T01:31:00+00:00",
       "relatedPosts": [
         {
           "label": "관련기사1",
+          "title": "마키나락스 기관 수급 재유입 확인",
+          "source": "Telegram @bumgore",
+          "url": "https://t.me/bumgore/88321"
+        },
+        {
+          "label": "관련기사2",
+          "title": "마키나락스 상한가 직행, AI 인프라 수혜 기대감 부각",
+          "source": "Telegram @YeouidoStory2",
+          "url": "https://t.me/YeouidoStory2/112896"
+        },
+        {
+          "label": "관련기사3",
           "title": "[증시 오늘(20일) 핵심 특징주] 마키나락스 상장 첫날 ‘따따블’ 직행…세아홀딩스·한성크린텍 급등 호재 만발",
           "source": "thefairnews.co.kr",
           "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5QM3pmU05nX244ZXJMMGNVMU1EZUNkMzIycUtxYUNvYjdWRE80azlVS00zQ1FmNTBqUV93OUxZZW9rYlpQZE1IaFhoNTdYTmNvY1JFSE9PVzF3M0xYYjNraHBLWjJaQlpibEtJMFF2MWrSAXRBVV95cUxQSnFLQUJqMUMtVHVYZkJCQW5IWWNYV0F4TW1VMWk4UG9RLUtwTFNBMFV5OGc5N1M4aTFRSHh6VEN0NTBrSjluU1hxQkwzX2tzUU92b084UjJlcVZLNEw1bE1wbjFSU21md3J3eFRRRzFqQWlpQQ?oc=5"
         }
-      ]
+      ],
+      "hasTelegram": true
+    },
+    {
+      "stockName": "소룩스",
+      "stockCode": null,
+      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+      "headline": "소룩스 지배구조 재편 기대감 반영",
+      "evidencePoints": [
+        "출처 Telegram @bumgore, Chosunbiz 기반 기사 2건",
+        "제목 기준 변동률 단서 -25.0%",
+        "소룩스 지배구조 재편 기대감 반영",
+        "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-05-27T04:05:07.389Z",
+      "cycleLabel": "KST_1100",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "소룩스 지배구조 재편 기대감 반영",
+      "source": "Telegram @bumgore",
+      "sourceUrl": "https://t.me/bumgore/88322",
+      "publishedAt": "2026-05-27T01:24:00+00:00",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "소룩스 지배구조 재편 기대감 반영",
+          "source": "Telegram @bumgore",
+          "url": "https://t.me/bumgore/88322"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5"
+        }
+      ],
+      "hasTelegram": true
+    },
+    {
+      "stockName": "LG전자",
+      "stockCode": null,
+      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+      "headline": "LG전자 전장 기대감에 수급 유입",
+      "evidencePoints": [
+        "출처 Telegram @YeouidoStory2, 비즈니스포스트 기반 기사 2건",
+        "제목 기준 변동률 단서 +30.0%",
+        "LG전자 전장 기대감에 수급 유입",
+        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-05-27T04:05:07.389Z",
+      "cycleLabel": "KST_1100",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "LG전자 전장 기대감에 수급 유입",
+      "source": "Telegram @YeouidoStory2",
+      "sourceUrl": "https://t.me/YeouidoStory2/112897",
+      "publishedAt": "2026-05-27T01:18:00+00:00",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 전장 기대감에 수급 유입",
+          "source": "Telegram @YeouidoStory2",
+          "url": "https://t.me/YeouidoStory2/112897"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
+        }
+      ],
+      "hasTelegram": true
     },
     {
       "stockName": "엔에이치스팩33호",
@@ -54,8 +144,8 @@
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
       "channelCount": 1,
-      "updatedAt": "2026-05-27T03:58:11.311Z",
-      "cycleLabel": "KST_1200",
+      "updatedAt": "2026-05-27T04:05:07.389Z",
+      "cycleLabel": "KST_1100",
       "direction": "up",
       "changeRate": 208,
       "latestHeadline": "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈",
@@ -69,37 +159,8 @@
           "source": "Chosunbiz",
           "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQ1pEbUVhT09lTlhaUkp2UTZNb2JyaWRYWmhYNmVBR2g3N250d29pNElQdzFYT19CM3hBdmstMkxiR1haWmtrMV9pUGRMU1lFZHJGbmtGcjlIYU1NazFQU1FQazRxdzhVWEJuaTc0SWNwTUFEX285YWd0eWRLelVhRWxVc2NpZ2vSAZsBQVVfeXFMTjBPT1NObFBHeGVrWHRKOGpjNUt1S3FFZm9WX0ktX3VVTVFDVklYYVpBV0RaY1VmYjl2WV9GYkpKa1lLVzJnQVVhQ19HWXNpOWNPcmRReGZOTDNrUGZOeGhfeUpxQjFYWG1kVDRUVzhFT1lhenBZdXlPMTlJMVFqVEZDbUk0aml6RFdvQlFjc2ZrbDJhMkhjcnluOUk?oc=5"
         }
-      ]
-    },
-    {
-      "stockName": "LG전자",
-      "stockCode": null,
-      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
-      "headline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 +30.0%",
-        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
       ],
-      "mentionScore": 80,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-05-27T03:58:11.311Z",
-      "cycleLabel": "KST_1200",
-      "direction": "up",
-      "changeRate": 30,
-      "latestHeadline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
-      "publishedAt": "Thu, 21 May 2026 08:35:02 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
-        }
-      ]
+      "hasTelegram": false
     },
     {
       "stockName": "미래에셋증권",
@@ -115,8 +176,8 @@
       "mentionScore": 62,
       "sentimentLabel": "negative",
       "channelCount": 1,
-      "updatedAt": "2026-05-27T03:58:11.311Z",
-      "cycleLabel": "KST_1200",
+      "updatedAt": "2026-05-27T04:05:07.389Z",
+      "cycleLabel": "KST_1100",
       "direction": "down",
       "changeRate": -7,
       "latestHeadline": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
@@ -136,58 +197,42 @@
           "source": "비즈니스포스트",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1OdVNoQXM2TWxxdVg0dkFCT3NiODdhM2RzVjdnUlFBOERzTmtqcUlmeFppYWtLbHhYQjhHVXloNDZLenBVQ0k5UExtZm1TMnJYbEN3WHdOZjcxbDNacTlXWFZmQnp1ZkNOWmMwNlByZEhuQ1k?oc=5"
         }
-      ]
-    },
-    {
-      "stockName": "소룩스",
-      "stockCode": null,
-      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈 Chosunbiz",
-      "headline": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
-      "evidencePoints": [
-        "출처 Chosunbiz 기반 기사 1건",
-        "제목 기준 변동률 단서 -25.0%",
-        "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈"
       ],
-      "mentionScore": 56,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-05-27T03:58:11.311Z",
-      "cycleLabel": "KST_1200",
-      "direction": "down",
-      "changeRate": -25,
-      "latestHeadline": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
-      "source": "Chosunbiz",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5",
-      "publishedAt": "Mon, 18 May 2026 07:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5"
-        }
-      ]
+      "hasTelegram": false
     }
   ],
   "items": [
     {
-      "timestamp": "2026-05-27T03:58:11.311Z",
-      "symbol": null,
+      "timestamp": "2026-05-27T04:05:07.389Z",
+      "symbol": "377480",
       "name": "마키나락스",
-      "changeRate": 300,
+      "changeRate": null,
       "price": null,
-      "summary": "[증시 오늘(20일) 핵심 특징주] 마키나락스 상장 첫날 ‘따따블’ 직행…세아홀딩스·한성크린텍 급등 호재 만발 thefairnews.co.kr",
-      "source": "thefairnews.co.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5QM3pmU05nX244ZXJMMGNVMU1EZUNkMzIycUtxYUNvYjdWRE80azlVS00zQ1FmNTBqUV93OUxZZW9rYlpQZE1IaFhoNTdYTmNvY1JFSE9PVzF3M0xYYjNraHBLWjJaQlpibEtJMFF2MWrSAXRBVV95cUxQSnFLQUJqMUMtVHVYZkJCQW5IWWNYV0F4TW1VMWk4UG9RLUtwTFNBMFV5OGc5N1M4aTFRSHh6VEN0NTBrSjluU1hxQkwzX2tzUU92b084UjJlcVZLNEw1bE1wbjFSU21md3J3eFRRRzFqQWlpQQ?oc=5",
+      "summary": "마키나락스 상한가 직행, AI 인프라 수혜 기대감 부각",
+      "source": "Telegram @bumgore",
+      "sourceUrl": "https://t.me/bumgore/88321",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 thefairnews.co.kr 기반 기사 1건",
-        "제목 기준 변동률 단서 +300.0%",
-        "[증시 오늘(20일) 핵심 특징주] 마키나락스 상장 첫날 ‘따따블’ 직행…세아홀딩스·한성크린텍 급등 호재 만발"
+        "출처 Telegram @bumgore, Telegram @YeouidoStory2, thefairnews.co.kr 기반 기사 3건",
+        "제목 기준 변동률 단서 +30.0%",
+        "마키나락스 기관 수급 재유입 확인",
+        "마키나락스 상한가 직행, AI 인프라 수혜 기대감 부각"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
+          "title": "마키나락스 기관 수급 재유입 확인",
+          "source": "Telegram @bumgore",
+          "url": "https://t.me/bumgore/88321"
+        },
+        {
+          "label": "관련기사2",
+          "title": "마키나락스 상한가 직행, AI 인프라 수혜 기대감 부각",
+          "source": "Telegram @YeouidoStory2",
+          "url": "https://t.me/YeouidoStory2/112896"
+        },
+        {
+          "label": "관련기사3",
           "title": "[증시 오늘(20일) 핵심 특징주] 마키나락스 상장 첫날 ‘따따블’ 직행…세아홀딩스·한성크린텍 급등 호재 만발",
           "source": "thefairnews.co.kr",
           "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5QM3pmU05nX244ZXJMMGNVMU1EZUNkMzIycUtxYUNvYjdWRE80azlVS00zQ1FmNTBqUV93OUxZZW9rYlpQZE1IaFhoNTdYTmNvY1JFSE9PVzF3M0xYYjNraHBLWjJaQlpibEtJMFF2MWrSAXRBVV95cUxQSnFLQUJqMUMtVHVYZkJCQW5IWWNYV0F4TW1VMWk4UG9RLUtwTFNBMFV5OGc5N1M4aTFRSHh6VEN0NTBrSjluU1hxQkwzX2tzUU92b084UjJlcVZLNEw1bE1wbjFSU21md3J3eFRRRzFqQWlpQQ?oc=5"
@@ -195,7 +240,69 @@
       ]
     },
     {
-      "timestamp": "2026-05-27T03:58:11.311Z",
+      "timestamp": "2026-05-27T04:05:07.389Z",
+      "symbol": null,
+      "name": "소룩스",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+      "source": "Telegram @bumgore",
+      "sourceUrl": "https://t.me/bumgore/88322",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 Telegram @bumgore, Chosunbiz 기반 기사 2건",
+        "제목 기준 변동률 단서 -25.0%",
+        "소룩스 지배구조 재편 기대감 반영",
+        "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "소룩스 지배구조 재편 기대감 반영",
+          "source": "Telegram @bumgore",
+          "url": "https://t.me/bumgore/88322"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-27T04:05:07.389Z",
+      "symbol": null,
+      "name": "LG전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+      "source": "Telegram @YeouidoStory2",
+      "sourceUrl": "https://t.me/YeouidoStory2/112897",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 Telegram @YeouidoStory2, 비즈니스포스트 기반 기사 2건",
+        "제목 기준 변동률 단서 +30.0%",
+        "LG전자 전장 기대감에 수급 유입",
+        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 전장 기대감에 수급 유입",
+          "source": "Telegram @YeouidoStory2",
+          "url": "https://t.me/YeouidoStory2/112897"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-27T04:05:07.389Z",
       "symbol": null,
       "name": "엔에이치스팩33호",
       "changeRate": 208,
@@ -219,31 +326,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-27T03:58:11.311Z",
-      "symbol": null,
-      "name": "LG전자",
-      "changeRate": 30,
-      "price": null,
-      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
-      "mentionScore": 80,
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 +30.0%",
-        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-05-27T03:58:11.311Z",
+      "timestamp": "2026-05-27T04:05:07.389Z",
       "symbol": null,
       "name": "미래에셋증권",
       "changeRate": -7,
@@ -272,34 +355,10 @@
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1OdVNoQXM2TWxxdVg0dkFCT3NiODdhM2RzVjdnUlFBOERzTmtqcUlmeFppYWtLbHhYQjhHVXloNDZLenBVQ0k5UExtZm1TMnJYbEN3WHdOZjcxbDNacTlXWFZmQnp1ZkNOWmMwNlByZEhuQ1k?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "2026-05-27T03:58:11.311Z",
-      "symbol": null,
-      "name": "소룩스",
-      "changeRate": -25,
-      "price": null,
-      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈 Chosunbiz",
-      "source": "Chosunbiz",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5",
-      "mentionScore": 56,
-      "evidencePoints": [
-        "출처 Chosunbiz 기반 기사 1건",
-        "제목 기준 변동률 단서 -25.0%",
-        "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
-    "provider": "market-research-news",
-    "model": "rule-based-extractor-v1"
+    "provider": "telegram-public-web",
+    "model": "rule-based-scraper-v1"
   }
 }

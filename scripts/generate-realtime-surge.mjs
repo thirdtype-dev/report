@@ -245,7 +245,8 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
     source: newest?.source ?? null,
     sourceUrl: newest?.sourceUrl ?? null,
     publishedAt: newest?.publishedAt ?? null,
-    relatedPosts
+    relatedPosts,
+    hasTelegram: articleGroup.some((item) => String(item.source || '').startsWith('Telegram'))
   };
 }
 
@@ -265,7 +266,12 @@ function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDat
 
   const signals = [...grouped.entries()]
     .map(([companyName, articleGroup]) => buildSignal(companyName, articleGroup, slotLabel, generatedAt))
-    .sort((left, right) => right.mentionScore - left.mentionScore)
+    .sort((left, right) => {
+      const leftPriority = left.hasTelegram ? 1 : 0;
+      const rightPriority = right.hasTelegram ? 1 : 0;
+      if (rightPriority !== leftPriority) return rightPriority - leftPriority;
+      return right.mentionScore - left.mentionScore;
+    })
     .slice(0, options.maxSignals ?? 5);
 
   const items = signals.map((signal) => ({
