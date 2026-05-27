@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
 const sourceMarketResearchPath = path.join(repoRoot, 'report', 'data', 'market-research.json');
+const sourceRealtimePath = path.join(repoRoot, 'report', 'data', 'realtime-surge.json');
 const publicDataDir = path.join(repoRoot, 'public', 'report', 'data');
 const outputSlotAdapterPath = path.join(publicDataDir, 'slot-adapter.json');
 const outputRealtimePath = path.join(publicDataDir, 'realtime-surge.json');
@@ -19,6 +20,8 @@ const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
 const REALTIME_POLISH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_POLISH_BATCH_SIZE ?? '5', 10);
+const REALTIME_FRESH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_FRESH_BATCH_SIZE ?? '5', 10);
+const REALTIME_VISIBLE_LIMIT = Number.parseInt(process.env.REALTIME_VISIBLE_LIMIT ?? '20', 10);
 const MARKET_RESEARCH_WRITER = {
   provider: 'market-research-news',
   model: 'rule-based-extractor-v1'
@@ -341,6 +344,53 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
   };
 }
 
+function getSignalKey(signal) {
+  const stockCode = cleanText(signal?.stockCode);
+  if (stockCode) return `code:${stockCode}`;
+  return `name:${cleanText(signal?.stockName).toLowerCase()}`;
+}
+
+function mergeRealtimeSignals(newSignals, previousSignals, {
+  freshBatchSize = REALTIME_FRESH_BATCH_SIZE,
+  visibleLimit = REALTIME_VISIBLE_LIMIT
+} = {}) {
+  const previousList = Array.isArray(previousSignals) ? previousSignals : [];
+  const previousKeys = new Set(previousList.map(getSignalKey));
+  const freshSignals = [];
+
+  for (const signal of newSignals) {
+    const key = getSignalKey(signal);
+    if (previousKeys.has(key)) continue;
+    if (freshSignals.some((item) => getSignalKey(item) === key)) continue;
+    freshSignals.push(signal);
+    if (freshSignals.length >= freshBatchSize) break;
+  }
+
+  const freshKeys = new Set(freshSignals.map(getSignalKey));
+  const mergedSignals = [
+    ...freshSignals,
+    ...previousList.filter((signal) => !freshKeys.has(getSignalKey(signal)))
+  ].slice(0, visibleLimit);
+
+  return { freshSignals, mergedSignals };
+}
+
+function buildItemsFromSignals(signals, generatedAt) {
+  return signals.map((signal) => ({
+    timestamp: generatedAt,
+    symbol: signal.stockCode,
+    name: signal.stockName,
+    changeRate: signal.changeRate,
+    price: null,
+    summary: signal.summary,
+    source: signal.source,
+    sourceUrl: signal.sourceUrl,
+    mentionScore: signal.mentionScore,
+    evidencePoints: signal.evidencePoints,
+    relatedPosts: signal.relatedPosts
+  }));
+}
+
 function buildFallbackPolish(signal) {
   const lead = pickLeadClause(signal.headline || signal.latestHeadline || signal.summary, signal.stockName, POLISHED_HEADLINE_MAX - signal.stockName.length - 1);
   const baseHeadline = truncateSentence(
@@ -615,21 +665,9 @@ function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDat
       if (rightPriority !== leftPriority) return rightPriority - leftPriority;
       return right.mentionScore - left.mentionScore;
     })
-    .slice(0, options.maxSignals ?? 20);
+    .slice(0, options.maxSignals ?? 10);
 
-  const items = signals.map((signal) => ({
-    timestamp: generatedAt,
-    symbol: signal.stockCode,
-    name: signal.stockName,
-    changeRate: signal.changeRate,
-    price: null,
-    summary: signal.summary,
-    source: signal.source,
-    sourceUrl: signal.sourceUrl,
-      mentionScore: signal.mentionScore,
-      evidencePoints: signal.evidencePoints,
-      relatedPosts: signal.relatedPosts
-    }));
+  const items = buildItemsFromSignals(signals, generatedAt);
 
   return {
     generated_at: generatedAt,
@@ -659,6 +697,17 @@ async function loadTelegramSource() {
   return messages.sort((left, right) => new Date(right.publishedAt).getTime() - new Date(left.publishedAt).getTime());
 }
 
+async function loadPreviousRealtimePayload(generatedDate) {
+  try {
+    const raw = await fs.readFile(sourceRealtimePath, 'utf8');
+    const payload = JSON.parse(raw);
+    if (payload?.generated_date !== generatedDate) return null;
+    return payload;
+  } catch {
+    return null;
+  }
+}
+
 async function main() {
   const slotHour = resolveSlotHour();
   const slotLabel = SLOT_LABELS[slotHour];
@@ -675,23 +724,37 @@ async function main() {
   const combinedCandidates = [...telegramCandidates, ...marketResearchCandidates];
   const usingTelegram = telegramCandidates.length > 0;
   const writer = usingTelegram ? TELEGRAM_PUBLIC_WRITER : MARKET_RESEARCH_WRITER;
-  const realtimePayload = usingTelegram
+  const nextPayload = usingTelegram
     ? buildRealtimePayload({ stockNewsCandidates: combinedCandidates }, slotHour, generatedAt, generatedDate, {
       writer,
       basedOn: 'public telegram channel mentions with market news backfill',
       subtitlePrefix: '공개 텔레그램 채널 기반',
-      maxSignals: 20
+      maxSignals: 40
     })
     : buildRealtimePayload(marketResearch, slotHour, generatedAt, generatedDate, {
       writer,
       basedOn: 'market-research stock news candidates',
       subtitlePrefix: '시장 뉴스 기반',
-      maxSignals: 20
+      maxSignals: 40
     });
-
-  const polished = await polishSignals(realtimePayload.signals);
-  realtimePayload.signals = polished.signals;
-  realtimePayload.polishWriter = polished.writer;
+  const previousPayload = await loadPreviousRealtimePayload(generatedDate);
+  const previousSignals = previousPayload?.signals ?? [];
+  const { freshSignals, mergedSignals } = mergeRealtimeSignals(nextPayload.signals, previousSignals);
+  const polished = await polishSignals(freshSignals);
+  const polishedFreshSignals = polished.signals;
+  const polishedFreshByKey = new Map(polishedFreshSignals.map((signal) => [getSignalKey(signal), signal]));
+  const finalSignals = mergedSignals.map((signal) => polishedFreshByKey.get(getSignalKey(signal)) ?? signal);
+  const realtimePayload = {
+    ...nextPayload,
+    signals: finalSignals,
+    items: buildItemsFromSignals(finalSignals, generatedAt),
+    state: finalSignals.length ? 'loaded' : 'empty',
+    summary: {
+      ...nextPayload.summary,
+      subtitle: `${nextPayload.summary.subtitle.split(' 급등 후보')[0]} 급등 후보 ${finalSignals.length}건`
+    },
+    polishWriter: polished.writer
+  };
 
   const slotAdapter = {
     schema: 'urn:hermes:slot-adapter:v1',
@@ -732,4 +795,8 @@ export function __testBuildRealtimePolishPrompt(signals) {
 
 export function __testChunkSignalsForPolish(signals, size) {
   return chunkSignalsForPolish(signals, size);
+}
+
+export function __testMergeRealtimeSignals(newSignals, previousSignals, options) {
+  return mergeRealtimeSignals(newSignals, previousSignals, options);
 }

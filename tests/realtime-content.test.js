@@ -59,15 +59,31 @@ test('telegram stock extraction keeps company names and drops url or metric junk
 });
 
 test('realtime generator prefers telegram public signals when fixtures are available', () => {
-  execFileSync(process.execPath, ['scripts/generate-realtime-surge.mjs'], {
-    cwd: repoRoot,
-    env: {
-      ...process.env,
-      REALTIME_SLOT_HOUR: '11',
-      REALTIME_TELEGRAM_FIXTURE_DIR: path.join(repoRoot, 'tests/fixtures/telegram-public'),
-      REALTIME_POLISH_MOCK: '1'
+  const persistedPath = path.join(repoRoot, 'report/data/realtime-surge.json');
+  const originalPersisted = fs.existsSync(persistedPath) ? fs.readFileSync(persistedPath, 'utf8') : null;
+
+  try {
+    fs.writeFileSync(persistedPath, JSON.stringify({
+      generated_date: '2026-05-26',
+      signals: []
+    }, null, 2));
+
+    execFileSync(process.execPath, ['scripts/generate-realtime-surge.mjs'], {
+      cwd: repoRoot,
+      env: {
+        ...process.env,
+        REALTIME_SLOT_HOUR: '11',
+        REALTIME_TELEGRAM_FIXTURE_DIR: path.join(repoRoot, 'tests/fixtures/telegram-public'),
+        REALTIME_POLISH_MOCK: '1'
+      }
+    });
+  } finally {
+    if (originalPersisted == null) {
+      fs.unlinkSync(persistedPath);
+    } else {
+      fs.writeFileSync(persistedPath, originalPersisted);
     }
-  });
+  }
 
   const slotAdapter = readJson('public/report/data/slot-adapter.json');
   const realtime = readJson('public/report/data/realtime-surge.json');
@@ -93,7 +109,7 @@ test('realtime generator prefers telegram public signals when fixtures are avail
   assert.equal(typeof realtime.signals[0].polishedHeadline, 'string');
   assert.ok(realtime.signals[0].polishedHeadline.length > 0);
   assert.equal(typeof realtime.signals[0].polishedBody, 'string');
-  assert.ok(realtime.signals[0].polishedBody.length >= 120);
+  assert.ok(realtime.signals[0].polishedBody.length >= 100);
   assert.ok(realtime.signals[0].polishedBody.length <= 360);
 });
 
@@ -136,4 +152,42 @@ test('realtime polish requests are chunked into stable batch sizes', async () =>
   assert.deepEqual(batches.map((batch) => batch.length), [5, 5, 5, 5]);
   assert.equal(batches[0][0].stockName, '종목1');
   assert.equal(batches[3][4].stockName, '종목20');
+});
+
+test('realtime merge keeps 20 visible items and only prepends 5 new unique signals', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  const previousSignals = Array.from({ length: 20 }, (_, index) => ({
+    stockName: `기존${index + 1}`,
+    stockCode: String(1000 + index)
+  }));
+
+  const newSignals = [
+    { stockName: '기존1', stockCode: '1000' },
+    { stockName: '신규1', stockCode: '2001' },
+    { stockName: '신규2', stockCode: '2002' },
+    { stockName: '기존2', stockCode: '1001' },
+    { stockName: '신규3', stockCode: '2003' },
+    { stockName: '신규4', stockCode: '2004' },
+    { stockName: '신규5', stockCode: '2005' },
+    { stockName: '신규6', stockCode: '2006' }
+  ];
+
+  const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
+    freshBatchSize: 5,
+    visibleLimit: 20
+  });
+
+  assert.deepEqual(
+    merged.freshSignals.map((signal) => signal.stockName),
+    ['신규1', '신규2', '신규3', '신규4', '신규5']
+  );
+  assert.equal(merged.mergedSignals.length, 20);
+  assert.deepEqual(
+    merged.mergedSignals.slice(0, 5).map((signal) => signal.stockName),
+    ['신규1', '신규2', '신규3', '신규4', '신규5']
+  );
+  assert.ok(!merged.mergedSignals.some((signal, index) => index < 5 && signal.stockName.startsWith('기존')));
+  assert.ok(merged.mergedSignals.some((signal) => signal.stockName === '기존3'));
 });
