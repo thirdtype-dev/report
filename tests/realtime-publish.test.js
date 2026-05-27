@@ -29,6 +29,7 @@ test('realtime surge workflow dispatches from Cloud Scheduler inputs', () => {
   includes(workflow, 'name: Publish Realtime Surge');
   includes(workflow, 'workflow_dispatch:');
   includes(workflow, 'slot_hour:');
+  includes(workflow, 'python3 scripts/fetch_kind_listed_stocks.py');
   includes(workflow, 'ANALYST_PROVIDER: openrouter');
   includes(workflow, 'ANALYST_MODEL: deepseek/deepseek-v4-flash:free');
   includes(workflow, 'OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}');

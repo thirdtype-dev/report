@@ -229,3 +229,10 @@ test('realtime payload blocks unmapped stock candidates before accumulation', as
     [{ name: '삼성전자', code: '005930' }]
   );
 });
+
+test('listed stocks master is available for realtime stock code lookup', () => {
+  const listed = readJson('report/data/listed-stocks.json');
+  assert.ok(listed.count > 2000);
+  assert.equal(listed.lookup['삼성전자'], '005930');
+  assert.equal(listed.lookup['SK스퀘어'], '402340');
+});

@@ -38,6 +38,9 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Refresh KIND listed stocks master
+        run: python3 scripts/fetch_kind_listed_stocks.py
+
       - name: Generate realtime surge data
         env:
           REALTIME_SLOT_HOUR: ${{ inputs.slot_hour }}

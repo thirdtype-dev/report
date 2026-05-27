@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SLOT_HOURS, SLOT_LABELS, SLOT_SCHEDULE } from './slot-constants.mjs';
@@ -9,6 +10,7 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
 const sourceMarketResearchPath = path.join(repoRoot, 'report', 'data', 'market-research.json');
 const sourceRealtimePath = path.join(repoRoot, 'report', 'data', 'realtime-surge.json');
+const sourceListedStocksPath = path.join(repoRoot, 'report', 'data', 'listed-stocks.json');
 const publicDataDir = path.join(repoRoot, 'public', 'report', 'data');
 const outputSlotAdapterPath = path.join(publicDataDir, 'slot-adapter.json');
 const outputRealtimePath = path.join(publicDataDir, 'realtime-surge.json');
@@ -61,25 +63,12 @@ const TELEGRAM_PUBLIC_CHANNELS = [
   'habit4117',
   'hogniel'
 ];
-const STOCK_CODE_OVERRIDES = new Map([
-  ['삼성전자', '005930'],
-  ['SK하이닉스', '000660'],
-  ['삼성화재', '000810'],
-  ['서울보증보험', '031210'],
-  ['ISC', '095340'],
-  ['현대차', '005380'],
-  ['LG전자', '066570'],
-  ['삼성전기', '009150'],
-  ['삼성물산', '028260'],
-  ['고려아연', '010130'],
-  ['SK스퀘어', '402340'],
-  ['네패스아크', '330860'],
-  ['녹십자', '006280'],
-  ['성호전자', '043260'],
-  ['마키나락스', '377480'],
-  ['소룩스', '290690'],
-  ['미래에셋증권', '006800'],
-  ['엔에이치스팩33호', '0130H0']
+const STOCK_CODE_ALIASES = new Map([
+  ['엔에이치스팩33호', 'NH스팩33호'],
+  ['마키나락스', '마키나락스'],
+  ['소룩스', '소룩스'],
+  ['ISC', 'ISC'],
+  ['SK스퀘어', 'SK스퀘어']
 ]);
 const POLISHED_HEADLINE_MAX = 70;
 const POLISHED_BODY_MIN = 120;
@@ -99,6 +88,28 @@ const NON_COMPANY_TOKENS = new Set([
   '쇼크', '매수', '휘청', '지수', '일제히', '엔비디아',
   '이란', '미국', '중국', '일본', '홍콩', '유럽', '호르무즈', '협상', '기대', '시험대'
 ]);
+
+function loadListedStocksLookup() {
+  try {
+    const payload = JSON.parse(readFileSync(sourceListedStocksPath, 'utf8'));
+    const lookup = new Map(Object.entries(payload?.lookup ?? {}));
+    for (const [alias, canonical] of STOCK_CODE_ALIASES.entries()) {
+      const normalizedCanonical = normalizeCompanyName(canonical);
+      const code = lookup.get(normalizedCanonical)
+        ?? lookup.get(normalizedCanonical.replace(/\s+/gu, ''))
+        ?? lookup.get(normalizedCanonical.toUpperCase());
+      if (code) {
+        lookup.set(normalizeCompanyName(alias), code);
+        lookup.set(normalizeCompanyName(alias).replace(/\s+/gu, ''), code);
+      }
+    }
+    return lookup;
+  } catch {
+    return new Map();
+  }
+}
+
+const LISTED_STOCK_LOOKUP = loadListedStocksLookup();
 
 function getKstParts(date = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', {
@@ -248,9 +259,9 @@ function getPreferredStockCode(stockName, currentCode = null) {
   const normalized = normalizeCompanyName(stockName);
   if (!normalized) return null;
 
-  return STOCK_CODE_OVERRIDES.get(normalized)
-    ?? STOCK_CODE_OVERRIDES.get(normalized.replace(/\s+/gu, ''))
-    ?? STOCK_CODE_OVERRIDES.get(normalized.toUpperCase())
+  return LISTED_STOCK_LOOKUP.get(normalized)
+    ?? LISTED_STOCK_LOOKUP.get(normalized.replace(/\s+/gu, ''))
+    ?? LISTED_STOCK_LOOKUP.get(normalized.toUpperCase())
     ?? null;
 }
 
