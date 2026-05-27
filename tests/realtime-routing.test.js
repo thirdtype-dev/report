@@ -72,13 +72,17 @@ test('realtime shell pages exist, are member-only, and route back to briefing', 
   includes(rootRealtime, "async function resolveDataBase()");
   includes(rootRealtime, "const dataBase = await resolveDataBase();");
   includes(rootRealtime, 'function buildRelatedLinks(signal)');
-  includes(rootRealtime, "signals.slice(0, 5).map(renderSignalCard).join('')");
+  includes(rootRealtime, "signals.slice(0, 20).map(renderSignalCard).join('')");
+  includes(rootRealtime, "const polishedHeadline = String(signal.polishedHeadline");
+  includes(rootRealtime, "const polishedBody = String(signal.polishedBody || '').trim();");
   includes(rootRealtime, "label: '긍정'");
   includes(rootRealtime, "label: '우려'");
   includes(rootRealtime, "return `${date} ${slotLabel} 기준`;");
   includes(rootRealtime, 'fetch(`${dataBase}/slot-adapter.json`');
   includes(rootRealtime, 'fetch(`${dataBase}/realtime-surge.json`');
   includes(rootRealtime, '관련기사1');
+  excludes(rootRealtime, 'signal-pill');
+  excludes(rootRealtime, 'signal-time');
   excludes(rootRealtime, '유료 회원 전용');
   excludes(rootRealtime, '브리핑 / 실시간 급등');
   excludes(rootRealtime, '상태 shell');

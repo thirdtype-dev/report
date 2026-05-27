@@ -224,32 +224,10 @@
         font-size: 0.96rem;
         line-height: 1.55;
       }
-      .signal-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        padding: 7px 10px;
-        border-radius: 999px;
-        font-size: 0.78rem;
-        font-weight: 900;
-      }
-      .signal-pill.is-up {
-        color: #166534;
-        background: rgba(34, 197, 94, 0.12);
-      }
-      .signal-pill.is-down {
-        color: #be123c;
-        background: rgba(244, 63, 94, 0.12);
-      }
-      .signal-pill.is-neutral {
-        color: #b45309;
-        background: rgba(245, 158, 11, 0.14);
-      }
       .signal-footer {
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-end;
-        justify-content: space-between;
+        align-items: center;
         gap: 10px;
         margin-top: 14px;
       }
@@ -266,12 +244,6 @@
       }
       .signal-link:hover {
         text-decoration: underline;
-      }
-      .signal-time {
-        color: #94a3b8;
-        font-size: 0.82rem;
-        font-weight: 700;
-        white-space: nowrap;
       }
       .disclaimer {
         margin-top: 16px;
@@ -302,7 +274,6 @@
         <div class="eyebrow published">실시간 급등</div>
         <h1 id="realtime-title">실시간 슬롯 데이터 불러오는 중</h1>
         <section class="live-board" id="live-board" hidden>
-          <div class="live-board-meta" id="live-board-meta">실시간 슬롯 데이터를 불러오는 중입니다.</div>
           <div class="signal-list" id="signal-list"></div>
         </section>
       </article>
@@ -311,7 +282,6 @@
     <script>
       const realtimeTitle = document.getElementById('realtime-title');
       const liveBoard = document.getElementById('live-board');
-      const liveBoardMeta = document.getElementById('live-board-meta');
       const signalList = document.getElementById('signal-list');
       const dataBaseCandidates = window.location.pathname.includes('/report/')
         ? ['./report/data', './data']
@@ -326,28 +296,10 @@
           .replace(/'/g, '&#39;');
       }
 
-      function formatChangeRate(value) {
-        if (typeof value !== 'number' || Number.isNaN(value)) return '변동률 미표기';
-        const sign = value > 0 ? '+' : '';
-        return `${sign}${value.toFixed(1)}%`;
-      }
-
       function formatBadge(signal) {
         if (signal.direction === 'up') return { className: 'is-up', label: '긍정' };
         if (signal.direction === 'down') return { className: 'is-down', label: '우려' };
         return { className: 'is-neutral', label: '중립' };
-      }
-
-      function formatPublishedTime(value) {
-        if (!value) return '';
-        const date = new Date(value);
-        if (Number.isNaN(date.getTime())) return '';
-        return new Intl.DateTimeFormat('ko-KR', {
-          timeZone: 'Asia/Seoul',
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false
-        }).format(date);
       }
 
       function formatRealtimeTitle(slot) {
@@ -373,6 +325,8 @@
       }
 
       function buildSupportingText(signal) {
+        const polishedBody = String(signal.polishedBody || '').trim();
+        if (polishedBody) return polishedBody;
         const summary = String(signal.summary || '').trim();
         if (summary && !/공개 채널 멘션|market research/i.test(summary)) return summary;
         const relatedPosts = Array.isArray(signal.relatedPosts) ? signal.relatedPosts : [];
@@ -386,7 +340,7 @@
         const relatedLinks = buildRelatedLinks(signal);
         const supportingText = buildSupportingText(signal);
         const stockCode = signal.stockCode ? `${signal.stockCode}` : '';
-        const timeLabel = formatPublishedTime(signal.publishedAt || signal.updatedAt);
+        const polishedHeadline = String(signal.polishedHeadline || signal.headline || signal.latestHeadline || signal.summary || '').trim();
         return `
           <article class="signal-card">
             <div class="signal-head">
@@ -398,16 +352,14 @@
                     ${stockCode ? `<span class="signal-code">${escapeHtml(stockCode)}</span>` : ''}
                   </div>
                 </div>
-                <p class="signal-headline">${escapeHtml(signal.headline || signal.latestHeadline || signal.summary)}</p>
+                <p class="signal-headline">${escapeHtml(polishedHeadline)}</p>
                 <p class="signal-summary">${escapeHtml(supportingText)}</p>
               </div>
-              <div class="signal-pill ${badge.className}">${escapeHtml(badge.label)} ${escapeHtml(formatChangeRate(signal.changeRate))}</div>
             </div>
             <div class="signal-footer">
               <div class="signal-links">
                 ${relatedLinks.map((item) => `<a class="signal-link" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)}</a>`).join('')}
               </div>
-              <div class="signal-time">${escapeHtml(timeLabel)}</div>
             </div>
           </article>
         `;
@@ -439,21 +391,18 @@
           const realtime = await realtimeRes.json();
           const signals = Array.isArray(realtime.signals) ? realtime.signals : [];
           realtimeTitle.textContent = formatRealtimeTitle(slot);
-          liveBoardMeta.textContent = `${slot.subtitle} / ${signals.length}개 후보 / ${slot.kstGeneratedAt}`;
 
           if (!signals.length) {
             realtimeTitle.textContent = formatRealtimeTitle(slot);
-            liveBoardMeta.textContent = '현재 조건을 충족하는 급등 후보가 없습니다.';
             signalList.innerHTML = '';
             liveBoard.hidden = false;
             return;
           }
 
-          signalList.innerHTML = signals.slice(0, 5).map(renderSignalCard).join('');
+          signalList.innerHTML = signals.slice(0, 20).map(renderSignalCard).join('');
           liveBoard.hidden = false;
         } catch (error) {
           realtimeTitle.textContent = '실시간 급등';
-          liveBoardMeta.textContent = '실시간급등 데이터를 불러오지 못했습니다.';
           signalList.innerHTML = '';
           liveBoard.hidden = false;
         }
