@@ -98,6 +98,7 @@ test('realtime generator prefers telegram public signals when fixtures are avail
 });
 
 test('realtime polish prompt stays compact and excludes raw evidence blobs', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
   const prompt = module.__testBuildRealtimePolishPrompt([
     {
@@ -126,6 +127,7 @@ test('realtime polish prompt stays compact and excludes raw evidence blobs', asy
 });
 
 test('realtime polish requests are chunked into stable batch sizes', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
   const signals = Array.from({ length: 20 }, (_, index) => ({ stockName: `종목${index + 1}` }));
   const batches = module.__testChunkSignalsForPolish(signals, 5);

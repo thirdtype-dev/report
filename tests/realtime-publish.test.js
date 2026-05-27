@@ -30,6 +30,7 @@ test('realtime surge workflow dispatches from Cloud Scheduler inputs', () => {
   includes(workflow, 'workflow_dispatch:');
   includes(workflow, 'slot_hour:');
   includes(workflow, 'ANALYST_PROVIDER: openrouter');
+  includes(workflow, 'ANALYST_MODEL: deepseek/deepseek-v4-flash:free');
   includes(workflow, 'OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}');
   includes(workflow, 'GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}');
   excludes(workflow, 'schedule:');

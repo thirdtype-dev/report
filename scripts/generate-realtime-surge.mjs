@@ -14,7 +14,7 @@ const outputRealtimePath = path.join(publicDataDir, 'realtime-surge.json');
 
 const REPORT_TIMEZONE = 'Asia/Seoul';
 const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
-const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'openrouter/free';
+const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash:free';
 const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
