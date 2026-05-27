@@ -7,13 +7,18 @@
   "slotHour": 14,
   "title": "KST 14:00 슬롯",
   "subtitle": "14:00 기준 실시간 급등 상세 데이터",
-  "generatedAt": "2026-05-27T05:00:09.164Z",
+  "generatedAt": "2026-05-27T05:30:39.974Z",
   "generatedDate": "2026-05-27",
-  "kstGeneratedAt": "2026. 05. 27. PM 2:00",
+  "kstGeneratedAt": "2026. 05. 27. PM 2:30",
   "reportRef": "./realtime-surge.json",
   "itemCount": 20,
   "writer": {
     "provider": "telegram-public-web",
     "model": "rule-based-scraper-v1"
+  },
+  "polishWriter": {
+    "provider": "rule-based-fallback",
+    "model": "signal-polish-v1",
+    "fallbackReason": "all_failed"
   }
 }
