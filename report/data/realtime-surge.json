@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-27T04:00:25.294Z",
+  "generated_at": "2026-05-27T03:58:11.311Z",
   "generated_date": "2026-05-27",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 5건",
-    "basedOn": "public telegram channel mentions with market news backfill"
+    "title": "KST 12:00 실시간 급등",
+    "subtitle": "시장 뉴스 기반 급등 후보 5건",
+    "basedOn": "market-research stock news candidates"
   },
   "signals": [
     {
@@ -24,8 +24,8 @@
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
       "channelCount": 1,
-      "updatedAt": "2026-05-27T04:00:25.294Z",
-      "cycleLabel": "KST_1300",
+      "updatedAt": "2026-05-27T03:58:11.311Z",
+      "cycleLabel": "KST_1200",
       "direction": "up",
       "changeRate": 300,
       "latestHeadline": "[증시 오늘(20일) 핵심 특징주] 마키나락스 상장 첫날 ‘따따블’ 직행…세아홀딩스·한성크린텍 급등 호재 만발",
@@ -54,8 +54,8 @@
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
       "channelCount": 1,
-      "updatedAt": "2026-05-27T04:00:25.294Z",
-      "cycleLabel": "KST_1300",
+      "updatedAt": "2026-05-27T03:58:11.311Z",
+      "cycleLabel": "KST_1200",
       "direction": "up",
       "changeRate": 208,
       "latestHeadline": "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈",
@@ -84,8 +84,8 @@
       "mentionScore": 80,
       "sentimentLabel": "positive",
       "channelCount": 1,
-      "updatedAt": "2026-05-27T04:00:25.294Z",
-      "cycleLabel": "KST_1300",
+      "updatedAt": "2026-05-27T03:58:11.311Z",
+      "cycleLabel": "KST_1200",
       "direction": "up",
       "changeRate": 30,
       "latestHeadline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
@@ -115,8 +115,8 @@
       "mentionScore": 62,
       "sentimentLabel": "negative",
       "channelCount": 1,
-      "updatedAt": "2026-05-27T04:00:25.294Z",
-      "cycleLabel": "KST_1300",
+      "updatedAt": "2026-05-27T03:58:11.311Z",
+      "cycleLabel": "KST_1200",
       "direction": "down",
       "changeRate": -7,
       "latestHeadline": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
@@ -139,38 +139,39 @@
       ]
     },
     {
-      "stockName": "삼성화재",
+      "stockName": "소룩스",
       "stockCode": null,
-      "summary": "Telegram @bumgore 공개 채널 멘션",
-      "headline": "삼성화재 📋 NDR 싱가포르에서 NDR 진행 . 핵심 주제는 자본 관리, 언더라이팅 사이클, 규제 환경. 1️⃣ 언더라이팅 사이클 — 바닥 찍고 개선 중",
+      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈 Chosunbiz",
+      "headline": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
       "evidencePoints": [
-        "출처 Telegram @bumgore 기반 기사 1건",
-        "삼성화재 📋 NDR 싱가포르에서 NDR 진행 . 핵심 주제는 자본 관리, 언더라이팅 사이클, 규제 환경. 1️⃣ 언더라이팅 사이클 — 바닥 찍고 개선 중"
+        "출처 Chosunbiz 기반 기사 1건",
+        "제목 기준 변동률 단서 -25.0%",
+        "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈"
       ],
-      "mentionScore": 56.8,
-      "sentimentLabel": "neutral",
+      "mentionScore": 56,
+      "sentimentLabel": "negative",
       "channelCount": 1,
-      "updatedAt": "2026-05-27T04:00:25.294Z",
-      "cycleLabel": "KST_1300",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "삼성화재 📋 NDR 싱가포르에서 NDR 진행 . 핵심 주제는 자본 관리, 언더라이팅 사이클, 규제 환경. 1️⃣ 언더라이팅 사이클 — 바닥 찍고 개선 중",
-      "source": "Telegram @bumgore",
-      "sourceUrl": "https://t.me/bumgore/54358",
-      "publishedAt": "2026-05-26T22:48:03+00:00",
+      "updatedAt": "2026-05-27T03:58:11.311Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": -25,
+      "latestHeadline": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+      "source": "Chosunbiz",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5",
+      "publishedAt": "Mon, 18 May 2026 07:00:00 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "삼성화재 📋 NDR 싱가포르에서 NDR 진행 . 핵심 주제는 자본 관리, 언더라이팅 사이클, 규제 환경. 1️⃣ 언더라이팅 사이클 — 바닥 찍고 개선 중",
-          "source": "Telegram @bumgore",
-          "url": "https://t.me/bumgore/54358"
+          "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5"
         }
       ]
     }
   ],
   "items": [
     {
-      "timestamp": "2026-05-27T04:00:25.294Z",
+      "timestamp": "2026-05-27T03:58:11.311Z",
       "symbol": null,
       "name": "마키나락스",
       "changeRate": 300,
@@ -194,7 +195,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-27T04:00:25.294Z",
+      "timestamp": "2026-05-27T03:58:11.311Z",
       "symbol": null,
       "name": "엔에이치스팩33호",
       "changeRate": 208,
@@ -218,7 +219,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-27T04:00:25.294Z",
+      "timestamp": "2026-05-27T03:58:11.311Z",
       "symbol": null,
       "name": "LG전자",
       "changeRate": 30,
@@ -242,7 +243,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-27T04:00:25.294Z",
+      "timestamp": "2026-05-27T03:58:11.311Z",
       "symbol": null,
       "name": "미래에셋증권",
       "changeRate": -7,
@@ -273,31 +274,32 @@
       ]
     },
     {
-      "timestamp": "2026-05-27T04:00:25.294Z",
+      "timestamp": "2026-05-27T03:58:11.311Z",
       "symbol": null,
-      "name": "삼성화재",
-      "changeRate": null,
+      "name": "소룩스",
+      "changeRate": -25,
       "price": null,
-      "summary": "Telegram @bumgore 공개 채널 멘션",
-      "source": "Telegram @bumgore",
-      "sourceUrl": "https://t.me/bumgore/54358",
-      "mentionScore": 56.8,
+      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈 Chosunbiz",
+      "source": "Chosunbiz",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5",
+      "mentionScore": 56,
       "evidencePoints": [
-        "출처 Telegram @bumgore 기반 기사 1건",
-        "삼성화재 📋 NDR 싱가포르에서 NDR 진행 . 핵심 주제는 자본 관리, 언더라이팅 사이클, 규제 환경. 1️⃣ 언더라이팅 사이클 — 바닥 찍고 개선 중"
+        "출처 Chosunbiz 기반 기사 1건",
+        "제목 기준 변동률 단서 -25.0%",
+        "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "삼성화재 📋 NDR 싱가포르에서 NDR 진행 . 핵심 주제는 자본 관리, 언더라이팅 사이클, 규제 환경. 1️⃣ 언더라이팅 사이클 — 바닥 찍고 개선 중",
-          "source": "Telegram @bumgore",
-          "url": "https://t.me/bumgore/54358"
+          "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5"
         }
       ]
     }
   ],
   "writer": {
-    "provider": "telegram-public-web",
-    "model": "rule-based-scraper-v1"
+    "provider": "market-research-news",
+    "model": "rule-based-extractor-v1"
   }
 }
