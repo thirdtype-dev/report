@@ -13,6 +13,11 @@ const outputSlotAdapterPath = path.join(publicDataDir, 'slot-adapter.json');
 const outputRealtimePath = path.join(publicDataDir, 'realtime-surge.json');
 
 const REPORT_TIMEZONE = 'Asia/Seoul';
+const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
+const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'openrouter/free';
+const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
+const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
+const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
 const MARKET_RESEARCH_WRITER = {
   provider: 'market-research-news',
   model: 'rule-based-extractor-v1'
@@ -59,6 +64,9 @@ const STOCK_CODE_OVERRIDES = new Map([
   ['미래에셋증권', '006800'],
   ['엔에이치스팩33호', '0130H0']
 ]);
+const POLISHED_HEADLINE_MAX = 70;
+const POLISHED_BODY_MIN = 120;
+const POLISHED_BODY_MAX = 320;
 
 const COMPANY_STOPWORDS = new Set([
   '오늘의', '주목주', '특징주', '마감', '증시', '시장', '전망', '코스피', '코스닥', 'AI', 'MY',
@@ -111,6 +119,19 @@ function cleanText(value) {
     .replace(/&quot;/g, '"')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function truncateSentence(value, maxLength) {
+  const text = cleanText(value);
+  if (!text || text.length <= maxLength) return text;
+  return `${text.slice(0, Math.max(0, maxLength - 1)).trimEnd()}…`;
+}
+
+function trimBody(value) {
+  const text = cleanText(value);
+  if (!text) return '';
+  if (text.length <= POLISHED_BODY_MAX) return text;
+  return `${text.slice(0, POLISHED_BODY_MAX - 1).trimEnd()}…`;
 }
 
 function stripPublisher(title) {
@@ -287,6 +308,194 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
   };
 }
 
+function buildFallbackPolish(signal) {
+  const baseHeadline = truncateSentence(signal.headline || signal.latestHeadline || `${signal.stockName} 관련 흐름`, POLISHED_HEADLINE_MAX);
+  const bodyParts = [];
+  if (signal.summary) bodyParts.push(cleanText(signal.summary));
+
+  const evidence = Array.isArray(signal.evidencePoints) ? signal.evidencePoints : [];
+  for (const point of evidence) {
+    const normalized = cleanText(point)
+      .replace(/^출처\s+/u, '')
+      .replace(/^제목 기준 변동률 단서\s*/u, '변동 단서 ')
+      .replace(/^상승\/강세 키워드 우세$/u, '상승 관련 키워드가 우세합니다.')
+      .replace(/^하락\/약세 키워드 우세$/u, '하락 관련 키워드가 우세합니다.');
+    if (!normalized) continue;
+    if (bodyParts.some((existing) => existing.includes(normalized) || normalized.includes(existing))) continue;
+    bodyParts.push(normalized);
+    if (bodyParts.length >= 4) break;
+  }
+
+  let polishedBody = bodyParts.join(' ');
+  if (polishedBody.length < POLISHED_BODY_MIN && Array.isArray(signal.relatedPosts)) {
+    const relatedTitles = signal.relatedPosts
+      .map((item) => cleanText(item?.title))
+      .filter(Boolean)
+      .slice(0, 2);
+    for (const title of relatedTitles) {
+      if (polishedBody.includes(title)) continue;
+      polishedBody = `${polishedBody} ${title}`.trim();
+      if (polishedBody.length >= POLISHED_BODY_MIN) break;
+    }
+  }
+
+  return {
+    polishedHeadline: baseHeadline,
+    polishedBody: trimBody(polishedBody || `${signal.stockName} 관련 근거 기사를 통해 흐름을 확인할 수 있습니다.`)
+  };
+}
+
+function buildRealtimePolishPrompt(signals) {
+  const payload = signals.map((signal) => ({
+    stockName: signal.stockName,
+    stockCode: signal.stockCode,
+    headline: signal.headline,
+    summary: signal.summary,
+    evidencePoints: signal.evidencePoints,
+    relatedPosts: signal.relatedPosts?.map((item) => ({ title: item.title, source: item.source })),
+    direction: signal.direction
+  }));
+
+  return [
+    'Return only valid JSON.',
+    'Use only the provided facts.',
+    'Do not add any investment advice or unsupported claims.',
+    'For each item return: stockName, polishedHeadline, polishedBody.',
+    `polishedHeadline: Korean plain text, concise summary style, max ${POLISHED_HEADLINE_MAX} characters, intended for bold 1-2 lines.`,
+    `polishedBody: Korean explanatory prose, 3-4 sentences, ${POLISHED_BODY_MIN}-${POLISHED_BODY_MAX} characters, intended for about 5-6 mobile lines.`,
+    'Remove source/publisher clutter, duplicate phrases, raw channel labels, and noisy ticker boilerplate.',
+    'Keep concrete nouns and causal facts if present.',
+    '',
+    JSON.stringify({ signals: payload })
+  ].join('\n');
+}
+
+function extractJsonBlock(raw) {
+  const text = String(raw ?? '').trim();
+  const objectMatch = text.match(/\{[\s\S]*\}$/u);
+  if (objectMatch) return objectMatch[0];
+  const arrayMatch = text.match(/\[[\s\S]*\]$/u);
+  if (arrayMatch) return arrayMatch[0];
+  return text;
+}
+
+function extractGeminiText(body) {
+  return body?.candidates?.[0]?.content?.parts?.map((part) => part?.text ?? '').join('') ?? '';
+}
+
+function normalizePolishedResponse(payload, fallbackSignals) {
+  const rows = Array.isArray(payload?.signals) ? payload.signals : Array.isArray(payload) ? payload : [];
+  const byStock = new Map(rows.map((item) => [cleanText(item?.stockName), item]));
+
+  return fallbackSignals.map((signal) => {
+    const fallback = buildFallbackPolish(signal);
+    const polished = byStock.get(cleanText(signal.stockName));
+    const polishedHeadline = truncateSentence(polished?.polishedHeadline || fallback.polishedHeadline, POLISHED_HEADLINE_MAX);
+    const polishedBody = trimBody(polished?.polishedBody || fallback.polishedBody);
+    if (!polishedBody || polishedBody.length < POLISHED_BODY_MIN) {
+      return fallback;
+    }
+    return {
+      polishedHeadline: polishedHeadline || fallback.polishedHeadline,
+      polishedBody
+    };
+  });
+}
+
+async function callOpenRouterPolish(prompt, fallbackSignals) {
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (!apiKey) throw new Error('missing_openrouter_api_key');
+
+  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
+    headers: {
+      authorization: `Bearer ${apiKey}`,
+      'content-type': 'application/json',
+      'http-referer': process.env.OPENROUTER_SITE_URL ?? 'https://thirdtype-dev.github.io',
+      'x-title': process.env.OPENROUTER_APP_TITLE ?? 'Maedo Signal Realtime Surge'
+    },
+    body: JSON.stringify({
+      model: ANALYST_MODEL,
+      messages: [
+        {
+          role: 'system',
+          content: 'Return only valid JSON. Use only provided data. No investment advice.'
+        },
+        { role: 'user', content: prompt }
+      ],
+      temperature: 0.2
+    })
+  });
+
+  const body = await response.text();
+  if (!response.ok) throw new Error(`openrouter_polish_failed_${response.status}`);
+  return normalizePolishedResponse(JSON.parse(extractJsonBlock(JSON.parse(body)?.choices?.[0]?.message?.content ?? '')), fallbackSignals);
+}
+
+async function callGeminiPolish(prompt, fallbackSignals) {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) throw new Error('missing_gemini_api_key');
+
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(FALLBACK_MODEL)}:generateContent`, {
+    method: 'POST',
+    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
+    headers: {
+      'content-type': 'application/json',
+      'x-goog-api-key': apiKey
+    },
+    body: JSON.stringify({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      generationConfig: {
+        temperature: 0.2,
+        responseMimeType: 'application/json'
+      }
+    })
+  });
+
+  const body = await response.text();
+  if (!response.ok) throw new Error(`gemini_polish_failed_${response.status}`);
+  return normalizePolishedResponse(JSON.parse(extractJsonBlock(extractGeminiText(JSON.parse(body)))), fallbackSignals);
+}
+
+async function polishSignals(signals) {
+  if (!Array.isArray(signals) || !signals.length) return { signals, writer: null };
+
+  if (process.env.REALTIME_POLISH_MOCK === '1') {
+    return {
+      signals: signals.map((signal) => ({
+        ...signal,
+        ...buildFallbackPolish(signal)
+      })),
+      writer: { provider: 'mock', model: 'realtime-polish-mock', fallbackReason: null }
+    };
+  }
+
+  const prompt = buildRealtimePolishPrompt(signals);
+  const baseSignals = signals.map((signal) => ({ ...signal }));
+
+  try {
+    const polished = await callOpenRouterPolish(prompt, baseSignals);
+    return {
+      signals: baseSignals.map((signal, index) => ({ ...signal, ...polished[index] })),
+      writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
+    };
+  } catch (error) {
+    try {
+      const polished = await callGeminiPolish(prompt, baseSignals);
+      return {
+        signals: baseSignals.map((signal, index) => ({ ...signal, ...polished[index] })),
+        writer: { provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason: 'primary_failed' }
+      };
+    } catch {
+      return {
+        signals: baseSignals.map((signal) => ({ ...signal, ...buildFallbackPolish(signal) })),
+        writer: { provider: 'rule-based-fallback', model: 'signal-polish-v1', fallbackReason: 'all_failed' }
+      };
+    }
+  }
+}
+
 function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDate, options = {}) {
   const slotLabel = SLOT_LABELS[slotHour];
   const candidates = (articleSource.stockNewsCandidates ?? [])
@@ -383,6 +592,10 @@ async function main() {
       maxSignals: 20
     });
 
+  const polished = await polishSignals(realtimePayload.signals);
+  realtimePayload.signals = polished.signals;
+  realtimePayload.polishWriter = polished.writer;
+
   const slotAdapter = {
     schema: 'urn:hermes:slot-adapter:v1',
     scheduleKey: schedule.key,
@@ -397,7 +610,8 @@ async function main() {
     kstGeneratedAt: formatKstHuman(now),
     reportRef: './realtime-surge.json',
     itemCount: realtimePayload.signals.length,
-    writer
+    writer,
+    polishWriter: polished.writer
   };
 
   await fs.mkdir(publicDataDir, { recursive: true });

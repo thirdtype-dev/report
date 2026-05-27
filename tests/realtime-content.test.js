@@ -64,7 +64,8 @@ test('realtime generator prefers telegram public signals when fixtures are avail
     env: {
       ...process.env,
       REALTIME_SLOT_HOUR: '11',
-      REALTIME_TELEGRAM_FIXTURE_DIR: path.join(repoRoot, 'tests/fixtures/telegram-public')
+      REALTIME_TELEGRAM_FIXTURE_DIR: path.join(repoRoot, 'tests/fixtures/telegram-public'),
+      REALTIME_POLISH_MOCK: '1'
     }
   });
 
@@ -89,4 +90,9 @@ test('realtime generator prefers telegram public signals when fixtures are avail
   assert.ok(Array.isArray(realtime.signals[0].relatedPosts));
   assert.ok(realtime.signals[0].relatedPosts.length >= 1);
   assert.equal(realtime.signals[0].relatedPosts[0].label, '관련기사1');
+  assert.equal(typeof realtime.signals[0].polishedHeadline, 'string');
+  assert.ok(realtime.signals[0].polishedHeadline.length > 0);
+  assert.equal(typeof realtime.signals[0].polishedBody, 'string');
+  assert.ok(realtime.signals[0].polishedBody.length >= 120);
+  assert.ok(realtime.signals[0].polishedBody.length <= 360);
 });

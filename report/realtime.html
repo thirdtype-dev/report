@@ -219,32 +219,10 @@
         font-size: 0.96rem;
         line-height: 1.55;
       }
-      .signal-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        padding: 7px 10px;
-        border-radius: 999px;
-        font-size: 0.78rem;
-        font-weight: 900;
-      }
-      .signal-pill.is-up {
-        color: #166534;
-        background: rgba(34, 197, 94, 0.12);
-      }
-      .signal-pill.is-down {
-        color: #be123c;
-        background: rgba(244, 63, 94, 0.12);
-      }
-      .signal-pill.is-neutral {
-        color: #b45309;
-        background: rgba(245, 158, 11, 0.14);
-      }
       .signal-footer {
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-end;
-        justify-content: space-between;
+        align-items: center;
         gap: 10px;
         margin-top: 14px;
       }
@@ -342,6 +320,8 @@
       }
 
       function buildSupportingText(signal) {
+        const polishedBody = String(signal.polishedBody || '').trim();
+        if (polishedBody) return polishedBody;
         const summary = String(signal.summary || '').trim();
         if (summary && !/공개 채널 멘션|market research/i.test(summary)) return summary;
         const relatedPosts = Array.isArray(signal.relatedPosts) ? signal.relatedPosts : [];
@@ -355,6 +335,7 @@
         const relatedLinks = buildRelatedLinks(signal);
         const supportingText = buildSupportingText(signal);
         const stockCode = signal.stockCode ? `${signal.stockCode}` : '';
+        const polishedHeadline = String(signal.polishedHeadline || signal.headline || signal.latestHeadline || signal.summary || '').trim();
         return `
           <article class="signal-card">
             <div class="signal-head">
@@ -366,10 +347,9 @@
                     ${stockCode ? `<span class="signal-code">${escapeHtml(stockCode)}</span>` : ''}
                   </div>
                 </div>
-                <p class="signal-headline">${escapeHtml(signal.headline || signal.latestHeadline || signal.summary)}</p>
+                <p class="signal-headline">${escapeHtml(polishedHeadline)}</p>
                 <p class="signal-summary">${escapeHtml(supportingText)}</p>
               </div>
-              <div class="signal-pill ${badge.className}">${escapeHtml(badge.label)}</div>
             </div>
             <div class="signal-footer">
               <div class="signal-links">
