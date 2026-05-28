@@ -15,6 +15,8 @@ const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-de
 const ADSENSE_CLIENT = 'ca-pub-3518959293552717';
 const INVESTOR_FLOW_TIMEOUT_MS = Number.parseInt(process.env.INVESTOR_FLOW_TIMEOUT_MS ?? '45000', 10);
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
+const LLM_MAX_ATTEMPTS = Number.parseInt(process.env.LLM_MAX_ATTEMPTS ?? '3', 10);
+const LLM_RETRY_BASE_DELAY_MS = Number.parseInt(process.env.LLM_RETRY_BASE_DELAY_MS ?? '1500', 10);
 const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*\breport-(?:pre|post)-market\b[^"]*">[\s\S]*?<\/article>/g;
 const YAHOO_SYMBOLS = [
   { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
@@ -355,6 +357,55 @@ function normalizePhase(value) {
 function isQuotaError(error) {
   const text = `${error?.message ?? ''} ${error?.body ?? ''}`.toLowerCase();
   return error?.status === 429 || text.includes('quota') || text.includes('rate limit') || text.includes('resource exhausted');
+}
+
+function isTransientLlmError(error) {
+  const text = `${error?.message ?? ''} ${error?.body ?? ''}`.toLowerCase();
+  return [
+    error?.name === 'TimeoutError',
+    error?.name === 'AbortError',
+    error?.status === 408,
+    error?.status === 409,
+    error?.status === 425,
+    error?.status === 429,
+    typeof error?.status === 'number' && error.status >= 500,
+    text.includes('timed out'),
+    text.includes('timeout'),
+    text.includes('temporarily unavailable'),
+    text.includes('experiencing high demand'),
+    text.includes('please try again later'),
+    text.includes('overloaded')
+  ].some(Boolean);
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function withLlmRetry(label, operation) {
+  let lastError;
+  for (let attempt = 1; attempt <= LLM_MAX_ATTEMPTS; attempt += 1) {
+    try {
+      return await operation();
+    } catch (error) {
+      lastError = error;
+      if (attempt >= LLM_MAX_ATTEMPTS || !isTransientLlmError(error)) {
+        throw error;
+      }
+
+      const delayMs = LLM_RETRY_BASE_DELAY_MS * attempt;
+      console.warn(`[market-briefing] ${label} transient failure; retrying`, {
+        attempt,
+        nextAttempt: attempt + 1,
+        maxAttempts: LLM_MAX_ATTEMPTS,
+        delayMs,
+        error: error.message
+      });
+      await sleep(delayMs);
+    }
+  }
+
+  throw lastError;
 }
 
 function extractTextFromGemini(json) {
@@ -1097,7 +1148,7 @@ async function writeReportWithFallback(marketResearch) {
   const prompt = buildPrompt(marketResearch);
   try {
     return {
-      report: await callOpenRouter(prompt),
+      report: await withLlmRetry('openrouter', () => callOpenRouter(prompt)),
       writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
     };
   } catch (error) {
@@ -1110,7 +1161,7 @@ async function writeReportWithFallback(marketResearch) {
     });
 
     return {
-      report: await callGemini(prompt),
+      report: await withLlmRetry('gemini', () => callGemini(prompt)),
       writer: { provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason }
     };
   }
