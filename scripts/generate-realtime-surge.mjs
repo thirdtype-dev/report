@@ -156,6 +156,10 @@ function cleanText(value) {
     .trim();
 }
 
+function isTelegramSource(value) {
+  return /^Telegram\b/iu.test(cleanText(value));
+}
+
 function truncateSentence(value, maxLength) {
   const text = cleanText(value);
   if (!text || text.length <= maxLength) return text;
@@ -171,8 +175,10 @@ function trimBody(value) {
 
 function sanitizeNarrativeText(value) {
   return cleanText(value)
+    .replace(/\[[^\]]{0,40}\]/gu, ' ')
     .replace(/https?:\/\/\S+/giu, ' ')
     .replace(/Telegram\s*@[\w_]+/giu, ' ')
+    .replace(/\b(비즈니스포스트|뉴스핌|조선비즈|Chosunbiz|연합뉴스|매일경제|한국경제|머니투데이|이데일리|아시아경제|서울경제|파이낸셜뉴스)\b/giu, ' ')
     .replace(/[📌📋🔔☞▶🔑🤖💰📈🏦🛡⚠️🌏]/gu, ' ')
     .replace(/\b\d+️⃣/gu, ' ')
     .replace(/\([^)]{0,24}\)/gu, (matched) => /\d{4,6}/u.test(matched) ? ' ' : matched)
@@ -322,11 +328,11 @@ function toArticleCandidate(article, index) {
   };
 }
 
-function buildEvidence(articleGroup) {
+function buildEvidence(articleGroup, displayArticleGroup = articleGroup) {
   const evidence = [];
-  const sources = [...new Set(articleGroup.map((item) => item.source).filter(Boolean))];
+  const sources = [...new Set(displayArticleGroup.map((item) => item.source).filter(Boolean))];
   if (sources.length) {
-    evidence.push(`출처 ${sources.join(', ')} 기반 기사 ${articleGroup.length}건`);
+    evidence.push(`출처 ${sources.join(', ')} 기반 기사 ${displayArticleGroup.length}건`);
   }
 
   const directionEvidence = articleGroup.find((item) => item.changeRate != null || item.direction !== 'neutral');
@@ -336,7 +342,7 @@ function buildEvidence(articleGroup) {
     evidence.push(directionEvidence.direction === 'up' ? '상승/강세 키워드 우세' : '하락/약세 키워드 우세');
   }
 
-  for (const item of articleGroup.slice(0, 2)) {
+  for (const item of displayArticleGroup.slice(0, 2)) {
     evidence.push(item.headline);
   }
 
@@ -356,13 +362,16 @@ function computeMentionScore(articleGroup) {
 
 function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
   const newest = articleGroup[0];
-  const direction = newest?.direction ?? 'neutral';
+  const newsArticles = articleGroup.filter((item) => item?.sourceUrl && !isTelegramSource(item.source));
+  const displayArticles = newsArticles.length ? newsArticles : articleGroup;
+  const newestDisplay = displayArticles[0];
+  const direction = newestDisplay?.direction ?? newest?.direction ?? 'neutral';
   const sentimentLabel = direction === 'up' ? 'positive' : direction === 'down' ? 'negative' : 'neutral';
-  const headlineSummary = newest?.summary || newest?.headline || `${companyName} 관련 기사 흐름이 포착됐습니다.`;
-  const supportingHeadline = articleGroup.find((item) => item.headline && item.headline !== newest?.headline)?.headline ?? null;
-  const evidencePoints = buildEvidence(articleGroup);
+  const headlineSummary = newestDisplay?.summary || newestDisplay?.headline || `${companyName} 관련 기사 흐름이 포착됐습니다.`;
+  const supportingHeadline = displayArticles.find((item) => item.headline && item.headline !== newestDisplay?.headline)?.headline ?? null;
+  const evidencePoints = buildEvidence(articleGroup, displayArticles);
   const mentionScore = computeMentionScore(articleGroup);
-  const relatedPosts = articleGroup
+  const relatedPosts = displayArticles
     .filter((item) => item.sourceUrl)
     .slice(0, 3)
     .map((item, index) => ({
@@ -376,10 +385,10 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
     stockName: companyName,
     stockCode: getPreferredStockCode(
       companyName,
-      newest?.stockCode ?? articleGroup.find((item) => item.stockCode)?.stockCode ?? null
+      newestDisplay?.stockCode ?? articleGroup.find((item) => item.stockCode)?.stockCode ?? null
     ),
     summary: supportingHeadline || headlineSummary,
-    headline: newest?.headline ?? `${companyName} 관련 기사 흐름`,
+    headline: newestDisplay?.headline ?? `${companyName} 관련 기사 흐름`,
     evidencePoints,
     mentionScore,
     sentimentLabel,
@@ -387,13 +396,14 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
     updatedAt: generatedAt,
     cycleLabel: slotLabel.cycleLabel,
     direction,
-    changeRate: newest?.changeRate ?? null,
-    latestHeadline: newest?.headline ?? null,
-    source: newest?.source ?? null,
-    sourceUrl: newest?.sourceUrl ?? null,
-    publishedAt: newest?.publishedAt ?? null,
+    changeRate: newestDisplay?.changeRate ?? newest?.changeRate ?? null,
+    latestHeadline: newestDisplay?.headline ?? newest?.headline ?? null,
+    source: newestDisplay?.source ?? null,
+    sourceUrl: newestDisplay?.sourceUrl ?? null,
+    publishedAt: newestDisplay?.publishedAt ?? newest?.publishedAt ?? null,
     relatedPosts,
-    hasTelegram: articleGroup.some((item) => String(item.source || '').startsWith('Telegram'))
+    hasTelegram: articleGroup.some((item) => isTelegramSource(item.source)),
+    hasNews: newsArticles.length > 0
   };
 }
 
@@ -423,13 +433,21 @@ function isDisplayableSignal(signal) {
   return true;
 }
 
+function isNewsBackedSignal(signal) {
+  if (!signal || typeof signal !== 'object') return false;
+  if (signal.hasNews === true) return true;
+  const relatedPosts = Array.isArray(signal.relatedPosts) ? signal.relatedPosts : [];
+  if (relatedPosts.some((item) => item?.url && !isTelegramSource(item?.source))) return true;
+  return Boolean(signal.sourceUrl) && !isTelegramSource(signal.source);
+}
+
 function mergeRealtimeSignals(newSignals, previousSignals, {
   freshBatchSize = REALTIME_FRESH_BATCH_SIZE,
   visibleLimit = REALTIME_VISIBLE_LIMIT
 } = {}) {
   const previousList = Array.isArray(previousSignals) ? previousSignals.map(hydrateSignalMetadata) : [];
   const hydratedNewSignals = Array.isArray(newSignals) ? newSignals.map(hydrateSignalMetadata) : [];
-  const filteredPreviousList = previousList.filter(isDisplayableSignal);
+  const filteredPreviousList = previousList.filter(isDisplayableSignal).filter(isNewsBackedSignal);
   const previousKeys = new Set(filteredPreviousList.map(getSignalKey));
   const freshSignals = [];
 
@@ -499,6 +517,7 @@ function buildFallbackPolish(signal) {
 
   const relatedTitles = Array.isArray(signal.relatedPosts)
     ? signal.relatedPosts
+        .filter((item) => !isTelegramSource(item?.source))
         .map((item) => pickLeadClause(item?.title, signal.stockName, 96))
         .filter(Boolean)
     : [];
@@ -511,6 +530,9 @@ function buildFallbackPolish(signal) {
   let polishedBody = sentences.join(' ');
   if (polishedBody.length < POLISHED_BODY_MIN) {
     polishedBody = `${polishedBody} 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다.`.trim();
+  }
+  if (polishedBody.length < POLISHED_BODY_MIN) {
+    polishedBody = `${polishedBody} 단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다.`.trim();
   }
 
   return {
@@ -739,6 +761,7 @@ function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDat
   const signals = [...grouped.entries()]
     .map(([companyName, articleGroup]) => buildSignal(companyName, articleGroup, slotLabel, generatedAt))
     .map(hydrateSignalMetadata)
+    .filter((signal) => signal.hasNews)
     .filter(isDisplayableSignal)
     .sort((left, right) => {
       const leftPriority = left.hasTelegram ? 1 : 0;
@@ -778,11 +801,11 @@ async function loadTelegramSource() {
   return messages.sort((left, right) => new Date(right.publishedAt).getTime() - new Date(left.publishedAt).getTime());
 }
 
-async function loadPreviousRealtimePayload(generatedDate) {
+async function loadPreviousRealtimePayload() {
   try {
     const raw = await fs.readFile(sourceRealtimePath, 'utf8');
     const payload = JSON.parse(raw);
-    if (payload?.generated_date !== generatedDate) return null;
+    if (!Array.isArray(payload?.signals) || !payload.signals.length) return null;
     return payload;
   } catch {
     return null;
@@ -818,15 +841,12 @@ async function main() {
       subtitlePrefix: '시장 뉴스 기반',
       maxSignals: 40
     });
-  const previousPayload = await loadPreviousRealtimePayload(generatedDate);
+  const previousPayload = await loadPreviousRealtimePayload();
   const previousSignals = previousPayload?.signals ?? [];
-  const { freshSignals, mergedSignals } = mergeRealtimeSignals(nextPayload.signals, previousSignals);
-  const polished = await polishSignals(freshSignals);
-  const polishedFreshSignals = polished.signals;
-  const polishedFreshByKey = new Map(polishedFreshSignals.map((signal) => [getSignalKey(signal), signal]));
-  const finalSignals = mergedSignals
-    .map((signal) => polishedFreshByKey.get(getSignalKey(signal)) ?? signal)
-    .map(hydrateSignalMetadata);
+  const { mergedSignals } = mergeRealtimeSignals(nextPayload.signals, previousSignals);
+  const polishTargets = mergedSignals.map(hydrateSignalMetadata);
+  const polished = await polishSignals(polishTargets);
+  const finalSignals = polished.signals.map(hydrateSignalMetadata);
   const realtimePayload = {
     ...nextPayload,
     signals: finalSignals,
@@ -892,4 +912,8 @@ export function __testMergeRealtimeSignals(newSignals, previousSignals, options)
 
 export function __testBuildRealtimePayload(articleSource, slotHour, generatedAt, generatedDate, options) {
   return buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDate, options);
+}
+
+export function __testBuildFallbackPolish(signal) {
+  return buildFallbackPolish(signal);
 }

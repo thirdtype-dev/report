@@ -98,14 +98,12 @@ test('realtime generator prefers telegram public signals when fixtures are avail
   assert.ok(Array.isArray(realtime.signals[0].evidencePoints));
   assert.ok(realtime.signals[0].evidencePoints.length > 0);
   assert.equal(realtime.summary.basedOn, 'public telegram channel mentions with market news backfill');
-  assert.equal(realtime.signals[0].stockName, '마키나락스');
-  assert.ok(realtime.signals[0].channelCount >= 2);
   assert.ok(realtime.signals.length <= 20);
   assert.ok(realtime.signals.length >= 5);
-  assert.equal(realtime.signals[0].stockCode, '377480');
-  assert.ok(Array.isArray(realtime.signals[0].relatedPosts));
-  assert.ok(realtime.signals[0].relatedPosts.length >= 1);
-  assert.equal(realtime.signals[0].relatedPosts[0].label, '관련기사1');
+  assert.ok(realtime.signals.some((signal) => signal.hasTelegram));
+  assert.ok(realtime.signals.every((signal) => Array.isArray(signal.relatedPosts)));
+  assert.ok(realtime.signals.every((signal) => signal.relatedPosts.length >= 1));
+  assert.ok(realtime.signals.every((signal) => signal.relatedPosts.every((item) => !String(item.source).startsWith('Telegram'))));
   assert.equal(typeof realtime.signals[0].polishedHeadline, 'string');
   assert.ok(realtime.signals[0].polishedHeadline.length > 0);
   assert.equal(typeof realtime.signals[0].polishedBody, 'string');
@@ -160,18 +158,27 @@ test('realtime merge keeps 20 visible items and only prepends 5 new unique signa
 
   const previousSignals = Array.from({ length: 20 }, (_, index) => ({
     stockName: `기존${index + 1}`,
-    stockCode: String(1000 + index)
+    stockCode: String(1000 + index),
+    source: '연합뉴스',
+    sourceUrl: `https://example.com/existing-${index + 1}`,
+    relatedPosts: [
+      {
+        label: '관련기사1',
+        source: '연합뉴스',
+        url: `https://example.com/existing-${index + 1}`
+      }
+    ]
   }));
 
   const newSignals = [
-    { stockName: '기존1', stockCode: '1000' },
-    { stockName: '신규1', stockCode: '2001' },
-    { stockName: '신규2', stockCode: '2002' },
-    { stockName: '기존2', stockCode: '1001' },
-    { stockName: '신규3', stockCode: '2003' },
-    { stockName: '신규4', stockCode: '2004' },
-    { stockName: '신규5', stockCode: '2005' },
-    { stockName: '신규6', stockCode: '2006' }
+    { stockName: '기존1', stockCode: '1000', source: '연합뉴스', sourceUrl: 'https://example.com/existing-1', relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-1' }] },
+    { stockName: '신규1', stockCode: '2001', source: '매일경제', sourceUrl: 'https://example.com/new-1', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-1' }] },
+    { stockName: '신규2', stockCode: '2002', source: '매일경제', sourceUrl: 'https://example.com/new-2', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-2' }] },
+    { stockName: '기존2', stockCode: '1001', source: '연합뉴스', sourceUrl: 'https://example.com/existing-2', relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-2' }] },
+    { stockName: '신규3', stockCode: '2003', source: '매일경제', sourceUrl: 'https://example.com/new-3', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-3' }] },
+    { stockName: '신규4', stockCode: '2004', source: '매일경제', sourceUrl: 'https://example.com/new-4', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-4' }] },
+    { stockName: '신규5', stockCode: '2005', source: '매일경제', sourceUrl: 'https://example.com/new-5', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-5' }] },
+    { stockName: '신규6', stockCode: '2006', source: '매일경제', sourceUrl: 'https://example.com/new-6', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-6' }] }
   ];
 
   const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
@@ -192,6 +199,165 @@ test('realtime merge keeps 20 visible items and only prepends 5 new unique signa
   assert.ok(merged.mergedSignals.some((signal) => signal.stockName === '기존3'));
 });
 
+test('realtime merge drops prior telegram-only signals from carry-over pool', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  const previousSignals = [
+    {
+      stockName: '텔레그램잔존',
+      stockCode: '1000',
+      source: 'Telegram @foo',
+      sourceUrl: 'https://t.me/foo/1',
+      relatedPosts: [{ label: '관련기사1', source: 'Telegram @foo', url: 'https://t.me/foo/1' }]
+    },
+    {
+      stockName: '뉴스잔존',
+      stockCode: '1001',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/news-keep',
+      relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/news-keep' }]
+    }
+  ];
+
+  const newSignals = [
+    { stockName: '신규뉴스', stockCode: '2001', source: '매일경제', sourceUrl: 'https://example.com/new', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new' }] }
+  ];
+
+  const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
+    freshBatchSize: 5,
+    visibleLimit: 20
+  });
+
+  assert.ok(!merged.mergedSignals.some((signal) => signal.stockName === '텔레그램잔존'));
+  assert.ok(merged.mergedSignals.some((signal) => signal.stockName === '뉴스잔존'));
+});
+
+test('realtime generator carries prior-day signals forward to keep 20 visible items', () => {
+  const persistedPath = path.join(repoRoot, 'report/data/realtime-surge.json');
+  const originalPersisted = fs.existsSync(persistedPath) ? fs.readFileSync(persistedPath, 'utf8') : null;
+  const previousSignals = Array.from({ length: 15 }, (_, index) => ({
+    stockName: `기존보유${index + 1}`,
+    stockCode: String(7000 + index),
+    summary: `기존 보유 종목 ${index + 1} 요약`,
+    headline: `기존 보유 종목 ${index + 1} 헤드라인`,
+    relatedPosts: [
+      {
+        label: '관련기사1',
+        title: `기존 보유 종목 ${index + 1} 기사`,
+        source: '연합뉴스',
+        url: `https://example.com/old-${index + 1}`
+      }
+    ],
+    source: '연합뉴스',
+    sourceUrl: `https://example.com/old-${index + 1}`
+  }));
+
+  try {
+    fs.writeFileSync(persistedPath, JSON.stringify({
+      generated_date: '2026-05-26',
+      signals: previousSignals
+    }, null, 2));
+
+    execFileSync(process.execPath, ['scripts/generate-realtime-surge.mjs'], {
+      cwd: repoRoot,
+      env: {
+        ...process.env,
+        REALTIME_SLOT_HOUR: '11',
+        REALTIME_TELEGRAM_FIXTURE_DIR: path.join(repoRoot, 'tests/fixtures/telegram-public'),
+        REALTIME_POLISH_MOCK: '1'
+      }
+    });
+  } finally {
+    if (originalPersisted == null) {
+      fs.unlinkSync(persistedPath);
+    } else {
+      fs.writeFileSync(persistedPath, originalPersisted);
+    }
+  }
+
+  const realtime = readJson('public/report/data/realtime-surge.json');
+  assert.equal(realtime.signals.length, 20);
+  assert.ok(realtime.signals.some((signal) => signal.stockName === '기존보유1'));
+  assert.ok(realtime.signals.every((signal) => typeof signal.polishedHeadline === 'string' && signal.polishedHeadline.length > 0));
+  assert.ok(realtime.signals.every((signal) => typeof signal.polishedBody === 'string' && signal.polishedBody.length >= 100));
+});
+
+test('realtime payload hides telegram-only candidates and exposes only news links for mixed signals', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const payload = module.__testBuildRealtimePayload({
+    stockNewsCandidates: [
+      {
+        companyName: '마키나락스',
+        stockCode: '377480',
+        title: '마키나락스 상한가 직행, AI 인프라 수혜 기대감 부각',
+        summary: 'Telegram @YeouidoStory2 공개 채널 멘션',
+        source: 'Telegram @YeouidoStory2',
+        sourceUrl: 'https://t.me/YeouidoStory2/112896',
+        publishedAt: '2026-05-27T01:28:00+00:00'
+      },
+      {
+        companyName: '삼성전자',
+        stockCode: '005930',
+        title: '삼성전자, HBM 수요 기대에 장중 강세',
+        summary: 'Telegram @investment_puzzle 공개 채널 멘션',
+        source: 'Telegram @investment_puzzle',
+        sourceUrl: 'https://t.me/investment_puzzle/10',
+        publishedAt: '2026-05-27T01:29:00+00:00'
+      },
+      {
+        companyName: '삼성전자',
+        stockCode: '005930',
+        title: '삼성전자, HBM 수요 기대에 장중 강세',
+        summary: 'HBM 수요 기대와 외국인 매수세가 함께 부각됐다',
+        source: '연합뉴스',
+        sourceUrl: 'https://example.com/samsung-news',
+        publishedAt: '2026-05-27T01:27:00+00:00'
+      },
+      {
+        companyName: 'SK하이닉스',
+        stockCode: '000660',
+        title: 'SK하이닉스, 목표가 상향에 9%대 급등',
+        summary: '목표주가 상향과 HBM 실적 기대가 반영됐다',
+        source: '매일경제',
+        sourceUrl: 'https://example.com/sk-news',
+        publishedAt: '2026-05-27T01:26:00+00:00'
+      }
+    ]
+  }, 14, '2026-05-27T05:00:00.000Z', '2026-05-27', { maxSignals: 10 });
+
+  assert.deepEqual(payload.signals.map((signal) => signal.stockName), ['삼성전자', 'SK하이닉스']);
+  assert.equal(payload.signals[0].source, '연합뉴스');
+  assert.ok(payload.signals[0].relatedPosts.length >= 1);
+  assert.ok(payload.signals[0].relatedPosts.every((item) => !String(item.source).startsWith('Telegram')));
+  assert.ok(payload.signals.every((signal) => signal.relatedPosts.length >= 1));
+});
+
+test('fallback polish rewrites noisy copied text into cleaner display copy', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const polished = module.__testBuildFallbackPolish({
+    stockName: '한화시스템',
+    headline: "[오늘의 주목주] '차익실현 압력' 한화시스템 주가 5%대 하락, 코스닥 디앤디파마텍 15%대 급등",
+    summary: "[오늘의 주목주] '차익실현 압력' 한화시스템 주가 5%대 하락, 코스닥 디앤디파마텍 15%대 급등 비즈니스포스트",
+    relatedPosts: [
+      {
+        title: "[오늘의 주목주] '차익실현 압력' 한화시스템 주가 5%대 하락, 코스닥 디앤디파마텍 15%대 급등",
+        source: '비즈니스포스트',
+        url: 'https://example.com/hanwha-news'
+      }
+    ],
+    channelCount: 1,
+    changeRate: -5
+  });
+
+  assert.notEqual(polished.polishedHeadline, "[오늘의 주목주] '차익실현 압력' 한화시스템 주가 5%대 하락, 코스닥 디앤디파마텍 15%대 급등");
+  assert.ok(!polished.polishedHeadline.includes('[오늘의 주목주]'));
+  assert.ok(!polished.polishedBody.includes('비즈니스포스트'));
+  assert.ok(polished.polishedBody.length >= 100);
+});
+
 test('realtime payload blocks unmapped stock candidates before accumulation', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
@@ -201,7 +367,7 @@ test('realtime payload blocks unmapped stock candidates before accumulation', as
         companyName: '삼성전자',
         title: '삼성전자 강세',
         summary: '반도체 수요 기대감',
-        source: 'Telegram test',
+        source: '연합뉴스',
         sourceUrl: 'https://example.com/1',
         publishedAt: '2026-05-27T01:00:00+00:00'
       },
