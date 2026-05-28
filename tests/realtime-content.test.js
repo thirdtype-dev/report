@@ -334,6 +334,64 @@ test('realtime payload hides telegram-only candidates and exposes only news link
   assert.ok(payload.signals.every((signal) => signal.relatedPosts.length >= 1));
 });
 
+test('google news backfill converts telegram-only company mentions into news candidates', async () => {
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const backfilled = module.__testBuildGoogleNewsBackfillCandidates(
+    [
+      {
+        companyName: '하나마이크론',
+        stockCode: '067310',
+        title: '하나마이크론 HBM 관련 기대감 부각',
+        summary: 'Telegram @merITz_tech 공개 채널 멘션',
+        source: 'Telegram @merITz_tech',
+        sourceUrl: 'https://t.me/merITz_tech/1',
+        publishedAt: '2026-05-28T00:00:00Z'
+      }
+    ],
+    [
+      {
+        companyName: '하나마이크론',
+        title: '하나마이크론, HBM 기대감에 장중 강세',
+        summary: 'HBM 후공정 수요 기대가 반영됐다',
+        source: '연합뉴스',
+        sourceUrl: 'https://example.com/hana-news',
+        publishedAt: '2026-05-28T00:10:00Z'
+      },
+      {
+        companyName: '무관종목',
+        title: '무관종목 기사',
+        summary: '무관',
+        source: '연합뉴스',
+        sourceUrl: 'https://example.com/other-news',
+        publishedAt: '2026-05-28T00:11:00Z'
+      }
+    ]
+  );
+
+  assert.equal(backfilled.length, 1);
+  assert.equal(backfilled[0].companyName, '하나마이크론');
+  assert.equal(backfilled[0].source, '연합뉴스');
+  assert.equal(backfilled[0].sourceUrl, 'https://example.com/hana-news');
+});
+
+test('display normalization removes telegram source labels when news links exist', async () => {
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const normalized = module.__testNormalizeSignalDisplaySources({
+    stockName: 'SK하이닉스',
+    stockCode: '000660',
+    source: 'Telegram @investment_puzzle',
+    sourceUrl: 'https://t.me/investment_puzzle/123',
+    relatedPosts: [
+      { label: '관련기사1', source: 'Telegram @investment_puzzle', url: 'https://t.me/investment_puzzle/123' },
+      { label: '관련기사2', source: '연합뉴스', url: 'https://example.com/sk-news' }
+    ]
+  });
+
+  assert.equal(normalized.source, '연합뉴스');
+  assert.equal(normalized.sourceUrl, 'https://example.com/sk-news');
+  assert.ok(normalized.relatedPosts.every((item) => !String(item.source).startsWith('Telegram')));
+});
+
 test('fallback polish rewrites noisy copied text into cleaner display copy', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));

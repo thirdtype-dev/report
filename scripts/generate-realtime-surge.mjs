@@ -21,9 +21,12 @@ const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash:f
 const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
+const GOOGLE_NEWS_TIMEOUT_MS = Number.parseInt(process.env.GOOGLE_NEWS_TIMEOUT_MS ?? '20000', 10);
 const REALTIME_POLISH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_POLISH_BATCH_SIZE ?? '5', 10);
 const REALTIME_FRESH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_FRESH_BATCH_SIZE ?? '5', 10);
 const REALTIME_VISIBLE_LIMIT = Number.parseInt(process.env.REALTIME_VISIBLE_LIMIT ?? '20', 10);
+const REALTIME_GOOGLE_BACKFILL_COMPANY_LIMIT = Number.parseInt(process.env.REALTIME_GOOGLE_BACKFILL_COMPANY_LIMIT ?? '20', 10);
+const REALTIME_GOOGLE_BACKFILL_ARTICLES_PER_COMPANY = Number.parseInt(process.env.REALTIME_GOOGLE_BACKFILL_ARTICLES_PER_COMPANY ?? '2', 10);
 const MARKET_RESEARCH_WRITER = {
   provider: 'market-research-news',
   model: 'rule-based-extractor-v1'
@@ -156,6 +159,17 @@ function cleanText(value) {
     .trim();
 }
 
+function decodeXml(value) {
+  return String(value ?? '')
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/gu, '$1')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
 function isTelegramSource(value) {
   return /^Telegram\b/iu.test(cleanText(value));
 }
@@ -211,6 +225,10 @@ function stripPublisher(title) {
   return cleanText(title).replace(/\s+-\s+[^-]+$/u, '').trim();
 }
 
+function stripHtml(value) {
+  return decodeXml(value).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 function inferDirection(text) {
   if (/(하한가|급락|하락|약세|내려)/u.test(text)) return 'down';
   if (/(상한가|급등|상승|강세|반등|랠리|따따블|직행)/u.test(text)) return 'up';
@@ -256,6 +274,10 @@ function normalizeCompanyName(token) {
     .replace(/^(주식회사|㈜)/u, '')
     .replace(/(은|는|이|가|도|을|를|에|서|로|과|와|만)$/u, '')
     .trim();
+}
+
+function normalizeSearchText(value) {
+  return stripHtml(value).replace(/\s+/gu, '').toLowerCase();
 }
 
 function getPreferredStockCode(stockName, currentCode = null) {
@@ -441,6 +463,93 @@ function isNewsBackedSignal(signal) {
   return Boolean(signal.sourceUrl) && !isTelegramSource(signal.source);
 }
 
+function hasNewsBackfillForCompany(companyName, candidates) {
+  return candidates.some((item) => item.companyName === companyName && !isTelegramSource(item.source) && item.sourceUrl);
+}
+
+function parseGoogleNewsRss(xml) {
+  return [...String(xml ?? '').matchAll(/<item>([\s\S]*?)<\/item>/gu)].map((match) => {
+    const item = match[1];
+    const title = stripHtml(item.match(/<title>([\s\S]*?)<\/title>/u)?.[1]);
+    const sourceUrl = decodeXml(item.match(/<link>([\s\S]*?)<\/link>/u)?.[1] ?? '');
+    const source = stripHtml(item.match(/<source[^>]*>([\s\S]*?)<\/source>/u)?.[1]);
+    const publishedAt = stripHtml(item.match(/<pubDate>([\s\S]*?)<\/pubDate>/u)?.[1]);
+    const summary = stripHtml(item.match(/<description>([\s\S]*?)<\/description>/u)?.[1]);
+    return { title, summary, source, sourceUrl, publishedAt };
+  }).filter((item) => item.title && item.sourceUrl);
+}
+
+async function fetchText(url) {
+  const response = await fetch(url, {
+    signal: AbortSignal.timeout(GOOGLE_NEWS_TIMEOUT_MS),
+    headers: {
+      accept: 'application/rss+xml,text/xml,text/html,*/*',
+      'user-agent': 'Mozilla/5.0 (compatible; HermesRealtimeSurgeBot/1.0)'
+    }
+  });
+  if (!response.ok) {
+    throw new Error(`fetch_failed_${response.status}`);
+  }
+  return response.text();
+}
+
+function buildGoogleNewsBackfillCandidates(telegramCandidates, googleNewsItems) {
+  const telegramByCompany = new Map();
+  for (const candidate of telegramCandidates) {
+    if (!candidate?.companyName) continue;
+    if (!telegramByCompany.has(candidate.companyName)) telegramByCompany.set(candidate.companyName, candidate);
+  }
+
+  const seen = new Set();
+  const backfilled = [];
+  for (const item of googleNewsItems) {
+    const companyName = normalizeCompanyName(item?.companyName ?? '');
+    if (!companyName || !telegramByCompany.has(companyName)) continue;
+    const baseCandidate = telegramByCompany.get(companyName);
+    const key = item.sourceUrl || `${companyName}:${item.title}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    backfilled.push({
+      companyName,
+      stockCode: baseCandidate?.stockCode ?? null,
+      title: cleanText(item.title),
+      summary: cleanText(item.summary),
+      source: cleanText(item.source),
+      sourceUrl: item.sourceUrl,
+      publishedAt: item.publishedAt ?? null
+    });
+  }
+  return backfilled;
+}
+
+async function fetchGoogleNewsBackfillCandidates(telegramCandidates, existingNewsCandidates) {
+  const targetCompanies = [...new Set(
+    telegramCandidates
+      .map((candidate) => normalizeCompanyName(candidate?.companyName ?? ''))
+      .filter(Boolean)
+      .filter((companyName) => !hasNewsBackfillForCompany(companyName, existingNewsCandidates))
+  )].slice(0, REALTIME_GOOGLE_BACKFILL_COMPANY_LIMIT);
+
+  if (!targetCompanies.length) return [];
+
+  const results = await Promise.allSettled(targetCompanies.map(async (companyName) => {
+    const query = `${companyName} 주가`;
+    const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
+    const items = parseGoogleNewsRss(await fetchText(url))
+      .filter((item) => {
+        const haystack = normalizeSearchText(`${item.title} ${item.summary}`);
+        const needle = normalizeSearchText(companyName);
+        return needle && haystack.includes(needle);
+      })
+      .slice(0, REALTIME_GOOGLE_BACKFILL_ARTICLES_PER_COMPANY)
+      .map((item) => ({ ...item, companyName }));
+    return items;
+  }));
+
+  const googleNewsItems = results.flatMap((result) => result.status === 'fulfilled' ? result.value : []);
+  return buildGoogleNewsBackfillCandidates(telegramCandidates, googleNewsItems);
+}
+
 function mergeRealtimeSignals(newSignals, previousSignals, {
   freshBatchSize = REALTIME_FRESH_BATCH_SIZE,
   visibleLimit = REALTIME_VISIBLE_LIMIT
@@ -538,6 +647,26 @@ function buildFallbackPolish(signal) {
   return {
     polishedHeadline: baseHeadline,
     polishedBody: trimBody(polishedBody || `${signal.stockName} 관련 근거 기사를 통해 흐름을 확인할 수 있습니다.`)
+  };
+}
+
+function normalizeSignalDisplaySources(signal) {
+  if (!signal || typeof signal !== 'object') return signal;
+  const relatedPosts = Array.isArray(signal.relatedPosts)
+    ? signal.relatedPosts.filter((item) => item?.url && !isTelegramSource(item?.source))
+    : [];
+  if (!isTelegramSource(signal.source)) {
+    return {
+      ...signal,
+      relatedPosts
+    };
+  }
+  const primary = relatedPosts[0] ?? null;
+  return {
+    ...signal,
+    source: primary?.source ?? signal.source,
+    sourceUrl: primary?.url ?? signal.sourceUrl,
+    relatedPosts
   };
 }
 
@@ -812,6 +941,26 @@ async function loadPreviousRealtimePayload() {
   }
 }
 
+function buildNewsBackfillSeedCandidates(previousSignals) {
+  const seeds = [];
+  for (const signal of Array.isArray(previousSignals) ? previousSignals : []) {
+    if (!signal || typeof signal !== 'object') continue;
+    const companyName = normalizeCompanyName(signal.stockName ?? '');
+    if (!companyName || !signal.stockCode) continue;
+    if (isNewsBackedSignal(signal)) continue;
+    seeds.push({
+      companyName,
+      stockCode: signal.stockCode,
+      title: cleanText(signal.headline || signal.latestHeadline || signal.summary),
+      summary: cleanText(signal.summary),
+      source: cleanText(signal.source),
+      sourceUrl: signal.sourceUrl ?? null,
+      publishedAt: signal.publishedAt ?? null
+    });
+  }
+  return seeds;
+}
+
 async function main() {
   const slotHour = resolveSlotHour();
   const slotLabel = SLOT_LABELS[slotHour];
@@ -822,11 +971,17 @@ async function main() {
 
   const generatedAt = now.toISOString();
   const generatedDate = `${kst.year}-${kst.month}-${kst.day}`;
+  const previousPayload = await loadPreviousRealtimePayload();
+  const previousSignals = previousPayload?.signals ?? [];
   const telegramMessages = await loadTelegramSource();
   const telegramCandidates = messagesToTelegramNewsCandidates(telegramMessages);
   const marketResearchCandidates = Array.isArray(marketResearch.stockNewsCandidates) ? marketResearch.stockNewsCandidates : [];
-  const combinedCandidates = [...telegramCandidates, ...marketResearchCandidates];
+  const previousBackfillSeeds = buildNewsBackfillSeedCandidates(previousSignals);
   const usingTelegram = telegramCandidates.length > 0;
+  const googleNewsBackfillCandidates = (usingTelegram || previousBackfillSeeds.length)
+    ? await fetchGoogleNewsBackfillCandidates([...telegramCandidates, ...previousBackfillSeeds], marketResearchCandidates)
+    : [];
+  const combinedCandidates = [...telegramCandidates, ...googleNewsBackfillCandidates, ...marketResearchCandidates];
   const writer = usingTelegram ? TELEGRAM_PUBLIC_WRITER : MARKET_RESEARCH_WRITER;
   const nextPayload = usingTelegram
     ? buildRealtimePayload({ stockNewsCandidates: combinedCandidates }, slotHour, generatedAt, generatedDate, {
@@ -841,12 +996,10 @@ async function main() {
       subtitlePrefix: '시장 뉴스 기반',
       maxSignals: 40
     });
-  const previousPayload = await loadPreviousRealtimePayload();
-  const previousSignals = previousPayload?.signals ?? [];
   const { mergedSignals } = mergeRealtimeSignals(nextPayload.signals, previousSignals);
   const polishTargets = mergedSignals.map(hydrateSignalMetadata);
   const polished = await polishSignals(polishTargets);
-  const finalSignals = polished.signals.map(hydrateSignalMetadata);
+  const finalSignals = polished.signals.map(hydrateSignalMetadata).map(normalizeSignalDisplaySources);
   const realtimePayload = {
     ...nextPayload,
     signals: finalSignals,
@@ -916,4 +1069,12 @@ export function __testBuildRealtimePayload(articleSource, slotHour, generatedAt,
 
 export function __testBuildFallbackPolish(signal) {
   return buildFallbackPolish(signal);
+}
+
+export function __testBuildGoogleNewsBackfillCandidates(telegramCandidates, googleNewsItems) {
+  return buildGoogleNewsBackfillCandidates(telegramCandidates, googleNewsItems);
+}
+
+export function __testNormalizeSignalDisplaySources(signal) {
+  return normalizeSignalDisplaySources(signal);
 }
