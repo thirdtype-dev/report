@@ -1,16 +1,118 @@
 {
-  "generated_at": "2026-05-29T01:00:36.729Z",
+  "generated_at": "2026-05-29T02:00:13.629Z",
   "generated_date": "2026-05-29",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
+      "headline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 +30.0%",
+        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
+      ],
+      "mentionScore": 80,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-05-29T02:00:13.629Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 30,
+      "latestHeadline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
+      "publishedAt": "Thu, 21 May 2026 08:35:02 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "LG전자 '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+      "polishedBody": "LG전자는 '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트. 1개 채널 또는 기사에서 관련 언급이 겹쳤습니다. 제목 기준 변동 단서는 +30.0%입니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다."
+    },
+    {
+      "stockName": "소룩스",
+      "stockCode": "290690",
+      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈 Chosunbiz",
+      "headline": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+      "evidencePoints": [
+        "출처 Chosunbiz 기반 기사 1건",
+        "제목 기준 변동률 단서 -25.0%",
+        "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈"
+      ],
+      "mentionScore": 56,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-05-29T02:00:13.629Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -25,
+      "latestHeadline": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+      "source": "Chosunbiz",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5",
+      "publishedAt": "Mon, 18 May 2026 07:00:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "소룩스 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락",
+      "polishedBody": "소룩스는 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락. 1개 채널 또는 기사에서 관련 언급이 겹쳤습니다. 제목 기준 변동 단서는 -25.0%입니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다."
+    },
+    {
+      "stockName": "미래에셋증권",
+      "stockCode": "006800",
+      "summary": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막 비즈니스포스트",
+      "headline": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -7.0%",
+        "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막"
+      ],
+      "mentionScore": 34.4,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-05-29T02:00:13.629Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -7,
+      "latestHeadline": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5",
+      "publishedAt": "Thu, 02 Apr 2026 07:00:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "미래에셋증권 '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만",
+      "polishedBody": "미래에셋증권는 '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만. 1개 채널 또는 기사에서 관련 언급이 겹쳤습니다. 제목 기준 변동 단서는 -7.0%입니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다."
+    },
     {
       "stockName": "케이카",
       "stockCode": "381970",
@@ -662,111 +764,83 @@
       "hasTelegram": false,
       "polishedHeadline": "현대차 경신 뒤 6590선 하락 마감, 증시 위축에 현대차",
       "polishedBody": "현대차는 경신 뒤 6590선 하락 마감, 증시 위축에 현대차. 1개 채널 또는 기사에서 관련 언급이 겹쳤습니다. 제목 기준 변동 단서는 -4.0%입니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다. 단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다."
-    },
-    {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이 알파경제",
-      "headline": "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이",
-      "evidencePoints": [
-        "출처 알파경제 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이"
-      ],
-      "mentionScore": 26,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-05-27T07:27:45.731Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이",
-      "source": "알파경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9NOFd4cks3RGg2eFp1U1VpUlh2SmdMMUVKRGhpNEtBS3FQeTNRd3dHSmk5Q1dKa09feEd1RHdIZ2Q3Y2Rhc1BWNXNpbGkyMlZleks2X3QwRkhqQThVbUHSAW5BVV95cUxQeHNuX29EZWhLQVBYUFY4QjVIbmNsQ2l4XzA2TDZDX051V2NNaGZqSWVQaTM3RFVaTm5iZlpjMFR6Rm5kVTl5X2loQ2lrNlRILXg4UTBxNi1RSjNKVFp1WmgyeXd5R1oxMy1Ya2lMdw?oc=5",
-      "publishedAt": "Wed, 20 May 2026 08:05:42 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이",
-          "source": "알파경제",
-          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9NOFd4cks3RGg2eFp1U1VpUlh2SmdMMUVKRGhpNEtBS3FQeTNRd3dHSmk5Q1dKa09feEd1RHdIZ2Q3Y2Rhc1BWNXNpbGkyMlZleks2X3QwRkhqQThVbUHSAW5BVV95cUxQeHNuX29EZWhLQVBYUFY4QjVIbmNsQ2l4XzA2TDZDX051V2NNaGZqSWVQaTM3RFVaTm5iZlpjMFR6Rm5kVTl5X2loQ2lrNlRILXg4UTBxNi1RSjNKVFp1WmgyeXd5R1oxMy1Ya2lMdw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "polishedHeadline": "삼성전자 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이",
-      "polishedBody": "삼성전자는 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선. 1개 채널 또는 기사에서 관련 언급이 겹쳤습니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다. 단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다."
-    },
-    {
-      "stockName": "SK하이닉스",
-      "stockCode": "000660",
-      "summary": "SK하이닉스 미래에셋증권은 27일 SK하이닉스 에 대해 고대역폭메모리(HBM)와 범용 메모리 가격 급등에 따른 실적 개선으로 밸류에이션 재평가가 본격화되고 있다며 투자의견 ‘매수’를 유지하고 목표주가를 기존 320만원에서 380만원으로 약 19% 상향했다. 전날 종가는 205만2000원이다. 김영건 미래에셋증권 연구원은 “높은 자기자본이익률(ROE)에도 불구하고 글로벌 메모리 업체 대비 주가순자산비율(P",
-      "headline": "SK하이닉스 가 '시총 1조 달러'를 돌파 했다. 아시아 기업으로는 대만 TSMC, 삼성전자에 이어 세 번째로 '트릴리언 클럽'에 합류했다. 27일 오전 9시 31분 SK하이닉스는 9.16%(18만 8000원) 오른 224만 원에 거래 중이다. 현 시가 기준 시가총액은 1598조 5914억 원(1조 644억 달러)에 달하며, 처음으로 1조 달러를 넘어섰다. 시총 1조 달러 이상 글로벌 상장사 14곳 중 국내 기업은 삼성전자와 SK하이닉스 2곳이 되며, 미국(7곳) 다음을 차지하게 됐다 . https:",
-      "evidencePoints": [
-        "출처 Telegram @investment_puzzle, 비즈니스포스트 기반 기사 3건",
-        "제목 기준 변동률 단서 +19.0%",
-        "SK하이닉스 가 '시총 1조 달러'를 돌파 했다. 아시아 기업으로는 대만 TSMC, 삼성전자에 이어 세 번째로 '트릴리언 클럽'에 합류했다. 27일 오전 9시 31분 SK하이닉스는 9.16%(18만 8000원) 오른 224만 원에 거래 중이다. 현 시가 기준 시가총액은 1598조 5914억 원(1조 644억 달러)에 달하며, 처음으로 1조 달러를 넘어섰다. 시총 1조 달러 이상 글로벌 상장사 14곳 중 국내 기업은 삼성전자와 SK하이닉스 2곳이 되며, 미국(7곳) 다음을 차지하게 됐다 . https:",
-        "SK하이닉스 미래에셋증권은 27일 SK하이닉스 에 대해 고대역폭메모리(HBM)와 범용 메모리 가격 급등에 따른 실적 개선으로 밸류에이션 재평가가 본격화되고 있다며 투자의견 ‘매수’를 유지하고 목표주가를 기존 320만원에서 380만원으로 약 19% 상향했다. 전날 종가는 205만2000원이다. 김영건 미래에셋증권 연구원은 “높은 자기자본이익률(ROE)에도 불구하고 글로벌 메모리 업체 대비 주가순자산비율(P"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-05-27T07:15:21.264Z",
-      "cycleLabel": "KST_1400",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "SK하이닉스 가 '시총 1조 달러'를 돌파 했다. 아시아 기업으로는 대만 TSMC, 삼성전자에 이어 세 번째로 '트릴리언 클럽'에 합류했다. 27일 오전 9시 31분 SK하이닉스는 9.16%(18만 8000원) 오른 224만 원에 거래 중이다. 현 시가 기준 시가총액은 1598조 5914억 원(1조 644억 달러)에 달하며, 처음으로 1조 달러를 넘어섰다. 시총 1조 달러 이상 글로벌 상장사 14곳 중 국내 기업은 삼성전자와 SK하이닉스 2곳이 되며, 미국(7곳) 다음을 차지하게 됐다 . https:",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBMZEhKVGdlSHV3QkhpaXlxNXhFNHNraXJTNVd1akFwSkUwMm9tN096a2JnSzVfWS13T1BYVG5fbERja2JXaFdpcjhnOHo0ZHpldFBnLTA5YVN6OC13ajE1UEFZWHFqbF9RZndlQmFneEZnRU0?oc=5",
-      "publishedAt": "2026-05-27T00:55:57+00:00",
-      "relatedPosts": [
-        {
-          "label": "관련기사3",
-          "title": "[오늘의 주목주] '코스피 폭락' SK하이닉스 주가 9%대 내려, 코스닥 펄어비스는 12%대 상승",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBMZEhKVGdlSHV3QkhpaXlxNXhFNHNraXJTNVd1akFwSkUwMm9tN096a2JnSzVfWS13T1BYVG5fbERja2JXaFdpcjhnOHo0ZHpldFBnLTA5YVN6OC13ajE1UEFZWHFqbF9RZndlQmFneEZnRU0?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "polishedHeadline": "SK하이닉스 가 '시총 1조 달러'를 돌파 했다",
-      "polishedBody": "SK하이닉스는 27일 SK하이닉스 에 대해 고대역폭메모리(HBM)와 범용 메모리 가격 급등에 따른 실적 개선으로 밸류에이션. 가 '시총 1조 달러'를 돌파 했다. 2개 채널 또는 기사에서 관련 언급이 겹쳤습니다. '코스피 폭락' SK하이닉스."
-    },
-    {
-      "stockName": "엔에이치스팩33호",
-      "stockCode": "0130H0",
-      "summary": "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈 Chosunbiz",
-      "headline": "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈",
-      "evidencePoints": [
-        "출처 Chosunbiz 기반 기사 1건",
-        "제목 기준 변동률 단서 +208.0%",
-        "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-05-27T07:15:21.264Z",
-      "cycleLabel": "KST_1400",
-      "direction": "up",
-      "changeRate": 208,
-      "latestHeadline": "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈",
-      "source": "Chosunbiz",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQ1pEbUVhT09lTlhaUkp2UTZNb2JyaWRYWmhYNmVBR2g3N250d29pNElQdzFYT19CM3hBdmstMkxiR1haWmtrMV9pUGRMU1lFZHJGbmtGcjlIYU1NazFQU1FQazRxdzhVWEJuaTc0SWNwTUFEX285YWd0eWRLelVhRWxVc2NpZ2vSAZsBQVVfeXFMTjBPT1NObFBHeGVrWHRKOGpjNUt1S3FFZm9WX0ktX3VVTVFDVklYYVpBV0RaY1VmYjl2WV9GYkpKa1lLVzJnQVVhQ19HWXNpOWNPcmRReGZOTDNrUGZOeGhfeUpxQjFYWG1kVDRUVzhFT1lhenBZdXlPMTlJMVFqVEZDbUk0aml6RFdvQlFjc2ZrbDJhMkhjcnluOUk?oc=5",
-      "publishedAt": "Fri, 27 Mar 2026 07:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQ1pEbUVhT09lTlhaUkp2UTZNb2JyaWRYWmhYNmVBR2g3N250d29pNElQdzFYT19CM3hBdmstMkxiR1haWmtrMV9pUGRMU1lFZHJGbmtGcjlIYU1NazFQU1FQazRxdzhVWEJuaTc0SWNwTUFEX285YWd0eWRLelVhRWxVc2NpZ2vSAZsBQVVfeXFMTjBPT1NObFBHeGVrWHRKOGpjNUt1S3FFZm9WX0ktX3VVTVFDVklYYVpBV0RaY1VmYjl2WV9GYkpKa1lLVzJnQVVhQ19HWXNpOWNPcmRReGZOTDNrUGZOeGhfeUpxQjFYWG1kVDRUVzhFT1lhenBZdXlPMTlJMVFqVEZDbUk0aml6RFdvQlFjc2ZrbDJhMkhjcnluOUk?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "polishedHeadline": "엔에이치스팩33호 , 코스닥 상장 첫날 208% 급등",
-      "polishedBody": "엔에이치스팩33호는 , 코스닥 상장 첫날 208% 급등. 1개 채널 또는 기사에서 관련 언급이 겹쳤습니다. 제목 기준 변동 단서는 +208.0%입니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다. 단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": 30,
+      "price": null,
+      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
+      "mentionScore": 80,
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 +30.0%",
+        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-29T02:00:13.629Z",
+      "symbol": "290690",
+      "name": "소룩스",
+      "changeRate": -25,
+      "price": null,
+      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈 Chosunbiz",
+      "source": "Chosunbiz",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5",
+      "mentionScore": 56,
+      "evidencePoints": [
+        "출처 Chosunbiz 기반 기사 1건",
+        "제목 기준 변동률 단서 -25.0%",
+        "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-29T02:00:13.629Z",
+      "symbol": "006800",
+      "name": "미래에셋증권",
+      "changeRate": -7,
+      "price": null,
+      "summary": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막 비즈니스포스트",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5",
+      "mentionScore": 34.4,
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -7.0%",
+        "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "381970",
       "name": "케이카",
       "changeRate": null,
@@ -796,7 +870,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "053030",
       "name": "바이넥스",
       "changeRate": null,
@@ -826,7 +900,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "007810",
       "name": "코리아써키트",
       "changeRate": null,
@@ -857,7 +931,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "373220",
       "name": "LG에너지솔루션",
       "changeRate": -15,
@@ -888,7 +962,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "477850",
       "name": "마키나락스",
       "changeRate": 300,
@@ -912,7 +986,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "003690",
       "name": "코리안리",
       "changeRate": 8.3,
@@ -943,7 +1017,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
@@ -974,7 +1048,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "031210",
       "name": "서울보증보험",
       "changeRate": null,
@@ -1004,7 +1078,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "095340",
       "name": "ISC",
       "changeRate": null,
@@ -1034,7 +1108,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "486990",
       "name": "노타",
       "changeRate": null,
@@ -1065,7 +1139,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "006280",
       "name": "녹십자",
       "changeRate": null,
@@ -1095,7 +1169,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "067310",
       "name": "하나마이크론",
       "changeRate": null,
@@ -1126,7 +1200,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "195870",
       "name": "해성디에스",
       "changeRate": null,
@@ -1156,7 +1230,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "272210",
       "name": "한화시스템",
       "changeRate": -5,
@@ -1180,7 +1254,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "010130",
       "name": "고려아연",
       "changeRate": -12,
@@ -1204,7 +1278,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": -7,
@@ -1228,7 +1302,7 @@
       ]
     },
     {
-      "timestamp": "2026-05-29T01:00:36.729Z",
+      "timestamp": "2026-05-29T02:00:13.629Z",
       "symbol": "005380",
       "name": "현대차",
       "changeRate": -4,
@@ -1248,79 +1322,6 @@
           "title": "[오늘의 주목주] 코스피 사상 최고가 경신 뒤 6590선 하락 마감, 증시 위축에 현대차 주가 4%대 내려",
           "source": "비즈니스포스트",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1jSDg3SGlmR2p5dDZNTnZRamhyS0dWaHkyYmNLUWtyamczMlpXWUZKRWVJeWZ3ZmFnZDZwNEJ4ZDNJbFlaUTZHX2FiNTd3bjVIQjZKOUNEcndaaGZJbm1YS0ZsVXNSaDlja3ZCdUVuWXk0N2M?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-05-29T01:00:36.729Z",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이 알파경제",
-      "source": "알파경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9NOFd4cks3RGg2eFp1U1VpUlh2SmdMMUVKRGhpNEtBS3FQeTNRd3dHSmk5Q1dKa09feEd1RHdIZ2Q3Y2Rhc1BWNXNpbGkyMlZleks2X3QwRkhqQThVbUHSAW5BVV95cUxQeHNuX29EZWhLQVBYUFY4QjVIbmNsQ2l4XzA2TDZDX051V2NNaGZqSWVQaTM3RFVaTm5iZlpjMFR6Rm5kVTl5X2loQ2lrNlRILXg4UTBxNi1RSjNKVFp1WmgyeXd5R1oxMy1Ya2lMdw?oc=5",
-      "mentionScore": 26,
-      "evidencePoints": [
-        "출처 알파경제 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이",
-          "source": "알파경제",
-          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9NOFd4cks3RGg2eFp1U1VpUlh2SmdMMUVKRGhpNEtBS3FQeTNRd3dHSmk5Q1dKa09feEd1RHdIZ2Q3Y2Rhc1BWNXNpbGkyMlZleks2X3QwRkhqQThVbUHSAW5BVV95cUxQeHNuX29EZWhLQVBYUFY4QjVIbmNsQ2l4XzA2TDZDX051V2NNaGZqSWVQaTM3RFVaTm5iZlpjMFR6Rm5kVTl5X2loQ2lrNlRILXg4UTBxNi1RSjNKVFp1WmgyeXd5R1oxMy1Ya2lMdw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-05-29T01:00:36.729Z",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": null,
-      "price": null,
-      "summary": "SK하이닉스 미래에셋증권은 27일 SK하이닉스 에 대해 고대역폭메모리(HBM)와 범용 메모리 가격 급등에 따른 실적 개선으로 밸류에이션 재평가가 본격화되고 있다며 투자의견 ‘매수’를 유지하고 목표주가를 기존 320만원에서 380만원으로 약 19% 상향했다. 전날 종가는 205만2000원이다. 김영건 미래에셋증권 연구원은 “높은 자기자본이익률(ROE)에도 불구하고 글로벌 메모리 업체 대비 주가순자산비율(P",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBMZEhKVGdlSHV3QkhpaXlxNXhFNHNraXJTNVd1akFwSkUwMm9tN096a2JnSzVfWS13T1BYVG5fbERja2JXaFdpcjhnOHo0ZHpldFBnLTA5YVN6OC13ajE1UEFZWHFqbF9RZndlQmFneEZnRU0?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 Telegram @investment_puzzle, 비즈니스포스트 기반 기사 3건",
-        "제목 기준 변동률 단서 +19.0%",
-        "SK하이닉스 가 '시총 1조 달러'를 돌파 했다. 아시아 기업으로는 대만 TSMC, 삼성전자에 이어 세 번째로 '트릴리언 클럽'에 합류했다. 27일 오전 9시 31분 SK하이닉스는 9.16%(18만 8000원) 오른 224만 원에 거래 중이다. 현 시가 기준 시가총액은 1598조 5914억 원(1조 644억 달러)에 달하며, 처음으로 1조 달러를 넘어섰다. 시총 1조 달러 이상 글로벌 상장사 14곳 중 국내 기업은 삼성전자와 SK하이닉스 2곳이 되며, 미국(7곳) 다음을 차지하게 됐다 . https:",
-        "SK하이닉스 미래에셋증권은 27일 SK하이닉스 에 대해 고대역폭메모리(HBM)와 범용 메모리 가격 급등에 따른 실적 개선으로 밸류에이션 재평가가 본격화되고 있다며 투자의견 ‘매수’를 유지하고 목표주가를 기존 320만원에서 380만원으로 약 19% 상향했다. 전날 종가는 205만2000원이다. 김영건 미래에셋증권 연구원은 “높은 자기자본이익률(ROE)에도 불구하고 글로벌 메모리 업체 대비 주가순자산비율(P"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사3",
-          "title": "[오늘의 주목주] '코스피 폭락' SK하이닉스 주가 9%대 내려, 코스닥 펄어비스는 12%대 상승",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBMZEhKVGdlSHV3QkhpaXlxNXhFNHNraXJTNVd1akFwSkUwMm9tN096a2JnSzVfWS13T1BYVG5fbERja2JXaFdpcjhnOHo0ZHpldFBnLTA5YVN6OC13ajE1UEFZWHFqbF9RZndlQmFneEZnRU0?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-05-29T01:00:36.729Z",
-      "symbol": "0130H0",
-      "name": "엔에이치스팩33호",
-      "changeRate": 208,
-      "price": null,
-      "summary": "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈 Chosunbiz",
-      "source": "Chosunbiz",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQ1pEbUVhT09lTlhaUkp2UTZNb2JyaWRYWmhYNmVBR2g3N250d29pNElQdzFYT19CM3hBdmstMkxiR1haWmtrMV9pUGRMU1lFZHJGbmtGcjlIYU1NazFQU1FQazRxdzhVWEJuaTc0SWNwTUFEX285YWd0eWRLelVhRWxVc2NpZ2vSAZsBQVVfeXFMTjBPT1NObFBHeGVrWHRKOGpjNUt1S3FFZm9WX0ktX3VVTVFDVklYYVpBV0RaY1VmYjl2WV9GYkpKa1lLVzJnQVVhQ19HWXNpOWNPcmRReGZOTDNrUGZOeGhfeUpxQjFYWG1kVDRUVzhFT1lhenBZdXlPMTlJMVFqVEZDbUk0aml6RFdvQlFjc2ZrbDJhMkhjcnluOUk?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 Chosunbiz 기반 기사 1건",
-        "제목 기준 변동률 단서 +208.0%",
-        "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 엔에이치스팩33호, 코스닥 상장 첫날 208% 급등 - 조선비즈",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQ1pEbUVhT09lTlhaUkp2UTZNb2JyaWRYWmhYNmVBR2g3N250d29pNElQdzFYT19CM3hBdmstMkxiR1haWmtrMV9pUGRMU1lFZHJGbmtGcjlIYU1NazFQU1FQazRxdzhVWEJuaTc0SWNwTUFEX285YWd0eWRLelVhRWxVc2NpZ2vSAZsBQVVfeXFMTjBPT1NObFBHeGVrWHRKOGpjNUt1S3FFZm9WX0ktX3VVTVFDVklYYVpBV0RaY1VmYjl2WV9GYkpKa1lLVzJnQVVhQ19HWXNpOWNPcmRReGZOTDNrUGZOeGhfeUpxQjFYWG1kVDRUVzhFT1lhenBZdXlPMTlJMVFqVEZDbUk0aml6RFdvQlFjc2ZrbDJhMkhjcnluOUk?oc=5"
         }
       ]
     }
