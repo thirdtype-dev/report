@@ -23,7 +23,7 @@ const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'deepseek/deepseek-
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
 const GOOGLE_NEWS_TIMEOUT_MS = Number.parseInt(process.env.GOOGLE_NEWS_TIMEOUT_MS ?? '20000', 10);
 const REALTIME_POLISH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_POLISH_BATCH_SIZE ?? '5', 10);
-const REALTIME_FRESH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_FRESH_BATCH_SIZE ?? '5', 10);
+const REALTIME_FRESH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_FRESH_BATCH_SIZE ?? '2', 10);
 const REALTIME_VISIBLE_LIMIT = Number.parseInt(process.env.REALTIME_VISIBLE_LIMIT ?? '20', 10);
 const REALTIME_GOOGLE_BACKFILL_COMPANY_LIMIT = Number.parseInt(process.env.REALTIME_GOOGLE_BACKFILL_COMPANY_LIMIT ?? '20', 10);
 const REALTIME_GOOGLE_BACKFILL_ARTICLES_PER_COMPANY = Number.parseInt(process.env.REALTIME_GOOGLE_BACKFILL_ARTICLES_PER_COMPANY ?? '2', 10);
@@ -559,6 +559,7 @@ function mergeRealtimeSignals(newSignals, previousSignals, {
   const filteredPreviousList = previousList.filter(isDisplayableSignal).filter(isNewsBackedSignal);
   const previousKeys = new Set(filteredPreviousList.map(getSignalKey));
   const freshSignals = [];
+  const targetFreshCount = Math.max(freshBatchSize, visibleLimit - filteredPreviousList.length);
 
   for (const signal of hydratedNewSignals) {
     if (!isDisplayableSignal(signal)) continue;
@@ -566,7 +567,7 @@ function mergeRealtimeSignals(newSignals, previousSignals, {
     if (previousKeys.has(key)) continue;
     if (freshSignals.some((item) => getSignalKey(item) === key)) continue;
     freshSignals.push(signal);
-    if (freshSignals.length >= freshBatchSize) break;
+    if (freshSignals.length >= targetFreshCount) break;
   }
 
   const freshKeys = new Set(freshSignals.map(getSignalKey));
@@ -576,6 +577,28 @@ function mergeRealtimeSignals(newSignals, previousSignals, {
   ].slice(0, visibleLimit);
 
   return { freshSignals, mergedSignals };
+}
+
+function assembleFinalSignals(mergedSignals, polishedSignals) {
+  const polishedByKey = new Map(
+    (Array.isArray(polishedSignals) ? polishedSignals : [])
+      .map((signal) => hydrateSignalMetadata(signal))
+      .map((signal) => [getSignalKey(signal), signal])
+  );
+
+  return (Array.isArray(mergedSignals) ? mergedSignals : [])
+    .map((signal) => {
+      const hydrated = hydrateSignalMetadata(signal);
+      const polished = polishedByKey.get(getSignalKey(hydrated));
+      if (polished) return polished;
+      if (cleanText(hydrated.polishedHeadline) && cleanText(hydrated.polishedBody)) return hydrated;
+      return {
+        ...hydrated,
+        ...buildFallbackPolish(hydrated)
+      };
+    })
+    .map(hydrateSignalMetadata)
+    .map(normalizeSignalDisplaySources);
 }
 
 function buildItemsFromSignals(signals, generatedAt) {
@@ -983,10 +1006,12 @@ async function main() {
       subtitlePrefix: '시장 뉴스 기반',
       maxSignals: 40
     });
-  const { mergedSignals } = mergeRealtimeSignals(nextPayload.signals, previousSignals);
-  const polishTargets = mergedSignals.map(hydrateSignalMetadata);
-  const polished = await polishSignals(polishTargets);
-  const finalSignals = polished.signals.map(hydrateSignalMetadata).map(normalizeSignalDisplaySources);
+  const { freshSignals, mergedSignals } = mergeRealtimeSignals(nextPayload.signals, previousSignals);
+  const polishTargets = freshSignals.map(hydrateSignalMetadata);
+  const polished = polishTargets.length
+    ? await polishSignals(polishTargets)
+    : { signals: [], writer: previousPayload?.polishWriter ?? null };
+  const finalSignals = assembleFinalSignals(mergedSignals, polished.signals);
   const realtimePayload = {
     ...nextPayload,
     signals: finalSignals,
@@ -1048,6 +1073,10 @@ export function __testChunkSignalsForPolish(signals, size) {
 
 export function __testMergeRealtimeSignals(newSignals, previousSignals, options) {
   return mergeRealtimeSignals(newSignals, previousSignals, options);
+}
+
+export function __testAssembleFinalSignals(mergedSignals, polishedSignals) {
+  return assembleFinalSignals(mergedSignals, polishedSignals);
 }
 
 export function __testBuildRealtimePayload(articleSource, slotHour, generatedAt, generatedDate, options) {

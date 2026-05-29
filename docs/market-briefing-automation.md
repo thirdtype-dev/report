@@ -50,12 +50,12 @@
 | 장마감 | 16:00 | `0 7 * * 1-5` | 1차 발행 |
 | 장마감 | 16:05 | `5 7 * * 1-5` | 백업 |
 | 장마감 | 16:10 | `10 7 * * 1-5` | 백업 |
-| 실시간급등 | 10:00~15:00 매시 정각 | `0 1-6 * * 1-5` | 장중 슬롯 갱신 |
+| 실시간급등 | 09:00~15:00 30분 간격 | 별도 30분 cadence | 장중 슬롯 갱신 |
 
 Cloud Scheduler는 Cloud Run relay를 호출하고, relay가 GitHub `workflow_dispatch`를 보낸다.
 
 - 브리핑 수동 실행 시 `workflow_dispatch.inputs.phase`로 `pre_market` 또는 `post_market` 지정
-- 실시간급등 수동 실행 시 `workflow_dispatch.inputs.slot_hour`로 `10`~`15` 지정
+- 실시간급등 수동 실행 시 `workflow_dispatch.inputs.slot_hour`로 `9`, `930`, `10`, `1030` ... `1430`, `15` 지정
 
 휴장일 게이트:
 
@@ -86,12 +86,11 @@ Cloud Scheduler는 Cloud Run relay를 호출하고, relay가 GitHub `workflow_di
 현재 writer 설정:
 
 - Primary: `openrouter/openrouter/free`
-- Fallback: `gemini/gemini-2.5-flash`
+- Fallback: `openrouter/deepseek/deepseek-v4-flash`
 
 필요 secrets:
 
 - `OPENROUTER_API_KEY`
-- `GEMINI_API_KEY`
 - `KRX_ID`
 - `KRX_PW`
 

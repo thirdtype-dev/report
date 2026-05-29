@@ -199,6 +199,75 @@ test('realtime merge keeps 20 visible items and only prepends 5 new unique signa
   assert.ok(merged.mergedSignals.some((signal) => signal.stockName === '기존3'));
 });
 
+test('fresh-only polish reuses prior polished copy for carry-over signals', async () => {
+  process.env.REALTIME_SLOT_HOUR = '930';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  const previousSignals = [
+    {
+      stockName: '기존1',
+      stockCode: '1000',
+      headline: '기존1 헤드라인',
+      summary: '기존1 요약',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/existing-1',
+      relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-1' }],
+      polishedHeadline: '기존1 기존 polish 제목',
+      polishedBody: '기존1 기존 polish 본문입니다. 이전 실행에서 생성된 요약을 그대로 유지합니다.'
+    },
+    {
+      stockName: '기존2',
+      stockCode: '1001',
+      headline: '기존2 헤드라인',
+      summary: '기존2 요약',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/existing-2',
+      relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-2' }],
+      polishedHeadline: '기존2 기존 polish 제목',
+      polishedBody: '기존2 기존 polish 본문입니다. 이전 실행에서 생성된 요약을 그대로 유지합니다.'
+    }
+  ];
+
+  const newSignals = [
+    {
+      stockName: '신규1',
+      stockCode: '2001',
+      headline: '신규1 헤드라인',
+      summary: '신규1 요약',
+      source: '매일경제',
+      sourceUrl: 'https://example.com/new-1',
+      relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-1' }]
+    },
+    {
+      stockName: '신규2',
+      stockCode: '2002',
+      headline: '신규2 헤드라인',
+      summary: '신규2 요약',
+      source: '매일경제',
+      sourceUrl: 'https://example.com/new-2',
+      relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-2' }]
+    }
+  ];
+
+  const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
+    freshBatchSize: 2,
+    visibleLimit: 20
+  });
+
+  const finalSignals = module.__testAssembleFinalSignals(
+    merged.mergedSignals,
+    [
+      { ...newSignals[0], polishedHeadline: '신규1 새 polish 제목', polishedBody: '신규1 새 polish 본문입니다. 이번 실행에서 새로 생성된 요약입니다.' },
+      { ...newSignals[1], polishedHeadline: '신규2 새 polish 제목', polishedBody: '신규2 새 polish 본문입니다. 이번 실행에서 새로 생성된 요약입니다.' }
+    ]
+  );
+
+  assert.equal(finalSignals[0].polishedHeadline, '신규1 새 polish 제목');
+  assert.equal(finalSignals[1].polishedHeadline, '신규2 새 polish 제목');
+  assert.equal(finalSignals[2].polishedHeadline, '기존1 기존 polish 제목');
+  assert.equal(finalSignals[3].polishedHeadline, '기존2 기존 polish 제목');
+});
+
 test('realtime merge drops prior telegram-only signals from carry-over pool', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));

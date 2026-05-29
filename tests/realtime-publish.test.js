@@ -35,6 +35,10 @@ test('realtime surge workflow dispatches from Cloud Scheduler inputs', () => {
   includes(workflow, 'name: Publish Realtime Surge');
   includes(workflow, 'workflow_dispatch:');
   includes(workflow, 'slot_hour:');
+  includes(workflow, "- '9'");
+  includes(workflow, "- '930'");
+  includes(workflow, "- '1430'");
+  includes(workflow, "- '15'");
   includes(workflow, 'python3 scripts/fetch_kind_listed_stocks.py');
   includes(workflow, 'ANALYST_PROVIDER: openrouter');
   includes(workflow, 'ANALYST_MODEL: openrouter/free');
@@ -48,8 +52,10 @@ test('realtime surge workflow dispatches from Cloud Scheduler inputs', () => {
   includes(workflow, 'report/data/slot-adapter.json');
 });
 
-test('slot constants define the supported 10:00-15:00 window', () => {
+test('slot constants define the supported 09:00-15:00 half-hour window', () => {
   const source = read('scripts/slot-constants.mjs');
-  includes(source, "key: '10:00-15:00'");
+  includes(source, "key: '09:00-15:00'");
+  includes(source, "930: { cycleLabel: 'KST_0930'");
+  includes(source, "1430: { cycleLabel: 'KST_1430'");
   includes(source, "15: { cycleLabel: 'KST_1500'");
 });
