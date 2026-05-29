@@ -8,8 +8,8 @@ const DATA_DIR = resolve(OUTPUT_DIR, 'data');
 const execFileAsync = promisify(execFile);
 const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
 const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'openrouter/free';
-const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
-const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
+const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'openrouter';
+const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'deepseek/deepseek-v4-flash';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
 const ADSENSE_CLIENT = 'ca-pub-3518959293552717';
@@ -406,10 +406,6 @@ async function withLlmRetry(label, operation) {
   }
 
   throw lastError;
-}
-
-function extractTextFromGemini(json) {
-  return json?.candidates?.[0]?.content?.parts?.map((part) => part.text ?? '').join('').trim() ?? '';
 }
 
 function extractJson(text) {
@@ -1004,8 +1000,8 @@ function mockMarketResearch() {
   };
 }
 
-async function callOpenRouter(prompt) {
-  const apiKey = process.env.OPENROUTER_API_KEY;
+async function callOpenRouter(prompt, options = {}) {
+  const apiKey = options.apiKey ?? process.env.OPENROUTER_API_KEY;
   if (!apiKey) throw new Error('missing_openrouter_api_key');
 
   const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -1018,7 +1014,7 @@ async function callOpenRouter(prompt) {
       'x-title': process.env.OPENROUTER_APP_TITLE ?? 'Maedo Signal Market Briefing'
     },
     body: JSON.stringify({
-      model: ANALYST_MODEL,
+      model: options.model ?? ANALYST_MODEL,
       messages: [
         {
           role: 'system',
@@ -1042,35 +1038,17 @@ async function callOpenRouter(prompt) {
   return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
 }
 
-async function callGemini(prompt) {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) throw new Error('missing_gemini_api_key');
+function getFallbackOpenRouterApiKey() {
+  return process.env.OPENROUTER_FALLBACK_API_KEY ?? process.env.OPENROUTER_API_KEY;
+}
 
-  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(FALLBACK_MODEL)}:generateContent`, {
-    method: 'POST',
-    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
-    headers: {
-      'content-type': 'application/json',
-      'x-goog-api-key': apiKey
-    },
-    body: JSON.stringify({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      generationConfig: {
-        temperature: 0.35,
-        responseMimeType: 'application/json'
-      }
-    })
+async function callOpenRouterFallback(prompt) {
+  const apiKey = getFallbackOpenRouterApiKey();
+  if (!apiKey) throw new Error('missing_openrouter_fallback_api_key');
+  return callOpenRouter(prompt, {
+    apiKey,
+    model: FALLBACK_MODEL
   });
-
-  const body = await res.text();
-  if (!res.ok) {
-    const error = new Error(`gemini_failed_${res.status}`);
-    error.status = res.status;
-    error.body = body;
-    throw error;
-  }
-
-  return validateReportShape(extractJson(extractTextFromGemini(JSON.parse(body))));
 }
 
 function mockReport(marketResearch) {
@@ -1161,7 +1139,7 @@ async function writeReportWithFallback(marketResearch) {
     });
 
     return {
-      report: await withLlmRetry('gemini', () => callGemini(prompt)),
+      report: await withLlmRetry('openrouter-fallback', () => callOpenRouterFallback(prompt)),
       writer: { provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason }
     };
   }

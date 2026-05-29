@@ -22,6 +22,12 @@ test('market briefing workflow is dispatch-only for external scheduler control',
   includes(workflow, 'workflow_dispatch:');
   excludes(workflow, 'schedule:');
   includes(workflow, "LLM_TIMEOUT_MS: '45000'");
+  includes(workflow, 'ANALYST_PROVIDER: openrouter');
+  includes(workflow, 'ANALYST_MODEL: openrouter/free');
+  includes(workflow, 'ANALYST_FALLBACK_PROVIDER: openrouter');
+  includes(workflow, 'ANALYST_FALLBACK_MODEL: deepseek/deepseek-v4-flash');
+  includes(workflow, 'OPENROUTER_FALLBACK_API_KEY: ${{ secrets.OPENROUTER_FALLBACK_API_KEY || secrets.OPENROUTER_API_KEY }}');
+  excludes(workflow, 'GEMINI_API_KEY:');
 });
 
 test('realtime surge workflow dispatches from Cloud Scheduler inputs', () => {
@@ -31,9 +37,12 @@ test('realtime surge workflow dispatches from Cloud Scheduler inputs', () => {
   includes(workflow, 'slot_hour:');
   includes(workflow, 'python3 scripts/fetch_kind_listed_stocks.py');
   includes(workflow, 'ANALYST_PROVIDER: openrouter');
-  includes(workflow, 'ANALYST_MODEL: deepseek/deepseek-v4-flash:free');
+  includes(workflow, 'ANALYST_MODEL: openrouter/free');
+  includes(workflow, 'ANALYST_FALLBACK_PROVIDER: openrouter');
+  includes(workflow, 'ANALYST_FALLBACK_MODEL: deepseek/deepseek-v4-flash');
   includes(workflow, 'OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}');
-  includes(workflow, 'GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}');
+  includes(workflow, 'OPENROUTER_FALLBACK_API_KEY: ${{ secrets.OPENROUTER_FALLBACK_API_KEY || secrets.OPENROUTER_API_KEY }}');
+  excludes(workflow, 'GEMINI_API_KEY:');
   excludes(workflow, 'schedule:');
   includes(workflow, 'node scripts/generate-realtime-surge.mjs');
   includes(workflow, 'report/data/slot-adapter.json');

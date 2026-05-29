@@ -17,9 +17,9 @@ const outputRealtimePath = path.join(publicDataDir, 'realtime-surge.json');
 
 const REPORT_TIMEZONE = 'Asia/Seoul';
 const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
-const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash:free';
-const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
-const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-2.5-flash';
+const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'openrouter/free';
+const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'openrouter';
+const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'deepseek/deepseek-v4-flash';
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
 const GOOGLE_NEWS_TIMEOUT_MS = Number.parseInt(process.env.GOOGLE_NEWS_TIMEOUT_MS ?? '20000', 10);
 const REALTIME_POLISH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_POLISH_BATCH_SIZE ?? '5', 10);
@@ -740,8 +740,8 @@ function normalizePolishedResponse(payload, fallbackSignals) {
   });
 }
 
-async function callOpenRouterPolish(prompt, fallbackSignals) {
-  const apiKey = process.env.OPENROUTER_API_KEY;
+async function callOpenRouterPolish(prompt, fallbackSignals, options = {}) {
+  const apiKey = options.apiKey ?? process.env.OPENROUTER_API_KEY;
   if (!apiKey) throw new Error('missing_openrouter_api_key');
 
   const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -754,7 +754,7 @@ async function callOpenRouterPolish(prompt, fallbackSignals) {
       'x-title': process.env.OPENROUTER_APP_TITLE ?? 'Maedo Signal Realtime Surge'
     },
     body: JSON.stringify({
-      model: ANALYST_MODEL,
+      model: options.model ?? ANALYST_MODEL,
       provider: {
         sort: 'throughput'
       },
@@ -776,30 +776,17 @@ async function callOpenRouterPolish(prompt, fallbackSignals) {
   return normalizePolishedResponse(JSON.parse(extractJsonBlock(JSON.parse(body)?.choices?.[0]?.message?.content ?? '')), fallbackSignals);
 }
 
-async function callGeminiPolish(prompt, fallbackSignals) {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) throw new Error('missing_gemini_api_key');
+function getFallbackOpenRouterApiKey() {
+  return process.env.OPENROUTER_FALLBACK_API_KEY ?? process.env.OPENROUTER_API_KEY;
+}
 
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(FALLBACK_MODEL)}:generateContent`, {
-    method: 'POST',
-    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
-    headers: {
-      'content-type': 'application/json',
-      'x-goog-api-key': apiKey
-    },
-    body: JSON.stringify({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      generationConfig: {
-        temperature: 0.2,
-        responseMimeType: 'application/json',
-        maxOutputTokens: 2200
-      }
-    })
+async function callOpenRouterFallbackPolish(prompt, fallbackSignals) {
+  const apiKey = getFallbackOpenRouterApiKey();
+  if (!apiKey) throw new Error('missing_openrouter_fallback_api_key');
+  return callOpenRouterPolish(prompt, fallbackSignals, {
+    apiKey,
+    model: FALLBACK_MODEL
   });
-
-  const body = await response.text();
-  if (!response.ok) throw new Error(`gemini_polish_failed_${response.status}`);
-  return normalizePolishedResponse(JSON.parse(extractJsonBlock(extractGeminiText(JSON.parse(body)))), fallbackSignals);
 }
 
 async function polishSignals(signals) {
@@ -829,7 +816,7 @@ async function polishSignals(signals) {
       batchWriters.push({ provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null });
       continue;
     } catch (error) {
-      console.warn('[realtime-surge] openrouter polish failed; retrying gemini', {
+      console.warn('[realtime-surge] openrouter polish failed; retrying fallback openrouter model', {
         provider: ANALYST_PROVIDER,
         model: ANALYST_MODEL,
         batchIndex: batchIndex + 1,
@@ -840,11 +827,11 @@ async function polishSignals(signals) {
     }
 
     try {
-      const polished = await callGeminiPolish(prompt, batchSignals);
+      const polished = await callOpenRouterFallbackPolish(prompt, batchSignals);
       mergedSignals.push(...batchSignals.map((signal, index) => ({ ...signal, ...polished[index] })));
       batchWriters.push({ provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason: 'primary_failed' });
     } catch (fallbackError) {
-      console.warn('[realtime-surge] gemini polish failed; using rule-based fallback', {
+      console.warn('[realtime-surge] fallback openrouter polish failed; using rule-based fallback', {
         provider: FALLBACK_PROVIDER,
         model: FALLBACK_MODEL,
         batchIndex: batchIndex + 1,
