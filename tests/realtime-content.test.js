@@ -152,6 +152,18 @@ test('realtime polish requests are chunked into stable batch sizes', async () =>
   assert.equal(batches[3][4].stockName, '종목20');
 });
 
+test('realtime openrouter polish request matches the looser briefing request shape', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const body = module.__testBuildOpenRouterPolishRequest('prompt body');
+
+  assert.equal(body.model, 'openrouter/free');
+  assert.equal(body.temperature, 0);
+  assert.equal(body.max_tokens, 1400);
+  assert.ok(!('response_format' in body));
+  assert.ok(!('provider' in body));
+});
+
 test('realtime merge keeps 20 visible items and only prepends 5 new unique signals', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));

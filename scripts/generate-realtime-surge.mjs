@@ -763,6 +763,21 @@ function normalizePolishedResponse(payload, fallbackSignals) {
   });
 }
 
+function buildOpenRouterPolishRequest(prompt, model = ANALYST_MODEL) {
+  return {
+    model,
+    messages: [
+      {
+        role: 'system',
+        content: 'Return only valid JSON. Use only provided data. No investment advice.'
+      },
+      { role: 'user', content: prompt }
+    ],
+    temperature: 0,
+    max_tokens: 1400
+  };
+}
+
 async function callOpenRouterPolish(prompt, fallbackSignals, options = {}) {
   const apiKey = options.apiKey ?? process.env.OPENROUTER_API_KEY;
   if (!apiKey) throw new Error('missing_openrouter_api_key');
@@ -776,26 +791,16 @@ async function callOpenRouterPolish(prompt, fallbackSignals, options = {}) {
       'http-referer': process.env.OPENROUTER_SITE_URL ?? 'https://thirdtype-dev.github.io',
       'x-title': process.env.OPENROUTER_APP_TITLE ?? 'Maedo Signal Realtime Surge'
     },
-    body: JSON.stringify({
-      model: options.model ?? ANALYST_MODEL,
-      provider: {
-        sort: 'throughput'
-      },
-      messages: [
-        {
-          role: 'system',
-          content: 'Return only valid JSON. Use only provided data. No investment advice.'
-        },
-        { role: 'user', content: prompt }
-      ],
-      temperature: 0,
-      max_tokens: 1400,
-      response_format: { type: 'json_object' }
-    })
+    body: JSON.stringify(buildOpenRouterPolishRequest(prompt, options.model ?? ANALYST_MODEL))
   });
 
   const body = await response.text();
-  if (!response.ok) throw new Error(`openrouter_polish_failed_${response.status}`);
+  if (!response.ok) {
+    const error = new Error(`openrouter_polish_failed_${response.status}`);
+    error.status = response.status;
+    error.body = body;
+    throw error;
+  }
   return normalizePolishedResponse(JSON.parse(extractJsonBlock(JSON.parse(body)?.choices?.[0]?.message?.content ?? '')), fallbackSignals);
 }
 
@@ -1069,6 +1074,10 @@ export function __testBuildRealtimePolishPrompt(signals) {
 
 export function __testChunkSignalsForPolish(signals, size) {
   return chunkSignalsForPolish(signals, size);
+}
+
+export function __testBuildOpenRouterPolishRequest(prompt, model) {
+  return buildOpenRouterPolishRequest(prompt, model);
 }
 
 export function __testMergeRealtimeSignals(newSignals, previousSignals, options) {
