@@ -26,7 +26,7 @@ test('market briefing workflow is dispatch-only for external scheduler control',
   includes(workflow, 'ANALYST_MODEL: openrouter/free');
   includes(workflow, 'ANALYST_FALLBACK_PROVIDER: openrouter');
   includes(workflow, 'ANALYST_FALLBACK_MODEL: deepseek/deepseek-v4-flash');
-  includes(workflow, 'OPENROUTER_FALLBACK_API_KEY: ${{ secrets.OPENROUTER_FALLBACK_API_KEY || secrets.OPENROUTER_API_KEY }}');
+  excludes(workflow, 'OPENROUTER_FALLBACK_API_KEY:');
   excludes(workflow, 'GEMINI_API_KEY:');
 });
 
@@ -41,7 +41,7 @@ test('realtime surge workflow dispatches from Cloud Scheduler inputs', () => {
   includes(workflow, 'ANALYST_FALLBACK_PROVIDER: openrouter');
   includes(workflow, 'ANALYST_FALLBACK_MODEL: deepseek/deepseek-v4-flash');
   includes(workflow, 'OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}');
-  includes(workflow, 'OPENROUTER_FALLBACK_API_KEY: ${{ secrets.OPENROUTER_FALLBACK_API_KEY || secrets.OPENROUTER_API_KEY }}');
+  excludes(workflow, 'OPENROUTER_FALLBACK_API_KEY:');
   excludes(workflow, 'GEMINI_API_KEY:');
   excludes(workflow, 'schedule:');
   includes(workflow, 'node scripts/generate-realtime-surge.mjs');

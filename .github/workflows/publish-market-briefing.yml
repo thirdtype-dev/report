@@ -63,7 +63,6 @@ jobs:
           ANALYST_FALLBACK_MODEL: deepseek/deepseek-v4-flash
           LLM_TIMEOUT_MS: '45000'
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          OPENROUTER_FALLBACK_API_KEY: ${{ secrets.OPENROUTER_FALLBACK_API_KEY || secrets.OPENROUTER_API_KEY }}
           KRX_ID: ${{ secrets.KRX_ID }}
           KRX_PW: ${{ secrets.KRX_PW }}
         run: node scripts/generate-market-briefing.mjs
