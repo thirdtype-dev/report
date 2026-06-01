@@ -9,8 +9,10 @@
 - 로컬 PC가 꺼져 있어도 발행은 GitHub Actions runner에서 수행된다.
 - 브리핑 페이지는 상단 `리딩방` 제목과 `브리핑 / 실시간급등` 버튼형 탭 구조를 유지한다.
 - `실시간급등` 버튼은 `realtime.html`과 `report/realtime.html` 별도 페이지로 이동한다.
-- 별도 페이지는 브리핑 상단 chrome을 유지하되, 유료 회원 전용 shell과 상태 영역만 먼저 고정한다.
-- 브리핑/실시간급등 HTML은 웹 브라우저 직접 진입 시 리딩방 비밀번호를 확인한다. 앱 WebView 진입은 `source=maedo-signal` 또는 Android WebView UA로 식별해 비밀번호 확인을 건너뛴다.
+- 별도 페이지는 브리핑 상단 chrome을 유지하고, 실시간급등 데이터 카드 목록을 직접 표시한다.
+- 브리핑/실시간급등 HTML은 웹 브라우저 직접 진입 시 리딩방 비밀번호를 확인한다.
+- 앱 WebView 진입은 `source=maedo-signal` 또는 Android WebView UA로 식별해 비밀번호 확인을 건너뛴다.
+- Android 앱은 다음 업데이트부터 `https://thirdtype-dev.github.io/report/?source=maedo-signal`로 리딩방을 열어 웹 직접 진입과 앱 진입을 명확히 분리한다.
 
 ## 주요 파일
 
@@ -34,6 +36,8 @@
   - 루트 separate-page 실시간급등 shell.
 - `report/realtime.html`
   - `/report/` 경로 separate-page 실시간급등 shell.
+- `apps/maedo-signal-android/app/src/main/java/com/maedo/signal/MainActivity.kt`
+  - Android 앱 리딩방 WebView 진입점. 앱은 `?source=maedo-signal` 마커로 웹 비밀번호 게이트를 우회한다.
 - `report/data/market-research.json`
   - 수집된 정규화 데이터.
 - `report/data/report.json`
