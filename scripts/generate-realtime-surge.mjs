@@ -905,7 +905,7 @@ function hasFallbackBoilerplate(value) {
     || text.includes('카드는 하락 또는 부담 요인이')
     || text.includes('카드는 방향성이 엇갈리거나')
     || text.includes('카드에 반영')
-    || text.includes('분류되')
+    || text.includes('분류')
     || text.includes('방향성으로 분류')
     || text.includes('종목코드')
     || text.includes('변동률 표현이 함께 포함됐습니다');

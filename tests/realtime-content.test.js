@@ -24,7 +24,7 @@ function assertNoRealtimeBoilerplate(value) {
   assert.ok(!text.includes('카드는 하락 또는 부담 요인이'));
   assert.ok(!text.includes('카드는 방향성이 엇갈리거나'));
   assert.ok(!text.includes('카드에 반영'));
-  assert.ok(!text.includes('분류되'));
+  assert.ok(!text.includes('분류'));
   assert.ok(!text.includes('방향성으로 분류'));
   assert.ok(!text.includes('종목코드'));
   assert.ok(!text.includes('변동률 표현이 함께 포함됐습니다'));
