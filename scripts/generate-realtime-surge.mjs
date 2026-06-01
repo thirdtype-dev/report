@@ -797,7 +797,7 @@ function buildFallbackPolish(signal) {
   }
 
   if (countDetailSentences(sentences.join(' ')) <= 4 && signal.stockCode) {
-    pushUniqueSentence(sentences, `${signal.stockName} 종목코드는 ${signal.stockCode}로 대조했습니다`);
+    pushUniqueSentence(sentences, `${signal.stockName} 종목코드 ${signal.stockCode} 기준으로 대조했습니다`);
   }
 
   const polishedBody = sentences.slice(0, 5).join(' ');

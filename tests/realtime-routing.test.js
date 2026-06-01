@@ -23,9 +23,8 @@ test('generator renders separate-page realtime navigation', () => {
   includes(source, 'google-adsense-account');
   includes(source, 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}');
   includes(source, 'data-room-link="./realtime.html"');
-  includes(source, "const READING_ROOM_PASSWORD = '1710'");
-  includes(source, "window.prompt('리딩방 비밀번호를 입력하세요')");
   includes(source, "if (href) window.location.href = href;");
+  excludes(source, "window.prompt('리딩방 비밀번호를 입력하세요')");
   includes(source, "eyebrow: '장시작 브리핑'");
   includes(source, "sessionLabel: '08:30'");
   includes(source, "eyebrow: '장마감 브리핑'");
@@ -41,9 +40,9 @@ test('briefing entry pages route realtime button to a separate page', () => {
     includes(html, 'google-adsense-account');
     includes(html, 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3518959293552717');
     includes(html, 'data-room-link="./realtime.html"');
-    includes(html, "const READING_ROOM_PASSWORD = '1710'");
-    includes(html, "sessionStorage.getItem('reading-room-auth')");
     includes(html, "if (href) window.location.href = href;");
+    excludes(html, "window.prompt('리딩방 비밀번호를 입력하세요')");
+    excludes(html, "sessionStorage.getItem('reading-room-auth')");
     assert.match(html, /<div class="eyebrow published">장시작 브리핑<\/div>/);
     assert.match(html, /<div class="eyebrow published">장마감 브리핑<\/div>/);
     assert.match(html, /<h1>\d{4}-\d{2}-\d{2} 08:30<\/h1>/);
@@ -84,9 +83,10 @@ test('realtime shell pages exist, are member-only, and route back to briefing', 
   includes(rootRealtime, "return `${date} ${slotLabel} 기준`;");
   includes(rootRealtime, 'fetch(`${dataBase}/slot-adapter.json`');
   includes(rootRealtime, 'fetch(`${dataBase}/realtime-surge.json`');
-  includes(rootRealtime, "const READING_ROOM_PASSWORD = '1710'");
-  includes(rootRealtime, "sessionStorage.getItem('reading-room-auth')");
-  includes(rootRealtime, "window.prompt('리딩방 비밀번호를 입력하세요')");
+  excludes(rootRealtime, "const READING_ROOM_PASSWORD = '1710'");
+  excludes(rootRealtime, "sessionStorage.getItem('reading-room-auth')");
+  excludes(rootRealtime, "window.prompt('리딩방 비밀번호를 입력하세요')");
+  includes(rootRealtime, 'loadRealtimeSurge();');
   includes(rootRealtime, '관련기사1');
   excludes(rootRealtime, 'signal-pill');
   excludes(rootRealtime, 'signal-time');

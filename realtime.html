@@ -278,7 +278,6 @@
       const realtimeTitle = document.getElementById('realtime-title');
       const liveBoard = document.getElementById('live-board');
       const signalList = document.getElementById('signal-list');
-      const READING_ROOM_PASSWORD = '1710';
       const dataBaseCandidates = window.location.pathname.includes('/report/')
         ? ['./report/data', './data']
         : ['./report/data', './data'];
@@ -411,18 +410,7 @@
         });
       });
 
-      function requireReadingRoomPassword() {
-        if (sessionStorage.getItem('reading-room-auth') === 'ok') return true;
-        const entered = window.prompt('리딩방 비밀번호를 입력하세요');
-        if (entered === READING_ROOM_PASSWORD) {
-          sessionStorage.setItem('reading-room-auth', 'ok');
-          return true;
-        }
-        document.body.innerHTML = '<main class="page"><article class="report"><h1>비밀번호 확인 필요</h1></article></main>';
-        return false;
-      }
-
-      if (requireReadingRoomPassword()) loadRealtimeSurge();
+      loadRealtimeSurge();
     </script>
   </body>
 </html>

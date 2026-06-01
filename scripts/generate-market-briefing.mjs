@@ -1252,16 +1252,6 @@ ${labeledList([
 function renderRoomScript() {
   return `<script>
     (() => {
-      const READING_ROOM_PASSWORD = '1710';
-      if (sessionStorage.getItem('reading-room-auth') !== 'ok') {
-        const entered = window.prompt('리딩방 비밀번호를 입력하세요');
-        if (entered === READING_ROOM_PASSWORD) {
-          sessionStorage.setItem('reading-room-auth', 'ok');
-        } else {
-          document.body.innerHTML = '<main class="page"><article class="report"><h1>비밀번호 확인 필요</h1></article></main>';
-          return;
-        }
-      }
       const tabs = document.querySelectorAll('[data-room-tab]');
       tabs.forEach((tab) => {
         tab.addEventListener('click', () => {
