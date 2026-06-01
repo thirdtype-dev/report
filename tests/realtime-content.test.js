@@ -139,6 +139,7 @@ test('realtime generator prefers telegram public signals when fixtures are avail
 
 test('realtime polish prompt stays compact and excludes raw evidence blobs', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
+  delete process.env.REALTIME_DESCRIPTION_ONLY;
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
   const prompt = module.__testBuildRealtimePolishPrompt([
     {
@@ -164,10 +165,14 @@ test('realtime polish prompt stays compact and excludes raw evidence blobs', asy
   assert.ok(prompt.length < 2500);
   assert.ok(!prompt.includes('매우 긴 원문 블롭'));
   assert.ok(prompt.includes('"headline":"SK하이닉스 가 시총 1조 달러를 돌파했다"'));
+  assert.ok(prompt.includes('exactly 4 sentences'));
+  assert.ok(prompt.includes('Do not mention stock code'));
+  assert.ok(prompt.includes('"변동률 표현"'));
 });
 
 test('realtime polish requests are chunked into stable batch sizes', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
+  delete process.env.REALTIME_DESCRIPTION_ONLY;
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
   const signals = Array.from({ length: 20 }, (_, index) => ({ stockName: `종목${index + 1}` }));
   const batches = module.__testChunkSignalsForPolish(signals, 5);
@@ -176,6 +181,15 @@ test('realtime polish requests are chunked into stable batch sizes', async () =>
   assert.deepEqual(batches.map((batch) => batch.length), [5, 5, 5, 5]);
   assert.equal(batches[0][0].stockName, '종목1');
   assert.equal(batches[3][4].stockName, '종목20');
+});
+
+test('description-only refresh uses one-card polish batches to avoid truncated JSON', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  process.env.REALTIME_DESCRIPTION_ONLY = '1';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  assert.equal(module.__testResolveRealtimePolishBatchSize(), 1);
+  delete process.env.REALTIME_DESCRIPTION_ONLY;
 });
 
 test('realtime openrouter polish request matches the looser briefing request shape', async () => {
@@ -584,6 +598,9 @@ test('fallback polish produces at least four detail sentences without changing t
 
   assert.equal(signal.stockName, '티로보틱스');
   assert.equal(signal.stockCode, '117730');
+  assert.ok(sentenceCount(polished.polishedBody) >= 4);
+  assert.ok(polished.polishedBody.length >= 120);
+  assert.ok(polished.polishedBody.includes('오버행 우려'));
   assertNoRealtimeBoilerplate(polished.polishedBody);
 });
 

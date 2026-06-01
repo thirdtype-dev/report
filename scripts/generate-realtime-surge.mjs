@@ -77,6 +77,7 @@ const STOCK_CODE_ALIASES = new Map([
 const POLISHED_HEADLINE_MAX = 70;
 const POLISHED_BODY_MIN = 120;
 const POLISHED_BODY_MAX = 320;
+const DESCRIPTION_ONLY_POLISH_BATCH_SIZE = 1;
 
 const COMPANY_STOPWORDS = new Set([
   '오늘의', '주목주', '특징주', '마감', '증시', '시장', '전망', '코스피', '코스닥', 'AI', 'MY',
@@ -171,6 +172,13 @@ function decodeXml(value) {
     .replace(/&gt;/g, '>');
 }
 
+function stripPublisherNames(value) {
+  return cleanText(value)
+    .replace(/(비즈니스포스트|뉴스핌|조선비즈|Chosunbiz|연합뉴스|매일경제|한국경제|머니투데이|이데일리|아시아경제|서울경제|파이낸셜뉴스)/giu, ' ')
+    .replace(/\s+/gu, ' ')
+    .trim();
+}
+
 function isTelegramSource(value) {
   return /^Telegram\b/iu.test(cleanText(value));
 }
@@ -193,7 +201,7 @@ function sanitizeNarrativeText(value) {
     .replace(/\[[^\]]{0,40}\]/gu, ' ')
     .replace(/https?:\/\/\S+/giu, ' ')
     .replace(/Telegram\s*@[\w_]+/giu, ' ')
-    .replace(/\b(비즈니스포스트|뉴스핌|조선비즈|Chosunbiz|연합뉴스|매일경제|한국경제|머니투데이|이데일리|아시아경제|서울경제|파이낸셜뉴스)\b/giu, ' ')
+    .replace(/(비즈니스포스트|뉴스핌|조선비즈|Chosunbiz|연합뉴스|매일경제|한국경제|머니투데이|이데일리|아시아경제|서울경제|파이낸셜뉴스)/giu, ' ')
     .replace(/[📌📋🔔☞▶🔑🤖💰📈🏦🛡⚠️🌏]/gu, ' ')
     .replace(/\b\d+️⃣/gu, ' ')
     .replace(/\([^)]{0,24}\)/gu, (matched) => /\d{4,6}/u.test(matched) ? ' ' : matched)
@@ -218,6 +226,10 @@ function hasKoreanBatchim(value) {
 
 function topicParticle(value) {
   return hasKoreanBatchim(value) ? '은' : '는';
+}
+
+function instrumentalParticle(value) {
+  return hasKoreanBatchim(value) ? '으로' : '로';
 }
 
 function cleanLeadClause(value) {
@@ -265,6 +277,120 @@ function pickLeadClause(value, stockName, maxLength = 90) {
   }
   const fallback = cleanLeadClause(sanitizeNarrativeText(value).replace(new RegExp(`^${stockName}\\s*`, 'u'), ''));
   return truncateSentence(fallback, maxLength);
+}
+
+function normalizeFallbackFact(value, stockName, maxLength = 96) {
+  return truncateSentence(
+    cleanLeadClause(
+      stripPublisherNames(sanitizeNarrativeText(value))
+        .replace(new RegExp(`^${stockName}(?:은|는|이|가)?\\s*`, 'u'), '')
+        .replace(new RegExp(`${stockName}(?:은|는|이|가)?\\s*`, 'gu'), '')
+        .replace(/\b(관련주|주식)\b/gu, '')
+        .replace(/\s+/gu, ' ')
+    ),
+    maxLength
+  );
+}
+
+function extractTargetContext(value, stockName) {
+  const text = stripPublisherNames(sanitizeNarrativeText(value));
+  const positions = findTargetNamePositions(text, stockName);
+  if (!positions.length) return '';
+
+  const directionMatches = [...text.matchAll(/(\d+(?:\.\d+)?)%\s*대?\s*(?:급등|급락|상승|하락|강세|약세|내려)|하한가|상한가|급등|급락|상승|하락|강세|약세|반등/gu)];
+  const targetPosition = directionMatches.length
+    ? positions
+        .map((position) => ({ position, distance: nearestDistance(position, directionMatches.map((match) => match.index ?? 0)) }))
+        .sort((a, b) => a.distance - b.distance)[0].position
+    : positions[0];
+
+  const startBoundaries = [text.lastIndexOf(',', targetPosition), text.lastIndexOf('.', targetPosition), text.lastIndexOf('·', targetPosition)];
+  const endCandidates = [text.indexOf(',', targetPosition), text.indexOf('.', targetPosition), text.indexOf('·', targetPosition)]
+    .filter((index) => index > targetPosition);
+  const start = Math.max(-1, ...startBoundaries) + 1;
+  const end = endCandidates.length ? Math.min(...endCandidates) : Math.min(text.length, targetPosition + 90);
+  return text.slice(start, end).trim();
+}
+
+function collectFallbackFacts(signal) {
+  const facts = [];
+  const sources = [
+    signal.summary,
+    signal.headline,
+    signal.latestHeadline,
+    ...(Array.isArray(signal.relatedPosts) ? signal.relatedPosts.map((item) => item?.title) : []),
+    ...(Array.isArray(signal.evidencePoints) ? signal.evidencePoints : [])
+  ];
+
+  for (const source of sources) {
+    const targetContext = normalizeFallbackFact(extractTargetContext(source, signal.stockName), signal.stockName);
+    if (targetContext && targetContext.length >= 8 && !facts.some((item) => item.includes(targetContext.slice(0, 18)) || targetContext.includes(item.slice(0, 18)))) {
+      facts.push(targetContext);
+      if (facts.length >= 5) return facts;
+    }
+    for (const clause of splitNarrativeClauses(source)) {
+      const fact = normalizeFallbackFact(clause, signal.stockName);
+      if (!fact || fact.length < 8) continue;
+      if (/^(출처|제목 기준|관련기사|채널|기사\s*\d*건)/u.test(fact)) continue;
+      if (facts.some((item) => item.includes(fact.slice(0, 18)) || fact.includes(item.slice(0, 18)))) continue;
+      facts.push(fact);
+      if (facts.length >= 5) return facts;
+    }
+  }
+
+  const fallback = normalizeFallbackFact(signal.summary || signal.headline, signal.stockName);
+  if (fallback) facts.push(fallback);
+  return facts;
+}
+
+function directionSentence(signal, primaryFact) {
+  if (signal.direction === 'up') {
+    return `${signal.stockName}${topicParticle(signal.stockName)} ${primaryFact || '상승 재료'}가 기사에서 먼저 부각됐습니다.`;
+  }
+  if (signal.direction === 'down') {
+    return `${signal.stockName}${topicParticle(signal.stockName)} ${primaryFact || '부담 요인'}이 단기 압력으로 제시됐습니다.`;
+  }
+  return `${signal.stockName}${topicParticle(signal.stockName)} ${primaryFact || '혼재된 재료'}를 중심으로 관찰 대상에 포함됐습니다.`;
+}
+
+function extractIssueFocus(fact) {
+  const text = normalizeSentenceText(fact)
+    .replace(/[+-]?\d+(?:\.\d+)?%대?\s*(?:급등|급락|상승|하락)?/gu, '')
+    .replace(/\b주가\b/gu, '')
+    .replace(/[.…]+$/gu, '')
+    .replace(/\s+/gu, ' ')
+    .trim();
+  const reasonMatch = text.match(/^(.{4,40}?)(?:에|로|으로)\s*(?:[.…]*\s*)?(?:급등|급락|상승|하락|강세|약세|부각|언급|정리|확인)/u);
+  const focus = cleanLeadClause(reasonMatch?.[1] ?? text).replace(/(?:에|로|으로)$/u, '');
+  return truncateSentence(focus || fact, 54);
+}
+
+function countNewsEvidence(signal) {
+  return Math.max(1, Array.isArray(signal.relatedPosts)
+    ? signal.relatedPosts.filter((item) => item?.url && !isTelegramSource(item?.source)).length
+    : 0);
+}
+
+function buildFallbackSentences(signal, facts) {
+  const primaryFact = normalizeSentenceText(facts[0] || pickLeadClause(signal.summary || signal.headline, signal.stockName, 96) || '직접 연결된 뉴스 단서')
+    .replace(/[.…]+$/gu, '');
+  const issueFocus = extractIssueFocus(primaryFact);
+  const evidenceCount = countNewsEvidence(signal);
+  const sentences = [
+    `${signal.stockName}${topicParticle(signal.stockName)} ${primaryFact}${instrumentalParticle(primaryFact)} 언급됐습니다.`
+  ];
+
+  if (signal.direction === 'up') {
+    sentences.push(`상승 근거는 ${issueFocus} 이슈에 맞춰져 있습니다.`);
+  } else if (signal.direction === 'down') {
+    sentences.push(`부담 요인은 ${issueFocus} 이슈로 요약됩니다.`);
+  } else {
+    sentences.push(`방향성은 ${issueFocus} 이슈를 중심으로 엇갈리게 잡힙니다.`);
+  }
+
+  sentences.push(`${evidenceCount}개 뉴스 단서가 종목명과 직접 연결돼 카드에 반영됐습니다.`);
+  sentences.push(`관전점은 이 재료가 후속 기사와 장중 수급에서도 유지되는지입니다.`);
+  return sentences;
 }
 
 function stripPublisher(title) {
@@ -750,26 +876,10 @@ function buildFallbackPolish(signal) {
     POLISHED_HEADLINE_MAX
   );
 
+  const facts = collectFallbackFacts(signal);
   const sentences = [];
-  const summaryLead = pickLeadClause(signal.summary, signal.stockName, 120);
-  if (summaryLead) {
-    pushUniqueSentence(sentences, `${signal.stockName}${topicParticle(signal.stockName)} ${summaryLead.replace(/\s+했다$/u, '한 상태입니다').replace(/\s+중$/u, ' 중입니다')}`);
-  }
-
-  const supportingLead = pickLeadClause(signal.headline, signal.stockName, 120);
-  if (supportingLead && !sentences.some((item) => item.includes(supportingLead.slice(0, 20)))) {
-    pushUniqueSentence(sentences, supportingLead);
-  }
-
-  const relatedTitles = Array.isArray(signal.relatedPosts)
-    ? signal.relatedPosts
-        .filter((item) => !isTelegramSource(item?.source))
-        .map((item) => pickLeadClause(item?.title, signal.stockName, 96))
-        .filter(Boolean)
-    : [];
-  for (const title of relatedTitles) {
-    pushUniqueSentence(sentences, title);
-    if (sentences.length >= 4) break;
+  for (const sentence of buildFallbackSentences(signal, facts)) {
+    pushUniqueSentence(sentences, sentence);
   }
 
   const polishedBody = sentences.slice(0, 5).join(' ');
@@ -794,7 +904,8 @@ function hasFallbackBoilerplate(value) {
     || text.includes('카드는 상승 재료가')
     || text.includes('카드는 하락 또는 부담 요인이')
     || text.includes('카드는 방향성이 엇갈리거나')
-    || text.includes('종목코드');
+    || text.includes('종목코드')
+    || text.includes('변동률 표현이 함께 포함됐습니다');
 }
 
 function shouldRefreshPolishedBody(value) {
@@ -884,7 +995,10 @@ function buildRealtimePolishPrompt(signals) {
     'Do not add any investment advice or unsupported claims.',
     'For each item return: stockName, polishedHeadline, polishedBody.',
     `polishedHeadline: Korean plain text, concise summary style, max ${POLISHED_HEADLINE_MAX} characters, intended for bold 1-2 lines.`,
-    `polishedBody: Korean explanatory prose, 3-4 sentences, ${POLISHED_BODY_MIN}-${POLISHED_BODY_MAX} characters, intended for about 5-6 mobile lines.`,
+    `polishedBody: Korean explanatory prose, exactly 4 sentences, ${POLISHED_BODY_MIN}-${POLISHED_BODY_MAX} characters, intended for about 5-6 mobile lines.`,
+    'Each polishedBody sentence must explain a different point: direct issue, price/context clue, why the item is tagged positive/neutral/risk, and what to watch next.',
+    'Do not mention stock code, card classification mechanics, source links, "관련 기사 흐름", "변동률 표현", or "근거를 확인".',
+    'Avoid repeating the same sentence frame across items.',
     'Remove source/publisher clutter, duplicate phrases, raw channel labels, and noisy ticker boilerplate.',
     'Keep concrete nouns and causal facts if present.',
     '',
@@ -908,6 +1022,12 @@ function chunkSignalsForPolish(signals, size = REALTIME_POLISH_BATCH_SIZE) {
     chunks.push(signals.slice(index, index + batchSize));
   }
   return chunks;
+}
+
+function resolveRealtimePolishBatchSize() {
+  return process.env.REALTIME_DESCRIPTION_ONLY === '1'
+    ? DESCRIPTION_ONLY_POLISH_BATCH_SIZE
+    : REALTIME_POLISH_BATCH_SIZE;
 }
 
 function extractGeminiText(body) {
@@ -1001,7 +1121,7 @@ async function polishSignals(signals) {
   }
 
   const baseSignals = signals.map((signal) => ({ ...signal }));
-  const batches = chunkSignalsForPolish(baseSignals);
+  const batches = chunkSignalsForPolish(baseSignals, resolveRealtimePolishBatchSize());
   const mergedSignals = [];
   const batchWriters = [];
 
@@ -1286,6 +1406,10 @@ export function __testBuildRealtimePolishPrompt(signals) {
 
 export function __testChunkSignalsForPolish(signals, size) {
   return chunkSignalsForPolish(signals, size);
+}
+
+export function __testResolveRealtimePolishBatchSize() {
+  return resolveRealtimePolishBatchSize();
 }
 
 export function __testBuildOpenRouterPolishRequest(prompt, model) {
