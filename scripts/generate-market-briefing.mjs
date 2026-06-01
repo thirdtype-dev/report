@@ -413,9 +413,58 @@ function extractJson(text) {
   const trimmed = text.trim();
   if (!trimmed) throw new Error('empty_llm_response');
 
-  const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  const body = fenced ? fenced[1].trim() : trimmed;
-  return JSON.parse(body);
+  const candidates = [
+    trimmed,
+    ...[...trimmed.matchAll(/```(?:json)?\s*([\s\S]*?)```/giu)].map((match) => match[1].trim())
+  ];
+  for (const candidate of candidates) {
+    try {
+      return JSON.parse(candidate);
+    } catch {
+      // opencode zen can include reasoning text before the final JSON.
+    }
+  }
+
+  for (let start = 0; start < trimmed.length; start += 1) {
+    const opening = trimmed[start];
+    if (opening !== '{' && opening !== '[') continue;
+    const closing = opening === '{' ? '}' : ']';
+    const stack = [closing];
+    let inString = false;
+    let escaped = false;
+
+    for (let index = start + 1; index < trimmed.length; index += 1) {
+      const char = trimmed[index];
+      if (inString) {
+        if (escaped) {
+          escaped = false;
+        } else if (char === '\\') {
+          escaped = true;
+        } else if (char === '"') {
+          inString = false;
+        }
+        continue;
+      }
+      if (char === '"') {
+        inString = true;
+      } else if (char === '{') {
+        stack.push('}');
+      } else if (char === '[') {
+        stack.push(']');
+      } else if (char === stack.at(-1)) {
+        stack.pop();
+        if (!stack.length) {
+          try {
+            return JSON.parse(trimmed.slice(start, index + 1));
+          } catch {
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  return JSON.parse(trimmed);
 }
 
 function isNonEmptyString(value) {

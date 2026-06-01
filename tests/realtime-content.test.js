@@ -207,6 +207,21 @@ test('realtime openrouter fallback polish request matches the looser briefing re
   assert.ok(!('provider' in body));
 });
 
+test('realtime polish extracts JSON after opencode zen reasoning preamble', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const body = module.__testExtractJsonBlock('We need to produce concise Korean copy.\\n```json\\n{"signals":[{"stockName":"NAVER","polishedBody":"본문"}]}\\n```');
+
+  assert.deepEqual(JSON.parse(body), {
+    signals: [
+      {
+        stockName: 'NAVER',
+        polishedBody: '본문'
+      }
+    ]
+  });
+});
+
 test('realtime merge keeps 20 visible items and only prepends 5 new unique signals', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));

@@ -1012,10 +1012,62 @@ function buildRealtimePolishPrompt(signals) {
 
 function extractJsonBlock(raw) {
   const text = String(raw ?? '').trim();
-  const objectMatch = text.match(/\{[\s\S]*\}$/u);
-  if (objectMatch) return objectMatch[0];
-  const arrayMatch = text.match(/\[[\s\S]*\]$/u);
-  if (arrayMatch) return arrayMatch[0];
+  if (!text) return text;
+
+  const candidates = [
+    text,
+    ...[...text.matchAll(/```(?:json)?\s*([\s\S]*?)```/giu)].map((match) => match[1].trim())
+  ];
+  for (const candidate of candidates) {
+    try {
+      JSON.parse(candidate);
+      return candidate;
+    } catch {
+      // Keep scanning below; opencode zen can include reasoning before the JSON.
+    }
+  }
+
+  for (let start = 0; start < text.length; start += 1) {
+    const opening = text[start];
+    if (opening !== '{' && opening !== '[') continue;
+    const closing = opening === '{' ? '}' : ']';
+    const stack = [closing];
+    let inString = false;
+    let escaped = false;
+
+    for (let index = start + 1; index < text.length; index += 1) {
+      const char = text[index];
+      if (inString) {
+        if (escaped) {
+          escaped = false;
+        } else if (char === '\\') {
+          escaped = true;
+        } else if (char === '"') {
+          inString = false;
+        }
+        continue;
+      }
+      if (char === '"') {
+        inString = true;
+      } else if (char === '{') {
+        stack.push('}');
+      } else if (char === '[') {
+        stack.push(']');
+      } else if (char === stack.at(-1)) {
+        stack.pop();
+        if (!stack.length) {
+          const candidate = text.slice(start, index + 1);
+          try {
+            JSON.parse(candidate);
+            return candidate;
+          } catch {
+            break;
+          }
+        }
+      }
+    }
+  }
+
   return text;
 }
 
@@ -1452,6 +1504,10 @@ export function __testResolveRealtimePolishBatchSize() {
 
 export function __testBuildOpenRouterPolishRequest(prompt, model) {
   return buildOpenRouterPolishRequest(prompt, model);
+}
+
+export function __testExtractJsonBlock(raw) {
+  return extractJsonBlock(raw);
 }
 
 export function __testMergeRealtimeSignals(newSignals, previousSignals, options) {
