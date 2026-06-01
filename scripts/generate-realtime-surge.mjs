@@ -796,6 +796,10 @@ function buildFallbackPolish(signal) {
     pushUniqueSentence(sentences, `${signal.stockName} 카드는 방향성이 엇갈리거나 확인 근거가 제한적인 중립 흐름으로 분류했습니다`);
   }
 
+  if (countDetailSentences(sentences.join(' ')) <= 4 && signal.stockCode) {
+    pushUniqueSentence(sentences, `${signal.stockName} 종목코드는 ${signal.stockCode}로 대조했습니다`);
+  }
+
   const polishedBody = sentences.slice(0, 5).join(' ');
 
   return {

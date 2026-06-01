@@ -582,6 +582,31 @@ test('fallback polish produces at least four detail sentences without changing t
   assertNoRealtimeBoilerplate(polished.polishedBody);
 });
 
+test('fallback polish keeps four sentences even when change-rate evidence is missing', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const polished = module.__testBuildFallbackPolish({
+    stockName: '삼성전자',
+    stockCode: '005930',
+    headline: '삼성전자 파업 우려에 코스피 7200선',
+    summary: '코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선',
+    relatedPosts: [
+      {
+        label: '관련기사1',
+        title: '삼성전자 파업 우려에 코스피 7200선',
+        source: '연합뉴스',
+        url: 'https://example.com/samsung'
+      }
+    ],
+    direction: 'up',
+    changeRate: null
+  });
+
+  assert.ok(sentenceCount(polished.polishedBody) >= 4);
+  assert.ok(polished.polishedBody.includes('005930'));
+  assertNoRealtimeBoilerplate(polished.polishedBody);
+});
+
 test('description refresh preserves cards and updates only supporting copy', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
