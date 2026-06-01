@@ -388,8 +388,8 @@ function buildFallbackSentences(signal, facts) {
     sentences.push(`방향성은 ${issueFocus} 이슈를 중심으로 엇갈리게 잡힙니다.`);
   }
 
-  sentences.push(`${evidenceCount}개 뉴스 단서가 종목명과 직접 연결돼 카드에 반영됐습니다.`);
-  sentences.push(`관전점은 이 재료가 후속 기사와 장중 수급에서도 유지되는지입니다.`);
+  sentences.push(`${evidenceCount}개 뉴스 단서에서 ${signal.stockName} 관련 재료가 확인됐습니다.`);
+  sentences.push(`후속 확인 포인트는 같은 재료가 추가 기사와 장중 수급에서도 이어지는지입니다.`);
   return sentences;
 }
 
@@ -904,6 +904,9 @@ function hasFallbackBoilerplate(value) {
     || text.includes('카드는 상승 재료가')
     || text.includes('카드는 하락 또는 부담 요인이')
     || text.includes('카드는 방향성이 엇갈리거나')
+    || text.includes('카드에 반영')
+    || text.includes('분류되')
+    || text.includes('방향성으로 분류')
     || text.includes('종목코드')
     || text.includes('변동률 표현이 함께 포함됐습니다');
 }
