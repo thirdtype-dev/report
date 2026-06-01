@@ -6,10 +6,11 @@ import { promisify } from 'node:util';
 const OUTPUT_DIR = resolve(process.cwd(), 'public/report');
 const DATA_DIR = resolve(OUTPUT_DIR, 'data');
 const execFileAsync = promisify(execFile);
-const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
-const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'openrouter/free';
+const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'opencode-zen';
+const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek-v4-flash';
 const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'openrouter';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'deepseek/deepseek-v4-flash';
+const OPENCODE_ZEN_BASE_URL = process.env.OPENCODE_ZEN_BASE_URL ?? 'https://opencode.ai/zen/v1';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
 const ADSENSE_CLIENT = 'ca-pub-3518959293552717';
@@ -1000,6 +1001,46 @@ function mockMarketResearch() {
   };
 }
 
+function buildBriefingChatRequest(prompt, model = ANALYST_MODEL) {
+  return {
+    model,
+    messages: [
+      {
+        role: 'system',
+        content: 'Return only valid JSON. Use only provided data. Do not provide investment advice.'
+      },
+      { role: 'user', content: prompt }
+    ],
+    temperature: 0.35
+  };
+}
+
+async function callOpenCodeZen(prompt, options = {}) {
+  const apiKey = options.apiKey ?? process.env.OPENCODE_ZEN_API_KEY;
+  if (!apiKey) throw new Error('missing_opencode_zen_api_key');
+
+  const res = await fetch(`${OPENCODE_ZEN_BASE_URL}/chat/completions`, {
+    method: 'POST',
+    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
+    headers: {
+      authorization: `Bearer ${apiKey}`,
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(buildBriefingChatRequest(prompt, options.model ?? ANALYST_MODEL))
+  });
+
+  const body = await res.text();
+  if (!res.ok) {
+    const error = new Error(`opencode_zen_failed_${res.status}`);
+    error.status = res.status;
+    error.body = body;
+    throw error;
+  }
+
+  const json = JSON.parse(body);
+  return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
+}
+
 async function callOpenRouter(prompt, options = {}) {
   const apiKey = options.apiKey ?? process.env.OPENROUTER_API_KEY;
   if (!apiKey) throw new Error('missing_openrouter_api_key');
@@ -1013,17 +1054,7 @@ async function callOpenRouter(prompt, options = {}) {
       'http-referer': process.env.OPENROUTER_SITE_URL ?? 'https://thirdtype-dev.github.io',
       'x-title': process.env.OPENROUTER_APP_TITLE ?? 'Maedo Signal Market Briefing'
     },
-    body: JSON.stringify({
-      model: options.model ?? ANALYST_MODEL,
-      messages: [
-        {
-          role: 'system',
-          content: 'Return only valid JSON. Use only provided data. Do not provide investment advice.'
-        },
-        { role: 'user', content: prompt }
-      ],
-      temperature: 0.35
-    })
+    body: JSON.stringify(buildBriefingChatRequest(prompt, options.model ?? ANALYST_MODEL))
   });
 
   const body = await res.text();
@@ -1036,6 +1067,12 @@ async function callOpenRouter(prompt, options = {}) {
 
   const json = JSON.parse(body);
   return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
+}
+
+async function callPrimaryWriter(prompt) {
+  if (ANALYST_PROVIDER === 'opencode-zen') return callOpenCodeZen(prompt);
+  if (ANALYST_PROVIDER === 'openrouter') return callOpenRouter(prompt);
+  throw new Error(`unsupported_analyst_provider_${ANALYST_PROVIDER}`);
 }
 
 function getFallbackOpenRouterApiKey() {
@@ -1126,7 +1163,7 @@ async function writeReportWithFallback(marketResearch) {
   const prompt = buildPrompt(marketResearch);
   try {
     return {
-      report: await withLlmRetry('openrouter', () => callOpenRouter(prompt)),
+      report: await withLlmRetry(ANALYST_PROVIDER, () => callPrimaryWriter(prompt)),
       writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
     };
   } catch (error) {

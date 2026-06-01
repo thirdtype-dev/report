@@ -17,11 +17,12 @@ const outputSlotAdapterPath = path.join(publicDataDir, 'slot-adapter.json');
 const outputRealtimePath = path.join(publicDataDir, 'realtime-surge.json');
 
 const REPORT_TIMEZONE = 'Asia/Seoul';
-const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
-const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'openrouter/free';
+const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'opencode-zen';
+const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek-v4-flash';
 const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'openrouter';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'deepseek/deepseek-v4-flash';
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
+const OPENCODE_ZEN_BASE_URL = process.env.OPENCODE_ZEN_BASE_URL ?? 'https://opencode.ai/zen/v1';
 const GOOGLE_NEWS_TIMEOUT_MS = Number.parseInt(process.env.GOOGLE_NEWS_TIMEOUT_MS ?? '20000', 10);
 const REALTIME_POLISH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_POLISH_BATCH_SIZE ?? '5', 10);
 const REALTIME_FRESH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_FRESH_BATCH_SIZE ?? '2', 10);
@@ -1056,7 +1057,7 @@ function normalizePolishedResponse(payload, fallbackSignals) {
   });
 }
 
-function buildOpenRouterPolishRequest(prompt, model = ANALYST_MODEL) {
+function buildPolishChatRequest(prompt, model = ANALYST_MODEL) {
   return {
     model,
     messages: [
@@ -1069,6 +1070,34 @@ function buildOpenRouterPolishRequest(prompt, model = ANALYST_MODEL) {
     temperature: 0,
     max_tokens: 1400
   };
+}
+
+function buildOpenRouterPolishRequest(prompt, model = FALLBACK_MODEL) {
+  return buildPolishChatRequest(prompt, model);
+}
+
+async function callOpenCodeZenPolish(prompt, fallbackSignals, options = {}) {
+  const apiKey = options.apiKey ?? process.env.OPENCODE_ZEN_API_KEY;
+  if (!apiKey) throw new Error('missing_opencode_zen_api_key');
+
+  const response = await fetch(`${OPENCODE_ZEN_BASE_URL}/chat/completions`, {
+    method: 'POST',
+    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
+    headers: {
+      authorization: `Bearer ${apiKey}`,
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(buildPolishChatRequest(prompt, options.model ?? ANALYST_MODEL))
+  });
+
+  const body = await response.text();
+  if (!response.ok) {
+    const error = new Error(`opencode_zen_polish_failed_${response.status}`);
+    error.status = response.status;
+    error.body = body;
+    throw error;
+  }
+  return normalizePolishedResponse(JSON.parse(extractJsonBlock(JSON.parse(body)?.choices?.[0]?.message?.content ?? '')), fallbackSignals);
 }
 
 async function callOpenRouterPolish(prompt, fallbackSignals, options = {}) {
@@ -1095,6 +1124,12 @@ async function callOpenRouterPolish(prompt, fallbackSignals, options = {}) {
     throw error;
   }
   return normalizePolishedResponse(JSON.parse(extractJsonBlock(JSON.parse(body)?.choices?.[0]?.message?.content ?? '')), fallbackSignals);
+}
+
+async function callPrimaryPolish(prompt, fallbackSignals) {
+  if (ANALYST_PROVIDER === 'opencode-zen') return callOpenCodeZenPolish(prompt, fallbackSignals);
+  if (ANALYST_PROVIDER === 'openrouter') return callOpenRouterPolish(prompt, fallbackSignals);
+  throw new Error(`unsupported_analyst_provider_${ANALYST_PROVIDER}`);
 }
 
 function getFallbackOpenRouterApiKey() {
@@ -1132,12 +1167,12 @@ async function polishSignals(signals) {
     const prompt = buildRealtimePolishPrompt(batchSignals);
 
     try {
-      const polished = await callOpenRouterPolish(prompt, batchSignals);
+      const polished = await callPrimaryPolish(prompt, batchSignals);
       mergedSignals.push(...batchSignals.map((signal, index) => ({ ...signal, ...polished[index] })));
       batchWriters.push({ provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null });
       continue;
     } catch (error) {
-      console.warn('[realtime-surge] openrouter polish failed; retrying fallback openrouter model', {
+      console.warn('[realtime-surge] primary polish failed; retrying fallback openrouter model', {
         provider: ANALYST_PROVIDER,
         model: ANALYST_MODEL,
         batchIndex: batchIndex + 1,

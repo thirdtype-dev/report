@@ -195,12 +195,12 @@ test('description-only refresh uses small polish batches to avoid truncated JSON
   delete process.env.REALTIME_DESCRIPTION_ONLY;
 });
 
-test('realtime openrouter polish request matches the looser briefing request shape', async () => {
+test('realtime openrouter fallback polish request matches the looser briefing request shape', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
   const body = module.__testBuildOpenRouterPolishRequest('prompt body');
 
-  assert.equal(body.model, 'openrouter/free');
+  assert.equal(body.model, 'deepseek/deepseek-v4-flash');
   assert.equal(body.temperature, 0);
   assert.equal(body.max_tokens, 1400);
   assert.ok(!('response_format' in body));
