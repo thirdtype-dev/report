@@ -16,6 +16,8 @@ function assertNoRealtimeBoilerplate(value) {
   assert.ok(!text.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다'));
   assert.ok(!text.includes('기사 제목과 요약에서 확인됐습니다'));
   assert.ok(!text.includes('표시 문구는'));
+  assert.ok(!text.includes('채널 또는 기사에서 관련 언급이 겹쳤습니다'));
+  assert.ok(!text.includes('제목 기준 변동 단서는'));
 }
 
 test('telegram public parser extracts normalized message fields', async () => {

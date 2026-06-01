@@ -705,15 +705,6 @@ function buildFallbackPolish(signal) {
     sentences.push(`${supportingLead}.`);
   }
 
-  if (signal.channelCount > 0) {
-    sentences.push(`${signal.channelCount}개 채널 또는 기사에서 관련 언급이 겹쳤습니다.`);
-  }
-
-  if (typeof signal.changeRate === 'number' && !Number.isNaN(signal.changeRate)) {
-    const sign = signal.changeRate > 0 ? '+' : '';
-    sentences.push(`제목 기준 변동 단서는 ${sign}${signal.changeRate.toFixed(1)}%입니다.`);
-  }
-
   const relatedTitles = Array.isArray(signal.relatedPosts)
     ? signal.relatedPosts
         .filter((item) => !isTelegramSource(item?.source))
@@ -739,7 +730,9 @@ function hasFallbackBoilerplate(value) {
   return text.includes('관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다')
     || text.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다')
     || text.includes('기사 제목과 요약에서 확인됐습니다')
-    || text.includes('표시 문구는');
+    || text.includes('표시 문구는')
+    || text.includes('채널 또는 기사에서 관련 언급이 겹쳤습니다')
+    || text.includes('제목 기준 변동 단서는');
 }
 
 function normalizeSignalDisplaySources(signal) {
