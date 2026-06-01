@@ -497,6 +497,31 @@ test('fallback polish rewrites noisy copied text into cleaner display copy', asy
   assert.ok(polished.polishedBody.length >= 100);
 });
 
+test('fallback polish does not append repeated generic boilerplate', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const polished = module.__testBuildFallbackPolish({
+    stockName: 'LG화학',
+    headline: "LG화학 '2차전지 주식 강세' LG화학 9%대 급등",
+    summary: '2차전지 관련주 강세 흐름이 부각됐다',
+    relatedPosts: [
+      {
+        title: "LG화학 '2차전지 주식 강세' LG화학 9%대 급등",
+        source: '비즈니스포스트',
+        url: 'https://example.com/lgchem-news'
+      }
+    ],
+    source: '비즈니스포스트',
+    channelCount: 1,
+    direction: 'up',
+    changeRate: 9
+  });
+
+  assert.ok(!polished.polishedBody.includes('관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다'));
+  assert.ok(!polished.polishedBody.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다'));
+  assert.ok(polished.polishedBody.includes('LG화학'));
+});
+
 test('realtime payload blocks unmapped stock candidates before accumulation', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
