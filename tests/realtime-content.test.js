@@ -183,12 +183,12 @@ test('realtime polish requests are chunked into stable batch sizes', async () =>
   assert.equal(batches[3][4].stockName, '종목20');
 });
 
-test('description-only refresh uses one-card polish batches to avoid truncated JSON', async () => {
+test('description-only refresh uses small polish batches to avoid truncated JSON', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   process.env.REALTIME_DESCRIPTION_ONLY = '1';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
 
-  assert.equal(module.__testResolveRealtimePolishBatchSize(), 1);
+  assert.equal(module.__testResolveRealtimePolishBatchSize(), 2);
   delete process.env.REALTIME_DESCRIPTION_ONLY;
 });
 

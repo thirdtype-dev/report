@@ -77,7 +77,7 @@ const STOCK_CODE_ALIASES = new Map([
 const POLISHED_HEADLINE_MAX = 70;
 const POLISHED_BODY_MIN = 120;
 const POLISHED_BODY_MAX = 320;
-const DESCRIPTION_ONLY_POLISH_BATCH_SIZE = 1;
+const DESCRIPTION_ONLY_POLISH_BATCH_SIZE = 2;
 
 const COMPANY_STOPWORDS = new Set([
   '오늘의', '주목주', '특징주', '마감', '증시', '시장', '전망', '코스피', '코스닥', 'AI', 'MY',
