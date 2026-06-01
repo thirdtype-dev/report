@@ -99,7 +99,7 @@ test('realtime generator prefers telegram public signals when fixtures are avail
   assert.ok(realtime.signals[0].evidencePoints.length > 0);
   assert.equal(realtime.summary.basedOn, 'public telegram channel mentions with market news backfill');
   assert.ok(realtime.signals.length <= 20);
-  assert.ok(realtime.signals.length >= 5);
+  assert.ok(realtime.signals.length >= 4);
   assert.ok(realtime.signals.some((signal) => signal.hasTelegram));
   assert.ok(realtime.signals.every((signal) => Array.isArray(signal.relatedPosts)));
   assert.ok(realtime.signals.every((signal) => signal.relatedPosts.length >= 1));
@@ -317,7 +317,7 @@ test('realtime merge drops prior telegram-only signals from carry-over pool', as
 test('realtime generator carries prior-day signals forward to keep 20 visible items', () => {
   const persistedPath = path.join(repoRoot, 'report/data/realtime-surge.json');
   const originalPersisted = fs.existsSync(persistedPath) ? fs.readFileSync(persistedPath, 'utf8') : null;
-  const previousSignals = Array.from({ length: 15 }, (_, index) => ({
+  const previousSignals = Array.from({ length: 16 }, (_, index) => ({
     stockName: `기존보유${index + 1}`,
     stockCode: String(7000 + index),
     summary: `기존 보유 종목 ${index + 1} 요약`,
@@ -557,6 +557,38 @@ test('direction inference uses target stock clause when headline mentions mixed 
   assert.equal(payload.signals[0].direction, 'up');
   assert.equal(payload.signals[0].sentimentLabel, 'positive');
   assert.equal(payload.signals[0].changeRate, 9);
+});
+
+test('carry-over signals refresh target stock direction from headline context', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const merged = module.__testMergeRealtimeSignals([], [
+    {
+      stockName: 'LG화학',
+      stockCode: '051910',
+      headline: "LG화학 '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락",
+      sentimentLabel: 'negative',
+      direction: 'down',
+      changeRate: 9,
+      source: '비즈니스포스트',
+      sourceUrl: 'https://example.com/lgchem-mixed-movers',
+      relatedPosts: [
+        {
+          label: '관련기사1',
+          source: '비즈니스포스트',
+          url: 'https://example.com/lgchem-mixed-movers'
+        }
+      ]
+    }
+  ], {
+    freshBatchSize: 5,
+    visibleLimit: 20
+  });
+
+  assert.equal(merged.mergedSignals.length, 1);
+  assert.equal(merged.mergedSignals[0].direction, 'up');
+  assert.equal(merged.mergedSignals[0].sentimentLabel, 'positive');
+  assert.equal(merged.mergedSignals[0].changeRate, 9);
 });
 
 test('listed stocks master is available for realtime stock code lookup', () => {

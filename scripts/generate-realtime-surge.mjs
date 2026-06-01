@@ -485,11 +485,26 @@ function hydrateSignalMetadata(signal) {
   if (!signal || typeof signal !== 'object') return signal;
   const stockName = normalizeCompanyName(signal.stockName ?? '');
   const stockCode = getPreferredStockCode(stockName, signal.stockCode);
+  const directionSourceText = signal.headline || signal.latestHeadline || signal.summary || '';
+  const inferredDirection = inferDirection(directionSourceText, stockName);
+  const direction = inferredDirection !== 'neutral'
+    ? inferredDirection
+    : typeof signal.changeRate === 'number' && signal.changeRate > 0
+      ? 'up'
+      : typeof signal.changeRate === 'number' && signal.changeRate < 0
+        ? 'down'
+        : signal.direction ?? 'neutral';
+  const inferredChangeRate = inferChangeRate(directionSourceText, direction, stockName);
+  const changeRate = inferredChangeRate ?? signal.changeRate ?? null;
+  const sentimentLabel = direction === 'up' ? 'positive' : direction === 'down' ? 'negative' : 'neutral';
 
   return {
     ...signal,
     stockName,
-    stockCode
+    stockCode,
+    direction,
+    changeRate,
+    sentimentLabel
   };
 }
 
