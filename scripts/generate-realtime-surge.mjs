@@ -1109,8 +1109,8 @@ function normalizePolishedResponse(payload, fallbackSignals) {
   });
 }
 
-function buildPolishChatRequest(prompt, model = ANALYST_MODEL) {
-  return {
+function buildPolishChatRequest(prompt, model = ANALYST_MODEL, options = {}) {
+  const request = {
     model,
     messages: [
       {
@@ -1122,10 +1122,18 @@ function buildPolishChatRequest(prompt, model = ANALYST_MODEL) {
     temperature: 0,
     max_tokens: 1400
   };
+  if (options.disableThinking) {
+    request.thinking = { type: 'disabled' };
+  }
+  return request;
 }
 
 function buildOpenRouterPolishRequest(prompt, model = FALLBACK_MODEL) {
   return buildPolishChatRequest(prompt, model);
+}
+
+function buildOpenCodeZenPolishRequest(prompt, model = ANALYST_MODEL) {
+  return buildPolishChatRequest(prompt, model, { disableThinking: true });
 }
 
 async function callOpenCodeZenPolish(prompt, fallbackSignals, options = {}) {
@@ -1139,7 +1147,7 @@ async function callOpenCodeZenPolish(prompt, fallbackSignals, options = {}) {
       authorization: `Bearer ${apiKey}`,
       'content-type': 'application/json'
     },
-    body: JSON.stringify(buildPolishChatRequest(prompt, options.model ?? ANALYST_MODEL))
+    body: JSON.stringify(buildOpenCodeZenPolishRequest(prompt, options.model ?? ANALYST_MODEL))
   });
 
   const body = await response.text();
@@ -1504,6 +1512,10 @@ export function __testResolveRealtimePolishBatchSize() {
 
 export function __testBuildOpenRouterPolishRequest(prompt, model) {
   return buildOpenRouterPolishRequest(prompt, model);
+}
+
+export function __testBuildOpenCodeZenPolishRequest(prompt, model) {
+  return buildOpenCodeZenPolishRequest(prompt, model);
 }
 
 export function __testExtractJsonBlock(raw) {

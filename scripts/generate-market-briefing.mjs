@@ -1050,8 +1050,8 @@ function mockMarketResearch() {
   };
 }
 
-function buildBriefingChatRequest(prompt, model = ANALYST_MODEL) {
-  return {
+function buildBriefingChatRequest(prompt, model = ANALYST_MODEL, options = {}) {
+  const request = {
     model,
     messages: [
       {
@@ -1062,6 +1062,14 @@ function buildBriefingChatRequest(prompt, model = ANALYST_MODEL) {
     ],
     temperature: 0.35
   };
+  if (options.disableThinking) {
+    request.thinking = { type: 'disabled' };
+  }
+  return request;
+}
+
+function buildOpenCodeZenBriefingRequest(prompt, model = ANALYST_MODEL) {
+  return buildBriefingChatRequest(prompt, model, { disableThinking: true });
 }
 
 async function callOpenCodeZen(prompt, options = {}) {
@@ -1075,7 +1083,7 @@ async function callOpenCodeZen(prompt, options = {}) {
       authorization: `Bearer ${apiKey}`,
       'content-type': 'application/json'
     },
-    body: JSON.stringify(buildBriefingChatRequest(prompt, options.model ?? ANALYST_MODEL))
+    body: JSON.stringify(buildOpenCodeZenBriefingRequest(prompt, options.model ?? ANALYST_MODEL))
   });
 
   const body = await res.text();
