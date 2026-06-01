@@ -229,18 +229,64 @@ function stripHtml(value) {
   return decodeXml(value).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function inferDirection(text) {
+function directionForKeyword(keyword) {
+  return /하한가|급락|하락|약세|내려/u.test(keyword) ? 'down' : 'up';
+}
+
+function findTargetNamePositions(text, stockName) {
+  const target = cleanText(stockName);
+  if (!target) return [];
+  const positions = [];
+  let offset = 0;
+  while (offset < text.length) {
+    const index = text.indexOf(target, offset);
+    if (index === -1) break;
+    positions.push(index);
+    offset = index + target.length;
+  }
+  return positions;
+}
+
+function nearestDistance(index, positions) {
+  if (!positions.length) return Number.POSITIVE_INFINITY;
+  return Math.min(...positions.map((position) => Math.abs(index - position)));
+}
+
+function inferDirection(text, stockName = null) {
+  const directionMatches = [...String(text ?? '').matchAll(/하한가|급락|하락|약세|내려|상한가|급등|상승|강세|반등|랠리|따따블|직행/gu)];
+  if (!directionMatches.length) return 'neutral';
+
+  const targetPositions = findTargetNamePositions(String(text ?? ''), stockName);
+  if (targetPositions.length) {
+    const nearest = directionMatches
+      .map((match) => ({
+        keyword: match[0],
+        distance: nearestDistance(match.index ?? 0, targetPositions)
+      }))
+      .sort((a, b) => a.distance - b.distance)[0];
+    return directionForKeyword(nearest.keyword);
+  }
+
   if (/(하한가|급락|하락|약세|내려)/u.test(text)) return 'down';
   if (/(상한가|급등|상승|강세|반등|랠리|따따블|직행)/u.test(text)) return 'up';
   return 'neutral';
 }
 
-function inferChangeRate(text, direction) {
+function inferChangeRate(text, direction, stockName = null) {
   if (/따따블/u.test(text)) return 300;
   if (/상한가/u.test(text)) return 30;
   if (/하한가/u.test(text)) return -30;
 
-  const matched = text.match(/(\d+(?:\.\d+)?)%\s*대?\s*(급등|급락|상승|하락|강세|약세|내려)/u);
+  const matches = [...String(text ?? '').matchAll(/(\d+(?:\.\d+)?)%\s*대?\s*(급등|급락|상승|하락|강세|약세|내려)/gu)];
+  const targetPositions = findTargetNamePositions(String(text ?? ''), stockName);
+  const matched = targetPositions.length && matches.length
+    ? matches
+        .map((match) => ({
+          match,
+          distance: nearestDistance(match.index ?? 0, targetPositions)
+        }))
+        .sort((a, b) => a.distance - b.distance)[0]?.match
+    : matches[0];
   if (matched) {
     const value = Number.parseFloat(matched[1]);
     return ['급락', '하락', '약세', '내려'].includes(matched[2]) ? -value : value;
@@ -330,8 +376,8 @@ function toArticleCandidate(article, index) {
   const companyName = normalizeCompanyName(article.companyName ?? '') || extractCompanyName(headline);
   if (!companyName) return null;
 
-  const direction = inferDirection(headline);
-  const changeRate = inferChangeRate(headline, direction);
+  const direction = inferDirection(headline, companyName);
+  const changeRate = inferChangeRate(headline, direction, companyName);
   const publishedAt = article.publishedAt ? new Date(article.publishedAt) : null;
   const recencyHours = publishedAt ? Math.max(0, (Date.now() - publishedAt.getTime()) / (1000 * 60 * 60)) : 999;
 

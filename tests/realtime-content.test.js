@@ -535,6 +535,30 @@ test('realtime payload blocks unmapped stock candidates before accumulation', as
   );
 });
 
+test('direction inference uses target stock clause when headline mentions mixed movers', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const payload = module.__testBuildRealtimePayload({
+    stockNewsCandidates: [
+      {
+        companyName: 'LG화학',
+        title: "LG화학 '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락",
+        summary: "LG화학은 '2차전지 주식 강세' 흐름 속 9%대 급등했고, 코스닥 케어젠은 11%대 급락했다.",
+        source: '비즈니스포스트',
+        sourceUrl: 'https://example.com/lgchem-mixed-movers',
+        publishedAt: '2026-06-01T01:00:00+00:00'
+      }
+    ]
+  }, 14, '2026-06-01T05:00:00.000Z', '2026-06-01', { maxSignals: 10 });
+
+  assert.equal(payload.signals.length, 1);
+  assert.equal(payload.signals[0].stockName, 'LG화학');
+  assert.equal(payload.signals[0].stockCode, '051910');
+  assert.equal(payload.signals[0].direction, 'up');
+  assert.equal(payload.signals[0].sentimentLabel, 'positive');
+  assert.equal(payload.signals[0].changeRate, 9);
+});
+
 test('listed stocks master is available for realtime stock code lookup', () => {
   const listed = readJson('report/data/listed-stocks.json');
   assert.ok(listed.count > 2000);
