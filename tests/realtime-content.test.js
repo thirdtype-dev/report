@@ -532,6 +532,10 @@ test('fallback polish does not append repeated generic boilerplate', async () =>
 
   assertNoRealtimeBoilerplate(polished.polishedBody);
   assert.ok(polished.polishedBody.includes('LG화학'));
+  assert.ok(polished.polishedBody.includes('LG화학은'));
+  assert.ok(!polished.polishedBody.includes('LG화학는'));
+  assert.ok(!polished.polishedBody.includes('은 ,'));
+  assert.ok(!polished.polishedBody.includes('는 ,'));
 });
 
 test('assembly refreshes stale boilerplate polished body from carry-over signals', async () => {

@@ -200,6 +200,28 @@ function sanitizeNarrativeText(value) {
     .replace(/\s*[|/]\s*/gu, ' ')
     .replace(/\s*-\s*/gu, '. ')
     .replace(/\s+/gu, ' ')
+    .replace(/\s+([,.!?])/gu, '$1')
+    .replace(/^[,.;:·…\s]+/gu, '')
+    .trim();
+}
+
+function hasKoreanBatchim(value) {
+  const chars = [...cleanText(value)];
+  const last = chars.at(-1);
+  if (!last) return false;
+  const code = last.charCodeAt(0);
+  if (code < 0xac00 || code > 0xd7a3) return false;
+  return (code - 0xac00) % 28 !== 0;
+}
+
+function topicParticle(value) {
+  return hasKoreanBatchim(value) ? '은' : '는';
+}
+
+function cleanLeadClause(value) {
+  return cleanText(value)
+    .replace(/^[,.;:·…\s]+/gu, '')
+    .replace(/\s+([,.!?])/gu, '$1')
     .trim();
 }
 
@@ -213,11 +235,11 @@ function splitNarrativeClauses(value) {
 function pickLeadClause(value, stockName, maxLength = 90) {
   const clauses = splitNarrativeClauses(value);
   for (const clause of clauses) {
-    const normalized = clause.replace(new RegExp(`^${stockName}\\s*`, 'u'), '').trim();
+    const normalized = cleanLeadClause(clause.replace(new RegExp(`^${stockName}\\s*`, 'u'), ''));
     if (!normalized) continue;
     return truncateSentence(normalized, maxLength);
   }
-  const fallback = sanitizeNarrativeText(value).replace(new RegExp(`^${stockName}\\s*`, 'u'), '').trim();
+  const fallback = cleanLeadClause(sanitizeNarrativeText(value).replace(new RegExp(`^${stockName}\\s*`, 'u'), ''));
   return truncateSentence(fallback, maxLength);
 }
 
@@ -697,7 +719,7 @@ function buildFallbackPolish(signal) {
   const sentences = [];
   const summaryLead = pickLeadClause(signal.summary, signal.stockName, 120);
   if (summaryLead) {
-    sentences.push(`${signal.stockName}는 ${summaryLead.replace(/\s+했다$/u, '한 상태입니다').replace(/\s+중$/u, ' 중입니다')}.`);
+    sentences.push(`${signal.stockName}${topicParticle(signal.stockName)} ${summaryLead.replace(/\s+했다$/u, '한 상태입니다').replace(/\s+중$/u, ' 중입니다')}.`);
   }
 
   const supportingLead = pickLeadClause(signal.headline, signal.stockName, 120);
