@@ -777,29 +777,6 @@ function buildFallbackPolish(signal) {
     pushUniqueSentence(sentences, `${signal.stockName} 관련 제목에는 ${sign}${signal.changeRate.toFixed(1)}% 변동률 표현이 함께 포함됐습니다`);
   }
 
-  const sources = [
-    signal.source,
-    ...(Array.isArray(signal.relatedPosts) ? signal.relatedPosts.map((item) => item?.source) : [])
-  ]
-    .map((item) => cleanText(item))
-    .filter((item) => item && !isTelegramSource(item));
-  const uniqueSources = [...new Set(sources)].slice(0, 2);
-  if (uniqueSources.length) {
-    pushUniqueSentence(sentences, `관련 기사 흐름을 기준으로 ${signal.stockName} 설명을 정리했습니다`);
-  }
-
-  if (signal.direction === 'up') {
-    pushUniqueSentence(sentences, `${signal.stockName} 카드는 상승 재료가 제목과 요약에 직접 연결된 경우로 분류했습니다`);
-  } else if (signal.direction === 'down') {
-    pushUniqueSentence(sentences, `${signal.stockName} 카드는 하락 또는 부담 요인이 제목과 요약에 직접 연결된 경우로 분류했습니다`);
-  } else {
-    pushUniqueSentence(sentences, `${signal.stockName} 카드는 방향성이 엇갈리거나 확인 근거가 제한적인 중립 흐름으로 분류했습니다`);
-  }
-
-  if (countDetailSentences(sentences.join(' ')) <= 4 && signal.stockCode) {
-    pushUniqueSentence(sentences, `${signal.stockName} 종목코드 ${signal.stockCode} 기준으로 대조했습니다`);
-  }
-
   const polishedBody = sentences.slice(0, 5).join(' ');
 
   return {
@@ -817,7 +794,12 @@ function hasFallbackBoilerplate(value) {
     || text.includes('채널 또는 기사에서 관련 언급이 겹쳤습니다')
     || text.includes('제목 기준 변동 단서는')
     || /[은는]\s*,/u.test(text)
-    || /[.!?]\s*,/u.test(text);
+    || /[.!?]\s*,/u.test(text)
+    || text.includes('관련 기사 흐름을 기준으로')
+    || text.includes('카드는 상승 재료가')
+    || text.includes('카드는 하락 또는 부담 요인이')
+    || text.includes('카드는 방향성이 엇갈리거나')
+    || text.includes('종목코드');
 }
 
 function shouldRefreshPolishedBody(value) {

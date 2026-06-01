@@ -19,6 +19,11 @@ function assertNoRealtimeBoilerplate(value) {
   assert.ok(!text.includes('채널 또는 기사에서 관련 언급이 겹쳤습니다'));
   assert.ok(!text.includes('제목 기준 변동 단서는'));
   assert.ok(!text.includes('. ,'));
+  assert.ok(!text.includes('관련 기사 흐름을 기준으로'));
+  assert.ok(!text.includes('카드는 상승 재료가'));
+  assert.ok(!text.includes('카드는 하락 또는 부담 요인이'));
+  assert.ok(!text.includes('카드는 방향성이 엇갈리거나'));
+  assert.ok(!text.includes('종목코드'));
 }
 
 function sentenceCount(value) {
@@ -578,11 +583,10 @@ test('fallback polish produces at least four detail sentences without changing t
 
   assert.equal(signal.stockName, '티로보틱스');
   assert.equal(signal.stockCode, '117730');
-  assert.ok(sentenceCount(polished.polishedBody) >= 4);
   assertNoRealtimeBoilerplate(polished.polishedBody);
 });
 
-test('fallback polish keeps four sentences even when change-rate evidence is missing', async () => {
+test('fallback polish does not pad thin evidence with template sentences', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
   const polished = module.__testBuildFallbackPolish({
@@ -602,8 +606,7 @@ test('fallback polish keeps four sentences even when change-rate evidence is mis
     changeRate: null
   });
 
-  assert.ok(sentenceCount(polished.polishedBody) >= 4);
-  assert.ok(polished.polishedBody.includes('005930'));
+  assert.ok(sentenceCount(polished.polishedBody) >= 2);
   assertNoRealtimeBoilerplate(polished.polishedBody);
 });
 
@@ -643,7 +646,6 @@ test('description refresh preserves cards and updates only supporting copy', asy
   assert.deepEqual(refreshed.signals.map((signal) => signal.stockName), ['티로보틱스', 'NAVER']);
   assert.deepEqual(refreshed.signals.map((signal) => signal.stockCode), ['117730', '035420']);
   assert.equal(refreshed.signals[0].polishedHeadline, '티로보틱스 오버행 우려에…12% 급락');
-  assert.ok(refreshed.signals.every((signal) => sentenceCount(signal.polishedBody) >= 4));
   refreshed.signals.forEach((signal) => assertNoRealtimeBoilerplate(signal.polishedBody));
 });
 
