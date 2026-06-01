@@ -28,6 +28,8 @@ function assertNoRealtimeBoilerplate(value) {
   assert.ok(!text.includes('방향성으로 분류'));
   assert.ok(!text.includes('종목코드'));
   assert.ok(!text.includes('변동률 표현이 함께 포함됐습니다'));
+  assert.ok(!/뉴스 단서에서 .* 관련 재료가 확인됐습니다/u.test(text));
+  assert.ok(!text.includes('후속 확인 포인트는 같은 재료가 추가 기사와 장중 수급에서도 이어지는지 여부입니다'));
 }
 
 function sentenceCount(value) {
@@ -257,6 +259,25 @@ test('realtime polished body avoids awkward question-noun final endings', async 
 
   assert.equal(body, '후속 확인 포인트는 같은 재료가 장중 수급에서도 이어지는지 여부입니다.');
   assertPoliteBodyEndings(body);
+});
+
+test('rule-based realtime fallback does not emit repeated news-evidence boilerplate', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const fallback = module.__testBuildFallbackPolish({
+    stockName: '티로보틱스',
+    stockCode: '117730',
+    headline: '[특징주] 티로보틱스, 오버행 우려에 12% 급락',
+    summary: '[특징주] 티로보틱스, 오버행 우려에 12% 급락',
+    direction: 'down',
+    relatedPosts: [
+      { title: '[특징주] 티로보틱스, 오버행 우려에 12% 급락', source: '조선비즈', url: 'https://example.com/news' }
+    ]
+  });
+
+  assertNoRealtimeBoilerplate(fallback.polishedBody);
+  assert.equal(sentenceCount(fallback.polishedBody), 4);
+  assertPoliteBodyEndings(fallback.polishedBody);
 });
 
 test('realtime merge keeps 20 visible items and only prepends 5 new unique signals', async () => {

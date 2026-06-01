@@ -433,21 +433,38 @@ function buildFallbackSentences(signal, facts) {
   const primaryFact = normalizeSentenceText(facts[0] || pickLeadClause(signal.summary || signal.headline, signal.stockName, 96) || '직접 연결된 뉴스 단서')
     .replace(/[.…]+$/gu, '');
   const issueFocus = extractIssueFocus(primaryFact);
-  const evidenceCount = countNewsEvidence(signal);
-  const sentences = [
-    `${signal.stockName}${topicParticle(signal.stockName)} ${primaryFact}${instrumentalParticle(primaryFact)} 언급됐습니다.`
-  ];
+  const secondaryFact = normalizeSentenceText(facts.find((fact) => fact !== facts[0]) || '')
+    .replace(/[.…]+$/gu, '');
+  const sentences = [];
 
   if (signal.direction === 'up') {
-    sentences.push(`상승 근거는 ${issueFocus} 이슈에 맞춰져 있습니다.`);
+    sentences.push(`${signal.stockName}${topicParticle(signal.stockName)} ${primaryFact} 재료가 부각되며 단기 모멘텀을 형성했습니다.`);
+    sentences.push(`${issueFocus} 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다.`);
   } else if (signal.direction === 'down') {
-    sentences.push(`부담 요인은 ${issueFocus} 이슈로 요약됩니다.`);
+    sentences.push(`${signal.stockName}${topicParticle(signal.stockName)} ${primaryFact} 이슈로 단기 변동성이 확대됐습니다.`);
+    sentences.push(`${issueFocus} 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다.`);
   } else {
-    sentences.push(`방향성은 ${issueFocus} 이슈를 중심으로 엇갈리게 잡힙니다.`);
+    sentences.push(`${signal.stockName}${topicParticle(signal.stockName)} ${primaryFact} 이슈를 중심으로 시장 관심이 붙었습니다.`);
+    sentences.push(`방향성 판단은 ${issueFocus} 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다.`);
   }
 
-  sentences.push(`${evidenceCount}개 뉴스 단서에서 ${signal.stockName} 관련 재료가 확인됐습니다.`);
-  sentences.push(`후속 확인 포인트는 같은 재료가 추가 기사와 장중 수급에서도 이어지는지입니다.`);
+  if (secondaryFact && secondaryFact.length >= 8) {
+    sentences.push(`보조 단서로는 ${secondaryFact} 내용이 더해져 해석 범위를 넓혔습니다.`);
+  } else if (signal.direction === 'up') {
+    sentences.push(`강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다.`);
+  } else if (signal.direction === 'down') {
+    sentences.push(`낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다.`);
+  } else {
+    sentences.push(`중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다.`);
+  }
+
+  if (signal.direction === 'up') {
+    sentences.push(`장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다.`);
+  } else if (signal.direction === 'down') {
+    sentences.push(`장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다.`);
+  } else {
+    sentences.push(`장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다.`);
+  }
   return sentences;
 }
 
@@ -966,7 +983,10 @@ function hasFallbackBoilerplate(value) {
     || text.includes('분류')
     || text.includes('방향성으로 분류')
     || text.includes('종목코드')
-    || text.includes('변동률 표현이 함께 포함됐습니다');
+    || text.includes('변동률 표현이 함께 포함됐습니다')
+    || /뉴스 단서에서 .* 관련 재료가 확인됐습니다/u.test(text)
+    || text.includes('후속 확인 포인트는 같은 재료가 추가 기사와 장중 수급에서도 이어지는지 여부입니다')
+    || text.includes('후속 확인 포인트는 같은 재료가 추가 기사와 장중 수급에서도 이어지는지입니다');
 }
 
 function shouldRefreshPolishedBody(value) {
