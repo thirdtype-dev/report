@@ -24,6 +24,7 @@ function assertNoRealtimeBoilerplate(value) {
   assert.ok(!text.includes('카드는 하락 또는 부담 요인이'));
   assert.ok(!text.includes('카드는 방향성이 엇갈리거나'));
   assert.ok(!text.includes('종목코드'));
+  assert.ok(!text.includes('변동률 표현이 함께 포함됐습니다'));
 }
 
 function sentenceCount(value) {
@@ -641,11 +642,23 @@ test('description refresh preserves cards and updates only supporting copy', asy
     items: []
   };
 
-  const refreshed = module.__testRefreshRealtimeDescriptions(payload, '2026-06-01T00:00:00.000Z');
+  const refreshed = module.__testRefreshRealtimeDescriptions(payload, '2026-06-01T00:00:00.000Z', [
+    {
+      stockName: '티로보틱스',
+      polishedHeadline: 'LLM이 만든 제목은 카드에 반영하지 않음',
+      polishedBody: '오버행 우려가 기사 제목의 핵심 배경으로 제시됐습니다. 주가 하락 폭이 크게 언급되며 단기 수급 부담이 부각됐습니다. 관련 기사에서는 급락 원인을 오버행 이슈와 연결해 설명했습니다. 기존 카드의 종목과 순서는 유지하고 설명 문장만 갱신합니다.'
+    },
+    {
+      stockName: 'NAVER',
+      polishedHeadline: 'LLM 제목 무시',
+      polishedBody: '장중 상승률이 기사 제목에서 직접 확인됩니다. 22만원선 회복이 함께 언급되며 단기 모멘텀이 부각됐습니다. 관련 뉴스는 주가 레벨과 상승 흐름을 중심으로 정리됐습니다. 설명은 기사에 나온 가격과 상승 흐름만 기준으로 구성했습니다.'
+    }
+  ]);
 
   assert.deepEqual(refreshed.signals.map((signal) => signal.stockName), ['티로보틱스', 'NAVER']);
   assert.deepEqual(refreshed.signals.map((signal) => signal.stockCode), ['117730', '035420']);
   assert.equal(refreshed.signals[0].polishedHeadline, '티로보틱스 오버행 우려에…12% 급락');
+  assert.ok(refreshed.signals[0].polishedBody.includes('오버행 우려가 기사 제목의 핵심 배경'));
   refreshed.signals.forEach((signal) => assertNoRealtimeBoilerplate(signal.polishedBody));
 });
 

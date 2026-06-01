@@ -772,11 +772,6 @@ function buildFallbackPolish(signal) {
     if (sentences.length >= 4) break;
   }
 
-  if (typeof signal.changeRate === 'number' && !Number.isNaN(signal.changeRate)) {
-    const sign = signal.changeRate > 0 ? '+' : '';
-    pushUniqueSentence(sentences, `${signal.stockName} 관련 제목에는 ${sign}${signal.changeRate.toFixed(1)}% 변동률 표현이 함께 포함됐습니다`);
-  }
-
   const polishedBody = sentences.slice(0, 5).join(' ');
 
   return {
@@ -807,10 +802,27 @@ function shouldRefreshPolishedBody(value) {
   return !text || hasFallbackBoilerplate(text) || countDetailSentences(text) < 4;
 }
 
-function refreshRealtimeDescriptions(payload, generatedAt = new Date().toISOString()) {
+function refreshRealtimeDescriptions(payload, generatedAt = new Date().toISOString(), polishedSignals = [], polishWriter = null) {
   const signals = Array.isArray(payload?.signals) ? payload.signals : [];
+  const polishedByKey = new Map();
+  for (const signal of (Array.isArray(polishedSignals) ? polishedSignals : [])) {
+    const rawName = cleanText(signal?.stockName).toLowerCase();
+    const hydrated = hydrateSignalMetadata(signal);
+    polishedByKey.set(getSignalKey(hydrated), hydrated);
+    polishedByKey.set(`name:${cleanText(hydrated?.stockName).toLowerCase()}`, hydrated);
+    if (rawName) polishedByKey.set(`name:${rawName}`, hydrated);
+  }
   const refreshedSignals = signals.map((signal) => {
     const hydrated = hydrateSignalMetadata(signal);
+    const polished = polishedByKey.get(getSignalKey(hydrated))
+      ?? polishedByKey.get(`name:${cleanText(hydrated?.stockName).toLowerCase()}`);
+    const polishedBody = cleanText(polished?.polishedBody);
+    if (polishedBody && !shouldRefreshPolishedBody(polishedBody)) {
+      return {
+        ...hydrated,
+        polishedBody: trimBody(polishedBody)
+      };
+    }
     const fallback = buildFallbackPolish(hydrated);
     return {
       ...hydrated,
@@ -823,7 +835,7 @@ function refreshRealtimeDescriptions(payload, generatedAt = new Date().toISOStri
     signals: refreshedSignals,
     items: buildItemsFromSignals(refreshedSignals, generatedAt),
     state: refreshedSignals.length ? 'loaded' : 'empty',
-    polishWriter: {
+    polishWriter: polishWriter ?? {
       provider: 'rule-based-description-refresh',
       model: 'realtime-description-v2',
       fallbackReason: null
@@ -1146,7 +1158,18 @@ async function main() {
   const previousPayload = await loadPreviousRealtimePayload();
 
   if (process.env.REALTIME_DESCRIPTION_ONLY === '1') {
-    const refreshedPayload = refreshRealtimeDescriptions(previousPayload ?? { signals: [] }, generatedAt);
+    const descriptionTargets = Array.isArray(previousPayload?.signals)
+      ? previousPayload.signals.map(hydrateSignalMetadata)
+      : [];
+    const polished = descriptionTargets.length
+      ? await polishSignals(descriptionTargets)
+      : { signals: [], writer: previousPayload?.polishWriter ?? null };
+    const refreshedPayload = refreshRealtimeDescriptions(
+      previousPayload ?? { signals: [] },
+      generatedAt,
+      polished.signals,
+      polished.writer
+    );
     let slotAdapter = {};
     try {
       slotAdapter = JSON.parse(await fs.readFile(sourceSlotAdapterPath, 'utf8'));
@@ -1285,8 +1308,8 @@ export function __testBuildFallbackPolish(signal) {
   return buildFallbackPolish(signal);
 }
 
-export function __testRefreshRealtimeDescriptions(payload, generatedAt) {
-  return refreshRealtimeDescriptions(payload, generatedAt);
+export function __testRefreshRealtimeDescriptions(payload, generatedAt, polishedSignals, polishWriter) {
+  return refreshRealtimeDescriptions(payload, generatedAt, polishedSignals, polishWriter);
 }
 
 export function __testBuildGoogleNewsBackfillCandidates(telegramCandidates, googleNewsItems) {
