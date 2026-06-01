@@ -282,6 +282,39 @@
         ? ['./report/data', './data']
         : ['./report/data', './data'];
 
+      function requireReadingRoomAccess() {
+        const READING_ROOM_PASSWORD = '1710';
+        const READING_ROOM_AUTH_KEY = 'reading-room-auth';
+        const params = new URLSearchParams(window.location.search);
+        const isAppEntry = params.get('maedo_app') === '1'
+          || params.get('source') === 'maedo-signal'
+          || /\bwv\b|MaedoSignal|maedo-signal|com\.maedo\.signal/iu.test(window.navigator.userAgent);
+
+        if (isAppEntry) {
+          sessionStorage.setItem(READING_ROOM_AUTH_KEY, 'app');
+          if (params.has('maedo_app') || params.has('source')) {
+            params.delete('maedo_app');
+            params.delete('source');
+            const query = params.toString();
+            window.history.replaceState(null, '', `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`);
+          }
+          return true;
+        }
+
+        if (sessionStorage.getItem(READING_ROOM_AUTH_KEY) === 'ok') return true;
+
+        const input = window.prompt('리딩방 비밀번호를 입력하세요');
+        if (input === READING_ROOM_PASSWORD) {
+          sessionStorage.setItem(READING_ROOM_AUTH_KEY, 'ok');
+          return true;
+        }
+
+        realtimeTitle.textContent = '접근이 제한되었습니다';
+        signalList.innerHTML = '';
+        liveBoard.hidden = false;
+        return false;
+      }
+
       function escapeHtml(value) {
         return String(value ?? '')
           .replace(/&/g, '&amp;')
@@ -410,7 +443,9 @@
         });
       });
 
-      loadRealtimeSurge();
+      if (requireReadingRoomAccess()) {
+        loadRealtimeSurge();
+      }
     </script>
   </body>
 </html>

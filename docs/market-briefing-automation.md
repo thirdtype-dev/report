@@ -10,6 +10,7 @@
 - 브리핑 페이지는 상단 `리딩방` 제목과 `브리핑 / 실시간급등` 버튼형 탭 구조를 유지한다.
 - `실시간급등` 버튼은 `realtime.html`과 `report/realtime.html` 별도 페이지로 이동한다.
 - 별도 페이지는 브리핑 상단 chrome을 유지하되, 유료 회원 전용 shell과 상태 영역만 먼저 고정한다.
+- 브리핑/실시간급등 HTML은 웹 브라우저 직접 진입 시 리딩방 비밀번호를 확인한다. 앱 WebView 진입은 `source=maedo-signal` 또는 Android WebView UA로 식별해 비밀번호 확인을 건너뛴다.
 
 ## 주요 파일
 
