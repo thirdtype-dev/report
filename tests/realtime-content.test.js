@@ -10,6 +10,14 @@ function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(repoRoot, relativePath), 'utf8'));
 }
 
+function assertNoRealtimeBoilerplate(value) {
+  const text = String(value ?? '');
+  assert.ok(!text.includes('관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다'));
+  assert.ok(!text.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다'));
+  assert.ok(!text.includes('기사 제목과 요약에서 확인됐습니다'));
+  assert.ok(!text.includes('표시 문구는'));
+}
+
 test('telegram public parser extracts normalized message fields', async () => {
   const fixture = fs.readFileSync(path.join(repoRoot, 'tests/fixtures/telegram-public/YeouidoStory2.html'), 'utf8');
   const module = await import(path.join(repoRoot, 'scripts/realtime-telegram-public.mjs'));
@@ -107,8 +115,9 @@ test('realtime generator prefers telegram public signals when fixtures are avail
   assert.equal(typeof realtime.signals[0].polishedHeadline, 'string');
   assert.ok(realtime.signals[0].polishedHeadline.length > 0);
   assert.equal(typeof realtime.signals[0].polishedBody, 'string');
-  assert.ok(realtime.signals[0].polishedBody.length >= 100);
+  assert.ok(realtime.signals[0].polishedBody.length > 0);
   assert.ok(realtime.signals[0].polishedBody.length <= 360);
+  assertNoRealtimeBoilerplate(realtime.signals[0].polishedBody);
 });
 
 test('realtime polish prompt stays compact and excludes raw evidence blobs', async () => {
@@ -361,7 +370,8 @@ test('realtime generator carries prior-day signals forward to keep 20 visible it
   assert.equal(realtime.signals.length, 20);
   assert.ok(realtime.signals.some((signal) => signal.stockName === '기존보유1'));
   assert.ok(realtime.signals.every((signal) => typeof signal.polishedHeadline === 'string' && signal.polishedHeadline.length > 0));
-  assert.ok(realtime.signals.every((signal) => typeof signal.polishedBody === 'string' && signal.polishedBody.length >= 100));
+  assert.ok(realtime.signals.every((signal) => typeof signal.polishedBody === 'string' && signal.polishedBody.length > 0));
+  realtime.signals.forEach((signal) => assertNoRealtimeBoilerplate(signal.polishedBody));
 });
 
 test('realtime payload hides telegram-only candidates and exposes only news links for mixed signals', async () => {
@@ -494,7 +504,8 @@ test('fallback polish rewrites noisy copied text into cleaner display copy', asy
   assert.notEqual(polished.polishedHeadline, "[오늘의 주목주] '차익실현 압력' 한화시스템 주가 5%대 하락, 코스닥 디앤디파마텍 15%대 급등");
   assert.ok(!polished.polishedHeadline.includes('[오늘의 주목주]'));
   assert.ok(!polished.polishedBody.includes('비즈니스포스트'));
-  assert.ok(polished.polishedBody.length >= 100);
+  assert.ok(polished.polishedBody.length > 0);
+  assertNoRealtimeBoilerplate(polished.polishedBody);
 });
 
 test('fallback polish does not append repeated generic boilerplate', async () => {
@@ -517,8 +528,7 @@ test('fallback polish does not append repeated generic boilerplate', async () =>
     changeRate: 9
   });
 
-  assert.ok(!polished.polishedBody.includes('관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다'));
-  assert.ok(!polished.polishedBody.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다'));
+  assertNoRealtimeBoilerplate(polished.polishedBody);
   assert.ok(polished.polishedBody.includes('LG화학'));
 });
 
@@ -543,13 +553,12 @@ test('assembly refreshes stale boilerplate polished body from carry-over signals
       ],
       direction: 'down',
       polishedHeadline: '하나기술 수주 계약 취소 우려',
-      polishedBody: '하나기술는 수주 계약 취소 우려가 부각됐습니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다. 단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다.'
+      polishedBody: '하나기술는 수주 계약 취소 우려가 부각됐습니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다. 단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다. 표시 문구는 하나기술에 직접 연결된 제목과 요약만 기준으로 정리했습니다.'
     }
   ], []);
 
   assert.equal(finalSignals.length, 1);
-  assert.ok(!finalSignals[0].polishedBody.includes('관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다'));
-  assert.ok(!finalSignals[0].polishedBody.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다'));
+  assertNoRealtimeBoilerplate(finalSignals[0].polishedBody);
   assert.ok(finalSignals[0].polishedBody.includes('하나기술'));
 });
 

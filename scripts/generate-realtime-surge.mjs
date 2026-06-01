@@ -726,23 +726,7 @@ function buildFallbackPolish(signal) {
     if (sentences.length >= 4) break;
   }
 
-  const directionText = signal.direction === 'up'
-    ? '강세'
-    : signal.direction === 'down'
-      ? '약세'
-      : '중립';
   let polishedBody = sentences.join(' ');
-  if (polishedBody.length < POLISHED_BODY_MIN) {
-    const sourceSentence = `${signal.stockName}의 ${directionText} 단서가 기사 제목과 요약에서 확인됐습니다.`;
-    if (!sentences.some((item) => item.includes(sourceSentence.slice(0, 18)))) {
-      sentences.push(sourceSentence);
-    }
-    polishedBody = sentences.join(' ');
-  }
-  if (polishedBody.length < POLISHED_BODY_MIN) {
-    sentences.push(`표시 문구는 ${signal.stockName}에 직접 연결된 제목과 요약만 기준으로 정리했습니다.`);
-    polishedBody = sentences.join(' ');
-  }
 
   return {
     polishedHeadline: baseHeadline,
@@ -753,7 +737,9 @@ function buildFallbackPolish(signal) {
 function hasFallbackBoilerplate(value) {
   const text = String(value ?? '');
   return text.includes('관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다')
-    || text.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다');
+    || text.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다')
+    || text.includes('기사 제목과 요약에서 확인됐습니다')
+    || text.includes('표시 문구는');
 }
 
 function normalizeSignalDisplaySources(signal) {
