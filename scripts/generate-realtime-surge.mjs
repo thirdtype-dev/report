@@ -754,7 +754,8 @@ function hasFallbackBoilerplate(value) {
     || text.includes('기사 제목과 요약에서 확인됐습니다')
     || text.includes('표시 문구는')
     || text.includes('채널 또는 기사에서 관련 언급이 겹쳤습니다')
-    || text.includes('제목 기준 변동 단서는');
+    || text.includes('제목 기준 변동 단서는')
+    || /[은는]\s*,/u.test(text);
 }
 
 function normalizeSignalDisplaySources(signal) {

@@ -559,7 +559,7 @@ test('assembly refreshes stale boilerplate polished body from carry-over signals
       ],
       direction: 'down',
       polishedHeadline: '하나기술 수주 계약 취소 우려',
-      polishedBody: '하나기술는 수주 계약 취소 우려가 부각됐습니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다. 단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다. 표시 문구는 하나기술에 직접 연결된 제목과 요약만 기준으로 정리했습니다.'
+      polishedBody: '하나기술는 , 수주 계약 취소 우려가 부각됐습니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다. 단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다. 표시 문구는 하나기술에 직접 연결된 제목과 요약만 기준으로 정리했습니다.'
     }
   ], []);
 
