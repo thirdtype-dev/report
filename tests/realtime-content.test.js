@@ -250,6 +250,15 @@ test('realtime polished body normalizes declarative endings to polite nida style
   assertPoliteBodyEndings(body);
 });
 
+test('realtime polished body avoids awkward question-noun final endings', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const body = module.__testTrimBody('후속 확인 포인트는 같은 재료가 장중 수급에서도 이어지는지입니다.');
+
+  assert.equal(body, '후속 확인 포인트는 같은 재료가 장중 수급에서도 이어지는지 여부입니다.');
+  assertPoliteBodyEndings(body);
+});
+
 test('realtime merge keeps 20 visible items and only prepends 5 new unique signals', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));

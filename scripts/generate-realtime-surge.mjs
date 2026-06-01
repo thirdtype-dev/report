@@ -231,7 +231,9 @@ function normalizePoliteEndings(value) {
   for (const [pattern, replacement] of replacements) {
     text = text.replace(pattern, replacement);
   }
-  return text;
+  return text
+    .replace(/는지입니다\./gu, '는지 여부입니다.')
+    .replace(/인지입니다\./gu, '인지 여부입니다.');
 }
 
 function ensurePoliteFinalEnding(value) {
