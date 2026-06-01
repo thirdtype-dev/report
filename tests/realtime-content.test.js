@@ -38,6 +38,14 @@ function sentenceCount(value) {
     .length;
 }
 
+function assertPoliteBodyEndings(value) {
+  String(value ?? '')
+    .split(/(?<=\.)\s+/u)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .forEach((sentence) => assert.match(sentence, /니다\.$/u));
+}
+
 test('telegram public parser extracts normalized message fields', async () => {
   const fixture = fs.readFileSync(path.join(repoRoot, 'tests/fixtures/telegram-public/YeouidoStory2.html'), 'utf8');
   const module = await import(path.join(repoRoot, 'scripts/realtime-telegram-public.mjs'));
@@ -231,6 +239,15 @@ test('realtime polish extracts JSON after opencode zen reasoning preamble', asyn
       }
     ]
   });
+});
+
+test('realtime polished body normalizes declarative endings to polite nida style', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const body = module.__testTrimBody('수주 기대감이 부각된다. 장중 거래대금이 커진다. 후속 수급 확인이 필요하다.');
+
+  assert.equal(body, '수주 기대감이 부각됩니다. 장중 거래대금이 커집니다. 후속 수급 확인이 필요합니다.');
+  assertPoliteBodyEndings(body);
 });
 
 test('realtime merge keeps 20 visible items and only prepends 5 new unique signals', async () => {

@@ -190,11 +190,66 @@ function truncateSentence(value, maxLength) {
   return `${text.slice(0, Math.max(0, maxLength - 1)).trimEnd()}…`;
 }
 
+function normalizePoliteEndings(value) {
+  let text = cleanText(value);
+  if (!text) return '';
+
+  const replacements = [
+    [/이다\./gu, '입니다.'],
+    [/아니다\./gu, '아닙니다.'],
+    [/된다\./gu, '됩니다.'],
+    [/했다\./gu, '했습니다.'],
+    [/됐다\./gu, '됐습니다.'],
+    [/간다\./gu, '갑니다.'],
+    [/나온다\./gu, '나옵니다.'],
+    [/오른다\./gu, '오릅니다.'],
+    [/내린다\./gu, '내립니다.'],
+    [/보인다\./gu, '보입니다.'],
+    [/이어진다\./gu, '이어집니다.'],
+    [/커진다\./gu, '커집니다.'],
+    [/한다\./gu, '합니다.'],
+    [/하다\./gu, '합니다.'],
+    [/받는다\./gu, '받습니다.'],
+    [/갖는다\./gu, '갖습니다.'],
+    [/있다\./gu, '있습니다.'],
+    [/없다\./gu, '없습니다.'],
+    [/높다\./gu, '높습니다.'],
+    [/낮다\./gu, '낮습니다.'],
+    [/크다\./gu, '큽니다.'],
+    [/강하다\./gu, '강합니다.'],
+    [/약하다\./gu, '약합니다.'],
+    [/부각된다\./gu, '부각됩니다.'],
+    [/확인된다\./gu, '확인됩니다.'],
+    [/평가된다\./gu, '평가됩니다.'],
+    [/관측된다\./gu, '관측됩니다.'],
+    [/언급된다\./gu, '언급됩니다.'],
+    [/연결된다\./gu, '연결됩니다.'],
+    [/집중된다\./gu, '집중됩니다.'],
+    [/예상된다\./gu, '예상됩니다.']
+  ];
+
+  for (const [pattern, replacement] of replacements) {
+    text = text.replace(pattern, replacement);
+  }
+  return text;
+}
+
+function ensurePoliteFinalEnding(value) {
+  const text = normalizePoliteEndings(value).replace(/[…,，;:]+$/u, '').trim();
+  if (!text) return '';
+  if (/니다\.$/u.test(text)) return text;
+  if (/다\.$/u.test(text)) return text.replace(/다\.$/u, '입니다.');
+  return `${text}입니다.`;
+}
+
 function trimBody(value) {
-  const text = cleanText(value);
+  const text = ensurePoliteFinalEnding(value);
   if (!text) return '';
   if (text.length <= POLISHED_BODY_MAX) return text;
-  return `${text.slice(0, POLISHED_BODY_MAX - 1).trimEnd()}…`;
+  const slice = text.slice(0, POLISHED_BODY_MAX).trimEnd();
+  const sentenceBoundary = slice.match(/^([\s\S]*니다\.)/u)?.[1];
+  if (sentenceBoundary) return sentenceBoundary;
+  return ensurePoliteFinalEnding(slice.slice(0, Math.max(0, POLISHED_BODY_MAX - 4)));
 }
 
 function sanitizeNarrativeText(value) {
@@ -1001,6 +1056,7 @@ function buildRealtimePolishPrompt(signals) {
     `polishedHeadline: Korean plain text, concise summary style, max ${POLISHED_HEADLINE_MAX} characters, intended for bold 1-2 lines.`,
     `polishedBody: Korean explanatory prose, exactly 4 sentences, ${POLISHED_BODY_MIN}-${POLISHED_BODY_MAX} characters, intended for about 5-6 mobile lines.`,
     'Each polishedBody sentence must explain a different point: direct issue, price/context clue, why the item is tagged positive/neutral/risk, and what to watch next.',
+    'Every polishedBody sentence must end with the polite Korean ending "니다.".',
     'Do not mention stock code, card classification mechanics, source links, "관련 기사 흐름", "변동률 표현", or "근거를 확인".',
     'Avoid repeating the same sentence frame across items.',
     'Remove source/publisher clutter, duplicate phrases, raw channel labels, and noisy ticker boilerplate.',
@@ -1520,6 +1576,10 @@ export function __testBuildOpenCodeZenPolishRequest(prompt, model) {
 
 export function __testExtractJsonBlock(raw) {
   return extractJsonBlock(raw);
+}
+
+export function __testTrimBody(value) {
+  return trimBody(value);
 }
 
 export function __testMergeRealtimeSignals(newSignals, previousSignals, options) {
