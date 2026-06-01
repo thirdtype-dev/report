@@ -18,6 +18,7 @@ function assertNoRealtimeBoilerplate(value) {
   assert.ok(!text.includes('표시 문구는'));
   assert.ok(!text.includes('채널 또는 기사에서 관련 언급이 겹쳤습니다'));
   assert.ok(!text.includes('제목 기준 변동 단서는'));
+  assert.ok(!text.includes('. ,'));
 }
 
 test('telegram public parser extracts normalized message fields', async () => {

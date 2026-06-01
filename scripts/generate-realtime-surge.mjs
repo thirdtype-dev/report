@@ -200,6 +200,7 @@ function sanitizeNarrativeText(value) {
     .replace(/\s*[|/]\s*/gu, ' ')
     .replace(/\s*-\s*/gu, '. ')
     .replace(/\s+/gu, ' ')
+    .replace(/([.!?])\s*,\s*/gu, '$1 ')
     .replace(/\s+([,.!?])/gu, '$1')
     .replace(/^[,.;:·…\s]+/gu, '')
     .trim();
@@ -755,7 +756,8 @@ function hasFallbackBoilerplate(value) {
     || text.includes('표시 문구는')
     || text.includes('채널 또는 기사에서 관련 언급이 겹쳤습니다')
     || text.includes('제목 기준 변동 단서는')
-    || /[은는]\s*,/u.test(text);
+    || /[은는]\s*,/u.test(text)
+    || /[.!?]\s*,/u.test(text);
 }
 
 function normalizeSignalDisplaySources(signal) {
