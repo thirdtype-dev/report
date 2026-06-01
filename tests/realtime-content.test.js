@@ -21,6 +21,14 @@ function assertNoRealtimeBoilerplate(value) {
   assert.ok(!text.includes('. ,'));
 }
 
+function sentenceCount(value) {
+  return String(value ?? '')
+    .split(/[.!?]\s+/u)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .length;
+}
+
 test('telegram public parser extracts normalized message fields', async () => {
   const fixture = fs.readFileSync(path.join(repoRoot, 'tests/fixtures/telegram-public/YeouidoStory2.html'), 'utf8');
   const module = await import(path.join(repoRoot, 'scripts/realtime-telegram-public.mjs'));
@@ -537,6 +545,81 @@ test('fallback polish does not append repeated generic boilerplate', async () =>
   assert.ok(!polished.polishedBody.includes('LG화학는'));
   assert.ok(!polished.polishedBody.includes('은 ,'));
   assert.ok(!polished.polishedBody.includes('는 ,'));
+});
+
+test('fallback polish produces at least four detail sentences without changing the card', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const signal = {
+    stockName: '티로보틱스',
+    stockCode: '117730',
+    headline: '[특징주] 티로보틱스, 오버행 우려에…12% 급락 - 조선비즈',
+    summary: '[특징주] 티로보틱스, 오버행 우려에…12% 급락 - 조선비즈 Chosunbiz',
+    evidencePoints: [
+      '출처 Chosunbiz 기반 기사 1건',
+      '제목 기준 변동률 단서 -12.0%',
+      '[특징주] 티로보틱스, 오버행 우려에…12% 급락 - 조선비즈'
+    ],
+    relatedPosts: [
+      {
+        label: '관련기사1',
+        title: '[특징주] 티로보틱스, 오버행 우려에…12% 급락 - 조선비즈',
+        source: 'Chosunbiz',
+        url: 'https://example.com/t-robotics'
+      }
+    ],
+    direction: 'down',
+    changeRate: -12,
+    channelCount: 1,
+    polishedBody: '티로보틱스는 오버행 우려에…12% 급락.'
+  };
+
+  const polished = module.__testBuildFallbackPolish(signal);
+
+  assert.equal(signal.stockName, '티로보틱스');
+  assert.equal(signal.stockCode, '117730');
+  assert.ok(sentenceCount(polished.polishedBody) >= 4);
+  assertNoRealtimeBoilerplate(polished.polishedBody);
+});
+
+test('description refresh preserves cards and updates only supporting copy', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const payload = {
+    signals: [
+      {
+        stockName: '티로보틱스',
+        stockCode: '117730',
+        headline: '[특징주] 티로보틱스, 오버행 우려에…12% 급락 - 조선비즈',
+        summary: '[특징주] 티로보틱스, 오버행 우려에…12% 급락 - 조선비즈 Chosunbiz',
+        relatedPosts: [{ label: '관련기사1', title: '[특징주] 티로보틱스, 오버행 우려에…12% 급락 - 조선비즈', source: 'Chosunbiz', url: 'https://example.com/t-robotics' }],
+        direction: 'down',
+        changeRate: -12,
+        polishedHeadline: '티로보틱스 오버행 우려에…12% 급락',
+        polishedBody: '짧은 설명.'
+      },
+      {
+        stockName: 'NAVER',
+        stockCode: '035420',
+        headline: 'NAVER 주가 장중 12.93% 상승',
+        summary: 'NAVER 주가, 5월 29일 장중 231,500원 12.93% 상승',
+        relatedPosts: [{ label: '관련기사1', title: 'NAVER 주가 장중 12.93% 상승', source: '한국경제', url: 'https://example.com/naver' }],
+        direction: 'up',
+        changeRate: 12.93,
+        polishedHeadline: 'NAVER 주가 장중 상승',
+        polishedBody: '짧은 설명.'
+      }
+    ],
+    items: []
+  };
+
+  const refreshed = module.__testRefreshRealtimeDescriptions(payload, '2026-06-01T00:00:00.000Z');
+
+  assert.deepEqual(refreshed.signals.map((signal) => signal.stockName), ['티로보틱스', 'NAVER']);
+  assert.deepEqual(refreshed.signals.map((signal) => signal.stockCode), ['117730', '035420']);
+  assert.equal(refreshed.signals[0].polishedHeadline, '티로보틱스 오버행 우려에…12% 급락');
+  assert.ok(refreshed.signals.every((signal) => sentenceCount(signal.polishedBody) >= 4));
+  refreshed.signals.forEach((signal) => assertNoRealtimeBoilerplate(signal.polishedBody));
 });
 
 test('assembly refreshes stale boilerplate polished body from carry-over signals', async () => {

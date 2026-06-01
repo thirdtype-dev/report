@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
 const sourceMarketResearchPath = path.join(repoRoot, 'report', 'data', 'market-research.json');
 const sourceRealtimePath = path.join(repoRoot, 'report', 'data', 'realtime-surge.json');
+const sourceSlotAdapterPath = path.join(repoRoot, 'report', 'data', 'slot-adapter.json');
 const sourceListedStocksPath = path.join(repoRoot, 'report', 'data', 'listed-stocks.json');
 const publicDataDir = path.join(repoRoot, 'public', 'report', 'data');
 const outputSlotAdapterPath = path.join(publicDataDir, 'slot-adapter.json');
@@ -224,6 +225,28 @@ function cleanLeadClause(value) {
     .replace(/^[,.;:·…\s]+/gu, '')
     .replace(/\s+([,.!?])/gu, '$1')
     .trim();
+}
+
+function normalizeSentenceText(value) {
+  return cleanLeadClause(value)
+    .replace(/[.!?]+$/u, '')
+    .trim();
+}
+
+function pushUniqueSentence(sentences, value) {
+  const text = normalizeSentenceText(value);
+  if (!text || text.length < 8) return;
+  const key = text.slice(0, 24);
+  if (sentences.some((sentence) => sentence.includes(key))) return;
+  sentences.push(`${text}.`);
+}
+
+function countDetailSentences(value) {
+  return String(value ?? '')
+    .split(/[.!?]\s+/u)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .length;
 }
 
 function splitNarrativeClauses(value) {
@@ -674,17 +697,27 @@ function assembleFinalSignals(mergedSignals, polishedSignals) {
     .map((signal) => {
       const hydrated = hydrateSignalMetadata(signal);
       const polished = polishedByKey.get(getSignalKey(hydrated));
-      if (polished) return polished;
+      if (polished) {
+        const hydratedPolished = hydrateSignalMetadata(polished);
+        if (!shouldRefreshPolishedBody(hydratedPolished.polishedBody)) return hydratedPolished;
+        return {
+          ...hydratedPolished,
+          polishedHeadline: cleanText(hydratedPolished.polishedHeadline) || buildFallbackPolish(hydratedPolished).polishedHeadline,
+          polishedBody: buildFallbackPolish(hydratedPolished).polishedBody
+        };
+      }
       if (
         cleanText(hydrated.polishedHeadline)
         && cleanText(hydrated.polishedBody)
-        && !hasFallbackBoilerplate(hydrated.polishedBody)
+        && !shouldRefreshPolishedBody(hydrated.polishedBody)
       ) {
         return hydrated;
       }
+      const fallback = buildFallbackPolish(hydrated);
       return {
         ...hydrated,
-        ...buildFallbackPolish(hydrated)
+        polishedHeadline: cleanText(hydrated.polishedHeadline) || fallback.polishedHeadline,
+        polishedBody: fallback.polishedBody
       };
     })
     .map(hydrateSignalMetadata)
@@ -720,12 +753,12 @@ function buildFallbackPolish(signal) {
   const sentences = [];
   const summaryLead = pickLeadClause(signal.summary, signal.stockName, 120);
   if (summaryLead) {
-    sentences.push(`${signal.stockName}${topicParticle(signal.stockName)} ${summaryLead.replace(/\s+했다$/u, '한 상태입니다').replace(/\s+중$/u, ' 중입니다')}.`);
+    pushUniqueSentence(sentences, `${signal.stockName}${topicParticle(signal.stockName)} ${summaryLead.replace(/\s+했다$/u, '한 상태입니다').replace(/\s+중$/u, ' 중입니다')}`);
   }
 
   const supportingLead = pickLeadClause(signal.headline, signal.stockName, 120);
   if (supportingLead && !sentences.some((item) => item.includes(supportingLead.slice(0, 20)))) {
-    sentences.push(`${supportingLead}.`);
+    pushUniqueSentence(sentences, supportingLead);
   }
 
   const relatedTitles = Array.isArray(signal.relatedPosts)
@@ -735,12 +768,35 @@ function buildFallbackPolish(signal) {
         .filter(Boolean)
     : [];
   for (const title of relatedTitles) {
-    if (sentences.some((item) => item.includes(title.slice(0, 18)))) continue;
-    sentences.push(`${title}.`);
+    pushUniqueSentence(sentences, title);
     if (sentences.length >= 4) break;
   }
 
-  let polishedBody = sentences.join(' ');
+  if (typeof signal.changeRate === 'number' && !Number.isNaN(signal.changeRate)) {
+    const sign = signal.changeRate > 0 ? '+' : '';
+    pushUniqueSentence(sentences, `${signal.stockName} 관련 제목에는 ${sign}${signal.changeRate.toFixed(1)}% 변동률 표현이 함께 포함됐습니다`);
+  }
+
+  const sources = [
+    signal.source,
+    ...(Array.isArray(signal.relatedPosts) ? signal.relatedPosts.map((item) => item?.source) : [])
+  ]
+    .map((item) => cleanText(item))
+    .filter((item) => item && !isTelegramSource(item));
+  const uniqueSources = [...new Set(sources)].slice(0, 2);
+  if (uniqueSources.length) {
+    pushUniqueSentence(sentences, `관련 기사 흐름을 기준으로 ${signal.stockName} 설명을 정리했습니다`);
+  }
+
+  if (signal.direction === 'up') {
+    pushUniqueSentence(sentences, `${signal.stockName} 카드는 상승 재료가 제목과 요약에 직접 연결된 경우로 분류했습니다`);
+  } else if (signal.direction === 'down') {
+    pushUniqueSentence(sentences, `${signal.stockName} 카드는 하락 또는 부담 요인이 제목과 요약에 직접 연결된 경우로 분류했습니다`);
+  } else {
+    pushUniqueSentence(sentences, `${signal.stockName} 카드는 방향성이 엇갈리거나 확인 근거가 제한적인 중립 흐름으로 분류했습니다`);
+  }
+
+  const polishedBody = sentences.slice(0, 5).join(' ');
 
   return {
     polishedHeadline: baseHeadline,
@@ -758,6 +814,35 @@ function hasFallbackBoilerplate(value) {
     || text.includes('제목 기준 변동 단서는')
     || /[은는]\s*,/u.test(text)
     || /[.!?]\s*,/u.test(text);
+}
+
+function shouldRefreshPolishedBody(value) {
+  const text = cleanText(value);
+  return !text || hasFallbackBoilerplate(text) || countDetailSentences(text) < 4;
+}
+
+function refreshRealtimeDescriptions(payload, generatedAt = new Date().toISOString()) {
+  const signals = Array.isArray(payload?.signals) ? payload.signals : [];
+  const refreshedSignals = signals.map((signal) => {
+    const hydrated = hydrateSignalMetadata(signal);
+    const fallback = buildFallbackPolish(hydrated);
+    return {
+      ...hydrated,
+      polishedBody: fallback.polishedBody
+    };
+  });
+  return {
+    ...payload,
+    generated_at: generatedAt,
+    signals: refreshedSignals,
+    items: buildItemsFromSignals(refreshedSignals, generatedAt),
+    state: refreshedSignals.length ? 'loaded' : 'empty',
+    polishWriter: {
+      provider: 'rule-based-description-refresh',
+      model: 'realtime-description-v2',
+      fallbackReason: null
+    }
+  };
 }
 
 function normalizeSignalDisplaySources(signal) {
@@ -1069,11 +1154,42 @@ async function main() {
   const now = new Date();
   const kst = getKstParts(now);
   const schedule = SLOT_SCHEDULE[0];
-  const marketResearch = JSON.parse(await fs.readFile(sourceMarketResearchPath, 'utf8'));
 
   const generatedAt = now.toISOString();
   const generatedDate = `${kst.year}-${kst.month}-${kst.day}`;
   const previousPayload = await loadPreviousRealtimePayload();
+
+  if (process.env.REALTIME_DESCRIPTION_ONLY === '1') {
+    const refreshedPayload = refreshRealtimeDescriptions(previousPayload ?? { signals: [] }, generatedAt);
+    let slotAdapter = {};
+    try {
+      slotAdapter = JSON.parse(await fs.readFile(sourceSlotAdapterPath, 'utf8'));
+    } catch {
+      slotAdapter = {};
+    }
+    const refreshedSlotAdapter = {
+      ...slotAdapter,
+      generatedAt,
+      generatedDate,
+      kstGeneratedAt: formatKstHuman(now),
+      itemCount: refreshedPayload.signals.length,
+      polishWriter: refreshedPayload.polishWriter
+    };
+    await fs.mkdir(publicDataDir, { recursive: true });
+    await fs.writeFile(outputSlotAdapterPath, `${JSON.stringify(refreshedSlotAdapter, null, 2)}\n`);
+    await fs.writeFile(outputRealtimePath, `${JSON.stringify(refreshedPayload, null, 2)}\n`);
+    console.log(JSON.stringify({
+      ok: true,
+      descriptionOnly: true,
+      slotHour,
+      cycleLabel: slotLabel.cycleLabel,
+      generatedAt,
+      signalCount: refreshedPayload.signals.length
+    }));
+    return;
+  }
+
+  const marketResearch = JSON.parse(await fs.readFile(sourceMarketResearchPath, 'utf8'));
   const previousSignals = previousPayload?.signals ?? [];
   const telegramMessages = await loadTelegramSource();
   const telegramCandidates = messagesToTelegramNewsCandidates(telegramMessages);
@@ -1181,6 +1297,10 @@ export function __testBuildRealtimePayload(articleSource, slotHour, generatedAt,
 
 export function __testBuildFallbackPolish(signal) {
   return buildFallbackPolish(signal);
+}
+
+export function __testRefreshRealtimeDescriptions(payload, generatedAt) {
+  return refreshRealtimeDescriptions(payload, generatedAt);
 }
 
 export function __testBuildGoogleNewsBackfillCandidates(telegramCandidates, googleNewsItems) {
