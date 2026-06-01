@@ -522,6 +522,37 @@ test('fallback polish does not append repeated generic boilerplate', async () =>
   assert.ok(polished.polishedBody.includes('LG화학'));
 });
 
+test('assembly refreshes stale boilerplate polished body from carry-over signals', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const finalSignals = module.__testAssembleFinalSignals([
+    {
+      stockName: '하나기술',
+      stockCode: '299030',
+      headline: '하나기술 수주 계약 취소 우려 부각',
+      summary: '수주 계약 취소 이슈가 투자심리에 부담으로 작용했다',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/hana-tech',
+      relatedPosts: [
+        {
+          label: '관련기사1',
+          title: '하나기술 수주 계약 취소 우려 부각',
+          source: '연합뉴스',
+          url: 'https://example.com/hana-tech'
+        }
+      ],
+      direction: 'down',
+      polishedHeadline: '하나기술 수주 계약 취소 우려',
+      polishedBody: '하나기술는 수주 계약 취소 우려가 부각됐습니다. 관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다. 단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다.'
+    }
+  ], []);
+
+  assert.equal(finalSignals.length, 1);
+  assert.ok(!finalSignals[0].polishedBody.includes('관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다'));
+  assert.ok(!finalSignals[0].polishedBody.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다'));
+  assert.ok(finalSignals[0].polishedBody.includes('하나기술'));
+});
+
 test('realtime payload blocks unmapped stock candidates before accumulation', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));

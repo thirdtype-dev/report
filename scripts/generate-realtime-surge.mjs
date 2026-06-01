@@ -652,7 +652,13 @@ function assembleFinalSignals(mergedSignals, polishedSignals) {
       const hydrated = hydrateSignalMetadata(signal);
       const polished = polishedByKey.get(getSignalKey(hydrated));
       if (polished) return polished;
-      if (cleanText(hydrated.polishedHeadline) && cleanText(hydrated.polishedBody)) return hydrated;
+      if (
+        cleanText(hydrated.polishedHeadline)
+        && cleanText(hydrated.polishedBody)
+        && !hasFallbackBoilerplate(hydrated.polishedBody)
+      ) {
+        return hydrated;
+      }
       return {
         ...hydrated,
         ...buildFallbackPolish(hydrated)
@@ -742,6 +748,12 @@ function buildFallbackPolish(signal) {
     polishedHeadline: baseHeadline,
     polishedBody: trimBody(polishedBody || `${signal.stockName} 관련 근거 기사를 통해 흐름을 확인할 수 있습니다.`)
   };
+}
+
+function hasFallbackBoilerplate(value) {
+  const text = String(value ?? '');
+  return text.includes('관련 기사 링크에서 세부 근거를 추가로 확인할 수 있습니다')
+    || text.includes('단기 급등 배경은 기사 본문과 추가 공시 흐름을 함께 보며 확인하는 편이 안전합니다');
 }
 
 function normalizeSignalDisplaySources(signal) {
