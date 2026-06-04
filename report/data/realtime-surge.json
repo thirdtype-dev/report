@@ -1,16 +1,98 @@
 {
-  "generated_at": "2026-06-04T00:27:47.002Z",
+  "generated_at": "2026-06-04T01:00:16.831Z",
   "generated_date": "2026-06-04",
-  "slot_hour": 14,
-  "cycle_label": "KST_1400",
-  "slot_label": "14:00",
+  "slot_hour": 10,
+  "cycle_label": "KST_1000",
+  "slot_label": "10:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 14:00 실시간 급등",
-    "subtitle": "시장 뉴스 기반 급등 후보 20건",
-    "basedOn": "market-research stock news candidates"
+    "title": "KST 10:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
+    "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "한미약품",
+      "stockCode": "128940",
+      "summary": "한미약품, 릴리와 단장증후군 치료물질 기술이전 계약 체결...주가 오르나? [주가동향]",
+      "headline": "한미약품, 릴리와 '깜짝' 기술이전 계약…\"추가 L/O 가능성\"",
+      "evidencePoints": [
+        "출처 연합인포맥스, 조세일보 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "한미약품, 릴리와 '깜짝' 기술이전 계약…\"추가 L/O 가능성\"",
+        "한미약품, 릴리와 단장증후군 치료물질 기술이전 계약 체결...주가 오르나? [주가동향]"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 5,
+      "updatedAt": "2026-06-04T01:00:16.831Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "한미약품, 릴리와 '깜짝' 기술이전 계약…\"추가 L/O 가능성\"",
+      "source": "연합인포맥스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sSmtuYmU0WDN6LUVTUnJ4SXJoSGtULUxzTGI1YWRDR1E2MzJXa3pBR1hJRXBnMjM0amRqMzIyYjF3Sm13WVh2ekdSZnVaQi1HRU1WUTRGMmhTb1BiUE45Zy1oa1dwdGNjUGtXNjdJM0U?oc=5",
+      "publishedAt": "Wed, 03 Jun 2026 23:32:35 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한미약품, 릴리와 '깜짝' 기술이전 계약…\"추가 L/O 가능성\"",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sSmtuYmU0WDN6LUVTUnJ4SXJoSGtULUxzTGI1YWRDR1E2MzJXa3pBR1hJRXBnMjM0amRqMzIyYjF3Sm13WVh2ekdSZnVaQi1HRU1WUTRGMmhTb1BiUE45Zy1oa1dwdGNjUGtXNjdJM0U?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한미약품, 릴리와 단장증후군 치료물질 기술이전 계약 체결...주가 오르나? [주가동향]",
+          "source": "조세일보",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5oeXE2ZkRnemkxUjd3b3V6SmRmOGcyUFozakR6TjJjZmZIOUFCM0x2R2x2SnRiNFZYZTFlNy1leHRHWldRS3JpM3pkTmd6eDhLVmthRDk5TXpDVEVwRTAyd3NOTDJQWE1pRUE?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "한미약품, 릴리와 단장증후군 치료제 기술이전",
+      "polishedBody": "한미약품은 릴리와 단장증후군 치료물질에 대한 기술이전 계약을 체결했습니다. 이번 계약은 예상치 못한 '깜짝' 딜로 시장의 관심을 집중시키고 있습니다. 중립적 평가는 추가 기술이전 가능성에 대한 기대감이 반영된 결과입니다. 향후 구체적인 계약 조건과 임상 일정이 주가에 영향을 줄 수 있습니다."
+    },
+    {
+      "stockName": "삼성생명",
+      "stockCode": "032830",
+      "summary": "생보업계 주식 자산 100조 재돌파…삼전 덕 본 삼성생명",
+      "headline": "[버핏 리포트] 삼성물산, 삼성전자·삼성생명 지분 가치 확대...주주환원 상승 가능성 높아 - SK",
+      "evidencePoints": [
+        "출처 버핏연구소, 연합인포맥스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "[버핏 리포트] 삼성물산, 삼성전자·삼성생명 지분 가치 확대...주주환원 상승 가능성 높아 - SK",
+        "생보업계 주식 자산 100조 재돌파…삼전 덕 본 삼성생명"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-06-04T01:00:16.831Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "[버핏 리포트] 삼성물산, 삼성전자·삼성생명 지분 가치 확대...주주환원 상승 가능성 높아 - SK",
+      "source": "버핏연구소",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE94aVVUMFBuV2psQXpMV1J0VTZBc196bEJKQi05SzFmVUl4ekRLVDdWQkFiWEZ3aXZtSi1maE8xVGZJeFQ2bnJMNTBqdHVMcUQ5c1dWT0EyLXA5RDlLNVdYbVBn?oc=5",
+      "publishedAt": "Wed, 03 Jun 2026 23:35:31 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[버핏 리포트] 삼성물산, 삼성전자·삼성생명 지분 가치 확대...주주환원 상승 가능성 높아 - SK",
+          "source": "버핏연구소",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE94aVVUMFBuV2psQXpMV1J0VTZBc196bEJKQi05SzFmVUl4ekRLVDdWQkFiWEZ3aXZtSi1maE8xVGZJeFQ2bnJMNTBqdHVMcUQ5c1dWT0EyLXA5RDlLNVdYbVBn?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "생보업계 주식 자산 100조 재돌파…삼전 덕 본 삼성생명",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAzLWFSNWFDbWhDaEZUcTJ0SW12MFUzV3hxbDMxSjRMMVdIQ0c3ZXNNX2FvZGQtQWpfenJ1dmgxaFI3V0ZSVjBDalpnbWt6MmptdUhPeXpMdUtYWlNBdUg3RzUxd2h0bmFid1haa1dQN3o?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "삼성생명, 삼성전자 지분 가치 확대 기대감",
+      "polishedBody": "삼성생명은 삼성전자 지분 가치 상승으로 주주환원 확대 가능성이 제기되었습니다. 생보업계 전체 주식 자산이 100조 원을 재돌파하며 우호적인 환경이 조성되었습니다. 긍정적 평가는 지분 가치 증가가 실적과 주주환원으로 이어질 수 있다는 점에 기반합니다. 향후 삼성전자 주가 흐름과 배당 정책 변화를 주목해야 합니다."
+    },
     {
       "stockName": "티로보틱스",
       "stockCode": "117730",
@@ -681,92 +763,73 @@
       "hasNews": true,
       "polishedHeadline": "코리안리 증권사 목표가 상향에 강세…8.3%",
       "polishedBody": "코리안리는 증권사 목표가 상향과 고배당 기대가 함께 부각되며 8%대 강세를 보였습니다. 보험주는 금리와 배당 매력, 손익 개선 기대가 동시에 작용할 때 수급이 빠르게 붙을 수 있습니다. 기사에서는 정부 정책과의 코드 기대도 언급됐지만, 주가에는 목표가 상향과 배당 매력이 더 직접적인 재료입니다. 장중에는 보험업종 동반 강세와 배당 기대 지속, 기관 매수세 유입 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "삼성전기",
-      "stockCode": "009150",
-      "summary": "삼화콘덴서 주가, 급등... 삼성전기 날자 쏠린 '매수세'",
-      "headline": "KB證 “삼성전기, MLCC·기판 동시 초호황…목표주가 220만원”",
-      "evidencePoints": [
-        "출처 v.daum.net, 금강일보 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "KB證 “삼성전기, MLCC·기판 동시 초호황…목표주가 220만원”",
-        "삼화콘덴서 주가, 급등... 삼성전기 날자 쏠린 '매수세'"
-      ],
-      "mentionScore": 87.2,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-05-28T01:53:57.604Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "KB證 “삼성전기, MLCC·기판 동시 초호황…목표주가 220만원”",
-      "source": "v.daum.net",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9lcHI4QThNMVJhbEhuLUs1aF9YU0pwYklfRkVxU2xVMFFpOG5rMERDcVdnRG1mMGRMOE9IdS1MZ2VIMnA3bktVNkUwMVFXb28?oc=5",
-      "publishedAt": "Tue, 26 May 2026 23:08:05 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "KB證 “삼성전기, MLCC·기판 동시 초호황…목표주가 220만원”",
-          "source": "v.daum.net",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9lcHI4QThNMVJhbEhuLUs1aF9YU0pwYklfRkVxU2xVMFFpOG5rMERDcVdnRG1mMGRMOE9IdS1MZ2VIMnA3bktVNkUwMVFXb28?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼화콘덴서 주가, 급등... 삼성전기 날자 쏠린 '매수세'",
-          "source": "금강일보",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9WMHl0cDNBQ0VKcUhQVzFsMFF6d0xEbE1sYzRhMDctRVo1b3A1T2V3X2o1anRna2hhbmNMSVJIUTNHb0cwLV9pelMwNFR6UDJnUlJWeGFvb0FtcEZPbGg3bFlJdWVTcjdEUnc?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "삼성전기 KB證 “삼성전기, MLCC·기판 동시 초호황…목표주가 220만원”",
-      "polishedBody": "삼성전기는 MLCC와 기판 사업이 동시에 호황이라는 증권사 분석이 핵심 재료입니다. 목표주가 220만원 제시는 업황 개선 기대를 강하게 반영한 리포트성 신호로 해석됩니다. 관련 부품주인 삼화콘덴서 급등까지 함께 언급돼 전장·AI 부품 밸류체인으로 관심이 확산되는 모습입니다. 장중에는 MLCC 관련주 동반 강세와 삼성전기 거래대금 증가, 리포트 이후 기관 수급을 확인해야 합니다."
-    },
-    {
-      "stockName": "서울보증보험",
-      "stockCode": "031210",
-      "summary": "예보, 내년까지 서울보증보험 지분 29.56% 매각… 법률자문사 선정 돌입 - 조선비즈",
-      "headline": "서울보증보험, 보험손익 증가...높아진 배당매력",
-      "evidencePoints": [
-        "출처 알파경제, Chosunbiz 기반 기사 2건",
-        "서울보증보험, 보험손익 증가...높아진 배당매력",
-        "예보, 내년까지 서울보증보험 지분 29.56% 매각… 법률자문사 선정 돌입 - 조선비즈"
-      ],
-      "mentionScore": 78,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-05-28T01:53:57.604Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "서울보증보험, 보험손익 증가...높아진 배당매력",
-      "source": "알파경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9kYnAxekVSRWpFWDlqRHBzamdiN1FjbUhaNGRUQ3BkV0ZXTnBObV82YThoUkt1cGd2SVByUFFNZzZRRTRSMzE0YzNwcnhqSjZOS05JQ2h4VnBSTGROYzVnc2s3NjRncWFXa1hSQk930gFuQVVfeXFMT2RicDF6RVJFakVYOWpEcHNqZ2I3UWNtSFo0ZFRDcGRXRldOcE5tXzZhOGhSS3VwZ3ZJUHJQUU1nNlFFNFIzMTRjM3ByeGpKNk5LTklDaHhWcFJMZE5jNWdzazc2NGdxYVdrWFJCT3c?oc=5",
-      "publishedAt": "Mon, 25 May 2026 23:58:27 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "서울보증보험, 보험손익 증가...높아진 배당매력",
-          "source": "알파경제",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9kYnAxekVSRWpFWDlqRHBzamdiN1FjbUhaNGRUQ3BkV0ZXTnBObV82YThoUkt1cGd2SVByUFFNZzZRRTRSMzE0YzNwcnhqSjZOS05JQ2h4VnBSTGROYzVnc2s3NjRncWFXa1hSQk930gFuQVVfeXFMT2RicDF6RVJFakVYOWpEcHNqZ2I3UWNtSFo0ZFRDcGRXRldOcE5tXzZhOGhSS3VwZ3ZJUHJQUU1nNlFFNFIzMTRjM3ByeGpKNk5LTklDaHhWcFJMZE5jNWdzazc2NGdxYVdrWFJCT3c?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "예보, 내년까지 서울보증보험 지분 29.56% 매각… 법률자문사 선정 돌입 - 조선비즈",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdWlqTkFSZTJVel9DTWxSWU1qa3dFQ0VxdG8zQk9jUDhFcURyZzhRTU5XeEI4ajdsaWE1RVRqYUVwRnZfSlFKYy10RTlNdEhVNmg1NDc1X1FvRDBia1k5eF9TbThCWGIzcEF5R3lmTG04eXBZOFl4QjVmS3JTYkZvemI1T05zMUnSAZsBQVVfeXFMTVZ5SjJKN3FhNGh3NUxpTEZUVnRHbUFNeTJyNHR5NzdQdXQ5XzFnaWZBNzR3dWs4NEY1YlF0Si1FZC1HMTNLNFZrdjBfRzZ2bFE0Y1EwZzJ1bDQtckxWU2k3aFlpTmE3bjlEU0VnYkZLVUJjdFlmSGdKT3lOZVNfNUNCb0F1YUZYNU5RZmtOaVowZzJRSlRBU3d2cGM?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "서울보증보험 보험손익 증가...높아진 배당매력",
-      "polishedBody": "서울보증보험은 보험손익 증가와 배당 매력 확대가 핵심 투자 포인트로 제시됐습니다. 예보의 지분 29.56% 매각 추진은 중장기적으로 오버행 부담과 유동성 확대 기대를 동시에 만들 수 있습니다. 실적 개선과 배당 매력이 주가 하단을 지지할 수 있지만, 매각 일정이 구체화되면 단기 수급 변동성도 커질 수 있습니다. 장중에는 매각 관련 후속 뉴스와 배당 기대 지속, 보험업종 상대 강도를 확인해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
+      "symbol": "128940",
+      "name": "한미약품",
+      "changeRate": null,
+      "price": null,
+      "summary": "한미약품, 릴리와 단장증후군 치료물질 기술이전 계약 체결...주가 오르나? [주가동향]",
+      "source": "연합인포맥스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sSmtuYmU0WDN6LUVTUnJ4SXJoSGtULUxzTGI1YWRDR1E2MzJXa3pBR1hJRXBnMjM0amRqMzIyYjF3Sm13WVh2ekdSZnVaQi1HRU1WUTRGMmhTb1BiUE45Zy1oa1dwdGNjUGtXNjdJM0U?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 연합인포맥스, 조세일보 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "한미약품, 릴리와 '깜짝' 기술이전 계약…\"추가 L/O 가능성\"",
+        "한미약품, 릴리와 단장증후군 치료물질 기술이전 계약 체결...주가 오르나? [주가동향]"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한미약품, 릴리와 '깜짝' 기술이전 계약…\"추가 L/O 가능성\"",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sSmtuYmU0WDN6LUVTUnJ4SXJoSGtULUxzTGI1YWRDR1E2MzJXa3pBR1hJRXBnMjM0amRqMzIyYjF3Sm13WVh2ekdSZnVaQi1HRU1WUTRGMmhTb1BiUE45Zy1oa1dwdGNjUGtXNjdJM0U?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한미약품, 릴리와 단장증후군 치료물질 기술이전 계약 체결...주가 오르나? [주가동향]",
+          "source": "조세일보",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5oeXE2ZkRnemkxUjd3b3V6SmRmOGcyUFozakR6TjJjZmZIOUFCM0x2R2x2SnRiNFZYZTFlNy1leHRHWldRS3JpM3pkTmd6eDhLVmthRDk5TXpDVEVwRTAyd3NOTDJQWE1pRUE?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-04T01:00:16.831Z",
+      "symbol": "032830",
+      "name": "삼성생명",
+      "changeRate": null,
+      "price": null,
+      "summary": "생보업계 주식 자산 100조 재돌파…삼전 덕 본 삼성생명",
+      "source": "버핏연구소",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE94aVVUMFBuV2psQXpMV1J0VTZBc196bEJKQi05SzFmVUl4ekRLVDdWQkFiWEZ3aXZtSi1maE8xVGZJeFQ2bnJMNTBqdHVMcUQ5c1dWT0EyLXA5RDlLNVdYbVBn?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 버핏연구소, 연합인포맥스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "[버핏 리포트] 삼성물산, 삼성전자·삼성생명 지분 가치 확대...주주환원 상승 가능성 높아 - SK",
+        "생보업계 주식 자산 100조 재돌파…삼전 덕 본 삼성생명"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[버핏 리포트] 삼성물산, 삼성전자·삼성생명 지분 가치 확대...주주환원 상승 가능성 높아 - SK",
+          "source": "버핏연구소",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE94aVVUMFBuV2psQXpMV1J0VTZBc196bEJKQi05SzFmVUl4ekRLVDdWQkFiWEZ3aXZtSi1maE8xVGZJeFQ2bnJMNTBqdHVMcUQ5c1dWT0EyLXA5RDlLNVdYbVBn?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "생보업계 주식 자산 100조 재돌파…삼전 덕 본 삼성생명",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAzLWFSNWFDbWhDaEZUcTJ0SW12MFUzV3hxbDMxSjRMMVdIQ0c3ZXNNX2FvZGQtQWpfenJ1dmgxaFI3V0ZSVjBDalpnbWt6MmptdUhPeXpMdUtYWlNBdUg3RzUxd2h0bmFid1haa1dQN3o?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "117730",
       "name": "티로보틱스",
       "changeRate": -12,
@@ -790,7 +853,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "299030",
       "name": "하나기술",
       "changeRate": null,
@@ -820,7 +883,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "127120",
       "name": "제이에스링크",
       "changeRate": null,
@@ -850,7 +913,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "035420",
       "name": "NAVER",
       "changeRate": null,
@@ -881,7 +944,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "085910",
       "name": "네오티스",
       "changeRate": null,
@@ -912,7 +975,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "010130",
       "name": "고려아연",
       "changeRate": -12,
@@ -936,7 +999,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "051910",
       "name": "LG화학",
       "changeRate": 9,
@@ -960,7 +1023,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": -3,
@@ -984,7 +1047,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -1008,7 +1071,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": 30,
@@ -1032,7 +1095,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "290690",
       "name": "소룩스",
       "changeRate": -25,
@@ -1056,7 +1119,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "006800",
       "name": "미래에셋증권",
       "changeRate": -7,
@@ -1080,7 +1143,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "381970",
       "name": "케이카",
       "changeRate": null,
@@ -1110,7 +1173,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "053030",
       "name": "바이넥스",
       "changeRate": null,
@@ -1140,7 +1203,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "007810",
       "name": "코리아써키트",
       "changeRate": null,
@@ -1171,7 +1234,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "373220",
       "name": "LG에너지솔루션",
       "changeRate": -15,
@@ -1202,7 +1265,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "477850",
       "name": "마키나락스",
       "changeRate": 300,
@@ -1226,7 +1289,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-04T00:27:47.002Z",
+      "timestamp": "2026-06-04T01:00:16.831Z",
       "symbol": "003690",
       "name": "코리안리",
       "changeRate": 8.3,
@@ -1255,76 +1318,15 @@
           "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE84eVFsZUNQOUhqZ0RpVlRBSUdweHNaeGFTaGhZcHl6N3lRWnA2Yzc5LUhiY1hudWxKdWQyQlJfNk5neE1NakJ3OFJlcnkwTmdGMFpEUWJpdWxZTXBkekE5TUlzWWNwRXZqcVBQUGxBSjctQQ?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "2026-06-04T00:27:47.002Z",
-      "symbol": "009150",
-      "name": "삼성전기",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼화콘덴서 주가, 급등... 삼성전기 날자 쏠린 '매수세'",
-      "source": "v.daum.net",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9lcHI4QThNMVJhbEhuLUs1aF9YU0pwYklfRkVxU2xVMFFpOG5rMERDcVdnRG1mMGRMOE9IdS1MZ2VIMnA3bktVNkUwMVFXb28?oc=5",
-      "mentionScore": 87.2,
-      "evidencePoints": [
-        "출처 v.daum.net, 금강일보 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "KB證 “삼성전기, MLCC·기판 동시 초호황…목표주가 220만원”",
-        "삼화콘덴서 주가, 급등... 삼성전기 날자 쏠린 '매수세'"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "KB證 “삼성전기, MLCC·기판 동시 초호황…목표주가 220만원”",
-          "source": "v.daum.net",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9lcHI4QThNMVJhbEhuLUs1aF9YU0pwYklfRkVxU2xVMFFpOG5rMERDcVdnRG1mMGRMOE9IdS1MZ2VIMnA3bktVNkUwMVFXb28?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼화콘덴서 주가, 급등... 삼성전기 날자 쏠린 '매수세'",
-          "source": "금강일보",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9WMHl0cDNBQ0VKcUhQVzFsMFF6d0xEbE1sYzRhMDctRVo1b3A1T2V3X2o1anRna2hhbmNMSVJIUTNHb0cwLV9pelMwNFR6UDJnUlJWeGFvb0FtcEZPbGg3bFlJdWVTcjdEUnc?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-04T00:27:47.002Z",
-      "symbol": "031210",
-      "name": "서울보증보험",
-      "changeRate": null,
-      "price": null,
-      "summary": "예보, 내년까지 서울보증보험 지분 29.56% 매각… 법률자문사 선정 돌입 - 조선비즈",
-      "source": "알파경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9kYnAxekVSRWpFWDlqRHBzamdiN1FjbUhaNGRUQ3BkV0ZXTnBObV82YThoUkt1cGd2SVByUFFNZzZRRTRSMzE0YzNwcnhqSjZOS05JQ2h4VnBSTGROYzVnc2s3NjRncWFXa1hSQk930gFuQVVfeXFMT2RicDF6RVJFakVYOWpEcHNqZ2I3UWNtSFo0ZFRDcGRXRldOcE5tXzZhOGhSS3VwZ3ZJUHJQUU1nNlFFNFIzMTRjM3ByeGpKNk5LTklDaHhWcFJMZE5jNWdzazc2NGdxYVdrWFJCT3c?oc=5",
-      "mentionScore": 78,
-      "evidencePoints": [
-        "출처 알파경제, Chosunbiz 기반 기사 2건",
-        "서울보증보험, 보험손익 증가...높아진 배당매력",
-        "예보, 내년까지 서울보증보험 지분 29.56% 매각… 법률자문사 선정 돌입 - 조선비즈"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "서울보증보험, 보험손익 증가...높아진 배당매력",
-          "source": "알파경제",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9kYnAxekVSRWpFWDlqRHBzamdiN1FjbUhaNGRUQ3BkV0ZXTnBObV82YThoUkt1cGd2SVByUFFNZzZRRTRSMzE0YzNwcnhqSjZOS05JQ2h4VnBSTGROYzVnc2s3NjRncWFXa1hSQk930gFuQVVfeXFMT2RicDF6RVJFakVYOWpEcHNqZ2I3UWNtSFo0ZFRDcGRXRldOcE5tXzZhOGhSS3VwZ3ZJUHJQUU1nNlFFNFIzMTRjM3ByeGpKNk5LTklDaHhWcFJMZE5jNWdzazc2NGdxYVdrWFJCT3c?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "예보, 내년까지 서울보증보험 지분 29.56% 매각… 법률자문사 선정 돌입 - 조선비즈",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdWlqTkFSZTJVel9DTWxSWU1qa3dFQ0VxdG8zQk9jUDhFcURyZzhRTU5XeEI4ajdsaWE1RVRqYUVwRnZfSlFKYy10RTlNdEhVNmg1NDc1X1FvRDBia1k5eF9TbThCWGIzcEF5R3lmTG04eXBZOFl4QjVmS3JTYkZvemI1T05zMUnSAZsBQVVfeXFMTVZ5SjJKN3FhNGh3NUxpTEZUVnRHbUFNeTJyNHR5NzdQdXQ5XzFnaWZBNzR3dWs4NEY1YlF0Si1FZC1HMTNLNFZrdjBfRzZ2bFE0Y1EwZzJ1bDQtckxWU2k3aFlpTmE3bjlEU0VnYkZLVUJjdFlmSGdKT3lOZVNfNUNCb0F1YUZYNU5RZmtOaVowZzJRSlRBU3d2cGM?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
-    "provider": "market-research-news",
-    "model": "rule-based-extractor-v1"
+    "provider": "telegram-public-web",
+    "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "manual-editorial-refresh",
-    "model": "human-curated-realtime-copy-v1",
-    "fallbackReason": "existing_card_copy_quality"
+    "provider": "opencode-zen",
+    "model": "deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
