@@ -205,6 +205,57 @@ test('description-only refresh uses small polish batches to avoid truncated JSON
   delete process.env.REALTIME_DESCRIPTION_ONLY;
 });
 
+test('realtime payload rejects keyword-like names even when an upstream fake code is present', async () => {
+  process.env.REALTIME_SLOT_HOUR = '11';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const payload = module.__testBuildRealtimePayload({
+    stockNewsCandidates: [
+      {
+        companyName: '장기화',
+        stockCode: '2030',
+        title: '반도체 업황 강세 장기화 전망',
+        summary: '반도체 업황 강세 장기화 전망',
+        source: '테스트',
+        sourceUrl: 'https://example.com/a',
+        publishedAt: 'Thu, 04 Jun 2026 00:00:00 GMT'
+      },
+      {
+        companyName: 'Ultra',
+        stockCode: '2025',
+        title: 'Ultra Clean 이사, 주식 226만 달러 매도',
+        summary: 'Ultra Clean 이사, 주식 226만 달러 매도',
+        source: '테스트',
+        sourceUrl: 'https://example.com/b',
+        publishedAt: 'Thu, 04 Jun 2026 00:00:00 GMT'
+      }
+    ]
+  }, 11, '2026-06-04T00:00:00.000Z', '2026-06-04', { maxSignals: 40 });
+
+  assert.equal(payload.signals.length, 0);
+});
+
+test('realtime payload canonicalizes mismatched upstream stock codes from listed stock lookup', async () => {
+  process.env.REALTIME_SLOT_HOUR = '11';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const payload = module.__testBuildRealtimePayload({
+    stockNewsCandidates: [
+      {
+        companyName: '삼성전자',
+        stockCode: '2025',
+        title: '삼성전자 주가 강세 지속',
+        summary: '삼성전자 주가 강세 지속',
+        source: '테스트',
+        sourceUrl: 'https://example.com/c',
+        publishedAt: 'Thu, 04 Jun 2026 00:00:00 GMT'
+      }
+    ]
+  }, 11, '2026-06-04T00:00:00.000Z', '2026-06-04', { maxSignals: 40 });
+
+  assert.equal(payload.signals.length, 1);
+  assert.equal(payload.signals[0].stockName, '삼성전자');
+  assert.equal(payload.signals[0].stockCode, '005930');
+});
+
 test('realtime openrouter fallback polish request matches the looser briefing request shape', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
@@ -283,10 +334,38 @@ test('rule-based realtime fallback does not emit repeated news-evidence boilerpl
 test('realtime merge keeps 20 visible items and only prepends 5 new unique signals', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const listed = [
+    ['삼성전자', '005930'],
+    ['SK하이닉스', '000660'],
+    ['NAVER', '035420'],
+    ['LG화학', '051910'],
+    ['LG전자', '066570'],
+    ['기아', '000270'],
+    ['셀트리온', '068270'],
+    ['하나기술', '299030'],
+    ['티로보틱스', '117730'],
+    ['미래에셋증권', '006800'],
+    ['바이넥스', '053030'],
+    ['케이카', '381970'],
+    ['제이에스링크', '127120'],
+    ['코리안리', '003690'],
+    ['네오티스', '085910'],
+    ['고려아연', '010130'],
+    ['소룩스', '290690'],
+    ['삼성전기', '009150'],
+    ['마키나락스', '477850'],
+    ['LG에너지솔루션', '373220'],
+    ['서울보증보험', '031210'],
+    ['코리아써키트', '007810'],
+    ['한화오션', '042660'],
+    ['두산에너빌리티', '034020'],
+    ['현대자동차', '005380'],
+    ['아세아', '002030']
+  ];
 
   const previousSignals = Array.from({ length: 20 }, (_, index) => ({
-    stockName: `기존${index + 1}`,
-    stockCode: String(1000 + index),
+    stockName: listed[index][0],
+    stockCode: listed[index][1],
     source: '연합뉴스',
     sourceUrl: `https://example.com/existing-${index + 1}`,
     relatedPosts: [
@@ -299,14 +378,14 @@ test('realtime merge keeps 20 visible items and only prepends 5 new unique signa
   }));
 
   const newSignals = [
-    { stockName: '기존1', stockCode: '1000', source: '연합뉴스', sourceUrl: 'https://example.com/existing-1', relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-1' }] },
-    { stockName: '신규1', stockCode: '2001', source: '매일경제', sourceUrl: 'https://example.com/new-1', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-1' }] },
-    { stockName: '신규2', stockCode: '2002', source: '매일경제', sourceUrl: 'https://example.com/new-2', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-2' }] },
-    { stockName: '기존2', stockCode: '1001', source: '연합뉴스', sourceUrl: 'https://example.com/existing-2', relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-2' }] },
-    { stockName: '신규3', stockCode: '2003', source: '매일경제', sourceUrl: 'https://example.com/new-3', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-3' }] },
-    { stockName: '신규4', stockCode: '2004', source: '매일경제', sourceUrl: 'https://example.com/new-4', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-4' }] },
-    { stockName: '신규5', stockCode: '2005', source: '매일경제', sourceUrl: 'https://example.com/new-5', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-5' }] },
-    { stockName: '신규6', stockCode: '2006', source: '매일경제', sourceUrl: 'https://example.com/new-6', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-6' }] }
+    { stockName: listed[0][0], stockCode: listed[0][1], source: '연합뉴스', sourceUrl: 'https://example.com/existing-1', relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-1' }] },
+    { stockName: listed[20][0], stockCode: listed[20][1], source: '매일경제', sourceUrl: 'https://example.com/new-1', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-1' }] },
+    { stockName: listed[21][0], stockCode: listed[21][1], source: '매일경제', sourceUrl: 'https://example.com/new-2', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-2' }] },
+    { stockName: listed[1][0], stockCode: listed[1][1], source: '연합뉴스', sourceUrl: 'https://example.com/existing-2', relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-2' }] },
+    { stockName: listed[22][0], stockCode: listed[22][1], source: '매일경제', sourceUrl: 'https://example.com/new-3', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-3' }] },
+    { stockName: listed[23][0], stockCode: listed[23][1], source: '매일경제', sourceUrl: 'https://example.com/new-4', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-4' }] },
+    { stockName: listed[24][0], stockCode: listed[24][1], source: '매일경제', sourceUrl: 'https://example.com/new-5', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-5' }] },
+    { stockName: listed[25][0], stockCode: listed[25][1], source: '매일경제', sourceUrl: 'https://example.com/new-6', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-6' }] }
   ];
 
   const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
@@ -316,15 +395,15 @@ test('realtime merge keeps 20 visible items and only prepends 5 new unique signa
 
   assert.deepEqual(
     merged.freshSignals.map((signal) => signal.stockName),
-    ['신규1', '신규2', '신규3', '신규4', '신규5']
+    [listed[20][0], listed[21][0], listed[22][0], listed[23][0], listed[24][0]]
   );
   assert.equal(merged.mergedSignals.length, 20);
   assert.deepEqual(
     merged.mergedSignals.slice(0, 5).map((signal) => signal.stockName),
-    ['신규1', '신규2', '신규3', '신규4', '신규5']
+    [listed[20][0], listed[21][0], listed[22][0], listed[23][0], listed[24][0]]
   );
-  assert.ok(!merged.mergedSignals.some((signal, index) => index < 5 && signal.stockName.startsWith('기존')));
-  assert.ok(merged.mergedSignals.some((signal) => signal.stockName === '기존3'));
+  assert.ok(!merged.mergedSignals.some((signal, index) => index < 5 && [listed[0][0], listed[1][0]].includes(signal.stockName)));
+  assert.ok(merged.mergedSignals.some((signal) => signal.stockName === listed[2][0]));
 });
 
 test('fresh-only polish reuses prior polished copy for carry-over signals', async () => {
@@ -333,44 +412,44 @@ test('fresh-only polish reuses prior polished copy for carry-over signals', asyn
 
   const previousSignals = [
     {
-      stockName: '기존1',
-      stockCode: '1000',
-      headline: '기존1 헤드라인',
-      summary: '기존1 요약',
+      stockName: '삼성전자',
+      stockCode: '005930',
+      headline: '삼성전자 헤드라인',
+      summary: '삼성전자 요약',
       source: '연합뉴스',
       sourceUrl: 'https://example.com/existing-1',
       relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-1' }],
-      polishedHeadline: '기존1 기존 polish 제목',
-      polishedBody: '기존1 기존 polish 본문입니다. 이전 실행에서 생성된 요약을 그대로 유지합니다.'
+      polishedHeadline: '삼성전자 기존 polish 제목',
+      polishedBody: '삼성전자는 기존 이슈가 이미 정리된 상태입니다. 이전 실행에서 확인한 핵심 재료가 유지되고 있습니다. 추가 변동 요인은 아직 제한적으로 관찰됩니다. 장중에는 수급 연속성만 확인하면 됩니다.'
     },
     {
-      stockName: '기존2',
-      stockCode: '1001',
-      headline: '기존2 헤드라인',
-      summary: '기존2 요약',
+      stockName: 'SK하이닉스',
+      stockCode: '000660',
+      headline: 'SK하이닉스 헤드라인',
+      summary: 'SK하이닉스 요약',
       source: '연합뉴스',
       sourceUrl: 'https://example.com/existing-2',
       relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/existing-2' }],
-      polishedHeadline: '기존2 기존 polish 제목',
-      polishedBody: '기존2 기존 polish 본문입니다. 이전 실행에서 생성된 요약을 그대로 유지합니다.'
+      polishedHeadline: 'SK하이닉스 기존 polish 제목',
+      polishedBody: 'SK하이닉스는 기존 수급 흐름이 이어지는 구간입니다. 이전 실행에서 정리한 반도체 업황 재료가 아직 유효합니다. 단기 변동성은 있으나 방향 자체는 크게 훼손되지 않았습니다. 장중에는 거래대금과 외국인 수급을 함께 확인해야 합니다.'
     }
   ];
 
   const newSignals = [
     {
-      stockName: '신규1',
-      stockCode: '2001',
-      headline: '신규1 헤드라인',
-      summary: '신규1 요약',
+      stockName: '서울보증보험',
+      stockCode: '031210',
+      headline: '서울보증보험 헤드라인',
+      summary: '서울보증보험 요약',
       source: '매일경제',
       sourceUrl: 'https://example.com/new-1',
       relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-1' }]
     },
     {
-      stockName: '신규2',
-      stockCode: '2002',
-      headline: '신규2 헤드라인',
-      summary: '신규2 요약',
+      stockName: '코리아써키트',
+      stockCode: '007810',
+      headline: '코리아써키트 헤드라인',
+      summary: '코리아써키트 요약',
       source: '매일경제',
       sourceUrl: 'https://example.com/new-2',
       relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-2' }]
@@ -385,15 +464,15 @@ test('fresh-only polish reuses prior polished copy for carry-over signals', asyn
   const finalSignals = module.__testAssembleFinalSignals(
     merged.mergedSignals,
     [
-      { ...newSignals[0], polishedHeadline: '신규1 새 polish 제목', polishedBody: '신규1 새 polish 본문입니다. 이번 실행에서 새로 생성된 요약입니다.' },
-      { ...newSignals[1], polishedHeadline: '신규2 새 polish 제목', polishedBody: '신규2 새 polish 본문입니다. 이번 실행에서 새로 생성된 요약입니다.' }
+      { ...newSignals[0], polishedHeadline: '서울보증보험 새 polish 제목', polishedBody: '서울보증보험은 새 이슈가 가격 반응으로 연결됐습니다. 배당 매력과 보험손익 개선 기대가 함께 거론됐습니다. 단기 수급이 유지되면 추가 관심이 붙을 수 있습니다. 장중에는 기관 매수 지속 여부를 확인해야 합니다.' },
+      { ...newSignals[1], polishedHeadline: '코리아써키트 새 polish 제목', polishedBody: '코리아써키트는 거래정지 예고 이슈가 변동성으로 이어졌습니다. 단기 급등 뒤에는 투자자 유의 신호가 빠르게 반영될 수 있습니다. 매매 과열 구간에서는 호가 공백이 커질 수 있습니다. 장중에는 거래대금 유지와 변동성 완화 여부를 확인해야 합니다.' }
     ]
   );
 
-  assert.equal(finalSignals[0].polishedHeadline, '신규1 새 polish 제목');
-  assert.equal(finalSignals[1].polishedHeadline, '신규2 새 polish 제목');
-  assert.equal(finalSignals[2].polishedHeadline, '기존1 기존 polish 제목');
-  assert.equal(finalSignals[3].polishedHeadline, '기존2 기존 polish 제목');
+  assert.equal(finalSignals[0].polishedHeadline, '서울보증보험 새 polish 제목');
+  assert.equal(finalSignals[1].polishedHeadline, '코리아써키트 새 polish 제목');
+  assert.equal(finalSignals[2].polishedHeadline, '삼성전자 기존 polish 제목');
+  assert.equal(finalSignals[3].polishedHeadline, 'SK하이닉스 기존 polish 제목');
 });
 
 test('realtime merge drops prior telegram-only signals from carry-over pool', async () => {
@@ -402,15 +481,15 @@ test('realtime merge drops prior telegram-only signals from carry-over pool', as
 
   const previousSignals = [
     {
-      stockName: '텔레그램잔존',
-      stockCode: '1000',
+      stockName: '삼성전자',
+      stockCode: '005930',
       source: 'Telegram @foo',
       sourceUrl: 'https://t.me/foo/1',
       relatedPosts: [{ label: '관련기사1', source: 'Telegram @foo', url: 'https://t.me/foo/1' }]
     },
     {
-      stockName: '뉴스잔존',
-      stockCode: '1001',
+      stockName: 'SK하이닉스',
+      stockCode: '000660',
       source: '연합뉴스',
       sourceUrl: 'https://example.com/news-keep',
       relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/news-keep' }]
@@ -418,7 +497,7 @@ test('realtime merge drops prior telegram-only signals from carry-over pool', as
   ];
 
   const newSignals = [
-    { stockName: '신규뉴스', stockCode: '2001', source: '매일경제', sourceUrl: 'https://example.com/new', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new' }] }
+    { stockName: '서울보증보험', stockCode: '031210', source: '매일경제', sourceUrl: 'https://example.com/new', relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new' }] }
   ];
 
   const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
@@ -426,22 +505,40 @@ test('realtime merge drops prior telegram-only signals from carry-over pool', as
     visibleLimit: 20
   });
 
-  assert.ok(!merged.mergedSignals.some((signal) => signal.stockName === '텔레그램잔존'));
-  assert.ok(merged.mergedSignals.some((signal) => signal.stockName === '뉴스잔존'));
+  assert.ok(!merged.mergedSignals.some((signal) => signal.stockName === '삼성전자'));
+  assert.ok(merged.mergedSignals.some((signal) => signal.stockName === 'SK하이닉스'));
 });
 
-test('realtime generator carries prior-day signals forward to keep 20 visible items', () => {
-  const persistedPath = path.join(repoRoot, 'report/data/realtime-surge.json');
-  const originalPersisted = fs.existsSync(persistedPath) ? fs.readFileSync(persistedPath, 'utf8') : null;
+test('realtime merge preserves prior-day signals when the fresh feed has no displayable items', async () => {
+  process.env.REALTIME_SLOT_HOUR = '11';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const carried = [
+    ['삼성전자', '005930'],
+    ['SK하이닉스', '000660'],
+    ['NAVER', '035420'],
+    ['LG화학', '051910'],
+    ['LG전자', '066570'],
+    ['기아', '000270'],
+    ['셀트리온', '068270'],
+    ['하나기술', '299030'],
+    ['티로보틱스', '117730'],
+    ['미래에셋증권', '006800'],
+    ['바이넥스', '053030'],
+    ['케이카', '381970'],
+    ['제이에스링크', '127120'],
+    ['코리안리', '003690'],
+    ['네오티스', '085910'],
+    ['고려아연', '010130']
+  ];
   const previousSignals = Array.from({ length: 16 }, (_, index) => ({
-    stockName: `기존보유${index + 1}`,
-    stockCode: String(7000 + index),
-    summary: `기존 보유 종목 ${index + 1} 요약`,
-    headline: `기존 보유 종목 ${index + 1} 헤드라인`,
+    stockName: carried[index][0],
+    stockCode: carried[index][1],
+    summary: `${carried[index][0]} 요약`,
+    headline: `${carried[index][0]} 헤드라인`,
     relatedPosts: [
       {
         label: '관련기사1',
-        title: `기존 보유 종목 ${index + 1} 기사`,
+        title: `${carried[index][0]} 기사`,
         source: '연합뉴스',
         url: `https://example.com/old-${index + 1}`
       }
@@ -450,35 +547,17 @@ test('realtime generator carries prior-day signals forward to keep 20 visible it
     sourceUrl: `https://example.com/old-${index + 1}`
   }));
 
-  try {
-    fs.writeFileSync(persistedPath, JSON.stringify({
-      generated_date: '2026-05-26',
-      signals: previousSignals
-    }, null, 2));
+  const merged = module.__testMergeRealtimeSignals([], previousSignals, {
+    freshBatchSize: 5,
+    visibleLimit: 20
+  });
+  const finalSignals = module.__testAssembleFinalSignals(merged.mergedSignals, []);
 
-    execFileSync(process.execPath, ['scripts/generate-realtime-surge.mjs'], {
-      cwd: repoRoot,
-      env: {
-        ...process.env,
-        REALTIME_SLOT_HOUR: '11',
-        REALTIME_TELEGRAM_FIXTURE_DIR: path.join(repoRoot, 'tests/fixtures/telegram-public'),
-        REALTIME_POLISH_MOCK: '1'
-      }
-    });
-  } finally {
-    if (originalPersisted == null) {
-      fs.unlinkSync(persistedPath);
-    } else {
-      fs.writeFileSync(persistedPath, originalPersisted);
-    }
-  }
-
-  const realtime = readJson('public/report/data/realtime-surge.json');
-  assert.equal(realtime.signals.length, 20);
-  assert.ok(realtime.signals.some((signal) => signal.stockName === '기존보유1'));
-  assert.ok(realtime.signals.every((signal) => typeof signal.polishedHeadline === 'string' && signal.polishedHeadline.length > 0));
-  assert.ok(realtime.signals.every((signal) => typeof signal.polishedBody === 'string' && signal.polishedBody.length > 0));
-  realtime.signals.forEach((signal) => assertNoRealtimeBoilerplate(signal.polishedBody));
+  assert.equal(finalSignals.length, previousSignals.length);
+  assert.ok(finalSignals.some((signal) => signal.stockName === '삼성전자'));
+  assert.ok(finalSignals.every((signal) => typeof signal.polishedHeadline === 'string' && signal.polishedHeadline.length > 0));
+  assert.ok(finalSignals.every((signal) => typeof signal.polishedBody === 'string' && signal.polishedBody.length > 0));
+  finalSignals.forEach((signal) => assertNoRealtimeBoilerplate(signal.polishedBody));
 });
 
 test('realtime payload hides telegram-only candidates and exposes only news links for mixed signals', async () => {

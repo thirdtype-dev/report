@@ -573,17 +573,17 @@ function normalizeSearchText(value) {
   return stripHtml(value).replace(/\s+/gu, '').toLowerCase();
 }
 
-function getPreferredStockCode(stockName, currentCode = null) {
-  const existing = cleanText(currentCode);
-  if (existing) return existing;
-
+function lookupListedStockCode(stockName) {
   const normalized = normalizeCompanyName(stockName);
   if (!normalized) return null;
-
   return LISTED_STOCK_LOOKUP.get(normalized)
     ?? LISTED_STOCK_LOOKUP.get(normalized.replace(/\s+/gu, ''))
     ?? LISTED_STOCK_LOOKUP.get(normalized.toUpperCase())
     ?? null;
+}
+
+function getPreferredStockCode(stockName, currentCode = null) {
+  return lookupListedStockCode(stockName);
 }
 
 function extractCompanyName(headline) {
