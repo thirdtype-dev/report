@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-06-08T01:32:39.074Z",
+  "generated_at": "2026-06-08T02:00:14.181Z",
   "generated_date": "2026-06-08",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성물산",
+      "stockCode": "028260",
+      "summary": "[오늘의 주목주] '차익 실현' 삼성물산 13%대 내려, 코스피 외인·기관 순매도에 5%대 하락 8160선 마감 비즈니스포스트",
+      "headline": "[오늘의 주목주] '차익 실현' 삼성물산 13%대 내려, 코스피 외인·기관 순매도에 5%대 하락 8160선 마감",
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -13.0%",
+        "[오늘의 주목주] '차익 실현' 삼성물산 13%대 내려, 코스피 외인·기관 순매도에 5%대 하락 8160선 마감"
+      ],
+      "mentionScore": 41.6,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-06-08T02:00:14.181Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -13,
+      "latestHeadline": "[오늘의 주목주] '차익 실현' 삼성물산 13%대 내려, 코스피 외인·기관 순매도에 5%대 하락 8160선 마감",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBIRXVSUE1LZmJHUnFzTWdxUk55cVZJYllHRy1QMEExZzZFeWUxVF9UM2hjaTFRRjhMb1kyLWRhOTdmdy1pT2R6cjJvUVdBdUZNUlJ1cjZudG5wbjh6U3ViT3c1OVBvMURZbVJmdXRUdUNGUEk?oc=5",
+      "publishedAt": "Fri, 05 Jun 2026 08:58:52 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '차익 실현' 삼성물산 13%대 내려, 코스피 외인·기관 순매도에 5%대 하락 8160선 마감",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBIRXVSUE1LZmJHUnFzTWdxUk55cVZJYllHRy1QMEExZzZFeWUxVF9UM2hjaTFRRjhMb1kyLWRhOTdmdy1pT2R6cjJvUVdBdUZNUlJ1cjZudG5wbjh6U3ViT3c1OVBvMURZbVJmdXRUdUNGUEk?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성물산, 차익 실현 매물에 13% 급락",
+      "polishedBody": "삼성물산은 차익 실현 매물이 출회되며 주가가 13%대 급락했습니다. 외국인과 기관의 순매도가 집중되며 5%대 하락 후 8160선에 마감했습니다. 이는 최근 상승에 따른 차익 실현 성격으로 분석되며 단기 조정 국면으로 평가됩니다. 향후 외국인과 기관의 매매 동향이 주가 방향성을 결정할 주요 변수가 될 것입니다."
+    },
     {
       "stockName": "테스",
       "stockCode": "095610",
@@ -717,45 +751,35 @@
       "hasNews": true,
       "polishedHeadline": "소룩스 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락",
       "polishedBody": "소룩스는 아리바이오의 단독 상장 검토 소식이 나오며 합병 기대감이 약해졌습니다. 이슈 직후 한때 25% 급락했다는 점에서 기존 기대를 반영했던 매수세가 빠르게 되돌려진 상황입니다. 바이오·합병 테마주는 공시 해석에 따라 주가가 크게 흔들릴 수 있어 추가 확인이 필요합니다. 장중에는 아리바이오와 소룩스의 후속 공시, 급락 이후 거래량 감소 여부, 반발 매수 강도를 확인해야 합니다."
-    },
-    {
-      "stockName": "미래에셋증권",
-      "stockCode": "006800",
-      "summary": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막 비즈니스포스트",
-      "headline": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 -7.0%",
-        "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막"
-      ],
-      "mentionScore": 34.4,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-05-29T02:00:42.658Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": -7,
-      "latestHeadline": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5",
-      "publishedAt": "Thu, 02 Apr 2026 07:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "미래에셋증권 '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만",
-      "polishedBody": "미래에셋증권은 코스피 급락 영향으로 증권주 투자심리가 위축되며 7%대 하락이 언급됐습니다. 증권주는 시장 거래대금과 지수 방향에 민감해, 지수 조정 시 실적 기대보다 리스크 회피가 먼저 반영됩니다. 코스닥 일부 종목 급락까지 함께 언급된 만큼 전반적인 위험 선호가 낮아진 장세로 해석됩니다. 장중에는 코스피 반등 여부와 증권업종 동반 회복, 개인 거래대금 감소 여부를 확인해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
+      "symbol": "028260",
+      "name": "삼성물산",
+      "changeRate": -13,
+      "price": null,
+      "summary": "[오늘의 주목주] '차익 실현' 삼성물산 13%대 내려, 코스피 외인·기관 순매도에 5%대 하락 8160선 마감 비즈니스포스트",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBIRXVSUE1LZmJHUnFzTWdxUk55cVZJYllHRy1QMEExZzZFeWUxVF9UM2hjaTFRRjhMb1kyLWRhOTdmdy1pT2R6cjJvUVdBdUZNUlJ1cjZudG5wbjh6U3ViT3c1OVBvMURZbVJmdXRUdUNGUEk?oc=5",
+      "mentionScore": 41.6,
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -13.0%",
+        "[오늘의 주목주] '차익 실현' 삼성물산 13%대 내려, 코스피 외인·기관 순매도에 5%대 하락 8160선 마감"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '차익 실현' 삼성물산 13%대 내려, 코스피 외인·기관 순매도에 5%대 하락 8160선 마감",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBIRXVSUE1LZmJHUnFzTWdxUk55cVZJYllHRy1QMEExZzZFeWUxVF9UM2hjaTFRRjhMb1kyLWRhOTdmdy1pT2R6cjJvUVdBdUZNUlJ1cjZudG5wbjh6U3ViT3c1OVBvMURZbVJmdXRUdUNGUEk?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "095610",
       "name": "테스",
       "changeRate": 30,
@@ -786,7 +810,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "0130H0",
       "name": "엔에이치스팩33호",
       "changeRate": 208,
@@ -810,7 +834,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "272210",
       "name": "한화시스템",
       "changeRate": -5,
@@ -834,7 +858,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "100790",
       "name": "미래에셋벤처투자",
       "changeRate": null,
@@ -858,7 +882,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "122640",
       "name": "예스티",
       "changeRate": null,
@@ -889,7 +913,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": -17,
@@ -920,7 +944,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "128940",
       "name": "한미약품",
       "changeRate": null,
@@ -951,7 +975,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "032830",
       "name": "삼성생명",
       "changeRate": null,
@@ -982,7 +1006,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "117730",
       "name": "티로보틱스",
       "changeRate": -12,
@@ -1006,7 +1030,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "299030",
       "name": "하나기술",
       "changeRate": null,
@@ -1036,7 +1060,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "127120",
       "name": "제이에스링크",
       "changeRate": null,
@@ -1066,7 +1090,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "035420",
       "name": "NAVER",
       "changeRate": null,
@@ -1097,7 +1121,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "085910",
       "name": "네오티스",
       "changeRate": null,
@@ -1128,7 +1152,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "010130",
       "name": "고려아연",
       "changeRate": -12,
@@ -1152,7 +1176,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "051910",
       "name": "LG화학",
       "changeRate": 9,
@@ -1176,7 +1200,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": -3,
@@ -1200,7 +1224,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -1224,7 +1248,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": 30,
@@ -1248,7 +1272,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-08T01:32:39.074Z",
+      "timestamp": "2026-06-08T02:00:14.181Z",
       "symbol": "290690",
       "name": "소룩스",
       "changeRate": -25,
@@ -1268,30 +1292,6 @@
           "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈",
           "source": "Chosunbiz",
           "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-08T01:32:39.074Z",
-      "symbol": "006800",
-      "name": "미래에셋증권",
-      "changeRate": -7,
-      "price": null,
-      "summary": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막 비즈니스포스트",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5",
-      "mentionScore": 34.4,
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 -7.0%",
-        "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5"
         }
       ]
     }
