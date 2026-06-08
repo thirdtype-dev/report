@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from html import unescape
@@ -99,9 +100,67 @@ def fetch_kind_html() -> str:
         return response.read().decode("euc-kr", "ignore")
 
 
+def load_existing_payload() -> dict | None:
+    if not OUTPUT_PATH.exists():
+        return None
+    try:
+        payload = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    if not isinstance(payload, dict):
+        return None
+    stocks = payload.get("stocks")
+    lookup = payload.get("lookup")
+    if not isinstance(stocks, list) or not stocks:
+        return None
+    if not isinstance(lookup, dict) or not lookup:
+        return None
+    return payload
+
+
+def use_existing_payload(reason: Exception) -> bool:
+    payload = load_existing_payload()
+    if payload is None:
+        return False
+    print(
+        json.dumps(
+            {
+                "ok": True,
+                "fallback": "existing-listed-stocks-cache",
+                "reason": f"{type(reason).__name__}: {reason}",
+                "count": payload.get("count", len(payload.get("stocks", []))),
+                "generatedAt": payload.get("generatedAt"),
+                "output": str(OUTPUT_PATH),
+            },
+            ensure_ascii=False,
+        )
+    )
+    return True
+
+
 def main() -> None:
-    html = fetch_kind_html()
+    try:
+        html = fetch_kind_html()
+    except Exception as error:
+        if use_existing_payload(error):
+            return
+        print(
+            json.dumps(
+                {
+                    "ok": False,
+                    "error": "KIND listed stocks refresh failed and no valid cache is available.",
+                    "reason": f"{type(error).__name__}: {error}",
+                    "output": str(OUTPUT_PATH),
+                },
+                ensure_ascii=False,
+            ),
+            file=sys.stderr,
+        )
+        raise
+
     stocks = parse_rows(html)
+    if not stocks:
+        raise RuntimeError("KIND listed stocks refresh returned zero parsed rows.")
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "source": "KRX KIND listed corporations download",
