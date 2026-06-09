@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-06-09T03:00:20.363Z",
+  "generated_at": "2026-06-09T04:00:16.721Z",
   "generated_date": "2026-06-09",
-  "slot_hour": 12,
-  "cycle_label": "KST_1200",
-  "slot_label": "12:00",
+  "slot_hour": 13,
+  "cycle_label": "KST_1300",
+  "slot_label": "13:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 12:00 실시간 급등",
+    "title": "KST 13:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "고려아연",
+      "stockCode": "010130",
+      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 비즈니스포스트",
+      "headline": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -12.0%",
+        "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려"
+      ],
+      "mentionScore": 40.4,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-06-09T04:00:16.721Z",
+      "cycleLabel": "KST_1300",
+      "direction": "down",
+      "changeRate": -12,
+      "latestHeadline": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
+      "publishedAt": "Mon, 02 Feb 2026 08:00:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "금·은 가격 급락에 고려아연 12%대 하락",
+      "polishedBody": "금과 은 가격이 급락하면서 고려아연 주가가 12%대 하락했습니다. 이는 글로벌 원자재 시장의 변동성이 확대된 데 따른 것으로 보입니다. 해당 종목은 하락 압력이 강해 부정적 신호로 평가됩니다. 향후 금속 가격 추이와 수급 상황을 주목할 필요가 있습니다."
+    },
     {
       "stockName": "SK하이닉스",
       "stockCode": "000660",
@@ -716,52 +750,35 @@
       "hasNews": true,
       "polishedHeadline": "제이에스링크 희토류 공급망 재편 수혜 전망…주가 고공행진 지속?",
       "polishedBody": "제이에스링크는 희토류 공급망 재편 수혜 기대와 최근 주가 강세가 함께 부각됐습니다. 다만 5년 적자에도 투자환기 지정은 피했다는 내용이 같이 언급돼, 기대감과 재무 부담이 동시에 존재합니다. 공급망 테마가 실제 실적 개선으로 이어지기 전까지는 재료성 매수와 차익실현이 빠르게 교차할 수 있습니다. 장중에는 테마 지속성보다 거래대금 유지와 고점 부근 매물 소화 여부를 우선 확인해야 합니다."
-    },
-    {
-      "stockName": "NAVER",
-      "stockCode": "035420",
-      "summary": "NAVER 주가, 5월 29일 장중 231,500원 12.93% 상승",
-      "headline": "NAVER(네이버) 주가 급등…22만원선 넘었다",
-      "evidencePoints": [
-        "출처 CBC뉴스, 톱스타뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "NAVER(네이버) 주가 급등…22만원선 넘었다",
-        "NAVER 주가, 5월 29일 장중 231,500원 12.93% 상승"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-06-01T00:03:01.611Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "NAVER(네이버) 주가 급등…22만원선 넘었다",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE42eFpNYkZWNUNrR2ZmVml2TDBaWWJzRmFPeFZ3OVl3OGFFWEkzVVByUzEyT3BzemF4QWRLMUlMUkVDU1pUTk53MUE0NUpkLUMwOE9uU3NrMkhMcFFiTTlNa2luSkF3LXE2?oc=5",
-      "publishedAt": "Sat, 30 May 2026 12:57:56 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "NAVER(네이버) 주가 급등…22만원선 넘었다",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE42eFpNYkZWNUNrR2ZmVml2TDBaWWJzRmFPeFZ3OVl3OGFFWEkzVVByUzEyT3BzemF4QWRLMUlMUkVDU1pUTk53MUE0NUpkLUMwOE9uU3NrMkhMcFFiTTlNa2luSkF3LXE2?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "NAVER 주가, 5월 29일 장중 231,500원 12.93% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE55RHVMdTFpM05wWEw0Wmh5MW9LNFYyY2VmRFcyeGVqdlZiY0J5X09zMVBJVlU0LWdXaU1qcTJjbHhtOFVQa1ROSnlFS3V0WlBnTEFPRGZ0NmJrV2NMczRzVkJhWlVZSHBWc2NIbjJOb2FYZw?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "NAVER 급등…22만원선 넘었다",
-      "polishedBody": "NAVER는 장중 22만원선을 넘어서며 강한 가격 모멘텀이 확인됐습니다. 기사상 231,500원과 12%대 상승 흐름이 함께 언급돼 단기 수급이 한쪽으로 쏠린 상태입니다. 플랫폼 대형주는 지수 영향과 외국인 수급의 영향을 크게 받기 때문에 상승 이후의 거래대금 유지가 중요합니다. 장중에는 고점 유지 여부와 기관·외국인 매수 지속, 차익실현 물량 출회를 함께 확인해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
+      "symbol": "010130",
+      "name": "고려아연",
+      "changeRate": -12,
+      "price": null,
+      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 비즈니스포스트",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
+      "mentionScore": 40.4,
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -12.0%",
+        "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": -9,
@@ -785,7 +802,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -809,7 +826,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": 30,
@@ -833,7 +850,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": -7,
@@ -857,7 +874,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "417840",
       "name": "저스템",
       "changeRate": null,
@@ -887,7 +904,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "462870",
       "name": "시프트업",
       "changeRate": 8,
@@ -918,7 +935,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "006800",
       "name": "미래에셋증권",
       "changeRate": -7,
@@ -942,7 +959,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": -13,
@@ -966,7 +983,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "095610",
       "name": "테스",
       "changeRate": 30,
@@ -997,7 +1014,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "0130H0",
       "name": "엔에이치스팩33호",
       "changeRate": 208,
@@ -1021,7 +1038,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "272210",
       "name": "한화시스템",
       "changeRate": -5,
@@ -1045,7 +1062,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "100790",
       "name": "미래에셋벤처투자",
       "changeRate": null,
@@ -1069,7 +1086,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "122640",
       "name": "예스티",
       "changeRate": null,
@@ -1100,7 +1117,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": -17,
@@ -1131,7 +1148,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "128940",
       "name": "한미약품",
       "changeRate": null,
@@ -1162,7 +1179,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "032830",
       "name": "삼성생명",
       "changeRate": null,
@@ -1193,7 +1210,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "117730",
       "name": "티로보틱스",
       "changeRate": -12,
@@ -1217,7 +1234,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "299030",
       "name": "하나기술",
       "changeRate": null,
@@ -1247,7 +1264,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T03:00:20.363Z",
+      "timestamp": "2026-06-09T04:00:16.721Z",
       "symbol": "127120",
       "name": "제이에스링크",
       "changeRate": null,
@@ -1273,37 +1290,6 @@
           "title": "제이에스링크, 5년 적자에도 '투자환기' 비켜갔다",
           "source": "딜사이트",
           "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5fUHFwalg0dVViZ3RwNGJtbWVqcFlWbmtxNUZHZzlWYThodHpCYWROYUgtVVlycjlZUUxJUktPNlZudkhjZXFoSXhjZVliSUk?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-09T03:00:20.363Z",
-      "symbol": "035420",
-      "name": "NAVER",
-      "changeRate": null,
-      "price": null,
-      "summary": "NAVER 주가, 5월 29일 장중 231,500원 12.93% 상승",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE42eFpNYkZWNUNrR2ZmVml2TDBaWWJzRmFPeFZ3OVl3OGFFWEkzVVByUzEyT3BzemF4QWRLMUlMUkVDU1pUTk53MUE0NUpkLUMwOE9uU3NrMkhMcFFiTTlNa2luSkF3LXE2?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 CBC뉴스, 톱스타뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "NAVER(네이버) 주가 급등…22만원선 넘었다",
-        "NAVER 주가, 5월 29일 장중 231,500원 12.93% 상승"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "NAVER(네이버) 주가 급등…22만원선 넘었다",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE42eFpNYkZWNUNrR2ZmVml2TDBaWWJzRmFPeFZ3OVl3OGFFWEkzVVByUzEyT3BzemF4QWRLMUlMUkVDU1pUTk53MUE0NUpkLUMwOE9uU3NrMkhMcFFiTTlNa2luSkF3LXE2?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "NAVER 주가, 5월 29일 장중 231,500원 12.93% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE55RHVMdTFpM05wWEw0Wmh5MW9LNFYyY2VmRFcyeGVqdlZiY0J5X09zMVBJVlU0LWdXaU1qcTJjbHhtOFVQa1ROSnlFS3V0WlBnTEFPRGZ0NmJrV2NMczRzVkJhWlVZSHBWc2NIbjJOb2FYZw?oc=5"
         }
       ]
     }
