@@ -1,16 +1,84 @@
 {
-  "generated_at": "2026-06-09T01:00:16.263Z",
+  "generated_at": "2026-06-09T02:00:21.075Z",
   "generated_date": "2026-06-09",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
+      "headline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 +30.0%",
+        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
+      ],
+      "mentionScore": 80,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-06-09T02:00:21.075Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 30,
+      "latestHeadline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
+      "publishedAt": "Thu, 21 May 2026 07:00:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "피지컬AI 기대에 LG전자 급등",
+      "polishedBody": "LG전자는 피지컬AI에 대한 기대감으로 상한가를 기록했습니다. 기관 매수세가 유입되며 주가는 8%대 급등해 7800선을 회복했습니다. 이는 긍정적인 신호로 평가되며 투자 심리를 개선시켰습니다. 향후 피지컬AI 관련 추가 모멘텀과 기관 동향이 주목됩니다."
+    },
+    {
+      "stockName": "SK스퀘어",
+      "stockCode": "402340",
+      "summary": "[오늘의 주목주] '반도체 투심 위축' SK스퀘어 주가 7%대 하락, 코스닥 코오롱티슈진 17%대 급등 비즈니스포스트",
+      "headline": "[오늘의 주목주] '반도체 투심 위축' SK스퀘어 주가 7%대 하락, 코스닥 코오롱티슈진 17%대 급등",
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -7.0%",
+        "[오늘의 주목주] '반도체 투심 위축' SK스퀘어 주가 7%대 하락, 코스닥 코오롱티슈진 17%대 급등"
+      ],
+      "mentionScore": 34.4,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-06-09T02:00:21.075Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -7,
+      "latestHeadline": "[오늘의 주목주] '반도체 투심 위축' SK스퀘어 주가 7%대 하락, 코스닥 코오롱티슈진 17%대 급등",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5BTFBvVTUtTnJJLVc4SEhIeWpsWFhranBQcXFSOXMwRlBVT2RxZWQtTzlvVkFQamZXWTFzSGFDX1JOd281RHRJTWxVWmpxMnF4V0t6NG4xUEoyWTZpMlk1bUJhdV9RRXk4enc1a25FcldwSmc?oc=5",
+      "publishedAt": "Thu, 26 Mar 2026 07:00:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '반도체 투심 위축' SK스퀘어 주가 7%대 하락, 코스닥 코오롱티슈진 17%대 급등",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5BTFBvVTUtTnJJLVc4SEhIeWpsWFhranBQcXFSOXMwRlBVT2RxZWQtTzlvVkFQamZXWTFzSGFDX1JOd281RHRJTWxVWmpxMnF4V0t6NG4xUEoyWTZpMlk1bUJhdV9RRXk4enc1a25FcldwSmc?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "반도체 투심 위축에 SK스퀘어 하락",
+      "polishedBody": "SK스퀘어는 '반도체 투심 위축' 주가 7%대 하락 이슈로 단기 변동성이 확대됐습니다. '반도체 투심 위축' 주가 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 7%대 하락, 코스닥 코오롱티슈진 17%대 급등 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "저스템",
       "stockCode": "417840",
@@ -696,79 +764,59 @@
       "hasNews": true,
       "polishedHeadline": "고려아연 '금·은 가격 급락' 고려아연",
       "polishedBody": "고려아연은 금·은 가격 급락 영향으로 원자재 가격 민감도가 다시 부각됐습니다. 귀금속 가격 하락은 제련 마진과 재고 평가에 대한 우려를 키우며 투자심리를 약화시킬 수 있습니다. 주가가 12%대 하락한 만큼 단기 반등 시도는 가능하지만, 원자재 가격 안정이 동반되지 않으면 반등 신뢰도는 낮습니다. 장중에는 금·은 가격 반등 여부와 외국인 매도 지속, 저점 부근 거래량 변화를 확인해야 합니다."
-    },
-    {
-      "stockName": "LG화학",
-      "stockCode": "051910",
-      "summary": "[오늘의 주목주] '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락 비즈니스포스트",
-      "headline": "[오늘의 주목주] '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락",
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 +9.0%",
-        "[오늘의 주목주] '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락"
-      ],
-      "mentionScore": 36.8,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-05-29T04:22:50.125Z",
-      "cycleLabel": "KST_1300",
-      "direction": "up",
-      "changeRate": 9,
-      "latestHeadline": "[오늘의 주목주] '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1neFJXZkw5a1Rmc1Y0OXRnazVSYVkwZ3AzUFgxSHJHb0NqVWdHYUF4Tlh6RTBjdjh4ZlFBS0VfOWw2ZkdlUHBpM0F3QmZtZHBhdzJZbmZSMjB1Vjh0dTExbFY2dHl4S2NuLXZlYU8zcUlxWFU?oc=5",
-      "publishedAt": "Wed, 26 Nov 2025 08:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1neFJXZkw5a1Rmc1Y0OXRnazVSYVkwZ3AzUFgxSHJHb0NqVWdHYUF4Tlh6RTBjdjh4ZlFBS0VfOWw2ZkdlUHBpM0F3QmZtZHBhdzJZbmZSMjB1Vjh0dTExbFY2dHl4S2NuLXZlYU8zcUlxWFU?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "LG화학 '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락",
-      "polishedBody": "LG화학은 2차전지 관련주 강세 속에서 9%대 급등 흐름이 확인됐습니다. 같은 기사에 다른 종목의 급락이 함께 담겼지만, LG화학 자체의 핵심 신호는 배터리 섹터 강세와 주가 상승입니다. 최근 눌림이 컸던 2차전지 대형주에 수급이 돌아오는지 여부가 단기 방향성을 좌우할 수 있습니다. 장중에는 상승 폭 유지와 배터리 대형주 동반 강세, 외국인·기관 매수 전환 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "SK하이닉스",
-      "stockCode": "000660",
-      "summary": "[특징주] 이란 사태 여파에 삼성전자·SK하이닉스 3% 급락 - 조선비즈 Chosunbiz",
-      "headline": "[특징주] 이란 사태 여파에 삼성전자·SK하이닉스 3% 급락 - 조선비즈",
-      "evidencePoints": [
-        "출처 Chosunbiz 기반 기사 1건",
-        "제목 기준 변동률 단서 -3.0%",
-        "[특징주] 이란 사태 여파에 삼성전자·SK하이닉스 3% 급락 - 조선비즈"
-      ],
-      "mentionScore": 29.6,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-05-29T03:00:45.101Z",
-      "cycleLabel": "KST_1200",
-      "direction": "down",
-      "changeRate": -3,
-      "latestHeadline": "[특징주] 이란 사태 여파에 삼성전자·SK하이닉스 3% 급락 - 조선비즈",
-      "source": "Chosunbiz",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObzhSdEtJZ0lnd2NscFFWRVNaaDFjXzBhMVNGUkI4SnRSVXBJLXV1dFVhd0JFY2Fta3VzeFRPdkFsMnBkOW9rRHJubkRwWkpQSWZsWXQweWRSYVM0aVZLZ3cwZ0tnSHZCRGlOWi1sbnNzLWx6REMzM2d2Z0k1SXpydkpxczRoeDBT0gGcAUFVX3lxTE5yd1RkOHBpYkVGV1ZTcmM4M3MzMG5tY0NrWXAweU1Xd0tuSWVOUXhOQ1B4S1dGTHBTbWllYXRGeU5PMWhwM1hZNE9EUUVRUTlvc3FwTFBSdG4zZm9DZEtFbF9sS2I2RHU4cXNWTGZqZUxiQkZLTFhjSkctVFBLZ1gzYUdDRk9haVVaUF80NDJzb0lJdDRlNGVFRzlCcw?oc=5",
-      "publishedAt": "Tue, 03 Mar 2026 08:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 이란 사태 여파에 삼성전자·SK하이닉스 3% 급락 - 조선비즈",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObzhSdEtJZ0lnd2NscFFWRVNaaDFjXzBhMVNGUkI4SnRSVXBJLXV1dFVhd0JFY2Fta3VzeFRPdkFsMnBkOW9rRHJubkRwWkpQSWZsWXQweWRSYVM0aVZLZ3cwZ0tnSHZCRGlOWi1sbnNzLWx6REMzM2d2Z0k1SXpydkpxczRoeDBT0gGcAUFVX3lxTE5yd1RkOHBpYkVGV1ZTcmM4M3MzMG5tY0NrWXAweU1Xd0tuSWVOUXhOQ1B4S1dGTHBTbWllYXRGeU5PMWhwM1hZNE9EUUVRUTlvc3FwTFBSdG4zZm9DZEtFbF9sS2I2RHU4cXNWTGZqZUxiQkZLTFhjSkctVFBLZ1gzYUdDRk9haVVaUF80NDJzb0lJdDRlNGVFRzlCcw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "SK하이닉스 이란 사태 여파에 삼성전자·SK하이닉스 3% 급락",
-      "polishedBody": "SK하이닉스는 이란 사태 여파로 삼성전자와 함께 3%대 급락 흐름이 언급됐습니다. 지정학적 불확실성은 반도체 수급 전망보다 위험자산 회피 심리를 먼저 자극할 수 있습니다. 대형 반도체주는 지수와 외국인 수급의 영향을 크게 받기 때문에 단기 낙폭 확대 구간에서는 수급 확인이 중요합니다. 장중에는 미국 기술주 선물, 원달러 환율, 외국인 현·선물 포지션 변화를 함께 봐야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": 30,
+      "price": null,
+      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
+      "mentionScore": 80,
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 +30.0%",
+        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T02:00:21.075Z",
+      "symbol": "402340",
+      "name": "SK스퀘어",
+      "changeRate": -7,
+      "price": null,
+      "summary": "[오늘의 주목주] '반도체 투심 위축' SK스퀘어 주가 7%대 하락, 코스닥 코오롱티슈진 17%대 급등 비즈니스포스트",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5BTFBvVTUtTnJJLVc4SEhIeWpsWFhranBQcXFSOXMwRlBVT2RxZWQtTzlvVkFQamZXWTFzSGFDX1JOd281RHRJTWxVWmpxMnF4V0t6NG4xUEoyWTZpMlk1bUJhdV9RRXk4enc1a25FcldwSmc?oc=5",
+      "mentionScore": 34.4,
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -7.0%",
+        "[오늘의 주목주] '반도체 투심 위축' SK스퀘어 주가 7%대 하락, 코스닥 코오롱티슈진 17%대 급등"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '반도체 투심 위축' SK스퀘어 주가 7%대 하락, 코스닥 코오롱티슈진 17%대 급등",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5BTFBvVTUtTnJJLVc4SEhIeWpsWFhranBQcXFSOXMwRlBVT2RxZWQtTzlvVkFQamZXWTFzSGFDX1JOd281RHRJTWxVWmpxMnF4V0t6NG4xUEoyWTZpMlk1bUJhdV9RRXk4enc1a25FcldwSmc?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "417840",
       "name": "저스템",
       "changeRate": null,
@@ -798,7 +846,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "462870",
       "name": "시프트업",
       "changeRate": 8,
@@ -829,7 +877,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "006800",
       "name": "미래에셋증권",
       "changeRate": -7,
@@ -853,7 +901,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": -13,
@@ -877,7 +925,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "095610",
       "name": "테스",
       "changeRate": 30,
@@ -908,7 +956,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "0130H0",
       "name": "엔에이치스팩33호",
       "changeRate": 208,
@@ -932,7 +980,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "272210",
       "name": "한화시스템",
       "changeRate": -5,
@@ -956,7 +1004,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "100790",
       "name": "미래에셋벤처투자",
       "changeRate": null,
@@ -980,7 +1028,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "122640",
       "name": "예스티",
       "changeRate": null,
@@ -1011,7 +1059,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": -17,
@@ -1042,7 +1090,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "128940",
       "name": "한미약품",
       "changeRate": null,
@@ -1073,7 +1121,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "032830",
       "name": "삼성생명",
       "changeRate": null,
@@ -1104,7 +1152,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "117730",
       "name": "티로보틱스",
       "changeRate": -12,
@@ -1128,7 +1176,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "299030",
       "name": "하나기술",
       "changeRate": null,
@@ -1158,7 +1206,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "127120",
       "name": "제이에스링크",
       "changeRate": null,
@@ -1188,7 +1236,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "035420",
       "name": "NAVER",
       "changeRate": null,
@@ -1219,7 +1267,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "085910",
       "name": "네오티스",
       "changeRate": null,
@@ -1250,7 +1298,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T01:00:16.263Z",
+      "timestamp": "2026-06-09T02:00:21.075Z",
       "symbol": "010130",
       "name": "고려아연",
       "changeRate": -12,
@@ -1270,54 +1318,6 @@
           "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
           "source": "비즈니스포스트",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-09T01:00:16.263Z",
-      "symbol": "051910",
-      "name": "LG화학",
-      "changeRate": 9,
-      "price": null,
-      "summary": "[오늘의 주목주] '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락 비즈니스포스트",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1neFJXZkw5a1Rmc1Y0OXRnazVSYVkwZ3AzUFgxSHJHb0NqVWdHYUF4Tlh6RTBjdjh4ZlFBS0VfOWw2ZkdlUHBpM0F3QmZtZHBhdzJZbmZSMjB1Vjh0dTExbFY2dHl4S2NuLXZlYU8zcUlxWFU?oc=5",
-      "mentionScore": 36.8,
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 +9.0%",
-        "[오늘의 주목주] '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '2차전지 주식 강세' LG화학 9%대 급등, 코스닥 케어젠 11%대 급락",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1neFJXZkw5a1Rmc1Y0OXRnazVSYVkwZ3AzUFgxSHJHb0NqVWdHYUF4Tlh6RTBjdjh4ZlFBS0VfOWw2ZkdlUHBpM0F3QmZtZHBhdzJZbmZSMjB1Vjh0dTExbFY2dHl4S2NuLXZlYU8zcUlxWFU?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-09T01:00:16.263Z",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": -3,
-      "price": null,
-      "summary": "[특징주] 이란 사태 여파에 삼성전자·SK하이닉스 3% 급락 - 조선비즈 Chosunbiz",
-      "source": "Chosunbiz",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObzhSdEtJZ0lnd2NscFFWRVNaaDFjXzBhMVNGUkI4SnRSVXBJLXV1dFVhd0JFY2Fta3VzeFRPdkFsMnBkOW9rRHJubkRwWkpQSWZsWXQweWRSYVM0aVZLZ3cwZ0tnSHZCRGlOWi1sbnNzLWx6REMzM2d2Z0k1SXpydkpxczRoeDBT0gGcAUFVX3lxTE5yd1RkOHBpYkVGV1ZTcmM4M3MzMG5tY0NrWXAweU1Xd0tuSWVOUXhOQ1B4S1dGTHBTbWllYXRGeU5PMWhwM1hZNE9EUUVRUTlvc3FwTFBSdG4zZm9DZEtFbF9sS2I2RHU4cXNWTGZqZUxiQkZLTFhjSkctVFBLZ1gzYUdDRk9haVVaUF80NDJzb0lJdDRlNGVFRzlCcw?oc=5",
-      "mentionScore": 29.6,
-      "evidencePoints": [
-        "출처 Chosunbiz 기반 기사 1건",
-        "제목 기준 변동률 단서 -3.0%",
-        "[특징주] 이란 사태 여파에 삼성전자·SK하이닉스 3% 급락 - 조선비즈"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 이란 사태 여파에 삼성전자·SK하이닉스 3% 급락 - 조선비즈",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObzhSdEtJZ0lnd2NscFFWRVNaaDFjXzBhMVNGUkI4SnRSVXBJLXV1dFVhd0JFY2Fta3VzeFRPdkFsMnBkOW9rRHJubkRwWkpQSWZsWXQweWRSYVM0aVZLZ3cwZ0tnSHZCRGlOWi1sbnNzLWx6REMzM2d2Z0k1SXpydkpxczRoeDBT0gGcAUFVX3lxTE5yd1RkOHBpYkVGV1ZTcmM4M3MzMG5tY0NrWXAweU1Xd0tuSWVOUXhOQ1B4S1dGTHBTbWllYXRGeU5PMWhwM1hZNE9EUUVRUTlvc3FwTFBSdG4zZm9DZEtFbF9sS2I2RHU4cXNWTGZqZUxiQkZLTFhjSkctVFBLZ1gzYUdDRk9haVVaUF80NDJzb0lJdDRlNGVFRzlCcw?oc=5"
         }
       ]
     }
