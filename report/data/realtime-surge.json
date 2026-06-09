@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-06-09T04:00:16.721Z",
+  "generated_at": "2026-06-09T05:00:16.154Z",
   "generated_date": "2026-06-09",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
+    "title": "KST 14:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "고영",
+      "stockCode": "098460",
+      "summary": "[특징주] 고영, 지난 1분기 사상 최대 매출 기록.. 24%대 '급등'",
+      "headline": "[장중수급포착] 고영, 기관 5일 연속 순매수행진... 주가 +3.96%",
+      "evidencePoints": [
+        "출처 뉴스핌, 글로벌이코노믹 기반 기사 2건",
+        "제목 기준 변동률 단서 +24.0%",
+        "[장중수급포착] 고영, 기관 5일 연속 순매수행진... 주가 +3.96%",
+        "[특징주] 고영, 지난 1분기 사상 최대 매출 기록.. 24%대 '급등'"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 4,
+      "updatedAt": "2026-06-09T05:00:16.154Z",
+      "cycleLabel": "KST_1400",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[장중수급포착] 고영, 기관 5일 연속 순매수행진... 주가 +3.96%",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE81em9jOHIyMUhQOEowZllqUmQ3QmhqV0R6RmJYUmNiQlRmdUdzbTdUX2trUUJ4WXFIYTYzd3NkRlN3dG5pZkJNXzdCRTZhZG4tdUVMZTdYVFNKeHVm?oc=5",
+      "publishedAt": "Tue, 09 Jun 2026 01:19:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 고영, 기관 5일 연속 순매수행진... 주가 +3.96%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE81em9jOHIyMUhQOEowZllqUmQ3QmhqV0R6RmJYUmNiQlRmdUdzbTdUX2trUUJ4WXFIYTYzd3NkRlN3dG5pZkJNXzdCRTZhZG4tdUVMZTdYVFNKeHVm?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 고영, 지난 1분기 사상 최대 매출 기록.. 24%대 '급등'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUmxkTGllT0F0TlNBVjZjUFVJNi1ZRzZ1TGdxV1hSeDFYSDRzRVl5QnlhbTk5YlhsZmFVU2wxeEZKT0RNbXhfSUVyQU1HNXJCejBpaGhoMzdKR2laZGN3bUthb2VUalZGT2tuRzhsVlBjelpIZ0xmdUN0RjZ2aEpoWTBhQ3hMa0E?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "고영, 기관 5일 연속 순매수에 주가 상승",
+      "polishedBody": "고영은 기관 투자자가 5일 연속 순매수하며 주가가 3.96% 상승했습니다. 이는 지난 1분기 사상 최대 매출을 기록한 실적 호조가 배경으로 작용했습니다. 이러한 흐름은 긍정적인 신호로 평가되며 투자 심리를 개선시킵니다. 향후 추가 실적 발표와 기관 매수 지속 여부가 주요 관전 포인트입니다."
+    },
     {
       "stockName": "고려아연",
       "stockCode": "010130",
@@ -710,51 +751,42 @@
       "hasNews": true,
       "polishedHeadline": "하나기술 투자분석 2026. 05. 29",
       "polishedBody": "하나기술은 수주 계약 취소와 CB 투자자 원금 상환 요구가 동시에 거론되며 신뢰도 부담이 커졌습니다. 수주 취소 이슈는 단순한 일회성 악재를 넘어 향후 매출 가시성과 자금 조달 여건을 같이 흔들 수 있습니다. CB 투자자 움직임은 주가보다 먼저 회사의 재무 리스크를 반영하는 신호로 해석될 수 있습니다. 장중에는 추가 공시와 전환사채 관련 물량 부담, 저가 매수 유입 강도를 함께 봐야 합니다."
-    },
-    {
-      "stockName": "제이에스링크",
-      "stockCode": "127120",
-      "summary": "제이에스링크, 5년 적자에도 '투자환기' 비켜갔다",
-      "headline": "[서치 e종목] 제이에스링크, 희토류 공급망 재편 수혜 전망…주가 고공행진 지속?",
-      "evidencePoints": [
-        "출처 데일리인베스트, 딜사이트 기반 기사 2건",
-        "[서치 e종목] 제이에스링크, 희토류 공급망 재편 수혜 전망…주가 고공행진 지속?",
-        "제이에스링크, 5년 적자에도 '투자환기' 비켜갔다"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-06-01T00:06:49.323Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[서치 e종목] 제이에스링크, 희토류 공급망 재편 수혜 전망…주가 고공행진 지속?",
-      "source": "데일리인베스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hckV3dkxLQkU1TFNQNW82c1pzR0VUNXl6ZXJmcHZ6Rndkc1hYM2dFV0poY21RSG5IZmNwRFhXZFVDVXpnR1U1Zm9vTklwalFNWXpKVV9ZRTRIYmdfdEVPOHRyeTZfVHRNTkMw0gFvQVVfeXFMUEgtZGJKXzltY2I4dWhJX1d6NThKOXQ2UmhnMzZ6c2xndENXUktwWTlrSTUzUHdpZjVBYk9ZZ3AwbW9LWE9FWG1HVUxEVXhWNUdaU1VQWFNxYk9rNlRvYzBIWWdwX0tRRXBxcFRVYXcw?oc=5",
-      "publishedAt": "Tue, 21 Apr 2026 07:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[서치 e종목] 제이에스링크, 희토류 공급망 재편 수혜 전망…주가 고공행진 지속?",
-          "source": "데일리인베스트",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hckV3dkxLQkU1TFNQNW82c1pzR0VUNXl6ZXJmcHZ6Rndkc1hYM2dFV0poY21RSG5IZmNwRFhXZFVDVXpnR1U1Zm9vTklwalFNWXpKVV9ZRTRIYmdfdEVPOHRyeTZfVHRNTkMw0gFvQVVfeXFMUEgtZGJKXzltY2I4dWhJX1d6NThKOXQ2UmhnMzZ6c2xndENXUktwWTlrSTUzUHdpZjVBYk9ZZ3AwbW9LWE9FWG1HVUxEVXhWNUdaU1VQWFNxYk9rNlRvYzBIWWdwX0tRRXBxcFRVYXcw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "제이에스링크, 5년 적자에도 '투자환기' 비켜갔다",
-          "source": "딜사이트",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5fUHFwalg0dVViZ3RwNGJtbWVqcFlWbmtxNUZHZzlWYThodHpCYWROYUgtVVlycjlZUUxJUktPNlZudkhjZXFoSXhjZVliSUk?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "제이에스링크 희토류 공급망 재편 수혜 전망…주가 고공행진 지속?",
-      "polishedBody": "제이에스링크는 희토류 공급망 재편 수혜 기대와 최근 주가 강세가 함께 부각됐습니다. 다만 5년 적자에도 투자환기 지정은 피했다는 내용이 같이 언급돼, 기대감과 재무 부담이 동시에 존재합니다. 공급망 테마가 실제 실적 개선으로 이어지기 전까지는 재료성 매수와 차익실현이 빠르게 교차할 수 있습니다. 장중에는 테마 지속성보다 거래대금 유지와 고점 부근 매물 소화 여부를 우선 확인해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
+      "symbol": "098460",
+      "name": "고영",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주] 고영, 지난 1분기 사상 최대 매출 기록.. 24%대 '급등'",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE81em9jOHIyMUhQOEowZllqUmQ3QmhqV0R6RmJYUmNiQlRmdUdzbTdUX2trUUJ4WXFIYTYzd3NkRlN3dG5pZkJNXzdCRTZhZG4tdUVMZTdYVFNKeHVm?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌, 글로벌이코노믹 기반 기사 2건",
+        "제목 기준 변동률 단서 +24.0%",
+        "[장중수급포착] 고영, 기관 5일 연속 순매수행진... 주가 +3.96%",
+        "[특징주] 고영, 지난 1분기 사상 최대 매출 기록.. 24%대 '급등'"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 고영, 기관 5일 연속 순매수행진... 주가 +3.96%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE81em9jOHIyMUhQOEowZllqUmQ3QmhqV0R6RmJYUmNiQlRmdUdzbTdUX2trUUJ4WXFIYTYzd3NkRlN3dG5pZkJNXzdCRTZhZG4tdUVMZTdYVFNKeHVm?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 고영, 지난 1분기 사상 최대 매출 기록.. 24%대 '급등'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUmxkTGllT0F0TlNBVjZjUFVJNi1ZRzZ1TGdxV1hSeDFYSDRzRVl5QnlhbTk5YlhsZmFVU2wxeEZKT0RNbXhfSUVyQU1HNXJCejBpaGhoMzdKR2laZGN3bUthb2VUalZGT2tuRzhsVlBjelpIZ0xmdUN0RjZ2aEpoWTBhQ3hMa0E?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "010130",
       "name": "고려아연",
       "changeRate": -12,
@@ -778,7 +810,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": -9,
@@ -802,7 +834,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -826,7 +858,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": 30,
@@ -850,7 +882,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": -7,
@@ -874,7 +906,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "417840",
       "name": "저스템",
       "changeRate": null,
@@ -904,7 +936,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "462870",
       "name": "시프트업",
       "changeRate": 8,
@@ -935,7 +967,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "006800",
       "name": "미래에셋증권",
       "changeRate": -7,
@@ -959,7 +991,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": -13,
@@ -983,7 +1015,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "095610",
       "name": "테스",
       "changeRate": 30,
@@ -1014,7 +1046,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "0130H0",
       "name": "엔에이치스팩33호",
       "changeRate": 208,
@@ -1038,7 +1070,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "272210",
       "name": "한화시스템",
       "changeRate": -5,
@@ -1062,7 +1094,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "100790",
       "name": "미래에셋벤처투자",
       "changeRate": null,
@@ -1086,7 +1118,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "122640",
       "name": "예스티",
       "changeRate": null,
@@ -1117,7 +1149,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": -17,
@@ -1148,7 +1180,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "128940",
       "name": "한미약품",
       "changeRate": null,
@@ -1179,7 +1211,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "032830",
       "name": "삼성생명",
       "changeRate": null,
@@ -1210,7 +1242,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "117730",
       "name": "티로보틱스",
       "changeRate": -12,
@@ -1234,7 +1266,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-09T04:00:16.721Z",
+      "timestamp": "2026-06-09T05:00:16.154Z",
       "symbol": "299030",
       "name": "하나기술",
       "changeRate": null,
@@ -1260,36 +1292,6 @@
           "title": "하나기술, 또 수주 계약 취소 ‘악몽’… CB 투자자들은 공시 직전 원금 상환 요구 - 조선비즈",
           "source": "Chosunbiz",
           "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOY3Itc0kyU2ZrX0d3STFEN25wbk5Vd2R0Ukh4MXB3SnBSUWo0Mzc3ZDFRQUpDRHFBZVJ5bEUxdzhDeDU0WE9Lelg1OFd5ZGxxbU1yS1o0VW01YlJfc2U1Q21SVmVMOUpBMkVic2cyOXc0R1pPc1hwb2dMX0F6SzZ6Sm5BX3d0OTDSAZsBQVVfeXFMUE5XZVJ4R09ndTh6dkgtaXQweVljVlk0emZOQmJ0QjRfZmxfQUJOZHNuX2VtQmcxUm1mU2RtWC02OUhtbWRCYkFuY0lOVHFmQzdDanNJTDZnV3otZk9fN0hSQXBGUmIxS3dZOXZiQnFOb2xFYVQzNTJJN1ZPWmZQalJKSXY0UkZmN3J2ZGdST1h3dWVzTkJBdllBSlE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-09T04:00:16.721Z",
-      "symbol": "127120",
-      "name": "제이에스링크",
-      "changeRate": null,
-      "price": null,
-      "summary": "제이에스링크, 5년 적자에도 '투자환기' 비켜갔다",
-      "source": "데일리인베스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hckV3dkxLQkU1TFNQNW82c1pzR0VUNXl6ZXJmcHZ6Rndkc1hYM2dFV0poY21RSG5IZmNwRFhXZFVDVXpnR1U1Zm9vTklwalFNWXpKVV9ZRTRIYmdfdEVPOHRyeTZfVHRNTkMw0gFvQVVfeXFMUEgtZGJKXzltY2I4dWhJX1d6NThKOXQ2UmhnMzZ6c2xndENXUktwWTlrSTUzUHdpZjVBYk9ZZ3AwbW9LWE9FWG1HVUxEVXhWNUdaU1VQWFNxYk9rNlRvYzBIWWdwX0tRRXBxcFRVYXcw?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 데일리인베스트, 딜사이트 기반 기사 2건",
-        "[서치 e종목] 제이에스링크, 희토류 공급망 재편 수혜 전망…주가 고공행진 지속?",
-        "제이에스링크, 5년 적자에도 '투자환기' 비켜갔다"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[서치 e종목] 제이에스링크, 희토류 공급망 재편 수혜 전망…주가 고공행진 지속?",
-          "source": "데일리인베스트",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hckV3dkxLQkU1TFNQNW82c1pzR0VUNXl6ZXJmcHZ6Rndkc1hYM2dFV0poY21RSG5IZmNwRFhXZFVDVXpnR1U1Zm9vTklwalFNWXpKVV9ZRTRIYmdfdEVPOHRyeTZfVHRNTkMw0gFvQVVfeXFMUEgtZGJKXzltY2I4dWhJX1d6NThKOXQ2UmhnMzZ6c2xndENXUktwWTlrSTUzUHdpZjVBYk9ZZ3AwbW9LWE9FWG1HVUxEVXhWNUdaU1VQWFNxYk9rNlRvYzBIWWdwX0tRRXBxcFRVYXcw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "제이에스링크, 5년 적자에도 '투자환기' 비켜갔다",
-          "source": "딜사이트",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5fUHFwalg0dVViZ3RwNGJtbWVqcFlWbmtxNUZHZzlWYThodHpCYWROYUgtVVlycjlZUUxJUktPNlZudkhjZXFoSXhjZVliSUk?oc=5"
         }
       ]
     }
