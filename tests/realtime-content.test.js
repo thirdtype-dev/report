@@ -137,7 +137,7 @@ test('realtime generator prefers telegram public signals when fixtures are avail
   assert.ok(realtime.signals[0].evidencePoints.length > 0);
   assert.equal(realtime.summary.basedOn, 'public telegram channel mentions with market news backfill');
   assert.ok(realtime.signals.length <= 20);
-  assert.ok(realtime.signals.length >= 4);
+  assert.ok(realtime.signals.length >= 3);
   assert.ok(realtime.signals.some((signal) => signal.hasTelegram));
   assert.ok(realtime.signals.every((signal) => Array.isArray(signal.relatedPosts)));
   assert.ok(realtime.signals.every((signal) => signal.relatedPosts.length >= 1));
@@ -404,6 +404,100 @@ test('realtime merge keeps 20 visible items and only prepends 5 new unique signa
   );
   assert.ok(!merged.mergedSignals.some((signal, index) => index < 5 && [listed[0][0], listed[1][0]].includes(signal.stockName)));
   assert.ok(merged.mergedSignals.some((signal) => signal.stockName === listed[2][0]));
+});
+
+test('realtime merge refreshes duplicate stock cards when the incoming signal has newer evidence', async () => {
+  process.env.REALTIME_SLOT_HOUR = '11';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  const previousSignals = [
+    {
+      stockName: '삼성전자',
+      stockCode: '005930',
+      headline: '삼성전자 이전 헤드라인',
+      summary: '삼성전자 이전 요약',
+      updatedAt: '2026-06-10T01:00:00.000Z',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/old-samsung',
+      relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/old-samsung' }],
+      polishedHeadline: '삼성전자 이전 polish 제목',
+      polishedBody: '삼성전자는 이전 카드 문구입니다. 이전 재료가 유지되고 있습니다. 신규 재료는 아직 반영되지 않았습니다. 장중에는 기존 수급만 확인하면 됩니다.'
+    },
+    {
+      stockName: 'SK하이닉스',
+      stockCode: '000660',
+      headline: 'SK하이닉스 이전 헤드라인',
+      summary: 'SK하이닉스 이전 요약',
+      updatedAt: '2026-06-10T01:00:00.000Z',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/old-hynix',
+      relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/old-hynix' }]
+    }
+  ];
+
+  const newSignals = [
+    {
+      stockName: '삼성전자',
+      stockCode: '005930',
+      headline: '삼성전자 신규 헤드라인',
+      summary: '삼성전자 신규 요약',
+      updatedAt: '2026-06-11T02:00:00.000Z',
+      source: '매일경제',
+      sourceUrl: 'https://example.com/new-samsung',
+      relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-samsung' }]
+    }
+  ];
+
+  const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
+    freshBatchSize: 2,
+    visibleLimit: 20
+  });
+
+  assert.deepEqual(merged.freshSignals.map((signal) => signal.stockName), ['삼성전자']);
+  assert.equal(merged.mergedSignals[0].stockName, '삼성전자');
+  assert.equal(merged.mergedSignals[0].headline, '삼성전자 신규 헤드라인');
+  assert.equal(merged.mergedSignals[0].sourceUrl, 'https://example.com/new-samsung');
+  assert.ok(!merged.mergedSignals.some((signal) => signal.sourceUrl === 'https://example.com/old-samsung'));
+});
+
+test('realtime merge does not replace a duplicate stock card with older evidence', async () => {
+  process.env.REALTIME_SLOT_HOUR = '11';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  const previousSignals = [
+    {
+      stockName: '삼성전자',
+      stockCode: '005930',
+      headline: '삼성전자 최신 헤드라인',
+      summary: '삼성전자 최신 요약',
+      updatedAt: '2026-06-11T02:00:00.000Z',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/newer-samsung',
+      relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/newer-samsung' }]
+    }
+  ];
+
+  const newSignals = [
+    {
+      stockName: '삼성전자',
+      stockCode: '005930',
+      headline: '삼성전자 과거 헤드라인',
+      summary: '삼성전자 과거 요약',
+      updatedAt: '2026-06-10T02:00:00.000Z',
+      source: '매일경제',
+      sourceUrl: 'https://example.com/older-samsung',
+      relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/older-samsung' }]
+    }
+  ];
+
+  const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
+    freshBatchSize: 2,
+    visibleLimit: 20
+  });
+
+  assert.deepEqual(merged.freshSignals.map((signal) => signal.stockName), []);
+  assert.equal(merged.mergedSignals[0].headline, '삼성전자 최신 헤드라인');
+  assert.equal(merged.mergedSignals[0].sourceUrl, 'https://example.com/newer-samsung');
 });
 
 test('fresh-only polish reuses prior polished copy for carry-over signals', async () => {

@@ -771,6 +771,43 @@ function isNewsBackedSignal(signal) {
   return Boolean(signal.sourceUrl) && !isTelegramSource(signal.source);
 }
 
+function signalEvidenceTime(signal) {
+  const candidates = [
+    signal?.updatedAt,
+    signal?.publishedAt,
+    signal?.generatedAt,
+    signal?.timestamp
+  ];
+  const times = candidates
+    .map((value) => Date.parse(value ?? ''))
+    .filter(Number.isFinite);
+  return times.length ? Math.max(...times) : 0;
+}
+
+function signalEvidenceSignature(signal) {
+  const relatedUrls = Array.isArray(signal?.relatedPosts)
+    ? signal.relatedPosts.map((item) => cleanText(item?.url)).filter(Boolean)
+    : [];
+  return [
+    cleanText(signal?.sourceUrl),
+    cleanText(signal?.headline),
+    cleanText(signal?.latestHeadline),
+    cleanText(signal?.summary),
+    ...relatedUrls
+  ].join('|');
+}
+
+function shouldRefreshExistingSignal(incoming, previous) {
+  if (!incoming || !previous) return false;
+  const incomingTime = signalEvidenceTime(incoming);
+  const previousTime = signalEvidenceTime(previous);
+  if (incomingTime && previousTime && incomingTime > previousTime) return true;
+  if (incomingTime && previousTime) return false;
+  if (incomingTime && !previousTime) return true;
+  if (!incomingTime && previousTime) return false;
+  return signalEvidenceSignature(incoming) !== signalEvidenceSignature(previous);
+}
+
 function hasNewsBackfillForCompany(companyName, candidates) {
   return candidates.some((item) => item.companyName === companyName && !isTelegramSource(item.source) && item.sourceUrl);
 }
@@ -865,20 +902,22 @@ function mergeRealtimeSignals(newSignals, previousSignals, {
   const previousList = Array.isArray(previousSignals) ? previousSignals.map(hydrateSignalMetadata) : [];
   const hydratedNewSignals = Array.isArray(newSignals) ? newSignals.map(hydrateSignalMetadata) : [];
   const filteredPreviousList = previousList.filter(isDisplayableSignal).filter(isNewsBackedSignal);
-  const previousKeys = new Set(filteredPreviousList.map(getSignalKey));
+  const previousByKey = new Map(filteredPreviousList.map((signal) => [getSignalKey(signal), signal]));
+  const previousKeys = new Set(previousByKey.keys());
   const freshSignals = [];
+  const freshKeys = new Set();
   const targetFreshCount = Math.max(freshBatchSize, visibleLimit - filteredPreviousList.length);
 
   for (const signal of hydratedNewSignals) {
     if (!isDisplayableSignal(signal)) continue;
     const key = getSignalKey(signal);
-    if (previousKeys.has(key)) continue;
-    if (freshSignals.some((item) => getSignalKey(item) === key)) continue;
+    if (freshKeys.has(key)) continue;
+    if (previousKeys.has(key) && !shouldRefreshExistingSignal(signal, previousByKey.get(key))) continue;
     freshSignals.push(signal);
+    freshKeys.add(key);
     if (freshSignals.length >= targetFreshCount) break;
   }
 
-  const freshKeys = new Set(freshSignals.map(getSignalKey));
   const mergedSignals = [
     ...freshSignals,
     ...filteredPreviousList.filter((signal) => !freshKeys.has(getSignalKey(signal)))
