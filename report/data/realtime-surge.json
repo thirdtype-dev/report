@@ -1,16 +1,84 @@
 {
-  "generated_at": "2026-06-12T01:00:18.068Z",
+  "generated_at": "2026-06-12T02:00:22.118Z",
   "generated_date": "2026-06-12",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
-    "basedOn": "public telegram channel mentions with market news backfill"
+    "title": "KST 11:00 실시간 급등",
+    "subtitle": "시장 뉴스 기반 급등 후보 20건",
+    "basedOn": "market-research stock news candidates"
   },
   "signals": [
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
+      "headline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 +30.0%",
+        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
+      ],
+      "mentionScore": 80,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-06-12T02:00:22.118Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 30,
+      "latestHeadline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
+      "publishedAt": "Thu, 21 May 2026 07:00:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "피지컬AI 기대에 LG전자 급등",
+      "polishedBody": "LG전자는 피지컬AI에 대한 기대감으로 상한가를 기록했습니다. 기관 매수세가 유입되며 주가는 8%대 급등해 7800선을 회복했습니다. 이는 긍정적인 신호로 평가되며 투자 심리를 자극하고 있습니다. 향후 피지컬AI 관련 추가 뉴스와 기관 동향이 주가에 영향을 줄 수 있습니다."
+    },
+    {
+      "stockName": "고려아연",
+      "stockCode": "010130",
+      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 비즈니스포스트",
+      "headline": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -12.0%",
+        "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려"
+      ],
+      "mentionScore": 40.4,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-06-12T02:00:22.118Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -12,
+      "latestHeadline": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
+      "publishedAt": "Mon, 02 Feb 2026 08:00:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "금·은 가격 급락에 고려아연 하락",
+      "polishedBody": "고려아연은 은 가격 급락' 주가 12%대 하락 이슈로 단기 변동성이 확대됐습니다. 은 가격 급락' 주가 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 '금·은 가격 급락' 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "삼성전자",
       "stockCode": "005930",
@@ -216,40 +284,6 @@
       "polishedBody": "고영은 기관 투자자가 5일 연속 순매수하며 주가가 3.96% 상승했습니다. 이는 지난 1분기 사상 최대 매출을 기록한 실적 호조가 배경으로 작용했습니다. 이러한 흐름은 긍정적인 신호로 평가되며 투자 심리를 개선시킵니다. 향후 추가 실적 발표와 기관 매수 지속 여부가 주요 관전 포인트입니다."
     },
     {
-      "stockName": "고려아연",
-      "stockCode": "010130",
-      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 비즈니스포스트",
-      "headline": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 -12.0%",
-        "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려"
-      ],
-      "mentionScore": 40.4,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-06-09T04:00:16.721Z",
-      "cycleLabel": "KST_1300",
-      "direction": "down",
-      "changeRate": -12,
-      "latestHeadline": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
-      "publishedAt": "Mon, 02 Feb 2026 08:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "금·은 가격 급락에 고려아연 12%대 하락",
-      "polishedBody": "금과 은 가격이 급락하면서 고려아연 주가가 12%대 하락했습니다. 이는 글로벌 원자재 시장의 변동성이 확대된 데 따른 것으로 보입니다. 해당 종목은 하락 압력이 강해 부정적 신호로 평가됩니다. 향후 금속 가격 추이와 수급 상황을 주목할 필요가 있습니다."
-    },
-    {
       "stockName": "SK하이닉스",
       "stockCode": "000660",
       "summary": "[오늘의 주목주] '코스피 폭락' SK하이닉스 주가 9%대 내려, 코스닥 펄어비스는 12%대 상승 비즈니스포스트",
@@ -282,40 +316,6 @@
       "hasNews": true,
       "polishedHeadline": "SK하이닉스, 코스피 폭락 속 9%대 급락",
       "polishedBody": "SK하이닉스 주가가 코스피 폭락과 함께 9%대 하락했습니다. 이는 반도체 업황 둔화 우려가 반영된 결과로 풀이됩니다. 해당 종목은 하락 방향으로 태그되어 투자자 주의가 필요합니다. 향후 반도체 수출 지표와 글로벌 수요 변화를 주목해야 합니다."
-    },
-    {
-      "stockName": "LG전자",
-      "stockCode": "066570",
-      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
-      "headline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 +30.0%",
-        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
-      ],
-      "mentionScore": 80,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-06-09T02:00:21.075Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": 30,
-      "latestHeadline": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
-      "publishedAt": "Thu, 21 May 2026 07:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "피지컬AI 기대에 LG전자 급등",
-      "polishedBody": "LG전자는 피지컬AI에 대한 기대감으로 상한가를 기록했습니다. 기관 매수세가 유입되며 주가는 8%대 급등해 7800선을 회복했습니다. 이는 긍정적인 신호로 평가되며 투자 심리를 개선시켰습니다. 향후 피지컬AI 관련 추가 모멘텀과 기관 동향이 주목됩니다."
     },
     {
       "stockName": "SK스퀘어",
@@ -769,7 +769,55 @@
   ],
   "items": [
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": 30,
+      "price": null,
+      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
+      "mentionScore": 80,
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 +30.0%",
+        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-12T02:00:22.118Z",
+      "symbol": "010130",
+      "name": "고려아연",
+      "changeRate": -12,
+      "price": null,
+      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 비즈니스포스트",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
+      "mentionScore": 40.4,
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -12.0%",
+        "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -806,7 +854,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "462870",
       "name": "시프트업",
       "changeRate": 8,
@@ -837,7 +885,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "131970",
       "name": "두산테스나",
       "changeRate": null,
@@ -868,7 +916,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "0117P0",
       "name": "피스피스스튜디오",
       "changeRate": null,
@@ -892,7 +940,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "098460",
       "name": "고영",
       "changeRate": null,
@@ -923,31 +971,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
-      "symbol": "010130",
-      "name": "고려아연",
-      "changeRate": -12,
-      "price": null,
-      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 비즈니스포스트",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
-      "mentionScore": 40.4,
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 -12.0%",
-        "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": -9,
@@ -971,31 +995,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
-      "symbol": "066570",
-      "name": "LG전자",
-      "changeRate": 30,
-      "price": null,
-      "summary": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복 비즈니스포스트",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5",
-      "mentionScore": 80,
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 +30.0%",
-        "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '피지컬AI 기대' LG전자 상한가, 코스피 기관 매수세에 8%대 급등 7800선 회복",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zT0RRUjI1ZEhrenA1SFhXTXFXRDV0dllteldIa0NjMElfaVZsaGc4dTVkOHJLWmNFRzM3T1pYcDNQRFpHLXFPZDRNWDJ1SkJfMUktWXFKeE1tQWZMa1pLamJfb1dpVG5MRkJIVVBMX2s2UTQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": -7,
@@ -1019,7 +1019,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "417840",
       "name": "저스템",
       "changeRate": null,
@@ -1049,7 +1049,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "006800",
       "name": "미래에셋증권",
       "changeRate": -7,
@@ -1073,7 +1073,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": -13,
@@ -1097,7 +1097,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "095610",
       "name": "테스",
       "changeRate": 30,
@@ -1128,7 +1128,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "0130H0",
       "name": "엔에이치스팩33호",
       "changeRate": 208,
@@ -1152,7 +1152,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "272210",
       "name": "한화시스템",
       "changeRate": -5,
@@ -1176,7 +1176,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "100790",
       "name": "미래에셋벤처투자",
       "changeRate": null,
@@ -1200,7 +1200,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "122640",
       "name": "예스티",
       "changeRate": null,
@@ -1231,7 +1231,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": -17,
@@ -1262,7 +1262,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "128940",
       "name": "한미약품",
       "changeRate": null,
@@ -1293,7 +1293,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T01:00:18.068Z",
+      "timestamp": "2026-06-12T02:00:22.118Z",
       "symbol": "032830",
       "name": "삼성생명",
       "changeRate": null,
@@ -1325,8 +1325,8 @@
     }
   ],
   "writer": {
-    "provider": "telegram-public-web",
-    "model": "rule-based-scraper-v1"
+    "provider": "market-research-news",
+    "model": "rule-based-extractor-v1"
   },
   "polishWriter": {
     "provider": "opencode-zen",
