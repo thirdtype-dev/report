@@ -98,12 +98,46 @@ test('telegram stock extraction keeps company names and drops url or metric junk
 
 test('realtime generator prefers telegram public signals when fixtures are available', () => {
   const persistedPath = path.join(repoRoot, 'report/data/realtime-surge.json');
+  const marketResearchPath = path.join(repoRoot, 'report/data/market-research.json');
   const originalPersisted = fs.existsSync(persistedPath) ? fs.readFileSync(persistedPath, 'utf8') : null;
+  const originalMarketResearch = fs.existsSync(marketResearchPath) ? fs.readFileSync(marketResearchPath, 'utf8') : null;
 
   try {
     fs.writeFileSync(persistedPath, JSON.stringify({
       generated_date: '2026-05-26',
       signals: []
+    }, null, 2));
+    fs.writeFileSync(marketResearchPath, JSON.stringify({
+      generatedAt: '2026-05-27T01:40:00.000Z',
+      stockNewsCandidates: [
+        {
+          companyName: '마키나락스',
+          stockCode: '377480',
+          title: '마키나락스, AI 인프라 수혜 기대감에 상한가',
+          summary: 'AI 인프라 수혜 기대감이 부각됐다',
+          source: '연합뉴스',
+          sourceUrl: 'https://example.com/makina-news',
+          publishedAt: '2026-05-27T01:32:00+00:00'
+        },
+        {
+          companyName: 'LG전자',
+          stockCode: '066570',
+          title: 'LG전자, 전장 기대감에 반등',
+          summary: '전장 기대감과 수급 유입이 함께 언급됐다',
+          source: '매일경제',
+          sourceUrl: 'https://example.com/lg-news',
+          publishedAt: '2026-05-27T01:30:00+00:00'
+        },
+        {
+          companyName: '소룩스',
+          stockCode: '290690',
+          title: '소룩스, 지배구조 재편 기대감에 강세',
+          summary: '지배구조 재편 기대감이 반영됐다',
+          source: '한국경제',
+          sourceUrl: 'https://example.com/solux-news',
+          publishedAt: '2026-05-27T01:26:00+00:00'
+        }
+      ]
     }, null, 2));
 
     execFileSync(process.execPath, ['scripts/generate-realtime-surge.mjs'], {
@@ -111,6 +145,7 @@ test('realtime generator prefers telegram public signals when fixtures are avail
       env: {
         ...process.env,
         REALTIME_SLOT_HOUR: '11',
+        REALTIME_GENERATED_AT: '2026-05-27T02:00:00.000Z',
         REALTIME_TELEGRAM_FIXTURE_DIR: path.join(repoRoot, 'tests/fixtures/telegram-public'),
         REALTIME_POLISH_MOCK: '1'
       }
@@ -120,6 +155,11 @@ test('realtime generator prefers telegram public signals when fixtures are avail
       fs.unlinkSync(persistedPath);
     } else {
       fs.writeFileSync(persistedPath, originalPersisted);
+    }
+    if (originalMarketResearch == null) {
+      fs.unlinkSync(marketResearchPath);
+    } else {
+      fs.writeFileSync(marketResearchPath, originalMarketResearch);
     }
   }
 
@@ -509,6 +549,93 @@ test('realtime merge refreshes duplicate stock cards when the incoming signal re
   assert.equal(merged.mergedSignals[0].sourceUrl, 'https://example.com/semis-up');
 });
 
+test('realtime merge prioritizes duplicate refreshes beyond the fresh batch cap', async () => {
+  process.env.REALTIME_SLOT_HOUR = '15';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const fillerPrevious = [
+    ['SK하이닉스', '000660'],
+    ['NAVER', '035420'],
+    ['LG화학', '051910'],
+    ['기아', '000270'],
+    ['셀트리온', '068270'],
+    ['하나기술', '299030'],
+    ['티로보틱스', '117730'],
+    ['미래에셋증권', '006800'],
+    ['바이넥스', '053030'],
+    ['케이카', '381970'],
+    ['제이에스링크', '127120'],
+    ['코리안리', '003690'],
+    ['네오티스', '085910'],
+    ['한화오션', '042660'],
+    ['두산에너빌리티', '034020'],
+    ['현대자동차', '005380'],
+    ['아세아', '002030'],
+    ['삼성물산', '028260'],
+    ['삼성전기', '009150']
+  ];
+  const previousSignals = [
+    {
+      stockName: '삼성전자',
+      stockCode: '005930',
+      direction: 'down',
+      headline: '삼성전자·SK하이닉스, 미국 반도체주 하락에 동반 약세',
+      updatedAt: '2026-06-12T01:00:00.000Z',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/old-samsung',
+      relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/old-samsung' }]
+    },
+    ...fillerPrevious.map(([stockName, stockCode], index) => ({
+      stockName,
+      stockCode,
+      headline: `${stockName} 기존 뉴스`,
+      updatedAt: '2026-06-12T01:00:00.000Z',
+      source: '연합뉴스',
+      sourceUrl: `https://example.com/old-${index + 1}`,
+      relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: `https://example.com/old-${index + 1}` }]
+    }))
+  ];
+  const newSignals = [
+    {
+      stockName: 'LG전자',
+      stockCode: '066570',
+      headline: 'LG전자 피지컬AI 기대에 상한가',
+      updatedAt: '2026-06-12T06:00:00.000Z',
+      source: '비즈니스포스트',
+      sourceUrl: 'https://example.com/new-lg',
+      relatedPosts: [{ label: '관련기사1', source: '비즈니스포스트', url: 'https://example.com/new-lg' }]
+    },
+    {
+      stockName: '고려아연',
+      stockCode: '010130',
+      headline: '고려아연 금 가격 급락에 약세',
+      updatedAt: '2026-06-12T06:00:00.000Z',
+      source: '매일경제',
+      sourceUrl: 'https://example.com/new-korea-zinc',
+      relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/new-korea-zinc' }]
+    },
+    {
+      stockName: '삼성전자',
+      stockCode: '005930',
+      direction: 'up',
+      changeRate: 10,
+      headline: '삼성전자 주가 장중 10% 뛰어, SK하이닉스도 7% 올라',
+      updatedAt: '2026-06-12T06:00:00.000Z',
+      source: '비즈니스포스트',
+      sourceUrl: 'https://example.com/new-samsung-up',
+      relatedPosts: [{ label: '관련기사1', source: '비즈니스포스트', url: 'https://example.com/new-samsung-up' }]
+    }
+  ];
+
+  const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
+    freshBatchSize: 2,
+    visibleLimit: 20
+  });
+
+  assert.ok(merged.freshSignals.some((signal) => signal.stockName === '삼성전자'));
+  assert.equal(merged.mergedSignals.find((signal) => signal.stockName === '삼성전자')?.direction, 'up');
+  assert.ok(!merged.mergedSignals.some((signal) => signal.sourceUrl === 'https://example.com/old-samsung'));
+});
+
 test('realtime merge does not replace a duplicate stock card with older evidence', async () => {
   process.env.REALTIME_SLOT_HOUR = '11';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
@@ -703,6 +830,26 @@ test('realtime merge preserves prior-day signals when the fresh feed has no disp
   finalSignals.forEach((signal) => assertNoRealtimeBoilerplate(signal.polishedBody));
 });
 
+test('realtime payload excludes stale dated stock news from the current slot', async () => {
+  process.env.REALTIME_SLOT_HOUR = '15';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const payload = module.__testBuildRealtimePayload({
+    stockNewsCandidates: [
+      {
+        companyName: '삼성전자',
+        stockCode: '005930',
+        title: '삼성전자·SK하이닉스, 미국 반도체주 하락에 동반 약세',
+        summary: '전일 미국 반도체주 하락에 동반 약세',
+        source: '연합뉴스',
+        sourceUrl: 'https://example.com/stale-samsung-down',
+        publishedAt: '2026-06-11T00:16:55+00:00'
+      }
+    ]
+  }, 15, '2026-06-12T06:59:16.212Z', '2026-06-12', { maxSignals: 10 });
+
+  assert.equal(payload.signals.length, 0);
+});
+
 test('realtime payload hides telegram-only candidates and exposes only news links for mixed signals', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
@@ -792,6 +939,177 @@ test('google news backfill converts telegram-only company mentions into news can
   assert.equal(backfilled[0].companyName, '하나마이크론');
   assert.equal(backfilled[0].source, '연합뉴스');
   assert.equal(backfilled[0].sourceUrl, 'https://example.com/hana-news');
+});
+
+test('google news backfill fans out one article to every mentioned target company', async () => {
+  process.env.REALTIME_SLOT_HOUR = '15';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const backfilled = module.__testBuildGoogleNewsBackfillCandidates(
+    [
+      { companyName: '삼성전자', stockCode: '005930' },
+      { companyName: 'SK하이닉스', stockCode: '000660' }
+    ],
+    [
+      {
+        companyName: '삼성전자',
+        title: '삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라',
+        summary: '삼성전자와 SK하이닉스가 동반 강세를 보였다',
+        source: '비즈니스포스트',
+        sourceUrl: 'https://example.com/semis-up',
+        publishedAt: '2026-06-12T02:02:01Z'
+      }
+    ]
+  );
+
+  assert.deepEqual(backfilled.map((candidate) => candidate.companyName), ['삼성전자', 'SK하이닉스']);
+  assert.deepEqual(backfilled.map((candidate) => candidate.stockCode), ['005930', '000660']);
+});
+
+test('stale existing news does not satisfy realtime backfill freshness', async () => {
+  process.env.REALTIME_SLOT_HOUR = '15';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  assert.equal(module.__testHasNewsBackfillForCompany('삼성전자', [
+    {
+      companyName: '삼성전자',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/stale-samsung-down',
+      publishedAt: '2026-06-11T00:16:55+00:00'
+    }
+  ], '2026-06-12'), false);
+
+  assert.equal(module.__testHasNewsBackfillForCompany('삼성전자', [
+    {
+      companyName: '삼성전자',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/fresh-samsung-up',
+      publishedAt: '2026-06-12T05:16:55+00:00'
+    }
+  ], '2026-06-12'), true);
+});
+
+test('stale news-backed carry-over signals remain google backfill seeds', async () => {
+  process.env.REALTIME_SLOT_HOUR = '15';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  const seeds = module.__testBuildNewsBackfillSeedCandidates([
+    {
+      stockName: '삼성전자',
+      stockCode: '005930',
+      headline: '삼성전자·SK하이닉스, 미국 반도체주 하락에 동반 약세',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/stale-samsung-down',
+      publishedAt: '2026-06-11T00:16:55+00:00',
+      relatedPosts: [{ source: '연합뉴스', url: 'https://example.com/stale-samsung-down' }]
+    },
+    {
+      stockName: 'LG전자',
+      stockCode: '066570',
+      headline: 'LG전자, 피지컬AI 기대에 상한가',
+      source: '비즈니스포스트',
+      sourceUrl: 'https://example.com/fresh-lg-up',
+      publishedAt: '2026-06-12T05:16:55+00:00',
+      relatedPosts: [{ source: '비즈니스포스트', url: 'https://example.com/fresh-lg-up' }]
+    }
+  ], '2026-06-12');
+
+  assert.deepEqual(seeds.map((seed) => seed.companyName), ['삼성전자']);
+});
+
+test('market-news realtime payload uses google backfill candidates when telegram is absent', async () => {
+  process.env.REALTIME_SLOT_HOUR = '15';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  const payload = module.__testBuildNextRealtimePayload({
+    usingTelegram: false,
+    googleNewsBackfillCandidates: [
+      {
+        companyName: '삼성전자',
+        stockCode: '005930',
+        title: '삼성전자 주가 장중 10% 뛰어, SK하이닉스도 7% 올라',
+        summary: '미국 반도체주 훈풍에 삼성전자와 SK하이닉스가 강세를 보였다',
+        source: '비즈니스포스트',
+        sourceUrl: 'https://example.com/fresh-samsung-up',
+        publishedAt: '2026-06-12T02:02:01.000Z'
+      }
+    ],
+    combinedCandidates: [
+      {
+        companyName: '삼성전자',
+        stockCode: '005930',
+        title: '삼성전자 주가 장중 10% 뛰어, SK하이닉스도 7% 올라',
+        summary: '미국 반도체주 훈풍에 삼성전자와 SK하이닉스가 강세를 보였다',
+        source: '비즈니스포스트',
+        sourceUrl: 'https://example.com/fresh-samsung-up',
+        publishedAt: '2026-06-12T02:02:01.000Z'
+      },
+      {
+        companyName: '삼성전자',
+        stockCode: '005930',
+        title: '삼성전자·SK하이닉스, 미국 반도체주 하락에 동반 약세',
+        summary: '전일 미국 반도체주 하락에 동반 약세',
+        source: '연합뉴스',
+        sourceUrl: 'https://example.com/stale-samsung-down',
+        publishedAt: '2026-06-11T00:16:55.000Z'
+      }
+    ],
+    marketResearch: {
+      stockNewsCandidates: [
+        {
+          companyName: '삼성전자',
+          stockCode: '005930',
+          title: '삼성전자·SK하이닉스, 미국 반도체주 하락에 동반 약세',
+          summary: '전일 미국 반도체주 하락에 동반 약세',
+          source: '연합뉴스',
+          sourceUrl: 'https://example.com/stale-samsung-down',
+          publishedAt: '2026-06-11T00:16:55.000Z'
+        }
+      ]
+    },
+    slotHour: 15,
+    generatedAt: '2026-06-12T06:59:16.212Z',
+    generatedDate: '2026-06-12',
+    writer: { provider: 'market-research', model: 'stock-news-candidates' }
+  });
+
+  assert.equal(payload.summary.basedOn, 'market-research stock news candidates with Google News backfill');
+  assert.equal(payload.signals[0]?.stockName, '삼성전자');
+  assert.equal(payload.signals[0]?.direction, 'up');
+  assert.equal(payload.signals[0]?.sourceUrl, 'https://example.com/fresh-samsung-up');
+});
+
+test('realtime payload prefers directional news as the visible card when a newer neutral article exists', async () => {
+  process.env.REALTIME_SLOT_HOUR = '15';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  const payload = module.__testBuildRealtimePayload({
+    stockNewsCandidates: [
+      {
+        companyName: '삼성전자',
+        stockCode: '005930',
+        title: '"지금은 2회말 수준" 삼성전자 이 가격 이하는 기회',
+        summary: '삼성전자 밸류에이션 점검 기사',
+        source: '이투데이',
+        sourceUrl: 'https://example.com/samsung-neutral',
+        publishedAt: '2026-06-12T06:28:00Z'
+      },
+      {
+        companyName: '삼성전자',
+        stockCode: '005930',
+        title: '삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라',
+        summary: '미국 반도체주 훈풍에 삼성전자와 SK하이닉스가 강세를 보였다',
+        source: '비즈니스포스트',
+        sourceUrl: 'https://example.com/samsung-up',
+        publishedAt: '2026-06-12T02:02:01Z'
+      }
+    ]
+  }, 15, '2026-06-12T06:59:16.212Z', '2026-06-12', { maxSignals: 10 });
+
+  assert.equal(payload.signals[0]?.stockName, '삼성전자');
+  assert.equal(payload.signals[0]?.direction, 'up');
+  assert.equal(payload.signals[0]?.changeRate, 10);
+  assert.equal(payload.signals[0]?.headline, '삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라');
+  assert.equal(payload.signals[0]?.sourceUrl, 'https://example.com/samsung-up');
 });
 
 test('display normalization removes telegram source labels when news links exist', async () => {

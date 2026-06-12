@@ -142,6 +142,23 @@ function formatKstHuman(date) {
   }).format(date);
 }
 
+function formatKstDate(date) {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: REPORT_TIMEZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).formatToParts(date);
+  const mapped = Object.fromEntries(parts.filter((part) => part.type !== 'literal').map((part) => [part.type, part.value]));
+  return `${mapped.year}-${mapped.month}-${mapped.day}`;
+}
+
+function publishedKstDate(value) {
+  const time = Date.parse(value ?? '');
+  if (!Number.isFinite(time)) return null;
+  return formatKstDate(new Date(time));
+}
+
 function resolveSlotHour() {
   const raw = process.env.REALTIME_SLOT_HOUR;
   const fallbackHour = Number.parseInt(getKstParts().hour, 10);
@@ -500,7 +517,7 @@ function nearestDistance(index, positions) {
 }
 
 function inferDirection(text, stockName = null) {
-  const directionMatches = [...String(text ?? '').matchAll(/하한가|급락|하락|약세|내려|상한가|급등|상승|강세|반등|랠리|따따블|직행/gu)];
+  const directionMatches = [...String(text ?? '').matchAll(/하한가|급락|하락|약세|내려|상한가|급등|상승|강세|반등|랠리|따따블|직행|올라|뛰어/gu)];
   if (!directionMatches.length) return 'neutral';
 
   const targetPositions = findTargetNamePositions(String(text ?? ''), stockName);
@@ -515,7 +532,7 @@ function inferDirection(text, stockName = null) {
   }
 
   if (/(하한가|급락|하락|약세|내려)/u.test(text)) return 'down';
-  if (/(상한가|급등|상승|강세|반등|랠리|따따블|직행)/u.test(text)) return 'up';
+  if (/(상한가|급등|상승|강세|반등|랠리|따따블|직행|올라|뛰어)/u.test(text)) return 'up';
   return 'neutral';
 }
 
@@ -524,7 +541,7 @@ function inferChangeRate(text, direction, stockName = null) {
   if (/상한가/u.test(text)) return 30;
   if (/하한가/u.test(text)) return -30;
 
-  const matches = [...String(text ?? '').matchAll(/(\d+(?:\.\d+)?)%\s*대?\s*(급등|급락|상승|하락|강세|약세|내려)/gu)];
+  const matches = [...String(text ?? '').matchAll(/(\d+(?:\.\d+)?)%\s*대?\s*(급등|급락|상승|하락|강세|약세|내려|올라|뛰어)/gu)];
   const targetPositions = findTargetNamePositions(String(text ?? ''), stockName);
   const matched = targetPositions.length && matches.length
     ? matches
@@ -643,6 +660,11 @@ function toArticleCandidate(article, index) {
   };
 }
 
+function isCurrentSlotNewsCandidate(candidate, generatedDate) {
+  const candidateDate = publishedKstDate(candidate?.publishedAt);
+  return !candidateDate || candidateDate === generatedDate;
+}
+
 function buildEvidence(articleGroup, displayArticleGroup = articleGroup) {
   const evidence = [];
   const sources = [...new Set(displayArticleGroup.map((item) => item.source).filter(Boolean))];
@@ -680,10 +702,12 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
   const newsArticles = articleGroup.filter((item) => item?.sourceUrl && !isTelegramSource(item.source));
   const displayArticles = newsArticles.length ? newsArticles : articleGroup;
   const newestDisplay = displayArticles[0];
-  const direction = newestDisplay?.direction ?? newest?.direction ?? 'neutral';
+  const directionalDisplay = displayArticles.find((item) => item.changeRate != null || item.direction !== 'neutral');
+  const primaryDisplay = directionalDisplay ?? newestDisplay;
+  const direction = primaryDisplay?.direction ?? newest?.direction ?? 'neutral';
   const sentimentLabel = direction === 'up' ? 'positive' : direction === 'down' ? 'negative' : 'neutral';
-  const headlineSummary = newestDisplay?.summary || newestDisplay?.headline || `${companyName} 관련 기사 흐름이 포착됐습니다.`;
-  const supportingHeadline = displayArticles.find((item) => item.headline && item.headline !== newestDisplay?.headline)?.headline ?? null;
+  const headlineSummary = primaryDisplay?.summary || primaryDisplay?.headline || `${companyName} 관련 기사 흐름이 포착됐습니다.`;
+  const supportingHeadline = displayArticles.find((item) => item.headline && item.headline !== primaryDisplay?.headline)?.headline ?? null;
   const evidencePoints = buildEvidence(articleGroup, displayArticles);
   const mentionScore = computeMentionScore(articleGroup);
   const relatedPosts = displayArticles
@@ -700,10 +724,10 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
     stockName: companyName,
     stockCode: getPreferredStockCode(
       companyName,
-      newestDisplay?.stockCode ?? articleGroup.find((item) => item.stockCode)?.stockCode ?? null
+      primaryDisplay?.stockCode ?? articleGroup.find((item) => item.stockCode)?.stockCode ?? null
     ),
     summary: supportingHeadline || headlineSummary,
-    headline: newestDisplay?.headline ?? `${companyName} 관련 기사 흐름`,
+    headline: primaryDisplay?.headline ?? `${companyName} 관련 기사 흐름`,
     evidencePoints,
     mentionScore,
     sentimentLabel,
@@ -711,11 +735,11 @@ function buildSignal(companyName, articleGroup, slotLabel, generatedAt) {
     updatedAt: generatedAt,
     cycleLabel: slotLabel.cycleLabel,
     direction,
-    changeRate: newestDisplay?.changeRate ?? newest?.changeRate ?? null,
-    latestHeadline: newestDisplay?.headline ?? newest?.headline ?? null,
-    source: newestDisplay?.source ?? null,
-    sourceUrl: newestDisplay?.sourceUrl ?? null,
-    publishedAt: newestDisplay?.publishedAt ?? newest?.publishedAt ?? null,
+    changeRate: primaryDisplay?.changeRate ?? newest?.changeRate ?? null,
+    latestHeadline: primaryDisplay?.headline ?? newest?.headline ?? null,
+    source: primaryDisplay?.source ?? null,
+    sourceUrl: primaryDisplay?.sourceUrl ?? null,
+    publishedAt: primaryDisplay?.publishedAt ?? newest?.publishedAt ?? null,
     relatedPosts,
     hasTelegram: articleGroup.some((item) => isTelegramSource(item.source)),
     hasNews: newsArticles.length > 0
@@ -817,8 +841,13 @@ function shouldRefreshExistingSignal(incoming, previous) {
   return signalEvidenceSignature(incoming) !== signalEvidenceSignature(previous);
 }
 
-function hasNewsBackfillForCompany(companyName, candidates) {
-  return candidates.some((item) => item.companyName === companyName && !isTelegramSource(item.source) && item.sourceUrl);
+function hasNewsBackfillForCompany(companyName, candidates, generatedDate = null) {
+  return candidates.some((item) => (
+    item.companyName === companyName
+    && !isTelegramSource(item.source)
+    && item.sourceUrl
+    && (!generatedDate || isCurrentSlotNewsCandidate(item, generatedDate))
+  ));
 }
 
 function parseGoogleNewsRss(xml) {
@@ -857,31 +886,36 @@ function buildGoogleNewsBackfillCandidates(telegramCandidates, googleNewsItems) 
   const seen = new Set();
   const backfilled = [];
   for (const item of googleNewsItems) {
-    const companyName = normalizeCompanyName(item?.companyName ?? '');
-    if (!companyName || !telegramByCompany.has(companyName)) continue;
-    const baseCandidate = telegramByCompany.get(companyName);
-    const key = item.sourceUrl || `${companyName}:${item.title}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    backfilled.push({
-      companyName,
-      stockCode: baseCandidate?.stockCode ?? null,
-      title: cleanText(item.title),
-      summary: cleanText(item.summary),
-      source: cleanText(item.source),
-      sourceUrl: item.sourceUrl,
-      publishedAt: item.publishedAt ?? null
+    const haystack = normalizeSearchText(`${item?.title ?? ''} ${item?.summary ?? ''}`);
+    const mentionedCompanies = [...telegramByCompany.keys()].filter((companyName) => {
+      const needle = normalizeSearchText(companyName);
+      return needle && haystack.includes(needle);
     });
+    for (const companyName of mentionedCompanies) {
+      const baseCandidate = telegramByCompany.get(companyName);
+      const key = `${companyName}:${item.sourceUrl || item.title}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      backfilled.push({
+        companyName,
+        stockCode: baseCandidate?.stockCode ?? null,
+        title: cleanText(item.title),
+        summary: cleanText(item.summary),
+        source: cleanText(item.source),
+        sourceUrl: item.sourceUrl,
+        publishedAt: item.publishedAt ?? null
+      });
+    }
   }
   return backfilled;
 }
 
-async function fetchGoogleNewsBackfillCandidates(telegramCandidates, existingNewsCandidates) {
+async function fetchGoogleNewsBackfillCandidates(telegramCandidates, existingNewsCandidates, generatedDate = null) {
   const targetCompanies = [...new Set(
     telegramCandidates
       .map((candidate) => normalizeCompanyName(candidate?.companyName ?? ''))
       .filter(Boolean)
-      .filter((companyName) => !hasNewsBackfillForCompany(companyName, existingNewsCandidates))
+      .filter((companyName) => !hasNewsBackfillForCompany(companyName, existingNewsCandidates, generatedDate))
   )].slice(0, REALTIME_GOOGLE_BACKFILL_COMPANY_LIMIT);
 
   if (!targetCompanies.length) return [];
@@ -893,7 +927,7 @@ async function fetchGoogleNewsBackfillCandidates(telegramCandidates, existingNew
       .filter((item) => {
         const haystack = normalizeSearchText(`${item.title} ${item.summary}`);
         const needle = normalizeSearchText(companyName);
-        return needle && haystack.includes(needle);
+        return needle && haystack.includes(needle) && (!generatedDate || isCurrentSlotNewsCandidate(item, generatedDate));
       })
       .slice(0, REALTIME_GOOGLE_BACKFILL_ARTICLES_PER_COMPANY)
       .map((item) => ({ ...item, companyName }));
@@ -921,7 +955,16 @@ function mergeRealtimeSignals(newSignals, previousSignals, {
     if (!isDisplayableSignal(signal)) continue;
     const key = getSignalKey(signal);
     if (freshKeys.has(key)) continue;
-    if (previousKeys.has(key) && !shouldRefreshExistingSignal(signal, previousByKey.get(key))) continue;
+    if (!previousKeys.has(key)) continue;
+    if (!shouldRefreshExistingSignal(signal, previousByKey.get(key))) continue;
+    freshSignals.push(signal);
+    freshKeys.add(key);
+  }
+
+  for (const signal of hydratedNewSignals) {
+    if (!isDisplayableSignal(signal)) continue;
+    const key = getSignalKey(signal);
+    if (freshKeys.has(key) || previousKeys.has(key)) continue;
     freshSignals.push(signal);
     freshKeys.add(key);
     if (freshSignals.length >= targetFreshCount) break;
@@ -1407,6 +1450,7 @@ function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDat
   const candidates = (articleSource.stockNewsCandidates ?? [])
     .map(toArticleCandidate)
     .filter(Boolean)
+    .filter((candidate) => isCurrentSlotNewsCandidate(candidate, generatedDate))
     .sort((left, right) => left.recencyHours - right.recencyHours);
 
   const grouped = new Map();
@@ -1470,13 +1514,13 @@ async function loadPreviousRealtimePayload() {
   }
 }
 
-function buildNewsBackfillSeedCandidates(previousSignals) {
+function buildNewsBackfillSeedCandidates(previousSignals, generatedDate = null) {
   const seeds = [];
   for (const signal of Array.isArray(previousSignals) ? previousSignals : []) {
     if (!signal || typeof signal !== 'object') continue;
     const companyName = normalizeCompanyName(signal.stockName ?? '');
     if (!companyName || !signal.stockCode) continue;
-    if (isNewsBackedSignal(signal)) continue;
+    if (isNewsBackedSignal(signal) && (!generatedDate || isCurrentSlotNewsCandidate(signal, generatedDate))) continue;
     seeds.push({
       companyName,
       stockCode: signal.stockCode,
@@ -1490,10 +1534,49 @@ function buildNewsBackfillSeedCandidates(previousSignals) {
   return seeds;
 }
 
+function buildNextRealtimePayload({
+  usingTelegram,
+  googleNewsBackfillCandidates,
+  combinedCandidates,
+  marketResearch,
+  slotHour,
+  generatedAt,
+  generatedDate,
+  writer
+}) {
+  if (usingTelegram) {
+    return buildRealtimePayload({ stockNewsCandidates: combinedCandidates }, slotHour, generatedAt, generatedDate, {
+      writer,
+      basedOn: 'public telegram channel mentions with market news backfill',
+      subtitlePrefix: '공개 텔레그램 채널 기반',
+      maxSignals: 40
+    });
+  }
+
+  if (Array.isArray(googleNewsBackfillCandidates) && googleNewsBackfillCandidates.length) {
+    return buildRealtimePayload({ stockNewsCandidates: combinedCandidates }, slotHour, generatedAt, generatedDate, {
+      writer,
+      basedOn: 'market-research stock news candidates with Google News backfill',
+      subtitlePrefix: '시장 뉴스+Google News 기반',
+      maxSignals: 40
+    });
+  }
+
+  return buildRealtimePayload(marketResearch, slotHour, generatedAt, generatedDate, {
+    writer,
+    basedOn: 'market-research stock news candidates',
+    subtitlePrefix: '시장 뉴스 기반',
+    maxSignals: 40
+  });
+}
+
 async function main() {
   const slotHour = resolveSlotHour();
   const slotLabel = SLOT_LABELS[slotHour];
-  const now = new Date();
+  const now = process.env.REALTIME_GENERATED_AT ? new Date(process.env.REALTIME_GENERATED_AT) : new Date();
+  if (Number.isNaN(now.getTime())) {
+    throw new Error(`Invalid REALTIME_GENERATED_AT: ${process.env.REALTIME_GENERATED_AT}`);
+  }
   const kst = getKstParts(now);
   const schedule = SLOT_SCHEDULE[0];
 
@@ -1547,26 +1630,23 @@ async function main() {
   const telegramMessages = await loadTelegramSource();
   const telegramCandidates = messagesToTelegramNewsCandidates(telegramMessages);
   const marketResearchCandidates = Array.isArray(marketResearch.stockNewsCandidates) ? marketResearch.stockNewsCandidates : [];
-  const previousBackfillSeeds = buildNewsBackfillSeedCandidates(previousSignals);
+  const previousBackfillSeeds = buildNewsBackfillSeedCandidates(previousSignals, generatedDate);
   const usingTelegram = telegramCandidates.length > 0;
   const googleNewsBackfillCandidates = (usingTelegram || previousBackfillSeeds.length)
-    ? await fetchGoogleNewsBackfillCandidates([...telegramCandidates, ...previousBackfillSeeds], marketResearchCandidates)
+    ? await fetchGoogleNewsBackfillCandidates([...telegramCandidates, ...previousBackfillSeeds], marketResearchCandidates, generatedDate)
     : [];
   const combinedCandidates = [...telegramCandidates, ...googleNewsBackfillCandidates, ...marketResearchCandidates];
   const writer = usingTelegram ? TELEGRAM_PUBLIC_WRITER : MARKET_RESEARCH_WRITER;
-  const nextPayload = usingTelegram
-    ? buildRealtimePayload({ stockNewsCandidates: combinedCandidates }, slotHour, generatedAt, generatedDate, {
-      writer,
-      basedOn: 'public telegram channel mentions with market news backfill',
-      subtitlePrefix: '공개 텔레그램 채널 기반',
-      maxSignals: 40
-    })
-    : buildRealtimePayload(marketResearch, slotHour, generatedAt, generatedDate, {
-      writer,
-      basedOn: 'market-research stock news candidates',
-      subtitlePrefix: '시장 뉴스 기반',
-      maxSignals: 40
-    });
+  const nextPayload = buildNextRealtimePayload({
+    usingTelegram,
+    googleNewsBackfillCandidates,
+    combinedCandidates,
+    marketResearch,
+    slotHour,
+    generatedAt,
+    generatedDate,
+    writer
+  });
   const { freshSignals, mergedSignals } = mergeRealtimeSignals(nextPayload.signals, previousSignals);
   const polishTargets = freshSignals.map(hydrateSignalMetadata);
   const polished = polishTargets.length
@@ -1674,6 +1754,22 @@ export function __testRefreshRealtimeDescriptions(payload, generatedAt, polished
 
 export function __testBuildGoogleNewsBackfillCandidates(telegramCandidates, googleNewsItems) {
   return buildGoogleNewsBackfillCandidates(telegramCandidates, googleNewsItems);
+}
+
+export async function __testFetchGoogleNewsBackfillCandidates(telegramCandidates, existingNewsCandidates, generatedDate) {
+  return fetchGoogleNewsBackfillCandidates(telegramCandidates, existingNewsCandidates, generatedDate);
+}
+
+export function __testHasNewsBackfillForCompany(companyName, candidates, generatedDate) {
+  return hasNewsBackfillForCompany(companyName, candidates, generatedDate);
+}
+
+export function __testBuildNewsBackfillSeedCandidates(previousSignals, generatedDate) {
+  return buildNewsBackfillSeedCandidates(previousSignals, generatedDate);
+}
+
+export function __testBuildNextRealtimePayload(options) {
+  return buildNextRealtimePayload(options);
 }
 
 export function __testNormalizeSignalDisplaySources(signal) {
