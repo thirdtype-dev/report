@@ -797,11 +797,20 @@ function signalEvidenceSignature(signal) {
   ].join('|');
 }
 
+function isOppositeDirectionalSignal(incoming, previous) {
+  const incomingDirection = incoming?.direction;
+  const previousDirection = previous?.direction;
+  return (incomingDirection === 'up' && previousDirection === 'down')
+    || (incomingDirection === 'down' && previousDirection === 'up');
+}
+
 function shouldRefreshExistingSignal(incoming, previous) {
   if (!incoming || !previous) return false;
   const incomingTime = signalEvidenceTime(incoming);
   const previousTime = signalEvidenceTime(previous);
   if (incomingTime && previousTime && incomingTime > previousTime) return true;
+  if (incomingTime && previousTime && incomingTime < previousTime) return false;
+  if (incomingTime && previousTime && isOppositeDirectionalSignal(incoming, previous)) return true;
   if (incomingTime && previousTime) return false;
   if (incomingTime && !previousTime) return true;
   if (!incomingTime && previousTime) return false;

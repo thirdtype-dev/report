@@ -460,6 +460,55 @@ test('realtime merge refreshes duplicate stock cards when the incoming signal ha
   assert.ok(!merged.mergedSignals.some((signal) => signal.sourceUrl === 'https://example.com/old-samsung'));
 });
 
+test('realtime merge refreshes duplicate stock cards when the incoming signal reverses direction', async () => {
+  process.env.REALTIME_SLOT_HOUR = '11';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+
+  const previousSignals = [
+    {
+      stockName: '삼성전자',
+      stockCode: '005930',
+      direction: 'down',
+      sentimentLabel: 'negative',
+      changeRate: -5,
+      headline: '삼성전자·SK하이닉스, 미국 반도체주 하락에 동반 약세',
+      summary: '미국 반도체주 하락에 동반 약세',
+      updatedAt: '2026-06-11T02:35:07.190Z',
+      source: '연합뉴스',
+      sourceUrl: 'https://example.com/semis-down',
+      relatedPosts: [{ label: '관련기사1', source: '연합뉴스', url: 'https://example.com/semis-down' }],
+      polishedHeadline: '삼성전자·SK하이닉스, 미국 반도체주 하락에 동반 약세',
+      polishedBody: '삼성전자는 미국 반도체주 하락 여파로 약세를 보였습니다. 반도체 대형주 전반의 투자심리가 위축됐습니다. 기존 카드는 하락 방향의 부담 요인을 중심으로 정리됐습니다. 장중에는 낙폭 축소 여부를 확인해야 합니다.'
+    }
+  ];
+
+  const newSignals = [
+    {
+      stockName: '삼성전자',
+      stockCode: '005930',
+      direction: 'up',
+      sentimentLabel: 'positive',
+      changeRate: 5,
+      headline: '삼성전자·SK하이닉스, 반도체 저가매수에 동반 급등',
+      summary: '오늘 삼성전자와 SK하이닉스가 동반 급등',
+      updatedAt: '2026-06-11T02:35:07.190Z',
+      source: '매일경제',
+      sourceUrl: 'https://example.com/semis-up',
+      relatedPosts: [{ label: '관련기사1', source: '매일경제', url: 'https://example.com/semis-up' }]
+    }
+  ];
+
+  const merged = module.__testMergeRealtimeSignals(newSignals, previousSignals, {
+    freshBatchSize: 2,
+    visibleLimit: 20
+  });
+
+  assert.deepEqual(merged.freshSignals.map((signal) => signal.stockName), ['삼성전자']);
+  assert.equal(merged.mergedSignals[0].direction, 'up');
+  assert.equal(merged.mergedSignals[0].headline, '삼성전자·SK하이닉스, 반도체 저가매수에 동반 급등');
+  assert.equal(merged.mergedSignals[0].sourceUrl, 'https://example.com/semis-up');
+});
+
 test('realtime merge does not replace a duplicate stock card with older evidence', async () => {
   process.env.REALTIME_SLOT_HOUR = '11';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
