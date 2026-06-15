@@ -1,150 +1,463 @@
 {
-  "generated_at": "2026-06-12T07:20:38.321Z",
-  "generated_date": "2026-06-12",
-  "slot_hour": 15,
-  "cycle_label": "KST_1500",
-  "slot_label": "15:00",
+  "generated_at": "2026-06-15T01:00:19.798Z",
+  "generated_date": "2026-06-15",
+  "slot_hour": 10,
+  "cycle_label": "KST_1000",
+  "slot_label": "10:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 15:00 실시간 급등",
-    "subtitle": "시장 뉴스+Google News 기반 급등 후보 20건",
-    "basedOn": "market-research stock news candidates with Google News backfill"
+    "title": "KST 10:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
+    "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "\"지금은 2회말 수준\"⋯삼성전자 '이 가격' 이하는 기회 [찐코노미]",
-      "headline": "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
+      "stockName": "삼성전기",
+      "stockCode": "009150",
+      "summary": "글로벌 MLCC 핵심 기업 삼성전기 주가 다시 불기둥...고부가가치 중심 체질 개선 중장기 성장 박차",
+      "headline": "[특징주] 제2의 반도체 대장주?.. 삼성전기·LG이노텍 기판주 '급등'",
       "evidencePoints": [
-        "출처 이투데이, 비즈니스포스트, 한국경제 기반 기사 3건",
-        "제목 기준 변동률 단서 +10.0%",
-        "\"지금은 2회말 수준\"⋯삼성전자 '이 가격' 이하는 기회 [찐코노미]",
-        "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라"
+        "출처 글로벌이코노믹, 핀포인트뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "[특징주] 제2의 반도체 대장주?.. 삼성전기·LG이노텍 기판주 '급등'",
+        "글로벌 MLCC 핵심 기업 삼성전기 주가 다시 불기둥...고부가가치 중심 체질 개선 중장기 성장 박차"
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-06-12T07:20:38.321Z",
-      "cycleLabel": "KST_1500",
+      "channelCount": 4,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
       "direction": "up",
-      "changeRate": 10,
-      "latestHeadline": "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5OMXdocDlpOGs5RHNLYVI5X3NxVC1ERWZ5Z1RNR2dmcWVPRWJTT2RaemxPRlZtMEp1akU5bTdFQjcwdTd3ZlhZOGtCX1l2Umh4SkNyTVo2d3UwbTZJaXFZWkpzcmZtYzhwU2NwYXVQNC1BVGc?oc=5",
-      "publishedAt": "Fri, 12 Jun 2026 02:02:01 GMT",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 제2의 반도체 대장주?.. 삼성전기·LG이노텍 기판주 '급등'",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZ205dnB2clpJVlFSMG5nNkRUTVZaMy1neGYyNU1iU0t5NFBmVHNfT3lfbFlNNmlDSHktMlFNSVVIZVk0UEZId3NfSHNhZ2hoMEVjZjFjWEVWZDRyWHdKZHVoVS1ubWdfTlVBYzJtaDloX3IzbGhmV3ZFWDJ4N0s0a3Bzcnc2aVE4?oc=5",
+      "publishedAt": "Mon, 15 Jun 2026 00:53:26 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "\"지금은 2회말 수준\"⋯삼성전자 '이 가격' 이하는 기회 [찐코노미]",
-          "source": "이투데이",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4yOHVUSzVSZlBsdHZKaEZ3NGx5LUs0M3BpN1FsclVydDVuZ1NjWVdOSTdaMHpzdTZ4UkpwRTYtNWhEU3JwREVCOXp3aDNMaGVtQWtpMw?oc=5"
+          "title": "[특징주] 제2의 반도체 대장주?.. 삼성전기·LG이노텍 기판주 '급등'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZ205dnB2clpJVlFSMG5nNkRUTVZaMy1neGYyNU1iU0t5NFBmVHNfT3lfbFlNNmlDSHktMlFNSVVIZVk0UEZId3NfSHNhZ2hoMEVjZjFjWEVWZDRyWHdKZHVoVS1ubWdfTlVBYzJtaDloX3IzbGhmV3ZFWDJ4N0s0a3Bzcnc2aVE4?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5OMXdocDlpOGs5RHNLYVI5X3NxVC1ERWZ5Z1RNR2dmcWVPRWJTT2RaemxPRlZtMEp1akU5bTdFQjcwdTd3ZlhZOGtCX1l2Umh4SkNyTVo2d3UwbTZJaXFZWkpzcmZtYzhwU2NwYXVQNC1BVGc?oc=5"
+          "title": "글로벌 MLCC 핵심 기업 삼성전기 주가 다시 불기둥...고부가가치 중심 체질 개선 중장기 성장 박차",
+          "source": "핀포인트뉴스",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAzLUoydUpQbWFDeWlhV0dkUUxXVlBIcGhVOG1wWDFBbEU1MzF5QlYtZkJYbmxrTndVa2psdnkwY1cwTGpQOWRUeVF2bjdoaG9JZVIzdVlHZlNSRjd1bTN3eFl6TVVPTDhhUVF4angwRWlFLWvSAXdBVV95cUxPS0J5cXZTbzN6TWd4MFc2Y2d5Vi1FdEV4aFI2RzNvRlVkMzI2a2JhSXl1Y0hjMHp2Tk9WZm93MTNKY0NGbVd0V29ydmJzcGhkc2xMUzZiYksyUG4zUjJrblMyaWR4ekQtbXBCekFjM2pnUV83eklFaw?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "삼성전기, MLCC 고부가 체질 개선으로 급등",
+      "polishedBody": "삼성전기는 글로벌 MLCC 핵심 기업으로서 고부가가치 중심 체질 개선에 박차를 가하고 있습니다. 주가는 '제2의 반도체 대장주'라는 기대감에 힘입어 급등세를 보였습니다. 이는 중장기 성장 전략이 시장에서 긍정적으로 평가받고 있음을 의미합니다. 향후 고부가 MLCC 수요 확대와 실적 개선 여부가 추가 상승의 핵심 변수가 될 것입니다."
+    },
+    {
+      "stockName": "미래에셋벤처투자",
+      "stockCode": "100790",
+      "summary": "[특징주] 미래에셋벤처투자, 스페이스X 공모주 물량 전량 삭감 '급락'",
+      "headline": "미래에셋벤처투자 주가, 6월 15일 장중 31,100원 19.85% 하락",
+      "evidencePoints": [
+        "출처 TopStarNews, 글로벌이코노믹 기반 기사 2건",
+        "제목 기준 변동률 단서 -19.9%",
+        "미래에셋벤처투자 주가, 6월 15일 장중 31,100원 19.85% 하락",
+        "[특징주] 미래에셋벤처투자, 스페이스X 공모주 물량 전량 삭감 '급락'"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": -19.85,
+      "latestHeadline": "미래에셋벤처투자 주가, 6월 15일 장중 31,100원 19.85% 하락",
+      "source": "TopStarNews",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ad0NFN0pxTzZFRDNJOF9RZy1QT2J5a1BYWEVXSGU2OTNBem83Z2RVanEyckNRVzlWb1JmTllFeGdGaENMQmMwSldtWUdmS0NYb2xSX1JySG1UWlh2VWdvNUFrdUtiYjA5V3plRGMwZWluQQ?oc=5",
+      "publishedAt": "Mon, 15 Jun 2026 00:53:52 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "미래에셋벤처투자 주가, 6월 15일 장중 31,100원 19.85% 하락",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ad0NFN0pxTzZFRDNJOF9RZy1QT2J5a1BYWEVXSGU2OTNBem83Z2RVanEyckNRVzlWb1JmTllFeGdGaENMQmMwSldtWUdmS0NYb2xSX1JySG1UWlh2VWdvNUFrdUtiYjA5V3plRGMwZWluQQ?oc=5"
         },
         {
-          "label": "관련기사3",
-          "title": "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JaXRBVDFjUms4UjY1V0w5TWRUSXcyZm5CUl83S09rdXozOWhMaXpzeFFqSFFwMXdPa1JITkExREtWTVZjc01wRlF4YktXNnhmbU1VX19TenJPd9IBVEFVX3lxTE9XS2Y5NUJ3SjdZSnFkSUgtUnlTek16SVBHZnZkdDhjVWNxSGpSdm1MTF9oRmVmSElfUktQTXhzV25VckRDS1ZmdnEyUUhOMFhEU3lNcA?oc=5"
+          "label": "관련기사2",
+          "title": "[특징주] 미래에셋벤처투자, 스페이스X 공모주 물량 전량 삭감 '급락'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbktMa3h0LXg5SVU1eFZmOFVhQ3NfN0s0V1VRMVpzcFlVMXd3RktXWGxieDB1RGhhbnR4SmJ0V3JuR1kxSjVuNVRGaS1manZiOWpqNkhYYnJTaFRTcEhLUy00cC1CWEJ2REFDY2JibWQ4SzNRa3ItWVdyMXFLcmI0WlVpSkluNDNa?oc=5"
         }
       ],
       "hasTelegram": false,
       "hasNews": true,
-      "polishedHeadline": "미 반도체주 훈풍에 삼성전자 장중 10% 급등",
-      "polishedBody": "미국 반도체주 강세 영향으로 삼성전자 주가가 장중 10% 상승했습니다. 이는 SK하이닉스도 7% 오르며 동반 강세를 보인 점에서 업종 전반의 훈풍이 확인됩니다. 긍정적인 시장 분위기 속에서도 추가 상승 여력에 대한 분석이 나오고 있어 주목됩니다. 향후 미국 반도체 지수와 주요 고객사 실적이 추가 방향성을 결정할 변수입니다."
+      "polishedHeadline": "미래에셋벤처투자, 스페이스X 공모주 물량 삭감에 급락",
+      "polishedBody": "미래에셋벤처투자는 스페이스X 공모주 물량이 전량 삭감되면서 직접적인 타격을 입었습니다. 주가는 장중 19.85% 하락하며 31,100원까지 떨어졌습니다. 이는 기대했던 공모주 수익이 사라진 점에서 부정적 신호로 해석됩니다. 향후 대체 투자처 발굴이나 추가 공모주 배정 소식이 주가 반등의 관건이 될 것입니다."
     },
     {
-      "stockName": "테스",
-      "stockCode": "095610",
-      "summary": "[장중수급포착] 테스, 외국인/기관 동시 순매수… 주가 +10.79%",
-      "headline": "테스 주가, 6월 9일 장중 156,400원 18.93% 상승",
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
+      "headline": "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
       "evidencePoints": [
-        "출처 뉴스핌, MSN 기반 기사 2건",
-        "제목 기준 변동률 단서 +18.9%",
-        "[장중수급포착] 테스, 외국인/기관 동시 순매수… 주가 +10.79%",
-        "테스 주가, 6월 9일 장중 156,400원 18.93% 상승"
+        "출처 글로벌이코노믹, 뉴스1, 금융소비자뉴스, 연합인포맥스, 마켓인 기반 기사 5건",
+        "상승/강세 키워드 우세",
+        "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+        "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 5,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcGF6N3VrUnlZalRhTjBsNkx6bUcwQ2RKNHJDUEhzdG9PckZkRVJpdkR0QndVQU52ZHIxUGtpV2czV21JeTFfSXg5Z1F3cVgtcDBZak1IbVYtNzZ6dE4xVkhLTG9ma0RoRnpsZzdDWms0YlBMWGVCNXlUYmhiNVVzTXMwdG8wUDdy?oc=5",
+      "publishedAt": "Mon, 15 Jun 2026 00:48:36 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcGF6N3VrUnlZalRhTjBsNkx6bUcwQ2RKNHJDUEhzdG9PckZkRVJpdkR0QndVQU52ZHIxUGtpV2czV21JeTFfSXg5Z1F3cVgtcDBZak1IbVYtNzZ6dE4xVkhLTG9ma0RoRnpsZzdDWms0YlBMWGVCNXlUYmhiNVVzTXMwdG8wUDdy?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
+          "source": "뉴스1",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5FOXFJcnBjSnpkd2s4TXItanJZTmEzdVQ1SWJNWlFvZ1F5WDY2M0x0LUpVdktNRlA0bktVUFR2bGlYTVpNVUlnOThralBJSnJlb0NUQ2dacWdsSEpLRzQ4?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "삼성생명, 삼성전자와의 주가 연동 구조 당분간 고착화…목표가↑",
+          "source": "금융소비자뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBXd0NQVVp5amZzVUZXX2xlLTZUdnh1cWl4QW9FYUJRYk1tYlZaUlh6Y3lqZThtUF9CdUVwMnpWVi1vMkJLdHVxRVNwOFNoaTNRNV9ES210VEc1YlRLeHZEcGZ2S09UcmNzX3c?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자, 미국-이란 종전 합의에 동반 급등",
+      "polishedBody": "삼성전자는 미국과 이란의 종전 합의 소식에 힘입어 주가가 급등했습니다. 이는 지정학적 리스크 완화가 반도체 업종 전반에 긍정적 영향을 미친 결과입니다. 시장은 안전자산 선호 심리가 줄어들고 위험자산 선호가 살아난 점을 긍정적으로 평가했습니다. 향후 글로벌 반도체 수요 회복 속도와 추가 지정학적 이벤트가 주가 방향을 결정할 것입니다."
+    },
+    {
+      "stockName": "삼성물산",
+      "stockCode": "028260",
+      "summary": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+      "headline": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
+      "evidencePoints": [
+        "출처 머니투데이, 뉴스1 기반 기사 2건",
+        "제목 기준 변동률 단서 +13.0%",
+        "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+        "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]"
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
       "channelCount": 2,
-      "updatedAt": "2026-06-12T07:20:38.321Z",
-      "cycleLabel": "KST_1500",
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
       "direction": "up",
-      "changeRate": 18.93,
-      "latestHeadline": "테스 주가, 6월 9일 장중 156,400원 18.93% 상승",
-      "source": "MSN",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNUUU0bFMxQnZBSlZHcVNOUkVyYXZyS1IyaXgyUDU2b3dfbG12SFZjSEFzQjlBRk5lb05pZnVQeGRfQTNNSXFqbjZuY1BUWHhfeXVYbGhsUGZ0ZjdDRV9YaHh4anZNT1pOUzJoQWJaMkM0WGZJZHhYWHVnbUR1STM5ZUJYa2loNkpQOWE0Z1pNd0FCeVhuc3VWTXVkZUx4RGVuVHlLV1J3R0d1UVlDb1dDY2ZuMk1lRWs5c0JSYU9WclBqVHhoSnk1LWg5aG5FdkV3OUZsTjRPZWRrOUZqcDZjWjdtZ053eVJuWXptRmh5MTU0WElXWnF4NWdWOA?oc=5",
-      "publishedAt": "Thu, 11 Jun 2026 18:12:17 GMT",
+      "changeRate": 13,
+      "latestHeadline": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
+      "source": "뉴스1",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5FOXFJcnBjSnpkd2s4TXItanJZTmEzdVQ1SWJNWlFvZ1F5WDY2M0x0LUpVdktNRlA0bktVUFR2bGlYTVpNVUlnOThralBJSnJlb0NUQ2dacWdsSEpLRzQ4?oc=5",
+      "publishedAt": "Mon, 15 Jun 2026 00:35:22 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "[장중수급포착] 테스, 외국인/기관 동시 순매수… 주가 +10.79%",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE44YV8xZmFtWjFqdWV6NGRENzRlM21mQVI0RjNCYUEwbnNtU0t0cTVXUTVmQ3JVam9uZjZ6c09WS2FWalg0cmpqZjFfUElCdWRwekUyY0FLY0p2YzZS?oc=5"
+          "title": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0zVG1hXzVaYU42M2VYR2dEWm9fTWZKSGZiRzF0aGRtZGU2dVhhUjltM01PTmNKSnhBVThiVmp6NnlZZUc4ZVVybDlpY2dNTUl3U1I1VXU0bV9ESGRZZHJORFNMQWF0VnpF0gFuQVVfeXFMUHRGb0JmRmJEYmh5SXJlMGtkMUFwWUZSLV9WNUVwc0t5a2I3NEtqNklfdTZHaUZwTWZHZEJGc1djU0hJRF91aXp2d0NPazhHRTRjeUMtLXhxUWhUaFU3cXlqeDRqaFdmLTFfdkxHRWc?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "테스 주가, 6월 9일 장중 156,400원 18.93% 상승",
-          "source": "MSN",
-          "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNUUU0bFMxQnZBSlZHcVNOUkVyYXZyS1IyaXgyUDU2b3dfbG12SFZjSEFzQjlBRk5lb05pZnVQeGRfQTNNSXFqbjZuY1BUWHhfeXVYbGhsUGZ0ZjdDRV9YaHh4anZNT1pOUzJoQWJaMkM0WGZJZHhYWHVnbUR1STM5ZUJYa2loNkpQOWE0Z1pNd0FCeVhuc3VWTXVkZUx4RGVuVHlLV1J3R0d1UVlDb1dDY2ZuMk1lRWs5c0JSYU9WclBqVHhoSnk1LWg5aG5FdkV3OUZsTjRPZWRrOUZqcDZjWjdtZ053eVJuWXptRmh5MTU0WElXWnF4NWdWOA?oc=5"
+          "title": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
+          "source": "뉴스1",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5FOXFJcnBjSnpkd2s4TXItanJZTmEzdVQ1SWJNWlFvZ1F5WDY2M0x0LUpVdktNRlA0bktVUFR2bGlYTVpNVUlnOThralBJSnJlb0NUQ2dacWdsSEpLRzQ4?oc=5"
         }
       ],
       "hasTelegram": false,
       "hasNews": true,
-      "polishedHeadline": "테스, 외국인·기관 동시 순매수에 18.93% 급등",
-      "polishedBody": "테스 주가가 장중 18.93% 급등하며 156,400원을 기록했습니다. 외국인과 기관이 동시에 순매수에 나서며 수급이 집중된 점이 상승을 견인했습니다. 이러한 기관 매수세는 실적 기대감을 반영한 것으로 해석됩니다. 향후 추가적인 기관 수급 변화와 실적 발표가 주가 향방을 가를 핵심입니다."
+      "polishedHeadline": "삼성물산, 삼성전자 지분 가치 상승에 13% 급등",
+      "polishedBody": "삼성물산은 삼성전자 주가 상승에 따른 지분 가치 증가로 13%대 급등을 기록했습니다. 이는 삼성전자의 5%대 상승이 삼성물산의 순자산 가치를 직접 끌어올렸기 때문입니다. 시장은 지배구조 개편 기대감과 함께 이 흐름을 긍정적으로 받아들였습니다. 향후 삼성전자 주가 흐름과 지배구조 관련 추가 이슈가 주요 관전 포인트입니다."
     },
     {
-      "stockName": "삼성전기",
-      "stockCode": "009150",
-      "summary": "\"삼성전기만큼 뛴다?\"...42만→65만원 목표가 50% 급등한 '건설업 큰형님'",
-      "headline": "삼성전기 주가 9% 급등...증권가 목표주가 줄상향",
+      "stockName": "삼성생명",
+      "stockCode": "032830",
+      "summary": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+      "headline": "\"삼성생명, 삼성전자 주가 상승은 '양날의 칼'…조정 땐 리스크로\"",
       "evidencePoints": [
-        "출처 gukjenews.com, 파이낸셜뉴스, 한국경제 기반 기사 3건",
-        "제목 기준 변동률 단서 +9.0%",
-        "삼성전기 주가 9% 급등...증권가 목표주가 줄상향",
-        "\"삼성전기만큼 뛴다?\"...42만→65만원 목표가 50% 급등한 '건설업 큰형님'"
+        "출처 머니투데이, 금융소비자뉴스, 연합인포맥스, 마켓인 기반 기사 4건",
+        "상승/강세 키워드 우세",
+        "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+        "삼성생명, 삼성전자와의 주가 연동 구조 당분간 고착화…목표가↑"
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-06-12T07:20:38.321Z",
-      "cycleLabel": "KST_1500",
+      "channelCount": 4,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
       "direction": "up",
-      "changeRate": 9,
-      "latestHeadline": "삼성전기 주가 9% 급등...증권가 목표주가 줄상향",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBLelBrMzhyUTZvRzJ5cU1nOEpkREFWRm1STHZWMno1NGNESlBGYWZYUDBlT3ZHREpCbXhKVFNhRFdBT0FVN0NpWC1ERXdYVTQ0VGVzanVjT2Zja0IzbzQwd3U1elE1OHh6Zmg4alJn?oc=5",
-      "publishedAt": "Fri, 12 Jun 2026 00:51:38 GMT",
+      "changeRate": null,
+      "latestHeadline": "\"삼성생명, 삼성전자 주가 상승은 '양날의 칼'…조정 땐 리스크로\"",
+      "source": "연합인포맥스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE02N2pnQnZqWXU3ZDA0bTJuSUhqcDQ1Wkh6aHp2OGdMeUduMVF0bXlfVHhKMnJTckpUZzJMMmxBb3lKR3RUSHpZcFNyNEhuem05NExWRDlSd0lIUlk5Y3ZyX0l1ZnlaOHlUcFNLdW9OZ2M?oc=5",
+      "publishedAt": "Sun, 14 Jun 2026 23:28:59 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "삼성전기 주가 9% 급등...증권가 목표주가 줄상향",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBLelBrMzhyUTZvRzJ5cU1nOEpkREFWRm1STHZWMno1NGNESlBGYWZYUDBlT3ZHREpCbXhKVFNhRFdBT0FVN0NpWC1ERXdYVTQ0VGVzanVjT2Zja0IzbzQwd3U1elE1OHh6Zmg4alJn?oc=5"
+          "title": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0zVG1hXzVaYU42M2VYR2dEWm9fTWZKSGZiRzF0aGRtZGU2dVhhUjltM01PTmNKSnhBVThiVmp6NnlZZUc4ZVVybDlpY2dNTUl3U1I1VXU0bV9ESGRZZHJORFNMQWF0VnpF0gFuQVVfeXFMUHRGb0JmRmJEYmh5SXJlMGtkMUFwWUZSLV9WNUVwc0t5a2I3NEtqNklfdTZHaUZwTWZHZEJGc1djU0hJRF91aXp2d0NPazhHRTRjeUMtLXhxUWhUaFU3cXlqeDRqaFdmLTFfdkxHRWc?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "\"삼성전기만큼 뛴다?\"...42만→65만원 목표가 50% 급등한 '건설업 큰형님'",
-          "source": "파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YalJKSktva21tbWIwMWpTVFNORkFxVS1HV2tXb1RiTWkzX0Q4OXByNHAtalpaUTZfZHQtaWhWenJLUk1qaVBGWEVPdm1hc2RxSWpmQWtuOWpad9IBXkFVX3lxTE94Uy1Tczh5eWpueGNlRGZ0X05JUW95M0xrNVdoRWNlSlpyVVlZcjR6SXl2a20wYzhfeHRTYVRSUFdCM0R3UW5aUnNXV05rSC1EeHpuUG9aU01BOXI0SkE?oc=5"
+          "title": "삼성생명, 삼성전자와의 주가 연동 구조 당분간 고착화…목표가↑",
+          "source": "금융소비자뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBXd0NQVVp5amZzVUZXX2xlLTZUdnh1cWl4QW9FYUJRYk1tYlZaUlh6Y3lqZThtUF9CdUVwMnpWVi1vMkJLdHVxRVNwOFNoaTNRNV9ES210VEc1YlRLeHZEcGZ2S09UcmNzX3c?oc=5"
         },
         {
           "label": "관련기사3",
-          "title": "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JaXRBVDFjUms4UjY1V0w5TWRUSXcyZm5CUl83S09rdXozOWhMaXpzeFFqSFFwMXdPa1JITkExREtWTVZjc01wRlF4YktXNnhmbU1VX19TenJPd9IBVEFVX3lxTE9XS2Y5NUJ3SjdZSnFkSUgtUnlTek16SVBHZnZkdDhjVWNxSGpSdm1MTF9oRmVmSElfUktQTXhzV25VckRDS1ZmdnEyUUhOMFhEU3lNcA?oc=5"
+          "title": "\"삼성생명, 삼성전자 주가 상승은 '양날의 칼'…조정 땐 리스크로\"",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE02N2pnQnZqWXU3ZDA0bTJuSUhqcDQ1Wkh6aHp2OGdMeUduMVF0bXlfVHhKMnJTckpUZzJMMmxBb3lKR3RUSHpZcFNyNEhuem05NExWRDlSd0lIUlk5Y3ZyX0l1ZnlaOHlUcFNLdW9OZ2M?oc=5"
         }
       ],
       "hasTelegram": false,
       "hasNews": true,
-      "polishedHeadline": "삼성전기 9% 급등, 증권가 목표주가 줄상향",
-      "polishedBody": "삼성전기 주가가 9% 급등하며 증권가에서 목표주가를 잇따라 상향 조정했습니다. 이는 전자부품 수요 회복 기대감이 반영된 결과입니다. 긍정적인 실적 전망이 투자 심리를 자극하며 주가 상승을 이끌고 있습니다. 향후 글로벌 전자부품 수요 지표와 주요 고객사 재고 동향이 추가 모멘텀을 결정할 것입니다."
+      "polishedHeadline": "삼성생명, 삼성전자 연동 리스크 속 주가 상승",
+      "polishedBody": "삼성생명은 삼성전자 주가 상승에 연동되어 장 초반 8% 상승했지만, 이는 양날의 칼로 지적됩니다. 삼성전자 조정 시 삼성생명이 리스크에 노출될 수 있다는 분석이 나옵니다. 시장은 단기적 긍정 효과와 중장기 연동 리스크를 동시에 고려하고 있습니다. 향후 삼성전자 주가 안정성과 삼성생명의 자체 실적 개선 여부가 주가 향방을 가를 것입니다."
+    },
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "LG전자 주가, 6월 15일 장중 245,500원 8.87% 상승",
+      "headline": "LG전자 주가, 급등세... 왜?",
+      "evidencePoints": [
+        "출처 금강일보, TopStarNews 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "LG전자 주가, 급등세... 왜?",
+        "LG전자 주가, 6월 15일 장중 245,500원 8.87% 상승"
+      ],
+      "mentionScore": 98.5,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "LG전자 주가, 급등세... 왜?",
+      "source": "금강일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBwNlJIa29FdjVpQVNFVTBxb1cyWjZyU0hkOXRlMElZNlNTamdMVGJudUlJekhhQjVDWjYwT1otckp2T3JNQ0xnRk5lcmprbkNwMEdseWw3b0RsN1RRa1hQcnA0Z1RpSGozWHc?oc=5",
+      "publishedAt": "Mon, 15 Jun 2026 00:48:47 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 급등세... 왜?",
+          "source": "금강일보",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBwNlJIa29FdjVpQVNFVTBxb1cyWjZyU0hkOXRlMElZNlNTamdMVGJudUlJekhhQjVDWjYwT1otckp2T3JNQ0xnRk5lcmprbkNwMEdseWw3b0RsN1RRa1hQcnA0Z1RpSGozWHc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "LG전자 주가, 6월 15일 장중 245,500원 8.87% 상승",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1mZGNwRHJjX21BcmpPbGRNUEQteVVpU3VyaEZIeDRmYzVmTGhEZldWUGc1dGhnVzJTMFlYemtqNFJ4TkZRbDl6Z2FUbHF4TklMNC01bEgxUExGTUdPVjhPX2c2UFBSeVo1SmtUVWlYX1o5QQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "LG전자 주가 급등, 장중 8.87% 상승",
+      "polishedBody": "LG전자 주가가 장중 8.87% 급등하며 245,500원을 기록했습니다. 이는 시장의 예상보다 큰 폭의 상승으로 투자자들의 관심이 집중되고 있습니다. 긍정적인 재료가 주가에 반영된 것으로 보이며 추가 상승 동력이 주목됩니다. 향후 실적 발표와 업계 동향이 주요 변수가 될 것입니다."
+    },
+    {
+      "stockName": "SK하이닉스",
+      "stockCode": "000660",
+      "summary": "SK하이닉스 주가, 6월 15일 장중 2,303,000원 7.12% 상승",
+      "headline": "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+      "evidencePoints": [
+        "출처 글로벌이코노믹, TopStarNews 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+        "SK하이닉스 주가, 6월 15일 장중 2,303,000원 7.12% 상승"
+      ],
+      "mentionScore": 96.3,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcGF6N3VrUnlZalRhTjBsNkx6bUcwQ2RKNHJDUEhzdG9PckZkRVJpdkR0QndVQU52ZHIxUGtpV2czV21JeTFfSXg5Z1F3cVgtcDBZak1IbVYtNzZ6dE4xVkhLTG9ma0RoRnpsZzdDWms0YlBMWGVCNXlUYmhiNVVzTXMwdG8wUDdy?oc=5",
+      "publishedAt": "Mon, 15 Jun 2026 00:48:36 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcGF6N3VrUnlZalRhTjBsNkx6bUcwQ2RKNHJDUEhzdG9PckZkRVJpdkR0QndVQU52ZHIxUGtpV2czV21JeTFfSXg5Z1F3cVgtcDBZak1IbVYtNzZ6dE4xVkhLTG9ma0RoRnpsZzdDWms0YlBMWGVCNXlUYmhiNVVzTXMwdG8wUDdy?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "SK하이닉스 주가, 6월 15일 장중 2,303,000원 7.12% 상승",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1zazU5TDV5OHotQXR6T2U1TldDZjBRTU8wMTA5VFpzbWdwRmZFSlNUMGpHQWxCVi01eGJGc3hKWlJFWm9EeGpzbHdxTHZiMDYwUjZGUDNFYVV4OEtzLTIwLU12YzdGbUI4VVl5YjgyMEFDdw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "SK하이닉스, 미국-이란 종전 합의에 급등",
+      "polishedBody": "SK하이닉스 주가가 미국과 이란의 종전 합의 소식에 7.12% 상승했습니다. 지정학적 리스크 완화가 반도체 업종 전반에 긍정적인 영향을 미친 것으로 분석됩니다. 이번 합의는 글로벌 공급망 안정성에 기여할 수 있다는 점에서 호재로 평가됩니다. 향후 추가 협상 진행 상황과 반도체 수요 변화를 지켜봐야 합니다."
+    },
+    {
+      "stockName": "미래에셋증권",
+      "stockCode": "006800",
+      "summary": "미래에셋증권, ‘스페이스X 공모주 삭감’ 후폭풍…주가 3%대 하락",
+      "headline": "미래에셋증권 주가, 6월 15일 장중 53,100원 1.53% 상승",
+      "evidencePoints": [
+        "출처 TopStarNews, 싱글리스트 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.5%",
+        "미래에셋증권 주가, 6월 15일 장중 53,100원 1.53% 상승",
+        "미래에셋증권, ‘스페이스X 공모주 삭감’ 후폭풍…주가 3%대 하락"
+      ],
+      "mentionScore": 91.4,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": 1.53,
+      "latestHeadline": "미래에셋증권 주가, 6월 15일 장중 53,100원 1.53% 상승",
+      "source": "TopStarNews",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9jbG5XUUxveHIxbDROcnRwMUttZE9MNEJ0NC1tdkdaNmFuYWRSODUxQWRkalBOQVJ3dHBLUFdDaWZLcEM3RUdSczNpTFlzNjJJNlQ2MnVWSzBRX21YbjlXblVMdWhDcFF2YTJCdTI5TFZGdw?oc=5",
+      "publishedAt": "Mon, 15 Jun 2026 00:48:27 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "미래에셋증권 주가, 6월 15일 장중 53,100원 1.53% 상승",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9jbG5XUUxveHIxbDROcnRwMUttZE9MNEJ0NC1tdkdaNmFuYWRSODUxQWRkalBOQVJ3dHBLUFdDaWZLcEM3RUdSczNpTFlzNjJJNlQ2MnVWSzBRX21YbjlXblVMdWhDcFF2YTJCdTI5TFZGdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "미래에셋증권, ‘스페이스X 공모주 삭감’ 후폭풍…주가 3%대 하락",
+          "source": "싱글리스트",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAyYzNkS1ZObTlWOWxtcTJocXYzdXR3V0tpbVN2dUQxZUFYR0xZVHBEOUxyckZtRDlCZGJLdEdKN2FkWmpmUlhOOVhnR0hBNDZxQnFDMXlYNlQ5UmFPVTVBN1lPTnhzUQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "미래에셋증권, 스페이스X 공모주 삭감 후폭풍",
+      "polishedBody": "미래에셋증권 주가가 스페이스X 공모주 삭감 이슈로 1.53% 상승했지만 관련 우려가 남아 있습니다. 공모주 배정 과정에서의 불확실성이 투자 심리에 영향을 주고 있습니다. 이는 단기적 변동성을 유발할 수 있는 리스크 요인으로 작용합니다. 향후 공모주 관련 추가 공시와 증권업계 반응이 중요합니다."
+    },
+    {
+      "stockName": "고려아연",
+      "stockCode": "010130",
+      "summary": "고려아연, 거시경제에 목표가 하향·최선호주는 유지-iM증권",
+      "headline": "iM證 \"고려아연, 매크로 환경 비우호적이지만…자원 민족주의 확산으로 견조\"",
+      "evidencePoints": [
+        "출처 네이트 기반 기사 2건",
+        "iM證 \"고려아연, 매크로 환경 비우호적이지만…자원 민족주의 확산으로 견조\"",
+        "고려아연, 거시경제에 목표가 하향·최선호주는 유지-iM증권"
+      ],
+      "mentionScore": 79,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "iM證 \"고려아연, 매크로 환경 비우호적이지만…자원 민족주의 확산으로 견조\"",
+      "source": "네이트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE14b0tWMEhFaENrN3cwMmxENldpeTB5akdETWJVVU8wVEZITnM0d3Z5MEllZWMtR3NzUVNjRjBUWXB5VjFTSDNIS1JnemxFc3JXN2FJ?oc=5",
+      "publishedAt": "Sun, 14 Jun 2026 23:59:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "iM證 \"고려아연, 매크로 환경 비우호적이지만…자원 민족주의 확산으로 견조\"",
+          "source": "네이트",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE14b0tWMEhFaENrN3cwMmxENldpeTB5akdETWJVVU8wVEZITnM0d3Z5MEllZWMtR3NzUVNjRjBUWXB5VjFTSDNIS1JnemxFc3JXN2FJ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "고려아연, 거시경제에 목표가 하향·최선호주는 유지-iM증권",
+          "source": "네이트",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1NVE84bEhQT3dveTJ5NmtKaXJnNmJXejc4VFJQd2IzMU9RVS14UHM2MU1ZLTg3LWtTcnVtY2NGRlhZWmptaWZxMkZ0OUgzTHpJWDlv?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "고려아연, 비우호적 매크로 속 자원 민족주의로 견조",
+      "polishedBody": "고려아연은 거시경제 환경이 비우호적임에도 자원 민족주의 확산으로 견조한 흐름을 보이고 있습니다. iM증권은 목표가를 하향 조정했지만 최선호주 의견을 유지했습니다. 이는 중립적인 신호로 해석되며 업종 내 상대적 강점이 부각되고 있습니다. 향후 원자재 가격 동향과 글로벌 자원 정책 변화를 주목해야 합니다."
+    },
+    {
+      "stockName": "테스",
+      "stockCode": "095610",
+      "summary": "두산테스나 주가 하락 중 아시아뉴스통신",
+      "headline": "두산테스나 주가 하락 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "두산테스나 주가 하락 중"
+      ],
+      "mentionScore": 61.3,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "두산테스나 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MbkM1U2dQWDNSeWVWTDRXNHZIc1EwRXFGUHZoNi0xNENvZnA0YTlMOG9ZVFF5NE5KLWFLOE82Mlh2akJKZW9NMHdiSFFpWXc2MWRlcV9ZUzVUcmlp?oc=5",
+      "publishedAt": "Mon, 15 Jun 2026 00:18:34 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산테스나 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MbkM1U2dQWDNSeWVWTDRXNHZIc1EwRXFGUHZoNi0xNENvZnA0YTlMOG9ZVFF5NE5KLWFLOE82Mlh2akJKZW9NMHdiSFFpWXc2MWRlcV9ZUzVUcmlp?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "두산테스나 주가 하락 중",
+      "polishedBody": "두산테스나 주가가 최근 하락세를 보이며 투자자들의 우려를 사고 있습니다. 구체적인 하락 원인은 아직 확인되지 않았지만 시장의 부정적 심리가 반영된 것으로 보입니다. 이는 단기적인 조정일 가능성도 있지만 추가 하락 리스크를 배제할 수 없습니다. 향후 실적 발표와 업계 뉴스가 주가 방향을 결정할 것입니다."
+    },
+    {
+      "stockName": "두산테스나",
+      "stockCode": "131970",
+      "summary": "두산테스나 주가 하락 중 아시아뉴스통신",
+      "headline": "두산테스나 주가 하락 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "두산테스나 주가 하락 중"
+      ],
+      "mentionScore": 61.3,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-06-15T01:00:19.798Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "두산테스나 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MbkM1U2dQWDNSeWVWTDRXNHZIc1EwRXFGUHZoNi0xNENvZnA0YTlMOG9ZVFF5NE5KLWFLOE82Mlh2akJKZW9NMHdiSFFpWXc2MWRlcV9ZUzVUcmlp?oc=5",
+      "publishedAt": "Mon, 15 Jun 2026 00:18:34 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산테스나 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MbkM1U2dQWDNSeWVWTDRXNHZIc1EwRXFGUHZoNi0xNENvZnA0YTlMOG9ZVFF5NE5KLWFLOE82Mlh2akJKZW9NMHdiSFFpWXc2MWRlcV9ZUzVUcmlp?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "두산테스나 주가 하락 중",
+      "polishedBody": "두산테스나는 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
       "stockName": "SK스퀘어",
@@ -222,88 +535,6 @@
       "polishedBody": "저스템 주가가 반도체 수율 솔루션 수요 급증 기대감에 31.91% 급등했습니다. 이는 반도체 제조 공정 효율화에 대한 시장의 관심이 높아진 데 따른 것입니다. 긍정적인 업황 전망이 주가 상승을 뒷받침하고 있습니다. 향후 반도체 업체들의 설비 투자 계획과 수율 개선 관련 수주 소식이 추가 상승 동력이 될 수 있습니다."
     },
     {
-      "stockName": "미래에셋증권",
-      "stockCode": "006800",
-      "summary": "[장중수급포착] 미래에셋증권, 외국인/기관 동시 순매수… 주가 +5.28%",
-      "headline": "미래에셋증권, 강한 매수세 유입 속 5%대 급등세 : 금융",
-      "evidencePoints": [
-        "출처 재경일보, 뉴스핌 기반 기사 2건",
-        "제목 기준 변동률 단서 +5.0%",
-        "미래에셋증권, 강한 매수세 유입 속 5%대 급등세 : 금융",
-        "[장중수급포착] 미래에셋증권, 외국인/기관 동시 순매수… 주가 +5.28%"
-      ],
-      "mentionScore": 91.4,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-06-12T07:20:38.321Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": 5,
-      "latestHeadline": "미래에셋증권, 강한 매수세 유입 속 5%대 급등세 : 금융",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1LWFIzbkN4VDMzOGJUaW5EcWlnRWEtRWFfaVkzVndVMDM5WHFXSFBVU3Z3b0xMYzMyajFlb0ZxOVBVRnpqaXc2MGl3?oc=5",
-      "publishedAt": "Fri, 12 Jun 2026 04:45:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "미래에셋증권, 강한 매수세 유입 속 5%대 급등세 : 금융",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1LWFIzbkN4VDMzOGJUaW5EcWlnRWEtRWFfaVkzVndVMDM5WHFXSFBVU3Z3b0xMYzMyajFlb0ZxOVBVRnpqaXc2MGl3?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[장중수급포착] 미래에셋증권, 외국인/기관 동시 순매수… 주가 +5.28%",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9qRGJPX240QVhRSlVFbnlfNV9TRDA4aXVqZkFnWG54TzJXU09UclZwdUYzdWNhVDBKaTJ0NEE4OUozNEdkcmVwemRVSmUtQTZYcXZQcThLRFdQaFlM?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "미래에셋증권, 외국인·기관 동시 순매수에 5% 급등",
-      "polishedBody": "미래에셋증권이 장중 강한 매수세를 보이며 5% 이상 급등했습니다. 외국인과 기관이 동시에 순매수에 나서며 주가 상승을 견인했습니다. 이러한 수급은 긍정적인 신호로 평가되며 투자 심리를 자극하고 있습니다. 향후 추가 매수세 유입 여부가 주가 향방의 핵심 변수가 될 것입니다."
-    },
-    {
-      "stockName": "SK하이닉스",
-      "stockCode": "000660",
-      "summary": "\"나도 사야 하나?\" '기업가치 SK하이닉스 1.8배' 초대어…첫날 주가 촉각[스페이스X 투자 해부]",
-      "headline": "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
-      "evidencePoints": [
-        "출처 비즈니스포스트, 아시아경제 기반 기사 2건",
-        "제목 기준 변동률 단서 +7.0%",
-        "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
-        "\"나도 사야 하나?\" '기업가치 SK하이닉스 1.8배' 초대어…첫날 주가 촉각[스페이스X 투자 해부]"
-      ],
-      "mentionScore": 91.1,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-06-12T07:20:38.321Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": 7,
-      "latestHeadline": "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5OMXdocDlpOGs5RHNLYVI5X3NxVC1ERWZ5Z1RNR2dmcWVPRWJTT2RaemxPRlZtMEp1akU5bTdFQjcwdTd3ZlhZOGtCX1l2Umh4SkNyTVo2d3UwbTZJaXFZWkpzcmZtYzhwU2NwYXVQNC1BVGc?oc=5",
-      "publishedAt": "Fri, 12 Jun 2026 02:02:01 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5OMXdocDlpOGs5RHNLYVI5X3NxVC1ERWZ5Z1RNR2dmcWVPRWJTT2RaemxPRlZtMEp1akU5bTdFQjcwdTd3ZlhZOGtCX1l2Umh4SkNyTVo2d3UwbTZJaXFZWkpzcmZtYzhwU2NwYXVQNC1BVGc?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"나도 사야 하나?\" '기업가치 SK하이닉스 1.8배' 초대어…첫날 주가 촉각[스페이스X 투자 해부]",
-          "source": "아시아경제",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAtSWhTc2ljSTdGVHBIbExkTkFhM3lob2JvRmJheHlIbXBEV3c3SXR3X1Z3Vl9QTlpTeFBNRUVRMndnbEpTZVh2M0NXX3FsTlZHa3dISzJHRkl5Q3FKWklqRg?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "미국 반도체주 훈풍에 SK하이닉스 7% 상승",
-      "polishedBody": "SK하이닉스가 미국 반도체주의 강세 영향으로 7% 올랐습니다. 삼성전자도 10% 급등하며 반도체 업종 전반에 훈풍이 불었습니다. 이는 글로벌 반도체 수요 회복 기대감을 반영한 긍정적 흐름입니다. 향후 엔비디아 등 주요 기업의 실적 발표가 추가 방향성을 결정할 것입니다."
-    },
-    {
       "stockName": "한화시스템",
       "stockCode": "272210",
       "summary": "한화시스템, 'K-방산 핵심 밸류체인' 장악…'우주·조선'까지 품었다",
@@ -344,149 +575,6 @@
       "polishedBody": "한화시스템이 K-방산 핵심 밸류체인을 장악했다는 평가를 받고 있습니다. 우주와 조선 분야까지 사업을 확장하며 성장 동력을 확보했습니다. 변동성 장세에서 방어주로 주목받으며 중립적인 관점에서 안정성을 인정받고 있습니다. 향후 방산 수출 계약 체결 여부가 주가에 중요한 영향을 미칠 것입니다."
     },
     {
-      "stockName": "삼성물산",
-      "stockCode": "028260",
-      "summary": "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'",
-      "headline": "삼성물산 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 한국경제 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "삼성물산 주가 상승 중",
-        "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'"
-      ],
-      "mentionScore": 81,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-06-12T07:20:38.321Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "삼성물산 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9qLWU5Ym4zS0ZxUVRHVXNPNkY4cGVkeW83ellYV0dmU2loNTdZdXpwYmVNbHZxQWZDUFpTLTdxTHJmOWxwSEVpd3BGV0VSb1ZOaVItT09TYWZCN2s4R0FoM09sU3ZsbHhCQ1JZcXlQWHk2Ry1r?oc=5",
-      "publishedAt": "Fri, 12 Jun 2026 00:22:33 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성물산 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9qLWU5Ym4zS0ZxUVRHVXNPNkY4cGVkeW83ellYV0dmU2loNTdZdXpwYmVNbHZxQWZDUFpTLTdxTHJmOWxwSEVpd3BGV0VSb1ZOaVItT09TYWZCN2s4R0FoM09sU3ZsbHhCQ1JZcXlQWHk2Ry1r?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JaXRBVDFjUms4UjY1V0w5TWRUSXcyZm5CUl83S09rdXozOWhMaXpzeFFqSFFwMXdPa1JITkExREtWTVZjc01wRlF4YktXNnhmbU1VX19TenJPd9IBVEFVX3lxTE9XS2Y5NUJ3SjdZSnFkSUgtUnlTek16SVBHZnZkdDhjVWNxSGpSdm1MTF9oRmVmSElfUktQTXhzV25VckRDS1ZmdnEyUUhOMFhEU3lNcA?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성물산, 외국인 매수에 목표가 65만원 전망",
-      "polishedBody": "삼성물산 주가가 외국인 매수세에 힘입어 상승 중입니다. 증권가에서는 목표주가 65만원을 제시하며 긍정적인 전망을 내놓고 있습니다. 외국인과 개인 투자자의 관심이 집중되며 상승 동력이 강화되고 있습니다. 향후 건설 및 상사 부문 실적 개선 여부가 추가 상승의 관건이 될 것입니다."
-    },
-    {
-      "stockName": "LG전자",
-      "stockCode": "066570",
-      "summary": "\"목표주가 40만 원 나왔다\" LG전자 주가 5% 강세 gukjenews.com",
-      "headline": "\"목표주가 40만 원 나왔다\" LG전자 주가 5% 강세",
-      "evidencePoints": [
-        "출처 gukjenews.com 기반 기사 1건",
-        "제목 기준 변동률 단서 +5.0%",
-        "\"목표주가 40만 원 나왔다\" LG전자 주가 5% 강세"
-      ],
-      "mentionScore": 61.3,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-06-12T07:20:38.321Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": 5,
-      "latestHeadline": "\"목표주가 40만 원 나왔다\" LG전자 주가 5% 강세",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1kNmd0bTVfd1V4VFZBVUFpSVhaM2h1eFU5a1gxX2xBOWw1aGNPOXFWUC0zWEhhM2E0R18zQlJqNUI3b0NsRjlkUC1BdHFSZXR3LUw4WHpHRDE0emdwalVzWkV0dk8ybWdHUzJ3V3hn?oc=5",
-      "publishedAt": "Fri, 12 Jun 2026 00:38:03 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "\"목표주가 40만 원 나왔다\" LG전자 주가 5% 강세",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1kNmd0bTVfd1V4VFZBVUFpSVhaM2h1eFU5a1gxX2xBOWw1aGNPOXFWUC0zWEhhM2E0R18zQlJqNUI3b0NsRjlkUC1BdHFSZXR3LUw4WHpHRDE0emdwalVzWkV0dk8ybWdHUzJ3V3hn?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "LG전자, 목표주가 40만원 제시에 5% 강세",
-      "polishedBody": "LG전자 주가가 목표주가 40만원 제시와 함께 5% 상승했습니다. 증권사의 긍정적 리포트가 투자 심리를 자극하며 매수세를 유발했습니다. 이는 기업 가치에 대한 신뢰를 반영한 긍정적 신호로 해석됩니다. 향후 가전 및 전장 부문의 실적 발표가 주가 방향성을 결정할 것입니다."
-    },
-    {
-      "stockName": "미래에셋벤처투자",
-      "stockCode": "100790",
-      "summary": "미래에셋벤처투자 주가, 6월 12일 장중 42,600원 1.19% 상승 TopStarNews",
-      "headline": "미래에셋벤처투자 주가, 6월 12일 장중 42,600원 1.19% 상승",
-      "evidencePoints": [
-        "출처 TopStarNews 기반 기사 1건",
-        "제목 기준 변동률 단서 +1.2%",
-        "미래에셋벤처투자 주가, 6월 12일 장중 42,600원 1.19% 상승"
-      ],
-      "mentionScore": 58.2,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-06-12T07:20:38.321Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": 1.19,
-      "latestHeadline": "미래에셋벤처투자 주가, 6월 12일 장중 42,600원 1.19% 상승",
-      "source": "TopStarNews",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5XbG5iNHVndmdyM3poYzcyVHFWSGRTdFEyWU5QMlgzZGp0ZVNUUUVza0dJZHBBMnNNVlNJZG5XZXJPYjFxd0Fzd3hlT2hPUE1fR01aUkdGcGwwUi11eE9TdUE2ME9GYVdtaVdyaGRWSFB6UQ?oc=5",
-      "publishedAt": "Fri, 12 Jun 2026 02:05:32 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "미래에셋벤처투자 주가, 6월 12일 장중 42,600원 1.19% 상승",
-          "source": "TopStarNews",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5XbG5iNHVndmdyM3poYzcyVHFWSGRTdFEyWU5QMlgzZGp0ZVNUUUVza0dJZHBBMnNNVlNJZG5XZXJPYjFxd0Fzd3hlT2hPUE1fR01aUkdGcGwwUi11eE9TdUE2ME9GYVdtaVdyaGRWSFB6UQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "미래에셋벤처투자 주가 1.19% 상승",
-      "polishedBody": "미래에셋벤처투자의 주가가 6월 12일 장중 42,600원으로 1.19% 상승했습니다. 이는 전일 대비 긍정적인 흐름을 보여주는 가격 움직임입니다. 상승 방향성은 투자 심리가 개선되었음을 시사합니다. 향후 추가 상승 여부와 거래량 변화를 주목할 필요가 있습니다."
-    },
-    {
-      "stockName": "삼성생명",
-      "stockCode": "032830",
-      "summary": "삼성생명 주가 상승 중 아시아뉴스통신",
-      "headline": "삼성생명 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "삼성생명 주가 상승 중"
-      ],
-      "mentionScore": 55.2,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-06-12T07:20:38.321Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "삼성생명 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5qb014UVhhdGUtd2hzdk5Wc01hVnZWSDAtMUQ1TDlvbnE2VkxzMlZ1ZjBFcXdZbDVibFRneGk0SC1KSTBjc1QyOVM5dE5ZcC1FWHJQaE04aUNWZ3FzWF82c0Nn?oc=5",
-      "publishedAt": "Fri, 12 Jun 2026 00:33:43 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성생명 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5qb014UVhhdGUtd2hzdk5Wc01hVnZWSDAtMUQ1TDlvbnE2VkxzMlZ1ZjBFcXdZbDVibFRneGk0SC1KSTBjc1QyOVM5dE5ZcC1FWHJQaE04aUNWZ3FzWF82c0Nn?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성생명 주가 상승 중",
-      "polishedBody": "삼성생명의 주가가 현재 상승세를 보이고 있습니다. 구체적인 변동률은 확인되지 않았으나 상승 방향성은 긍정적인 신호로 해석됩니다. 이는 시장에서의 수요 증가를 반영할 가능성이 있습니다. 향후 주가 흐름과 관련 뉴스 전개를 지켜봐야 합니다."
-    },
-    {
       "stockName": "피스피스스튜디오",
       "stockCode": "0117P0",
       "summary": "[피스피스스튜디오 IPO]올해 기관 의무확약 꼴찌…상장 첫날 -36% : 네이버 블로그 Naver Blog",
@@ -518,40 +606,6 @@
       "hasNews": true,
       "polishedHeadline": "피스피스스튜디오 IPO 첫날 -36%",
       "polishedBody": "피스피스스튜디오가 상장 첫날 주가가 36% 하락했습니다. 올해 기관 의무확약 비율이 가장 낮은 점이 부정적 요인으로 작용했습니다. 이는 중립적인 신호로, 시장의 신뢰 부족을 나타냅니다. 향후 기관 투자자들의 추가 매매 동향을 관찰해야 합니다."
-    },
-    {
-      "stockName": "고려아연",
-      "stockCode": "010130",
-      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 비즈니스포스트",
-      "headline": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 -12.0%",
-        "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려"
-      ],
-      "mentionScore": 40.4,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-06-12T06:59:16.212Z",
-      "cycleLabel": "KST_1500",
-      "direction": "down",
-      "changeRate": -12,
-      "latestHeadline": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
-      "publishedAt": "Mon, 02 Feb 2026 08:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "금·은 가격 급락에 고려아연 하락",
-      "polishedBody": "고려아연은 금과 은 가격이 급락하면서 주가가 12%대 하락했습니다. 원자재 가격 하락이 직접적인 악재로 작용했습니다. 이는 위험 신호로 받아들여지며 투자 심리가 위축되었습니다. 향후 금속 가격 동향이 주가 회복 여부를 결정할 것입니다."
     },
     {
       "stockName": "시프트업",
@@ -593,47 +647,6 @@
       "hasNews": true,
       "polishedHeadline": "시프트업, 키움증권 목표가 6만5천원 제시…주가는 반토막",
       "polishedBody": "키움증권이 시프트업에 대해 기업분석을 개시하며 목표가 6만5천원을 제시했지만, 주가는 이미 반토막이 났습니다. 임원들의 차익 실현 매물이 나오면서 오버행 부담이 주가에 압박을 가하고 있습니다. 그럼에도 증권사의 긍정적 분석이 나온 점은 상승 방향 신호로 해석됩니다. 향후 추가 기관 보고서와 실적 발표가 주가 향방을 결정할 변수입니다."
-    },
-    {
-      "stockName": "두산테스나",
-      "stockCode": "131970",
-      "summary": "두산테스나 주가 전망 : 1년만에 5배 상승한 반도체 장비 관련주",
-      "headline": "스몰인사이트 \"두산테스나, 구조적 성장 본격화\"",
-      "evidencePoints": [
-        "출처 뉴시스, 네이버 프리미엄콘텐츠 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "스몰인사이트 \"두산테스나, 구조적 성장 본격화\"",
-        "두산테스나 주가 전망 : 1년만에 5배 상승한 반도체 장비 관련주"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-06-10T01:00:17.336Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "스몰인사이트 \"두산테스나, 구조적 성장 본격화\"",
-      "source": "뉴시스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5MNVJlZXdqZEhWTmloYlJBT3diRWFCRTlOMWMwa1RucHNSY0EtQmp1RkM2TTlZTjBHQS1vZ0FRaHdRSC1pbk1waFZnbS1SWmpfc2hjT0VkQkhlZ1pVazNlNtIBeEFVX3lxTE04Nks4VWhKdjN3R0hpdUJaY1BnR1ptMTVYX0tsZlFxWVkwcmV0LXN6QW1YM3dyQzY1T0kyR3cyLWNTTkVhT3FyN3VSRnFlM0p6U0RLYXA3NU1DdGdJOGNENWgzdXZ4aTItYVZxbHRlV19OVGx3S3FCag?oc=5",
-      "publishedAt": "Wed, 10 Jun 2026 00:03:45 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "스몰인사이트 \"두산테스나, 구조적 성장 본격화\"",
-          "source": "뉴시스",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5MNVJlZXdqZEhWTmloYlJBT3diRWFCRTlOMWMwa1RucHNSY0EtQmp1RkM2TTlZTjBHQS1vZ0FRaHdRSC1pbk1waFZnbS1SWmpfc2hjT0VkQkhlZ1pVazNlNtIBeEFVX3lxTE04Nks4VWhKdjN3R0hpdUJaY1BnR1ptMTVYX0tsZlFxWVkwcmV0LXN6QW1YM3dyQzY1T0kyR3cyLWNTTkVhT3FyN3VSRnFlM0p6U0RLYXA3NU1DdGdJOGNENWgzdXZ4aTItYVZxbHRlV19OVGx3S3FCag?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산테스나 주가 전망 : 1년만에 5배 상승한 반도체 장비 관련주",
-          "source": "네이버 프리미엄콘텐츠",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNcFNrajFCUlVoNjV0ZUxCZGlyd2U2bDRoZGI2N2JkakNibUVtY0N0T09fRkhKVUxLOWtNOWNVbDlUYnBnSGN4eG5yLWt1RkJrdDhMWjFZYjJheEJaa2Z2ckl4ZjZqUmE2ZVFQWXIwYzQ4XzRyQjBwTkItSDlkVGVRVHFvWQ?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "두산테스나, 구조적 성장 본격화 전망",
-      "polishedBody": "반도체 장비 관련주인 두산테스나가 구조적 성장 국면에 진입했다는 분석이 나왔습니다. 최근 1년간 주가가 5배 상승하며 시장의 높은 관심을 받고 있습니다. 이는 중립적인 신호로, 추가 성장 가능성과 현재 고평가 우려가 공존하기 때문입니다. 향후 실적 발표와 반도체 업황 추이가 주가 방향을 결정할 주요 변수입니다."
     },
     {
       "stockName": "고영",
@@ -795,112 +808,345 @@
   ],
   "items": [
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": 10,
-      "price": null,
-      "summary": "\"지금은 2회말 수준\"⋯삼성전자 '이 가격' 이하는 기회 [찐코노미]",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5OMXdocDlpOGs5RHNLYVI5X3NxVC1ERWZ5Z1RNR2dmcWVPRWJTT2RaemxPRlZtMEp1akU5bTdFQjcwdTd3ZlhZOGtCX1l2Umh4SkNyTVo2d3UwbTZJaXFZWkpzcmZtYzhwU2NwYXVQNC1BVGc?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 이투데이, 비즈니스포스트, 한국경제 기반 기사 3건",
-        "제목 기준 변동률 단서 +10.0%",
-        "\"지금은 2회말 수준\"⋯삼성전자 '이 가격' 이하는 기회 [찐코노미]",
-        "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "\"지금은 2회말 수준\"⋯삼성전자 '이 가격' 이하는 기회 [찐코노미]",
-          "source": "이투데이",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4yOHVUSzVSZlBsdHZKaEZ3NGx5LUs0M3BpN1FsclVydDVuZ1NjWVdOSTdaMHpzdTZ4UkpwRTYtNWhEU3JwREVCOXp3aDNMaGVtQWtpMw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5OMXdocDlpOGs5RHNLYVI5X3NxVC1ERWZ5Z1RNR2dmcWVPRWJTT2RaemxPRlZtMEp1akU5bTdFQjcwdTd3ZlhZOGtCX1l2Umh4SkNyTVo2d3UwbTZJaXFZWkpzcmZtYzhwU2NwYXVQNC1BVGc?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JaXRBVDFjUms4UjY1V0w5TWRUSXcyZm5CUl83S09rdXozOWhMaXpzeFFqSFFwMXdPa1JITkExREtWTVZjc01wRlF4YktXNnhmbU1VX19TenJPd9IBVEFVX3lxTE9XS2Y5NUJ3SjdZSnFkSUgtUnlTek16SVBHZnZkdDhjVWNxSGpSdm1MTF9oRmVmSElfUktQTXhzV25VckRDS1ZmdnEyUUhOMFhEU3lNcA?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "095610",
-      "name": "테스",
-      "changeRate": 18.93,
-      "price": null,
-      "summary": "[장중수급포착] 테스, 외국인/기관 동시 순매수… 주가 +10.79%",
-      "source": "MSN",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNUUU0bFMxQnZBSlZHcVNOUkVyYXZyS1IyaXgyUDU2b3dfbG12SFZjSEFzQjlBRk5lb05pZnVQeGRfQTNNSXFqbjZuY1BUWHhfeXVYbGhsUGZ0ZjdDRV9YaHh4anZNT1pOUzJoQWJaMkM0WGZJZHhYWHVnbUR1STM5ZUJYa2loNkpQOWE0Z1pNd0FCeVhuc3VWTXVkZUx4RGVuVHlLV1J3R0d1UVlDb1dDY2ZuMk1lRWs5c0JSYU9WclBqVHhoSnk1LWg5aG5FdkV3OUZsTjRPZWRrOUZqcDZjWjdtZ053eVJuWXptRmh5MTU0WElXWnF4NWdWOA?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 뉴스핌, MSN 기반 기사 2건",
-        "제목 기준 변동률 단서 +18.9%",
-        "[장중수급포착] 테스, 외국인/기관 동시 순매수… 주가 +10.79%",
-        "테스 주가, 6월 9일 장중 156,400원 18.93% 상승"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[장중수급포착] 테스, 외국인/기관 동시 순매수… 주가 +10.79%",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE44YV8xZmFtWjFqdWV6NGRENzRlM21mQVI0RjNCYUEwbnNtU0t0cTVXUTVmQ3JVam9uZjZ6c09WS2FWalg0cmpqZjFfUElCdWRwekUyY0FLY0p2YzZS?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "테스 주가, 6월 9일 장중 156,400원 18.93% 상승",
-          "source": "MSN",
-          "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNUUU0bFMxQnZBSlZHcVNOUkVyYXZyS1IyaXgyUDU2b3dfbG12SFZjSEFzQjlBRk5lb05pZnVQeGRfQTNNSXFqbjZuY1BUWHhfeXVYbGhsUGZ0ZjdDRV9YaHh4anZNT1pOUzJoQWJaMkM0WGZJZHhYWHVnbUR1STM5ZUJYa2loNkpQOWE0Z1pNd0FCeVhuc3VWTXVkZUx4RGVuVHlLV1J3R0d1UVlDb1dDY2ZuMk1lRWs5c0JSYU9WclBqVHhoSnk1LWg5aG5FdkV3OUZsTjRPZWRrOUZqcDZjWjdtZ053eVJuWXptRmh5MTU0WElXWnF4NWdWOA?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "009150",
       "name": "삼성전기",
-      "changeRate": 9,
+      "changeRate": null,
       "price": null,
-      "summary": "\"삼성전기만큼 뛴다?\"...42만→65만원 목표가 50% 급등한 '건설업 큰형님'",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBLelBrMzhyUTZvRzJ5cU1nOEpkREFWRm1STHZWMno1NGNESlBGYWZYUDBlT3ZHREpCbXhKVFNhRFdBT0FVN0NpWC1ERXdYVTQ0VGVzanVjT2Zja0IzbzQwd3U1elE1OHh6Zmg4alJn?oc=5",
+      "summary": "글로벌 MLCC 핵심 기업 삼성전기 주가 다시 불기둥...고부가가치 중심 체질 개선 중장기 성장 박차",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZ205dnB2clpJVlFSMG5nNkRUTVZaMy1neGYyNU1iU0t5NFBmVHNfT3lfbFlNNmlDSHktMlFNSVVIZVk0UEZId3NfSHNhZ2hoMEVjZjFjWEVWZDRyWHdKZHVoVS1ubWdfTlVBYzJtaDloX3IzbGhmV3ZFWDJ4N0s0a3Bzcnc2aVE4?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 gukjenews.com, 파이낸셜뉴스, 한국경제 기반 기사 3건",
-        "제목 기준 변동률 단서 +9.0%",
-        "삼성전기 주가 9% 급등...증권가 목표주가 줄상향",
-        "\"삼성전기만큼 뛴다?\"...42만→65만원 목표가 50% 급등한 '건설업 큰형님'"
+        "출처 글로벌이코노믹, 핀포인트뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "[특징주] 제2의 반도체 대장주?.. 삼성전기·LG이노텍 기판주 '급등'",
+        "글로벌 MLCC 핵심 기업 삼성전기 주가 다시 불기둥...고부가가치 중심 체질 개선 중장기 성장 박차"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "삼성전기 주가 9% 급등...증권가 목표주가 줄상향",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBLelBrMzhyUTZvRzJ5cU1nOEpkREFWRm1STHZWMno1NGNESlBGYWZYUDBlT3ZHREpCbXhKVFNhRFdBT0FVN0NpWC1ERXdYVTQ0VGVzanVjT2Zja0IzbzQwd3U1elE1OHh6Zmg4alJn?oc=5"
+          "title": "[특징주] 제2의 반도체 대장주?.. 삼성전기·LG이노텍 기판주 '급등'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZ205dnB2clpJVlFSMG5nNkRUTVZaMy1neGYyNU1iU0t5NFBmVHNfT3lfbFlNNmlDSHktMlFNSVVIZVk0UEZId3NfSHNhZ2hoMEVjZjFjWEVWZDRyWHdKZHVoVS1ubWdfTlVBYzJtaDloX3IzbGhmV3ZFWDJ4N0s0a3Bzcnc2aVE4?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "\"삼성전기만큼 뛴다?\"...42만→65만원 목표가 50% 급등한 '건설업 큰형님'",
-          "source": "파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YalJKSktva21tbWIwMWpTVFNORkFxVS1HV2tXb1RiTWkzX0Q4OXByNHAtalpaUTZfZHQtaWhWenJLUk1qaVBGWEVPdm1hc2RxSWpmQWtuOWpad9IBXkFVX3lxTE94Uy1Tczh5eWpueGNlRGZ0X05JUW95M0xrNVdoRWNlSlpyVVlZcjR6SXl2a20wYzhfeHRTYVRSUFdCM0R3UW5aUnNXV05rSC1EeHpuUG9aU01BOXI0SkE?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JaXRBVDFjUms4UjY1V0w5TWRUSXcyZm5CUl83S09rdXozOWhMaXpzeFFqSFFwMXdPa1JITkExREtWTVZjc01wRlF4YktXNnhmbU1VX19TenJPd9IBVEFVX3lxTE9XS2Y5NUJ3SjdZSnFkSUgtUnlTek16SVBHZnZkdDhjVWNxSGpSdm1MTF9oRmVmSElfUktQTXhzV25VckRDS1ZmdnEyUUhOMFhEU3lNcA?oc=5"
+          "title": "글로벌 MLCC 핵심 기업 삼성전기 주가 다시 불기둥...고부가가치 중심 체질 개선 중장기 성장 박차",
+          "source": "핀포인트뉴스",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAzLUoydUpQbWFDeWlhV0dkUUxXVlBIcGhVOG1wWDFBbEU1MzF5QlYtZkJYbmxrTndVa2psdnkwY1cwTGpQOWRUeVF2bjdoaG9JZVIzdVlHZlNSRjd1bTN3eFl6TVVPTDhhUVF4angwRWlFLWvSAXdBVV95cUxPS0J5cXZTbzN6TWd4MFc2Y2d5Vi1FdEV4aFI2RzNvRlVkMzI2a2JhSXl1Y0hjMHp2Tk9WZm93MTNKY0NGbVd0V29ydmJzcGhkc2xMUzZiYksyUG4zUjJrblMyaWR4ekQtbXBCekFjM2pnUV83eklFaw?oc=5"
         }
       ]
     },
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "100790",
+      "name": "미래에셋벤처투자",
+      "changeRate": -19.85,
+      "price": null,
+      "summary": "[특징주] 미래에셋벤처투자, 스페이스X 공모주 물량 전량 삭감 '급락'",
+      "source": "TopStarNews",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ad0NFN0pxTzZFRDNJOF9RZy1QT2J5a1BYWEVXSGU2OTNBem83Z2RVanEyckNRVzlWb1JmTllFeGdGaENMQmMwSldtWUdmS0NYb2xSX1JySG1UWlh2VWdvNUFrdUtiYjA5V3plRGMwZWluQQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 TopStarNews, 글로벌이코노믹 기반 기사 2건",
+        "제목 기준 변동률 단서 -19.9%",
+        "미래에셋벤처투자 주가, 6월 15일 장중 31,100원 19.85% 하락",
+        "[특징주] 미래에셋벤처투자, 스페이스X 공모주 물량 전량 삭감 '급락'"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "미래에셋벤처투자 주가, 6월 15일 장중 31,100원 19.85% 하락",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ad0NFN0pxTzZFRDNJOF9RZy1QT2J5a1BYWEVXSGU2OTNBem83Z2RVanEyckNRVzlWb1JmTllFeGdGaENMQmMwSldtWUdmS0NYb2xSX1JySG1UWlh2VWdvNUFrdUtiYjA5V3plRGMwZWluQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 미래에셋벤처투자, 스페이스X 공모주 물량 전량 삭감 '급락'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbktMa3h0LXg5SVU1eFZmOFVhQ3NfN0s0V1VRMVpzcFlVMXd3RktXWGxieDB1RGhhbnR4SmJ0V3JuR1kxSjVuNVRGaS1manZiOWpqNkhYYnJTaFRTcEhLUy00cC1CWEJ2REFDY2JibWQ4SzNRa3ItWVdyMXFLcmI0WlVpSkluNDNa?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcGF6N3VrUnlZalRhTjBsNkx6bUcwQ2RKNHJDUEhzdG9PckZkRVJpdkR0QndVQU52ZHIxUGtpV2czV21JeTFfSXg5Z1F3cVgtcDBZak1IbVYtNzZ6dE4xVkhLTG9ma0RoRnpsZzdDWms0YlBMWGVCNXlUYmhiNVVzTXMwdG8wUDdy?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 글로벌이코노믹, 뉴스1, 금융소비자뉴스, 연합인포맥스, 마켓인 기반 기사 5건",
+        "상승/강세 키워드 우세",
+        "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+        "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcGF6N3VrUnlZalRhTjBsNkx6bUcwQ2RKNHJDUEhzdG9PckZkRVJpdkR0QndVQU52ZHIxUGtpV2czV21JeTFfSXg5Z1F3cVgtcDBZak1IbVYtNzZ6dE4xVkhLTG9ma0RoRnpsZzdDWms0YlBMWGVCNXlUYmhiNVVzTXMwdG8wUDdy?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
+          "source": "뉴스1",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5FOXFJcnBjSnpkd2s4TXItanJZTmEzdVQ1SWJNWlFvZ1F5WDY2M0x0LUpVdktNRlA0bktVUFR2bGlYTVpNVUlnOThralBJSnJlb0NUQ2dacWdsSEpLRzQ4?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "삼성생명, 삼성전자와의 주가 연동 구조 당분간 고착화…목표가↑",
+          "source": "금융소비자뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBXd0NQVVp5amZzVUZXX2xlLTZUdnh1cWl4QW9FYUJRYk1tYlZaUlh6Y3lqZThtUF9CdUVwMnpWVi1vMkJLdHVxRVNwOFNoaTNRNV9ES210VEc1YlRLeHZEcGZ2S09UcmNzX3c?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "028260",
+      "name": "삼성물산",
+      "changeRate": 13,
+      "price": null,
+      "summary": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+      "source": "뉴스1",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5FOXFJcnBjSnpkd2s4TXItanJZTmEzdVQ1SWJNWlFvZ1F5WDY2M0x0LUpVdktNRlA0bktVUFR2bGlYTVpNVUlnOThralBJSnJlb0NUQ2dacWdsSEpLRzQ4?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 머니투데이, 뉴스1 기반 기사 2건",
+        "제목 기준 변동률 단서 +13.0%",
+        "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+        "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0zVG1hXzVaYU42M2VYR2dEWm9fTWZKSGZiRzF0aGRtZGU2dVhhUjltM01PTmNKSnhBVThiVmp6NnlZZUc4ZVVybDlpY2dNTUl3U1I1VXU0bV9ESGRZZHJORFNMQWF0VnpF0gFuQVVfeXFMUHRGb0JmRmJEYmh5SXJlMGtkMUFwWUZSLV9WNUVwc0t5a2I3NEtqNklfdTZHaUZwTWZHZEJGc1djU0hJRF91aXp2d0NPazhHRTRjeUMtLXhxUWhUaFU3cXlqeDRqaFdmLTFfdkxHRWc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자 오르자 지분 가치↑…삼성물산 13%대 급등[핫종목]",
+          "source": "뉴스1",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5FOXFJcnBjSnpkd2s4TXItanJZTmEzdVQ1SWJNWlFvZ1F5WDY2M0x0LUpVdktNRlA0bktVUFR2bGlYTVpNVUlnOThralBJSnJlb0NUQ2dacWdsSEpLRzQ4?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "032830",
+      "name": "삼성생명",
+      "changeRate": null,
+      "price": null,
+      "summary": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+      "source": "연합인포맥스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE02N2pnQnZqWXU3ZDA0bTJuSUhqcDQ1Wkh6aHp2OGdMeUduMVF0bXlfVHhKMnJTckpUZzJMMmxBb3lKR3RUSHpZcFNyNEhuem05NExWRDlSd0lIUlk5Y3ZyX0l1ZnlaOHlUcFNLdW9OZ2M?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 머니투데이, 금융소비자뉴스, 연합인포맥스, 마켓인 기반 기사 4건",
+        "상승/강세 키워드 우세",
+        "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+        "삼성생명, 삼성전자와의 주가 연동 구조 당분간 고착화…목표가↑"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼전 5%대 뛰자 삼성물산·삼성생명 달린다… 장 초반 12%·8% ↑ - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0zVG1hXzVaYU42M2VYR2dEWm9fTWZKSGZiRzF0aGRtZGU2dVhhUjltM01PTmNKSnhBVThiVmp6NnlZZUc4ZVVybDlpY2dNTUl3U1I1VXU0bV9ESGRZZHJORFNMQWF0VnpF0gFuQVVfeXFMUHRGb0JmRmJEYmh5SXJlMGtkMUFwWUZSLV9WNUVwc0t5a2I3NEtqNklfdTZHaUZwTWZHZEJGc1djU0hJRF91aXp2d0NPazhHRTRjeUMtLXhxUWhUaFU3cXlqeDRqaFdmLTFfdkxHRWc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성생명, 삼성전자와의 주가 연동 구조 당분간 고착화…목표가↑",
+          "source": "금융소비자뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBXd0NQVVp5amZzVUZXX2xlLTZUdnh1cWl4QW9FYUJRYk1tYlZaUlh6Y3lqZThtUF9CdUVwMnpWVi1vMkJLdHVxRVNwOFNoaTNRNV9ES210VEc1YlRLeHZEcGZ2S09UcmNzX3c?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "\"삼성생명, 삼성전자 주가 상승은 '양날의 칼'…조정 땐 리스크로\"",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE02N2pnQnZqWXU3ZDA0bTJuSUhqcDQ1Wkh6aHp2OGdMeUduMVF0bXlfVHhKMnJTckpUZzJMMmxBb3lKR3RUSHpZcFNyNEhuem05NExWRDlSd0lIUlk5Y3ZyX0l1ZnlaOHlUcFNLdW9OZ2M?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "LG전자 주가, 6월 15일 장중 245,500원 8.87% 상승",
+      "source": "금강일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBwNlJIa29FdjVpQVNFVTBxb1cyWjZyU0hkOXRlMElZNlNTamdMVGJudUlJekhhQjVDWjYwT1otckp2T3JNQ0xnRk5lcmprbkNwMEdseWw3b0RsN1RRa1hQcnA0Z1RpSGozWHc?oc=5",
+      "mentionScore": 98.5,
+      "evidencePoints": [
+        "출처 금강일보, TopStarNews 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "LG전자 주가, 급등세... 왜?",
+        "LG전자 주가, 6월 15일 장중 245,500원 8.87% 상승"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 급등세... 왜?",
+          "source": "금강일보",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBwNlJIa29FdjVpQVNFVTBxb1cyWjZyU0hkOXRlMElZNlNTamdMVGJudUlJekhhQjVDWjYwT1otckp2T3JNQ0xnRk5lcmprbkNwMEdseWw3b0RsN1RRa1hQcnA0Z1RpSGozWHc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "LG전자 주가, 6월 15일 장중 245,500원 8.87% 상승",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1mZGNwRHJjX21BcmpPbGRNUEQteVVpU3VyaEZIeDRmYzVmTGhEZldWUGc1dGhnVzJTMFlYemtqNFJ4TkZRbDl6Z2FUbHF4TklMNC01bEgxUExGTUdPVjhPX2c2UFBSeVo1SmtUVWlYX1o5QQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "changeRate": null,
+      "price": null,
+      "summary": "SK하이닉스 주가, 6월 15일 장중 2,303,000원 7.12% 상승",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcGF6N3VrUnlZalRhTjBsNkx6bUcwQ2RKNHJDUEhzdG9PckZkRVJpdkR0QndVQU52ZHIxUGtpV2czV21JeTFfSXg5Z1F3cVgtcDBZak1IbVYtNzZ6dE4xVkhLTG9ma0RoRnpsZzdDWms0YlBMWGVCNXlUYmhiNVVzTXMwdG8wUDdy?oc=5",
+      "mentionScore": 96.3,
+      "evidencePoints": [
+        "출처 글로벌이코노믹, TopStarNews 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+        "SK하이닉스 주가, 6월 15일 장중 2,303,000원 7.12% 상승"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성전자·SK하이닉스, 미국-이란 종전 합의.. 동반 '급등'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcGF6N3VrUnlZalRhTjBsNkx6bUcwQ2RKNHJDUEhzdG9PckZkRVJpdkR0QndVQU52ZHIxUGtpV2czV21JeTFfSXg5Z1F3cVgtcDBZak1IbVYtNzZ6dE4xVkhLTG9ma0RoRnpsZzdDWms0YlBMWGVCNXlUYmhiNVVzTXMwdG8wUDdy?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "SK하이닉스 주가, 6월 15일 장중 2,303,000원 7.12% 상승",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1zazU5TDV5OHotQXR6T2U1TldDZjBRTU8wMTA5VFpzbWdwRmZFSlNUMGpHQWxCVi01eGJGc3hKWlJFWm9EeGpzbHdxTHZiMDYwUjZGUDNFYVV4OEtzLTIwLU12YzdGbUI4VVl5YjgyMEFDdw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "006800",
+      "name": "미래에셋증권",
+      "changeRate": 1.53,
+      "price": null,
+      "summary": "미래에셋증권, ‘스페이스X 공모주 삭감’ 후폭풍…주가 3%대 하락",
+      "source": "TopStarNews",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9jbG5XUUxveHIxbDROcnRwMUttZE9MNEJ0NC1tdkdaNmFuYWRSODUxQWRkalBOQVJ3dHBLUFdDaWZLcEM3RUdSczNpTFlzNjJJNlQ2MnVWSzBRX21YbjlXblVMdWhDcFF2YTJCdTI5TFZGdw?oc=5",
+      "mentionScore": 91.4,
+      "evidencePoints": [
+        "출처 TopStarNews, 싱글리스트 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.5%",
+        "미래에셋증권 주가, 6월 15일 장중 53,100원 1.53% 상승",
+        "미래에셋증권, ‘스페이스X 공모주 삭감’ 후폭풍…주가 3%대 하락"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "미래에셋증권 주가, 6월 15일 장중 53,100원 1.53% 상승",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9jbG5XUUxveHIxbDROcnRwMUttZE9MNEJ0NC1tdkdaNmFuYWRSODUxQWRkalBOQVJ3dHBLUFdDaWZLcEM3RUdSczNpTFlzNjJJNlQ2MnVWSzBRX21YbjlXblVMdWhDcFF2YTJCdTI5TFZGdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "미래에셋증권, ‘스페이스X 공모주 삭감’ 후폭풍…주가 3%대 하락",
+          "source": "싱글리스트",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAyYzNkS1ZObTlWOWxtcTJocXYzdXR3V0tpbVN2dUQxZUFYR0xZVHBEOUxyckZtRDlCZGJLdEdKN2FkWmpmUlhOOVhnR0hBNDZxQnFDMXlYNlQ5UmFPVTVBN1lPTnhzUQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "010130",
+      "name": "고려아연",
+      "changeRate": null,
+      "price": null,
+      "summary": "고려아연, 거시경제에 목표가 하향·최선호주는 유지-iM증권",
+      "source": "네이트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE14b0tWMEhFaENrN3cwMmxENldpeTB5akdETWJVVU8wVEZITnM0d3Z5MEllZWMtR3NzUVNjRjBUWXB5VjFTSDNIS1JnemxFc3JXN2FJ?oc=5",
+      "mentionScore": 79,
+      "evidencePoints": [
+        "출처 네이트 기반 기사 2건",
+        "iM證 \"고려아연, 매크로 환경 비우호적이지만…자원 민족주의 확산으로 견조\"",
+        "고려아연, 거시경제에 목표가 하향·최선호주는 유지-iM증권"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "iM證 \"고려아연, 매크로 환경 비우호적이지만…자원 민족주의 확산으로 견조\"",
+          "source": "네이트",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE14b0tWMEhFaENrN3cwMmxENldpeTB5akdETWJVVU8wVEZITnM0d3Z5MEllZWMtR3NzUVNjRjBUWXB5VjFTSDNIS1JnemxFc3JXN2FJ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "고려아연, 거시경제에 목표가 하향·최선호주는 유지-iM증권",
+          "source": "네이트",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1NVE84bEhQT3dveTJ5NmtKaXJnNmJXejc4VFJQd2IzMU9RVS14UHM2MU1ZLTg3LWtTcnVtY2NGRlhZWmptaWZxMkZ0OUgzTHpJWDlv?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "095610",
+      "name": "테스",
+      "changeRate": null,
+      "price": null,
+      "summary": "두산테스나 주가 하락 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MbkM1U2dQWDNSeWVWTDRXNHZIc1EwRXFGUHZoNi0xNENvZnA0YTlMOG9ZVFF5NE5KLWFLOE82Mlh2akJKZW9NMHdiSFFpWXc2MWRlcV9ZUzVUcmlp?oc=5",
+      "mentionScore": 61.3,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "두산테스나 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산테스나 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MbkM1U2dQWDNSeWVWTDRXNHZIc1EwRXFGUHZoNi0xNENvZnA0YTlMOG9ZVFF5NE5KLWFLOE82Mlh2akJKZW9NMHdiSFFpWXc2MWRlcV9ZUzVUcmlp?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
+      "symbol": "131970",
+      "name": "두산테스나",
+      "changeRate": null,
+      "price": null,
+      "summary": "두산테스나 주가 하락 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MbkM1U2dQWDNSeWVWTDRXNHZIc1EwRXFGUHZoNi0xNENvZnA0YTlMOG9ZVFF5NE5KLWFLOE82Mlh2akJKZW9NMHdiSFFpWXc2MWRlcV9ZUzVUcmlp?oc=5",
+      "mentionScore": 61.3,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "두산테스나 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산테스나 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MbkM1U2dQWDNSeWVWTDRXNHZIc1EwRXFGUHZoNi0xNENvZnA0YTlMOG9ZVFF5NE5KLWFLOE82Mlh2akJKZW9NMHdiSFFpWXc2MWRlcV9ZUzVUcmlp?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": 12.87,
@@ -931,7 +1177,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "417840",
       "name": "저스템",
       "changeRate": 31.91,
@@ -955,69 +1201,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "006800",
-      "name": "미래에셋증권",
-      "changeRate": 5,
-      "price": null,
-      "summary": "[장중수급포착] 미래에셋증권, 외국인/기관 동시 순매수… 주가 +5.28%",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1LWFIzbkN4VDMzOGJUaW5EcWlnRWEtRWFfaVkzVndVMDM5WHFXSFBVU3Z3b0xMYzMyajFlb0ZxOVBVRnpqaXc2MGl3?oc=5",
-      "mentionScore": 91.4,
-      "evidencePoints": [
-        "출처 재경일보, 뉴스핌 기반 기사 2건",
-        "제목 기준 변동률 단서 +5.0%",
-        "미래에셋증권, 강한 매수세 유입 속 5%대 급등세 : 금융",
-        "[장중수급포착] 미래에셋증권, 외국인/기관 동시 순매수… 주가 +5.28%"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "미래에셋증권, 강한 매수세 유입 속 5%대 급등세 : 금융",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1LWFIzbkN4VDMzOGJUaW5EcWlnRWEtRWFfaVkzVndVMDM5WHFXSFBVU3Z3b0xMYzMyajFlb0ZxOVBVRnpqaXc2MGl3?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[장중수급포착] 미래에셋증권, 외국인/기관 동시 순매수… 주가 +5.28%",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9qRGJPX240QVhRSlVFbnlfNV9TRDA4aXVqZkFnWG54TzJXU09UclZwdUYzdWNhVDBKaTJ0NEE4OUozNEdkcmVwemRVSmUtQTZYcXZQcThLRFdQaFlM?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": 7,
-      "price": null,
-      "summary": "\"나도 사야 하나?\" '기업가치 SK하이닉스 1.8배' 초대어…첫날 주가 촉각[스페이스X 투자 해부]",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5OMXdocDlpOGs5RHNLYVI5X3NxVC1ERWZ5Z1RNR2dmcWVPRWJTT2RaemxPRlZtMEp1akU5bTdFQjcwdTd3ZlhZOGtCX1l2Umh4SkNyTVo2d3UwbTZJaXFZWkpzcmZtYzhwU2NwYXVQNC1BVGc?oc=5",
-      "mentionScore": 91.1,
-      "evidencePoints": [
-        "출처 비즈니스포스트, 아시아경제 기반 기사 2건",
-        "제목 기준 변동률 단서 +7.0%",
-        "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
-        "\"나도 사야 하나?\" '기업가치 SK하이닉스 1.8배' 초대어…첫날 주가 촉각[스페이스X 투자 해부]"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자 주가 장중 10% 뛰어, 미국 반도체주 훈풍에 SK하이닉스도 7% 올라",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5OMXdocDlpOGs5RHNLYVI5X3NxVC1ERWZ5Z1RNR2dmcWVPRWJTT2RaemxPRlZtMEp1akU5bTdFQjcwdTd3ZlhZOGtCX1l2Umh4SkNyTVo2d3UwbTZJaXFZWkpzcmZtYzhwU2NwYXVQNC1BVGc?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"나도 사야 하나?\" '기업가치 SK하이닉스 1.8배' 초대어…첫날 주가 촉각[스페이스X 투자 해부]",
-          "source": "아시아경제",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAtSWhTc2ljSTdGVHBIbExkTkFhM3lob2JvRmJheHlIbXBEV3c3SXR3X1Z3Vl9QTlpTeFBNRUVRMndnbEpTZVh2M0NXX3FsTlZHa3dISzJHRkl5Q3FKWklqRg?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "272210",
       "name": "한화시스템",
       "changeRate": null,
@@ -1047,110 +1231,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "028260",
-      "name": "삼성물산",
-      "changeRate": null,
-      "price": null,
-      "summary": "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9qLWU5Ym4zS0ZxUVRHVXNPNkY4cGVkeW83ellYV0dmU2loNTdZdXpwYmVNbHZxQWZDUFpTLTdxTHJmOWxwSEVpd3BGV0VSb1ZOaVItT09TYWZCN2s4R0FoM09sU3ZsbHhCQ1JZcXlQWHk2Ry1r?oc=5",
-      "mentionScore": 81,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 한국경제 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "삼성물산 주가 상승 중",
-        "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성물산 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9qLWU5Ym4zS0ZxUVRHVXNPNkY4cGVkeW83ellYV0dmU2loNTdZdXpwYmVNbHZxQWZDUFpTLTdxTHJmOWxwSEVpd3BGV0VSb1ZOaVItT09TYWZCN2s4R0FoM09sU3ZsbHhCQ1JZcXlQWHk2Ry1r?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "외국인도 쓸어담더니…\"65만원 간다\" 전망에 개미들 '들썩'",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9JaXRBVDFjUms4UjY1V0w5TWRUSXcyZm5CUl83S09rdXozOWhMaXpzeFFqSFFwMXdPa1JITkExREtWTVZjc01wRlF4YktXNnhmbU1VX19TenJPd9IBVEFVX3lxTE9XS2Y5NUJ3SjdZSnFkSUgtUnlTek16SVBHZnZkdDhjVWNxSGpSdm1MTF9oRmVmSElfUktQTXhzV25VckRDS1ZmdnEyUUhOMFhEU3lNcA?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "066570",
-      "name": "LG전자",
-      "changeRate": 5,
-      "price": null,
-      "summary": "\"목표주가 40만 원 나왔다\" LG전자 주가 5% 강세 gukjenews.com",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1kNmd0bTVfd1V4VFZBVUFpSVhaM2h1eFU5a1gxX2xBOWw1aGNPOXFWUC0zWEhhM2E0R18zQlJqNUI3b0NsRjlkUC1BdHFSZXR3LUw4WHpHRDE0emdwalVzWkV0dk8ybWdHUzJ3V3hn?oc=5",
-      "mentionScore": 61.3,
-      "evidencePoints": [
-        "출처 gukjenews.com 기반 기사 1건",
-        "제목 기준 변동률 단서 +5.0%",
-        "\"목표주가 40만 원 나왔다\" LG전자 주가 5% 강세"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "\"목표주가 40만 원 나왔다\" LG전자 주가 5% 강세",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1kNmd0bTVfd1V4VFZBVUFpSVhaM2h1eFU5a1gxX2xBOWw1aGNPOXFWUC0zWEhhM2E0R18zQlJqNUI3b0NsRjlkUC1BdHFSZXR3LUw4WHpHRDE0emdwalVzWkV0dk8ybWdHUzJ3V3hn?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "100790",
-      "name": "미래에셋벤처투자",
-      "changeRate": 1.19,
-      "price": null,
-      "summary": "미래에셋벤처투자 주가, 6월 12일 장중 42,600원 1.19% 상승 TopStarNews",
-      "source": "TopStarNews",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5XbG5iNHVndmdyM3poYzcyVHFWSGRTdFEyWU5QMlgzZGp0ZVNUUUVza0dJZHBBMnNNVlNJZG5XZXJPYjFxd0Fzd3hlT2hPUE1fR01aUkdGcGwwUi11eE9TdUE2ME9GYVdtaVdyaGRWSFB6UQ?oc=5",
-      "mentionScore": 58.2,
-      "evidencePoints": [
-        "출처 TopStarNews 기반 기사 1건",
-        "제목 기준 변동률 단서 +1.2%",
-        "미래에셋벤처투자 주가, 6월 12일 장중 42,600원 1.19% 상승"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "미래에셋벤처투자 주가, 6월 12일 장중 42,600원 1.19% 상승",
-          "source": "TopStarNews",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5XbG5iNHVndmdyM3poYzcyVHFWSGRTdFEyWU5QMlgzZGp0ZVNUUUVza0dJZHBBMnNNVlNJZG5XZXJPYjFxd0Fzd3hlT2hPUE1fR01aUkdGcGwwUi11eE9TdUE2ME9GYVdtaVdyaGRWSFB6UQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "032830",
-      "name": "삼성생명",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성생명 주가 상승 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5qb014UVhhdGUtd2hzdk5Wc01hVnZWSDAtMUQ1TDlvbnE2VkxzMlZ1ZjBFcXdZbDVibFRneGk0SC1KSTBjc1QyOVM5dE5ZcC1FWHJQaE04aUNWZ3FzWF82c0Nn?oc=5",
-      "mentionScore": 55.2,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "삼성생명 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성생명 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5qb014UVhhdGUtd2hzdk5Wc01hVnZWSDAtMUQ1TDlvbnE2VkxzMlZ1ZjBFcXdZbDVibFRneGk0SC1KSTBjc1QyOVM5dE5ZcC1FWHJQaE04aUNWZ3FzWF82c0Nn?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "0117P0",
       "name": "피스피스스튜디오",
       "changeRate": null,
@@ -1173,31 +1254,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "010130",
-      "name": "고려아연",
-      "changeRate": -12,
-      "price": null,
-      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 비즈니스포스트",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
-      "mentionScore": 40.4,
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 -12.0%",
-        "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "462870",
       "name": "시프트업",
       "changeRate": 8,
@@ -1228,38 +1285,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
-      "symbol": "131970",
-      "name": "두산테스나",
-      "changeRate": null,
-      "price": null,
-      "summary": "두산테스나 주가 전망 : 1년만에 5배 상승한 반도체 장비 관련주",
-      "source": "뉴시스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5MNVJlZXdqZEhWTmloYlJBT3diRWFCRTlOMWMwa1RucHNSY0EtQmp1RkM2TTlZTjBHQS1vZ0FRaHdRSC1pbk1waFZnbS1SWmpfc2hjT0VkQkhlZ1pVazNlNtIBeEFVX3lxTE04Nks4VWhKdjN3R0hpdUJaY1BnR1ptMTVYX0tsZlFxWVkwcmV0LXN6QW1YM3dyQzY1T0kyR3cyLWNTTkVhT3FyN3VSRnFlM0p6U0RLYXA3NU1DdGdJOGNENWgzdXZ4aTItYVZxbHRlV19OVGx3S3FCag?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 뉴시스, 네이버 프리미엄콘텐츠 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "스몰인사이트 \"두산테스나, 구조적 성장 본격화\"",
-        "두산테스나 주가 전망 : 1년만에 5배 상승한 반도체 장비 관련주"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "스몰인사이트 \"두산테스나, 구조적 성장 본격화\"",
-          "source": "뉴시스",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5MNVJlZXdqZEhWTmloYlJBT3diRWFCRTlOMWMwa1RucHNSY0EtQmp1RkM2TTlZTjBHQS1vZ0FRaHdRSC1pbk1waFZnbS1SWmpfc2hjT0VkQkhlZ1pVazNlNtIBeEFVX3lxTE04Nks4VWhKdjN3R0hpdUJaY1BnR1ptMTVYX0tsZlFxWVkwcmV0LXN6QW1YM3dyQzY1T0kyR3cyLWNTTkVhT3FyN3VSRnFlM0p6U0RLYXA3NU1DdGdJOGNENWgzdXZ4aTItYVZxbHRlV19OVGx3S3FCag?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산테스나 주가 전망 : 1년만에 5배 상승한 반도체 장비 관련주",
-          "source": "네이버 프리미엄콘텐츠",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNcFNrajFCUlVoNjV0ZUxCZGlyd2U2bDRoZGI2N2JkakNibUVtY0N0T09fRkhKVUxLOWtNOWNVbDlUYnBnSGN4eG5yLWt1RkJrdDhMWjFZYjJheEJaa2Z2ckl4ZjZqUmE2ZVFQWXIwYzQ4XzRyQjBwTkItSDlkVGVRVHFvWQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "098460",
       "name": "고영",
       "changeRate": null,
@@ -1290,7 +1316,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "0130H0",
       "name": "엔에이치스팩33호",
       "changeRate": 208,
@@ -1314,7 +1340,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "122640",
       "name": "예스티",
       "changeRate": null,
@@ -1345,7 +1371,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-12T07:20:38.321Z",
+      "timestamp": "2026-06-15T01:00:19.798Z",
       "symbol": "128940",
       "name": "한미약품",
       "changeRate": null,
@@ -1377,8 +1403,8 @@
     }
   ],
   "writer": {
-    "provider": "market-research-news",
-    "model": "rule-based-extractor-v1"
+    "provider": "telegram-public-web",
+    "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
     "provider": "opencode-zen",
