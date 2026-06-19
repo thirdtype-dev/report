@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-18T23:35:44.083Z",
-  "phase": "pre_market",
-  "sessionLabel": "08:30",
+  "generatedAt": "2026-06-19T07:00:49.179Z",
+  "phase": "post_market",
+  "sessionLabel": "16:00",
   "summary": {
     "signal": "yellow",
     "totalScore": 0,
@@ -12,33 +12,33 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "value": "9,063.84",
-      "change": "+3.86%",
-      "signal": "blue",
+      "value": "9,052.42",
+      "change": "-0.13%",
+      "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-06-18T09:05:30.000Z",
+      "updatedAt": "2026-06-19T06:33:00.000Z",
       "reason": "KOSPI 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "value": "1,000.93",
-      "change": "-1.74%",
+      "value": "966.59",
+      "change": "-3.43%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-06-18T09:05:30.000Z",
+      "updatedAt": "2026-06-19T06:33:00.000Z",
       "reason": "KOSDAQ 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,536.42",
-      "change": "+1.69%",
-      "signal": "blue",
+      "value": "1,525.78",
+      "change": "+0.02%",
+      "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-06-18T22:29:52.000Z",
+      "updatedAt": "2026-06-19T07:00:30.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "30,685.50",
-      "change": "+3.36%",
+      "value": "30,526.25",
+      "change": "+0.87%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-06-18T23:25:10.000Z",
+      "updatedAt": "2026-06-19T06:50:17.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,7 +82,7 @@
       "change": null,
       "signal": "yellow",
       "status": "unavailable",
-      "updatedAt": "2026-06-19T08:35:43.985350+09:00",
+      "updatedAt": "2026-06-19T16:00:49.057848+09:00",
       "reason": "pykrx/KRX 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: 코스피, 장중 최고치 경신 8,900선…'9천피' 눈앞에(종합) - 연합뉴스 (연합뉴스) / 코스피, FOMC 경계감에 8600선 후퇴…외국인·기관 동반 매도 - 녹색경제신문 (녹색경제신문) / 코스피, FOMC 경계감에 장중 약보합…외국인·기관 동반 순매도 - 인더스트리뉴스 (인더스트리뉴스)",
       "sourceUrl": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-06-18T23:35:44.083Z",
+      "updatedAt": "2026-06-19T07:00:49.179Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -102,34 +102,34 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "currentPrice": "9,063.84",
-      "change": "+337.24",
-      "changePercent": "+3.86%",
-      "trend": "up",
+      "currentPrice": "9,052.42",
+      "change": "-11.42",
+      "changePercent": "-0.13%",
+      "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-06-18T09:05:30.000Z",
+      "updatedAt": "2026-06-19T06:33:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "currentPrice": "1,000.93",
-      "change": "-17.75",
-      "changePercent": "-1.74%",
+      "currentPrice": "966.59",
+      "change": "-34.34",
+      "changePercent": "-3.43%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-06-18T09:05:30.000Z",
+      "updatedAt": "2026-06-19T06:33:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,536.42",
-      "change": "+25.46",
-      "changePercent": "+1.69%",
+      "currentPrice": "1,525.78",
+      "change": "+0.36",
+      "changePercent": "+0.02%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-06-18T22:29:52.000Z",
+      "updatedAt": "2026-06-19T07:00:30.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "30,685.50",
-      "change": "+998.00",
-      "changePercent": "+3.36%",
+      "currentPrice": "30,526.25",
+      "change": "+262.90",
+      "changePercent": "+0.87%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-06-18T23:25:10.000Z",
+      "updatedAt": "2026-06-19T06:50:17.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -179,16 +179,8 @@
       "title": "'검은 월요일' 코스피 8%·코스닥 9% 하락…서킷브레이커 발동에 패닉 장세 - 뉴스톱",
       "summary": "'검은 월요일' 코스피 8%·코스닥 9% 하락…서킷브레이커 발동에 패닉 장세&nbsp;&nbsp;뉴스톱",
       "source": "뉴스톱",
-      "publishedAt": "Mon, 08 Jun 2026 09:23:35 GMT",
+      "publishedAt": "Mon, 08 Jun 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE4xWUdldnVrdU9HbEF6azJhbjU5Wm1fTUhNYU9uMXU4YTF3WHFxdnNnY2FuZ01HTFFQS1dhQ25wREd3RF8wemQyaDhwMTU0SU9KUmxXdnhINkpPemRJSzJleXhHbFVJRUxSZzNWNTdFOA?oc=5",
-      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
-    },
-    {
-      "title": "코스피 8476 또 최고치…AI·반도체 쏠림 - seouleconews.com",
-      "summary": "코스피 8476 또 최고치…AI·반도체 쏠림&nbsp;&nbsp;seouleconews.com",
-      "source": "seouleconews.com",
-      "publishedAt": "Fri, 29 May 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE10eW5ZcWFSUXQwM1dsY0stN094ckkxMHJ1cHdoeXZlZG4tT1lRTEtlZnBHUVEtTFh4eF9GeTFfRWJXYVREUTU3RFZnMkEtZXZPel8yQ0NpMVRxYmFtSnBvX05sZlJLOC1Qa2h3MWNTTDY?oc=5",
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     },
     {
@@ -197,6 +189,14 @@
       "source": "jabon.co.kr",
       "publishedAt": "Thu, 04 Jun 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBfV3VsLUQtWEtfMXpYNjlXTUZWakppbC0xbXBuR2M1WVhWZHFFdnlKY3hpMTV2VHpRVGdJUHlTZ0JxRUo0S1lKSnN3dVdPY1hYb1RMbl9XcVZMTThPTkhyS0VUMk03Sms?oc=5",
+      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
+    },
+    {
+      "title": "코스피 6000선 회복할까…반도체·2차전지 반등 시도[주간증시전망] - 이데일리TV",
+      "summary": "코스피 6000선 회복할까…반도체·2차전지 반등 시도[주간증시전망]&nbsp;&nbsp;이데일리TV",
+      "source": "이데일리TV",
+      "publishedAt": "Sun, 08 Mar 2026 08:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9YRjB1NzRlSlhYa0xPbndVemx6THkxVVY3N1EwLWdUSVpZVVJrZGtKQlMwX2hVM1lycjBtWUwwYy1BTmVYdHJMbTVsSTlWTm5FWk1NQnB0Rml3SU9PXzJheUtqRjRIVjg2Zk1DUDFKUHFqS05YRU5XYXBOcw?oc=5",
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     },
     {
@@ -213,14 +213,6 @@
       "source": "thefairnews.co.kr",
       "publishedAt": "Thu, 04 Jun 2026 15:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQc2hfb2Z5NWlKQnRRX1lucjZGZzhNZXpwUzdiQkE3OHhxaFNUWWF5SlFWU2d2eWp1OUFwbENPbk1oNG5TQ0I1cFJQS3ZiajBTUVRucm5kMHl6ZXlCOXlUdGVoZzAtWGw3TDdNM1RKbl_SAXRBVV95cUxNNEdROTMxTUltRXBZZlBsYlo2NTBKM2wtRU9GeFdBR0VLNjJGZF85eW9uYi1oNXhvTUVDaGVzSVRSNW8wZWZuZmlvMXpvcVQ4UVQtNUxneWJORXoydmxibXdQSklzeVNucTU4X2g5RVFhdGswdQ?oc=5",
-      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
-    },
-    {
-      "title": "코스피 6000선 회복할까…반도체·2차전지 반등 시도[주간증시전망] - 이데일리TV",
-      "summary": "코스피 6000선 회복할까…반도체·2차전지 반등 시도[주간증시전망]&nbsp;&nbsp;이데일리TV",
-      "source": "이데일리TV",
-      "publishedAt": "Sun, 08 Mar 2026 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9YRjB1NzRlSlhYa0xPbndVemx6THkxVVY3N1EwLWdUSVpZVVJrZGtKQlMwX2hVM1lycjBtWUwwYy1BTmVYdHJMbTVsSTlWTm5FWk1NQnB0Rml3SU9PXzJheUtqRjRIVjg2Zk1DUDFKUHFqS05YRU5XYXBOcw?oc=5",
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     },
     {
@@ -246,79 +238,23 @@
       "publishedAt": "Mon, 20 Apr 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQa3pIZEhjM1NTQ0JDUG5FeFdoTUlRclpGMjkwMHF0cW5Kc3NvcHVQN0h0UzVXQ0VmREUyVXpJZUlSTzRwVllPWnY5VHk4dW01Sy1XbnFVR1dwdlpKenMxTDAwVHYzUmtQNklDUWlGbFNSY2Z6Nk9YS3VRVE5FNVo2TFUySk5OSkRrTVE?oc=5",
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
+    },
+    {
+      "title": "[박정식의 국내 주식시황] 브로드컴 쇼크에 반도체 부담…국내증시, 코스닥 순환매 이어질까 - 뉴스퀘스트",
+      "summary": "[박정식의 국내 주식시황] 브로드컴 쇼크에 반도체 부담…국내증시, 코스닥 순환매 이어질까&nbsp;&nbsp;뉴스퀘스트",
+      "source": "뉴스퀘스트",
+      "publishedAt": "Thu, 04 Jun 2026 23:14:23 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5TUFVTWktRcVpXVmFrZE1FVHdwa1RNTjZETUlPM014bmszOGFXeHJuMjE0NXU3WTBwbHMySjdJeHFDNURacFBKYjU4LXZtenZVdnYtVEtyZ3ZHYTM0WDl5emxtZmxEYVp2cnJzenlaNNIBc0FVX3lxTE9mc00yaU1CSmNKMmV3Sjl6VEszaXNLTkMwMUJkR0s1M1R6SXlKaUdtT05YQjJXZVRyYUppdFk1WlZmajlsZ2hiV083VjJFSDVKQWlTUmVKaUlIZDhvZ1N5dnJvZlJEQ1g5YnRMTWZLODR4c28?oc=5",
+      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     }
   ],
   "stockNewsCandidates": [
     {
-      "title": "'젠슨 황 땡큐'…급락장서 웃은 네이버, 9% 상승 마감 [특징주] - 데일리안",
-      "summary": "'젠슨 황 땡큐'…급락장서 웃은 네이버, 9% 상승 마감 [특징주]&nbsp;&nbsp;데일리안",
-      "source": "데일리안",
-      "publishedAt": "Mon, 08 Jun 2026 07:10:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQai1oOGRCNUsyUU9XZjJFSFdiRkJyVnh1YWRsMWUyN3d5OFpXT0Jka3EtVkRSM1dJc3pJV3M5OHpaMFB3dTNFSXk3Znk3djh3d1V3MmEwOFZTU01uQTdJT2JiaUEyOTA5TV9hZmo2aGRzSnpQR2luYkFjWDJwRDV0X1gtTndFNGNuTEt1NlIzRXRNdUY4Wm9MdHlJMkpuaUR0Wk5vdW16YW1UQ01VRk04UVR0ZWNCWXZGcFBGM0h6MHFfcld6TWY1TWdHNEVvMXNvSFZpNGlsRy1oWXJaNzFCeHJmZWdaSkVucVl4V0M1RGpiaFV2SDY2VXRQSFEwV2xxY2JzWnp0MmxvejgxOGfSAZACQVVfeXFMTm0wQVFiZ01sNkhKZm5JbmdhNm9uRzFGSldMZHNhd3dYMk0yYVBVQVN6cXFTNG1yMGJhNm9ZZktXNmNVZG9ORUR6NFVlYThReUVPNlE2S2FieG11T3QzV3V3eDRIZFUwYTlSR29hR1NBdTdwOEhoWm1uYVRrODlORGFKQWNJcXU1ZmtSVmhZaUhoRjhsc2lxRENxaFEtZWM5Mzg1MUM1Ykdrd3owUmJ4SHdaWXVrQXp5VTlCRFBXTFYybGpsQzBIdTJHZ3huMnMyNzVGbE9hMGpjc3lkUXV2TnlfcUZqdnNBMk9LYTBIeFY3TXRUNkc3bGpQMW56Nmd5VGd6Z2ZwUV9oTzZyYTI2R28?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막 - 비즈니스포스트",
-      "summary": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막&nbsp;&nbsp;비즈니스포스트",
+      "title": "[오늘의 주목주] '반도체 강세' 한미반도체 주가 24%대 급등, 코스피 '돌아온 외국인'에 8120선 상승 - 비즈니스포스트",
+      "summary": "[오늘의 주목주] '반도체 강세' 한미반도체 주가 24%대 급등, 코스피 '돌아온 외국인'에 8120선 상승&nbsp;&nbsp;비즈니스포스트",
       "source": "비즈니스포스트",
-      "publishedAt": "Thu, 02 Apr 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[증시 오늘(11일) 핵심 특징주] AI 건전성 의문·美 한파에 코스피 급락…‘보스턴 잭팟’ 화신정공은 장중 상한가 - thefairnews.co.kr",
-      "summary": "[증시 오늘(11일) 핵심 특징주] AI 건전성 의문·美 한파에 코스피 급락…‘보스턴 잭팟’ 화신정공은 장중 상한가&nbsp;&nbsp;thefairnews.co.kr",
-      "source": "thefairnews.co.kr",
-      "publishedAt": "Thu, 11 Jun 2026 01:44:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE82Y0s4LW0zMUdXVDJnRkEwakF1ZkF6Q3pwMzlVMHJ2eHRqblZSQ0FvRGFRYUtrbGV4aE5mZ0xxWGllaWlvQWdJWFV0WGRlLTVpM0VFUGtqQlU1ME9ubWp2cDNORTRLU0p0ajJYV0RzYnPSAXRBVV95cUxOSlFscUVJUE82Wi02bTVxNjlCNUJKQ1h4SW5UR1pBb0g3d2tveEl5WkFCeTdFYTgxMXgyTThiNFlXTlV6Rk1GZGQ2OVNsemw0RkluMlh2R2lxdi12QjVyS2JZSmV4bVllTkR2UUtTUDQtX1hQSQ?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "터보퀀트에 반도체 휘청, 코스피 -3%대 | KB의 생각 - KB Think",
-      "summary": "터보퀀트에 반도체 휘청, 코스피 -3%대 | KB의 생각&nbsp;&nbsp;KB Think",
-      "source": "KB Think",
-      "publishedAt": "Thu, 26 Mar 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81dnE2VkFYMWFrTHhsdXRWUlQ5MlJzemJrUjZrTHhXbmVFa25KTTdjVS0xWE5oenBKbTVrM0NQelMzUkcySDB4WHRITmhrdDZGcW1kUm5EOVJQSW9ETjAtUVdkM1otVjhqemNUVA?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[마감] 코스피, 중동 긴장고조·유가 급등에 3% 급락 - 알파경제",
-      "summary": "[마감] 코스피, 중동 긴장고조·유가 급등에 3% 급락&nbsp;&nbsp;알파경제",
-      "source": "알파경제",
-      "publishedAt": "Mon, 30 Mar 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9UTVU2MTlIZURHXzIwWmRYN2laSUtuUElZUDU2NFVJREFLaXE4LWtkbnJPZldCdVM4XzdvaWM2TGJxSUZKLV9XbWJYU3NtRGJsaW85TnptUU5RS3ItX1HSAW5BVV95cUxNOS10X1FHNzhnaDZTcGpoWUh0dFprRnFtYVJ6NGgwT1AxVVU2UFV6UEFkckoxNHlpU1BsOHduVGlvRFU2UjctRlhSakFTNkZvd2FUYmFNMUM0Yl9pd1VzNXlGRmN1c2p4SDR6a1NFUQ?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈 - Chosunbiz",
-      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈&nbsp;&nbsp;Chosunbiz",
-      "source": "Chosunbiz",
-      "publishedAt": "Mon, 18 May 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[AI MY 증시전망] 미·이란 협상 기대·유가 급락에 코스피 6000 안착 시험대 - 뉴스핌",
-      "summary": "[AI MY 증시전망] 미·이란 협상 기대·유가 급락에 코스피 6000 안착 시험대&nbsp;&nbsp;뉴스핌",
-      "source": "뉴스핌",
-      "publishedAt": "Wed, 15 Apr 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1iNmZiNUVINHpMWmtkRmZzYWRaWm8zeGtYYnR5ZTBRald2MnpHM3dnQW9ETmhZUVRNZkE5bWxDU0RDVzU2MDhfcU5NQXY5ZExBNXJpZEt3WGdHUmIt?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 전쟁 공포에 증시 ‘패닉’…인트론바이오, 나홀로 상한가 왜 - 바이오타임즈",
-      "summary": "[특징주] 전쟁 공포에 증시 ‘패닉’…인트론바이오, 나홀로 상한가 왜&nbsp;&nbsp;바이오타임즈",
-      "source": "바이오타임즈",
-      "publishedAt": "Wed, 04 Mar 2026 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1sd3g5Q0RLaE9oYXduREV4UGkzTzhveEdQcGFJSDVQMy05X2FJSzdLUHdaRnU4R3dKY3g2Z3FaUWNWUXZfTjJHTjVUb0FTUGRuUkhsb0wyT0J4WWlOREQwVFdvN0xKSVNRenlNRg?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "코스닥, 7.09% 급등한 1064.41 마감...'기관 2.6조 순매수'에 4년 반만 천스닥 - 오피니언뉴스",
-      "summary": "코스닥, 7.09% 급등한 1064.41 마감...'기관 2.6조 순매수'에 4년 반만 천스닥&nbsp;&nbsp;오피니언뉴스",
-      "source": "오피니언뉴스",
-      "publishedAt": "Mon, 26 Jan 2026 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE8ydHFaNm95WnRuVUR5aW5EQ1Vyd2g0Z3hoalZ3VnczS2J0dW5hR0JJUkt6eC1JTm9uYUI1T2xUWVJ0WEVhTXNDRXp1RWVuNGh4eXZlcFpJdGhWMWlLeXFmT2p5RnVlcUc3VnZWMWtFMEpadw?oc=5",
+      "publishedAt": "Fri, 12 Jun 2026 08:17:38 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAydDJXMll0cDAzNGhtYUtPbUNqZk50R29wbjJCVW94eUJ1cGk3R0V0UHRkckVFa1ZlRXcwamdxckhpNE0taHhMTjNmN1JudEd0RUtvcmhMZmVRY1gxM2Y5WE1Pd3FHVFFYSW5NQWpWSDFsR3c?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
@@ -330,19 +266,67 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
-      "title": "[오늘의 주목주] '젠슨 황 한국 방문 기대감' LG전자 상한가, 코스피 기관 매수에 8470선 상승 마감 - 비즈니스포스트",
-      "summary": "[오늘의 주목주] '젠슨 황 한국 방문 기대감' LG전자 상한가, 코스피 기관 매수에 8470선 상승 마감&nbsp;&nbsp;비즈니스포스트",
-      "source": "비즈니스포스트",
-      "publishedAt": "Fri, 29 May 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01ell2X05Td1ZkanM4ZnZHUTVLRDViNGtIdWhHN3F3ZExGUDlQOFNzbjlsa3VXaFFnbGw3V25nNzF0eWpEQ2FucFhiQkpURFYtS2dSSm9GN3VXRjE1YXZGcTNjbjU5MTU2MmlxNHNkdkRVRU0?oc=5",
+      "title": "[증시 오늘(11일) 핵심 특징주] AI 건전성 의문·美 한파에 코스피 급락…‘보스턴 잭팟’ 화신정공은 장중 상한가 - thefairnews.co.kr",
+      "summary": "[증시 오늘(11일) 핵심 특징주] AI 건전성 의문·美 한파에 코스피 급락…‘보스턴 잭팟’ 화신정공은 장중 상한가&nbsp;&nbsp;thefairnews.co.kr",
+      "source": "thefairnews.co.kr",
+      "publishedAt": "Thu, 11 Jun 2026 01:44:50 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE82Y0s4LW0zMUdXVDJnRkEwakF1ZkF6Q3pwMzlVMHJ2eHRqblZSQ0FvRGFRYUtrbGV4aE5mZ0xxWGllaWlvQWdJWFV0WGRlLTVpM0VFUGtqQlU1ME9ubWp2cDNORTRLU0p0ajJYV0RzYnPSAXRBVV95cUxOSlFscUVJUE82Wi02bTVxNjlCNUJKQ1h4SW5UR1pBb0g3d2tveEl5WkFCeTdFYTgxMXgyTThiNFlXTlV6Rk1GZGQ2OVNsemw0RkluMlh2R2lxdi12QjVyS2JZSmV4bVllTkR2UUtTUDQtX1hQSQ?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
-      "title": "3/11(수) 매매일지 복기 - 네이버 프리미엄콘텐츠",
-      "summary": "3/11(수) 매매일지 복기&nbsp;&nbsp;네이버 프리미엄콘텐츠",
+      "title": "[특징주] KB금융, 코스피 급락 속 '방어주' 선전 속 '상승' - 전국매일신문",
+      "summary": "[특징주] KB금융, 코스피 급락 속 '방어주' 선전 속 '상승'&nbsp;&nbsp;전국매일신문",
+      "source": "전국매일신문",
+      "publishedAt": "Fri, 05 Jun 2026 04:50:40 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5GZHhEaUhVWHFqaC1EdV9ZMktIdjZDNnUweXQzekFTRU1wSks1Q0lZT005MG9YUXczMHVRVFM1NmRFbHBJV2dKaGVrTTh6ZnBsYjEwUERhZ0RPSVZBQ1NrbDNkOVI2d2t3WGE4N3NR?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "외인 매도 뚫고 코스피 7,490 마감 - KB Think",
+      "summary": "외인 매도 뚫고 코스피 7,490 마감&nbsp;&nbsp;KB Think",
+      "source": "KB Think",
+      "publishedAt": "Thu, 07 May 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAtcVFlRU5kd2ZYZUNZQURHTGJwVGZUYlBiTHNCamFXLTJibHRYaEJfRl9JMjVzMUFxejFvb3UyUlNjQkxZakY5dWNYMW5SdXBmTjNEV2tKaEhjMW0yMGhyQ0ViUDcwQmRoUWJqMQ?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "2026년 3/5(목) - 데일리포인트 - 네이버 프리미엄콘텐츠",
+      "summary": "2026년 3/5(목) - 데일리포인트&nbsp;&nbsp;네이버 프리미엄콘텐츠",
       "source": "네이버 프리미엄콘텐츠",
-      "publishedAt": "Wed, 11 Mar 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOYTJjTWhOSHZZRXZ0ZU9qbDZDbm5hTDBRYlhGd0xBcWpXUm1IemE2M3hBblFhNWVlQWFSeDI1dXhobGdyZ0VVODdfYmFyY1plcXdETUVoSHhUVmh0MXJMV2NCdjNhZjg2WjY5RnFjLXNJYjFaQkN3YUxfcDhDZXViUER0akY5VkY5Nmh3?oc=5",
+      "publishedAt": "Thu, 05 Mar 2026 08:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOakxocVpnUm1qOW5sZVRqTkJ2THllQ1hUcnBOOTkyNkxlVFd5cnpjRklpWVNFdGlubVNqd0JRV0lYMjlzdlJsN3VvM3BVSFJQeGw0SjROS2NfVm5kZ181N01fbThDVklZbXFJdjdUUkZCZHhaYzdUR0RwbHozSm9MYWFVUGJFY1BIOW1z?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[마감] 코스피, 중동 긴장고조·유가 급등에 3% 급락 - 알파경제",
+      "summary": "[마감] 코스피, 중동 긴장고조·유가 급등에 3% 급락&nbsp;&nbsp;알파경제",
+      "source": "알파경제",
+      "publishedAt": "Mon, 30 Mar 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9UTVU2MTlIZURHXzIwWmRYN2laSUtuUElZUDU2NFVJREFLaXE4LWtkbnJPZldCdVM4XzdvaWM2TGJxSUZKLV9XbWJYU3NtRGJsaW85TnptUU5RS3ItX1HSAW5BVV95cUxNOS10X1FHNzhnaDZTcGpoWUh0dFprRnFtYVJ6NGgwT1AxVVU2UFV6UEFkckoxNHlpU1BsOHduVGlvRFU2UjctRlhSakFTNkZvd2FUYmFNMUM0Yl9pd1VzNXlGRmN1c2p4SDR6a1NFUQ?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[오늘의 주목주] '삼성전자 지분 보유' 삼성화재 주가 7%대 급등, 코스피 개인 순매수에 7760선 강보합 마감 - 비즈니스포스트",
+      "summary": "[오늘의 주목주] '삼성전자 지분 보유' 삼성화재 주가 7%대 급등, 코스피 개인 순매수에 7760선 강보합 마감&nbsp;&nbsp;비즈니스포스트",
+      "source": "비즈니스포스트",
+      "publishedAt": "Thu, 11 Jun 2026 08:37:23 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1XMTZQUjgwSE5adk5GUTJWMGNNbHhyTi1LVWNCbWR5S3ZTYlhId0oydEFCWkZ2TEoydmladHBsS2cwN1RNNVNsc1lWbG5yU1BaOHVuSEVpYlFVRTJpYkhfTzktU2hsbzE4bVQxUXA3Z0hCTW8?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈 - Chosunbiz",
+      "summary": "[특징주] 아리바이오 “단독 상장 검토” 소식에…소룩스 한때 25% 급락 - 조선비즈&nbsp;&nbsp;Chosunbiz",
+      "source": "Chosunbiz",
+      "publishedAt": "Mon, 18 May 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOcVhLdU5SMjlTeV84UjMwNGJDM3JXanp1RDB1b0wzbGpuOE1tWXhTa1o5LWtxc2JDN2xWN2RBbVRYV3ZXbGRGSXdPaVh4RklRT2hTYUNWVmF3ZUVBUkUyXy05eGZ6VDZSQUlVSUFqUEFBSTFUb1lrVWJxNGZzeFhvMjJlUXVuejZF0gGcAUFVX3lxTFBRZHp2a2p3WTdYa3FkYUg2aExSU0otcDN2RjNyQXF3TW1mdkFVMEhsVUVlSlpJMEFpUGRtcEx6N1JxNlktbnFSeHRxbUNHQjgzUF8xM0RtZUNpY25qSzRrS0NieUt6Q0RfYlhMckRwb2RoVy1JX3N2a1phaGNfQUNVQzZVNV9SNHNFZG4wTmlESHdoRTRyRXZKSUoyRg?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "'젠슨 황 땡큐'…급락장서 웃은 네이버, 9% 상승 마감 [특징주] - 데일리안",
+      "summary": "'젠슨 황 땡큐'…급락장서 웃은 네이버, 9% 상승 마감 [특징주]&nbsp;&nbsp;데일리안",
+      "source": "데일리안",
+      "publishedAt": "Mon, 08 Jun 2026 07:10:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQai1oOGRCNUsyUU9XZjJFSFdiRkJyVnh1YWRsMWUyN3d5OFpXT0Jka3EtVkRSM1dJc3pJV3M5OHpaMFB3dTNFSXk3Znk3djh3d1V3MmEwOFZTU01uQTdJT2JiaUEyOTA5TV9hZmo2aGRzSnpQR2luYkFjWDJwRDV0X1gtTndFNGNuTEt1NlIzRXRNdUY4Wm9MdHlJMkpuaUR0Wk5vdW16YW1UQ01VRk04UVR0ZWNCWXZGcFBGM0h6MHFfcld6TWY1TWdHNEVvMXNvSFZpNGlsRy1oWXJaNzFCeHJmZWdaSkVucVl4V0M1RGpiaFV2SDY2VXRQSFEwV2xxY2JzWnp0MmxvejgxOGfSAZACQVVfeXFMTm0wQVFiZ01sNkhKZm5JbmdhNm9uRzFGSldMZHNhd3dYMk0yYVBVQVN6cXFTNG1yMGJhNm9ZZktXNmNVZG9ORUR6NFVlYThReUVPNlE2S2FieG11T3QzV3V3eDRIZFUwYTlSR29hR1NBdTdwOEhoWm1uYVRrODlORGFKQWNJcXU1ZmtSVmhZaUhoRjhsc2lxRENxaFEtZWM5Mzg1MUM1Ykdrd3owUmJ4SHdaWXVrQXp5VTlCRFBXTFYybGpsQzBIdTJHZ3huMnMyNzVGbE9hMGpjc3lkUXV2TnlfcUZqdnNBMk9LYTBIeFY3TXRUNkc3bGpQMW56Nmd5VGd6Z2ZwUV9oTzZyYTI2R28?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
@@ -354,11 +338,43 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
+      "title": "터보퀀트에 반도체 휘청, 코스피 -3%대 | KB의 생각 - KB Think",
+      "summary": "터보퀀트에 반도체 휘청, 코스피 -3%대 | KB의 생각&nbsp;&nbsp;KB Think",
+      "source": "KB Think",
+      "publishedAt": "Thu, 26 Mar 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81dnE2VkFYMWFrTHhsdXRWUlQ5MlJzemJrUjZrTHhXbmVFa25KTTdjVS0xWE5oenBKbTVrM0NQelMzUkcySDB4WHRITmhrdDZGcW1kUm5EOVJQSW9ETjAtUVdkM1otVjhqemNUVA?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
       "title": "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이 - 알파경제",
       "summary": "[마감] 코스피, 美 국채금리 급등·삼성전자 파업 우려에 7200선 턱걸이&nbsp;&nbsp;알파경제",
       "source": "알파경제",
       "publishedAt": "Wed, 20 May 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9NOFd4cks3RGg2eFp1U1VpUlh2SmdMMUVKRGhpNEtBS3FQeTNRd3dHSmk5Q1dKa09feEd1RHdIZ2Q3Y2Rhc1BWNXNpbGkyMlZleks2X3QwRkhqQThVbUHSAW5BVV95cUxQeHNuX29EZWhLQVBYUFY4QjVIbmNsQ2l4XzA2TDZDX051V2NNaGZqSWVQaTM3RFVaTm5iZlpjMFR6Rm5kVTl5X2loQ2lrNlRILXg4UTBxNi1RSjNKVFp1WmgyeXd5R1oxMy1Ya2lMdw?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막 - 비즈니스포스트",
+      "summary": "[오늘의 주목주] '코스피 급락'에 미래에셋증권 7%대 내려, 코스닥 삼천당제약 사흘 만 주가 반토막&nbsp;&nbsp;비즈니스포스트",
+      "source": "비즈니스포스트",
+      "publishedAt": "Thu, 02 Apr 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01em40RVVqb0pGdTJSblpWdldlM3V4VllIZC1yZUxjUUhQbXJFZWJhM2I5NktjVXpsa01Ya3lHeDR4dlBCQXZzem5pVWpldVVFd0FyUWlDQWtuaW1nZHR3R1V4LS1OanNZV1ZKV0o0UmV1c0U?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[증시 오늘(4일) 핵심 특징주] 美 브로드컴 충격·중동 긴장에 흔들리는 코스피…외인 '셀 코리아'에 반도체·자동차 동반 약세 - thefairnews.co.kr",
+      "summary": "[증시 오늘(4일) 핵심 특징주] 美 브로드컴 충격·중동 긴장에 흔들리는 코스피…외인 '셀 코리아'에 반도체·자동차 동반 약세&nbsp;&nbsp;thefairnews.co.kr",
+      "source": "thefairnews.co.kr",
+      "publishedAt": "Thu, 04 Jun 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAtVnEtbGpkb0ZaXzl5Q3k2UFhTMG9Dd25KeGlESG9nUFpXSTRjWk9VQlBjajJrNFpuS0RDQUl3bEVndjlDODB3MEFNRVZvZklvbmdjVk9OM1d1M29DTmJ4SjBaRmJJOGlNa21mUFgxaDnSAXRBVV95cUxPbHNNUDhoczZSa1NRUWNwMkhwSG9hRHQ2ZGNZX3hhTEY5NENGc21OVFVnckRvSi1RXzRSWm9odlhIVzdra0RIUkhkNWkxWWZUY05abFZVcVJCV1lUUG5GUDFYc1dvVC1LcklsVVN2TktMU0FhdA?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[오늘의 주목주] '젠슨 황 한국 방문 기대감' LG전자 상한가, 코스피 기관 매수에 8470선 상승 마감 - 비즈니스포스트",
+      "summary": "[오늘의 주목주] '젠슨 황 한국 방문 기대감' LG전자 상한가, 코스피 기관 매수에 8470선 상승 마감&nbsp;&nbsp;비즈니스포스트",
+      "source": "비즈니스포스트",
+      "publishedAt": "Fri, 29 May 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01ell2X05Td1ZkanM4ZnZHUTVLRDViNGtIdWhHN3F3ZExGUDlQOFNzbjlsa3VXaFFnbGw3V25nNzF0eWpEQ2FucFhiQkpURFYtS2dSSm9GN3VXRjE1YXZGcTNjbjU5MTU2MmlxNHNkdkRVRU0?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
@@ -370,27 +386,11 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
-      "title": "2월 2일 증시 시황·주요 특징주 분석 - thefairnews.co.kr",
-      "summary": "2월 2일 증시 시황·주요 특징주 분석&nbsp;&nbsp;thefairnews.co.kr",
-      "source": "thefairnews.co.kr",
-      "publishedAt": "Mon, 02 Feb 2026 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAzN2ZoRnItT3ZYVmdtekpJVXJIaHVnWDhzU0N5cGc5SHF5bjZPd2NqY1NnSGlGbHJFdTViQm5VR0YxZmdEU3V1QUQweHBpNnhkZlZwMGhIR082VkJ6dFlZMFpWNVhrajh5THRvRkVoY3LSAXRBVV95cUxNSGtiUUZhVHBrVjVzaTVrUlZmUktaSS1qbS1RTE0zVTB3cERaTWZKT0pZcDRVMkltb2dEVEdQX2tUT0dFdC0yZGpxdGtXNzNBSXZuTllpMmd0MlE4MTRFbFZZQTFhemVseGM5LWxyNDJiNEZjdQ?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
       "title": "[오늘의 주목주] '차익실현 압력' 한화시스템 주가 5%대 하락, 코스닥 디앤디파마텍 15%대 급등 - 비즈니스포스트",
       "summary": "[오늘의 주목주] '차익실현 압력' 한화시스템 주가 5%대 하락, 코스닥 디앤디파마텍 15%대 급등&nbsp;&nbsp;비즈니스포스트",
       "source": "비즈니스포스트",
       "publishedAt": "Fri, 13 Mar 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE11bGJEVTdBbXBSLTBwTmYtOUtxWlE5TWZXUll1QV94cnFFb0dMZk9RaHNrZGxTZEUyT3pJWElUMVlzbWtIbS1pMEVhcEhKYkFJT2hmX2E1cXZKM1BiV2U5MXNmdEE5VWJ3UzdwRU05VUsxTEk?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[심층분석] 반도체 충격에 2차전지·바이오까지 동반 급락…‘기술주 연쇄 조정’의 속사정 - thefairnews.co.kr",
-      "summary": "[심층분석] 반도체 충격에 2차전지·바이오까지 동반 급락…‘기술주 연쇄 조정’의 속사정&nbsp;&nbsp;thefairnews.co.kr",
-      "source": "thefairnews.co.kr",
-      "publishedAt": "Mon, 08 Jun 2026 15:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA2NmdXcWNVR1k0R3RxNEhyc0J6eThWZVVTb08yNFEzdzAtcklWbFdSekRYLUx0NEtIellhLWo1aTNPSzNEM0daTzM0RlpKMVE5TWhRRFpFTnRlU3Q4Qk9oemNqYXhFeTZpSjdLTTdqYkPSAXRBVV95cUxNZmFxSXV0ZTJaRE52dUFJOTB6UHVXU01oWGVGV2RoVjNRYXQtNkVqeE5jd0dFUnF1WXZpQkEzTTJxbjF3aWEwa0NmbG1haVJMS0hmWVVCMU5BN0JST25KVGlzMi1YbG1zSHZNS1B0ZDBCQ1djaQ?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     }
   ],
@@ -420,19 +420,19 @@
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
-      "title": "코스피 8000선 회복…외국인·기관 대규모 순매수에 4.63% 급등 - 한경매거진&북",
-      "summary": "코스피 8000선 회복…외국인·기관 대규모 순매수에 4.63% 급등&nbsp;&nbsp;한경매거진&북",
-      "source": "한경매거진&북",
-      "publishedAt": "Fri, 12 Jun 2026 07:20:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1XUXBDWUlTdjExQTlOem1yX3lWbGRSVWZOX0pNdFM2ejBwMEdYRDBmQnFnZUFLQzV0eEV2YnJheXczU3FGNU4tV3d5bDNzc0oxUFlwTGFUalRwU3VXSUN1X0VIRlRZQy04?oc=5",
-      "query": "코스피 외국인 기관 순매수 순매도"
-    },
-    {
       "title": "코스피, 美 FOMC 앞두고 소폭 하락…외국인 순매도 전환 - 글로벌경제신문",
       "summary": "코스피, 美 FOMC 앞두고 소폭 하락…외국인 순매도 전환&nbsp;&nbsp;글로벌경제신문",
       "source": "글로벌경제신문",
       "publishedAt": "Wed, 17 Jun 2026 02:10:16 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBBbloyRkRib1dMZk85SWY2dmtKdXdmUVp3ZDZfV3lrU3NPWWdXelJVeWlLeWxNNlV0SHF6N1RNcW5KcDBfN3NKWjhlVzNZeHlvbGhzRXN2S0htYkFmSE5YM3Nkd09zTnBZWUU0N3hOcjjSAXBBVV95cUxQQW5aMkZEYm9XTGZPOUlmNnZrSnV3ZlFad2Q2X1d5a1NzT1lnV3pSVXlpS3lsTTZVdEhxejdUTXFuSnAwXzdzSlo4ZVczWXh5b2xoc0VzdktIbWJBZkhOWDNzZHdPc05wWVlFNDd4TnI4?oc=5",
+      "query": "코스피 외국인 기관 순매수 순매도"
+    },
+    {
+      "title": "코스피 8000선 회복…외국인·기관 대규모 순매수에 4.63% 급등 - 한경매거진&북",
+      "summary": "코스피 8000선 회복…외국인·기관 대규모 순매수에 4.63% 급등&nbsp;&nbsp;한경매거진&북",
+      "source": "한경매거진&북",
+      "publishedAt": "Fri, 12 Jun 2026 07:20:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1XUXBDWUlTdjExQTlOem1yX3lWbGRSVWZOX0pNdFM2ejBwMEdYRDBmQnFnZUFLQzV0eEV2YnJheXczU3FGNU4tV3d5bDNzc0oxUFlwTGFUalRwU3VXSUN1X0VIRlRZQy04?oc=5",
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
@@ -460,6 +460,14 @@
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
+      "title": "코스피, 외국인 2조 순매도에 8100선 후퇴…개인 매수에 낙폭 줄여 - hidomin.com",
+      "summary": "코스피, 외국인 2조 순매도에 8100선 후퇴…개인 매수에 낙폭 줄여&nbsp;&nbsp;hidomin.com",
+      "source": "hidomin.com",
+      "publishedAt": "Thu, 28 May 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9WYkdCX0RPcGlEODJkR3Y0MGI4STJCcnhZU0JiX1B5RlBnZ1BnSGEySG1kNVR2TVdoeExDTkpsMEFtWlVtRGVIVHFxaHduaTZVV09pemlHYnA0eDF0Y21qZndzNTV5bFNyZnc?oc=5",
+      "query": "코스피 외국인 기관 순매수 순매도"
+    },
+    {
       "title": "‘던져라 외국인, 다 받아주마’…코스피 떠받치는 개미들, 6일째 순매수 - 한겨레",
       "summary": "‘던져라 외국인, 다 받아주마’…코스피 떠받치는 개미들, 6일째 순매수&nbsp;&nbsp;한겨레",
       "source": "한겨레",
@@ -468,19 +476,11 @@
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
-      "title": "개미 8조 불타기 vs 외국인 7조 차익실현...코스피 7400선 줄다리기 - 머니투데이 - 머니투데이",
-      "summary": "개미 8조 불타기 vs 외국인 7조 차익실현...코스피 7400선 줄다리기 - 머니투데이&nbsp;&nbsp;머니투데이",
-      "source": "머니투데이",
-      "publishedAt": "Thu, 07 May 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9CMVFiZTNBYkJjbHR3cWlKTmhHbTBzeXF2WWRGSXFVQ0owQ3NHR3AxMU9RcU1la1ZFaHlvb05uQ0U1T1dCYUZ5dGI5bU82TmhSWHpSMjh0SXBha1RUbmo1Vlp0czNMeUVk0gFuQVVfeXFMTjA3TlpucE5WS1p3ZGtkY2NwalpkYmlicFdEdTE5Umt3R3cxOTJubmNFQllnSXZORlNUeEFha1pURUtHU2hnZFA5LUt5aFdmYW41RkhpX1pIajZoeXd5b095dnQ2NEFSbWpIeGNnYUE?oc=5",
-      "query": "코스피 외국인 기관 순매수 순매도"
-    },
-    {
-      "title": "코스피, 외국인 2조 순매도에 8100선 후퇴…개인 매수에 낙폭 줄여 - hidomin.com",
-      "summary": "코스피, 외국인 2조 순매도에 8100선 후퇴…개인 매수에 낙폭 줄여&nbsp;&nbsp;hidomin.com",
-      "source": "hidomin.com",
-      "publishedAt": "Thu, 28 May 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9WYkdCX0RPcGlEODJkR3Y0MGI4STJCcnhZU0JiX1B5RlBnZ1BnSGEySG1kNVR2TVdoeExDTkpsMEFtWlVtRGVIVHFxaHduaTZVV09pemlHYnA0eDF0Y21qZndzNTV5bFNyZnc?oc=5",
+      "title": "코스피 장중 한때 8700선 회복…외국인·기관 순매수 - 네이트",
+      "summary": "코스피 장중 한때 8700선 회복…외국인·기관 순매수&nbsp;&nbsp;네이트",
+      "source": "네이트",
+      "publishedAt": "Tue, 16 Jun 2026 02:31:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBsTlNkM2xmUkk3bVpwb3V6ajR0UlNoOXlJWkNFbUVyZnZJanFFOHB6TENNZ1NUb0EtNVNfOWhnZ0lURTJpQnpEY3J5TlJGamtNMWJOSklxczZtNldNTlNTaEVUSEZFLXFIaDFpLWJkS05iNE54T0t5Ng?oc=5",
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
@@ -582,11 +582,11 @@
       "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
     },
     {
-      "title": "[특징주] 형지글로벌, 대규모 유·무상증자 발표 후 19% 강세 - 조선비즈 - Chosunbiz",
-      "summary": "[특징주] 형지글로벌, 대규모 유·무상증자 발표 후 19% 강세 - 조선비즈&nbsp;&nbsp;Chosunbiz",
-      "source": "Chosunbiz",
-      "publishedAt": "Wed, 02 Apr 2025 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQUjc5RXhsTmZDc1JiRVIyU1otRk1TSGEwcGZ5bzBjc1JpYlhoVzhmUl81S21rUDZ0TjFCRlp4Q1JtQzI5OS14MTZZNURqMzd4bjRJMGU1amR0Z1d0eWpVbXVxeThHQzNYQjM0ZEFJcUY4NS0tUVM4WmRmQVdlRWx6TDY0Smx5V3PSAZsBQVVfeXFMT19ienFhclFmSW9nRU5yaHVKWHdtOG9sYTFESGNpRFVQMG10OUhtYUFCZnplQ21CaE9UXzRoWDd6YXZYODFjWmNObk5ybXlncXZfMkR3S1czYkdXbm0ycHpWTlNndk5NNlZlVUE0UHpneDBROWd6RDJla3lQWFBGUUt2N3o1YVdWX0RxcUp4bTBITVVFbkdBTDNqdGs?oc=5",
+      "title": "다시 늘어나는 무상증자, “권리락 착시효과 주가강세 주의해야” - 동양뉴스",
+      "summary": "다시 늘어나는 무상증자, “권리락 착시효과 주가강세 주의해야”&nbsp;&nbsp;동양뉴스",
+      "source": "동양뉴스",
+      "publishedAt": "Fri, 30 Jun 2023 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBoZEhSWVM5dDctVjIxRnNsWWllSkNLNjdTTngzaE5paGJjMC1wd1RRcnJOOG54ZHh3cDhCME52SDU1YXBwVXRwSFNKN21lX3c2R3BkeGowQUg3TV90TUtrWg?oc=5",
       "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
     }
   ],
@@ -597,6 +597,14 @@
       "source": "인포스탁데일리",
       "publishedAt": "Fri, 20 Mar 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBFN2lOUDhIaGE3TnBLUmp4Zkg2OTF6aGVkOTZmVFMtWGJ5akRYNFlQLVV4LW12b3N2eF84dk1UcFAyUW1ieFF4SzBNejFJSG9VNk5HRTY1OVNjeFJhNGFJNi1VeGNmYTJMd3c5ZVd1N0E0R0xtR3c?oc=5",
+      "query": "오늘 증시 일정 신규상장 보호예수 해제"
+    },
+    {
+      "title": "스페이스X 거래는 몇 시부터?…주가는 얼마나 오를까[오미주] - 머니투데이 - 머니투데이",
+      "summary": "스페이스X 거래는 몇 시부터?…주가는 얼마나 오를까[오미주] - 머니투데이&nbsp;&nbsp;머니투데이",
+      "source": "머니투데이",
+      "publishedAt": "Fri, 12 Jun 2026 09:14:37 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1SbkluTnc2dHByeG1MeXN6bVd3aHlYNUJzWEk2VnV5ckNYRzJJamI1bDhNZzJSTGNLMThNcFF5R3NOY1JGUjNsR1QtZlJscVU3LXByUVk3ZG5XbUU3YmxOMWU5clpsbkQ20gFuQVVfeXFMTXJzS0FGVXRYYTZ3N1hjVWdkWE1HZjFsU2pzQWR4OW1jMnZIdUJJSGtDSDJVcG9HTTZwRzVZaXBoSkRRVFVrV1Baa3VCRjdrWjczVWZoZ3ZtTktFVzV0aWZCeFBIVW9SUmx1bGJleFE?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
@@ -672,19 +680,11 @@
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
-      "title": "보호예수 해제 앞둔 신규 상장주...매도 물량 쏟아질까 - 이투데이",
-      "summary": "보호예수 해제 앞둔 신규 상장주...매도 물량 쏟아질까&nbsp;&nbsp;이투데이",
-      "source": "이투데이",
-      "publishedAt": "Thu, 02 Sep 2021 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE52V2N2b1NJMUFlOHl1c0dPWGhyVnJneDVTM2E4WGphdHZPbWZSUVBCM1dwM01rUFF5TFFwSzg0cndHLW9vR0ZPUnhhZVZ2N0VyTkw3eg?oc=5",
-      "query": "오늘 증시 일정 신규상장 보호예수 해제"
-    },
-    {
-      "title": "시프트업 2대주주 지분 매각제한 풀린다 - 비즈워치",
-      "summary": "시프트업 2대주주 지분 매각제한 풀린다&nbsp;&nbsp;비즈워치",
-      "source": "비즈워치",
-      "publishedAt": "Thu, 02 Jan 2025 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAwdWRhT1hZUldLdkxXWUIzSkVrcHQzRzNHY19KTDdGdWpJd01vdTZOdDZvSEJWb1habm5idi1xdWVUM0ExYWlnME5fbW5Vb0JmVnVBcm5mck5fZEM4SlYtbTVUT1B5bXktclE?oc=5",
+      "title": "11/21(월) 오늘의 장전 시황 (美 연준위원들의 매파적 발언, 주요 기업들 호실적) - 네이버 프리미엄콘텐츠",
+      "summary": "11/21(월) 오늘의 장전 시황 (美 연준위원들의 매파적 발언, 주요 기업들 호실적)&nbsp;&nbsp;네이버 프리미엄콘텐츠",
+      "source": "네이버 프리미엄콘텐츠",
+      "publishedAt": "Mon, 21 Nov 2022 08:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQcDlfOG1jSnAzX0tLclV3QTE4NzluOXVhV01SbUx0cVVkX3FhSmxBdFE3SVRCVm1XQ0hNd2xnLTBwU0I1Z2xhRHA5Z2pyX3dJMUpPc2ZhbXBzUk02SmtWeFZNbkVRRDZhSFU1bDhiSDFNZzM4RjlqRTFPRGMwN09lckNQNldFVlU?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     }
   ],
@@ -762,19 +762,11 @@
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
-      "title": "[이 시각 시황] 젠슨 황 방한 소식에 광통신주 '들썩' - SBSBiz",
-      "summary": "[이 시각 시황] 젠슨 황 방한 소식에 광통신주 '들썩'&nbsp;&nbsp;SBSBiz",
-      "source": "SBSBiz",
+      "title": "[이 시각 시황] 젠슨 황 방한 소식에 광통신주 '들썩' - biz.sbs.co.kr.",
+      "summary": "[이 시각 시황] 젠슨 황 방한 소식에 광통신주 '들썩'&nbsp;&nbsp;biz.sbs.co.kr.",
+      "source": "biz.sbs.co.kr.",
       "publishedAt": "Wed, 03 Jun 2026 22:52:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB4ZjJ1WExGLWt1TXZVSGNDUzdlbzFrMVRwdS1JbVBVVFhXb0hfeC1CcndQWG42TU5xRmg4UkhpOGhWX3pEb3lHRE1uaXlUeHFZTWpR?oc=5",
-      "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
-    },
-    {
-      "title": "코스피, 기관·외국인 순매수에 장중 5%대 강세 - 네이트",
-      "summary": "코스피, 기관·외국인 순매수에 장중 5%대 강세&nbsp;&nbsp;네이트",
-      "source": "네이트",
-      "publishedAt": "Mon, 15 Jun 2026 00:59:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE84WEd4QWJHVS1EQWJFYTdBWllJTExKZnJJUjRfckRCaGdEelpHcjJYYWhrbE5RRXV5Y3Fpbkl4dmJHbUlUMW9jSC0yc3ZlekYxQ3l3?oc=5",
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
@@ -794,6 +786,14 @@
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
+      "title": "[오늘증시]중동 불안 지속에 코스피 약세 \"5778선 마감\"…반도체 하락, 화장품·유통 강세 - Queen 이코노미퀸",
+      "summary": "[오늘증시]중동 불안 지속에 코스피 약세 \"5778선 마감\"…반도체 하락, 화장품·유통 강세&nbsp;&nbsp;Queen 이코노미퀸",
+      "source": "Queen 이코노미퀸",
+      "publishedAt": "Thu, 09 Apr 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9RUml3bnQteUVLd3Vla2ZfZ2lPOGN2MzlwZUxnZGp6aEZyX0hWTEZuaWk3bHdPV1FIWjBUa3lZRW52SHo2eWFMSzNUUmVQZ3pSSG9BeGFVRmdEX1FfX3ppMmZ2NXFfNll4Mmc?oc=5",
+      "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
+    },
+    {
       "title": "코스피 신고가 경신, 대형주 강세 - KB Think",
       "summary": "코스피 신고가 경신, 대형주 강세&nbsp;&nbsp;KB Think",
       "source": "KB Think",
@@ -804,7 +804,7 @@
   ],
   "investorFlows": {
     "status": "unavailable",
-    "generatedAt": "2026-06-19T08:35:43.985350+09:00",
+    "generatedAt": "2026-06-19T16:00:49.057848+09:00",
     "source": "pykrx/KRX",
     "collectionWindow": {
       "lookbackDays": 14,
