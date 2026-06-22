@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-22T01:00:16.105Z",
+  "generated_at": "2026-06-22T02:00:14.231Z",
   "generated_date": "2026-06-22",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
@@ -14,19 +14,19 @@
     {
       "stockName": "삼성전기",
       "stockCode": "009150",
-      "summary": "메리츠證 \"삼성전기 AI향 기판·MLCC 이익성장…목표가 280만원\"",
+      "summary": "메리츠증권 \"삼성전기, AI발 수요 2028년까지도 확대…목표가↑\"",
       "headline": "삼성전기 목표주가 280만 원으로 상향",
       "evidencePoints": [
-        "출처 2news.co.kr, 뉴스1 기반 기사 2건",
+        "출처 2news.co.kr, 연합뉴스 기반 기사 2건",
         "제목 기준 변동률 단서 +16.7%",
         "삼성전기 목표주가 280만 원으로 상향",
-        "메리츠證 \"삼성전기 AI향 기판·MLCC 이익성장…목표가 280만원\""
+        "메리츠증권 \"삼성전기, AI발 수요 2028년까지도 확대…목표가↑\""
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "neutral",
-      "channelCount": 5,
-      "updatedAt": "2026-06-22T01:00:16.105Z",
-      "cycleLabel": "KST_1000",
+      "channelCount": 4,
+      "updatedAt": "2026-06-22T02:00:14.231Z",
+      "cycleLabel": "KST_1100",
       "direction": "neutral",
       "changeRate": null,
       "latestHeadline": "삼성전기 목표주가 280만 원으로 상향",
@@ -42,15 +42,55 @@
         },
         {
           "label": "관련기사2",
-          "title": "메리츠證 \"삼성전기 AI향 기판·MLCC 이익성장…목표가 280만원\"",
-          "source": "뉴스1",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1keVNjNHhwM2ZjbndpMVFRS28xTkdOWTEwc3BXTnZSUWFoT09vOGpGSDYzLXpsQURPU0c5eDhEVUUzck1semRETEUxNk92allzY2FqSkRTUVRsOFV2NzRB?oc=5"
+          "title": "메리츠증권 \"삼성전기, AI발 수요 2028년까지도 확대…목표가↑\"",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBJNGF1QjJBYm1NV1JpU29iUkJkUEJ6QVZzUEVHU2FlNTNQWmpIOUl0ZjFWRHU1c0wzekYtSkk4UGZRVV82RE9sSnMtbEd2d1dwY2lRWm1aUklOSnJRc180Y9IBYEFVX3lxTFBJNGF1QjJBYm1NV1JpU29iUkJkUEJ6QVZzUEVHU2FlNTNQWmpIOUl0ZjFWRHU1c0wzekYtSkk4UGZRVV82RE9sSnMtbEd2d1dwY2lRWm1aUklOSnJRc180Yw?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "삼성전기 목표주가 280만 원으로 상향",
-      "polishedBody": "삼성전기는 메리츠證 \"AI향 기판 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 메리츠證 \"AI향 기판 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 목표주가 280만 원으로 상향 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+      "polishedHeadline": "삼성전기 목표주가 280만 원 상향",
+      "polishedBody": "메리츠증권은 삼성전기의 목표주가를 280만 원으로 상향 조정했습니다. 이는 AI 관련 수요가 2028년까지 확대될 것이라는 전망에 기반합니다. 해당 소식은 긍정적 신호로 평가되며 추가 성장 동력이 기대됩니다. 향후 AI 반도체 시장의 수요 변화와 실적 발표를 주목할 필요가 있습니다."
+    },
+    {
+      "stockName": "한국콜마",
+      "stockCode": "161890",
+      "summary": "[모닝 리포트] \"한국콜마, 2분기 역대 최대 실적 전망…수출 호조에 성장 지속\"",
+      "headline": "[버핏 리포트] 한국콜마, 2Q 역대 최대 실적 예상... 수출 증가로 3Q까지 물량 확보 – NH",
+      "evidencePoints": [
+        "출처 버핏연구소, 뉴스핌 기반 기사 2건",
+        "[버핏 리포트] 한국콜마, 2Q 역대 최대 실적 예상... 수출 증가로 3Q까지 물량 확보 – NH",
+        "[모닝 리포트] \"한국콜마, 2분기 역대 최대 실적 전망…수출 호조에 성장 지속\""
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 3,
+      "updatedAt": "2026-06-22T02:00:14.231Z",
+      "cycleLabel": "KST_1100",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[버핏 리포트] 한국콜마, 2Q 역대 최대 실적 예상... 수출 증가로 3Q까지 물량 확보 – NH",
+      "source": "버핏연구소",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1aSVZ2NUlMdF9mNkVmU3FFUTc1X0gtcUNXM29tVkZzSWs5OTRJc1cyd3V2Q24xRFJmdGFBcmdTMzVZc0ZTU0FFMWRkWG1hM05vQzdoN1JJRjlrWm1QdjY3d3Zn?oc=5",
+      "publishedAt": "Mon, 22 Jun 2026 01:17:23 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[버핏 리포트] 한국콜마, 2Q 역대 최대 실적 예상... 수출 증가로 3Q까지 물량 확보 – NH",
+          "source": "버핏연구소",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1aSVZ2NUlMdF9mNkVmU3FFUTc1X0gtcUNXM29tVkZzSWs5OTRJc1cyd3V2Q24xRFJmdGFBcmdTMzVZc0ZTU0FFMWRkWG1hM05vQzdoN1JJRjlrWm1QdjY3d3Zn?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[모닝 리포트] \"한국콜마, 2분기 역대 최대 실적 전망…수출 호조에 성장 지속\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9famhhTnl6QkNwRDh2amxqd0JpakJ0SlJhaXMyQ29SOEdVeTRvNnZHVy15YU43VzN1UDNLRk5vSVRORExMR2xITHZpWkxpT3gtZ3VjLVNkWk95cnZa?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "한국콜마 2분기 역대 최대 실적 전망",
+      "polishedBody": "한국콜마는 2분기 역대 최대 실적을 기록할 것으로 예상됩니다. 수출 호조가 지속되며 3분기까지 물량이 확보된 상태입니다. 이는 중립적 신호로 시장 기대치를 충족할 가능성이 높습니다. 향후 수출 추이와 3분기 실적 발표가 주요 관전 포인트입니다."
     },
     {
       "stockName": "SK스퀘어",
@@ -739,65 +779,24 @@
       "hasNews": true,
       "polishedHeadline": "알지노믹스, HLB 신약 호재에 강세",
       "polishedBody": "HLB의 간암 신약 서면심사 가능성 소식에 알지노믹스도 강세를 보였습니다. 이는 바이오 업종 전반에 긍정적인 영향을 미친 호재입니다. 동반 상승은 긍정적 신호로, 관련 업종의 모멘텀을 확인할 필요가 있습니다. 향후 HLB의 심사 결과와 업종 흐름을 지켜봐야 합니다."
-    },
-    {
-      "stockName": "하이비젼시스템",
-      "stockCode": "126700",
-      "summary": "[리포트 브리핑]하이비젼시스템, 'ESS로 증명하고, 본업은 돌아선다' Not Rated - 메리츠증권",
-      "headline": "하이비젼시스템 주가 강세...영업익 '흑자 전환' 전망",
-      "evidencePoints": [
-        "출처 gukjenews.com, 뉴스핌 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "하이비젼시스템 주가 강세...영업익 '흑자 전환' 전망",
-        "[리포트 브리핑]하이비젼시스템, 'ESS로 증명하고, 본업은 돌아선다' Not Rated - 메리츠증권"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-06-17T06:00:21.781Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "하이비젼시스템 주가 강세...영업익 '흑자 전환' 전망",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9tTmdIQTVQX1d1ZVU4ZG02MVJaU3gzMzdNalQtTjNwNndCcWdocjFRanZEUjQ2d2xjYS1QZWxKcTlwZGxpWHdxN2xRV1NPMTM1V3lCeUVsTGFtbGstaTBWU0VtZ3BWbEhpaUl6U09n?oc=5",
-      "publishedAt": "Wed, 17 Jun 2026 01:22:45 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "하이비젼시스템 주가 강세...영업익 '흑자 전환' 전망",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9tTmdIQTVQX1d1ZVU4ZG02MVJaU3gzMzdNalQtTjNwNndCcWdocjFRanZEUjQ2d2xjYS1QZWxKcTlwZGxpWHdxN2xRV1NPMTM1V3lCeUVsTGFtbGstaTBWU0VtZ3BWbEhpaUl6U09n?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[리포트 브리핑]하이비젼시스템, 'ESS로 증명하고, 본업은 돌아선다' Not Rated - 메리츠증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9wYTE0TTVIREhJN28zRnR2YWszYkhVQVRDTm5iSkVseXZ2TGtZR3ZhVWVNa2pWeW5XZFI4bE03a1RlTVlxUWw4ZktmX3NmNlc4WVhraVdYR3U3bVVu?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "하이비젼시스템, 영업익 흑자 전환 기대",
-      "polishedBody": "하이비젼시스템은 에너지저장장치 사업 호조로 영업이익 흑자 전환이 전망됩니다. 메리츠증권은 리포트를 통해 본업 회복과 신사업 성장을 긍정적으로 평가했습니다. 이러한 전망은 주가 강세로 이어지며 상승 흐름을 보이고 있습니다. 향후 실적 발표에서 흑자 전환이 확인되는지가 관건입니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
       "price": null,
-      "summary": "메리츠證 \"삼성전기 AI향 기판·MLCC 이익성장…목표가 280만원\"",
+      "summary": "메리츠증권 \"삼성전기, AI발 수요 2028년까지도 확대…목표가↑\"",
       "source": "2news.co.kr",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9kZ3NMSWhEQjZfekw2S3oxMlVTU3lUYW5GYmFWQWRLYzFlSVlCOFdTRVB0OWRRMG5XMkZ2OTAwZnNQd2EzSWlvelljX0REX3FnS2g0YlM1cVVBT25qbVItRVN1TW1ycGpQ?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 2news.co.kr, 뉴스1 기반 기사 2건",
+        "출처 2news.co.kr, 연합뉴스 기반 기사 2건",
         "제목 기준 변동률 단서 +16.7%",
         "삼성전기 목표주가 280만 원으로 상향",
-        "메리츠證 \"삼성전기 AI향 기판·MLCC 이익성장…목표가 280만원\""
+        "메리츠증권 \"삼성전기, AI발 수요 2028년까지도 확대…목표가↑\""
       ],
       "relatedPosts": [
         {
@@ -808,14 +807,44 @@
         },
         {
           "label": "관련기사2",
-          "title": "메리츠證 \"삼성전기 AI향 기판·MLCC 이익성장…목표가 280만원\"",
-          "source": "뉴스1",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1keVNjNHhwM2ZjbndpMVFRS28xTkdOWTEwc3BXTnZSUWFoT09vOGpGSDYzLXpsQURPU0c5eDhEVUUzck1semRETEUxNk92allzY2FqSkRTUVRsOFV2NzRB?oc=5"
+          "title": "메리츠증권 \"삼성전기, AI발 수요 2028년까지도 확대…목표가↑\"",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBJNGF1QjJBYm1NV1JpU29iUkJkUEJ6QVZzUEVHU2FlNTNQWmpIOUl0ZjFWRHU1c0wzekYtSkk4UGZRVV82RE9sSnMtbEd2d1dwY2lRWm1aUklOSnJRc180Y9IBYEFVX3lxTFBJNGF1QjJBYm1NV1JpU29iUkJkUEJ6QVZzUEVHU2FlNTNQWmpIOUl0ZjFWRHU1c0wzekYtSkk4UGZRVV82RE9sSnMtbEd2d1dwY2lRWm1aUklOSnJRc180Yw?oc=5"
         }
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
+      "symbol": "161890",
+      "name": "한국콜마",
+      "changeRate": null,
+      "price": null,
+      "summary": "[모닝 리포트] \"한국콜마, 2분기 역대 최대 실적 전망…수출 호조에 성장 지속\"",
+      "source": "버핏연구소",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1aSVZ2NUlMdF9mNkVmU3FFUTc1X0gtcUNXM29tVkZzSWs5OTRJc1cyd3V2Q24xRFJmdGFBcmdTMzVZc0ZTU0FFMWRkWG1hM05vQzdoN1JJRjlrWm1QdjY3d3Zn?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 버핏연구소, 뉴스핌 기반 기사 2건",
+        "[버핏 리포트] 한국콜마, 2Q 역대 최대 실적 예상... 수출 증가로 3Q까지 물량 확보 – NH",
+        "[모닝 리포트] \"한국콜마, 2분기 역대 최대 실적 전망…수출 호조에 성장 지속\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[버핏 리포트] 한국콜마, 2Q 역대 최대 실적 예상... 수출 증가로 3Q까지 물량 확보 – NH",
+          "source": "버핏연구소",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1aSVZ2NUlMdF9mNkVmU3FFUTc1X0gtcUNXM29tVkZzSWs5OTRJc1cyd3V2Q24xRFJmdGFBcmdTMzVZc0ZTU0FFMWRkWG1hM05vQzdoN1JJRjlrWm1QdjY3d3Zn?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[모닝 리포트] \"한국콜마, 2분기 역대 최대 실적 전망…수출 호조에 성장 지속\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9famhhTnl6QkNwRDh2amxqd0JpakJ0SlJhaXMyQ29SOEdVeTRvNnZHVy15YU43VzN1UDNLRk5vSVRORExMR2xITHZpWkxpT3gtZ3VjLVNkWk95cnZa?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": null,
@@ -852,7 +881,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": null,
@@ -889,7 +918,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -926,7 +955,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": null,
@@ -956,7 +985,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "032830",
       "name": "삼성생명",
       "changeRate": null,
@@ -986,7 +1015,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "034020",
       "name": "두산에너빌리티",
       "changeRate": null,
@@ -1017,7 +1046,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": null,
@@ -1041,7 +1070,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "420770",
       "name": "기가비스",
       "changeRate": 8.2,
@@ -1072,7 +1101,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "204270",
       "name": "제이앤티씨",
       "changeRate": 30,
@@ -1103,7 +1132,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "047810",
       "name": "한국항공우주",
       "changeRate": 55.9,
@@ -1127,7 +1156,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": -1.64,
@@ -1151,7 +1180,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "004710",
       "name": "한솔테크닉스",
       "changeRate": null,
@@ -1174,7 +1203,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "010130",
       "name": "고려아연",
       "changeRate": null,
@@ -1197,7 +1226,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "353200",
       "name": "대덕전자",
       "changeRate": null,
@@ -1221,7 +1250,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "160980",
       "name": "싸이맥스",
       "changeRate": null,
@@ -1245,7 +1274,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "100790",
       "name": "미래에셋벤처투자",
       "changeRate": -5.51,
@@ -1269,7 +1298,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "006800",
       "name": "미래에셋증권",
       "changeRate": null,
@@ -1299,7 +1328,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-22T01:00:16.105Z",
+      "timestamp": "2026-06-22T02:00:14.231Z",
       "symbol": "476830",
       "name": "알지노믹스",
       "changeRate": null,
@@ -1321,37 +1350,6 @@
           "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBkSGJUR0FYVzBRNVV2SDZHRVg0bm40aEtVTTZ1TnlGUy1YMXdLYVd5X0lqZmpPWnV6OW9MRjh2YUQtNFVIaE5RRWhGUWtwU0tPVC1z?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "2026-06-22T01:00:16.105Z",
-      "symbol": "126700",
-      "name": "하이비젼시스템",
-      "changeRate": null,
-      "price": null,
-      "summary": "[리포트 브리핑]하이비젼시스템, 'ESS로 증명하고, 본업은 돌아선다' Not Rated - 메리츠증권",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9tTmdIQTVQX1d1ZVU4ZG02MVJaU3gzMzdNalQtTjNwNndCcWdocjFRanZEUjQ2d2xjYS1QZWxKcTlwZGxpWHdxN2xRV1NPMTM1V3lCeUVsTGFtbGstaTBWU0VtZ3BWbEhpaUl6U09n?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 gukjenews.com, 뉴스핌 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "하이비젼시스템 주가 강세...영업익 '흑자 전환' 전망",
-        "[리포트 브리핑]하이비젼시스템, 'ESS로 증명하고, 본업은 돌아선다' Not Rated - 메리츠증권"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "하이비젼시스템 주가 강세...영업익 '흑자 전환' 전망",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9tTmdIQTVQX1d1ZVU4ZG02MVJaU3gzMzdNalQtTjNwNndCcWdocjFRanZEUjQ2d2xjYS1QZWxKcTlwZGxpWHdxN2xRV1NPMTM1V3lCeUVsTGFtbGstaTBWU0VtZ3BWbEhpaUl6U09n?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[리포트 브리핑]하이비젼시스템, 'ESS로 증명하고, 본업은 돌아선다' Not Rated - 메리츠증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9wYTE0TTVIREhJN28zRnR2YWszYkhVQVRDTm5iSkVseXZ2TGtZR3ZhVWVNa2pWeW5XZFI4bE03a1RlTVlxUWw4ZktmX3NmNlc4WVhraVdYR3U3bVVu?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -1359,8 +1357,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "mixed",
-    "model": "signal-polish-v1, deepseek/deepseek-v4-flash",
-    "fallbackReason": "mixed_with_fallback"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": "primary_failed"
   }
 }
