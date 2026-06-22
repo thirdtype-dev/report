@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T23:30:48.462Z",
+  "generatedAt": "2026-06-22T23:35:44.509Z",
   "phase": "pre_market",
   "sessionLabel": "08:30",
   "summary": {
@@ -35,10 +35,10 @@
       "key": "usdkrw",
       "title": "USD/KRW",
       "value": "1,536.10",
-      "change": "-0.09%",
-      "signal": "yellow",
+      "change": "+0.31%",
+      "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-06-22T22:29:57.000Z",
+      "updatedAt": "2026-06-22T23:33:28.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "30,550.50",
-      "change": "+0.95%",
+      "value": "30,559.25",
+      "change": "+0.98%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-06-22T23:20:31.000Z",
+      "updatedAt": "2026-06-22T23:25:25.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,7 +82,7 @@
       "change": null,
       "signal": "yellow",
       "status": "unavailable",
-      "updatedAt": "2026-06-23T08:30:48.362050+09:00",
+      "updatedAt": "2026-06-23T08:35:44.410482+09:00",
       "reason": "pykrx/KRX 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: 코스피, 외국인 1조원대 순매도에 약세…코스닥은 상승 - 시사저널 (시사저널) / 코스피, FOMC 경계감에 장중 약보합…외국인·기관 동반 순매도 - 인더스트리뉴스 (인더스트리뉴스) / 코스피, 장중 최고치 경신 8,900선…'9천피' 눈앞에(종합) - 연합뉴스 (연합뉴스)",
       "sourceUrl": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-06-22T23:30:48.462Z",
+      "updatedAt": "2026-06-22T23:35:44.509Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -125,11 +125,11 @@
       "key": "usdkrw",
       "title": "USD/KRW",
       "currentPrice": "1,536.10",
-      "change": "-1.46",
-      "changePercent": "-0.09%",
-      "trend": "down",
+      "change": "+4.77",
+      "changePercent": "+0.31%",
+      "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-06-22T22:29:57.000Z",
+      "updatedAt": "2026-06-22T23:33:28.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "30,550.50",
-      "change": "+287.15",
-      "changePercent": "+0.95%",
+      "currentPrice": "30,559.25",
+      "change": "+295.90",
+      "changePercent": "+0.98%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-06-22T23:20:31.000Z",
+      "updatedAt": "2026-06-22T23:25:25.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -804,7 +804,7 @@
   ],
   "investorFlows": {
     "status": "unavailable",
-    "generatedAt": "2026-06-23T08:30:48.362050+09:00",
+    "generatedAt": "2026-06-23T08:35:44.410482+09:00",
     "source": "pykrx/KRX",
     "collectionWindow": {
       "lookbackDays": 14,
