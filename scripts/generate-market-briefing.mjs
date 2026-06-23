@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
 import { resolve } from 'node:path';
 import { promisify } from 'node:util';
@@ -523,6 +523,86 @@ function validateReportShape(report) {
   }
 
   return report;
+}
+
+const PLACEHOLDER_COPY_RE = /(수집되지 않았습니다|뉴스 수집 실패|fetch_failed_\d+|재분류해야 합니다|확인되지 않았습니다|확인 불가)/u;
+
+function candidateLooksUnavailable(item) {
+  const text = `${item?.title ?? ''} ${item?.summary ?? ''}`;
+  return item?.status === 'unavailable' || PLACEHOLDER_COPY_RE.test(text);
+}
+
+function hasUsableCandidates(items, minimum = 1) {
+  if (!Array.isArray(items)) return false;
+  return items.filter((item) => !candidateLooksUnavailable(item)).length >= minimum;
+}
+
+function reportContainsPlaceholderCopy(report) {
+  return PLACEHOLDER_COPY_RE.test(JSON.stringify(report ?? {}));
+}
+
+function briefingQualityIssues(marketResearch, report) {
+  const issues = [];
+
+  if (reportContainsPlaceholderCopy(report)) {
+    issues.push('placeholder_copy');
+  }
+
+  const investorFlowUsable = isInvestorFlowsAvailable(marketResearch?.investorFlows)
+    || hasUsableCandidates(marketResearch?.investorFlowNewsCandidates);
+  if (!investorFlowUsable) {
+    issues.push('investor_flow_source_unavailable');
+  }
+
+  const sectorThemeUsable = hasUsableCandidates(marketResearch?.sectorThemeNewsCandidates)
+    || hasUsableCandidates(marketResearch?.marketNews);
+  if (!sectorThemeUsable) {
+    issues.push('sector_theme_source_unavailable');
+  }
+
+  if (PHASE === 'post_market' && !hasUsableCandidates(marketResearch?.stockNewsCandidates, 2)) {
+    issues.push('notable_stock_source_unavailable');
+  }
+
+  if (PHASE === 'pre_market') {
+    if (!hasUsableCandidates(marketResearch?.disclosureNewsCandidates)) {
+      issues.push('disclosure_source_unavailable');
+    }
+    if (!hasUsableCandidates(marketResearch?.scheduleNewsCandidates)) {
+      issues.push('schedule_source_unavailable');
+    }
+  }
+
+  return issues;
+}
+
+function currentReportMarkers() {
+  const config = PHASE_CONFIG[PHASE];
+  return [
+    `<div class="eyebrow published">${escapeHtml(config.eyebrow)}</div>`,
+    `<h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>`
+  ];
+}
+
+function hasCurrentCompleteReport(existingHtml) {
+  const markers = currentReportMarkers();
+  return extractArticles(String(existingHtml ?? '')).some((article) => (
+    markers.every((marker) => article.includes(marker))
+    && !PLACEHOLDER_COPY_RE.test(article)
+  ));
+}
+
+function resolveBriefingPublishPlan({ marketResearch, report, existingHtml }) {
+  const issues = briefingQualityIssues(marketResearch, report);
+  if (issues.length === 0) {
+    return { action: 'publish_new', issues };
+  }
+
+  if (hasCurrentCompleteReport(existingHtml)) {
+    return { action: 'preserve_existing', issues };
+  }
+
+  throw new Error(`briefing_quality_gate_failed:${issues.join(',')}`);
 }
 
 function reportSchema() {
@@ -1444,6 +1524,21 @@ async function legacyArticles(currentArticle) {
   });
 }
 
+async function readExistingCommittedReportHtml() {
+  try {
+    return await readFile(resolve(process.cwd(), 'report/index.html'), 'utf-8');
+  } catch {
+    return '';
+  }
+}
+
+async function preserveExistingCommittedReportOutputs() {
+  await mkdir(DATA_DIR, { recursive: true });
+  await copyFile(resolve(process.cwd(), 'report/index.html'), resolve(OUTPUT_DIR, 'index.html'));
+  await copyFile(resolve(process.cwd(), 'report/data/market-research.json'), resolve(DATA_DIR, 'market-research.json'));
+  await copyFile(resolve(process.cwd(), 'report/data/report.json'), resolve(DATA_DIR, 'report.json'));
+}
+
 async function renderHtml(_marketResearch, report, writer) {
   const publishedAt = new Date().toISOString();
   const currentArticle = renderArticle(report);
@@ -1487,6 +1582,19 @@ ${articles}
 async function main() {
   const marketResearch = process.env.REPORT_LLM_MOCK === '1' ? mockMarketResearch() : await collectPublicMarketResearch();
   const { report, writer } = await writeReportWithFallback(marketResearch);
+  const publishPlan = resolveBriefingPublishPlan({
+    marketResearch,
+    report,
+    existingHtml: await readExistingCommittedReportHtml()
+  });
+
+  if (publishPlan.action === 'preserve_existing') {
+    await preserveExistingCommittedReportOutputs();
+    console.warn('[market-briefing] preserved existing complete report after degraded rerun', {
+      issues: publishPlan.issues
+    });
+    return;
+  }
 
   await mkdir(DATA_DIR, { recursive: true });
   await writeFile(resolve(DATA_DIR, 'market-research.json'), JSON.stringify(marketResearch, null, 2), 'utf-8');
@@ -1505,3 +1613,5 @@ main().catch((error) => {
   console.error('[market-briefing] failed', error);
   process.exit(1);
 });
+
+export const __testResolveBriefingPublishPlan = resolveBriefingPublishPlan;

@@ -1,0 +1,124 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const path = require('node:path');
+
+const repoRoot = path.resolve(__dirname, '..');
+
+async function importBriefingModule() {
+  process.env.REPORT_LLM_MOCK = '1';
+  process.env.PRESERVE_EXISTING_REPORTS = '0';
+  process.env.BRIEFING_PHASE = 'post_market';
+  return await import(path.join(repoRoot, 'scripts/generate-market-briefing.mjs'));
+}
+
+function currentDateKey() {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Seoul',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(new Date());
+}
+
+test('market briefing preserves the existing complete session when a rerun loses all source coverage', async () => {
+  const module = await importBriefingModule();
+  const badResearch = {
+    investorFlows: {
+      status: 'unavailable',
+      markets: [],
+      reason: 'KOSPI:no_investor_flow_data_within_14_days:empty_pykrx_dataframe'
+    },
+    investorFlowNewsCandidates: [
+      {
+        title: '코스피 외국인 기관 순매수 순매도 뉴스 수집 실패',
+        summary: 'fetch_failed_503',
+        status: 'unavailable'
+      }
+    ],
+    sectorThemeNewsCandidates: [
+      {
+        title: '오늘 강세 업종 약세 업종 코스피 코스닥 뉴스 수집 실패',
+        summary: 'fetch_failed_503',
+        status: 'unavailable'
+      }
+    ],
+    stockNewsCandidates: [
+      {
+        title: '오늘 특징주 급등 급락 코스피 코스닥 뉴스 수집 실패',
+        summary: 'fetch_failed_503',
+        status: 'unavailable'
+      }
+    ]
+  };
+
+  const plan = module.__testResolveBriefingPublishPlan({
+    marketResearch: badResearch,
+    report: { marketSummary: { summary: '코스피가 하락했습니다.' } },
+    existingHtml: `<article class="report report-post-market">
+      <div class="eyebrow published">장마감 브리핑</div>
+      <h1>${currentDateKey()} 16:00</h1>
+      <h2>② 투자자별 수급 동향</h2>
+      <p>뉴스 기준 외국인은 순매도세를 보였습니다.</p>
+      <h2>③ 업종별/테마별 흐름</h2>
+      <p>반도체 업종이 강세를 보였다는 보도가 있습니다.</p>
+    </article>`
+  });
+
+  assert.equal(plan.action, 'preserve_existing');
+  assert.deepEqual(plan.issues, [
+    'investor_flow_source_unavailable',
+    'sector_theme_source_unavailable',
+    'notable_stock_source_unavailable'
+  ]);
+});
+
+test('market briefing fails instead of publishing placeholder copy when no complete session exists', async () => {
+  const module = await importBriefingModule();
+  const research = {
+    investorFlows: {
+      status: 'ok',
+      markets: [{ market: 'KOSPI', netBuy: { foreign: -100000000, institution: 200000000, retail: -100000000 } }]
+    },
+    investorFlowNewsCandidates: [],
+    sectorThemeNewsCandidates: [
+      { title: '반도체 업종 강세', summary: '반도체 업종이 강세를 보였습니다.' }
+    ],
+    stockNewsCandidates: [
+      { title: '네이버 상승', summary: '네이버가 상승했습니다.' },
+      { title: '대동기어 하락', summary: '대동기어가 하락했습니다.' }
+    ]
+  };
+  const badReport = {
+    marketSummary: {
+      kospi: '8,203.84 (▼ 9.99%)',
+      kosdaq: '891.52 (▼ 7.94%)',
+      summary: '코스피와 코스닥이 급락했습니다.'
+    },
+    investorFlows: {
+      foreign: '외국인 투자자 수급 데이터는 수집되지 않았습니다.',
+      institution: '기관 투자자 수급 데이터는 수집되지 않았습니다.',
+      retail: '개인 투자자 수급 데이터는 수집되지 않았습니다.'
+    },
+    sectorThemes: {
+      strong: '반도체 업종 강세',
+      weak: '일부 업종 약세'
+    },
+    notableStocks: {
+      surging: ['네이버 상승', '펄어비스 상승'],
+      plunging: ['대동기어 하락', '이노스페이스 하락']
+    },
+    tomorrowStrategy: {
+      outlook: '수급 확인이 필요합니다.',
+      checklist: ['외국인 수급 확인']
+    }
+  };
+
+  assert.throws(
+    () => module.__testResolveBriefingPublishPlan({
+      marketResearch: research,
+      report: badReport,
+      existingHtml: '<article class="report report-post-market"><h1>2026-01-01 16:00</h1></article>'
+    }),
+    /briefing_quality_gate_failed:placeholder_copy/
+  );
+});
