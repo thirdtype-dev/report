@@ -1,34 +1,41 @@
 {
   "report": {
-    "openingStrategy": {
-      "keywords": "코스피 9000선 안착, 코스닥 약세, 반도체 강세, 외국인 순매도",
-      "oneLineStrategy": "코스피는 9000선 안착 시도, 코스닥은 반도체·바이오·배터리 테마 주목",
-      "expectedOpen": "코스피 강보합, 코스닥 약보합 예상"
+    "marketSummary": {
+      "kospi": "8,203.84 (▼ 9.99%)",
+      "kosdaq": "891.52 (▼ 7.94%)",
+      "summary": "코스피와 코스닥이 모두 급락 마감했습니다. 외국인과 기관의 동반 매도세가 지수 하락을 주도한 것으로 보도되었습니다."
     },
-    "investorFlowWatch": {
-      "continuity": "뉴스 기준 외국인 순매도 지속, 코스피 약세 요인",
-      "keyInvestor": "외국인",
-      "checkPoint": "외국인 매도 규모와 코스닥 상승 동력 확인 필요"
+    "investorFlows": {
+      "foreign": "뉴스 기준 외국인은 순매도세를 보였습니다.",
+      "institution": "뉴스 기준 기관도 순매도에 동참한 것으로 전해졌습니다.",
+      "retail": "뉴스 기준 개인은 순매수한 것으로 나타났습니다."
     },
-    "sectorWeather": {
-      "sunny": "반도체, 전자부품 강세",
-      "cloudy": "코스닥 전반 약세",
-      "rainy": "외국인 매도 영향권 업종"
+    "sectorThemes": {
+      "strong": "반도체 업종이 강세를 보였다는 보도가 있습니다.",
+      "weak": "시장 전반이 약세를 보였으며, 특정 약세 업종은 확인되지 않았습니다."
     },
-    "disclosuresAndNews": {
-      "corporateDisclosure": "티엘비 1200억 유증 결정, 대동기어 유무상증자 소식",
-      "majorNews": "코스피 9000 돌파 속 코스닥 1000선 붕괴, 증시 양극화 심화",
-      "schedule": "아이엠바이오로직스 코스닥 신규 상장 예정"
+    "notableStocks": {
+      "surging": [
+        "펄어비스, 창사 이래 첫 배당 소식에 급락장 속에서도 상승 마감",
+        "네이버, 젠슨 황 관련 기대감에 9% 상승 마감"
+      ],
+      "plunging": [
+        "대동기어, 대규모 유·무상증자 소식에 10% 급락",
+        "이노스페이스, 470억 규모 유상증자 결정에 급락"
+      ]
     },
-    "watchlist": {
-      "leaders": "네이버, LG전자 상승",
-      "technicals": "반도체 장비주, 2차전지 관련주",
-      "eventDriven": "젠슨 황 한국 방문 기대감, FOMC 경계감"
+    "tomorrowStrategy": {
+      "outlook": "외국인과 기관의 매도세가 지속될 경우 코스피와 코스닥의 추가 하락 가능성이 있습니다. 반도체 업종의 강세가 지수 하락을 방어할 수 있을지 주목됩니다.",
+      "checklist": [
+        "외국인 및 기관 수급 동향 확인",
+        "반도체 업종 및 주요 테마주 흐름 점검",
+        "미국 증시 및 나스닥 선물 움직임 모니터링"
+      ]
     }
   },
   "writer": {
-    "provider": "openrouter",
-    "model": "deepseek/deepseek-v4-flash",
-    "fallbackReason": "primary_failed"
+    "provider": "opencode-zen",
+    "model": "deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
