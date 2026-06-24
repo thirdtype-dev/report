@@ -145,3 +145,87 @@ test('market briefing removes news-basis boilerplate from visible copy', async (
   assert.equal(cleaned.investorFlows.foreign, '전일 외국인은 코스피에서 순매도한 것으로 나타났습니다.');
   assert.equal(cleaned.tomorrowStrategy.checklist[0], '외국인 수급 확인');
 });
+
+test('post-market briefing fails when investor flow copy describes the previous day', async () => {
+  const module = await importBriefingModule();
+  const research = {
+    generatedAt: '2026-06-24T07:05:40.339Z',
+    investorFlows: {
+      status: 'unavailable',
+      generatedAt: '2026-06-24T16:05:40+09:00',
+      markets: [],
+      reason: 'empty_pykrx_dataframe'
+    },
+    investorFlowNewsCandidates: [
+      {
+        title: '코스피, 외국인·기관 순매도에 8800선 하회',
+        summary: '전일 코스피 수급 기사입니다.',
+        publishedAt: 'Tue, 23 Jun 2026 01:55:34 GMT'
+      }
+    ],
+    sectorThemeNewsCandidates: [
+      { title: '반도체 업종 강세', summary: '반도체 업종이 강세를 보였습니다.' }
+    ],
+    stockNewsCandidates: [
+      { title: '삼성전자 상승', summary: '삼성전자가 상승했습니다.' },
+      { title: 'LG전자 하락', summary: 'LG전자가 하락했습니다.' }
+    ]
+  };
+
+  assert.throws(
+    () => module.__testResolveBriefingPublishPlan({
+      marketResearch: research,
+      report: {
+        marketSummary: { kospi: '8,471.02 (▲3.26%)', kosdaq: '909.31 (▲2.00%)', summary: '코스피와 코스닥이 상승 마감했습니다.' },
+        investorFlows: {
+          foreign: '전일 외국인은 코스피에서 순매도한 것으로 나타났습니다.',
+          institution: '전일 기관도 코스피에서 순매도한 것으로 나타났습니다.',
+          retail: '전일 개인은 코스피에서 순매수한 것으로 나타났습니다.'
+        },
+        sectorThemes: { strong: '화장품·유통 업종 강세', weak: '반도체 업종 약세' },
+        notableStocks: { surging: ['삼성전자 상승', 'SK하이닉스 상승'], plunging: ['LG전자 하락', 'SK스퀘어 하락'] },
+        tomorrowStrategy: { outlook: '반도체 업종의 지속성을 확인해야 합니다.', checklist: ['수급 확인', '환율 확인', '미국 증시 확인'] }
+      },
+      existingHtml: ''
+    }),
+    /briefing_quality_gate_failed:stale_investor_flow_copy/
+  );
+});
+
+test('post-market briefing does not preserve an existing article with stale investor flow copy', async () => {
+  const module = await importBriefingModule();
+  const badResearch = {
+    investorFlows: {
+      status: 'unavailable',
+      markets: [],
+      reason: 'empty_pykrx_dataframe'
+    },
+    investorFlowNewsCandidates: [
+      {
+        title: '코스피 외국인 기관 순매수 순매도 뉴스 수집 실패',
+        summary: 'fetch_failed_503',
+        status: 'unavailable'
+      }
+    ],
+    sectorThemeNewsCandidates: [
+      { title: '오늘 강세 업종 약세 업종 코스피 코스닥 뉴스 수집 실패', summary: 'fetch_failed_503', status: 'unavailable' }
+    ],
+    stockNewsCandidates: [
+      { title: '오늘 특징주 급등 급락 코스피 코스닥 뉴스 수집 실패', summary: 'fetch_failed_503', status: 'unavailable' }
+    ]
+  };
+
+  assert.throws(
+    () => module.__testResolveBriefingPublishPlan({
+      marketResearch: badResearch,
+      report: { marketSummary: { summary: '코스피가 상승했습니다.' } },
+      existingHtml: `<article class="report report-post-market">
+        <div class="eyebrow published">장마감 브리핑</div>
+        <h1>${currentDateKey()} 16:00</h1>
+        <h2>② 투자자별 수급 동향</h2>
+        <p>전일 외국인은 코스피에서 순매도한 것으로 나타났습니다.</p>
+      </article>`
+    }),
+    /briefing_quality_gate_failed:/
+  );
+});

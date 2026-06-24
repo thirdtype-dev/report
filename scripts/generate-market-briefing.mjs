@@ -544,6 +544,7 @@ function sanitizeBriefingCopy(value) {
 }
 
 const PLACEHOLDER_COPY_RE = /(수집되지 않았습니다|뉴스 수집 실패|fetch_failed_\d+|재분류해야 합니다|확인되지 않았습니다|확인 불가)/u;
+const STALE_INVESTOR_FLOW_COPY_RE = /전일\s*(?:외국인|기관|개인|코스피|코스닥)[^.!?。]*(?:순매수|순매도|매도|매수)|(?:외국인|기관|개인)[^.!?。]*전일[^.!?。]*(?:순매수|순매도|매도|매수)/u;
 
 function candidateLooksUnavailable(item) {
   const text = `${item?.title ?? ''} ${item?.summary ?? ''}`;
@@ -559,11 +560,26 @@ function reportContainsPlaceholderCopy(report) {
   return PLACEHOLDER_COPY_RE.test(JSON.stringify(report ?? {}));
 }
 
+function reportContainsStaleInvestorFlowCopy(report) {
+  const targets = PHASE === 'post_market'
+    ? report?.investorFlows
+    : report?.investorFlowWatch;
+  return STALE_INVESTOR_FLOW_COPY_RE.test(JSON.stringify(targets ?? {}));
+}
+
+function articleContainsStaleInvestorFlowCopy(article) {
+  return STALE_INVESTOR_FLOW_COPY_RE.test(String(article ?? ''));
+}
+
 function briefingQualityIssues(marketResearch, report) {
   const issues = [];
 
   if (reportContainsPlaceholderCopy(report)) {
     issues.push('placeholder_copy');
+  }
+
+  if (reportContainsStaleInvestorFlowCopy(report)) {
+    issues.push('stale_investor_flow_copy');
   }
 
   const investorFlowUsable = isInvestorFlowsAvailable(marketResearch?.investorFlows)
@@ -607,6 +623,7 @@ function hasCurrentCompleteReport(existingHtml) {
   return extractArticles(String(existingHtml ?? '')).some((article) => (
     markers.every((marker) => article.includes(marker))
     && !PLACEHOLDER_COPY_RE.test(article)
+    && !articleContainsStaleInvestorFlowCopy(article)
   ));
 }
 
@@ -689,8 +706,8 @@ function buildPrompt(marketResearch) {
     '입력 JSON은 공개 데이터 소스(Yahoo Finance chart, Google News RSS, pykrx/KRX 투자자별 거래대금)를 정규화한 것이다.',
     'status가 unavailable인 항목은 확인 필요로 처리하고, 수치나 사실을 추정해 채우지 않는다.',
     '각 문장의 근거는 sources, marketNews, investorFlows, investorFlowNewsCandidates, disclosureNewsCandidates, scheduleNewsCandidates, sectorThemeNewsCandidates, stockNewsCandidates 범위 안에서만 사용한다.',
-    '장시작 외국인/기관 수급 관전 포인트는 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 수급/선물/프로그램 매매 흐름을 추출해 작성한다.',
-    '장마감 투자자별 수급 동향은 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 외국인/기관/개인 흐름을 추출해 작성한다.',
+    '장시작 외국인/기관 수급 관전 포인트는 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 당일 장 전후 맥락만 추출해 작성한다.',
+    '장마감 투자자별 수급 동향은 investorFlows의 당일 정형 수급만 사용한다. investorFlows가 unavailable이거나 최신 거래일이 오늘이 아니면 전일/과거 수급을 현재 장마감 수급처럼 쓰지 않는다.',
     '수급 코멘트가 뉴스 기반일 때도 "뉴스 기준", "보도 기준" 같은 메타 표현은 쓰지 말고, 확인된 흐름만 자연스럽게 서술한다.',
     '장시작 기업 공시는 disclosureNewsCandidates에서 실적, 유상증자, 무상증자, 계약, 자사주, 배당, M&A 관련 뉴스를 추출해 작성한다.',
     '장시작 주요 일정은 scheduleNewsCandidates에서 신규상장, 청약, 보호예수, 주총, 경제지표, 거래정지/변경상장 일정을 추출해 작성한다.',
