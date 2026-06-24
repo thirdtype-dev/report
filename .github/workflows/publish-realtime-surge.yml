@@ -59,12 +59,11 @@ jobs:
       - name: Generate realtime surge data
         env:
           REALTIME_SLOT_HOUR: ${{ inputs.slot_hour }}
-          ANALYST_PROVIDER: opencode-zen
-          ANALYST_MODEL: deepseek-v4-flash
+          ANALYST_PROVIDER: openrouter
+          ANALYST_MODEL: deepseek/deepseek-v4-flash
           ANALYST_FALLBACK_PROVIDER: openrouter
           ANALYST_FALLBACK_MODEL: deepseek/deepseek-v4-flash
           LLM_TIMEOUT_MS: '45000'
-          OPENCODE_ZEN_API_KEY: ${{ secrets.OPENCODE_ZEN_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           REALTIME_DESCRIPTION_ONLY: ${{ inputs.description_only == 'true' && '1' || '0' }}
         run: node scripts/generate-realtime-surge.mjs

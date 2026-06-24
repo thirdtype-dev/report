@@ -17,8 +17,8 @@ const outputSlotAdapterPath = path.join(publicDataDir, 'slot-adapter.json');
 const outputRealtimePath = path.join(publicDataDir, 'realtime-surge.json');
 
 const REPORT_TIMEZONE = 'Asia/Seoul';
-const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'opencode-zen';
-const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek-v4-flash';
+const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
+const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash';
 const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'openrouter';
 const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'deepseek/deepseek-v4-flash';
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);

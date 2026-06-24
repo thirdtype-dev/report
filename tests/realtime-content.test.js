@@ -311,7 +311,7 @@ test('realtime openrouter fallback polish request matches the looser briefing re
 test('realtime opencode zen polish request disables DeepSeek thinking output', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
-  const body = module.__testBuildOpenCodeZenPolishRequest('prompt body');
+  const body = module.__testBuildOpenCodeZenPolishRequest('prompt body', 'deepseek-v4-flash');
 
   assert.equal(body.model, 'deepseek-v4-flash');
   assert.deepEqual(body.thinking, { type: 'disabled' });

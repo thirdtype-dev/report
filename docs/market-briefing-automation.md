@@ -90,13 +90,12 @@ Cloud Scheduler는 Cloud Run relay를 호출하고, relay가 GitHub `workflow_di
 
 현재 writer 설정:
 
-- Primary: `opencode-zen/deepseek-v4-flash`
+- Primary: `openrouter/deepseek/deepseek-v4-flash`
 - Fallback: `openrouter/deepseek/deepseek-v4-flash`
 
 필요 secrets:
 
 - `OPENROUTER_API_KEY`
-- `OPENCODE_ZEN_API_KEY`
 - `KRX_ID`
 - `KRX_PW`
 

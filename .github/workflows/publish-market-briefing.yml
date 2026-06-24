@@ -57,12 +57,11 @@ jobs:
         if: steps.trading_day.outputs.is_trading_day == 'true'
         env:
           BRIEFING_PHASE: ${{ inputs.phase || 'pre_market' }}
-          ANALYST_PROVIDER: opencode-zen
-          ANALYST_MODEL: deepseek-v4-flash
+          ANALYST_PROVIDER: openrouter
+          ANALYST_MODEL: deepseek/deepseek-v4-flash
           ANALYST_FALLBACK_PROVIDER: openrouter
           ANALYST_FALLBACK_MODEL: deepseek/deepseek-v4-flash
           LLM_TIMEOUT_MS: '45000'
-          OPENCODE_ZEN_API_KEY: ${{ secrets.OPENCODE_ZEN_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           KRX_ID: ${{ secrets.KRX_ID }}
           KRX_PW: ${{ secrets.KRX_PW }}
