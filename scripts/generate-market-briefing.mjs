@@ -561,13 +561,17 @@ function reportContainsPlaceholderCopy(report) {
 }
 
 function reportContainsStaleInvestorFlowCopy(report) {
-  const targets = PHASE === 'post_market'
-    ? report?.investorFlows
-    : report?.investorFlowWatch;
+  if (PHASE !== 'post_market') {
+    return false;
+  }
+  const targets = report?.investorFlows;
   return STALE_INVESTOR_FLOW_COPY_RE.test(JSON.stringify(targets ?? {}));
 }
 
 function articleContainsStaleInvestorFlowCopy(article) {
+  if (PHASE !== 'post_market') {
+    return false;
+  }
   return STALE_INVESTOR_FLOW_COPY_RE.test(String(article ?? ''));
 }
 

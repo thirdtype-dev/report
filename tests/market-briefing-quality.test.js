@@ -1,14 +1,22 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const path = require('node:path');
+const { pathToFileURL } = require('node:url');
 
 const repoRoot = path.resolve(__dirname, '..');
+const moduleCache = new Map();
 
-async function importBriefingModule() {
+async function importBriefingModule(phase = 'post_market') {
+  if (moduleCache.has(phase)) {
+    return moduleCache.get(phase);
+  }
   process.env.REPORT_LLM_MOCK = '1';
   process.env.PRESERVE_EXISTING_REPORTS = '0';
-  process.env.BRIEFING_PHASE = 'post_market';
-  return await import(path.join(repoRoot, 'scripts/generate-market-briefing.mjs'));
+  process.env.BRIEFING_PHASE = phase;
+  const moduleUrl = `${pathToFileURL(path.join(repoRoot, 'scripts/generate-market-briefing.mjs')).href}?phase=${phase}`;
+  const module = await import(moduleUrl);
+  moduleCache.set(phase, module);
+  return module;
 }
 
 function currentDateKey() {
@@ -228,4 +236,66 @@ test('post-market briefing does not preserve an existing article with stale inve
     }),
     /briefing_quality_gate_failed:/
   );
+});
+
+test('pre-market briefing allows prior-session investor-flow watch copy', async () => {
+  const module = await importBriefingModule('pre_market');
+  const research = {
+    investorFlows: {
+      status: 'unavailable',
+      markets: [],
+      reason: 'market_not_open_yet'
+    },
+    investorFlowNewsCandidates: [
+      {
+        title: '코스피, 외국인 순매도에 하락',
+        summary: '전 거래일 외국인 순매도가 지수 부담으로 작용했습니다.',
+        publishedAt: 'Wed, 24 Jun 2026 07:00:00 GMT'
+      }
+    ],
+    sectorThemeNewsCandidates: [
+      { title: '반도체 업종 강세', summary: '반도체 업종이 강세를 보였습니다.' }
+    ],
+    disclosureNewsCandidates: [
+      { title: 'A사 공급계약 공시', summary: '전일 장 마감 후 공급계약 공시가 확인됐습니다.' }
+    ],
+    scheduleNewsCandidates: [
+      { title: '오늘 주요 증시 일정', summary: '신규상장과 보호예수 해제 일정이 예정되어 있습니다.' }
+    ]
+  };
+
+  const plan = module.__testResolveBriefingPublishPlan({
+    marketResearch: research,
+    report: {
+      openingStrategy: {
+        keywords: '외국인 수급, 반도체, 공시',
+        oneLineStrategy: '외국인 수급 부담과 반도체 강세를 함께 확인해야 합니다.',
+        expectedOpen: '전일 하락 이후 보합권 출발 가능성이 있습니다.'
+      },
+      investorFlowWatch: {
+        continuity: '전일 외국인은 코스피에서 순매도한 것으로 나타났습니다.',
+        keyInvestor: '외국인 수급이 핵심 변수입니다.',
+        checkPoint: '장 초반 외국인 매도 지속 여부를 확인해야 합니다.'
+      },
+      sectorWeather: {
+        sunny: '반도체 업종 강세',
+        cloudy: '대형주 혼조',
+        rainy: '코스닥 변동성'
+      },
+      disclosuresAndNews: {
+        corporateDisclosure: '공급계약 공시가 확인됐습니다.',
+        majorNews: '반도체 업종 강세가 이어졌습니다.',
+        schedule: '신규상장과 보호예수 해제 일정이 예정되어 있습니다.'
+      },
+      watchlist: {
+        leaders: '반도체 대형주',
+        technicals: '전일 하락 이후 지지선 확인',
+        eventDriven: '공급계약 공시 종목'
+      }
+    },
+    existingHtml: ''
+  });
+
+  assert.equal(plan.action, 'publish_new');
+  assert.deepEqual(plan.issues, []);
 });
