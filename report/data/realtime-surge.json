@@ -1,53 +1,88 @@
 {
-  "generated_at": "2026-06-24T01:00:14.323Z",
+  "generated_at": "2026-06-24T02:00:14.202Z",
   "generated_date": "2026-06-24",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
+      "stockName": "DL이앤씨",
+      "stockCode": "375500",
+      "summary": "사우디 '8천533억원' 추징 통보, DL이앤씨 충당부채 영향은",
+      "headline": "[특징주] \"DL이앤씨, 사우디 과세에 조세 불복\".. 4%대 '강세'",
+      "evidencePoints": [
+        "출처 글로벌이코노믹, 연합인포맥스 기반 기사 2건",
+        "제목 기준 변동률 단서 +4.0%",
+        "[특징주] \"DL이앤씨, 사우디 과세에 조세 불복\".. 4%대 '강세'",
+        "사우디 '8천533억원' 추징 통보, DL이앤씨 충당부채 영향은"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-06-24T02:00:14.202Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 4,
+      "latestHeadline": "[특징주] \"DL이앤씨, 사우디 과세에 조세 불복\".. 4%대 '강세'",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxORXJtWkRXLVk1bUctaThxNF9EUTI3aTJHc2tzNzlqTFBTUC1QZHRXMkFPeFd5ODRvN1R3blM5cHNnUERxMmRjOHNQWFhhQkM3cm1XNmxIMGFvQkVUMzM3US1vclc2S0hVNzhhRmN0RnpCZENITzFPMmNvaC1qODhOeHI0WkRpRzVZ?oc=5",
+      "publishedAt": "Wed, 24 Jun 2026 01:30:21 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] \"DL이앤씨, 사우디 과세에 조세 불복\".. 4%대 '강세'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxORXJtWkRXLVk1bUctaThxNF9EUTI3aTJHc2tzNzlqTFBTUC1QZHRXMkFPeFd5ODRvN1R3blM5cHNnUERxMmRjOHNQWFhhQkM3cm1XNmxIMGFvQkVUMzM3US1vclc2S0hVNzhhRmN0RnpCZENITzFPMmNvaC1qODhOeHI0WkRpRzVZ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "사우디 '8천533억원' 추징 통보, DL이앤씨 충당부채 영향은",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1pTVR1RlZROVA4VkFrQmhHN3FMd2FkSzRMUE9Oc2tzY0xyR1h1X3hudGV1eEFWUV9qWjZLa3Rqa0M2dEJ6bFp2VzdLNkhKdmYxdVlsRFNmZkpaNE9qRkJEaEl0TTJhYjUxZ1dHZ2kwLUU?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "사우디 과세 불복, DL이앤씨 4%대 강세",
+      "polishedBody": "DL이앤씨는 충당부채 영향은 재료가 부각되며 단기 모멘텀을 형성했습니다. 충당부채 영향은 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 \", 사우디 과세에 조세 불복\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
       "stockName": "삼성전자",
       "stockCode": "005930",
-      "summary": "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환",
-      "headline": "[특징주] 삼성물산, 삼성전자 지분가치 상승 기대감 +10%대 ↑",
+      "summary": "삼성전자, 90조원 자사주 매입 임박…\"주주가치 제고 기대\"",
+      "headline": "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환",
       "evidencePoints": [
-        "출처 전국매일신문, 비즈니스포스트, 연합뉴스 기반 기사 3건",
-        "제목 기준 변동률 단서 +10.0%",
-        "[특징주] 삼성물산, 삼성전자 지분가치 상승 기대감 +10%대 ↑",
-        "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환"
+        "출처 비즈니스포스트, 연합뉴스 기반 기사 2건",
+        "제목 기준 변동률 단서 +18.0%",
+        "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환",
+        "삼성전자, 90조원 자사주 매입 임박…\"주주가치 제고 기대\""
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
       "channelCount": 7,
-      "updatedAt": "2026-06-24T01:00:14.323Z",
-      "cycleLabel": "KST_1000",
+      "updatedAt": "2026-06-24T02:00:14.202Z",
+      "cycleLabel": "KST_1100",
       "direction": "up",
-      "changeRate": 10,
-      "latestHeadline": "[특징주] 삼성물산, 삼성전자 지분가치 상승 기대감 +10%대 ↑",
-      "source": "전국매일신문",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1sbHZEenA4eGlSNEk1U01kNDB4dzhPeVYzb0JHQ3lYVWxKNGp5cllHVzNLeW84WVI2YmJwX1FBR2xsb2gyeERZdEtheFBFX1NNZENJX09oZXZfZElwSG5iekdSczlOZDRVME9pdVJn?oc=5",
-      "publishedAt": "Wed, 24 Jun 2026 00:48:48 GMT",
+      "changeRate": 8,
+      "latestHeadline": "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5JZlN0am5PUlpXMjVITWMtNzJxbFRvdjVnMGlvRFEtbzBZbTF4bGhLSnNZLTNzX01MaW5NVnJ4LXVFdUxWV1QwX05qOS13MzJ0MnFBQnNMRlNsZTJZbnpJWE1vSG5OMko3eUVkdlNYRk9lVUU?oc=5",
+      "publishedAt": "Wed, 24 Jun 2026 00:30:50 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "[특징주] 삼성물산, 삼성전자 지분가치 상승 기대감 +10%대 ↑",
-          "source": "전국매일신문",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1sbHZEenA4eGlSNEk1U01kNDB4dzhPeVYzb0JHQ3lYVWxKNGp5cllHVzNLeW84WVI2YmJwX1FBR2xsb2gyeERZdEtheFBFX1NNZENJX09oZXZfZElwSG5iekdSczlOZDRVME9pdVJn?oc=5"
-        },
-        {
-          "label": "관련기사2",
           "title": "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환",
           "source": "비즈니스포스트",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5JZlN0am5PUlpXMjVITWMtNzJxbFRvdjVnMGlvRFEtbzBZbTF4bGhLSnNZLTNzX01MaW5NVnJ4LXVFdUxWV1QwX05qOS13MzJ0MnFBQnNMRlNsZTJZbnpJWE1vSG5OMko3eUVkdlNYRk9lVUU?oc=5"
         },
         {
-          "label": "관련기사3",
+          "label": "관련기사2",
           "title": "삼성전자, 90조원 자사주 매입 임박…\"주주가치 제고 기대\"",
           "source": "연합뉴스",
           "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1NaUtKQy1fRV9sNkRtdGw4UFpCYVVrcmpUX3BmTnFjQzRncHFENjJqcElHbzVKRlNWeG5aR3NxQmUtZndzQTZVOS1MbU1RYW90N2pCaFhWUExKMFXSAWBBVV95cUxNR3I5V09BcWtSSnVFUFFQTVlZRlo4N0VGS0dwLWRmRVBfZHMwcEtRcHRfczk3VDlFS2dfN2dHODBWenBUNkluVTNkYVNTS0IwZGZydldCLWxGMnI2d05rUXY?oc=5"
@@ -55,8 +90,83 @@
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "삼성전자 삼성물산, 삼성전자 지분가치 상승 기대감 +10%대 ↑",
-      "polishedBody": "삼성전자는 주가 장중 8%대 반등 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 장중 반등 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+      "polishedHeadline": "삼성전자 8% 반등, 시총 1위 탈환",
+      "polishedBody": "삼성전자 주가가 장중 8%대 반등하며 SK하이닉스를 제치고 시가총액 1위를 되찾았습니다. 90조원 규모의 자사주 매입 임박 소식이 주가 상승을 견인한 것으로 분석됩니다. 이는 주주가치 제고 기대감을 반영하며 긍정적 신호로 해석됩니다. 향후 자사주 매입 일정과 추가 주주환원 정책 발표가 주가 향방을 결정할 것입니다."
+    },
+    {
+      "stockName": "두산",
+      "stockCode": "000150",
+      "summary": "[장중수급포착] 두산, 외국인 7일 연속 순매수행진... 주가 +3.79%",
+      "headline": "클로봇 주가 장중 12%대 강세, 사업다각화 위해 두산로지스틱스솔루션 인수",
+      "evidencePoints": [
+        "출처 비즈니스포스트, 뉴스핌 기반 기사 2건",
+        "제목 기준 변동률 단서 +12.0%",
+        "클로봇 주가 장중 12%대 강세, 사업다각화 위해 두산로지스틱스솔루션 인수",
+        "[장중수급포착] 두산, 외국인 7일 연속 순매수행진... 주가 +3.79%"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-06-24T02:00:14.202Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 12,
+      "latestHeadline": "클로봇 주가 장중 12%대 강세, 사업다각화 위해 두산로지스틱스솔루션 인수",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBxa1ZtSWgySy1DTEdHY2JyUkZYdWRtUzJESUp4RnYyZ3czYm1lSnF1dW9NZmxvUkRkM3JkMGNMYkRoZTVTYkRJZnpqcXlQZ0VFemxONFlzel9OcTh6dDd0dUNDaWJtcVp4UndIb0RzX3NNaDQ?oc=5",
+      "publishedAt": "Wed, 24 Jun 2026 01:42:52 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "클로봇 주가 장중 12%대 강세, 사업다각화 위해 두산로지스틱스솔루션 인수",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBxa1ZtSWgySy1DTEdHY2JyUkZYdWRtUzJESUp4RnYyZ3czYm1lSnF1dW9NZmxvUkRkM3JkMGNMYkRoZTVTYkRJZnpqcXlQZ0VFemxONFlzel9OcTh6dDd0dUNDaWJtcVp4UndIb0RzX3NNaDQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[장중수급포착] 두산, 외국인 7일 연속 순매수행진... 주가 +3.79%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBfSmxqVGRETHdINTZCdEp5ZHMyeXZKWkNYUmJjMU5EVXJLdTRIX1JGRTV3dENOMjZ6NDRBM1lGcFNIMHI3cTNpcVkxaXVET0pMMGZfNm9uTU8xYVFR?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "두산, 로지스틱스 인수에 12% 급등",
+      "polishedBody": "두산이 사업 다각화를 위해 두산로지스틱스솔루션 인수를 추진하면서 주가가 장중 12%대 강세를 보였습니다. 외국인 투자자들이 7일 연속 순매수하며 상승을 뒷받침하고 있습니다. 이번 인수는 신사업 진출을 통한 성장 동력 확보로 평가되며 긍정적 신호입니다. 향후 인수 완료 시점과 시너지 효과 창출 여부가 주가에 영향을 미칠 것입니다."
+    },
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "LG전자 주가 하락 중 아시아뉴스통신",
+      "headline": "LG전자 주가 하락 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "LG전자 주가 하락 중"
+      ],
+      "mentionScore": 60.4,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-06-24T02:00:14.202Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "LG전자 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5namxacUgzdGluSlAzQU5YRkZOTGtDSk53TjN6Nks3WUhsTnFoTGxWVGZ4WEcyUERVb2NsTm9INmxwVnp5SDFMUW1kOHRNbk00QUdoaUVqVkh5djFE?oc=5",
+      "publishedAt": "Wed, 24 Jun 2026 00:22:20 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5namxacUgzdGluSlAzQU5YRkZOTGtDSk53TjN6Nks3WUhsTnFoTGxWVGZ4WEcyUERVb2NsTm9INmxwVnp5SDFMUW1kOHRNbk00QUdoaUVqVkh5djFE?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "LG전자 주가 하락, 특별 이슈 부재",
+      "polishedBody": "LG전자는 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
       "stockName": "SK하이닉스",
@@ -227,47 +337,6 @@
       "hasNews": true,
       "polishedHeadline": "삼성전기 주가 상승 중",
       "polishedBody": "삼성전기는 \"업계 1위, 프리미엄 부여 마땅\"…목표주가 280만 원으로 상향 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "두산",
-      "stockCode": "000150",
-      "summary": "두산에너빌리티 주가 '9만빌리티'도 무너졌다…코스피 급락에 투자심리 '냉랭'",
-      "headline": "[속보] 클로봇, 두산 물류자동화 자회사 인수 효과에 강세…장중 주가 6%대 상승",
-      "evidencePoints": [
-        "출처 CBC뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 +6.0%",
-        "[속보] 클로봇, 두산 물류자동화 자회사 인수 효과에 강세…장중 주가 6%대 상승",
-        "두산에너빌리티 주가 '9만빌리티'도 무너졌다…코스피 급락에 투자심리 '냉랭'"
-      ],
-      "mentionScore": 86.8,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-06-24T01:00:14.323Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": 6,
-      "latestHeadline": "[속보] 클로봇, 두산 물류자동화 자회사 인수 효과에 강세…장중 주가 6%대 상승",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBhM2FsdDVQa09ESUthV2FBV0JfSVVhRGtUdUZDbm1MUFdxN3g2VDNnbkxVQmNkMEV1MDI0Y2p0V3FnWXJBUWxIMnZ0MFRUN1FnZ1dPLWRfM3JDNzBWYkxRaF9GUk1rX3lW?oc=5",
-      "publishedAt": "Wed, 24 Jun 2026 00:33:57 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[속보] 클로봇, 두산 물류자동화 자회사 인수 효과에 강세…장중 주가 6%대 상승",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBhM2FsdDVQa09ESUthV2FBV0JfSVVhRGtUdUZDbm1MUFdxN3g2VDNnbkxVQmNkMEV1MDI0Y2p0V3FnWXJBUWxIMnZ0MFRUN1FnZ1dPLWRfM3JDNzBWYkxRaF9GUk1rX3lW?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산에너빌리티 주가 '9만빌리티'도 무너졌다…코스피 급락에 투자심리 '냉랭'",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9OMFk5OEpMT1FBb2tSTE90ZGNab0M3aHBkR3VFUzVRZmE0TXd2SlQzNFVKXzA2N1djLVVXU1BXY2pycXZhdDVGNFRBYXpHMjNWRlpIM1g1SV9FQjNObU9ueGhRTmpGb0Jy?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "두산 클로봇, 두산 물류자동화 자회사 인수 효과에 강세…장중",
-      "polishedBody": "두산은 에너빌리티 주가 '9만빌리티'도 무너졌다…코스피 급락에 투자심리 '냉랭' 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 물류자동화 자회사 인수 효과에 강세…장중 주가 6%대 상승 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "SK스퀘어",
@@ -480,46 +549,6 @@
       "polishedBody": "두산에너빌리티는 주가 '9만빌리티'도 무너졌다…코스피 급락에 투자심리 '냉랭' CBC뉴스 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
-      "stockName": "DL이앤씨",
-      "stockCode": "375500",
-      "summary": "\"DL이앤씨, 사우디발 8500억 세금폭탄…오히려 매수 기회\"[클릭 e종목]",
-      "headline": "DL이앤씨, 과세조치로 인해 투자심리에 부담...실적에 미치는 영향은 제한적 -하나",
-      "evidencePoints": [
-        "출처 버핏연구소, v.daum.net 기반 기사 2건",
-        "DL이앤씨, 과세조치로 인해 투자심리에 부담...실적에 미치는 영향은 제한적 -하나",
-        "\"DL이앤씨, 사우디발 8500억 세금폭탄…오히려 매수 기회\"[클릭 e종목]"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-06-24T01:00:14.323Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "DL이앤씨, 과세조치로 인해 투자심리에 부담...실적에 미치는 영향은 제한적 -하나",
-      "source": "버핏연구소",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1nTERzc0xsUE5yZU9KMUdUdHdVSnRQeVAwT09pYjRrYllMa1MtdUZPZlUxZ29fdHF0M0ZLYnhxc1NycWltMHVHWTlhdFVsU1B2dDBfTDFleFc4UHRmZWRxa3V3?oc=5",
-      "publishedAt": "Tue, 23 Jun 2026 23:44:09 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "DL이앤씨, 과세조치로 인해 투자심리에 부담...실적에 미치는 영향은 제한적 -하나",
-          "source": "버핏연구소",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1nTERzc0xsUE5yZU9KMUdUdHdVSnRQeVAwT09pYjRrYllMa1MtdUZPZlUxZ29fdHF0M0ZLYnhxc1NycWltMHVHWTlhdFVsU1B2dDBfTDFleFc4UHRmZWRxa3V3?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"DL이앤씨, 사우디발 8500억 세금폭탄…오히려 매수 기회\"[클릭 e종목]",
-          "source": "v.daum.net",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBmY1R4bUZNeG9IbDRvOUNnd2FoR0dWUFZUeURIN0Rzc0txMUZKcTQzSHJWZ2VyTEV6Mlh0U1EzT2FBR2JmeVVfTlAzNmFKVkIzUWFkcg?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "DL이앤씨, 사우디 과세 부담…실적 영향은 제한적",
-      "polishedBody": "DL이앤씨는 사우디에서 8500억원 규모의 과세 조치를 받아 투자심리에 부담을 주고 있습니다. 다만 증권사는 이번 과세가 실적에 미치는 영향은 제한적이라고 분석했습니다. 이러한 상황은 오히려 저가 매수 기회로 평가되며 중립적인 신호로 해석됩니다. 향후 사우디 프로젝트 진행 상황과 추가 세무 이슈를 지켜봐야 합니다."
-    },
-    {
       "stockName": "예스티",
       "stockCode": "122640",
       "summary": "[리포트 브리핑]예스티, '할인의 근거 소멸, 멀티플 리레이팅 진행중' 목표가 50,000원 - 리딩투자증권",
@@ -667,46 +696,6 @@
       "polishedBody": "고려아연은 한화 보유 주식 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 한화 보유 주식 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 한화 보유 주식, 안 파나 못 파나 뉴스임팩트 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
-      "stockName": "LG전자",
-      "stockCode": "066570",
-      "summary": "교보증권, LG전자 목표주가 35만 원으로 대폭 상향",
-      "headline": "“LG전자 35만원으로 상향”…‘백색가전’ 꼬리표 떼고 AI 성장주로 대변신 [오늘 나온 보고서]",
-      "evidencePoints": [
-        "출처 매일경제 마켓, 2news.co.kr 기반 기사 2건",
-        "“LG전자 35만원으로 상향”…‘백색가전’ 꼬리표 떼고 AI 성장주로 대변신 [오늘 나온 보고서]",
-        "교보증권, LG전자 목표주가 35만 원으로 대폭 상향"
-      ],
-      "mentionScore": 87.2,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-06-23T01:00:18.372Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "“LG전자 35만원으로 상향”…‘백색가전’ 꼬리표 떼고 AI 성장주로 대변신 [오늘 나온 보고서]",
-      "source": "매일경제 마켓",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBxTzJYeTlJaVBPa2VuSVZtVUYxdXJyRUZWV0E1ZHRGU0FDR0xMcTF0dmY5NEFCQXc4OG1ad2g5OHlQc3h4NlZXZ3hwb1ltV3l4V2c?oc=5",
-      "publishedAt": "Tue, 23 Jun 2026 00:10:18 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "“LG전자 35만원으로 상향”…‘백색가전’ 꼬리표 떼고 AI 성장주로 대변신 [오늘 나온 보고서]",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBxTzJYeTlJaVBPa2VuSVZtVUYxdXJyRUZWV0E1ZHRGU0FDR0xMcTF0dmY5NEFCQXc4OG1ad2g5OHlQc3h4NlZXZ3hwb1ltV3l4V2c?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "교보증권, LG전자 목표주가 35만 원으로 대폭 상향",
-          "source": "2news.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KWWFfVzM0dTk2cGRVU3JpX3ZhLXNwUEVRbzFEU0dCaHpBekhyMkEzZTlfVy1IVnhEWGRDR202NW9HMW9ESXBxYmY4dVdhRVoyQVd6U3pwc0hoVHg4NUZ4SWZ3MXBMTkZD?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "LG전자, AI 성장주로 목표가 상향",
-      "polishedBody": "교보증권은 LG전자의 목표주가를 35만 원으로 대폭 상향했습니다. 백색가전 이미지에서 벗어나 AI 성장주로 변신하고 있다는 평가입니다. 이는 신사업 성장 가능성이 주가에 긍정적 영향을 준 것으로 분석됩니다. 향후 AI 관련 사업 성과가 지속될지 주목해야 합니다."
-    },
-    {
       "stockName": "한솔테크닉스",
       "stockCode": "004710",
       "summary": "한솔테크닉스 주가, 급등세... 왜? 금강일보",
@@ -777,36 +766,61 @@
   ],
   "items": [
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": 10,
+      "timestamp": "2026-06-24T02:00:14.202Z",
+      "symbol": "375500",
+      "name": "DL이앤씨",
+      "changeRate": 4,
       "price": null,
-      "summary": "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환",
-      "source": "전국매일신문",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1sbHZEenA4eGlSNEk1U01kNDB4dzhPeVYzb0JHQ3lYVWxKNGp5cllHVzNLeW84WVI2YmJwX1FBR2xsb2gyeERZdEtheFBFX1NNZENJX09oZXZfZElwSG5iekdSczlOZDRVME9pdVJn?oc=5",
+      "summary": "사우디 '8천533억원' 추징 통보, DL이앤씨 충당부채 영향은",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxORXJtWkRXLVk1bUctaThxNF9EUTI3aTJHc2tzNzlqTFBTUC1QZHRXMkFPeFd5ODRvN1R3blM5cHNnUERxMmRjOHNQWFhhQkM3cm1XNmxIMGFvQkVUMzM3US1vclc2S0hVNzhhRmN0RnpCZENITzFPMmNvaC1qODhOeHI0WkRpRzVZ?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 전국매일신문, 비즈니스포스트, 연합뉴스 기반 기사 3건",
-        "제목 기준 변동률 단서 +10.0%",
-        "[특징주] 삼성물산, 삼성전자 지분가치 상승 기대감 +10%대 ↑",
-        "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환"
+        "출처 글로벌이코노믹, 연합인포맥스 기반 기사 2건",
+        "제목 기준 변동률 단서 +4.0%",
+        "[특징주] \"DL이앤씨, 사우디 과세에 조세 불복\".. 4%대 '강세'",
+        "사우디 '8천533억원' 추징 통보, DL이앤씨 충당부채 영향은"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "[특징주] 삼성물산, 삼성전자 지분가치 상승 기대감 +10%대 ↑",
-          "source": "전국매일신문",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1sbHZEenA4eGlSNEk1U01kNDB4dzhPeVYzb0JHQ3lYVWxKNGp5cllHVzNLeW84WVI2YmJwX1FBR2xsb2gyeERZdEtheFBFX1NNZENJX09oZXZfZElwSG5iekdSczlOZDRVME9pdVJn?oc=5"
+          "title": "[특징주] \"DL이앤씨, 사우디 과세에 조세 불복\".. 4%대 '강세'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxORXJtWkRXLVk1bUctaThxNF9EUTI3aTJHc2tzNzlqTFBTUC1QZHRXMkFPeFd5ODRvN1R3blM5cHNnUERxMmRjOHNQWFhhQkM3cm1XNmxIMGFvQkVUMzM3US1vclc2S0hVNzhhRmN0RnpCZENITzFPMmNvaC1qODhOeHI0WkRpRzVZ?oc=5"
         },
         {
           "label": "관련기사2",
+          "title": "사우디 '8천533억원' 추징 통보, DL이앤씨 충당부채 영향은",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1pTVR1RlZROVA4VkFrQmhHN3FMd2FkSzRMUE9Oc2tzY0xyR1h1X3hudGV1eEFWUV9qWjZLa3Rqa0M2dEJ6bFp2VzdLNkhKdmYxdVlsRFNmZkpaNE9qRkJEaEl0TTJhYjUxZ1dHZ2kwLUU?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-24T02:00:14.202Z",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": 8,
+      "price": null,
+      "summary": "삼성전자, 90조원 자사주 매입 임박…\"주주가치 제고 기대\"",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5JZlN0am5PUlpXMjVITWMtNzJxbFRvdjVnMGlvRFEtbzBZbTF4bGhLSnNZLTNzX01MaW5NVnJ4LXVFdUxWV1QwX05qOS13MzJ0MnFBQnNMRlNsZTJZbnpJWE1vSG5OMko3eUVkdlNYRk9lVUU?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 비즈니스포스트, 연합뉴스 기반 기사 2건",
+        "제목 기준 변동률 단서 +18.0%",
+        "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환",
+        "삼성전자, 90조원 자사주 매입 임박…\"주주가치 제고 기대\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
           "title": "삼성전자 주가 장중 8%대 반등, SK하이닉스 제치고 시가총액 1위 탈환",
           "source": "비즈니스포스트",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5JZlN0am5PUlpXMjVITWMtNzJxbFRvdjVnMGlvRFEtbzBZbTF4bGhLSnNZLTNzX01MaW5NVnJ4LXVFdUxWV1QwX05qOS13MzJ0MnFBQnNMRlNsZTJZbnpJWE1vSG5OMko3eUVkdlNYRk9lVUU?oc=5"
         },
         {
-          "label": "관련기사3",
+          "label": "관련기사2",
           "title": "삼성전자, 90조원 자사주 매입 임박…\"주주가치 제고 기대\"",
           "source": "연합뉴스",
           "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1NaUtKQy1fRV9sNkRtdGw4UFpCYVVrcmpUX3BmTnFjQzRncHFENjJqcElHbzVKRlNWeG5aR3NxQmUtZndzQTZVOS1MbU1RYW90N2pCaFhWUExKMFXSAWBBVV95cUxNR3I5V09BcWtSSnVFUFFQTVlZRlo4N0VGS0dwLWRmRVBfZHMwcEtRcHRfczk3VDlFS2dfN2dHODBWenBUNkluVTNkYVNTS0IwZGZydldCLWxGMnI2d05rUXY?oc=5"
@@ -814,7 +828,62 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
+      "symbol": "000150",
+      "name": "두산",
+      "changeRate": 12,
+      "price": null,
+      "summary": "[장중수급포착] 두산, 외국인 7일 연속 순매수행진... 주가 +3.79%",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBxa1ZtSWgySy1DTEdHY2JyUkZYdWRtUzJESUp4RnYyZ3czYm1lSnF1dW9NZmxvUkRkM3JkMGNMYkRoZTVTYkRJZnpqcXlQZ0VFemxONFlzel9OcTh6dDd0dUNDaWJtcVp4UndIb0RzX3NNaDQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 비즈니스포스트, 뉴스핌 기반 기사 2건",
+        "제목 기준 변동률 단서 +12.0%",
+        "클로봇 주가 장중 12%대 강세, 사업다각화 위해 두산로지스틱스솔루션 인수",
+        "[장중수급포착] 두산, 외국인 7일 연속 순매수행진... 주가 +3.79%"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "클로봇 주가 장중 12%대 강세, 사업다각화 위해 두산로지스틱스솔루션 인수",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBxa1ZtSWgySy1DTEdHY2JyUkZYdWRtUzJESUp4RnYyZ3czYm1lSnF1dW9NZmxvUkRkM3JkMGNMYkRoZTVTYkRJZnpqcXlQZ0VFemxONFlzel9OcTh6dDd0dUNDaWJtcVp4UndIb0RzX3NNaDQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[장중수급포착] 두산, 외국인 7일 연속 순매수행진... 주가 +3.79%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBfSmxqVGRETHdINTZCdEp5ZHMyeXZKWkNYUmJjMU5EVXJLdTRIX1JGRTV3dENOMjZ6NDRBM1lGcFNIMHI3cTNpcVkxaXVET0pMMGZfNm9uTU8xYVFR?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-24T02:00:14.202Z",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "LG전자 주가 하락 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5namxacUgzdGluSlAzQU5YRkZOTGtDSk53TjN6Nks3WUhsTnFoTGxWVGZ4WEcyUERVb2NsTm9INmxwVnp5SDFMUW1kOHRNbk00QUdoaUVqVkh5djFE?oc=5",
+      "mentionScore": 60.4,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "LG전자 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5namxacUgzdGluSlAzQU5YRkZOTGtDSk53TjN6Nks3WUhsTnFoTGxWVGZ4WEcyUERVb2NsTm9INmxwVnp5SDFMUW1kOHRNbk00QUdoaUVqVkh5djFE?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": 8,
@@ -851,7 +920,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": 10,
@@ -882,7 +951,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": null,
@@ -913,7 +982,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
@@ -944,38 +1013,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
-      "symbol": "000150",
-      "name": "두산",
-      "changeRate": 6,
-      "price": null,
-      "summary": "두산에너빌리티 주가 '9만빌리티'도 무너졌다…코스피 급락에 투자심리 '냉랭'",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBhM2FsdDVQa09ESUthV2FBV0JfSVVhRGtUdUZDbm1MUFdxN3g2VDNnbkxVQmNkMEV1MDI0Y2p0V3FnWXJBUWxIMnZ0MFRUN1FnZ1dPLWRfM3JDNzBWYkxRaF9GUk1rX3lW?oc=5",
-      "mentionScore": 86.8,
-      "evidencePoints": [
-        "출처 CBC뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 +6.0%",
-        "[속보] 클로봇, 두산 물류자동화 자회사 인수 효과에 강세…장중 주가 6%대 상승",
-        "두산에너빌리티 주가 '9만빌리티'도 무너졌다…코스피 급락에 투자심리 '냉랭'"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[속보] 클로봇, 두산 물류자동화 자회사 인수 효과에 강세…장중 주가 6%대 상승",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBhM2FsdDVQa09ESUthV2FBV0JfSVVhRGtUdUZDbm1MUFdxN3g2VDNnbkxVQmNkMEV1MDI0Y2p0V3FnWXJBUWxIMnZ0MFRUN1FnZ1dPLWRfM3JDNzBWYkxRaF9GUk1rX3lW?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산에너빌리티 주가 '9만빌리티'도 무너졌다…코스피 급락에 투자심리 '냉랭'",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9OMFk5OEpMT1FBb2tSTE90ZGNab0M3aHBkR3VFUzVRZmE0TXd2SlQzNFVKXzA2N1djLVVXU1BXY2pycXZhdDVGNFRBYXpHMjNWRlpIM1g1SV9FQjNObU9ueGhRTmpGb0Jy?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": null,
@@ -1006,7 +1044,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "420770",
       "name": "기가비스",
       "changeRate": null,
@@ -1030,7 +1068,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "032830",
       "name": "삼성생명",
       "changeRate": null,
@@ -1054,7 +1092,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "347850",
       "name": "디앤디파마텍",
       "changeRate": null,
@@ -1078,7 +1116,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "004170",
       "name": "신세계",
       "changeRate": null,
@@ -1101,7 +1139,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "034020",
       "name": "두산에너빌리티",
       "changeRate": null,
@@ -1125,37 +1163,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
-      "symbol": "375500",
-      "name": "DL이앤씨",
-      "changeRate": null,
-      "price": null,
-      "summary": "\"DL이앤씨, 사우디발 8500억 세금폭탄…오히려 매수 기회\"[클릭 e종목]",
-      "source": "버핏연구소",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1nTERzc0xsUE5yZU9KMUdUdHdVSnRQeVAwT09pYjRrYllMa1MtdUZPZlUxZ29fdHF0M0ZLYnhxc1NycWltMHVHWTlhdFVsU1B2dDBfTDFleFc4UHRmZWRxa3V3?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 버핏연구소, v.daum.net 기반 기사 2건",
-        "DL이앤씨, 과세조치로 인해 투자심리에 부담...실적에 미치는 영향은 제한적 -하나",
-        "\"DL이앤씨, 사우디발 8500억 세금폭탄…오히려 매수 기회\"[클릭 e종목]"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "DL이앤씨, 과세조치로 인해 투자심리에 부담...실적에 미치는 영향은 제한적 -하나",
-          "source": "버핏연구소",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1nTERzc0xsUE5yZU9KMUdUdHdVSnRQeVAwT09pYjRrYllMa1MtdUZPZlUxZ29fdHF0M0ZLYnhxc1NycWltMHVHWTlhdFVsU1B2dDBfTDFleFc4UHRmZWRxa3V3?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"DL이앤씨, 사우디발 8500억 세금폭탄…오히려 매수 기회\"[클릭 e종목]",
-          "source": "v.daum.net",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBmY1R4bUZNeG9IbDRvOUNnd2FoR0dWUFZUeURIN0Rzc0txMUZKcTQzSHJWZ2VyTEV6Mlh0U1EzT2FBR2JmeVVfTlAzNmFKVkIzUWFkcg?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "122640",
       "name": "예스티",
       "changeRate": 3.77,
@@ -1186,7 +1194,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "161890",
       "name": "한국콜마",
       "changeRate": null,
@@ -1216,7 +1224,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "204270",
       "name": "제이앤티씨",
       "changeRate": null,
@@ -1239,7 +1247,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "010130",
       "name": "고려아연",
       "changeRate": null,
@@ -1262,37 +1270,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
-      "symbol": "066570",
-      "name": "LG전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "교보증권, LG전자 목표주가 35만 원으로 대폭 상향",
-      "source": "매일경제 마켓",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBxTzJYeTlJaVBPa2VuSVZtVUYxdXJyRUZWV0E1ZHRGU0FDR0xMcTF0dmY5NEFCQXc4OG1ad2g5OHlQc3h4NlZXZ3hwb1ltV3l4V2c?oc=5",
-      "mentionScore": 87.2,
-      "evidencePoints": [
-        "출처 매일경제 마켓, 2news.co.kr 기반 기사 2건",
-        "“LG전자 35만원으로 상향”…‘백색가전’ 꼬리표 떼고 AI 성장주로 대변신 [오늘 나온 보고서]",
-        "교보증권, LG전자 목표주가 35만 원으로 대폭 상향"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "“LG전자 35만원으로 상향”…‘백색가전’ 꼬리표 떼고 AI 성장주로 대변신 [오늘 나온 보고서]",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBxTzJYeTlJaVBPa2VuSVZtVUYxdXJyRUZWV0E1ZHRGU0FDR0xMcTF0dmY5NEFCQXc4OG1ad2g5OHlQc3h4NlZXZ3hwb1ltV3l4V2c?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "교보증권, LG전자 목표주가 35만 원으로 대폭 상향",
-          "source": "2news.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KWWFfVzM0dTk2cGRVU3JpX3ZhLXNwUEVRbzFEU0dCaHpBekhyMkEzZTlfVy1IVnhEWGRDR202NW9HMW9ESXBxYmY4dVdhRVoyQVd6U3pwc0hoVHg4NUZ4SWZ3MXBMTkZD?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "004710",
       "name": "한솔테크닉스",
       "changeRate": null,
@@ -1316,7 +1294,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-24T01:00:14.323Z",
+      "timestamp": "2026-06-24T02:00:14.202Z",
       "symbol": "047810",
       "name": "한국항공우주",
       "changeRate": 55.9,
@@ -1345,8 +1323,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "mixed",
-    "model": "signal-polish-v1, deepseek/deepseek-v4-flash",
-    "fallbackReason": "mixed_with_fallback"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
