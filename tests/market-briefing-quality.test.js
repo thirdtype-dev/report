@@ -122,3 +122,26 @@ test('market briefing fails instead of publishing placeholder copy when no compl
     /briefing_quality_gate_failed:placeholder_copy/
   );
 });
+
+test('market briefing removes news-basis boilerplate from visible copy', async () => {
+  const module = await importBriefingModule();
+  const cleaned = module.__testSanitizeBriefingCopy({
+    marketSummary: {
+      summary: '뉴스 기준, 코스피가 반등했습니다.'
+    },
+    investorFlows: {
+      foreign: '뉴스 기준, 전일 외국인은 코스피에서 순매도한 것으로 나타났습니다.',
+      institution: '보도 기준, 기관도 순매도했습니다.',
+      retail: '개인은 순매수했습니다.'
+    },
+    tomorrowStrategy: {
+      checklist: ['뉴스 기준, 외국인 수급 확인', '환율 확인']
+    }
+  });
+
+  const serialized = JSON.stringify(cleaned);
+  assert.equal(serialized.includes('뉴스 기준'), false);
+  assert.equal(serialized.includes('보도 기준'), false);
+  assert.equal(cleaned.investorFlows.foreign, '전일 외국인은 코스피에서 순매도한 것으로 나타났습니다.');
+  assert.equal(cleaned.tomorrowStrategy.checklist[0], '외국인 수급 확인');
+});

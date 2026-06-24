@@ -522,7 +522,25 @@ function validateReportShape(report) {
     throw error;
   }
 
-  return report;
+  return sanitizeBriefingCopy(report);
+}
+
+function sanitizeVisibleText(value) {
+  return String(value)
+    .replace(/(?:뉴스|보도)\s*기준[,，]?\s*/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+function sanitizeBriefingCopy(value) {
+  if (typeof value === 'string') return sanitizeVisibleText(value);
+  if (Array.isArray(value)) return value.map((entry) => sanitizeBriefingCopy(entry));
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, entry]) => [key, sanitizeBriefingCopy(entry)])
+    );
+  }
+  return value;
 }
 
 const PLACEHOLDER_COPY_RE = /(수집되지 않았습니다|뉴스 수집 실패|fetch_failed_\d+|재분류해야 합니다|확인되지 않았습니다|확인 불가)/u;
@@ -673,7 +691,7 @@ function buildPrompt(marketResearch) {
     '각 문장의 근거는 sources, marketNews, investorFlows, investorFlowNewsCandidates, disclosureNewsCandidates, scheduleNewsCandidates, sectorThemeNewsCandidates, stockNewsCandidates 범위 안에서만 사용한다.',
     '장시작 외국인/기관 수급 관전 포인트는 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 수급/선물/프로그램 매매 흐름을 추출해 작성한다.',
     '장마감 투자자별 수급 동향은 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 외국인/기관/개인 흐름을 추출해 작성한다.',
-    '수급 코멘트가 뉴스 기반일 때는 정확한 순매수 금액을 만들지 말고 "뉴스 기준", "보도 기준" 같은 표현으로 근거 수준을 표시한다.',
+    '수급 코멘트가 뉴스 기반일 때도 "뉴스 기준", "보도 기준" 같은 메타 표현은 쓰지 말고, 확인된 흐름만 자연스럽게 서술한다.',
     '장시작 기업 공시는 disclosureNewsCandidates에서 실적, 유상증자, 무상증자, 계약, 자사주, 배당, M&A 관련 뉴스를 추출해 작성한다.',
     '장시작 주요 일정은 scheduleNewsCandidates에서 신규상장, 청약, 보호예수, 주총, 경제지표, 거래정지/변경상장 일정을 추출해 작성한다.',
     '장마감 업종별/테마별 흐름은 sectorThemeNewsCandidates와 marketNews에서 강세/약세 업종과 테마를 반드시 분리해 작성한다.',
@@ -1661,3 +1679,4 @@ main().catch((error) => {
 });
 
 export const __testResolveBriefingPublishPlan = resolveBriefingPublishPlan;
+export const __testSanitizeBriefingCopy = sanitizeBriefingCopy;
