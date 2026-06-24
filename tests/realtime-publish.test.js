@@ -24,12 +24,12 @@ test('market briefing workflow is dispatch-only for external scheduler control',
   includes(workflow, "LLM_TIMEOUT_MS: '45000'");
   includes(workflow, 'ANALYST_PROVIDER: openrouter');
   includes(workflow, 'ANALYST_MODEL: deepseek/deepseek-v4-flash');
-  includes(workflow, 'ANALYST_FALLBACK_PROVIDER: openrouter');
-  includes(workflow, 'ANALYST_FALLBACK_MODEL: deepseek/deepseek-v4-flash');
+  includes(workflow, 'ANALYST_FALLBACK_PROVIDER: gemini');
+  includes(workflow, 'ANALYST_FALLBACK_MODEL: gemini-3.1-flash-lite');
   includes(workflow, 'OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}');
+  includes(workflow, 'GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}');
   excludes(workflow, 'OPENCODE_ZEN_API_KEY:');
   excludes(workflow, 'OPENROUTER_FALLBACK_API_KEY:');
-  excludes(workflow, 'GEMINI_API_KEY:');
 });
 
 test('realtime surge workflow dispatches from Cloud Scheduler inputs', () => {
@@ -45,26 +45,30 @@ test('realtime surge workflow dispatches from Cloud Scheduler inputs', () => {
   includes(workflow, 'python3 scripts/fetch_kind_listed_stocks.py');
   includes(workflow, 'ANALYST_PROVIDER: openrouter');
   includes(workflow, 'ANALYST_MODEL: deepseek/deepseek-v4-flash');
-  includes(workflow, 'ANALYST_FALLBACK_PROVIDER: openrouter');
-  includes(workflow, 'ANALYST_FALLBACK_MODEL: deepseek/deepseek-v4-flash');
+  includes(workflow, 'ANALYST_FALLBACK_PROVIDER: gemini');
+  includes(workflow, 'ANALYST_FALLBACK_MODEL: gemini-3.1-flash-lite');
   includes(workflow, 'OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}');
+  includes(workflow, 'GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}');
   excludes(workflow, 'OPENCODE_ZEN_API_KEY:');
   includes(workflow, "REALTIME_DESCRIPTION_ONLY: ${{ inputs.description_only == 'true' && '1' || '0' }}");
   excludes(workflow, 'OPENROUTER_FALLBACK_API_KEY:');
-  excludes(workflow, 'GEMINI_API_KEY:');
   excludes(workflow, 'schedule:');
   includes(workflow, 'node scripts/generate-realtime-surge.mjs');
   includes(workflow, 'report/data/slot-adapter.json');
 });
 
-test('report generator defaults use openrouter for briefing and realtime polish', () => {
+test('report generator defaults use openrouter primary and gemini fallback for briefing and realtime polish', () => {
   const briefing = read('scripts/generate-market-briefing.mjs');
   const realtime = read('scripts/generate-realtime-surge.mjs');
 
   includes(briefing, "const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';");
   includes(briefing, "const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash';");
+  includes(briefing, "const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';");
+  includes(briefing, "const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-3.1-flash-lite';");
   includes(realtime, "const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';");
   includes(realtime, "const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash';");
+  includes(realtime, "const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';");
+  includes(realtime, "const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-3.1-flash-lite';");
 });
 
 test('slot constants define the supported 09:00-15:00 half-hour window', () => {

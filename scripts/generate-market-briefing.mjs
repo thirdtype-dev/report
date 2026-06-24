@@ -8,8 +8,8 @@ const DATA_DIR = resolve(OUTPUT_DIR, 'data');
 const execFileAsync = promisify(execFile);
 const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
 const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash';
-const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'openrouter';
-const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'deepseek/deepseek-v4-flash';
+const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
+const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-3.1-flash-lite';
 const OPENCODE_ZEN_BASE_URL = process.env.OPENCODE_ZEN_BASE_URL ?? 'https://opencode.ai/zen/v1';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
@@ -1152,6 +1152,20 @@ function buildOpenCodeZenBriefingRequest(prompt, model = ANALYST_MODEL) {
   return buildBriefingChatRequest(prompt, model, { disableThinking: true });
 }
 
+function buildGeminiBriefingRequest(prompt) {
+  return {
+    contents: [{ role: 'user', parts: [{ text: prompt }] }],
+    generationConfig: {
+      temperature: 0.35,
+      responseMimeType: 'application/json'
+    }
+  };
+}
+
+function extractGeminiText(body) {
+  return body?.candidates?.[0]?.content?.parts?.map((part) => part?.text ?? '').join('') ?? '';
+}
+
 async function callOpenCodeZen(prompt, options = {}) {
   const apiKey = options.apiKey ?? process.env.OPENCODE_ZEN_API_KEY;
   if (!apiKey) throw new Error('missing_opencode_zen_api_key');
@@ -1206,6 +1220,32 @@ async function callOpenRouter(prompt, options = {}) {
   return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
 }
 
+async function callGemini(prompt, options = {}) {
+  const apiKey = options.apiKey ?? process.env.GEMINI_API_KEY;
+  const model = options.model ?? FALLBACK_MODEL;
+  if (!apiKey) throw new Error('missing_gemini_api_key');
+
+  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
+    method: 'POST',
+    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
+    headers: {
+      'content-type': 'application/json',
+      'x-goog-api-key': apiKey
+    },
+    body: JSON.stringify(buildGeminiBriefingRequest(prompt))
+  });
+
+  const body = await res.text();
+  if (!res.ok) {
+    const error = new Error(`gemini_failed_${res.status}`);
+    error.status = res.status;
+    error.body = body;
+    throw error;
+  }
+
+  return validateReportShape(extractJson(extractGeminiText(JSON.parse(body))));
+}
+
 async function callPrimaryWriter(prompt) {
   if (ANALYST_PROVIDER === 'opencode-zen') return callOpenCodeZen(prompt);
   if (ANALYST_PROVIDER === 'openrouter') return callOpenRouter(prompt);
@@ -1223,6 +1263,12 @@ async function callOpenRouterFallback(prompt) {
     apiKey,
     model: FALLBACK_MODEL
   });
+}
+
+async function callFallbackWriter(prompt) {
+  if (FALLBACK_PROVIDER === 'gemini') return callGemini(prompt, { model: FALLBACK_MODEL });
+  if (FALLBACK_PROVIDER === 'openrouter') return callOpenRouterFallback(prompt);
+  throw new Error(`unsupported_fallback_provider_${FALLBACK_PROVIDER}`);
 }
 
 function mockReport(marketResearch) {
@@ -1313,7 +1359,7 @@ async function writeReportWithFallback(marketResearch) {
     });
 
     return {
-      report: await withLlmRetry('openrouter-fallback', () => callOpenRouterFallback(prompt)),
+      report: await withLlmRetry(`${FALLBACK_PROVIDER}-fallback`, () => callFallbackWriter(prompt)),
       writer: { provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason }
     };
   }

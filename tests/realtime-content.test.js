@@ -299,13 +299,23 @@ test('realtime payload canonicalizes mismatched upstream stock codes from listed
 test('realtime openrouter fallback polish request matches the looser briefing request shape', async () => {
   process.env.REALTIME_SLOT_HOUR = '14';
   const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
-  const body = module.__testBuildOpenRouterPolishRequest('prompt body');
+  const body = module.__testBuildOpenRouterPolishRequest('prompt body', 'deepseek/deepseek-v4-flash');
 
   assert.equal(body.model, 'deepseek/deepseek-v4-flash');
   assert.equal(body.temperature, 0);
   assert.equal(body.max_tokens, 1400);
   assert.ok(!('response_format' in body));
   assert.ok(!('provider' in body));
+});
+
+test('realtime gemini fallback polish request uses json mime type', async () => {
+  process.env.REALTIME_SLOT_HOUR = '14';
+  const module = await import(path.join(repoRoot, 'scripts/generate-realtime-surge.mjs'));
+  const body = module.__testBuildGeminiPolishRequest('prompt body');
+
+  assert.deepEqual(body.contents, [{ role: 'user', parts: [{ text: 'prompt body' }] }]);
+  assert.equal(body.generationConfig.temperature, 0);
+  assert.equal(body.generationConfig.responseMimeType, 'application/json');
 });
 
 test('realtime opencode zen polish request disables DeepSeek thinking output', async () => {
