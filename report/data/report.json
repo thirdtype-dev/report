@@ -1,34 +1,34 @@
 {
   "report": {
     "openingStrategy": {
-      "keywords": "변동성, 반도체, 외국인 매도",
-      "oneLineStrategy": "코스피 8800선 하회에 따른 경계심리가 지속되는 가운데, 반도체 등 주요 업종의 수급 흐름을 살피며 보수적으로 대응할 필요가 있습니다.",
-      "expectedOpen": "미국 증시의 혼조세와 나스닥 선물 상승을 반영하여 코스피는 변동성 장세를 보일 것으로 예상됩니다."
+      "keywords": "코스피 8930, 나스닥 선물 +1.27%, 반도체 강세, 외국인 순매도",
+      "oneLineStrategy": "코스피는 전일 급등세와 나스닥 선물 상승에 힘입어 강세 출발이 예상되나, 외국인과 기관의 순매도 압력이 지속되며 변동성 장세가 이어질 수 있습니다.",
+      "expectedOpen": "코스피 9,000선 안착 시도, 코스닥은 약세 출발 예상"
     },
     "investorFlowWatch": {
-      "continuity": "최근 외국인과 기관의 동반 순매도세가 지수 하락을 주도하고 있어 수급 개선 여부가 관건입니다.",
+      "continuity": "외국인과 기관의 순매도 기조가 이어지고 있습니다.",
       "keyInvestor": "외국인",
-      "checkPoint": "외국인의 대규모 순매도 기조가 진정되는지, 기관의 저가 매수세가 유입되는지 확인이 필요합니다."
+      "checkPoint": "외국인과 기관의 동반 매도세가 지수 하락을 주도하고 있으며, 개인 투자자의 순매수 대응이 주요 변수입니다."
     },
     "sectorWeather": {
-      "sunny": "반도체",
-      "cloudy": "바이오, 배터리",
-      "rainy": "대형주 전반"
+      "sunny": "반도체 업종이 강세를 보이며 지수를 견인하고 있습니다.",
+      "cloudy": "코스닥 시장은 전반적인 약세 흐름을 보이고 있습니다.",
+      "rainy": "외국인과 기관의 매도세가 지속되며 시장 전반에 하방 압력이 가해지고 있습니다."
     },
     "disclosuresAndNews": {
-      "corporateDisclosure": "주요 공시를 통해 실적 개선 여부와 유상증자 등 자본 변동 관련 내용을 면밀히 점검해야 합니다.",
-      "majorNews": "코스피 9000선 돌파 후 극심한 변동성이 나타나고 있으며, 외국인 수급 이탈에 따른 지수 하방 압력이 주요 이슈입니다.",
-      "schedule": "주요 경제지표 발표 및 기업별 보호예수 해제 등 수급에 영향을 줄 수 있는 일정을 체크해야 합니다."
+      "corporateDisclosure": "HD현대중공업, 삼천당제약, OCI, 유진로봇, 셀트리온, CJ 등이 주요 공시를 발표했습니다.",
+      "majorNews": "코스피가 9,000선을 돌파한 후 변동성이 확대되고 있으며, 반도체와 2차전지 업종이 시장을 주도하고 있습니다.",
+      "schedule": "미국, 중국, 홍콩, 대만 증시가 휴장합니다."
     },
     "watchlist": {
-      "leaders": "삼성전자, SK하이닉스",
-      "technicals": "코스피 8800선 지지력 테스트",
-      "eventDriven": "유상증자 공시 기업 및 보호예수 해제 종목"
+      "leaders": "삼성전자, SK하이닉스 등 반도체 대형주가 강세를 보이며 지수 상승을 주도하고 있습니다.",
+      "technicals": "코스피 9,000선 안착 여부와 코스닥 887선 지지력이 기술적 관점에서 중요합니다.",
+      "eventDriven": "HD현대중공업, 삼천당제약, OCI, 유진로봇, 셀트리온, CJ 등의 공시와 관련된 종목들의 움직임에 주목할 필요가 있습니다."
     }
   },
   "writer": {
-    "provider": "gemini",
-    "model": "gemini-3.1-flash-lite",
-    "fallbackReason": "primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
