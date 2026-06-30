@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>오늘내일모레 iOS 개인정보처리방침</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --paper: #ffffff;
+      --ink: #17181c;
+      --muted: #5b6270;
+      --line: #e4e7ee;
+      --accent: #0f766e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.72;
+    }
+
+    main {
+      width: min(900px, calc(100% - 32px));
+      margin: 40px auto;
+      padding: 42px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 12px 36px rgba(17, 24, 39, 0.06);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.28;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+    }
+
+    h2 {
+      margin: 40px 0 14px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      font-size: 23px;
+    }
+
+    h3 {
+      margin: 26px 0 10px;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul {
+      margin: 10px 0 18px 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 650;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .meta {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .notice {
+      margin: 24px 0 0;
+      padding: 16px 18px;
+      background: #eef7f4;
+      border: 1px solid #cde7df;
+      border-radius: 10px;
+      color: #16372f;
+    }
+
+    .lang {
+      margin-top: 56px;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        width: min(100% - 20px, 900px);
+        margin: 10px auto;
+        padding: 26px 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>오늘내일모레 iOS 개인정보처리방침</h1>
+    <p class="meta">시행일: 2026년 6월 30일</p>
+
+    <p>
+      오늘내일모레 iOS 앱은 3일 타임라인, 일정 작성, 기기 캘린더 연동, 홈 화면 위젯,
+      텍스트 공유, 일정 템플릿, 빠른 메모, 디데이, 프리미엄 구독 기능을 제공하는 캘린더 앱입니다.
+      본 개인정보처리방침은 오늘내일모레 iOS 앱이 어떤 정보를 처리하고, 어디에 저장하며,
+      이용자가 이를 어떻게 관리할 수 있는지 설명합니다.
+    </p>
+
+    <p class="notice">
+      오늘내일모레 iOS 앱은 일정 데이터를 별도 개발자 서버에 저장하지 않습니다. 다만 이용자가
+      iPhone 또는 iPad에 연동된 캘린더를 읽도록 허용하거나 해당 캘린더에 일정을 저장하면,
+      그 일정은 iCloud, Google Calendar, Exchange 등 이용자가 기기에 설정한 캘린더 제공자의
+      정책과 동기화 설정에 따라 처리될 수 있습니다.
+    </p>
+
+    <h2>1. 처리하는 정보</h2>
+    <p>앱은 기능 제공에 필요한 범위에서 다음 정보를 처리합니다.</p>
+    <ul>
+      <li><strong>일정 정보:</strong> 제목, 시작·종료 일시, 종일 여부, 메모 또는 설명, 장소, 반복, 알림, 캘린더 식별자, 캘린더명, 색상, 일정 식별자.</li>
+      <li><strong>기기 캘린더 정보:</strong> 이용자가 캘린더 접근 권한을 허용한 경우 Apple EventKit을 통해 쓰기 가능한 캘린더 목록과 일정 정보를 읽고, 이용자가 선택한 캘린더에 일정을 저장합니다.</li>
+      <li><strong>앱 설정 및 로컬 데이터:</strong> 로컬 일정, 일정 템플릿, 최근 일정, 숨긴 캘린더, 캘린더 별칭, 상단 키워드, 키워드 표시 기간, 일정 작성 기본 탭, 좌하단 영역 선택, 빠른 메모, 디데이 제목·날짜·임박 기준, AI 일정 해석 설정.</li>
+      <li><strong>공유 텍스트:</strong> iOS Share Extension으로 전달된 일반 텍스트 또는 웹 URL을 앱 그룹 저장소에 임시 저장한 뒤, 앱의 일정 추가 화면 메모 초깃값으로 채웁니다. 공유 텍스트는 자동으로 일정 저장되지 않습니다.</li>
+      <li><strong>위젯 표시 데이터:</strong> 홈 화면 위젯 표시를 위해 프리미엄 상태와 표시 가능한 일정 스냅샷을 앱 그룹 저장소에 저장합니다.</li>
+      <li><strong>구독 상태:</strong> 프리미엄 월간·연간 구독 상품과 현재 구독 권한은 Apple StoreKit 및 App Store 거래 정보를 통해 확인합니다. 개발자는 카드번호 등 결제수단 정보를 직접 수집하거나 저장하지 않습니다.</li>
+      <li><strong>선택형 외부 AI 처리:</strong> 외부 LLM 사용은 이용자가 설정에서 직접 활성화하고 API key를 입력한 경우에만 사용됩니다. 이 경우 공유 텍스트 또는 일정 해석 대상 텍스트가 선택한 제공자(OpenAI, Google Gemini, Anthropic)의 API로 전송될 수 있습니다. API key는 기기 Keychain에 저장됩니다.</li>
+    </ul>
+
+    <h2>2. 이용 목적</h2>
+    <ul>
+      <li>오늘·내일·모레 일정 타임라인, 일정 검색, 상세 보기, 일정 작성·수정·삭제 기능 제공</li>
+      <li>기기에 연동된 캘린더 일정 표시, 숨김, 별칭 표시, 선택한 캘린더로 일정 저장</li>
+      <li>텍스트 공유로 일정 추가 화면의 편집 가능한 초안 생성</li>
+      <li>홈 화면 위젯, 일정 템플릿, 빠른 메모, 디데이, 상단 키워드 기능 제공</li>
+      <li>프리미엄 구독 상태 확인 및 구독 기능 제공</li>
+      <li>이용자 문의 대응 및 법령·App Store 정책 준수</li>
+    </ul>
+
+    <h2>3. 저장 위치 및 제3자 처리</h2>
+    <ul>
+      <li><strong>기기 내부 저장소:</strong> 로컬 일정, 템플릿, 최근 일정, 설정, 메모, 디데이 정보는 앱의 UserDefaults 기반 로컬 저장소에 저장됩니다.</li>
+      <li><strong>앱 그룹 저장소:</strong> Share Extension에서 앱으로 넘기는 공유 텍스트와 위젯 표시용 일정 스냅샷은 앱 그룹 저장소에 저장됩니다.</li>
+      <li><strong>Keychain:</strong> 이용자가 입력한 외부 AI 제공자 API key는 기기 Keychain에 저장됩니다.</li>
+      <li><strong>Apple EventKit 및 캘린더 제공자:</strong> 이용자가 권한을 허용하면 EventKit이 기기 캘린더에 접근합니다. iCloud, Google Calendar, Exchange 등 계정 제공자의 보관·동기화·공유 정책은 오늘내일모레가 통제하지 않습니다.</li>
+      <li><strong>Apple StoreKit 및 App Store:</strong> 구독 결제, 환불, 영수증, 권한 확인은 Apple 플랫폼에서 처리됩니다.</li>
+      <li><strong>선택한 외부 AI 제공자:</strong> 이용자가 외부 AI 해석을 활성화한 경우, 텍스트는 선택한 제공자의 API와 개인정보처리방침에 따라 처리될 수 있습니다.</li>
+    </ul>
+    <p>
+      오늘내일모레 iOS 앱은 캘린더 데이터를 판매하지 않으며, 캘린더 데이터를 저장하는 별도 개발자 서버를 운영하지 않습니다.
+      법령상 의무, 이용자 요청 처리, 보안상 필요한 경우를 제외하고 개발자가 일정 원문을 제3자에게 제공하지 않습니다.
+    </p>
+
+    <h2>4. 보관 및 삭제</h2>
+    <ul>
+      <li>앱 내부 저장소의 로컬 일정, 템플릿, 최근 일정, 설정, 메모, 디데이 정보는 이용자가 삭제하거나 앱을 삭제할 때까지 기기에 보관됩니다.</li>
+      <li>공유 텍스트는 앱이 불러온 뒤 앱 그룹 저장소에서 삭제되며, 일정으로 저장하지 않은 공유 텍스트는 개발자 서버로 전송되지 않습니다.</li>
+      <li>기기 캘린더에 저장된 일정은 해당 캘린더 제공자의 보관 정책과 이용자의 계정 동기화 설정에 따릅니다. 앱 또는 캘린더 앱에서 삭제할 수 있습니다.</li>
+      <li>외부 AI API key는 설정에서 비우거나 앱 데이터를 삭제하는 등 iOS가 제공하는 방식으로 제거할 수 있습니다.</li>
+      <li>App Store 구독 및 거래 정보는 Apple의 정책과 관련 법령상 보관 의무에 따릅니다.</li>
+    </ul>
+
+    <h2>5. 이용자 선택 및 권리</h2>
+    <ul>
+      <li>iOS 설정에서 캘린더 접근 권한을 언제든지 허용하거나 철회할 수 있습니다.</li>
+      <li>앱에서 로컬 일정, 템플릿, 캘린더 표시 여부, 캘린더 별칭, 상단 키워드, 빠른 메모, 디데이 설정을 변경하거나 삭제할 수 있습니다.</li>
+      <li>외부 AI 해석은 설정에서 켜거나 끌 수 있고, OpenAI, Gemini, Claude/Anthropic API key를 저장하거나 삭제할 수 있습니다.</li>
+      <li>프리미엄 구독은 App Store의 구독 관리 화면에서 관리하거나 해지할 수 있습니다.</li>
+      <li>캘린더 권한을 철회하면 기기 캘린더 표시 및 저장 기능이 제한될 수 있습니다.</li>
+    </ul>
+
+    <h2>6. 아동의 개인정보</h2>
+    <p>
+      오늘내일모레 iOS 앱은 아동을 주 이용 대상으로 설계된 앱이 아닙니다. 아동의 개인정보가
+      부적절하게 처리되었다고 판단되는 경우 아래 문의처로 연락해 주시면 필요한 조치를 검토하겠습니다.
+    </p>
+
+    <h2>7. 정책 변경</h2>
+    <p>
+      개인정보처리방침이 변경되는 경우 앱, App Store 등록정보 또는 정책 문서의 시행일 갱신을 통해 고지합니다.
+      중요한 변경이 있을 때에는 합리적인 방법으로 추가 안내할 수 있습니다.
+    </p>
+
+    <h2>8. 문의처</h2>
+    <p>개인정보 처리와 관련한 문의는 아래 이메일로 연락해 주십시오.</p>
+    <p><strong><a href="mailto:thirdtype@gmail.com">thirdtype@gmail.com</a></strong></p>
+
+    <h2>9. 외부 정책 링크</h2>
+    <ul>
+      <li><a href="https://www.apple.com/legal/privacy/">Apple 개인정보처리방침</a></li>
+      <li><a href="https://support.apple.com/billing">Apple 결제 및 구독 도움말</a></li>
+      <li><a href="https://openai.com/policies/privacy-policy">OpenAI 개인정보처리방침</a></li>
+      <li><a href="https://policies.google.com/privacy">Google 개인정보처리방침</a></li>
+      <li><a href="https://www.anthropic.com/privacy">Anthropic 개인정보처리방침</a></li>
+    </ul>
+
+    <section class="lang" lang="en">
+      <h1>Today Tomorrow iOS Privacy Policy</h1>
+      <p class="meta">Effective date: June 30, 2026</p>
+
+      <p>
+        Today Tomorrow for iOS is a calendar app that provides a three-day timeline,
+        event creation, device calendar integration, home screen widgets, text sharing,
+        event templates, quick memo, D-Day, and premium subscription features. This Privacy
+        Policy explains what information the iOS app processes, where it is stored, and how
+        users can manage it.
+      </p>
+
+      <p class="notice">
+        Today Tomorrow for iOS does not store your calendar data on a separate developer server.
+        If you allow the app to read calendars connected to your iPhone or iPad, or if you save
+        an event to one of those calendars, that event may be processed by the calendar provider
+        configured on your device, such as iCloud, Google Calendar, or Exchange, according to
+        that provider's policies and sync settings.
+      </p>
+
+      <h2>1. Information We Process</h2>
+      <ul>
+        <li><strong>Event information:</strong> title, start and end time, all-day status, memo or description, location, recurrence, reminders, calendar identifier, calendar name, color, and event identifier.</li>
+        <li><strong>Device calendar information:</strong> if you grant calendar access, the app uses Apple EventKit to read writable calendar lists and event information, and to save events to a calendar you select.</li>
+        <li><strong>App settings and local data:</strong> local events, event templates, recent events, hidden calendars, calendar aliases, top keywords, keyword lookahead window, default event form fields, bottom panel selection, quick memo, D-Day title, date, urgency threshold, and AI schedule parsing settings.</li>
+        <li><strong>Shared text:</strong> plain text or web URLs sent through the iOS Share Extension are temporarily stored in the app group container and used to prefill the memo field in the add-event screen. Shared text is not saved as an event automatically.</li>
+        <li><strong>Widget display data:</strong> premium status and a displayable event snapshot are stored in the app group container for home screen widgets.</li>
+        <li><strong>Subscription status:</strong> monthly and yearly premium products and active entitlements are checked through Apple StoreKit and App Store transaction information. The developer does not directly collect or store payment card details.</li>
+        <li><strong>Optional external AI processing:</strong> external LLM use happens only if you enable it in Settings and enter an API key. In that case, shared text or other schedule-parsing text may be sent to the selected provider's API, such as OpenAI, Google Gemini, or Anthropic. API keys are stored in the device Keychain.</li>
+      </ul>
+
+      <h2>2. Purposes of Use</h2>
+      <ul>
+        <li>Provide the today, tomorrow, and day-after-tomorrow timeline, search, detail view, and event create, edit, and delete features</li>
+        <li>Show, hide, alias, and save events to calendars connected to the device</li>
+        <li>Create an editable add-event draft from shared text</li>
+        <li>Provide home screen widgets, event templates, quick memo, D-Day, and top keyword features</li>
+        <li>Verify premium subscription status and provide subscription features</li>
+        <li>Respond to inquiries and comply with applicable laws and App Store policies</li>
+      </ul>
+
+      <h2>3. Storage Location and Third-Party Processing</h2>
+      <ul>
+        <li><strong>On-device storage:</strong> local events, templates, recent events, settings, memo, and D-Day information are stored locally through UserDefaults-based app storage.</li>
+        <li><strong>App group storage:</strong> shared text handed off from the Share Extension and widget event snapshots are stored in the app group container.</li>
+        <li><strong>Keychain:</strong> external AI provider API keys entered by the user are stored in the device Keychain.</li>
+        <li><strong>Apple EventKit and calendar providers:</strong> when you grant permission, EventKit accesses device calendars. Today Tomorrow does not control the retention, sync, or sharing policies of account providers such as iCloud, Google Calendar, or Exchange.</li>
+        <li><strong>Apple StoreKit and App Store:</strong> subscription purchase, refund, receipt, and entitlement handling are processed by Apple platform services.</li>
+        <li><strong>Selected external AI provider:</strong> if you enable external AI parsing, text may be processed under the selected provider's API terms and privacy policy.</li>
+      </ul>
+      <p>
+        Today Tomorrow for iOS does not sell calendar data and does not operate a separate
+        developer server for storing calendar data. Except where required by law, necessary for
+        user support, or needed for security, the developer does not provide raw calendar content
+        to third parties.
+      </p>
+
+      <h2>4. Retention and Deletion</h2>
+      <ul>
+        <li>Local events, templates, recent events, settings, memo, and D-Day information remain on the device until you delete them or delete the app.</li>
+        <li>Shared text is removed from app group storage after the app loads it. Unsaved shared text is not sent to a developer server.</li>
+        <li>Events saved to device calendars follow the retention policies and sync settings of the relevant calendar provider. You can delete them in the app or in your calendar app.</li>
+        <li>External AI API keys can be removed by clearing them in Settings or by using iOS-supported app data removal methods.</li>
+        <li>App Store subscription and transaction information is retained by Apple according to Apple's policies and legal obligations.</li>
+      </ul>
+
+      <h2>5. User Choices and Rights</h2>
+      <ul>
+        <li>You can grant or revoke calendar access at any time in iOS Settings.</li>
+        <li>You can change or delete local events, templates, calendar visibility, calendar aliases, top keywords, quick memo, and D-Day settings in the app.</li>
+        <li>You can enable or disable external AI parsing in Settings, and save or delete API keys for OpenAI, Gemini, and Claude/Anthropic.</li>
+        <li>You can manage or cancel premium subscriptions in App Store subscription settings.</li>
+        <li>If you revoke calendar access, device calendar display and save features may be limited.</li>
+      </ul>
+
+      <h2>6. Children's Privacy</h2>
+      <p>
+        Today Tomorrow for iOS is not designed primarily for children. If you believe a child's
+        personal information has been processed inappropriately, contact us and we will review
+        the necessary action.
+      </p>
+
+      <h2>7. Policy Changes</h2>
+      <p>
+        If this Privacy Policy changes, we will notify users by updating the effective date in
+        the app, App Store listing, or policy document. For material changes, we may provide
+        additional notice through reasonable methods.
+      </p>
+
+      <h2>8. Contact</h2>
+      <p>For privacy questions, contact:</p>
+      <p><strong><a href="mailto:thirdtype@gmail.com">thirdtype@gmail.com</a></strong></p>
+
+      <h2>9. External Policy Links</h2>
+      <ul>
+        <li><a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a></li>
+        <li><a href="https://support.apple.com/billing">Apple billing and subscriptions support</a></li>
+        <li><a href="https://openai.com/policies/privacy-policy">OpenAI Privacy Policy</a></li>
+        <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+        <li><a href="https://www.anthropic.com/privacy">Anthropic Privacy Policy</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
