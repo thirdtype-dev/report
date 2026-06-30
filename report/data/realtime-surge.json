@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-06-30T04:00:16.393Z",
+  "generated_at": "2026-06-30T05:00:14.723Z",
   "generated_date": "2026-06-30",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
+    "title": "KST 14:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "“반도체 공급부족 2028년까지 지속… 내년 삼성전자 영업익 580조 전망”",
+      "headline": "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
+      "evidencePoints": [
+        "출처 주간동아, 공감신문 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "“반도체 공급부족 2028년까지 지속… 내년 삼성전자 영업익 580조 전망”",
+        "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-06-30T05:00:14.723Z",
+      "cycleLabel": "KST_1400",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
+      "source": "공감신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1jLUVqbFRoTTE1MnBRa3dNaWZlaXRucExHdTdVUjdvMDN5MnNqRXZxalpaM0lIbGRpbVNwWVBiWV8zSjkwZElsZW83NjM4MjBQR1pRQ0E2YnVXQ01DNmpwMklobmFoNk1q?oc=5",
+      "publishedAt": "Tue, 30 Jun 2026 00:42:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "“반도체 공급부족 2028년까지 지속… 내년 삼성전자 영업익 580조 전망”",
+          "source": "주간동아",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5rWEgyNzRYZTFUZ3RvelJkYThGZjZNWDdKUHB5dTZHeWVWbkg4WTVHaUY1OXp1WkVST0VsN2FNVTJKRmRSbmVydDA1VVBNd2J4ZEFWWmxNWFR6aG8yRDRPTXRFV0o?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
+          "source": "공감신문",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1jLUVqbFRoTTE1MnBRa3dNaWZlaXRucExHdTdVUjdvMDN5MnNqRXZxalpaM0lIbGRpbVNwWVBiWV8zSjkwZElsZW83NjM4MjBQR1pRQ0E2YnVXQ01DNmpwMklobmFoNk1q?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "반도체 공급 부족 장기화 전망에 목표가 상승",
+      "polishedBody": "반도체 공급 부족이 2028년까지 지속될 것이라는 전망이 제기되었습니다. 내년 삼성전자 영업이익이 580조 원에 달할 것이라는 분석이 나왔습니다. 이는 반도체 시장의 구조적 호황을 반영하여 긍정적인 신호로 평가됩니다. 향후 글로벌 반도체 수급 동향과 추가 실적 전망치 변화를 주목해야 합니다."
+    },
     {
       "stockName": "크래프톤",
       "stockCode": "259960",
@@ -24,8 +65,8 @@
       "mentionScore": 99.9,
       "sentimentLabel": "neutral",
       "channelCount": 3,
-      "updatedAt": "2026-06-30T04:00:16.393Z",
-      "cycleLabel": "KST_1300",
+      "updatedAt": "2026-06-30T05:00:14.723Z",
+      "cycleLabel": "KST_1400",
       "direction": "neutral",
       "changeRate": null,
       "latestHeadline": "크래프톤 주가 7%↑...증권가 2분기 호실적 전망",
@@ -48,49 +89,41 @@
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "크래프톤, 2분기 호실적 기대감에 주가 상승세",
-      "polishedBody": "크래프톤이 증권가의 긍정적인 실적 전망에 힘입어 주가 상승 흐름을 보이고 있습니다. 현재 주가는 매력적인 진입 구간으로 평가받으며 증권사로부터 목표가 상향 조정이 이어지고 있습니다. 신작 성과와 기존 게임의 견조한 매출이 실적 개선을 견인할 것으로 예상되어 투자 심리가 회복되는 모습입니다. 향후 발표될 실제 분기 실적 수치와 신규 게임의 시장 안착 여부를 면밀히 살펴봐야 합니다."
+      "polishedHeadline": "증권가 호실적 전망에 주가 7% 상승",
+      "polishedBody": "크래프톤 주가가 7% 상승하며 증권가의 긍정적인 전망이 반영되었습니다. 하나증권은 목표가 460,000원을 제시하며 매수 기회라고 평가했습니다. 이는 2분기 호실적 기대감이 주가에 긍정적인 영향을 준 것으로 보입니다. 향후 실제 실적 발표와 추가 증권사 리포트를 확인할 필요가 있습니다."
     },
     {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "삼성전자 주가 상승 중",
-      "headline": "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
+      "stockName": "에이프릴바이오",
+      "stockCode": "397030",
+      "summary": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략. ThinkPool",
+      "headline": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
       "evidencePoints": [
-        "출처 공감신문, 아시아뉴스통신 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
-        "삼성전자 주가 상승 중"
+        "출처 ThinkPool 기반 기사 1건",
+        "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략."
       ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-06-30T04:00:16.393Z",
-      "cycleLabel": "KST_1300",
-      "direction": "up",
+      "mentionScore": 55.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-06-30T05:00:14.723Z",
+      "cycleLabel": "KST_1400",
+      "direction": "neutral",
       "changeRate": null,
-      "latestHeadline": "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
-      "source": "공감신문",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1jLUVqbFRoTTE1MnBRa3dNaWZlaXRucExHdTdVUjdvMDN5MnNqRXZxalpaM0lIbGRpbVNwWVBiWV8zSjkwZElsZW83NjM4MjBQR1pRQ0E2YnVXQ01DNmpwMklobmFoNk1q?oc=5",
-      "publishedAt": "Tue, 30 Jun 2026 00:42:00 GMT",
+      "latestHeadline": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
+      "source": "ThinkPool",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5",
+      "publishedAt": "Mon, 29 Jun 2026 22:56:00 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
-          "source": "공감신문",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1jLUVqbFRoTTE1MnBRa3dNaWZlaXRucExHdTdVUjdvMDN5MnNqRXZxalpaM0lIbGRpbVNwWVBiWV8zSjkwZElsZW83NjM4MjBQR1pRQ0E2YnVXQ01DNmpwMklobmFoNk1q?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전자 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8xV04yZjdCNHdwSlpnRHhzU2lqRDM2TFdzc2R6Tk1SaDJCdUJzZ3lDVk9mbzdPLU82VjNqeEcxWkF3TGlMQXNXcENpWWxpcWtpOTEyRFF4TFRpTWdo?oc=5"
+          "title": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
+          "source": "ThinkPool",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5"
         }
       ],
-      "hasTelegram": true,
+      "hasTelegram": false,
       "hasNews": true,
-      "polishedHeadline": "삼성전자, 반도체 시장 기대감 속 목표주가 상향",
-      "polishedBody": "반도체 업황 개선에 대한 기대감이 커지면서 삼성전자의 주가가 오름세를 나타내고 있습니다. 시장에서는 반도체 시장의 격변기를 맞아 삼성전자의 실적 회복 속도가 빨라질 것으로 내다보고 있습니다. 주요 증권사들이 목표주가를 잇달아 올리며 업계 전반의 긍정적인 전망이 주가에 반영되는 상황입니다. 향후 글로벌 반도체 수요 변화와 메모리 가격의 추이를 지속적으로 확인하는 것이 중요합니다."
+      "polishedHeadline": "저점 매수 기회 분석에 주목",
+      "polishedBody": "현재 주가가 저점 구간이라는 분석이 제기되었습니다. ThinkPool은 이 시점을 물량을 모아둘 기회로 판단했습니다. 이는 추가 하락 리스크보다는 반등 가능성에 무게를 둔 중립적인 시각입니다. 향후 기업의 임상 결과나 신규 계약 체결 여부가 주요 변수가 될 것입니다."
     },
     {
       "stockName": "SK이터닉스",
@@ -125,39 +158,6 @@
       "hasNews": true,
       "polishedHeadline": "SK이터닉스, 반도체 관련주 강세 속 동반 상승",
       "polishedBody": "SK이터닉스가 반도체 관련 산업의 성장세와 맞물려 주가 상승 탄력을 받고 있습니다. 최근 시장의 관심이 집중된 반도체 섹터의 흐름을 따라 투자자들의 매수세가 유입되는 분위기입니다. 인공지능 산업의 확장이 관련 기업들의 가치를 재평가하게 만들면서 긍정적인 시장 반응을 이끌어내고 있습니다. 향후 관련 산업의 설비 투자 확대와 실질적인 수주 소식이 주가에 미칠 영향을 지켜봐야 합니다."
-    },
-    {
-      "stockName": "에이프릴바이오",
-      "stockCode": "397030",
-      "summary": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략. ThinkPool",
-      "headline": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
-      "evidencePoints": [
-        "출처 ThinkPool 기반 기사 1건",
-        "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략."
-      ],
-      "mentionScore": 56.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-06-30T04:00:16.393Z",
-      "cycleLabel": "KST_1300",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
-      "source": "ThinkPool",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5",
-      "publishedAt": "Mon, 29 Jun 2026 22:56:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
-          "source": "ThinkPool",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "에이프릴바이오, 저점 매수 기회 분석 및 대응 전략",
-      "polishedBody": "에이프릴바이오가 현재 주가 저점 구간에서 투자자들의 관심을 모으고 있습니다. 기술적 분석을 바탕으로 물량을 확보하려는 움직임이 나타나며 향후 반등 가능성에 대한 기대가 형성되고 있습니다. 바이오 섹터의 전반적인 변동성 속에서도 기업의 내재 가치에 주목하는 시각이 존재하여 중립적인 관점이 유지됩니다. 향후 임상 진행 상황과 주요 파이프라인의 개발 성과가 주가 방향성을 결정할 핵심 요소가 될 것입니다."
     },
     {
       "stockName": "GS리테일",
@@ -755,7 +755,38 @@
   ],
   "items": [
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "“반도체 공급부족 2028년까지 지속… 내년 삼성전자 영업익 580조 전망”",
+      "source": "공감신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1jLUVqbFRoTTE1MnBRa3dNaWZlaXRucExHdTdVUjdvMDN5MnNqRXZxalpaM0lIbGRpbVNwWVBiWV8zSjkwZElsZW83NjM4MjBQR1pRQ0E2YnVXQ01DNmpwMklobmFoNk1q?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 주간동아, 공감신문 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "“반도체 공급부족 2028년까지 지속… 내년 삼성전자 영업익 580조 전망”",
+        "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "“반도체 공급부족 2028년까지 지속… 내년 삼성전자 영업익 580조 전망”",
+          "source": "주간동아",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5rWEgyNzRYZTFUZ3RvelJkYThGZjZNWDdKUHB5dTZHeWVWbkg4WTVHaUY1OXp1WkVST0VsN2FNVTJKRmRSbmVydDA1VVBNd2J4ZEFWWmxNWFR6aG8yRDRPTXRFV0o?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
+          "source": "공감신문",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1jLUVqbFRoTTE1MnBRa3dNaWZlaXRucExHdTdVUjdvMDN5MnNqRXZxalpaM0lIbGRpbVNwWVBiWV8zSjkwZElsZW83NjM4MjBQR1pRQ0E2YnVXQ01DNmpwMklobmFoNk1q?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "259960",
       "name": "크래프톤",
       "changeRate": null,
@@ -785,38 +816,30 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
-      "symbol": "005930",
-      "name": "삼성전자",
+      "timestamp": "2026-06-30T05:00:14.723Z",
+      "symbol": "397030",
+      "name": "에이프릴바이오",
       "changeRate": null,
       "price": null,
-      "summary": "삼성전자 주가 상승 중",
-      "source": "공감신문",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1jLUVqbFRoTTE1MnBRa3dNaWZlaXRucExHdTdVUjdvMDN5MnNqRXZxalpaM0lIbGRpbVNwWVBiWV8zSjkwZElsZW83NjM4MjBQR1pRQ0E2YnVXQ01DNmpwMklobmFoNk1q?oc=5",
-      "mentionScore": 99.9,
+      "summary": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략. ThinkPool",
+      "source": "ThinkPool",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5",
+      "mentionScore": 55.9,
       "evidencePoints": [
-        "출처 공감신문, 아시아뉴스통신 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
-        "삼성전자 주가 상승 중"
+        "출처 ThinkPool 기반 기사 1건",
+        "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략."
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "삼성전자·SK하이닉스 목표주가 상승…반도체 시장 격변 예고",
-          "source": "공감신문",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1jLUVqbFRoTTE1MnBRa3dNaWZlaXRucExHdTdVUjdvMDN5MnNqRXZxalpaM0lIbGRpbVNwWVBiWV8zSjkwZElsZW83NjM4MjBQR1pRQ0E2YnVXQ01DNmpwMklobmFoNk1q?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전자 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8xV04yZjdCNHdwSlpnRHhzU2lqRDM2TFdzc2R6Tk1SaDJCdUJzZ3lDVk9mbzdPLU82VjNqeEcxWkF3TGlMQXNXcENpWWxpcWtpOTEyRFF4TFRpTWdo?oc=5"
+          "title": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
+          "source": "ThinkPool",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5"
         }
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "475150",
       "name": "SK이터닉스",
       "changeRate": null,
@@ -840,30 +863,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
-      "symbol": "397030",
-      "name": "에이프릴바이오",
-      "changeRate": null,
-      "price": null,
-      "summary": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략. ThinkPool",
-      "source": "ThinkPool",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5",
-      "mentionScore": 56.9,
-      "evidencePoints": [
-        "출처 ThinkPool 기반 기사 1건",
-        "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략."
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
-          "source": "ThinkPool",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "007070",
       "name": "GS리테일",
       "changeRate": null,
@@ -893,7 +893,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "375500",
       "name": "DL이앤씨",
       "changeRate": null,
@@ -916,7 +916,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "161890",
       "name": "한국콜마",
       "changeRate": null,
@@ -939,7 +939,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "032830",
       "name": "삼성생명",
       "changeRate": null,
@@ -963,7 +963,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": -3,
@@ -994,7 +994,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
@@ -1025,7 +1025,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "004170",
       "name": "신세계",
       "changeRate": null,
@@ -1056,7 +1056,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "000150",
       "name": "두산",
       "changeRate": null,
@@ -1086,7 +1086,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": -3,
@@ -1110,7 +1110,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": null,
@@ -1133,7 +1133,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": null,
@@ -1157,7 +1157,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "034020",
       "name": "두산에너빌리티",
       "changeRate": null,
@@ -1180,7 +1180,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "226950",
       "name": "올릭스",
       "changeRate": 25,
@@ -1211,7 +1211,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": null,
@@ -1234,7 +1234,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "347850",
       "name": "디앤디파마텍",
       "changeRate": 20,
@@ -1265,7 +1265,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-30T04:00:16.393Z",
+      "timestamp": "2026-06-30T05:00:14.723Z",
       "symbol": "356860",
       "name": "티엘비",
       "changeRate": null,
@@ -1301,8 +1301,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "gemini",
-    "model": "gemini-3.1-flash-lite",
-    "fallbackReason": "primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
