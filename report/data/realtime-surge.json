@@ -1,96 +1,330 @@
 {
-  "generated_at": "2026-07-01T06:00:18.532Z",
-  "generated_date": "2026-07-01",
-  "slot_hour": 15,
-  "cycle_label": "KST_1500",
-  "slot_label": "15:00",
+  "generated_at": "2026-07-02T01:00:15.010Z",
+  "generated_date": "2026-07-02",
+  "slot_hour": 10,
+  "cycle_label": "KST_1000",
+  "slot_label": "10:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 15:00 실시간 급등",
+    "title": "KST 10:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
-      "stockName": "에코프로비엠",
-      "stockCode": "247540",
-      "summary": "에코프로비엠 주가 하락 중",
-      "headline": "1.2조 유상증자 에코프로비엠, 장중 9% 급락…목표주가도 하향 [이런국장 저런주식]",
+      "stockName": "SK하이닉스",
+      "stockCode": "000660",
+      "summary": "[아시아 특징주] SK하이닉스 좇는 홍콩 레버리지 ETF…거꾸로 주가 좌우한다",
+      "headline": "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
       "evidencePoints": [
-        "출처 서울경제, 아시아뉴스통신 기반 기사 2건",
-        "제목 기준 변동률 단서 -9.0%",
-        "1.2조 유상증자 에코프로비엠, 장중 9% 급락…목표주가도 하향 [이런국장 저런주식]",
-        "에코프로비엠 주가 하락 중"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 4,
-      "updatedAt": "2026-07-01T06:00:18.532Z",
-      "cycleLabel": "KST_1500",
-      "direction": "down",
-      "changeRate": -9,
-      "latestHeadline": "1.2조 유상증자 에코프로비엠, 장중 9% 급락…목표주가도 하향 [이런국장 저런주식]",
-      "source": "서울경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9qaVVDQU5FWXhhU1BiODd6RmRoWDNpTXYyMVhxLV90WWFJTEgzcllEajV0UkZqZDFTN0hQM1dQRlVNSFpnekxpeld3SnVBbmpHN1HSAVNBVV95cUxNUHM2OExIZk0yOVZsMVZJMW1PdXBhS1hkd2hiODlBV1FzUUNfdjlWSVk2aHdvR2J0UWhrcjdEOUZCZDk0S1o5bDNYUC1WUUU3S1VKbw?oc=5",
-      "publishedAt": "Wed, 01 Jul 2026 05:17:45 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "1.2조 유상증자 에코프로비엠, 장중 9% 급락…목표주가도 하향 [이런국장 저런주식]",
-          "source": "서울경제",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9qaVVDQU5FWXhhU1BiODd6RmRoWDNpTXYyMVhxLV90WWFJTEgzcllEajV0UkZqZDFTN0hQM1dQRlVNSFpnekxpeld3SnVBbmpHN1HSAVNBVV95cUxNUHM2OExIZk0yOVZsMVZJMW1PdXBhS1hkd2hiODlBV1FzUUNfdjlWSVk2aHdvR2J0UWhrcjdEOUZCZDk0S1o5bDNYUC1WUUU3S1VKbw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "에코프로비엠 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE4zNjZjanVrcEJOQURiZV8yb0ZrTHFBYW9EX1BtZ2tVVEU2TkFvWWYybVF6STRUZ2VyODBfcHN3Rl9KaHE4bDZleU1GbzlZLWozbXVsbGRWNzhBTTFrR1M4OWhjVVhJZzdaOVFEQVRPQS0zT3R4?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "에코프로비엠, 1.2조 유상증자 여파로 주가 9% 급락",
-      "polishedBody": "에코프로비엠이 대규모 유상증자 소식을 발표하며 장중 주가가 9% 가까이 하락했습니다. 이번 자금 조달 계획이 시장에 알려지면서 투자자들의 매도세가 강하게 나타나고 있습니다. 증권가에서 목표주가를 하향 조정하는 등 부정적인 평가가 이어지며 투자 심리가 크게 위축된 상황입니다. 향후 유상증자 과정에서 발생하는 주주 가치 희석 우려와 수급 변화를 면밀히 살펴봐야 합니다."
-    },
-    {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "\"삼성전자 덕분에 은퇴합니다\"…'30만전자'에 은퇴 선언한 학원강사",
-      "headline": "7월 7일, 삼성전자 2분기 잠정실적 발표! 주가 전망 어떨까?",
-      "evidencePoints": [
-        "출처 네이버 프리미엄콘텐츠, v.daum.net 기반 기사 2건",
-        "7월 7일, 삼성전자 2분기 잠정실적 발표! 주가 전망 어떨까?",
-        "\"삼성전자 덕분에 은퇴합니다\"…'30만전자'에 은퇴 선언한 학원강사"
+        "출처 연합뉴스, 뉴스핌 기반 기사 2건",
+        "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
+        "[아시아 특징주] SK하이닉스 좇는 홍콩 레버리지 ETF…거꾸로 주가 좌우한다"
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "neutral",
       "channelCount": 3,
-      "updatedAt": "2026-07-01T06:00:18.532Z",
-      "cycleLabel": "KST_1500",
+      "updatedAt": "2026-07-02T01:00:15.010Z",
+      "cycleLabel": "KST_1000",
       "direction": "neutral",
       "changeRate": null,
-      "latestHeadline": "7월 7일, 삼성전자 2분기 잠정실적 발표! 주가 전망 어떨까?",
-      "source": "네이버 프리미엄콘텐츠",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPVndrYWl4UFJuLWZRM292dG9LX05SN3d4aUQ2UFQtRmVaUWtacUtWdHk5SHdGeDBQbmlMa3VOSkVOelpNZUFnd3J2ME5pNHpGU1p0NFZocUVVWGkyVGhfdFVaUHVqbUxmYk9PcDlVQWpzYzJrY2V5RERoTkhvU0lwTjh4OA?oc=5",
-      "publishedAt": "Wed, 01 Jul 2026 04:15:00 GMT",
+      "latestHeadline": "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
+      "source": "연합뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Hajdla1BYQk5XTTI2YkhZclB5MndtTGljdUFzTUlnNGl0ZjlpRmxlVFZsMlRfZ1kxajBoOXZnWjA1MVVQZDRmUEpPbFJCenRnMHE1aWtEZHdsVFHSAWBBVV95cUxNaURVVTZZOFJBYncxUG90UG9kTFcwSklZcHd4SHZqLWctc3ZKUUt4NDNsSjVUSWdMTEloUEkzQnI3dHFqcDhwQ09rTnlYOGRxd24zOEtuWWFQNDhpYUwyWlg?oc=5",
+      "publishedAt": "Wed, 01 Jul 2026 23:16:51 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "7월 7일, 삼성전자 2분기 잠정실적 발표! 주가 전망 어떨까?",
-          "source": "네이버 프리미엄콘텐츠",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPVndrYWl4UFJuLWZRM292dG9LX05SN3d4aUQ2UFQtRmVaUWtacUtWdHk5SHdGeDBQbmlMa3VOSkVOelpNZUFnd3J2ME5pNHpGU1p0NFZocUVVWGkyVGhfdFVaUHVqbUxmYk9PcDlVQWpzYzJrY2V5RERoTkhvU0lwTjh4OA?oc=5"
+          "title": "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Hajdla1BYQk5XTTI2YkhZclB5MndtTGljdUFzTUlnNGl0ZjlpRmxlVFZsMlRfZ1kxajBoOXZnWjA1MVVQZDRmUEpPbFJCenRnMHE1aWtEZHdsVFHSAWBBVV95cUxNaURVVTZZOFJBYncxUG90UG9kTFcwSklZcHd4SHZqLWctc3ZKUUt4NDNsSjVUSWdMTEloUEkzQnI3dHFqcDhwQ09rTnlYOGRxd24zOEtuWWFQNDhpYUwyWlg?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "\"삼성전자 덕분에 은퇴합니다\"…'30만전자'에 은퇴 선언한 학원강사",
-          "source": "v.daum.net",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9PeFNkaHFneGNweFZLakttbFo0MWhKZmktb19iYjBCelJ4dGZNU0ozb0lvRlY3Xzk4SzVOQmF4RElOaFNkY05FczgzNlZZbTQ?oc=5"
+          "title": "[아시아 특징주] SK하이닉스 좇는 홍콩 레버리지 ETF…거꾸로 주가 좌우한다",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9id1VzcTVJT0xTeExDYm55eUxhdGpmTEF4MkIteXVPdWJrZk1aYV9kREJ4N09CX19ZdXZYVEowNXRTb2cyWlFvN3BteXN2Q2FiNVFZYWs0OVI1RTNG?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "삼성전자 2분기 잠정실적 발표 앞두고 시장 관심 집중",
-      "polishedBody": "삼성전자가 7월 7일 2분기 잠정실적 발표를 앞두고 시장의 이목이 쏠리고 있습니다. 최근 주가 흐름에 대한 다양한 전망이 엇갈리는 가운데 투자자들의 기대와 우려가 공존하는 모습입니다. 실적 발표를 기점으로 주가 방향성이 결정될 것으로 보여 중립적인 관점에서 시장의 반응을 지켜보고 있습니다. 향후 발표될 구체적인 실적 수치와 경영진의 향후 사업 전략이 주가에 미칠 영향을 확인해야 합니다."
+      "polishedHeadline": "SK하이닉스, 증권가 목표가 대폭 상향 및 홍콩 ETF 변수 주목",
+      "polishedBody": "IBK투자증권이 SK하이닉스의 목표 주가를 기존 대비 크게 높여 잡았습니다. 홍콩 시장의 레버리지 ETF 수급이 주가 변동성에 영향을 미치는 현상이 관찰되고 있습니다. 증권사의 긍정적인 전망과 수급 이슈가 혼재되어 있어 중립적인 시각이 유지됩니다. 향후 ETF 관련 자금 흐름이 주가에 미칠 파급력을 면밀히 살펴봐야 합니다."
+    },
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
+      "headline": "\"주가는 30% 떨어졌는데\"...정부와 삼성전자 덕 볼 거라는 이 회사",
+      "evidencePoints": [
+        "출처 파이낸셜뉴스, 연합뉴스, 조선일보 기반 기사 3건",
+        "\"주가는 30% 떨어졌는데\"...정부와 삼성전자 덕 볼 거라는 이 회사",
+        "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 3,
+      "updatedAt": "2026-07-02T01:00:15.010Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "\"주가는 30% 떨어졌는데\"...정부와 삼성전자 덕 볼 거라는 이 회사",
+      "source": "파이낸셜뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE85dzlOT2cyQTVUcWI2MUZyZ19HaVNqUzV3Q3lEelIzeVpWS1dNNzNzUnI4bG9lZjlla3ZuY2tUMGFTY3d0R2ZGaDlVSjVDY3I3cjVOM3c4c3ZiZw?oc=5",
+      "publishedAt": "Thu, 02 Jul 2026 00:13:30 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "\"주가는 30% 떨어졌는데\"...정부와 삼성전자 덕 볼 거라는 이 회사",
+          "source": "파이낸셜뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE85dzlOT2cyQTVUcWI2MUZyZ19HaVNqUzV3Q3lEelIzeVpWS1dNNzNzUnI4bG9lZjlla3ZuY2tUMGFTY3d0R2ZGaDlVSjVDY3I3cjVOM3c4c3ZiZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Hajdla1BYQk5XTTI2YkhZclB5MndtTGljdUFzTUlnNGl0ZjlpRmxlVFZsMlRfZ1kxajBoOXZnWjA1MVVQZDRmUEpPbFJCenRnMHE1aWtEZHdsVFHSAWBBVV95cUxNaURVVTZZOFJBYncxUG90UG9kTFcwSklZcHd4SHZqLWctc3ZKUUt4NDNsSjVUSWdMTEloUEkzQnI3dHFqcDhwQ09rTnlYOGRxd24zOEtuWWFQNDhpYUwyWlg?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "수퍼개미 남석관 \"코스피 1만 가능... 삼성전자 말고 이것 사라\"",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZlpKRWJVRThueEV3VlRONEVGekstcWVrREt3Rk5yV0c0MUhNbWRzZk5tRncweVJYbUx4UVNCLVZTaThzVmZQb3VTd1A4bkRlS1BOakNHN2FmcWM4TmtuR25kX0VqUmM3RWtOSXcwMGd0alhZTTB6QWZOcU5IRG5yQg?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자, 정부 정책 수혜 기대감 속 시장 상황 주시",
+      "polishedBody": "삼성전자는 최근 주가 하락세에도 불구하고 정부 정책의 수혜를 입을 것이라는 분석이 제기되었습니다. 시장 전반의 불확실성 속에서 특정 기업과의 동반 성장이 거론되는 상황입니다. 정책적 기대감과 시장의 하락 압력이 공존하여 신중한 접근이 필요한 시점입니다. 향후 정부의 구체적인 지원책이 실질적인 실적 개선으로 이어질지 확인해야 합니다."
+    },
+    {
+      "stockName": "에코프로비엠",
+      "stockCode": "247540",
+      "summary": "[분석] 에코프로비엠, 1.2조 유상증자...단기 주가 부담 불가피",
+      "headline": "코스피 5%·코스닥 3.4%대 패닉셀, 에코프로·에코프로비엠 주가 급락",
+      "evidencePoints": [
+        "출처 gukjenews.com, 알파경제 기반 기사 2건",
+        "제목 기준 변동률 단서 -5.0%",
+        "코스피 5%·코스닥 3.4%대 패닉셀, 에코프로·에코프로비엠 주가 급락",
+        "[분석] 에코프로비엠, 1.2조 유상증자...단기 주가 부담 불가피"
+      ],
+      "mentionScore": 93.7,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-07-02T01:00:15.010Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": -5,
+      "latestHeadline": "코스피 5%·코스닥 3.4%대 패닉셀, 에코프로·에코프로비엠 주가 급락",
+      "source": "gukjenews.com",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1nUDktVkdnWEdBVnpZc3JSWVQyeVd1WXFMQ3FiVXpjLXAyMHVJelI4a2U1U3duZ0QtZVdSajVMdk5La3pMVGdQdjRyd21CbmlXNnBSRkhXdEppM0xhQUJCX2k4dkhZQkhyRGtjS2VR?oc=5",
+      "publishedAt": "Thu, 02 Jul 2026 00:42:16 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "코스피 5%·코스닥 3.4%대 패닉셀, 에코프로·에코프로비엠 주가 급락",
+          "source": "gukjenews.com",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1nUDktVkdnWEdBVnpZc3JSWVQyeVd1WXFMQ3FiVXpjLXAyMHVJelI4a2U1U3duZ0QtZVdSajVMdk5La3pMVGdQdjRyd21CbmlXNnBSRkhXdEppM0xhQUJCX2k4dkhZQkhyRGtjS2VR?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[분석] 에코프로비엠, 1.2조 유상증자...단기 주가 부담 불가피",
+          "source": "알파경제",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5va1I5Z2stYnI2MkJ6NGVJdVRWeDZEWVJFWUJkUmNzQXhQaF85Rm5xMC1pdzBVb3RFanhqODRONmtuN3ZqS0htbFFlWFl0amRNYVhuVzU3VUw3Q1hRRm5GdFhWOU1uRlRhVzduN2tn?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "에코프로비엠, 대규모 유상증자 발표에 주가 급락세",
+      "polishedBody": "에코프로비엠이 1조 2천억 원 규모의 유상증자를 결정하며 주가에 하방 압력이 가해졌습니다. 코스닥 시장 전반의 패닉셀 현상과 맞물려 투자 심리가 크게 위축된 모습입니다. 대규모 자금 조달에 따른 주식 가치 희석 우려로 인해 부정적인 평가가 지배적입니다. 향후 증자 과정에서의 자금 활용 계획과 시장의 수급 회복 여부가 관건입니다."
+    },
+    {
+      "stockName": "KB금융",
+      "stockCode": "105560",
+      "summary": "NH투자 \"KB금융지주 비은행 강점 돋보여, 올해 주주환원율 55% 전망\"",
+      "headline": "[특징주] 4대금융, 코스피 급락에 역주행...KB금융 3% 등 방어주 매력 부각",
+      "evidencePoints": [
+        "출처 오피니언뉴스, 비즈니스포스트 기반 기사 2건",
+        "제목 기준 변동률 단서 -3.0%",
+        "[특징주] 4대금융, 코스피 급락에 역주행...KB금융 3% 등 방어주 매력 부각",
+        "NH투자 \"KB금융지주 비은행 강점 돋보여, 올해 주주환원율 55% 전망\""
+      ],
+      "mentionScore": 91.5,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-07-02T01:00:15.010Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": -3,
+      "latestHeadline": "[특징주] 4대금융, 코스피 급락에 역주행...KB금융 3% 등 방어주 매력 부각",
+      "source": "오피니언뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9TZHEtTkdMdS1QV2x0SUVsa1h4SHBySjdZaWdqbzJCN3BvUEJyWXp6UjFYdWQ1M29hcmxOMHhoaDM1UTBYS290WUZ4R0hJdlNJV3FPNHpQOFQ1ekQxQVg4WGFxT25tcEJ0a2NVcVNMbWQ?oc=5",
+      "publishedAt": "Thu, 02 Jul 2026 00:55:43 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 4대금융, 코스피 급락에 역주행...KB금융 3% 등 방어주 매력 부각",
+          "source": "오피니언뉴스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9TZHEtTkdMdS1QV2x0SUVsa1h4SHBySjdZaWdqbzJCN3BvUEJyWXp6UjFYdWQ1M29hcmxOMHhoaDM1UTBYS290WUZ4R0hJdlNJV3FPNHpQOFQ1ekQxQVg4WGFxT25tcEJ0a2NVcVNMbWQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "NH투자 \"KB금융지주 비은행 강점 돋보여, 올해 주주환원율 55% 전망\"",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1KRGgtR0NMWW5vZHNhN19qRzhLb1pQMDlaVHY4WjZZbl9mNnlMZ3k5aVdQbXBYRUhmTTUtdUFxYnNZSFR1VmE5M2tha2dlLVhKbFQyUFQzSGtpNGlLeWJBOWYxdGJXcmkzcC1fZ0NRNnF3Wmc?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "KB금융 4대금융, 코스피 급락에 역주행...KB금융 3% 등 방어주 매력 부각",
+      "polishedBody": "코스피 지수가 급락하는 상황에서도 KB금융은 상대적으로 견조한 흐름을 보이며 방어주 역할을 수행했습니다. 비은행 부문의 강점과 높은 주주환원율 전망이 투자자들의 관심을 끌고 있습니다. 시장의 하락세에도 불구하고 안정적인 수익 구조가 돋보여 긍정적인 평가를 받습니다. 향후 실제 주주환원 정책이 계획대로 이행되는지 지켜볼 필요가 있습니다."
+    },
+    {
+      "stockName": "삼성전기",
+      "stockCode": "009150",
+      "summary": "외국인 6월 순매수 1위는 '삼성전기'…지분율 40% 육박",
+      "headline": "“실적도 오르고 몸값도 뛴다”…삼성전기 목표주가 상향300만원 잇따라 [오늘 나온 보고서]",
+      "evidencePoints": [
+        "출처 매일경제 마켓, 한국경제 기반 기사 2건",
+        "“실적도 오르고 몸값도 뛴다”…삼성전기 목표주가 상향300만원 잇따라 [오늘 나온 보고서]",
+        "외국인 6월 순매수 1위는 '삼성전기'…지분율 40% 육박"
+      ],
+      "mentionScore": 87,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-07-02T01:00:15.010Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "“실적도 오르고 몸값도 뛴다”…삼성전기 목표주가 상향300만원 잇따라 [오늘 나온 보고서]",
+      "source": "매일경제 마켓",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9JRnhhVHFhQW5NMlpMT1lISmt5dm1qZnlzOUJBUzkycWZsZG8zTXFvb0MwYlFQcGx1c3RCVk82RGw4MGZMaE8yU3RxS1hVekZiU0E?oc=5",
+      "publishedAt": "Thu, 02 Jul 2026 00:03:08 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "“실적도 오르고 몸값도 뛴다”…삼성전기 목표주가 상향300만원 잇따라 [오늘 나온 보고서]",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9JRnhhVHFhQW5NMlpMT1lISmt5dm1qZnlzOUJBUzkycWZsZG8zTXFvb0MwYlFQcGx1c3RCVk82RGw4MGZMaE8yU3RxS1hVekZiU0E?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "외국인 6월 순매수 1위는 '삼성전기'…지분율 40% 육박",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1yVDF3SExkMThHM2VXWDl2dW5DOGd6QkJyZG1INGRSSVZnTVgxVGFIM2Z6NDUwTnEyMWJWX3RrSDJVczZneWY2WEN5TDJzLW5nVmdhdkZ1bDlfZ9IBVEFVX3lxTE5ZTzluTTVWOWRLQVg1WnBBdHJ0WnZvMkh2a1JnSHZJR0g0WU1ScVFSbjRFM3E1YVduRHdfX1UzX1poMThWQ2IxMzU4U0lldHNzWGd4VQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전기, 실적 개선 기대감에 외국인 순매수 집중",
+      "polishedBody": "삼성전기는 실적 성장세가 뚜렷해지면서 증권가의 목표 주가 상향 조정이 잇따르고 있습니다. 외국인 투자자들이 6월 순매수 1위 종목으로 꼽을 만큼 지분율이 빠르게 확대되는 추세입니다. 실적 개선과 수급 유입이 동시에 나타나고 있어 시장의 기대감이 반영된 상태입니다. 향후 외국인 투자자의 매수세가 지속적으로 유지될 수 있을지 확인해야 합니다."
+    },
+    {
+      "stockName": "크래프톤",
+      "stockCode": "259960",
+      "summary": "크래프톤, '실적·주주환원·신작' 3박자에 주가 '고공행진'",
+      "headline": "크래프톤 성장 기대, 기업가치 재평가 가능성 제기",
+      "evidencePoints": [
+        "출처 tokenpost.kr, 컨슈머타임스 기반 기사 2건",
+        "크래프톤 성장 기대, 기업가치 재평가 가능성 제기",
+        "크래프톤, '실적·주주환원·신작' 3박자에 주가 '고공행진'"
+      ],
+      "mentionScore": 86.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-07-02T01:00:15.010Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "크래프톤 성장 기대, 기업가치 재평가 가능성 제기",
+      "source": "tokenpost.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4zcGNmd01aaXkxVlZFRnZjRkNpb2FUSTdYaXpYdTcwTGJpMExoZ1c0Wm1lazVNR2V0R2NyZmhjV3dPdkdib1ZvOWJKem1BeC1RbVcwZnJB0gFbQVVfeXFMTVFoVlNzWGVMMWlWVGI0RnBEbEFROGpjalVjTVQ4eVZ6UE5COGRubTlaOE5VRWRXcHJ6OWU1UEl3WndLYzd5bmZlRExyZlNOOEhkOVNzWHlWRmwtSQ?oc=5",
+      "publishedAt": "Wed, 01 Jul 2026 23:54:03 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "크래프톤 성장 기대, 기업가치 재평가 가능성 제기",
+          "source": "tokenpost.kr",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4zcGNmd01aaXkxVlZFRnZjRkNpb2FUSTdYaXpYdTcwTGJpMExoZ1c0Wm1lazVNR2V0R2NyZmhjV3dPdkdib1ZvOWJKem1BeC1RbVcwZnJB0gFbQVVfeXFMTVFoVlNzWGVMMWlWVGI0RnBEbEFROGpjalVjTVQ4eVZ6UE5COGRubTlaOE5VRWRXcHJ6OWU1UEl3WndLYzd5bmZlRExyZlNOOEhkOVNzWHlWRmwtSQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "크래프톤, '실적·주주환원·신작' 3박자에 주가 '고공행진'",
+          "source": "컨슈머타임스",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5fclQya21ILWM5ZHphTHMyem1XRWU4TVJlQ3ZJNjJTTXFpcjhCT3NTSmhEVWptTU82bXF0MVplNWRVYWRyVGhCVWp2RGdUSWRIQWREc2dBVHM4X0FTbXBBQmY5T29kY01yLXc?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "크래프톤, 실적과 신작 모멘텀으로 기업가치 재평가 기대",
+      "polishedBody": "크래프톤이 견조한 실적과 적극적인 주주환원 정책을 바탕으로 시장의 주목을 받고 있습니다. 최근 주가는 이러한 긍정적인 요소들이 복합적으로 작용하며 상승 흐름을 이어가는 모습입니다. 신작 출시와 안정적인 수익 구조가 기업가치 재평가를 이끌 수 있다는 분석이 제기됩니다. 향후 신작의 흥행 성과와 주주 가치 제고를 위한 추가적인 행보를 지켜봐야 합니다."
+    },
+    {
+      "stockName": "한국콜마",
+      "stockCode": "161890",
+      "summary": "화장품, 6월 수출 역대 최대치 경신… 한국콜마, 10%대↑ - 머니투데이 머니투데이",
+      "headline": "화장품, 6월 수출 역대 최대치 경신… 한국콜마, 10%대↑ - 머니투데이",
+      "evidencePoints": [
+        "출처 머니투데이 기반 기사 1건",
+        "화장품, 6월 수출 역대 최대치 경신… 한국콜마, 10%대↑ - 머니투데이"
+      ],
+      "mentionScore": 61.6,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-07-02T01:00:15.010Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "화장품, 6월 수출 역대 최대치 경신… 한국콜마, 10%대↑ - 머니투데이",
+      "source": "머니투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9paS1CRXF6U0dhSzN6OVM5UXlDMkwwb2ZPVWlPRElGcjhESDh0LU5RaTRYRzNSYThsdGZ1cDRuSG9WUjZYb1ItdWRHS1UxMDdqVm80aE5TS3hHTFd1Qm1WakZYRU1va0hH0gFuQVVfeXFMTkhmdVRoVTdKdzFldVBJMTN2RWdnb1NkakZkWTllb2wzcGdITjZ2NUI0cUdsUDlqN3FzZHNpQ1NUd1VPV3h0cWJyX0p0bTdQeGxvekFIa0Z4WlY3TWVOOXR3Y0xsZUpKOXdRTkhwanc?oc=5",
+      "publishedAt": "Thu, 02 Jul 2026 00:37:48 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "화장품, 6월 수출 역대 최대치 경신… 한국콜마, 10%대↑ - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9paS1CRXF6U0dhSzN6OVM5UXlDMkwwb2ZPVWlPRElGcjhESDh0LU5RaTRYRzNSYThsdGZ1cDRuSG9WUjZYb1ItdWRHS1UxMDdqVm80aE5TS3hHTFd1Qm1WakZYRU1va0hH0gFuQVVfeXFMTkhmdVRoVTdKdzFldVBJMTN2RWdnb1NkakZkWTllb2wzcGdITjZ2NUI0cUdsUDlqN3FzZHNpQ1NUd1VPV3h0cWJyX0p0bTdQeGxvekFIa0Z4WlY3TWVOOXR3Y0xsZUpKOXdRTkhwanc?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "화장품 수출 역대 최대치 경신에 한국콜마 주가 강세",
+      "polishedBody": "국내 화장품 업계가 6월 수출 실적에서 역대 최대치를 기록하며 가파른 성장세를 보이고 있습니다. 이러한 수출 호조에 힘입어 한국콜마의 주가는 10%대 이상의 상승 폭을 기록하며 시장의 관심을 끌었습니다. 글로벌 시장에서의 수요 확대가 실적 개선으로 이어질 것이라는 기대감이 주가에 긍정적으로 반영되었습니다. 향후 화장품 수출 데이터의 지속적인 성장 여부와 해외 시장 점유율 확대 추이를 확인해야 합니다."
+    },
+    {
+      "stockName": "선익시스템",
+      "stockCode": "171090",
+      "summary": "[리포트 브리핑]선익시스템, '주가는 조정, 채워지는 곳간' 목표가 83,000원 - 메리츠증권 뉴스핌",
+      "headline": "[리포트 브리핑]선익시스템, '주가는 조정, 채워지는 곳간' 목표가 83,000원 - 메리츠증권",
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "제목 기준 변동률 단서 +91.3%",
+        "[리포트 브리핑]선익시스템, '주가는 조정, 채워지는 곳간' 목표가 83,000원 - 메리츠증권"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-07-02T01:00:15.010Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[리포트 브리핑]선익시스템, '주가는 조정, 채워지는 곳간' 목표가 83,000원 - 메리츠증권",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJMmxyZ09PU1ZHRk5yR2pKTS1pMThRdUxRQ05OME5vUnRMY0VlVW9nbHlZVjNnYnhabktVWTg2TFRzZ1RIQmF6dkF6YjJjNTNhVy10N0UyX2Z1NnIw?oc=5",
+      "publishedAt": "Thu, 02 Jul 2026 00:26:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]선익시스템, '주가는 조정, 채워지는 곳간' 목표가 83,000원 - 메리츠증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJMmxyZ09PU1ZHRk5yR2pKTS1pMThRdUxRQ05OME5vUnRMY0VlVW9nbHlZVjNnYnhabktVWTg2TFRzZ1RIQmF6dkF6YjJjNTNhVy10N0UyX2Z1NnIw?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "선익시스템, 주가 조정 속 실적 개선 기대감 유효",
+      "polishedBody": "선익시스템이 최근 주가 조정 국면을 겪고 있으나 내실은 더욱 탄탄해지고 있다는 평가가 나옵니다. 증권가에서는 현재의 주가 흐름을 저평가 구간으로 판단하며 목표가를 83,000원으로 제시했습니다. 수주 잔고가 쌓이며 향후 실적 성장이 가시화될 것이라는 전망이 투자 심리에 영향을 미치고 있습니다. 앞으로 실제 수주 물량이 매출로 전환되는 속도와 시장 내 기술 경쟁력을 면밀히 살펴봐야 합니다."
     },
     {
       "stockName": "디앤디파마텍",
@@ -125,47 +359,6 @@
       "hasNews": true,
       "polishedHeadline": "디앤디파마텍, 장중 8%대 급등하며 9만 5천 원 돌파 시도",
       "polishedBody": "디앤디파마텍의 주가가 장중 8% 이상 급등하며 강한 상승세를 보이고 있습니다. 9만 5천 원 선 돌파를 눈앞에 두면서 매수세가 유입되어 주가를 끌어올리는 형국입니다. 최근 시장 내 투자 심리가 개선되면서 종목에 대한 긍정적인 평가가 주가 상승을 견인하고 있습니다. 앞으로 주가가 저항선을 뚫고 추가적인 상승 탄력을 이어갈 수 있을지 여부가 관전 포인트입니다."
-    },
-    {
-      "stockName": "KB금융",
-      "stockCode": "105560",
-      "summary": "대신證 \"KB금융, 업계 최고 실적·환원에도 싸다…적극 매수 기회\"",
-      "headline": "KB금융, 7월 자사주 매입 예정…주가 변동성 확대",
-      "evidencePoints": [
-        "출처 네이트, 뉴스1 기반 기사 2건",
-        "제목 기준 변동률 단서 +10.0%",
-        "KB금융, 7월 자사주 매입 예정…주가 변동성 확대",
-        "대신證 \"KB금융, 업계 최고 실적·환원에도 싸다…적극 매수 기회\""
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-07-01T06:00:18.532Z",
-      "cycleLabel": "KST_1500",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "KB금융, 7월 자사주 매입 예정…주가 변동성 확대",
-      "source": "네이트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBzM2tMX3NkVGpkZkpjSy1xWm1XY3RmSDhxQWljelVudmN0MWNoSWVhMGtoMmdJWWU3STJ5MVRTdWhtb0VPc1lDaE14TkVaalhPSEQ4?oc=5",
-      "publishedAt": "Wed, 01 Jul 2026 02:10:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "KB금융, 7월 자사주 매입 예정…주가 변동성 확대",
-          "source": "네이트",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBzM2tMX3NkVGpkZkpjSy1xWm1XY3RmSDhxQWljelVudmN0MWNoSWVhMGtoMmdJWWU3STJ5MVRTdWhtb0VPc1lDaE14TkVaalhPSEQ4?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "대신證 \"KB금융, 업계 최고 실적·환원에도 싸다…적극 매수 기회\"",
-          "source": "뉴스1",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE52eUFHNGVCZFB1Z3NKcW4zR3VDWHBhaHVFTWs2dzZWLU5DXzBuT1dNLWFQX0pwYy1PYkFlb0Q0QkYydDhXMDg4RU8xUnBCYm5mVkpLLUtDSGRlYms?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "KB금융 7월 자사주 매입 예정…주가 변동성 확대",
-      "polishedBody": "KB금융이 7월 중 자사주 매입을 예고하면서 주가 변동성이 커질 것으로 예상됩니다. 업계 최고 수준의 실적과 주주 환원 정책에도 불구하고 현재 주가가 저평가되어 있다는 분석이 나옵니다. 증권가에서는 이를 적극적인 매수 기회로 평가하며 긍정적인 시각을 유지하고 있습니다. 향후 자사주 매입이 실제 주가 부양과 시장 안정화에 얼마나 기여할지 지켜볼 필요가 있습니다."
     },
     {
       "stockName": "비나텍",
@@ -207,88 +400,6 @@
       "hasNews": true,
       "polishedHeadline": "비나텍, 실적 성장 기대감에 상한가 기록",
       "polishedBody": "비나텍이 본격적인 실적 성장세가 확인되면서 장중 상한가를 달성했습니다. 증권가에서 시스템 수주가 이제 시작이라는 분석을 내놓으며 매수세가 강하게 몰렸습니다. 실적 개선에 대한 기대감이 주가에 즉각적으로 반영되면서 투자자들의 높은 관심을 받고 있습니다. 앞으로 신규 수주 물량이 실제 매출로 이어지며 지속적인 성장 동력을 확보할 수 있을지 주목됩니다."
-    },
-    {
-      "stockName": "크래프톤",
-      "stockCode": "259960",
-      "summary": "다올투자증권 \"크래프톤, 신작 공개로 밸류에이션 디스카운트 해소\"",
-      "headline": "크래프톤 주가 연일 상승 \"2분기 이후 실적 모멘텀 반영\"",
-      "evidencePoints": [
-        "출처 gukjenews.com, 컨슈머타임스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "크래프톤 주가 연일 상승 \"2분기 이후 실적 모멘텀 반영\"",
-        "다올투자증권 \"크래프톤, 신작 공개로 밸류에이션 디스카운트 해소\""
-      ],
-      "mentionScore": 85.2,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-07-01T06:00:18.532Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "크래프톤 주가 연일 상승 \"2분기 이후 실적 모멘텀 반영\"",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5QUXBwdUlOVWtNc3Z6VnF4VUl0Z3BTOWFPOC1BWUpwWl84S0NUT0VXNmVyTk4xMk9LSm1KYVhlb2VBZUhzbzJXM2tja1RIQXBsY0pPUGF2NDdjeWx4akVlVDNSVDZRTGFqM3lXdTFB?oc=5",
-      "publishedAt": "Wed, 01 Jul 2026 03:12:09 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "크래프톤 주가 연일 상승 \"2분기 이후 실적 모멘텀 반영\"",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5QUXBwdUlOVWtNc3Z6VnF4VUl0Z3BTOWFPOC1BWUpwWl84S0NUT0VXNmVyTk4xMk9LSm1KYVhlb2VBZUhzbzJXM2tja1RIQXBsY0pPUGF2NDdjeWx4akVlVDNSVDZRTGFqM3lXdTFB?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "다올투자증권 \"크래프톤, 신작 공개로 밸류에이션 디스카운트 해소\"",
-          "source": "컨슈머타임스",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1FVHJodG1KNVZBbElDUXBnWk5JNGRzN0FuWlRDbmJJRUxOZnJlb014ZHNnR1NZb0tQWDBaXy1qRm9qWjIyTkg5Vmh5N2JKWk1yN1VScUljQjF5bHY3TFVPUkthQzlOZnh5TUE?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "크래프톤, 신작 기대감에 실적 모멘텀 본격화",
-      "polishedBody": "크래프톤이 신작 공개를 앞두고 밸류에이션 디스카운트 해소 기대감이 커지며 주가 상승세를 보이고 있습니다. 2분기 이후 실적 개선에 대한 시장의 긍정적인 전망이 주가에 반영되는 모습입니다. 신작을 통한 성장 동력 확보가 기업 가치 재평가로 이어질 것이라는 분석이 투자 심리를 자극합니다. 향후 신작의 구체적인 성과와 실적 기여도가 주가 흐름을 결정할 핵심 변수가 될 것입니다."
-    },
-    {
-      "stockName": "삼성전기",
-      "stockCode": "009150",
-      "summary": "삼성전기, 공급자 우위 시장...목표주가 300만원 '상향'",
-      "headline": "[특징주] 삼성전기, 4500억원 글로벌 빅테크향 MLCC 공급계약 '강세'",
-      "evidencePoints": [
-        "출처 알파경제, 글로벌이코노믹 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "삼성전기, 공급자 우위 시장...목표주가 300만원 '상향'",
-        "[특징주] 삼성전기, 4500억원 글로벌 빅테크향 MLCC 공급계약 '강세'"
-      ],
-      "mentionScore": 84.2,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-07-01T06:00:18.532Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "[특징주] 삼성전기, 4500억원 글로벌 빅테크향 MLCC 공급계약 '강세'",
-      "source": "글로벌이코노믹",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbURoS3pwdnk5NG52bW01Q3d2cVFYTDNJYjVBbzZDYk8wUG51bWY0dFJqNHFqZFRIbVh0QWNHbTVFUm1yTEtvNVhqT0x2UDZtVmVXTEtSQjFhVzBxbk9pS2ctb1ZNRUMzdzloTURFTFZJaEI0MEY4QTdoWk4zTDNRSkF2R19tcVhS?oc=5",
-      "publishedAt": "Wed, 01 Jul 2026 00:37:04 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전기, 공급자 우위 시장...목표주가 300만원 '상향'",
-          "source": "알파경제",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1Mc3BGVXFteVMzdjRrM1AtanFLT1VOTS1jVTg0ZHVxWXFyV3hHRml6bWVZd0l5RU9Ta3RwOEhtRFVOaEFQcXl0NE5qV09MU1ZNXzFHaW9wZk80NE5GYk5IcmJBcXlqY0lZSnQ2eE1B?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[특징주] 삼성전기, 4500억원 글로벌 빅테크향 MLCC 공급계약 '강세'",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbURoS3pwdnk5NG52bW01Q3d2cVFYTDNJYjVBbzZDYk8wUG51bWY0dFJqNHFqZFRIbVh0QWNHbTVFUm1yTEtvNVhqT0x2UDZtVmVXTEtSQjFhVzBxbk9pS2ctb1ZNRUMzdzloTURFTFZJaEI0MEY4QTdoWk4zTDNRSkF2R19tcVhS?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전기, 4500억 규모 MLCC 공급 계약에 강세",
-      "polishedBody": "삼성전기가 글로벌 빅테크 기업과 대규모 적층세라믹콘덴서 공급 계약을 체결하며 시장의 주목을 받고 있습니다. 이번 계약으로 공급자 우위 시장에서의 입지를 강화하며 증권가로부터 목표주가 상향 조정까지 이끌어냈습니다. 대형 수주를 통한 안정적인 매출 확보가 기업의 성장성을 뒷받침한다는 점에서 긍정적인 평가가 나옵니다. 향후 추가적인 대형 공급 계약 체결 여부와 수익성 개선 폭을 지켜봐야 합니다."
     },
     {
       "stockName": "GS리테일",
@@ -355,46 +466,6 @@
       "hasNews": true,
       "polishedHeadline": "국민연금, DL이앤씨 지분 11.2%로 확대",
       "polishedBody": "국민연금공단이 DL이앤씨 주식 121만 7592주를 추가로 매입하며 지분율을 11.2%까지 끌어올렸습니다. 주요 주주의 지분 확대는 기업의 장기적인 가치에 대한 신뢰를 보여주는 지표로 시장에서 받아들여집니다. 안정적인 지분 확보가 향후 경영 환경에 미칠 영향에 대해 투자자들의 관심이 쏠리고 있습니다. 앞으로 국민연금의 추가 지분 매입 여부와 기업의 경영 전략 변화를 면밀히 관찰할 필요가 있습니다."
-    },
-    {
-      "stockName": "한국콜마",
-      "stockCode": "161890",
-      "summary": "29일, 기관 보유 비중 확대... 한국콜마, 삼아알미늄, 대신밸런스제20호스팩 등",
-      "headline": "한국콜마 주주 국민연금공단, 한국콜마 주식등의 수 50만8558주 증가…총 지분율 12.68%",
-      "evidencePoints": [
-        "출처 디지털투데이, ThinkPool 기반 기사 2건",
-        "한국콜마 주주 국민연금공단, 한국콜마 주식등의 수 50만8558주 증가…총 지분율 12.68%",
-        "29일, 기관 보유 비중 확대... 한국콜마, 삼아알미늄, 대신밸런스제20호스팩 등"
-      ],
-      "mentionScore": 87.5,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-07-01T05:00:14.094Z",
-      "cycleLabel": "KST_1400",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "한국콜마 주주 국민연금공단, 한국콜마 주식등의 수 50만8558주 증가…총 지분율 12.68%",
-      "source": "디지털투데이",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1fMDFyRGtmUnNEaF9CQzVzRnMwZ0pvRWlHVU9icXR0QmNYMkNXb0pnX2xVVGlqRGtzbEN6aXp4TkM4RzRnWWlFeTVVcnVxNi1tbERjSmo1UUlKeU9feEdiWkthYU1QSzNQcUFYSUdYNG1zVVE?oc=5",
-      "publishedAt": "Wed, 01 Jul 2026 04:32:04 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국콜마 주주 국민연금공단, 한국콜마 주식등의 수 50만8558주 증가…총 지분율 12.68%",
-          "source": "디지털투데이",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1fMDFyRGtmUnNEaF9CQzVzRnMwZ0pvRWlHVU9icXR0QmNYMkNXb0pnX2xVVGlqRGtzbEN6aXp4TkM4RzRnWWlFeTVVcnVxNi1tbERjSmo1UUlKeU9feEdiWkthYU1QSzNQcUFYSUdYNG1zVVE?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "29일, 기관 보유 비중 확대... 한국콜마, 삼아알미늄, 대신밸런스제20호스팩 등",
-          "source": "ThinkPool",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5BNU5OTUdoTFd1Z2tsRmFLamRNSG9kOTk2NHBGUC13aXJfUE05SGxpeFN6VDN6Uk9mcnlOcGhzS3RRVUdMSWRvQTVsdTVuR0lPaVh5V1N1cG1PeTlpTXh5TzZoLTViRk5M?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "국민연금, 한국콜마 지분율 12.68%로 확대",
-      "polishedBody": "국민연금공단이 한국콜마 주식 50만8558주를 추가 매수하여 보유 지분율을 12.68%로 높였습니다. 이는 기관 투자자의 신뢰를 반영하며 긍정적인 신호로 평가됩니다. 주가에 직접적인 변동은 없었으나 안정적인 수급 기반이 마련되었습니다. 향후 추가 매수 여부와 기업 실적 발표가 주요 관전 포인트입니다."
     },
     {
       "stockName": "올릭스",
@@ -701,139 +772,246 @@
       "hasNews": true,
       "polishedHeadline": "SK이터닉스, 장중 7%대 급등세 기록",
       "polishedBody": "SK이터닉스의 주가가 7월 1일 장중 5만 5500원까지 오르며 7% 이상의 상승률을 기록했습니다. 당일 거래량이 늘어나며 매수세가 집중되는 흐름을 보이고 있습니다. 단기적인 주가 급등은 시장의 수급 변화와 투자자들의 높은 관심이 반영된 결과로 보입니다. 향후 주가 변동성이 확대될 가능성이 있으므로 거래량과 추세 변화를 면밀히 관찰해야 합니다."
-    },
-    {
-      "stockName": "SK하이닉스",
-      "stockCode": "000660",
-      "summary": "삼성전자·SK하이닉스 주가 상승 출발...2분기 호실적 전망 gukjenews.com",
-      "headline": "삼성전자·SK하이닉스 주가 상승 출발...2분기 호실적 전망",
-      "evidencePoints": [
-        "출처 gukjenews.com 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "삼성전자·SK하이닉스 주가 상승 출발...2분기 호실적 전망"
-      ],
-      "mentionScore": 61.2,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-07-01T01:00:20.204Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "삼성전자·SK하이닉스 주가 상승 출발...2분기 호실적 전망",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5TNUpFZnc5MVIxRTZNRWp6c3kzbnJHQjItVXV2SEZSY3oycGZWRlpJWktwSDhMT19wOGpXX2F2M19XUU0wN3FwNmthRHpqeXZVdkRFMkpJb2M4UnB0a04tU1ZlLS1CYWxWd1hZM0xB?oc=5",
-      "publishedAt": "Wed, 01 Jul 2026 00:14:14 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자·SK하이닉스 주가 상승 출발...2분기 호실적 전망",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5TNUpFZnc5MVIxRTZNRWp6c3kzbnJHQjItVXV2SEZSY3oycGZWRlpJWktwSDhMT19wOGpXX2F2M19XUU0wN3FwNmthRHpqeXZVdkRFMkpJb2M4UnB0a04tU1ZlLS1CYWxWd1hZM0xB?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "SK하이닉스, 2분기 실적 기대감에 주가 상승 출발",
-      "polishedBody": "SK하이닉스가 2분기 호실적을 기록할 것이라는 전망이 나오면서 주가가 상승세를 보이고 있습니다. 반도체 업황 회복에 대한 기대감이 반영되며 투자자들의 매수세가 유입되는 모습입니다. 실적 개선에 대한 긍정적인 시장 분위기가 주가 상승을 견인하는 핵심 요인으로 평가됩니다. 향후 발표될 구체적인 분기 실적 수치가 주가 흐름에 어떤 영향을 미칠지 주목됩니다."
-    },
-    {
-      "stockName": "에이프릴바이오",
-      "stockCode": "397030",
-      "summary": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략. ThinkPool",
-      "headline": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
-      "evidencePoints": [
-        "출처 ThinkPool 기반 기사 1건",
-        "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략."
-      ],
-      "mentionScore": 54.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-06-30T06:00:15.518Z",
-      "cycleLabel": "KST_1500",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
-      "source": "ThinkPool",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5",
-      "publishedAt": "Mon, 29 Jun 2026 22:56:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
-          "source": "ThinkPool",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "에이프릴바이오, 저점 매수 기회로 평가",
-      "polishedBody": "에이프릴바이오는 현재 저점에서 물량을 모을 기회라는 의견이 제시됩니다. 주가가 낮은 수준에 머물며 추가 하락 리스크와 반등 가능성이 공존합니다. 해당 의견은 투자자 관점에서 중립적인 대응 전략으로 해석됩니다. 향후 기업의 실적 개선이나 신규 파이프라인 발표 여부를 주시해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
-      "symbol": "247540",
-      "name": "에코프로비엠",
-      "changeRate": -9,
+      "timestamp": "2026-07-02T01:00:15.010Z",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "changeRate": null,
       "price": null,
-      "summary": "에코프로비엠 주가 하락 중",
-      "source": "서울경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9qaVVDQU5FWXhhU1BiODd6RmRoWDNpTXYyMVhxLV90WWFJTEgzcllEajV0UkZqZDFTN0hQM1dQRlVNSFpnekxpeld3SnVBbmpHN1HSAVNBVV95cUxNUHM2OExIZk0yOVZsMVZJMW1PdXBhS1hkd2hiODlBV1FzUUNfdjlWSVk2aHdvR2J0UWhrcjdEOUZCZDk0S1o5bDNYUC1WUUU3S1VKbw?oc=5",
+      "summary": "[아시아 특징주] SK하이닉스 좇는 홍콩 레버리지 ETF…거꾸로 주가 좌우한다",
+      "source": "연합뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Hajdla1BYQk5XTTI2YkhZclB5MndtTGljdUFzTUlnNGl0ZjlpRmxlVFZsMlRfZ1kxajBoOXZnWjA1MVVQZDRmUEpPbFJCenRnMHE1aWtEZHdsVFHSAWBBVV95cUxNaURVVTZZOFJBYncxUG90UG9kTFcwSklZcHd4SHZqLWctc3ZKUUt4NDNsSjVUSWdMTEloUEkzQnI3dHFqcDhwQ09rTnlYOGRxd24zOEtuWWFQNDhpYUwyWlg?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 서울경제, 아시아뉴스통신 기반 기사 2건",
-        "제목 기준 변동률 단서 -9.0%",
-        "1.2조 유상증자 에코프로비엠, 장중 9% 급락…목표주가도 하향 [이런국장 저런주식]",
-        "에코프로비엠 주가 하락 중"
+        "출처 연합뉴스, 뉴스핌 기반 기사 2건",
+        "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
+        "[아시아 특징주] SK하이닉스 좇는 홍콩 레버리지 ETF…거꾸로 주가 좌우한다"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "1.2조 유상증자 에코프로비엠, 장중 9% 급락…목표주가도 하향 [이런국장 저런주식]",
-          "source": "서울경제",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9qaVVDQU5FWXhhU1BiODd6RmRoWDNpTXYyMVhxLV90WWFJTEgzcllEajV0UkZqZDFTN0hQM1dQRlVNSFpnekxpeld3SnVBbmpHN1HSAVNBVV95cUxNUHM2OExIZk0yOVZsMVZJMW1PdXBhS1hkd2hiODlBV1FzUUNfdjlWSVk2aHdvR2J0UWhrcjdEOUZCZDk0S1o5bDNYUC1WUUU3S1VKbw?oc=5"
+          "title": "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Hajdla1BYQk5XTTI2YkhZclB5MndtTGljdUFzTUlnNGl0ZjlpRmxlVFZsMlRfZ1kxajBoOXZnWjA1MVVQZDRmUEpPbFJCenRnMHE1aWtEZHdsVFHSAWBBVV95cUxNaURVVTZZOFJBYncxUG90UG9kTFcwSklZcHd4SHZqLWctc3ZKUUt4NDNsSjVUSWdMTEloUEkzQnI3dHFqcDhwQ09rTnlYOGRxd24zOEtuWWFQNDhpYUwyWlg?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "에코프로비엠 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE4zNjZjanVrcEJOQURiZV8yb0ZrTHFBYW9EX1BtZ2tVVEU2TkFvWWYybVF6STRUZ2VyODBfcHN3Rl9KaHE4bDZleU1GbzlZLWozbXVsbGRWNzhBTTFrR1M4OWhjVVhJZzdaOVFEQVRPQS0zT3R4?oc=5"
+          "title": "[아시아 특징주] SK하이닉스 좇는 홍콩 레버리지 ETF…거꾸로 주가 좌우한다",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9id1VzcTVJT0xTeExDYm55eUxhdGpmTEF4MkIteXVPdWJrZk1aYV9kREJ4N09CX19ZdXZYVEowNXRTb2cyWlFvN3BteXN2Q2FiNVFZYWs0OVI1RTNG?oc=5"
         }
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
       "price": null,
-      "summary": "\"삼성전자 덕분에 은퇴합니다\"…'30만전자'에 은퇴 선언한 학원강사",
-      "source": "네이버 프리미엄콘텐츠",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPVndrYWl4UFJuLWZRM292dG9LX05SN3d4aUQ2UFQtRmVaUWtacUtWdHk5SHdGeDBQbmlMa3VOSkVOelpNZUFnd3J2ME5pNHpGU1p0NFZocUVVWGkyVGhfdFVaUHVqbUxmYk9PcDlVQWpzYzJrY2V5RERoTkhvU0lwTjh4OA?oc=5",
+      "summary": "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
+      "source": "파이낸셜뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE85dzlOT2cyQTVUcWI2MUZyZ19HaVNqUzV3Q3lEelIzeVpWS1dNNzNzUnI4bG9lZjlla3ZuY2tUMGFTY3d0R2ZGaDlVSjVDY3I3cjVOM3c4c3ZiZw?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 네이버 프리미엄콘텐츠, v.daum.net 기반 기사 2건",
-        "7월 7일, 삼성전자 2분기 잠정실적 발표! 주가 전망 어떨까?",
-        "\"삼성전자 덕분에 은퇴합니다\"…'30만전자'에 은퇴 선언한 학원강사"
+        "출처 파이낸셜뉴스, 연합뉴스, 조선일보 기반 기사 3건",
+        "\"주가는 30% 떨어졌는데\"...정부와 삼성전자 덕 볼 거라는 이 회사",
+        "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "7월 7일, 삼성전자 2분기 잠정실적 발표! 주가 전망 어떨까?",
-          "source": "네이버 프리미엄콘텐츠",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPVndrYWl4UFJuLWZRM292dG9LX05SN3d4aUQ2UFQtRmVaUWtacUtWdHk5SHdGeDBQbmlMa3VOSkVOelpNZUFnd3J2ME5pNHpGU1p0NFZocUVVWGkyVGhfdFVaUHVqbUxmYk9PcDlVQWpzYzJrY2V5RERoTkhvU0lwTjh4OA?oc=5"
+          "title": "\"주가는 30% 떨어졌는데\"...정부와 삼성전자 덕 볼 거라는 이 회사",
+          "source": "파이낸셜뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE85dzlOT2cyQTVUcWI2MUZyZ19HaVNqUzV3Q3lEelIzeVpWS1dNNzNzUnI4bG9lZjlla3ZuY2tUMGFTY3d0R2ZGaDlVSjVDY3I3cjVOM3c4c3ZiZw?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "\"삼성전자 덕분에 은퇴합니다\"…'30만전자'에 은퇴 선언한 학원강사",
-          "source": "v.daum.net",
-          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9PeFNkaHFneGNweFZLakttbFo0MWhKZmktb19iYjBCelJ4dGZNU0ozb0lvRlY3Xzk4SzVOQmF4RElOaFNkY05FczgzNlZZbTQ?oc=5"
+          "title": "IBK투자증권, SK하이닉스 목표가 180만원→400만원 상향",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5Hajdla1BYQk5XTTI2YkhZclB5MndtTGljdUFzTUlnNGl0ZjlpRmxlVFZsMlRfZ1kxajBoOXZnWjA1MVVQZDRmUEpPbFJCenRnMHE1aWtEZHdsVFHSAWBBVV95cUxNaURVVTZZOFJBYncxUG90UG9kTFcwSklZcHd4SHZqLWctc3ZKUUt4NDNsSjVUSWdMTEloUEkzQnI3dHFqcDhwQ09rTnlYOGRxd24zOEtuWWFQNDhpYUwyWlg?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "수퍼개미 남석관 \"코스피 1만 가능... 삼성전자 말고 이것 사라\"",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZlpKRWJVRThueEV3VlRONEVGekstcWVrREt3Rk5yV0c0MUhNbWRzZk5tRncweVJYbUx4UVNCLVZTaThzVmZQb3VTd1A4bkRlS1BOakNHN2FmcWM4TmtuR25kX0VqUmM3RWtOSXcwMGd0alhZTTB6QWZOcU5IRG5yQg?oc=5"
         }
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
+      "symbol": "247540",
+      "name": "에코프로비엠",
+      "changeRate": -5,
+      "price": null,
+      "summary": "[분석] 에코프로비엠, 1.2조 유상증자...단기 주가 부담 불가피",
+      "source": "gukjenews.com",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1nUDktVkdnWEdBVnpZc3JSWVQyeVd1WXFMQ3FiVXpjLXAyMHVJelI4a2U1U3duZ0QtZVdSajVMdk5La3pMVGdQdjRyd21CbmlXNnBSRkhXdEppM0xhQUJCX2k4dkhZQkhyRGtjS2VR?oc=5",
+      "mentionScore": 93.7,
+      "evidencePoints": [
+        "출처 gukjenews.com, 알파경제 기반 기사 2건",
+        "제목 기준 변동률 단서 -5.0%",
+        "코스피 5%·코스닥 3.4%대 패닉셀, 에코프로·에코프로비엠 주가 급락",
+        "[분석] 에코프로비엠, 1.2조 유상증자...단기 주가 부담 불가피"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "코스피 5%·코스닥 3.4%대 패닉셀, 에코프로·에코프로비엠 주가 급락",
+          "source": "gukjenews.com",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1nUDktVkdnWEdBVnpZc3JSWVQyeVd1WXFMQ3FiVXpjLXAyMHVJelI4a2U1U3duZ0QtZVdSajVMdk5La3pMVGdQdjRyd21CbmlXNnBSRkhXdEppM0xhQUJCX2k4dkhZQkhyRGtjS2VR?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[분석] 에코프로비엠, 1.2조 유상증자...단기 주가 부담 불가피",
+          "source": "알파경제",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5va1I5Z2stYnI2MkJ6NGVJdVRWeDZEWVJFWUJkUmNzQXhQaF85Rm5xMC1pdzBVb3RFanhqODRONmtuN3ZqS0htbFFlWFl0amRNYVhuVzU3VUw3Q1hRRm5GdFhWOU1uRlRhVzduN2tn?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-02T01:00:15.010Z",
+      "symbol": "105560",
+      "name": "KB금융",
+      "changeRate": -3,
+      "price": null,
+      "summary": "NH투자 \"KB금융지주 비은행 강점 돋보여, 올해 주주환원율 55% 전망\"",
+      "source": "오피니언뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9TZHEtTkdMdS1QV2x0SUVsa1h4SHBySjdZaWdqbzJCN3BvUEJyWXp6UjFYdWQ1M29hcmxOMHhoaDM1UTBYS290WUZ4R0hJdlNJV3FPNHpQOFQ1ekQxQVg4WGFxT25tcEJ0a2NVcVNMbWQ?oc=5",
+      "mentionScore": 91.5,
+      "evidencePoints": [
+        "출처 오피니언뉴스, 비즈니스포스트 기반 기사 2건",
+        "제목 기준 변동률 단서 -3.0%",
+        "[특징주] 4대금융, 코스피 급락에 역주행...KB금융 3% 등 방어주 매력 부각",
+        "NH투자 \"KB금융지주 비은행 강점 돋보여, 올해 주주환원율 55% 전망\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 4대금융, 코스피 급락에 역주행...KB금융 3% 등 방어주 매력 부각",
+          "source": "오피니언뉴스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9TZHEtTkdMdS1QV2x0SUVsa1h4SHBySjdZaWdqbzJCN3BvUEJyWXp6UjFYdWQ1M29hcmxOMHhoaDM1UTBYS290WUZ4R0hJdlNJV3FPNHpQOFQ1ekQxQVg4WGFxT25tcEJ0a2NVcVNMbWQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "NH투자 \"KB금융지주 비은행 강점 돋보여, 올해 주주환원율 55% 전망\"",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1KRGgtR0NMWW5vZHNhN19qRzhLb1pQMDlaVHY4WjZZbl9mNnlMZ3k5aVdQbXBYRUhmTTUtdUFxYnNZSFR1VmE5M2tha2dlLVhKbFQyUFQzSGtpNGlLeWJBOWYxdGJXcmkzcC1fZ0NRNnF3Wmc?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-02T01:00:15.010Z",
+      "symbol": "009150",
+      "name": "삼성전기",
+      "changeRate": null,
+      "price": null,
+      "summary": "외국인 6월 순매수 1위는 '삼성전기'…지분율 40% 육박",
+      "source": "매일경제 마켓",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9JRnhhVHFhQW5NMlpMT1lISmt5dm1qZnlzOUJBUzkycWZsZG8zTXFvb0MwYlFQcGx1c3RCVk82RGw4MGZMaE8yU3RxS1hVekZiU0E?oc=5",
+      "mentionScore": 87,
+      "evidencePoints": [
+        "출처 매일경제 마켓, 한국경제 기반 기사 2건",
+        "“실적도 오르고 몸값도 뛴다”…삼성전기 목표주가 상향300만원 잇따라 [오늘 나온 보고서]",
+        "외국인 6월 순매수 1위는 '삼성전기'…지분율 40% 육박"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "“실적도 오르고 몸값도 뛴다”…삼성전기 목표주가 상향300만원 잇따라 [오늘 나온 보고서]",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9JRnhhVHFhQW5NMlpMT1lISmt5dm1qZnlzOUJBUzkycWZsZG8zTXFvb0MwYlFQcGx1c3RCVk82RGw4MGZMaE8yU3RxS1hVekZiU0E?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "외국인 6월 순매수 1위는 '삼성전기'…지분율 40% 육박",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1yVDF3SExkMThHM2VXWDl2dW5DOGd6QkJyZG1INGRSSVZnTVgxVGFIM2Z6NDUwTnEyMWJWX3RrSDJVczZneWY2WEN5TDJzLW5nVmdhdkZ1bDlfZ9IBVEFVX3lxTE5ZTzluTTVWOWRLQVg1WnBBdHJ0WnZvMkh2a1JnSHZJR0g0WU1ScVFSbjRFM3E1YVduRHdfX1UzX1poMThWQ2IxMzU4U0lldHNzWGd4VQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-02T01:00:15.010Z",
+      "symbol": "259960",
+      "name": "크래프톤",
+      "changeRate": null,
+      "price": null,
+      "summary": "크래프톤, '실적·주주환원·신작' 3박자에 주가 '고공행진'",
+      "source": "tokenpost.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4zcGNmd01aaXkxVlZFRnZjRkNpb2FUSTdYaXpYdTcwTGJpMExoZ1c0Wm1lazVNR2V0R2NyZmhjV3dPdkdib1ZvOWJKem1BeC1RbVcwZnJB0gFbQVVfeXFMTVFoVlNzWGVMMWlWVGI0RnBEbEFROGpjalVjTVQ4eVZ6UE5COGRubTlaOE5VRWRXcHJ6OWU1UEl3WndLYzd5bmZlRExyZlNOOEhkOVNzWHlWRmwtSQ?oc=5",
+      "mentionScore": 86.9,
+      "evidencePoints": [
+        "출처 tokenpost.kr, 컨슈머타임스 기반 기사 2건",
+        "크래프톤 성장 기대, 기업가치 재평가 가능성 제기",
+        "크래프톤, '실적·주주환원·신작' 3박자에 주가 '고공행진'"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "크래프톤 성장 기대, 기업가치 재평가 가능성 제기",
+          "source": "tokenpost.kr",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4zcGNmd01aaXkxVlZFRnZjRkNpb2FUSTdYaXpYdTcwTGJpMExoZ1c0Wm1lazVNR2V0R2NyZmhjV3dPdkdib1ZvOWJKem1BeC1RbVcwZnJB0gFbQVVfeXFMTVFoVlNzWGVMMWlWVGI0RnBEbEFROGpjalVjTVQ4eVZ6UE5COGRubTlaOE5VRWRXcHJ6OWU1UEl3WndLYzd5bmZlRExyZlNOOEhkOVNzWHlWRmwtSQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "크래프톤, '실적·주주환원·신작' 3박자에 주가 '고공행진'",
+          "source": "컨슈머타임스",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5fclQya21ILWM5ZHphTHMyem1XRWU4TVJlQ3ZJNjJTTXFpcjhCT3NTSmhEVWptTU82bXF0MVplNWRVYWRyVGhCVWp2RGdUSWRIQWREc2dBVHM4X0FTbXBBQmY5T29kY01yLXc?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-02T01:00:15.010Z",
+      "symbol": "161890",
+      "name": "한국콜마",
+      "changeRate": null,
+      "price": null,
+      "summary": "화장품, 6월 수출 역대 최대치 경신… 한국콜마, 10%대↑ - 머니투데이 머니투데이",
+      "source": "머니투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9paS1CRXF6U0dhSzN6OVM5UXlDMkwwb2ZPVWlPRElGcjhESDh0LU5RaTRYRzNSYThsdGZ1cDRuSG9WUjZYb1ItdWRHS1UxMDdqVm80aE5TS3hHTFd1Qm1WakZYRU1va0hH0gFuQVVfeXFMTkhmdVRoVTdKdzFldVBJMTN2RWdnb1NkakZkWTllb2wzcGdITjZ2NUI0cUdsUDlqN3FzZHNpQ1NUd1VPV3h0cWJyX0p0bTdQeGxvekFIa0Z4WlY3TWVOOXR3Y0xsZUpKOXdRTkhwanc?oc=5",
+      "mentionScore": 61.6,
+      "evidencePoints": [
+        "출처 머니투데이 기반 기사 1건",
+        "화장품, 6월 수출 역대 최대치 경신… 한국콜마, 10%대↑ - 머니투데이"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "화장품, 6월 수출 역대 최대치 경신… 한국콜마, 10%대↑ - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9paS1CRXF6U0dhSzN6OVM5UXlDMkwwb2ZPVWlPRElGcjhESDh0LU5RaTRYRzNSYThsdGZ1cDRuSG9WUjZYb1ItdWRHS1UxMDdqVm80aE5TS3hHTFd1Qm1WakZYRU1va0hH0gFuQVVfeXFMTkhmdVRoVTdKdzFldVBJMTN2RWdnb1NkakZkWTllb2wzcGdITjZ2NUI0cUdsUDlqN3FzZHNpQ1NUd1VPV3h0cWJyX0p0bTdQeGxvekFIa0Z4WlY3TWVOOXR3Y0xsZUpKOXdRTkhwanc?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-02T01:00:15.010Z",
+      "symbol": "171090",
+      "name": "선익시스템",
+      "changeRate": null,
+      "price": null,
+      "summary": "[리포트 브리핑]선익시스템, '주가는 조정, 채워지는 곳간' 목표가 83,000원 - 메리츠증권 뉴스핌",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJMmxyZ09PU1ZHRk5yR2pKTS1pMThRdUxRQ05OME5vUnRMY0VlVW9nbHlZVjNnYnhabktVWTg2TFRzZ1RIQmF6dkF6YjJjNTNhVy10N0UyX2Z1NnIw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "제목 기준 변동률 단서 +91.3%",
+        "[리포트 브리핑]선익시스템, '주가는 조정, 채워지는 곳간' 목표가 83,000원 - 메리츠증권"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]선익시스템, '주가는 조정, 채워지는 곳간' 목표가 83,000원 - 메리츠증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJMmxyZ09PU1ZHRk5yR2pKTS1pMThRdUxRQ05OME5vUnRMY0VlVW9nbHlZVjNnYnhabktVWTg2TFRzZ1RIQmF6dkF6YjJjNTNhVy10N0UyX2Z1NnIw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "347850",
       "name": "디앤디파마텍",
       "changeRate": 8,
@@ -857,38 +1035,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
-      "symbol": "105560",
-      "name": "KB금융",
-      "changeRate": null,
-      "price": null,
-      "summary": "대신證 \"KB금융, 업계 최고 실적·환원에도 싸다…적극 매수 기회\"",
-      "source": "네이트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBzM2tMX3NkVGpkZkpjSy1xWm1XY3RmSDhxQWljelVudmN0MWNoSWVhMGtoMmdJWWU3STJ5MVRTdWhtb0VPc1lDaE14TkVaalhPSEQ4?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 네이트, 뉴스1 기반 기사 2건",
-        "제목 기준 변동률 단서 +10.0%",
-        "KB금융, 7월 자사주 매입 예정…주가 변동성 확대",
-        "대신證 \"KB금융, 업계 최고 실적·환원에도 싸다…적극 매수 기회\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "KB금융, 7월 자사주 매입 예정…주가 변동성 확대",
-          "source": "네이트",
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBzM2tMX3NkVGpkZkpjSy1xWm1XY3RmSDhxQWljelVudmN0MWNoSWVhMGtoMmdJWWU3STJ5MVRTdWhtb0VPc1lDaE14TkVaalhPSEQ4?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "대신證 \"KB금융, 업계 최고 실적·환원에도 싸다…적극 매수 기회\"",
-          "source": "뉴스1",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE52eUFHNGVCZFB1Z3NKcW4zR3VDWHBhaHVFTWs2dzZWLU5DXzBuT1dNLWFQX0pwYy1PYkFlb0Q0QkYydDhXMDg4RU8xUnBCYm5mVkpLLUtDSGRlYms?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "126340",
       "name": "비나텍",
       "changeRate": 30,
@@ -919,69 +1066,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
-      "symbol": "259960",
-      "name": "크래프톤",
-      "changeRate": null,
-      "price": null,
-      "summary": "다올투자증권 \"크래프톤, 신작 공개로 밸류에이션 디스카운트 해소\"",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5QUXBwdUlOVWtNc3Z6VnF4VUl0Z3BTOWFPOC1BWUpwWl84S0NUT0VXNmVyTk4xMk9LSm1KYVhlb2VBZUhzbzJXM2tja1RIQXBsY0pPUGF2NDdjeWx4akVlVDNSVDZRTGFqM3lXdTFB?oc=5",
-      "mentionScore": 85.2,
-      "evidencePoints": [
-        "출처 gukjenews.com, 컨슈머타임스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "크래프톤 주가 연일 상승 \"2분기 이후 실적 모멘텀 반영\"",
-        "다올투자증권 \"크래프톤, 신작 공개로 밸류에이션 디스카운트 해소\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "크래프톤 주가 연일 상승 \"2분기 이후 실적 모멘텀 반영\"",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5QUXBwdUlOVWtNc3Z6VnF4VUl0Z3BTOWFPOC1BWUpwWl84S0NUT0VXNmVyTk4xMk9LSm1KYVhlb2VBZUhzbzJXM2tja1RIQXBsY0pPUGF2NDdjeWx4akVlVDNSVDZRTGFqM3lXdTFB?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "다올투자증권 \"크래프톤, 신작 공개로 밸류에이션 디스카운트 해소\"",
-          "source": "컨슈머타임스",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1FVHJodG1KNVZBbElDUXBnWk5JNGRzN0FuWlRDbmJJRUxOZnJlb014ZHNnR1NZb0tQWDBaXy1qRm9qWjIyTkg5Vmh5N2JKWk1yN1VScUljQjF5bHY3TFVPUkthQzlOZnh5TUE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-01T06:00:18.532Z",
-      "symbol": "009150",
-      "name": "삼성전기",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성전기, 공급자 우위 시장...목표주가 300만원 '상향'",
-      "source": "글로벌이코노믹",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbURoS3pwdnk5NG52bW01Q3d2cVFYTDNJYjVBbzZDYk8wUG51bWY0dFJqNHFqZFRIbVh0QWNHbTVFUm1yTEtvNVhqT0x2UDZtVmVXTEtSQjFhVzBxbk9pS2ctb1ZNRUMzdzloTURFTFZJaEI0MEY4QTdoWk4zTDNRSkF2R19tcVhS?oc=5",
-      "mentionScore": 84.2,
-      "evidencePoints": [
-        "출처 알파경제, 글로벌이코노믹 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "삼성전기, 공급자 우위 시장...목표주가 300만원 '상향'",
-        "[특징주] 삼성전기, 4500억원 글로벌 빅테크향 MLCC 공급계약 '강세'"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전기, 공급자 우위 시장...목표주가 300만원 '상향'",
-          "source": "알파경제",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1Mc3BGVXFteVMzdjRrM1AtanFLT1VOTS1jVTg0ZHVxWXFyV3hHRml6bWVZd0l5RU9Ta3RwOEhtRFVOaEFQcXl0NE5qV09MU1ZNXzFHaW9wZk80NE5GYk5IcmJBcXlqY0lZSnQ2eE1B?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[특징주] 삼성전기, 4500억원 글로벌 빅테크향 MLCC 공급계약 '강세'",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbURoS3pwdnk5NG52bW01Q3d2cVFYTDNJYjVBbzZDYk8wUG51bWY0dFJqNHFqZFRIbVh0QWNHbTVFUm1yTEtvNVhqT0x2UDZtVmVXTEtSQjFhVzBxbk9pS2ctb1ZNRUMzdzloTURFTFZJaEI0MEY4QTdoWk4zTDNRSkF2R19tcVhS?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "007070",
       "name": "GS리테일",
       "changeRate": null,
@@ -1004,7 +1089,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "375500",
       "name": "DL이앤씨",
       "changeRate": null,
@@ -1027,37 +1112,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
-      "symbol": "161890",
-      "name": "한국콜마",
-      "changeRate": null,
-      "price": null,
-      "summary": "29일, 기관 보유 비중 확대... 한국콜마, 삼아알미늄, 대신밸런스제20호스팩 등",
-      "source": "디지털투데이",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1fMDFyRGtmUnNEaF9CQzVzRnMwZ0pvRWlHVU9icXR0QmNYMkNXb0pnX2xVVGlqRGtzbEN6aXp4TkM4RzRnWWlFeTVVcnVxNi1tbERjSmo1UUlKeU9feEdiWkthYU1QSzNQcUFYSUdYNG1zVVE?oc=5",
-      "mentionScore": 87.5,
-      "evidencePoints": [
-        "출처 디지털투데이, ThinkPool 기반 기사 2건",
-        "한국콜마 주주 국민연금공단, 한국콜마 주식등의 수 50만8558주 증가…총 지분율 12.68%",
-        "29일, 기관 보유 비중 확대... 한국콜마, 삼아알미늄, 대신밸런스제20호스팩 등"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국콜마 주주 국민연금공단, 한국콜마 주식등의 수 50만8558주 증가…총 지분율 12.68%",
-          "source": "디지털투데이",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1fMDFyRGtmUnNEaF9CQzVzRnMwZ0pvRWlHVU9icXR0QmNYMkNXb0pnX2xVVGlqRGtzbEN6aXp4TkM4RzRnWWlFeTVVcnVxNi1tbERjSmo1UUlKeU9feEdiWkthYU1QSzNQcUFYSUdYNG1zVVE?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "29일, 기관 보유 비중 확대... 한국콜마, 삼아알미늄, 대신밸런스제20호스팩 등",
-          "source": "ThinkPool",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5BNU5OTUdoTFd1Z2tsRmFLamRNSG9kOTk2NHBGUC13aXJfUE05SGxpeFN6VDN6Uk9mcnlOcGhzS3RRVUdMSWRvQTVsdTVuR0lPaVh5V1N1cG1PeTlpTXh5TzZoLTViRk5M?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "226950",
       "name": "올릭스",
       "changeRate": null,
@@ -1088,7 +1143,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": null,
@@ -1112,7 +1167,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": -4.54,
@@ -1143,7 +1198,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": null,
@@ -1166,7 +1221,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "000150",
       "name": "두산",
       "changeRate": 2.76,
@@ -1197,7 +1252,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "034020",
       "name": "두산에너빌리티",
       "changeRate": 2.76,
@@ -1228,7 +1283,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "032830",
       "name": "삼성생명",
       "changeRate": null,
@@ -1259,7 +1314,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-01T06:00:18.532Z",
+      "timestamp": "2026-07-02T01:00:15.010Z",
       "symbol": "475150",
       "name": "SK이터닉스",
       "changeRate": 7.35,
@@ -1279,53 +1334,6 @@
           "title": "SK이터닉스 주가, 7월 1일 장중 55,500원 7.35% 상승",
           "source": "TopStarNews",
           "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0yTG41cTlqVmZTZ0RORjVxRjA1dkR0VjJhNG9WOS0tTTZLYXZDSjkxSlhMaktoOWlXLWZVa0tqTG00WFh5NmNhTjJubXlpdDZtRXNVdWo1bmo1ZG9nTjhqMzNrY2t1NlR3eV9lOXpNTkgtZw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-01T06:00:18.532Z",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성전자·SK하이닉스 주가 상승 출발...2분기 호실적 전망 gukjenews.com",
-      "source": "gukjenews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5TNUpFZnc5MVIxRTZNRWp6c3kzbnJHQjItVXV2SEZSY3oycGZWRlpJWktwSDhMT19wOGpXX2F2M19XUU0wN3FwNmthRHpqeXZVdkRFMkpJb2M4UnB0a04tU1ZlLS1CYWxWd1hZM0xB?oc=5",
-      "mentionScore": 61.2,
-      "evidencePoints": [
-        "출처 gukjenews.com 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "삼성전자·SK하이닉스 주가 상승 출발...2분기 호실적 전망"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자·SK하이닉스 주가 상승 출발...2분기 호실적 전망",
-          "source": "gukjenews.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5TNUpFZnc5MVIxRTZNRWp6c3kzbnJHQjItVXV2SEZSY3oycGZWRlpJWktwSDhMT19wOGpXX2F2M19XUU0wN3FwNmthRHpqeXZVdkRFMkpJb2M4UnB0a04tU1ZlLS1CYWxWd1hZM0xB?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-01T06:00:18.532Z",
-      "symbol": "397030",
-      "name": "에이프릴바이오",
-      "changeRate": null,
-      "price": null,
-      "summary": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략. ThinkPool",
-      "source": "ThinkPool",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5",
-      "mentionScore": 54.9,
-      "evidencePoints": [
-        "출처 ThinkPool 기반 기사 1건",
-        "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략."
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "에이프릴바이오(397030)저점에선 물량 모아둘 기회로 보이며 이후 전망 및 대응전략.",
-          "source": "ThinkPool",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBJZWtoUWJGeFdvUDNqUm92LUUtcnFObUVIWk5ERFhzVUJ0SUhhTDJucjJ5TGVxNEVVRG5VZnNwU3RmT3hpVHJVS0xVSE82VmVacUpOclJ2UERHRlln?oc=5"
         }
       ]
     }
