@@ -1,97 +1,204 @@
 {
-  "generated_at": "2026-07-07T02:00:15.231Z",
+  "generated_at": "2026-07-07T03:00:20.732Z",
   "generated_date": "2026-07-07",
-  "slot_hour": 11,
-  "cycle_label": "KST_1100",
-  "slot_label": "11:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 11:00 실시간 급등",
+    "title": "KST 12:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "삼성전자, '역대 최대 실적'에도 프리마켓서 4% 약세",
-      "headline": "\"실적보다 못미친 기대치\"…삼성전자 역대급 성적에도 주가 급락 By EBN",
-      "evidencePoints": [
-        "출처 Investing.com 한국어, 연합인포맥스 기반 기사 2건",
-        "제목 기준 변동률 단서 +28.0%",
-        "\"실적보다 못미친 기대치\"…삼성전자 역대급 성적에도 주가 급락 By EBN",
-        "삼성전자, '역대 최대 실적'에도 프리마켓서 4% 약세"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 7,
-      "updatedAt": "2026-07-07T02:00:15.231Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": 28,
-      "latestHeadline": "\"실적보다 못미친 기대치\"…삼성전자 역대급 성적에도 주가 급락 By EBN",
-      "source": "Investing.com 한국어",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQbVgzYU9HdFNfVDY1NHBDZllfYVZ6ejdWVTdSWGxXR1lzUS1aNzhnSHJTMlNQdE1qR1VrcDRBZU1mbkVETXhOT2FVUXduakVWMkRMSlYxTnpYN0oxejRabDNvU3BLeVRIVHBrYUxHLTM?oc=5",
-      "publishedAt": "Tue, 07 Jul 2026 00:41:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "\"실적보다 못미친 기대치\"…삼성전자 역대급 성적에도 주가 급락 By EBN",
-          "source": "Investing.com 한국어",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQbVgzYU9HdFNfVDY1NHBDZllfYVZ6ejdWVTdSWGxXR1lzUS1aNzhnSHJTMlNQdE1qR1VrcDRBZU1mbkVETXhOT2FVUXduakVWMkRMSlYxTnpYN0oxejRabDNvU3BLeVRIVHBrYUxHLTM?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전자, '역대 최대 실적'에도 프리마켓서 4% 약세",
-          "source": "연합인포맥스",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1SbFpYRXFjZEw4WkRsWEVzeUdoUk9MZ1pxTUZzc3BJUU9KXy1pcHZ0cFlCRENpbzdXTHktX1FsU3NhSkxZLXpEd3U0dFF5dUcxWGdmVlNoNXJpZ0tlSENScUpGX3VRbXIxVXNsc1hGWlE?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "삼성전자, 역대급 실적에도 시장 기대치 하회하며 주가 급락",
-      "polishedBody": "삼성전자가 역대 최대 수준의 실적을 발표했음에도 불구하고 시장의 기대치를 충족하지 못하며 주가가 하락세를 보이고 있습니다. 프리마켓에서 4%가량 약세를 기록하며 투자자들의 실망감이 매도세로 이어지는 모습입니다. 실적 수치 자체는 긍정적이나 시장의 높은 눈높이를 맞추지 못한 점이 주가 하락의 주요 원인으로 분석됩니다. 향후 발표될 구체적인 사업 부문별 수익성과 시장의 추가적인 평가를 지켜봐야 합니다."
-    },
-    {
       "stockName": "LG전자",
       "stockCode": "066570",
-      "summary": "LG전자 주가 하락 중",
-      "headline": "LG전자 주가, 7월 7일 장중 179,700원 3.23% 하락",
+      "summary": "LG전자, 어닝서프라이즈에도 주가 하락…증시 전반에 '셀온'[핫종목]",
+      "headline": "LG전자 2분기 사상 최대 실적에도 주가 하락세 지속",
       "evidencePoints": [
-        "출처 TopStarNews, 아시아뉴스통신 기반 기사 2건",
-        "제목 기준 변동률 단서 -3.2%",
-        "LG전자 주가, 7월 7일 장중 179,700원 3.23% 하락",
-        "LG전자 주가 하락 중"
+        "출처 2news.co.kr, 뉴스1 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "LG전자 2분기 사상 최대 실적에도 주가 하락세 지속",
+        "LG전자, 어닝서프라이즈에도 주가 하락…증시 전반에 '셀온'[핫종목]"
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "negative",
-      "channelCount": 5,
-      "updatedAt": "2026-07-07T02:00:15.231Z",
-      "cycleLabel": "KST_1100",
+      "channelCount": 4,
+      "updatedAt": "2026-07-07T03:00:20.732Z",
+      "cycleLabel": "KST_1200",
       "direction": "down",
-      "changeRate": -3.23,
-      "latestHeadline": "LG전자 주가, 7월 7일 장중 179,700원 3.23% 하락",
-      "source": "TopStarNews",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5Gbjc0aXZOZjVSSG9BUjlfSzd4a0tocjh0UEVfUGtpSlNCLUlNeVZJZmdUa21JdmlwcXlxMThtcEdOVnhCSXdsanhwVHM1UkEya1pONzBnSWR1QmtlQnFaZWdDY2JmVDh3b0R6dkExZmZqQQ?oc=5",
-      "publishedAt": "Tue, 07 Jul 2026 01:19:25 GMT",
+      "changeRate": null,
+      "latestHeadline": "LG전자 2분기 사상 최대 실적에도 주가 하락세 지속",
+      "source": "2news.co.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ZTEhPTzc3ck5KOEVqT2cyZE10VWtPT2ZybW9NSGFDbGJkQUtFcTBUblFmRmw2ZzhEQmxpVTgwSVNrNVRPX1BIWVVUanlkRWFKUFhicHZOXzVDMHYtUnVfVVdzMGFpc3dV?oc=5",
+      "publishedAt": "Tue, 07 Jul 2026 02:33:00 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "LG전자 주가, 7월 7일 장중 179,700원 3.23% 하락",
-          "source": "TopStarNews",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5Gbjc0aXZOZjVSSG9BUjlfSzd4a0tocjh0UEVfUGtpSlNCLUlNeVZJZmdUa21JdmlwcXlxMThtcEdOVnhCSXdsanhwVHM1UkEya1pONzBnSWR1QmtlQnFaZWdDY2JmVDh3b0R6dkExZmZqQQ?oc=5"
+          "title": "LG전자 2분기 사상 최대 실적에도 주가 하락세 지속",
+          "source": "2news.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ZTEhPTzc3ck5KOEVqT2cyZE10VWtPT2ZybW9NSGFDbGJkQUtFcTBUblFmRmw2ZzhEQmxpVTgwSVNrNVRPX1BIWVVUanlkRWFKUFhicHZOXzVDMHYtUnVfVVdzMGFpc3dV?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "LG전자 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE0yRk5LbXlJNzRxb3NBN0dvcUJ6dzEzaFB6S0Z3dDJmZUF1Tk5JR2NNTDRwRHpibUd3THNodktfSFczTG9uNElSR04zNExKb01wVzNPQ1FZX05nQWlt?oc=5"
+          "title": "LG전자, 어닝서프라이즈에도 주가 하락…증시 전반에 '셀온'[핫종목]",
+          "source": "뉴스1",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5hbGZxcnBSZXZvVC1zd05GazU5YTNFZHNKcWdSdjRzTUdNRGJsNXJ2Xzd3Sk1wUmNObGd0ZDVXSE5URnYzaXRXbHVXWFY4cmxreHFsTkdsbEdtVWM?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "LG전자, 장중 3%대 하락하며 17만 원대 후반 기록",
-      "polishedBody": "LG전자의 주가가 장중 3% 넘게 하락하며 17만 9,700원 선에서 거래되고 있습니다. 최근 주가 흐름이 약세를 면치 못하면서 투자 심리가 다소 위축된 상황입니다. 전반적인 시장 분위기와 맞물려 매도 물량이 출회된 것이 주가 하락의 배경으로 풀이됩니다. 향후 주가 반등을 위한 거래량 회복 여부와 주요 지지선 방어 여부를 확인해야 합니다."
+      "polishedHeadline": "LG전자, 사상 최대 실적에도 주가 하락 지속",
+      "polishedBody": "기록적인 2분기 실적을 발표했지만 주가가 하락하고 있습니다. 증시 전반의 셀온 분위기가 영향을 주고 있습니다. 실적 호재에도 차익 실현 매물이 출회되며 하락 압력을 받고 있습니다. 향후 추가 실적 발표와 시장 수급 변화를 주목해야 합니다."
+    },
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "'삼성전자 2분기 실적발표일' 시간 언제? 목표주가 60만 원 육박",
+      "headline": "'역대급 실적'에도 못 넘은 눈높이…삼성전자 6%대 급락하는 이유는",
+      "evidencePoints": [
+        "출처 연합인포맥스, gukjenews.com 기반 기사 2건",
+        "제목 기준 변동률 단서 +28.0%",
+        "'역대급 실적'에도 못 넘은 눈높이…삼성전자 6%대 급락하는 이유는",
+        "'삼성전자 2분기 실적발표일' 시간 언제? 목표주가 60만 원 육박"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 8,
+      "updatedAt": "2026-07-07T03:00:20.732Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": -6,
+      "latestHeadline": "'역대급 실적'에도 못 넘은 눈높이…삼성전자 6%대 급락하는 이유는",
+      "source": "연합인포맥스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9xTWtxSXBDR0pMOGNZR2J0UVRkeDVqT1pwT2FaR3Zqa3BrdXZFSlRWakk1aDRocUhTa25MSy0zeDV0dzNnMTFsQVZmVlkteEpWY0FidkRCNXhZQjVRUFFsbWUtYUhKeTNrTmpkYnZBcnM?oc=5",
+      "publishedAt": "Tue, 07 Jul 2026 01:38:21 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "'역대급 실적'에도 못 넘은 눈높이…삼성전자 6%대 급락하는 이유는",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9xTWtxSXBDR0pMOGNZR2J0UVRkeDVqT1pwT2FaR3Zqa3BrdXZFSlRWakk1aDRocUhTa25MSy0zeDV0dzNnMTFsQVZmVlkteEpWY0FidkRCNXhZQjVRUFFsbWUtYUhKeTNrTmpkYnZBcnM?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "'삼성전자 2분기 실적발표일' 시간 언제? 목표주가 60만 원 육박",
+          "source": "gukjenews.com",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE14blA5WllvdGRORVhVSXFFSFlQS3pRZDFIS3NWSmIzRmNLa0lyZEtXTENsN2s5aG9vN2NZbW9aN3NBcHRobzE4MlJvUjg2NlhXUDl6UU1ZSE41ME1vQkhBbUJTdlVndkE0OGk0Y1V3?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자, 역대급 실적에도 기대치 하회하며 급락",
+      "polishedBody": "2분기 역대급 실적을 기록했지만 시장 기대치를 넘지 못했습니다. 주가는 6%대 급락하며 낙폭을 키웠습니다. 어닝 서프라이즈 부재로 투자 심리가 위축되었습니다. 실적 발표 후 기관과 외국인의 매매 동향을 지켜볼 필요가 있습니다."
+    },
+    {
+      "stockName": "삼양식품",
+      "stockCode": "003230",
+      "summary": "“삼양식품 더 간다”…KB증권, 영업이익 48%↑·목표가 195만원",
+      "headline": "[장중수급포착] 삼양식품, 외국인/기관 동시 순매수… 주가 +8.38%",
+      "evidencePoints": [
+        "출처 뉴스핌, ppss.kr 기반 기사 2건",
+        "[장중수급포착] 삼양식품, 외국인/기관 동시 순매수… 주가 +8.38%",
+        "“삼양식품 더 간다”…KB증권, 영업이익 48%↑·목표가 195만원"
+      ],
+      "mentionScore": 87.5,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-07-07T03:00:20.732Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[장중수급포착] 삼양식품, 외국인/기관 동시 순매수… 주가 +8.38%",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCZ1AySGYwMTBteUZqUVJ4blNBVXhDYVZwMlowRWN2cFgzdnpoYXpQeWl1bHNIcF9pOTZVQU9qZ21zUmcwTVFiQTl5UUdmMl9IaGFMZkQ0M1FUSVNx?oc=5",
+      "publishedAt": "Tue, 07 Jul 2026 02:31:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 삼양식품, 외국인/기관 동시 순매수… 주가 +8.38%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCZ1AySGYwMTBteUZqUVJ4blNBVXhDYVZwMlowRWN2cFgzdnpoYXpQeWl1bHNIcF9pOTZVQU9qZ21zUmcwTVFiQTl5UUdmMl9IaGFMZkQ0M1FUSVNx?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "“삼양식품 더 간다”…KB증권, 영업이익 48%↑·목표가 195만원",
+          "source": "ppss.kr",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8tN3ZhRlpKcW0zZDZacXZnMm0waGprbWVDYnhya0hHZzdQU1lyWUc4M2huWkVyZWtKd3BmSVBjeHpxdk5GMTNCT2F0c2oydW9KNFl6TXE5QUxnZGJyQ2FLd0RHeHY?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼양식품, 외국인 기관 순매수에 주가 급등",
+      "polishedBody": "장중 외국인과 기관이 동시에 순매수하며 주가가 8% 이상 올랐습니다. KB증권은 영업이익 48% 증가와 목표가 195만원을 제시했습니다. 긍정적인 수급과 리포트가 호재이나 이미 주가에 반영되었을 가능성이 있습니다. 추가 상승 모멘텀을 확인하기 위해 실적 추이를 주목해야 합니다."
+    },
+    {
+      "stockName": "HD현대일렉트릭",
+      "stockCode": "267260",
+      "summary": "HD현대일렉트릭, 실적 전망 정정 공시 속 장중 약세…숨 고르기 국면 진입 : 기업주식정보 재경일보",
+      "headline": "HD현대일렉트릭, 실적 전망 정정 공시 속 장중 약세…숨 고르기 국면 진입 : 기업주식정보",
+      "evidencePoints": [
+        "출처 재경일보 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "HD현대일렉트릭, 실적 전망 정정 공시 속 장중 약세…숨 고르기 국면 진입 : 기업주식정보"
+      ],
+      "mentionScore": 61.4,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-07-07T03:00:20.732Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "HD현대일렉트릭, 실적 전망 정정 공시 속 장중 약세…숨 고르기 국면 진입 : 기업주식정보",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9lZWhjRC14VlpZQ1NrTmxEa2Z4NVNzMEtoRVNsRnAtTFdqSnp3MnAwdXBqYWFiQURGVTFqTzhzeEtzQnFuX3B3dkpn?oc=5",
+      "publishedAt": "Tue, 07 Jul 2026 02:24:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "HD현대일렉트릭, 실적 전망 정정 공시 속 장중 약세…숨 고르기 국면 진입 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9lZWhjRC14VlpZQ1NrTmxEa2Z4NVNzMEtoRVNsRnAtTFdqSnp3MnAwdXBqYWFiQURGVTFqTzhzeEtzQnFuX3B3dkpn?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "HD현대일렉트릭, 실적 전망 정정 공시에 약세",
+      "polishedBody": "실적 전망 정정 공시가 발표되면서 장중 약세를 보이고 있습니다. 주가는 숨 고르기 국면에 진입하며 하락 압력을 받고 있습니다. 공시 내용에 대한 불확실성이 투자자 우려로 작용하고 있습니다. 정정 공시의 세부 내용과 향후 실적 가이던스 변경을 확인해야 합니다."
+    },
+    {
+      "stockName": "DL이앤씨",
+      "stockCode": "375500",
+      "summary": "[리포트 브리핑]DL이앤씨, '무난한 실적, 저평가 해소 포인트는 유효' 목표가 100,000원 - 미래에셋증권 뉴스핌",
+      "headline": "[리포트 브리핑]DL이앤씨, '무난한 실적, 저평가 해소 포인트는 유효' 목표가 100,000원 - 미래에셋증권",
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[리포트 브리핑]DL이앤씨, '무난한 실적, 저평가 해소 포인트는 유효' 목표가 100,000원 - 미래에셋증권"
+      ],
+      "mentionScore": 61.4,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-07-07T03:00:20.732Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[리포트 브리핑]DL이앤씨, '무난한 실적, 저평가 해소 포인트는 유효' 목표가 100,000원 - 미래에셋증권",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBSLW5qbkJHaXA2TE1iUExHcHFZZjQ0ZTMxdDlxZzR0ZWZyclhMYVlXcFctdXBhcFNLT1ZkNXd6X080ejNYazhOd2VaOGRrNzJpS0VlVGhpTWZmdWZL?oc=5",
+      "publishedAt": "Tue, 07 Jul 2026 02:24:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]DL이앤씨, '무난한 실적, 저평가 해소 포인트는 유효' 목표가 100,000원 - 미래에셋증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBSLW5qbkJHaXA2TE1iUExHcHFZZjQ0ZTMxdDlxZzR0ZWZyclhMYVlXcFctdXBhcFNLT1ZkNXd6X080ejNYazhOd2VaOGRrNzJpS0VlVGhpTWZmdWZL?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "DL이앤씨, 무난한 실적에 저평가 해소 기대감",
+      "polishedBody": "미래에셋증권은 DL이앤씨에 대해 무난한 실적을 평가했습니다. 목표주가 10만원을 제시하며 저평가 해소 포인트가 유효하다고 분석했습니다. 실적이 예상 범위 내에 있어 긍정적이지만 큰 촉매는 부족한 상황입니다. 추가적인 수주 모멘텀이나 실적 개선 신호가 나오는지 지켜봐야 합니다."
     },
     {
       "stockName": "에코프로비엠",
@@ -591,39 +698,6 @@
       "polishedBody": "선익시스템은 김혜동 대표이사가 자사주 2만 5천 주를 추가로 매입하며 지분율을 0.44%까지 높였습니다. 경영진의 책임 경영 의지가 시장에 전달되면서 투자자들의 주목을 받고 있습니다. 대표이사의 지분 확대는 기업의 미래 가치에 대한 자신감을 보여주는 중립적인 신호로 해석됩니다. 향후 경영진의 지분 매입이 실제 기업 실적 개선으로 이어질지 확인이 필요합니다."
     },
     {
-      "stockName": "HD현대일렉트릭",
-      "stockCode": "267260",
-      "summary": "HD현대일렉트릭, 올해 수주 목표 51.85달러로 22% 상향 thecommoditiesnews.com",
-      "headline": "HD현대일렉트릭, 올해 수주 목표 51.85달러로 22% 상향",
-      "evidencePoints": [
-        "출처 thecommoditiesnews.com 기반 기사 1건",
-        "HD현대일렉트릭, 올해 수주 목표 51.85달러로 22% 상향"
-      ],
-      "mentionScore": 86.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-07-06T06:00:18.392Z",
-      "cycleLabel": "KST_1500",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "HD현대일렉트릭, 올해 수주 목표 51.85달러로 22% 상향",
-      "source": "thecommoditiesnews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5SVGgwb3M1dkFfZTBnRmZxTVZkWXhIMnFoM0dlZzRqTFNMU0FpSGZHQldrV2s3SUp2amdUMUdUUDhBempNTXh5VXhpelRvRkJqc0FIVFNyMUhjZjVVSnZ3THdpX0VYU1l4RDZLcmhVMF9BUm0tdmp3?oc=5",
-      "publishedAt": "Mon, 06 Jul 2026 02:00:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "HD현대일렉트릭, 올해 수주 목표 51.85달러로 22% 상향",
-          "source": "thecommoditiesnews.com",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5SVGgwb3M1dkFfZTBnRmZxTVZkWXhIMnFoM0dlZzRqTFNMU0FpSGZHQldrV2s3SUp2amdUMUdUUDhBempNTXh5VXhpelRvRkJqc0FIVFNyMUhjZjVVSnZ3THdpX0VYU1l4RDZLcmhVMF9BUm0tdmp3?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "HD현대일렉트릭 올해 수주 목표 51.85달러로 22% 상향",
-      "polishedBody": "HD현대일렉트릭은 올해 수주 목표 51.85달러로 22% 상향 thecommoditiesnews.com 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 올해 수주 목표 51.85달러로 상향 thecommoditiesnews.com 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
       "stockName": "크래프톤",
       "stockCode": "259960",
       "summary": "[코스피 현미경 분석] 크래프톤, 하반기부터 신작 사이클 도래…주가 재상승? 데일리인베스트",
@@ -689,153 +763,150 @@
       "hasNews": true,
       "polishedHeadline": "인텍플러스, FC-BGA 검사 독점력으로 수주 급증",
       "polishedBody": "인텍플러스가 FC-BGA 검사 분야에서 독점력을 바탕으로 수주가 급증하고 있습니다. 이러한 수주 증가는 실적 개선 기대를 높이고 있습니다. 하지만 흑자전환 여부는 아직 불확실하여 중립적 신호로 보입니다. 향후 실적 발표와 추가 수주 동향을 주목해야 합니다."
-    },
-    {
-      "stockName": "삼양식품",
-      "stockCode": "003230",
-      "summary": "[리포트 브리핑]삼양식품, '성장은 계속된다' 목표가 1,950,000원 - KB증권",
-      "headline": "삼양식품, 해외 확장으로 실적 기대감 UP…목표주가 195만 원 유지",
-      "evidencePoints": [
-        "출처 tokenpost.kr, 뉴스핌 기반 기사 2건",
-        "삼양식품, 해외 확장으로 실적 기대감 UP…목표주가 195만 원 유지",
-        "[리포트 브리핑]삼양식품, '성장은 계속된다' 목표가 1,950,000원 - KB증권"
-      ],
-      "mentionScore": 87.5,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-07-06T01:00:16.097Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "삼양식품, 해외 확장으로 실적 기대감 UP…목표주가 195만 원 유지",
-      "source": "tokenpost.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jRnFleGJxeFJ2aGFNWGhlcC1JdDIyTUFZRGRTSXU1RXAtUndtLUlKMm5ELXkzZGx1YUJDdVZGazI2OWFzM0NBTGVCeDFEUmRlZmc2ZWF30gFbQVVfeXFMTklCVUxENGJoMXhBVUM1TG1uWElMbjU3T3FWZEl6a0NTTGdaN2dUN2xNWEZSaG9VMld4UFpNUGlQZmFvZVlFVVdtQ2VIWTVfR3JJTkFXUWhYNWkzdw?oc=5",
-      "publishedAt": "Mon, 06 Jul 2026 00:30:51 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼양식품, 해외 확장으로 실적 기대감 UP…목표주가 195만 원 유지",
-          "source": "tokenpost.kr",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jRnFleGJxeFJ2aGFNWGhlcC1JdDIyTUFZRGRTSXU1RXAtUndtLUlKMm5ELXkzZGx1YUJDdVZGazI2OWFzM0NBTGVCeDFEUmRlZmc2ZWF30gFbQVVfeXFMTklCVUxENGJoMXhBVUM1TG1uWElMbjU3T3FWZEl6a0NTTGdaN2dUN2xNWEZSaG9VMld4UFpNUGlQZmFvZVlFVVdtQ2VIWTVfR3JJTkFXUWhYNWkzdw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[리포트 브리핑]삼양식품, '성장은 계속된다' 목표가 1,950,000원 - KB증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1rT2hNd1V4bkxldGpDdkZwNVh0NXAzQThqNGItMnRESjhLNnN1NURuaEFSTDlvVmJuMENlZ0hNWV90M1V4UjRlcXlaaVdlVmllRmcwNTBuNlZ6RW5f?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼양식품, 해외 시장 확장으로 실적 기대감 지속",
-      "polishedBody": "KB증권은 삼양식품의 해외 시장 확장세가 지속될 것으로 보고 목표주가를 195만 원으로 유지했습니다. 글로벌 시장에서의 매출 성장이 가시화되면서 기업 가치에 대한 시장의 신뢰가 두터워진 상황입니다. 지속적인 성장 동력을 확보했다는 평가가 이어지며 안정적인 주가 흐름을 보이고 있습니다. 향후 해외 지역별 매출 비중 확대와 신규 시장 진출 성과를 지속적으로 확인해야 합니다."
-    },
-    {
-      "stockName": "DL이앤씨",
-      "stockCode": "375500",
-      "summary": "DL이앤씨, 손에 모든 걸 쥐었다...2분기 실적 기대치 상회할 것-한화",
-      "headline": "DL이앤씨, 2분기 실적 기대치 상회할 전망...밸류에이션 매력 높아",
-      "evidencePoints": [
-        "출처 동양뉴스, 이데일리 기반 기사 2건",
-        "DL이앤씨, 2분기 실적 기대치 상회할 전망...밸류에이션 매력 높아",
-        "DL이앤씨, 손에 모든 걸 쥐었다...2분기 실적 기대치 상회할 것-한화"
-      ],
-      "mentionScore": 86.3,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-07-06T01:00:16.097Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "DL이앤씨, 2분기 실적 기대치 상회할 전망...밸류에이션 매력 높아",
-      "source": "동양뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1OaW44MmI5Rjhma1JsTHotM2g5emFLUHh5bTNsVENKc19VZVdhWkpnVjVwaWZ6QlRXNWR6UjZYR0p0ZnFkSEpRSTBiWlhXeHU4VGpYcGhhWm5JNGg2S3hxaw?oc=5",
-      "publishedAt": "Sun, 05 Jul 2026 23:17:32 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "DL이앤씨, 2분기 실적 기대치 상회할 전망...밸류에이션 매력 높아",
-          "source": "동양뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1OaW44MmI5Rjhma1JsTHotM2g5emFLUHh5bTNsVENKc19VZVdhWkpnVjVwaWZ6QlRXNWR6UjZYR0p0ZnFkSEpRSTBiWlhXeHU4VGpYcGhhWm5JNGg2S3hxaw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "DL이앤씨, 손에 모든 걸 쥐었다...2분기 실적 기대치 상회할 것-한화",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNaDd6cHRqMmx5YTlpaEhQVV9UTXZULWh4QjBpZlpsNzMtc1lsM2xLd3J0X0tVcmh3bzhrMDFFdUJYOS1Oc0RaQS1ZR0t4NEltcUl6a2Y2U2pSV3F1N29Pc0tzdjdDR05fSkpHSUVNMnFuTk5NZ0pGX19pUXQ5M282Xw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "DL이앤씨, 2분기 실적 기대치 상회 전망",
-      "polishedBody": "DL이앤씨는 2분기 실적이 시장 기대치를 상회할 것으로 전망됩니다. 한화투자증권은 밸류에이션 매력이 높다고 분석했습니다. 이는 중립적 신호로, 실적 개선 기대감이 주가에 반영되고 있습니다. 향후 실제 실적 발표와 업황 변화를 지켜봐야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": 28,
-      "price": null,
-      "summary": "삼성전자, '역대 최대 실적'에도 프리마켓서 4% 약세",
-      "source": "Investing.com 한국어",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQbVgzYU9HdFNfVDY1NHBDZllfYVZ6ejdWVTdSWGxXR1lzUS1aNzhnSHJTMlNQdE1qR1VrcDRBZU1mbkVETXhOT2FVUXduakVWMkRMSlYxTnpYN0oxejRabDNvU3BLeVRIVHBrYUxHLTM?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 Investing.com 한국어, 연합인포맥스 기반 기사 2건",
-        "제목 기준 변동률 단서 +28.0%",
-        "\"실적보다 못미친 기대치\"…삼성전자 역대급 성적에도 주가 급락 By EBN",
-        "삼성전자, '역대 최대 실적'에도 프리마켓서 4% 약세"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "\"실적보다 못미친 기대치\"…삼성전자 역대급 성적에도 주가 급락 By EBN",
-          "source": "Investing.com 한국어",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQbVgzYU9HdFNfVDY1NHBDZllfYVZ6ejdWVTdSWGxXR1lzUS1aNzhnSHJTMlNQdE1qR1VrcDRBZU1mbkVETXhOT2FVUXduakVWMkRMSlYxTnpYN0oxejRabDNvU3BLeVRIVHBrYUxHLTM?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전자, '역대 최대 실적'에도 프리마켓서 4% 약세",
-          "source": "연합인포맥스",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1SbFpYRXFjZEw4WkRsWEVzeUdoUk9MZ1pxTUZzc3BJUU9KXy1pcHZ0cFlCRENpbzdXTHktX1FsU3NhSkxZLXpEd3U0dFF5dUcxWGdmVlNoNXJpZ0tlSENScUpGX3VRbXIxVXNsc1hGWlE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "066570",
       "name": "LG전자",
-      "changeRate": -3.23,
+      "changeRate": null,
       "price": null,
-      "summary": "LG전자 주가 하락 중",
-      "source": "TopStarNews",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5Gbjc0aXZOZjVSSG9BUjlfSzd4a0tocjh0UEVfUGtpSlNCLUlNeVZJZmdUa21JdmlwcXlxMThtcEdOVnhCSXdsanhwVHM1UkEya1pONzBnSWR1QmtlQnFaZWdDY2JmVDh3b0R6dkExZmZqQQ?oc=5",
+      "summary": "LG전자, 어닝서프라이즈에도 주가 하락…증시 전반에 '셀온'[핫종목]",
+      "source": "2news.co.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ZTEhPTzc3ck5KOEVqT2cyZE10VWtPT2ZybW9NSGFDbGJkQUtFcTBUblFmRmw2ZzhEQmxpVTgwSVNrNVRPX1BIWVVUanlkRWFKUFhicHZOXzVDMHYtUnVfVVdzMGFpc3dV?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 TopStarNews, 아시아뉴스통신 기반 기사 2건",
-        "제목 기준 변동률 단서 -3.2%",
-        "LG전자 주가, 7월 7일 장중 179,700원 3.23% 하락",
-        "LG전자 주가 하락 중"
+        "출처 2news.co.kr, 뉴스1 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "LG전자 2분기 사상 최대 실적에도 주가 하락세 지속",
+        "LG전자, 어닝서프라이즈에도 주가 하락…증시 전반에 '셀온'[핫종목]"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "LG전자 주가, 7월 7일 장중 179,700원 3.23% 하락",
-          "source": "TopStarNews",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5Gbjc0aXZOZjVSSG9BUjlfSzd4a0tocjh0UEVfUGtpSlNCLUlNeVZJZmdUa21JdmlwcXlxMThtcEdOVnhCSXdsanhwVHM1UkEya1pONzBnSWR1QmtlQnFaZWdDY2JmVDh3b0R6dkExZmZqQQ?oc=5"
+          "title": "LG전자 2분기 사상 최대 실적에도 주가 하락세 지속",
+          "source": "2news.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ZTEhPTzc3ck5KOEVqT2cyZE10VWtPT2ZybW9NSGFDbGJkQUtFcTBUblFmRmw2ZzhEQmxpVTgwSVNrNVRPX1BIWVVUanlkRWFKUFhicHZOXzVDMHYtUnVfVVdzMGFpc3dV?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "LG전자 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE0yRk5LbXlJNzRxb3NBN0dvcUJ6dzEzaFB6S0Z3dDJmZUF1Tk5JR2NNTDRwRHpibUd3THNodktfSFczTG9uNElSR04zNExKb01wVzNPQ1FZX05nQWlt?oc=5"
+          "title": "LG전자, 어닝서프라이즈에도 주가 하락…증시 전반에 '셀온'[핫종목]",
+          "source": "뉴스1",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5hbGZxcnBSZXZvVC1zd05GazU5YTNFZHNKcWdSdjRzTUdNRGJsNXJ2Xzd3Sk1wUmNObGd0ZDVXSE5URnYzaXRXbHVXWFY4cmxreHFsTkdsbEdtVWM?oc=5"
         }
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": -6,
+      "price": null,
+      "summary": "'삼성전자 2분기 실적발표일' 시간 언제? 목표주가 60만 원 육박",
+      "source": "연합인포맥스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9xTWtxSXBDR0pMOGNZR2J0UVRkeDVqT1pwT2FaR3Zqa3BrdXZFSlRWakk1aDRocUhTa25MSy0zeDV0dzNnMTFsQVZmVlkteEpWY0FidkRCNXhZQjVRUFFsbWUtYUhKeTNrTmpkYnZBcnM?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 연합인포맥스, gukjenews.com 기반 기사 2건",
+        "제목 기준 변동률 단서 +28.0%",
+        "'역대급 실적'에도 못 넘은 눈높이…삼성전자 6%대 급락하는 이유는",
+        "'삼성전자 2분기 실적발표일' 시간 언제? 목표주가 60만 원 육박"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "'역대급 실적'에도 못 넘은 눈높이…삼성전자 6%대 급락하는 이유는",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9xTWtxSXBDR0pMOGNZR2J0UVRkeDVqT1pwT2FaR3Zqa3BrdXZFSlRWakk1aDRocUhTa25MSy0zeDV0dzNnMTFsQVZmVlkteEpWY0FidkRCNXhZQjVRUFFsbWUtYUhKeTNrTmpkYnZBcnM?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "'삼성전자 2분기 실적발표일' 시간 언제? 목표주가 60만 원 육박",
+          "source": "gukjenews.com",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE14blA5WllvdGRORVhVSXFFSFlQS3pRZDFIS3NWSmIzRmNLa0lyZEtXTENsN2s5aG9vN2NZbW9aN3NBcHRobzE4MlJvUjg2NlhXUDl6UU1ZSE41ME1vQkhBbUJTdlVndkE0OGk0Y1V3?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-07T03:00:20.732Z",
+      "symbol": "003230",
+      "name": "삼양식품",
+      "changeRate": null,
+      "price": null,
+      "summary": "“삼양식품 더 간다”…KB증권, 영업이익 48%↑·목표가 195만원",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCZ1AySGYwMTBteUZqUVJ4blNBVXhDYVZwMlowRWN2cFgzdnpoYXpQeWl1bHNIcF9pOTZVQU9qZ21zUmcwTVFiQTl5UUdmMl9IaGFMZkQ0M1FUSVNx?oc=5",
+      "mentionScore": 87.5,
+      "evidencePoints": [
+        "출처 뉴스핌, ppss.kr 기반 기사 2건",
+        "[장중수급포착] 삼양식품, 외국인/기관 동시 순매수… 주가 +8.38%",
+        "“삼양식품 더 간다”…KB증권, 영업이익 48%↑·목표가 195만원"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 삼양식품, 외국인/기관 동시 순매수… 주가 +8.38%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCZ1AySGYwMTBteUZqUVJ4blNBVXhDYVZwMlowRWN2cFgzdnpoYXpQeWl1bHNIcF9pOTZVQU9qZ21zUmcwTVFiQTl5UUdmMl9IaGFMZkQ0M1FUSVNx?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "“삼양식품 더 간다”…KB증권, 영업이익 48%↑·목표가 195만원",
+          "source": "ppss.kr",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8tN3ZhRlpKcW0zZDZacXZnMm0waGprbWVDYnhya0hHZzdQU1lyWUc4M2huWkVyZWtKd3BmSVBjeHpxdk5GMTNCT2F0c2oydW9KNFl6TXE5QUxnZGJyQ2FLd0RHeHY?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-07T03:00:20.732Z",
+      "symbol": "267260",
+      "name": "HD현대일렉트릭",
+      "changeRate": null,
+      "price": null,
+      "summary": "HD현대일렉트릭, 실적 전망 정정 공시 속 장중 약세…숨 고르기 국면 진입 : 기업주식정보 재경일보",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9lZWhjRC14VlpZQ1NrTmxEa2Z4NVNzMEtoRVNsRnAtTFdqSnp3MnAwdXBqYWFiQURGVTFqTzhzeEtzQnFuX3B3dkpn?oc=5",
+      "mentionScore": 61.4,
+      "evidencePoints": [
+        "출처 재경일보 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "HD현대일렉트릭, 실적 전망 정정 공시 속 장중 약세…숨 고르기 국면 진입 : 기업주식정보"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "HD현대일렉트릭, 실적 전망 정정 공시 속 장중 약세…숨 고르기 국면 진입 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9lZWhjRC14VlpZQ1NrTmxEa2Z4NVNzMEtoRVNsRnAtTFdqSnp3MnAwdXBqYWFiQURGVTFqTzhzeEtzQnFuX3B3dkpn?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-07T03:00:20.732Z",
+      "symbol": "375500",
+      "name": "DL이앤씨",
+      "changeRate": null,
+      "price": null,
+      "summary": "[리포트 브리핑]DL이앤씨, '무난한 실적, 저평가 해소 포인트는 유효' 목표가 100,000원 - 미래에셋증권 뉴스핌",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBSLW5qbkJHaXA2TE1iUExHcHFZZjQ0ZTMxdDlxZzR0ZWZyclhMYVlXcFctdXBhcFNLT1ZkNXd6X080ejNYazhOd2VaOGRrNzJpS0VlVGhpTWZmdWZL?oc=5",
+      "mentionScore": 61.4,
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[리포트 브리핑]DL이앤씨, '무난한 실적, 저평가 해소 포인트는 유효' 목표가 100,000원 - 미래에셋증권"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]DL이앤씨, '무난한 실적, 저평가 해소 포인트는 유효' 목표가 100,000원 - 미래에셋증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBSLW5qbkJHaXA2TE1iUExHcHFZZjQ0ZTMxdDlxZzR0ZWZyclhMYVlXcFctdXBhcFNLT1ZkNXd6X080ejNYazhOd2VaOGRrNzJpS0VlVGhpTWZmdWZL?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "247540",
       "name": "에코프로비엠",
       "changeRate": null,
@@ -866,7 +937,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "161890",
       "name": "한국콜마",
       "changeRate": null,
@@ -889,7 +960,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "000150",
       "name": "두산",
       "changeRate": null,
@@ -926,7 +997,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": null,
@@ -962,7 +1033,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
@@ -993,7 +1064,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "105560",
       "name": "KB금융",
       "changeRate": null,
@@ -1023,7 +1094,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": null,
@@ -1053,7 +1124,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "034020",
       "name": "두산에너빌리티",
       "changeRate": null,
@@ -1084,7 +1155,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "012330",
       "name": "현대모비스",
       "changeRate": null,
@@ -1108,7 +1179,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": null,
@@ -1132,7 +1203,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": null,
@@ -1155,7 +1226,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "047810",
       "name": "한국항공우주",
       "changeRate": -5.17,
@@ -1179,7 +1250,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "171090",
       "name": "선익시스템",
       "changeRate": null,
@@ -1202,30 +1273,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
-      "symbol": "267260",
-      "name": "HD현대일렉트릭",
-      "changeRate": null,
-      "price": null,
-      "summary": "HD현대일렉트릭, 올해 수주 목표 51.85달러로 22% 상향 thecommoditiesnews.com",
-      "source": "thecommoditiesnews.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5SVGgwb3M1dkFfZTBnRmZxTVZkWXhIMnFoM0dlZzRqTFNMU0FpSGZHQldrV2s3SUp2amdUMUdUUDhBempNTXh5VXhpelRvRkJqc0FIVFNyMUhjZjVVSnZ3THdpX0VYU1l4RDZLcmhVMF9BUm0tdmp3?oc=5",
-      "mentionScore": 86.9,
-      "evidencePoints": [
-        "출처 thecommoditiesnews.com 기반 기사 1건",
-        "HD현대일렉트릭, 올해 수주 목표 51.85달러로 22% 상향"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "HD현대일렉트릭, 올해 수주 목표 51.85달러로 22% 상향",
-          "source": "thecommoditiesnews.com",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5SVGgwb3M1dkFfZTBnRmZxTVZkWXhIMnFoM0dlZzRqTFNMU0FpSGZHQldrV2s3SUp2amdUMUdUUDhBempNTXh5VXhpelRvRkJqc0FIVFNyMUhjZjVVSnZ3THdpX0VYU1l4RDZLcmhVMF9BUm0tdmp3?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "259960",
       "name": "크래프톤",
       "changeRate": null,
@@ -1249,7 +1297,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-07T02:00:15.231Z",
+      "timestamp": "2026-07-07T03:00:20.732Z",
       "symbol": "064290",
       "name": "인텍플러스",
       "changeRate": null,
@@ -1270,66 +1318,6 @@
           "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5sU29UdldGRjZfZjJ1eGlvZ2JIcndIZ01qQVFmWm9BdkpCdFN2bGpBVGR6UDR0cnZxREo3MlI1Vmt5ZXBiSHdmVUNrUXFpWDd5OG03aFRDR2d4TnlvTjNlZVFHMWt6NUlmd1UwONIBb0FVX3lxTE45X1d5R2ZIWmhoQWZlVUZPS0Z1OUVIZUpCSzVlYmU3V1VoRFpVUlVYSDZxUGxXSDFIalVCSXV6MW9QYmdMenVYMTY1aUNYUnZmSkZhWE00X19sejJHczRLS0VqckJ0blBhMzh2c3BMRQ?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "2026-07-07T02:00:15.231Z",
-      "symbol": "003230",
-      "name": "삼양식품",
-      "changeRate": null,
-      "price": null,
-      "summary": "[리포트 브리핑]삼양식품, '성장은 계속된다' 목표가 1,950,000원 - KB증권",
-      "source": "tokenpost.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jRnFleGJxeFJ2aGFNWGhlcC1JdDIyTUFZRGRTSXU1RXAtUndtLUlKMm5ELXkzZGx1YUJDdVZGazI2OWFzM0NBTGVCeDFEUmRlZmc2ZWF30gFbQVVfeXFMTklCVUxENGJoMXhBVUM1TG1uWElMbjU3T3FWZEl6a0NTTGdaN2dUN2xNWEZSaG9VMld4UFpNUGlQZmFvZVlFVVdtQ2VIWTVfR3JJTkFXUWhYNWkzdw?oc=5",
-      "mentionScore": 87.5,
-      "evidencePoints": [
-        "출처 tokenpost.kr, 뉴스핌 기반 기사 2건",
-        "삼양식품, 해외 확장으로 실적 기대감 UP…목표주가 195만 원 유지",
-        "[리포트 브리핑]삼양식품, '성장은 계속된다' 목표가 1,950,000원 - KB증권"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼양식품, 해외 확장으로 실적 기대감 UP…목표주가 195만 원 유지",
-          "source": "tokenpost.kr",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jRnFleGJxeFJ2aGFNWGhlcC1JdDIyTUFZRGRTSXU1RXAtUndtLUlKMm5ELXkzZGx1YUJDdVZGazI2OWFzM0NBTGVCeDFEUmRlZmc2ZWF30gFbQVVfeXFMTklCVUxENGJoMXhBVUM1TG1uWElMbjU3T3FWZEl6a0NTTGdaN2dUN2xNWEZSaG9VMld4UFpNUGlQZmFvZVlFVVdtQ2VIWTVfR3JJTkFXUWhYNWkzdw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[리포트 브리핑]삼양식품, '성장은 계속된다' 목표가 1,950,000원 - KB증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1rT2hNd1V4bkxldGpDdkZwNVh0NXAzQThqNGItMnRESjhLNnN1NURuaEFSTDlvVmJuMENlZ0hNWV90M1V4UjRlcXlaaVdlVmllRmcwNTBuNlZ6RW5f?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-07T02:00:15.231Z",
-      "symbol": "375500",
-      "name": "DL이앤씨",
-      "changeRate": null,
-      "price": null,
-      "summary": "DL이앤씨, 손에 모든 걸 쥐었다...2분기 실적 기대치 상회할 것-한화",
-      "source": "동양뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1OaW44MmI5Rjhma1JsTHotM2g5emFLUHh5bTNsVENKc19VZVdhWkpnVjVwaWZ6QlRXNWR6UjZYR0p0ZnFkSEpRSTBiWlhXeHU4VGpYcGhhWm5JNGg2S3hxaw?oc=5",
-      "mentionScore": 86.3,
-      "evidencePoints": [
-        "출처 동양뉴스, 이데일리 기반 기사 2건",
-        "DL이앤씨, 2분기 실적 기대치 상회할 전망...밸류에이션 매력 높아",
-        "DL이앤씨, 손에 모든 걸 쥐었다...2분기 실적 기대치 상회할 것-한화"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "DL이앤씨, 2분기 실적 기대치 상회할 전망...밸류에이션 매력 높아",
-          "source": "동양뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1OaW44MmI5Rjhma1JsTHotM2g5emFLUHh5bTNsVENKc19VZVdhWkpnVjVwaWZ6QlRXNWR6UjZYR0p0ZnFkSEpRSTBiWlhXeHU4VGpYcGhhWm5JNGg2S3hxaw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "DL이앤씨, 손에 모든 걸 쥐었다...2분기 실적 기대치 상회할 것-한화",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNaDd6cHRqMmx5YTlpaEhQVV9UTXZULWh4QjBpZlpsNzMtc1lsM2xLd3J0X0tVcmh3bzhrMDFFdUJYOS1Oc0RaQS1ZR0t4NEltcUl6a2Y2U2pSV3F1N29Pc0tzdjdDR05fSkpHSUVNMnFuTk5NZ0pGX19pUXQ5M282Xw?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -1337,8 +1325,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "gemini",
-    "model": "gemini-3.1-flash-lite",
-    "fallbackReason": "primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
