@@ -544,7 +544,7 @@ function sanitizeBriefingCopy(value) {
 }
 
 const PLACEHOLDER_COPY_RE = /(수집되지 않았습니다|뉴스 수집 실패|fetch_failed_\d+|재분류해야 합니다|확인되지 않았습니다|확인 불가)/u;
-const STALE_INVESTOR_FLOW_COPY_RE = /전일\s*(?:외국인|기관|개인|코스피|코스닥)[^.!?。]*(?:순매수|순매도|매도|매수)|(?:외국인|기관|개인)[^.!?。]*전일[^.!?。]*(?:순매수|순매도|매도|매수)/u;
+const STALE_INVESTOR_FLOW_COPY_RE = /(?:전일(?:에는|의)?|전\s*거래일|이전\s*거래일|지난\s*거래일)[^.!?。]*(?:순매수|순매도|매도|매수)|(?:외국인|기관|개인)[^.!?。]*(?:전일(?:에는|의)?|전\s*거래일|이전\s*거래일|지난\s*거래일)[^.!?。]*(?:순매수|순매도|매도|매수)/u;
 
 function candidateLooksUnavailable(item) {
   const text = `${item?.title ?? ''} ${item?.summary ?? ''}`;
@@ -642,6 +642,25 @@ function resolveBriefingPublishPlan({ marketResearch, report, existingHtml }) {
   }
 
   throw new Error(`briefing_quality_gate_failed:${issues.join(',')}`);
+}
+
+function unavailablePostMarketInvestorFlows() {
+  return {
+    foreign: 'KRX 정형 수급 공개가 아직 완료되지 않아 외국인 당일 순매수/순매도 금액은 확정 전입니다.',
+    institution: 'KRX 정형 수급 공개가 아직 완료되지 않아 기관 당일 순매수/순매도 금액은 확정 전입니다.',
+    retail: 'KRX 정형 수급 공개가 아직 완료되지 않아 개인 당일 순매수/순매도 금액은 확정 전입니다.'
+  };
+}
+
+function prepareReportForPublish(marketResearch, report) {
+  const prepared = sanitizeBriefingCopy(report);
+  if (PHASE === 'post_market' && !isInvestorFlowsAvailable(marketResearch?.investorFlows)) {
+    return {
+      ...prepared,
+      investorFlows: unavailablePostMarketInvestorFlows()
+    };
+  }
+  return prepared;
 }
 
 function reportSchema() {
@@ -1666,7 +1685,8 @@ ${articles}
 
 async function main() {
   const marketResearch = process.env.REPORT_LLM_MOCK === '1' ? mockMarketResearch() : await collectPublicMarketResearch();
-  const { report, writer } = await writeReportWithFallback(marketResearch);
+  const { report: generatedReport, writer } = await writeReportWithFallback(marketResearch);
+  const report = prepareReportForPublish(marketResearch, generatedReport);
   const publishPlan = resolveBriefingPublishPlan({
     marketResearch,
     report,
@@ -1701,3 +1721,4 @@ main().catch((error) => {
 
 export const __testResolveBriefingPublishPlan = resolveBriefingPublishPlan;
 export const __testSanitizeBriefingCopy = sanitizeBriefingCopy;
+export const __testPrepareReportForPublish = prepareReportForPublish;

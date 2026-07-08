@@ -200,6 +200,88 @@ test('post-market briefing fails when investor flow copy describes the previous 
   );
 });
 
+test('post-market briefing fails when split investor flow sentences describe the previous day', async () => {
+  const module = await importBriefingModule();
+  const research = {
+    investorFlows: {
+      status: 'ok',
+      markets: [{ market: 'KOSPI', netBuy: { foreign: -100000000, institution: -200000000, retail: 300000000 } }]
+    },
+    investorFlowNewsCandidates: [],
+    sectorThemeNewsCandidates: [
+      { title: '반도체 업종 약세', summary: '반도체 업종이 약세를 보였습니다.' }
+    ],
+    stockNewsCandidates: [
+      { title: '삼성전자 상승', summary: '삼성전자가 상승했습니다.' },
+      { title: 'LG전자 하락', summary: 'LG전자가 하락했습니다.' }
+    ]
+  };
+
+  assert.throws(
+    () => module.__testResolveBriefingPublishPlan({
+      marketResearch: research,
+      report: {
+        marketSummary: { kospi: '7,246.79 (▼5.35%)', kosdaq: '785.00 (▼5.56%)', summary: '코스피와 코스닥이 급락했습니다.' },
+        investorFlows: {
+          foreign: '외국인은 최근 순매도 기조를 이어가며 지수 하락을 주도했습니다. 전일에는 삼성전자에 대해 1조8000억원 규모의 순매도가 확인됐습니다.',
+          institution: '기관도 순매도에 동참했습니다.',
+          retail: '개인은 순매수에 나섰습니다.'
+        },
+        sectorThemes: { strong: '인프라 업종 강세', weak: '반도체 업종 약세' },
+        notableStocks: { surging: ['삼성전자 상승', 'SK하이닉스 상승'], plunging: ['LG전자 하락', 'SK스퀘어 하락'] },
+        tomorrowStrategy: { outlook: '외국인 수급을 확인해야 합니다.', checklist: ['수급 확인', '환율 확인', '미국 증시 확인'] }
+      },
+      existingHtml: ''
+    }),
+    /briefing_quality_gate_failed:stale_investor_flow_copy/
+  );
+});
+
+test('post-market briefing replaces LLM investor flow copy when structured flows are unavailable', async () => {
+  const module = await importBriefingModule();
+  const marketResearch = {
+    investorFlows: {
+      status: 'unavailable',
+      markets: [],
+      reason: 'KOSPI:no_investor_flow_data_within_14_days:empty_pykrx_dataframe'
+    },
+    investorFlowNewsCandidates: [
+      { title: '외국인 순매도 관련 뉴스', summary: '외국인 수급 관련 보도입니다.' }
+    ],
+    sectorThemeNewsCandidates: [
+      { title: '반도체 업종 약세', summary: '반도체 업종이 약세를 보였습니다.' }
+    ],
+    stockNewsCandidates: [
+      { title: '삼성전자 상승', summary: '삼성전자가 상승했습니다.' },
+      { title: 'LG전자 하락', summary: 'LG전자가 하락했습니다.' }
+    ]
+  };
+  const report = {
+    marketSummary: { kospi: '7,246.79 (▼5.35%)', kosdaq: '785.00 (▼5.56%)', summary: '코스피와 코스닥이 급락했습니다.' },
+    investorFlows: {
+      foreign: '외국인은 최근 순매도 기조를 이어가며 지수 하락을 주도했습니다. 전일에는 삼성전자에 대해 1조8000억원 규모의 순매도가 확인됐습니다.',
+      institution: '기관도 순매도에 동참했습니다.',
+      retail: '개인은 순매수에 나섰습니다.'
+    },
+    sectorThemes: { strong: '인프라 업종 강세', weak: '반도체 업종 약세' },
+    notableStocks: { surging: ['삼성전자 상승', 'SK하이닉스 상승'], plunging: ['LG전자 하락', 'SK스퀘어 하락'] },
+    tomorrowStrategy: { outlook: '외국인 수급을 확인해야 합니다.', checklist: ['수급 확인', '환율 확인', '미국 증시 확인'] }
+  };
+
+  const prepared = module.__testPrepareReportForPublish(marketResearch, report);
+
+  assert.equal(JSON.stringify(prepared).includes('전일'), false);
+  assert.equal(prepared.investorFlows.foreign, 'KRX 정형 수급 공개가 아직 완료되지 않아 외국인 당일 순매수/순매도 금액은 확정 전입니다.');
+  assert.equal(
+    module.__testResolveBriefingPublishPlan({
+      marketResearch,
+      report: prepared,
+      existingHtml: ''
+    }).action,
+    'publish_new'
+  );
+});
+
 test('post-market briefing does not preserve an existing article with stale investor flow copy', async () => {
   const module = await importBriefingModule();
   const badResearch = {
