@@ -1,96 +1,213 @@
 {
-  "generated_at": "2026-07-09T02:00:18.581Z",
+  "generated_at": "2026-07-09T05:05:20.336Z",
   "generated_date": "2026-07-09",
-  "slot_hour": 11,
-  "cycle_label": "KST_1100",
-  "slot_label": "11:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 11:00 실시간 급등",
+    "title": "KST 14:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
-      "stockName": "SK하이닉스",
-      "stockCode": "000660",
-      "summary": "SK하이닉스 고점 대비 29% 급락…상투 잡힌 개미들 `환불 밈` 봇물",
-      "headline": "시총 1위 찍고 급전직하…SK하이닉스 급락에 '주식 환불' 밈 유행",
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "“서프라이즈보다 중요한 구조적 변화” 증권가, LG전자 목표주가 잇따라 상향 - 조선비즈",
+      "headline": "“42% 하락은 기회”…삼성전기·LG전자 쓸어담아 [주식 초고수는 지금]",
       "evidencePoints": [
-        "출처 아시아경제, 매일신문 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "시총 1위 찍고 급전직하…SK하이닉스 급락에 '주식 환불' 밈 유행",
-        "SK하이닉스 고점 대비 29% 급락…상투 잡힌 개미들 `환불 밈` 봇물"
+        "출처 Chosunbiz, 매일경제 기반 기사 2건",
+        "제목 기준 변동률 단서 -42.0%",
+        "“서프라이즈보다 중요한 구조적 변화” 증권가, LG전자 목표주가 잇따라 상향 - 조선비즈",
+        "“42% 하락은 기회”…삼성전기·LG전자 쓸어담아 [주식 초고수는 지금]"
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "negative",
       "channelCount": 3,
-      "updatedAt": "2026-07-09T02:00:18.581Z",
-      "cycleLabel": "KST_1100",
+      "updatedAt": "2026-07-09T05:05:20.336Z",
+      "cycleLabel": "KST_1400",
       "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "시총 1위 찍고 급전직하…SK하이닉스 급락에 '주식 환불' 밈 유행",
-      "source": "아시아경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95WGRwdURNaTRyd3FzNy0wa3FTZ1VSRHlrLVg2VmxhSDRfeDh4RVYzS0VuMFFHX01GTm43czRhR1dPQ2E5Ukd6WUs5cGpRcGFLaUxKUGl0ckI5M29HblZ2cA?oc=5",
-      "publishedAt": "Thu, 09 Jul 2026 01:42:04 GMT",
+      "changeRate": -42,
+      "latestHeadline": "“42% 하락은 기회”…삼성전기·LG전자 쓸어담아 [주식 초고수는 지금]",
+      "source": "매일경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBjMElEUHl6TlVET2o2ZDhkLWc5cEU1N2V2a3dYelB1Zm9yU3BRMEZfemRETVRhc3pBMnNrTWl0MVExWEJSdGJyNHpzeXZsR2JVamc?oc=5",
+      "publishedAt": "Thu, 09 Jul 2026 02:05:36 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "시총 1위 찍고 급전직하…SK하이닉스 급락에 '주식 환불' 밈 유행",
-          "source": "아시아경제",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95WGRwdURNaTRyd3FzNy0wa3FTZ1VSRHlrLVg2VmxhSDRfeDh4RVYzS0VuMFFHX01GTm43czRhR1dPQ2E5Ukd6WUs5cGpRcGFLaUxKUGl0ckI5M29HblZ2cA?oc=5"
+          "title": "“서프라이즈보다 중요한 구조적 변화” 증권가, LG전자 목표주가 잇따라 상향 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdU1RU1RxLVdEMUQ0azJ1aFN2RU9ZdnoxbmljWTU5bVk2VVRSOEljT1ViZktKRkdnenV3d0NHTGxQTkFQWmlJcGlZQ3Z2ay01OElaYjBaV2VhREdTbGVLaXI5SjB1LS1oSTA3emtEcTZQTUVCXzBzLWFhUGNPQ1JIeXpn0gGWAUFVX3lxTFAxQVYxTUVuTU1XVDltVDdXbHJNaHBiTGJ2b3ZyWFhBdC04NkxCeXpRYWFVQWxmdW00eHkxS1lsMnBxdEYtNU51b0ltTHJkWWloNVFROEN5bzZHUllRNFJWN0xicHdvQmttYnJGWVFWVktuUktibGc1cE92M3hGaElCeFpMRUs3Tk1rN3lFdXg0alpvbktQQQ?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "SK하이닉스 고점 대비 29% 급락…상투 잡힌 개미들 `환불 밈` 봇물",
-          "source": "매일신문",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAxcXAwRGtub1RaOC1BUDdQTDNoWGNZUE83UFl1dkVIMnE4c3ZnUEo1OXo1Z2ZQX1gyamQwWm9jZjJGMVhia1dYUWFsbng1dHBxSHdGMGp3ZmlsQWhaeHh3Xy1R?oc=5"
+          "title": "“42% 하락은 기회”…삼성전기·LG전자 쓸어담아 [주식 초고수는 지금]",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBjMElEUHl6TlVET2o2ZDhkLWc5cEU1N2V2a3dYelB1Zm9yU3BRMEZfemRETVRhc3pBMnNrTWl0MVExWEJSdGJyNHpzeXZsR2JVamc?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "SK하이닉스 고점 대비 29% 급락…개미들 '주식 환불' 밈 확산",
-      "polishedBody": "SK하이닉스는 고점 대비 29% 급락…상투 잡힌 개미들 `환불 밈` 봇물 이슈로 단기 변동성이 확대됐습니다. 고점 대비 …상투 잡힌 개미들 `환불 밈` 봇물 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 시총 1위 찍고 급전직하…급락에 '주식 환불' 밈 유행 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+      "polishedHeadline": "LG전자, 구조적 변화 기대감에 증권가 목표가 상향",
+      "polishedBody": "최근 주가가 큰 폭으로 하락하며 투자자들의 우려가 커진 상황입니다. 증권가에서는 일시적인 실적보다 기업의 구조적 변화에 주목하며 목표 주가를 잇따라 올리고 있습니다. 이러한 변화가 장기적인 성장 동력이 될 것으로 평가받아 긍정적인 시각이 유지되고 있습니다. 향후 실적 개선세가 실제 주가 반등으로 이어질지 여부를 지켜봐야 합니다."
     },
     {
-      "stockName": "LG전자",
-      "stockCode": "066570",
-      "summary": "LG전자 향한 '시선이 달라졌다'…칠러·로봇에 목표가 줄상향",
-      "headline": "\"실적보다 구조 변화\" … 증권가, LG전자 목표 주가 줄상향",
+      "stockName": "SK하이닉스",
+      "stockCode": "000660",
+      "summary": "“430만닉스 간다”…SK하닉, 미국 ADR 상장 이후 투자법",
+      "headline": "[ET특징주] SK하이닉스, 3거래일 연속 약세 후 반등… 주가 6%↑",
       "evidencePoints": [
-        "출처 뉴데일리, KB Think 기반 기사 2건",
-        "\"실적보다 구조 변화\" … 증권가, LG전자 목표 주가 줄상향",
-        "LG전자 향한 '시선이 달라졌다'…칠러·로봇에 목표가 줄상향"
+        "출처 전자신문, 중앙일보 기반 기사 2건",
+        "제목 기준 변동률 단서 -6.0%",
+        "[ET특징주] SK하이닉스, 3거래일 연속 약세 후 반등… 주가 6%↑",
+        "“430만닉스 간다”…SK하닉, 미국 ADR 상장 이후 투자법"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-07-09T05:05:20.336Z",
+      "cycleLabel": "KST_1400",
+      "direction": "down",
+      "changeRate": -6,
+      "latestHeadline": "[ET특징주] SK하이닉스, 3거래일 연속 약세 후 반등… 주가 6%↑",
+      "source": "전자신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5qaERaUVlnUXd6VXYxVFpkdklPUGNTSm1XUEJzUTFjTjF5cl9EZ1h2dVZpYTJuTURQRmdIMThYMHBybDZHX1FrUWVhdHNuUQ?oc=5",
+      "publishedAt": "Thu, 09 Jul 2026 02:31:46 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[ET특징주] SK하이닉스, 3거래일 연속 약세 후 반등… 주가 6%↑",
+          "source": "전자신문",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5qaERaUVlnUXd6VXYxVFpkdklPUGNTSm1XUEJzUTFjTjF5cl9EZ1h2dVZpYTJuTURQRmdIMThYMHBybDZHX1FrUWVhdHNuUQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "“430만닉스 간다”…SK하닉, 미국 ADR 상장 이후 투자법",
+          "source": "중앙일보",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBtUkhHenhSMTJqOWR5MW5aVzJqdzhnTDBGcjQ3WW04MXhya0tvblI4azlmeWh0OTVrUkNPeGVwdlllU28zUkFHaUkwclgwX2w3TzlkMTZR?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "SK하이닉스, 3일간의 약세 끝내고 반등 성공",
+      "polishedBody": "SK하이닉스가 3거래일 연속 하락세를 보인 뒤 6%대 반등을 기록했습니다. 미국 ADR 상장 이후 투자 전략에 대한 시장의 관심이 주가 회복의 주요 배경으로 작용했습니다. 반등 흐름이 나타나며 투자 심리가 다소 개선된 점은 긍정적인 신호로 해석됩니다. 향후 미국 시장에서의 추가적인 주가 움직임과 수급 변화를 면밀히 관찰할 필요가 있습니다."
+    },
+    {
+      "stockName": "아바텍",
+      "stockCode": "149950",
+      "summary": "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\"",
+      "headline": "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
+      "evidencePoints": [
+        "출처 뉴스핌, 뷰어스 기반 기사 2건",
+        "제목 기준 변동률 단서 -191.9%",
+        "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
+        "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\""
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "neutral",
       "channelCount": 3,
-      "updatedAt": "2026-07-09T02:00:18.581Z",
-      "cycleLabel": "KST_1100",
+      "updatedAt": "2026-07-09T05:05:20.336Z",
+      "cycleLabel": "KST_1400",
       "direction": "neutral",
       "changeRate": null,
-      "latestHeadline": "\"실적보다 구조 변화\" … 증권가, LG전자 목표 주가 줄상향",
-      "source": "뉴데일리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNTVJudGpVUXU4SEpxV3hESXpFVEhZaDJTd3E2MjZDTGM1emFueXExRXhMMENSeUJQc2t5bUViOHg0WU5tcWhCTzd0SFptZE4wc2dHbkh0TFZ5WTZqc21Vd0R6N3ZjWll0ZlloNUctQ1BMcmN0LWxhV3ZQOXR5eDJJWNIBgAFBVV95cUxNTVJudGpVUXU4SEpxV3hESXpFVEhZaDJTd3E2MjZDTGM1emFueXExRXhMMENSeUJQc2t5bUViOHg0WU5tcWhCTzd0SFptZE4wc2dHbkh0TFZ5WTZqc21Vd0R6N3ZjWll0ZlloNUctQ1BMcmN0LWxhV3ZQOXR5eDJJWA?oc=5",
-      "publishedAt": "Thu, 09 Jul 2026 00:33:23 GMT",
+      "latestHeadline": "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1zYXliNjZZQmU0TkdUUlZ6N2JDd29OTlllcjY3ZDA5S1E0cHRJM2VjVFlwOEM2Rng0dVUxMVZGcnlqVzdJS2FXcGtVUGFyWDdlN0JLUlhYOWtEN2pD?oc=5",
+      "publishedAt": "Wed, 08 Jul 2026 23:52:00 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "\"실적보다 구조 변화\" … 증권가, LG전자 목표 주가 줄상향",
-          "source": "뉴데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNTVJudGpVUXU4SEpxV3hESXpFVEhZaDJTd3E2MjZDTGM1emFueXExRXhMMENSeUJQc2t5bUViOHg0WU5tcWhCTzd0SFptZE4wc2dHbkh0TFZ5WTZqc21Vd0R6N3ZjWll0ZlloNUctQ1BMcmN0LWxhV3ZQOXR5eDJJWNIBgAFBVV95cUxNTVJudGpVUXU4SEpxV3hESXpFVEhZaDJTd3E2MjZDTGM1emFueXExRXhMMENSeUJQc2t5bUViOHg0WU5tcWhCTzd0SFptZE4wc2dHbkh0TFZ5WTZqc21Vd0R6N3ZjWll0ZlloNUctQ1BMcmN0LWxhV3ZQOXR5eDJJWA?oc=5"
+          "title": "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1zYXliNjZZQmU0TkdUUlZ6N2JDd29OTlllcjY3ZDA5S1E0cHRJM2VjVFlwOEM2Rng0dVUxMVZGcnlqVzdJS2FXcGtVUGFyWDdlN0JLUlhYOWtEN2pD?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "LG전자 향한 '시선이 달라졌다'…칠러·로봇에 목표가 줄상향",
-          "source": "KB Think",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBDS2Z5eVFaZl9jUURvQk1RVDNYTTl1U1lfMTE4VGE5OXBXMFhaTUJ0cGZ2eGhxVVQ1c3pjamlyRlpBcjYtdjc4dUdySzJ2enpDbGZZUUVheThfNG9fZHpMS1REajNGd2NOa3ktZGVhNU5VZw?oc=5"
+          "title": "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\"",
+          "source": "뷰어스",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1OdkdBbU56WGF0WjJKRlI0azBkNzNLbGl6X1RHaWUzN0hSZU5fSUM1RFRuU0xlNEZsRktVUWwtcEhZb1AwR1lqRVQ5aXVjdFUzMEFDaDNDUTA?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "LG전자, 칠러와 로봇 등 사업 구조 변화에 증권가 목표가 상향",
-      "polishedBody": "LG전자가 단순한 실적을 넘어 사업 구조의 근본적인 변화를 꾀하며 증권가의 긍정적인 평가를 받고 있습니다. 칠러와 로봇 등 신성장 동력에 대한 기대감이 반영되면서 다수의 증권사가 목표 주가를 줄줄이 올리고 있습니다. 미래 성장성을 확보하려는 전략적 행보가 기업 가치 재평가로 이어질 수 있다는 점에서 중립 이상의 평가를 받습니다. 향후 신사업 부문에서 구체적인 매출 성과가 어떻게 나타날지 확인하는 것이 중요합니다."
+      "polishedHeadline": "아바텍, MLCC 슈퍼 사이클 수혜주로 주목",
+      "polishedBody": "아바텍이 MLCC 시장의 슈퍼 사이클을 이끌 숨은 진주로 평가받고 있습니다. 증권가에서는 기업의 성장 잠재력을 높게 평가하며 목표 주가를 16,000원으로 제시했습니다. 산업 전반의 호황이 기업 실적에 직접적인 도움을 줄 것으로 기대되어 중립 이상의 평가를 받습니다. 향후 실제 생산량 확대와 시장 점유율 변화가 주가에 미칠 영향을 확인해야 합니다."
+    },
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "\"40만전자는 힘들다\" \"60만원 간다\"...삼성전자 주가, 엇갈린 전망 - 머니투데이",
+      "headline": "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
+      "evidencePoints": [
+        "출처 YTN, 머니투데이 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
+        "\"40만전자는 힘들다\" \"60만원 간다\"...삼성전자 주가, 엇갈린 전망 - 머니투데이"
+      ],
+      "mentionScore": 82.2,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-07-09T05:05:20.336Z",
+      "cycleLabel": "KST_1400",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
+      "source": "YTN",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9DUnBCNlJZRU5oR2ktT3VyYno0MlduV29CYkZqRDNTblVoZWNmaTJNTXJGdDJoalA4cTZIa2lSVzFnR2tVQnR4VTgybjlnVm1BMGlXdU5aZG1JRUpxOGc?oc=5",
+      "publishedAt": "Wed, 08 Jul 2026 23:19:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
+          "source": "YTN",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9DUnBCNlJZRU5oR2ktT3VyYno0MlduV29CYkZqRDNTblVoZWNmaTJNTXJGdDJoalA4cTZIa2lSVzFnR2tVQnR4VTgybjlnVm1BMGlXdU5aZG1JRUpxOGc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "\"40만전자는 힘들다\" \"60만원 간다\"...삼성전자 주가, 엇갈린 전망 - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5LVWxOUkJtbHRoLW1QQW5Hc254TzFUYmktSlhOOWJMclQ0QTMxc1VNSVNPTmJmZlV4UGtnVTFRMFBfRzRpazhtMERDNkoxOGNJQzZReTlnemFrVzlndkUwVGlKMEJQUVln0gFuQVVfeXFMTk4tV19ucndOR3ZVeWVSWVRMLTZXVWpEX21CLTJRYUF6blVXVmJYSl85bWMtRnFkQ3FWRzlZLTJjSWtTTndMOU95cG05WXZrY0g4djk5VTJvdEJkUFZ6eWdCOVVqLXdja2w2OVUxenc?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자, 메모리 업황 정점 논란 속 주가 전망 엇갈려",
+      "polishedBody": "메모리 반도체 업황이 정점에 도달했다는 공포감이 시장에 확산하고 있습니다. 주가 향방을 두고 40만 원대 하락과 60만 원대 상승이라는 상반된 전망이 팽팽하게 맞서고 있습니다. 반등 시점에 대한 불확실성이 존재하지만 기술적 반등 가능성도 함께 거론되는 상황입니다. 향후 반도체 수요 회복 속도와 시장의 신뢰 회복 여부가 관건이 될 것입니다."
+    },
+    {
+      "stockName": "KB금융",
+      "stockCode": "105560",
+      "summary": "KB금융 주가 상승 중 아시아뉴스통신",
+      "headline": "KB금융 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "KB금융 주가 상승 중"
+      ],
+      "mentionScore": 57.1,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-07-09T05:05:20.336Z",
+      "cycleLabel": "KST_1400",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "KB금융 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kWTVyZ1N4a3FfRTVTbWtXODFKaWp3TEFwRVBMdjgzSENFN25hN3Bjd0JFVWdmallJeHo5RXRUT2dEOFpEc0lHVEs1YnMxQ1QyYWZnVjNtd0lJR3Zf?oc=5",
+      "publishedAt": "Thu, 09 Jul 2026 00:11:51 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "KB금융 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kWTVyZ1N4a3FfRTVTbWtXODFKaWp3TEFwRVBMdjgzSENFN25hN3Bjd0JFVWdmallJeHo5RXRUT2dEOFpEc0lHVEs1YnMxQ1QyYWZnVjNtd0lJR3Zf?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "KB금융, 주가 상승 흐름 지속",
+      "polishedBody": "KB금융의 주가가 최근 시장에서 상승세를 이어가고 있습니다. 전반적인 금융 시장의 분위기와 맞물려 투자자들의 매수세가 유입된 것으로 풀이됩니다. 주가 상승 흐름이 견조하게 유지되고 있다는 점은 투자자들에게 긍정적인 요소로 작용합니다. 향후 금리 환경 변화와 기업의 실적 발표 내용을 지속적으로 확인해야 합니다."
     },
     {
       "stockName": "두산",
@@ -261,47 +378,6 @@
       "hasNews": true,
       "polishedHeadline": "삼양식품, 해외 성장세와 저평가 매력 부각",
       "polishedBody": "삼양식품은 불닭볶음면의 글로벌 인기에 힘입어 견조한 실적 성장세를 이어가고 있습니다. 현재 주가는 우수한 실적 대비 저평가된 상태로 평가받으며 투자자들의 관심을 모으고 있습니다. 해외 시장에서의 매출 확대와 중국 지역의 추가적인 수요 증가가 긍정적인 요인으로 작용합니다. 향후 글로벌 시장 점유율 확대와 실적 개선 흐름이 지속될지 여부를 지켜봐야 합니다."
-    },
-    {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "가온칩스 주가, 웃음꽃... 이유는 삼성전자?",
-      "headline": "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
-      "evidencePoints": [
-        "출처 금강일보, YTN 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "가온칩스 주가, 웃음꽃... 이유는 삼성전자?",
-        "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]"
-      ],
-      "mentionScore": 86.4,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-07-09T02:00:18.581Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
-      "source": "YTN",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5wMjcxc2FxTFg4blBub2pjaFhfaVhKNGltVWpOcHRKWXEyeDMxd29TS3F2WHFmd1hsdGtKYy1XdmZXTjM3dEtEdVRvMzhoeTZzSUV0MVptRV9qQjUwUGd4U2tld2Vvdmp0VWpYZ3RpTQ?oc=5",
-      "publishedAt": "Wed, 08 Jul 2026 23:19:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "가온칩스 주가, 웃음꽃... 이유는 삼성전자?",
-          "source": "금강일보",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5hV0hfTTMtVm1sLUNEdE9Ea0NpOXlhYnZUNkxKRkdnbTZuQkVJVXBFWHk1TWhhQm5nN0Y1YTlKZnFsY3BROXVJRVRWQ2JGYWdiQlJkTUJPV1J0aXZIbVJvS2tDQmppWVR0d0E?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
-          "source": "YTN",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5wMjcxc2FxTFg4blBub2pjaFhfaVhKNGltVWpOcHRKWXEyeDMxd29TS3F2WHFmd1hsdGtKYy1XdmZXTjM3dEtEdVRvMzhoeTZzSUV0MVptRV9qQjUwUGd4U2tld2Vvdmp0VWpYZ3RpTQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전자, 메모리 업황 우려 속 반등 시점 주목",
-      "polishedBody": "삼성전자는 메모리 반도체 시장의 정점 통과에 대한 시장의 우려가 확산하며 주가 변동성을 겪고 있습니다. 업황 둔화 가능성이 제기되면서 투자 심리가 위축된 상황이 이어지고 있습니다. 다만 반도체 생태계 내 관련 기업들의 움직임이 삼성전자의 향후 회복 가능성을 가늠하는 지표로 활용됩니다. 메모리 가격 추이와 반도체 수요의 회복 시점이 주가 반등의 핵심 변수가 될 전망입니다."
     },
     {
       "stockName": "LG이노텍",
@@ -601,81 +677,6 @@
       "polishedBody": "한국항공우주의 주가가 시장의 전반적인 하락 흐름을 따라가며 약세를 보이고 있습니다. 지수 급락에 따른 투자 심리 위축이 방산주 전반의 주가 하락으로 이어지는 양상입니다. 시장의 불확실성이 커지면서 단기적인 매도세가 출현한 점이 주가 하락의 주요 원인으로 분석됩니다. 향후 방산 수출 실적의 가시화와 함께 시장의 하락세를 극복하고 주가가 회복될 수 있을지 지켜봐야 합니다."
     },
     {
-      "stockName": "KB금융",
-      "stockCode": "105560",
-      "summary": "KB금융 주가 상승 중 아시아뉴스통신",
-      "headline": "KB금융 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "KB금융 주가 상승 중"
-      ],
-      "mentionScore": 60.2,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-07-09T02:00:18.581Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "KB금융 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kWTVyZ1N4a3FfRTVTbWtXODFKaWp3TEFwRVBMdjgzSENFN25hN3Bjd0JFVWdmallJeHo5RXRUT2dEOFpEc0lHVEs1YnMxQ1QyYWZnVjNtd0lJR3Zf?oc=5",
-      "publishedAt": "Thu, 09 Jul 2026 00:11:51 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "KB금융 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kWTVyZ1N4a3FfRTVTbWtXODFKaWp3TEFwRVBMdjgzSENFN25hN3Bjd0JFVWdmallJeHo5RXRUT2dEOFpEc0lHVEs1YnMxQ1QyYWZnVjNtd0lJR3Zf?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "KB금융 주가 상승세 지속",
-      "polishedBody": "KB금융의 주가가 시장의 주목을 받으며 오름세를 보이고 있습니다. 최근 금융권 전반의 흐름과 맞물려 투자자들의 매수세가 유입되는 모습입니다. 실적 개선 기대감이 주가 상승의 주요 동력으로 작용하며 긍정적인 평가를 받고 있습니다. 향후 금융 당국의 정책 변화와 금리 환경이 주가에 어떤 영향을 미칠지 지켜봐야 합니다."
-    },
-    {
-      "stockName": "아바텍",
-      "stockCode": "149950",
-      "summary": "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\"",
-      "headline": "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
-      "evidencePoints": [
-        "출처 뉴스핌, 뷰어스 기반 기사 2건",
-        "제목 기준 변동률 단서 -191.9%",
-        "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
-        "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\""
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-07-09T02:00:18.581Z",
-      "cycleLabel": "KST_1100",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1zYXliNjZZQmU0TkdUUlZ6N2JDd29OTlllcjY3ZDA5S1E0cHRJM2VjVFlwOEM2Rng0dVUxMVZGcnlqVzdJS2FXcGtVUGFyWDdlN0JLUlhYOWtEN2pD?oc=5",
-      "publishedAt": "Wed, 08 Jul 2026 23:52:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1zYXliNjZZQmU0TkdUUlZ6N2JDd29OTlllcjY3ZDA5S1E0cHRJM2VjVFlwOEM2Rng0dVUxMVZGcnlqVzdJS2FXcGtVUGFyWDdlN0JLUlhYOWtEN2pD?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\"",
-          "source": "뷰어스",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1OdkdBbU56WGF0WjJKRlI0azBkNzNLbGl6X1RHaWUzN0hSZU5fSUM1RFRuU0xlNEZsRktVUWwtcEhZb1AwR1lqRVQ5aXVjdFUzMEFDaDNDUTA?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "아바텍, MLCC 슈퍼 사이클 수혜 기대",
-      "polishedBody": "아바텍이 MLCC 슈퍼 사이클의 숨은 진주로 주목받으며 증권가의 관심을 끌고 있습니다. 메리츠증권은 해당 기업의 성장 잠재력을 높게 평가하여 목표 주가를 16,000원으로 제시했습니다. 업황 회복에 따른 실적 턴어라운드 가능성이 부각되면서 중립 이상의 기대감이 형성되었습니다. 향후 실제 수주 물량 확대와 시장 점유율 변화가 주가 향방을 결정할 핵심 요소가 될 것입니다."
-    },
-    {
       "stockName": "현대모비스",
       "stockCode": "012330",
       "summary": "현대모비스 주가 상승 중 아시아뉴스통신",
@@ -779,68 +780,155 @@
   ],
   "items": [
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": null,
-      "price": null,
-      "summary": "SK하이닉스 고점 대비 29% 급락…상투 잡힌 개미들 `환불 밈` 봇물",
-      "source": "아시아경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95WGRwdURNaTRyd3FzNy0wa3FTZ1VSRHlrLVg2VmxhSDRfeDh4RVYzS0VuMFFHX01GTm43czRhR1dPQ2E5Ukd6WUs5cGpRcGFLaUxKUGl0ckI5M29HblZ2cA?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 아시아경제, 매일신문 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "시총 1위 찍고 급전직하…SK하이닉스 급락에 '주식 환불' 밈 유행",
-        "SK하이닉스 고점 대비 29% 급락…상투 잡힌 개미들 `환불 밈` 봇물"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "시총 1위 찍고 급전직하…SK하이닉스 급락에 '주식 환불' 밈 유행",
-          "source": "아시아경제",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95WGRwdURNaTRyd3FzNy0wa3FTZ1VSRHlrLVg2VmxhSDRfeDh4RVYzS0VuMFFHX01GTm43czRhR1dPQ2E5Ukd6WUs5cGpRcGFLaUxKUGl0ckI5M29HblZ2cA?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "SK하이닉스 고점 대비 29% 급락…상투 잡힌 개미들 `환불 밈` 봇물",
-          "source": "매일신문",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAxcXAwRGtub1RaOC1BUDdQTDNoWGNZUE83UFl1dkVIMnE4c3ZnUEo1OXo1Z2ZQX1gyamQwWm9jZjJGMVhia1dYUWFsbng1dHBxSHdGMGp3ZmlsQWhaeHh3Xy1R?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "066570",
       "name": "LG전자",
-      "changeRate": null,
+      "changeRate": -42,
       "price": null,
-      "summary": "LG전자 향한 '시선이 달라졌다'…칠러·로봇에 목표가 줄상향",
-      "source": "뉴데일리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNTVJudGpVUXU4SEpxV3hESXpFVEhZaDJTd3E2MjZDTGM1emFueXExRXhMMENSeUJQc2t5bUViOHg0WU5tcWhCTzd0SFptZE4wc2dHbkh0TFZ5WTZqc21Vd0R6N3ZjWll0ZlloNUctQ1BMcmN0LWxhV3ZQOXR5eDJJWNIBgAFBVV95cUxNTVJudGpVUXU4SEpxV3hESXpFVEhZaDJTd3E2MjZDTGM1emFueXExRXhMMENSeUJQc2t5bUViOHg0WU5tcWhCTzd0SFptZE4wc2dHbkh0TFZ5WTZqc21Vd0R6N3ZjWll0ZlloNUctQ1BMcmN0LWxhV3ZQOXR5eDJJWA?oc=5",
+      "summary": "“서프라이즈보다 중요한 구조적 변화” 증권가, LG전자 목표주가 잇따라 상향 - 조선비즈",
+      "source": "매일경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBjMElEUHl6TlVET2o2ZDhkLWc5cEU1N2V2a3dYelB1Zm9yU3BRMEZfemRETVRhc3pBMnNrTWl0MVExWEJSdGJyNHpzeXZsR2JVamc?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 뉴데일리, KB Think 기반 기사 2건",
-        "\"실적보다 구조 변화\" … 증권가, LG전자 목표 주가 줄상향",
-        "LG전자 향한 '시선이 달라졌다'…칠러·로봇에 목표가 줄상향"
+        "출처 Chosunbiz, 매일경제 기반 기사 2건",
+        "제목 기준 변동률 단서 -42.0%",
+        "“서프라이즈보다 중요한 구조적 변화” 증권가, LG전자 목표주가 잇따라 상향 - 조선비즈",
+        "“42% 하락은 기회”…삼성전기·LG전자 쓸어담아 [주식 초고수는 지금]"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "\"실적보다 구조 변화\" … 증권가, LG전자 목표 주가 줄상향",
-          "source": "뉴데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNTVJudGpVUXU4SEpxV3hESXpFVEhZaDJTd3E2MjZDTGM1emFueXExRXhMMENSeUJQc2t5bUViOHg0WU5tcWhCTzd0SFptZE4wc2dHbkh0TFZ5WTZqc21Vd0R6N3ZjWll0ZlloNUctQ1BMcmN0LWxhV3ZQOXR5eDJJWNIBgAFBVV95cUxNTVJudGpVUXU4SEpxV3hESXpFVEhZaDJTd3E2MjZDTGM1emFueXExRXhMMENSeUJQc2t5bUViOHg0WU5tcWhCTzd0SFptZE4wc2dHbkh0TFZ5WTZqc21Vd0R6N3ZjWll0ZlloNUctQ1BMcmN0LWxhV3ZQOXR5eDJJWA?oc=5"
+          "title": "“서프라이즈보다 중요한 구조적 변화” 증권가, LG전자 목표주가 잇따라 상향 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdU1RU1RxLVdEMUQ0azJ1aFN2RU9ZdnoxbmljWTU5bVk2VVRSOEljT1ViZktKRkdnenV3d0NHTGxQTkFQWmlJcGlZQ3Z2ay01OElaYjBaV2VhREdTbGVLaXI5SjB1LS1oSTA3emtEcTZQTUVCXzBzLWFhUGNPQ1JIeXpn0gGWAUFVX3lxTFAxQVYxTUVuTU1XVDltVDdXbHJNaHBiTGJ2b3ZyWFhBdC04NkxCeXpRYWFVQWxmdW00eHkxS1lsMnBxdEYtNU51b0ltTHJkWWloNVFROEN5bzZHUllRNFJWN0xicHdvQmttYnJGWVFWVktuUktibGc1cE92M3hGaElCeFpMRUs3Tk1rN3lFdXg0alpvbktQQQ?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "LG전자 향한 '시선이 달라졌다'…칠러·로봇에 목표가 줄상향",
-          "source": "KB Think",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBDS2Z5eVFaZl9jUURvQk1RVDNYTTl1U1lfMTE4VGE5OXBXMFhaTUJ0cGZ2eGhxVVQ1c3pjamlyRlpBcjYtdjc4dUdySzJ2enpDbGZZUUVheThfNG9fZHpMS1REajNGd2NOa3ktZGVhNU5VZw?oc=5"
+          "title": "“42% 하락은 기회”…삼성전기·LG전자 쓸어담아 [주식 초고수는 지금]",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBjMElEUHl6TlVET2o2ZDhkLWc5cEU1N2V2a3dYelB1Zm9yU3BRMEZfemRETVRhc3pBMnNrTWl0MVExWEJSdGJyNHpzeXZsR2JVamc?oc=5"
         }
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "changeRate": -6,
+      "price": null,
+      "summary": "“430만닉스 간다”…SK하닉, 미국 ADR 상장 이후 투자법",
+      "source": "전자신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5qaERaUVlnUXd6VXYxVFpkdklPUGNTSm1XUEJzUTFjTjF5cl9EZ1h2dVZpYTJuTURQRmdIMThYMHBybDZHX1FrUWVhdHNuUQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 전자신문, 중앙일보 기반 기사 2건",
+        "제목 기준 변동률 단서 -6.0%",
+        "[ET특징주] SK하이닉스, 3거래일 연속 약세 후 반등… 주가 6%↑",
+        "“430만닉스 간다”…SK하닉, 미국 ADR 상장 이후 투자법"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[ET특징주] SK하이닉스, 3거래일 연속 약세 후 반등… 주가 6%↑",
+          "source": "전자신문",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5qaERaUVlnUXd6VXYxVFpkdklPUGNTSm1XUEJzUTFjTjF5cl9EZ1h2dVZpYTJuTURQRmdIMThYMHBybDZHX1FrUWVhdHNuUQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "“430만닉스 간다”…SK하닉, 미국 ADR 상장 이후 투자법",
+          "source": "중앙일보",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBtUkhHenhSMTJqOWR5MW5aVzJqdzhnTDBGcjQ3WW04MXhya0tvblI4azlmeWh0OTVrUkNPeGVwdlllU28zUkFHaUkwclgwX2w3TzlkMTZR?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-09T05:05:20.336Z",
+      "symbol": "149950",
+      "name": "아바텍",
+      "changeRate": null,
+      "price": null,
+      "summary": "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\"",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1zYXliNjZZQmU0TkdUUlZ6N2JDd29OTlllcjY3ZDA5S1E0cHRJM2VjVFlwOEM2Rng0dVUxMVZGcnlqVzdJS2FXcGtVUGFyWDdlN0JLUlhYOWtEN2pD?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌, 뷰어스 기반 기사 2건",
+        "제목 기준 변동률 단서 -191.9%",
+        "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
+        "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1zYXliNjZZQmU0TkdUUlZ6N2JDd29OTlllcjY3ZDA5S1E0cHRJM2VjVFlwOEM2Rng0dVUxMVZGcnlqVzdJS2FXcGtVUGFyWDdlN0JLUlhYOWtEN2pD?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\"",
+          "source": "뷰어스",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1OdkdBbU56WGF0WjJKRlI0azBkNzNLbGl6X1RHaWUzN0hSZU5fSUM1RFRuU0xlNEZsRktVUWwtcEhZb1AwR1lqRVQ5aXVjdFUzMEFDaDNDUTA?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-09T05:05:20.336Z",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "\"40만전자는 힘들다\" \"60만원 간다\"...삼성전자 주가, 엇갈린 전망 - 머니투데이",
+      "source": "YTN",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9DUnBCNlJZRU5oR2ktT3VyYno0MlduV29CYkZqRDNTblVoZWNmaTJNTXJGdDJoalA4cTZIa2lSVzFnR2tVQnR4VTgybjlnVm1BMGlXdU5aZG1JRUpxOGc?oc=5",
+      "mentionScore": 82.2,
+      "evidencePoints": [
+        "출처 YTN, 머니투데이 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
+        "\"40만전자는 힘들다\" \"60만원 간다\"...삼성전자 주가, 엇갈린 전망 - 머니투데이"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
+          "source": "YTN",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9DUnBCNlJZRU5oR2ktT3VyYno0MlduV29CYkZqRDNTblVoZWNmaTJNTXJGdDJoalA4cTZIa2lSVzFnR2tVQnR4VTgybjlnVm1BMGlXdU5aZG1JRUpxOGc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "\"40만전자는 힘들다\" \"60만원 간다\"...삼성전자 주가, 엇갈린 전망 - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5LVWxOUkJtbHRoLW1QQW5Hc254TzFUYmktSlhOOWJMclQ0QTMxc1VNSVNPTmJmZlV4UGtnVTFRMFBfRzRpazhtMERDNkoxOGNJQzZReTlnemFrVzlndkUwVGlKMEJQUVln0gFuQVVfeXFMTk4tV19ucndOR3ZVeWVSWVRMLTZXVWpEX21CLTJRYUF6blVXVmJYSl85bWMtRnFkQ3FWRzlZLTJjSWtTTndMOU95cG05WXZrY0g4djk5VTJvdEJkUFZ6eWdCOVVqLXdja2w2OVUxenc?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-09T05:05:20.336Z",
+      "symbol": "105560",
+      "name": "KB금융",
+      "changeRate": null,
+      "price": null,
+      "summary": "KB금융 주가 상승 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kWTVyZ1N4a3FfRTVTbWtXODFKaWp3TEFwRVBMdjgzSENFN25hN3Bjd0JFVWdmallJeHo5RXRUT2dEOFpEc0lHVEs1YnMxQ1QyYWZnVjNtd0lJR3Zf?oc=5",
+      "mentionScore": 57.1,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "KB금융 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "KB금융 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kWTVyZ1N4a3FfRTVTbWtXODFKaWp3TEFwRVBMdjgzSENFN25hN3Bjd0JFVWdmallJeHo5RXRUT2dEOFpEc0lHVEs1YnMxQ1QyYWZnVjNtd0lJR3Zf?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "000150",
       "name": "두산",
       "changeRate": null,
@@ -877,7 +965,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": 6,
@@ -908,7 +996,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": 5,
@@ -939,7 +1027,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "003230",
       "name": "삼양식품",
       "changeRate": null,
@@ -970,38 +1058,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "가온칩스 주가, 웃음꽃... 이유는 삼성전자?",
-      "source": "YTN",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5wMjcxc2FxTFg4blBub2pjaFhfaVhKNGltVWpOcHRKWXEyeDMxd29TS3F2WHFmd1hsdGtKYy1XdmZXTjM3dEtEdVRvMzhoeTZzSUV0MVptRV9qQjUwUGd4U2tld2Vvdmp0VWpYZ3RpTQ?oc=5",
-      "mentionScore": 86.4,
-      "evidencePoints": [
-        "출처 금강일보, YTN 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "가온칩스 주가, 웃음꽃... 이유는 삼성전자?",
-        "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "가온칩스 주가, 웃음꽃... 이유는 삼성전자?",
-          "source": "금강일보",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5hV0hfTTMtVm1sLUNEdE9Ea0NpOXlhYnZUNkxKRkdnbTZuQkVJVXBFWHk1TWhhQm5nN0Y1YTlKZnFsY3BROXVJRVRWQ2JGYWdiQlJkTUJPV1J0aXZIbVJvS2tDQmppWVR0d0E?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "'메모리 정점' 공포 확산...삼성전자 반등은 언제? [이슈톺]",
-          "source": "YTN",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5wMjcxc2FxTFg4blBub2pjaFhfaVhKNGltVWpOcHRKWXEyeDMxd29TS3F2WHFmd1hsdGtKYy1XdmZXTjM3dEtEdVRvMzhoeTZzSUV0MVptRV9qQjUwUGd4U2tld2Vvdmp0VWpYZ3RpTQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": null,
@@ -1032,7 +1089,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "161890",
       "name": "한국콜마",
       "changeRate": null,
@@ -1062,7 +1119,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "375500",
       "name": "DL이앤씨",
       "changeRate": null,
@@ -1092,7 +1149,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "034020",
       "name": "두산에너빌리티",
       "changeRate": null,
@@ -1123,7 +1180,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "259960",
       "name": "크래프톤",
       "changeRate": null,
@@ -1146,7 +1203,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": null,
@@ -1170,7 +1227,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "247540",
       "name": "에코프로비엠",
       "changeRate": null,
@@ -1194,7 +1251,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "047810",
       "name": "한국항공우주",
       "changeRate": null,
@@ -1218,62 +1275,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
-      "symbol": "105560",
-      "name": "KB금융",
-      "changeRate": null,
-      "price": null,
-      "summary": "KB금융 주가 상승 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kWTVyZ1N4a3FfRTVTbWtXODFKaWp3TEFwRVBMdjgzSENFN25hN3Bjd0JFVWdmallJeHo5RXRUT2dEOFpEc0lHVEs1YnMxQ1QyYWZnVjNtd0lJR3Zf?oc=5",
-      "mentionScore": 60.2,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "KB금융 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "KB금융 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kWTVyZ1N4a3FfRTVTbWtXODFKaWp3TEFwRVBMdjgzSENFN25hN3Bjd0JFVWdmallJeHo5RXRUT2dEOFpEc0lHVEs1YnMxQ1QyYWZnVjNtd0lJR3Zf?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-09T02:00:18.581Z",
-      "symbol": "149950",
-      "name": "아바텍",
-      "changeRate": null,
-      "price": null,
-      "summary": "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\"",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1zYXliNjZZQmU0TkdUUlZ6N2JDd29OTlllcjY3ZDA5S1E0cHRJM2VjVFlwOEM2Rng0dVUxMVZGcnlqVzdJS2FXcGtVUGFyWDdlN0JLUlhYOWtEN2pD?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 뉴스핌, 뷰어스 기반 기사 2건",
-        "제목 기준 변동률 단서 -191.9%",
-        "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
-        "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[리포트 브리핑]아바텍, 'MLCC Super Cycle의 숨은 진주' 목표가 16,000원 - 메리츠증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1zYXliNjZZQmU0TkdUUlZ6N2JDd29OTlllcjY3ZDA5S1E0cHRJM2VjVFlwOEM2Rng0dVUxMVZGcnlqVzdJS2FXcGtVUGFyWDdlN0JLUlhYOWtEN2pD?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[애널픽] \"아바텍, MLCC 슈퍼 사이클의 숨은 진주\"",
-          "source": "뷰어스",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1OdkdBbU56WGF0WjJKRlI0azBkNzNLbGl6X1RHaWUzN0hSZU5fSUM1RFRuU0xlNEZsRktVUWwtcEhZb1AwR1lqRVQ5aXVjdFUzMEFDaDNDUTA?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "012330",
       "name": "현대모비스",
       "changeRate": null,
@@ -1297,7 +1299,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "267260",
       "name": "HD현대일렉트릭",
       "changeRate": null,
@@ -1321,7 +1323,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-09T02:00:18.581Z",
+      "timestamp": "2026-07-09T05:05:20.336Z",
       "symbol": "171090",
       "name": "선익시스템",
       "changeRate": null,
