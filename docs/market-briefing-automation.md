@@ -100,7 +100,7 @@ Cloud Scheduler는 Cloud Run relay를 호출하고, relay가 GitHub `workflow_di
 - `KRX_ID`
 - `KRX_PW`
 
-`KRX_ID`, `KRX_PW`는 `pykrx`가 KRX 로그인 세션을 요구하는 경우를 대비해 workflow env로 전달한다. 수급 수집이 실패해도 전체 발행은 실패시키지 않고 `unavailable` 또는 뉴스 기반 보조 근거로 진행한다.
+`KRX_ID`, `KRX_PW`는 `pykrx`가 KRX 로그인 세션을 요구하는 경우를 대비해 workflow env로 전달한다. 수급 수집이 실패해도 전체 발행은 실패시키지 않는다. 장시작은 뉴스 기반 관전 포인트를 사용할 수 있지만, 장마감은 당일 정형 수급이 완전하지 않으면 수급 섹션을 생략한다.
 
 ## 데이터 수집 구조
 
@@ -131,11 +131,11 @@ Cloud Scheduler는 Cloud Run relay를 호출하고, relay가 GitHub `workflow_di
 - KOSPI/KOSDAQ 최근 14일 안에서 실제 데이터가 있는 최신 거래일을 찾는다.
 - 외국인, 기관, 개인, 금융투자, 투신, 연기금 등 세부 수급을 JSON으로 반환한다.
 
-2차:
+2차(장시작 관전 포인트 전용):
 
 - `investorFlowNewsCandidates`
 - Google News RSS 기반 수급 뉴스 후보.
-- 정형 KRX 수급이 실패하면 LLM이 보도 기반으로 외국인/기관 흐름을 작성한다.
+- 정형 KRX 수급이 실패하면 장시작 브리핑에 한해 LLM이 보도 기반 관전 포인트를 작성한다.
 
 주의:
 
@@ -143,6 +143,8 @@ Cloud Scheduler는 Cloud Run relay를 호출하고, relay가 GitHub `workflow_di
 - 뉴스 기반 수급일 때는 정확한 순매수 금액을 만들지 않는다.
 - 프롬프트에서 `뉴스 기준`, `보도 기준` 같은 메타 표현은 금지하고 확인된 흐름만 자연스럽게 서술하도록 제한한다.
 - 장마감 투자자별 수급은 당일 정형 수급만 사용한다. 정형 수급이 unavailable이면 전일/과거 뉴스 후보를 현재 장마감 수급처럼 대체하지 않는다.
+- 장마감 수급 섹션은 오늘 날짜의 KOSPI·KOSDAQ 정형 수급에 외국인·기관·개인 순매수 거래대금이 모두 있을 때만 렌더링한다.
+- 위 계약이 충족되지 않으면 모델이 어떤 문구를 생성했든 `investorFlows`를 폐기하고 공개 HTML에서 수급 섹션 자체를 생략한다. 미확정·집계 중·수집 실패 같은 내부 데이터 상태를 사용자 문장으로 대체하지 않는다.
 
 ### 기업 공시
 

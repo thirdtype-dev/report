@@ -74,7 +74,6 @@ test('market briefing preserves the existing complete session when a rerun loses
 
   assert.equal(plan.action, 'preserve_existing');
   assert.deepEqual(plan.issues, [
-    'investor_flow_source_unavailable',
     'sector_theme_source_unavailable',
     'notable_stock_source_unavailable'
   ]);
@@ -237,7 +236,7 @@ test('post-market briefing fails when split investor flow sentences describe the
   );
 });
 
-test('post-market briefing replaces LLM investor flow copy when structured flows are unavailable', async () => {
+test('post-market briefing omits the investor-flow section when current structured flows are unavailable', async () => {
   const module = await importBriefingModule();
   const marketResearch = {
     investorFlows: {
@@ -271,7 +270,7 @@ test('post-market briefing replaces LLM investor flow copy when structured flows
   const prepared = module.__testPrepareReportForPublish(marketResearch, report);
 
   assert.equal(JSON.stringify(prepared).includes('전일'), false);
-  assert.equal(prepared.investorFlows.foreign, 'KRX 정형 수급 공개가 아직 완료되지 않아 외국인 당일 순매수/순매도 금액은 확정 전입니다.');
+  assert.equal(prepared.investorFlows, null);
   assert.equal(
     module.__testResolveBriefingPublishPlan({
       marketResearch,
@@ -279,6 +278,105 @@ test('post-market briefing replaces LLM investor flow copy when structured flows
       existingHtml: ''
     }).action,
     'publish_new'
+  );
+  const rendered = module.__testRenderPostMarketReport(prepared);
+  assert.equal(rendered.includes('투자자별 수급 동향'), false);
+  assert.equal(rendered.includes('확정 전'), false);
+  assert.match(rendered, /<h2>② 업종별\/테마별 흐름<\/h2>/);
+});
+
+test('post-market briefing omits model copy when structured flows are stale or incomplete', async () => {
+  const module = await importBriefingModule();
+  const report = {
+    investorFlows: {
+      foreign: '외국인은 순매수했습니다.',
+      institution: '기관은 순매도했습니다.',
+      retail: '개인은 순매도했습니다.'
+    }
+  };
+  const staleResearch = {
+    investorFlows: {
+      status: 'ok',
+      markets: [
+        { market: 'KOSPI', latestDate: '2026-01-01', netBuy: { foreign: 1, institution: -1, retail: -1 } },
+        { market: 'KOSDAQ', latestDate: '2026-01-01', netBuy: { foreign: 1, institution: -1, retail: -1 } }
+      ]
+    }
+  };
+  const partialResearch = {
+    investorFlows: {
+      status: 'partial',
+      markets: [
+        { market: 'KOSPI', latestDate: currentDateKey(), netBuy: { foreign: 1, institution: -1, retail: -1 } }
+      ]
+    }
+  };
+
+  assert.equal(module.__testPrepareReportForPublish(staleResearch, report).investorFlows, null);
+  assert.equal(module.__testPrepareReportForPublish(partialResearch, report).investorFlows, null);
+});
+
+test('post-market briefing keeps investor-flow copy only with complete current KOSPI and KOSDAQ values', async () => {
+  const module = await importBriefingModule();
+  const marketResearch = {
+    investorFlows: {
+      status: 'ok',
+      markets: [
+        { market: 'KOSPI', latestDate: currentDateKey(), netBuy: { foreign: 1, institution: -1, retail: -1 } },
+        { market: 'KOSDAQ', latestDate: currentDateKey(), netBuy: { foreign: 2, institution: -2, retail: 0 } }
+      ]
+    }
+  };
+  const report = {
+    investorFlows: {
+      foreign: '외국인은 양 시장 합산 순매수했습니다.',
+      institution: '기관은 양 시장 합산 순매도했습니다.',
+      retail: '개인은 혼조를 보였습니다.'
+    }
+  };
+
+  const prepared = module.__testPrepareReportForPublish(marketResearch, report);
+
+  assert.deepEqual(prepared.investorFlows, report.investorFlows);
+  assert.equal(module.__testHasCurrentPostMarketInvestorFlows(marketResearch.investorFlows), true);
+  assert.match(module.__testRenderPostMarketReport({
+    ...prepared,
+    marketSummary: {},
+    sectorThemes: {},
+    notableStocks: { surging: [], plunging: [] },
+    tomorrowStrategy: { checklist: [] }
+  }), /투자자별 수급 동향/);
+});
+
+test('post-market quality gate rejects unavailable-flow prose regardless of exact wording', async () => {
+  const module = await importBriefingModule();
+  const marketResearch = {
+    investorFlows: { status: 'unavailable', markets: [] },
+    investorFlowNewsCandidates: [{ title: '당일 수급 기사', summary: '수급 기사입니다.' }],
+    sectorThemeNewsCandidates: [{ title: '반도체 강세', summary: '반도체 업종이 강세였습니다.' }],
+    stockNewsCandidates: [
+      { title: 'A 상승', summary: 'A가 상승했습니다.' },
+      { title: 'B 하락', summary: 'B가 하락했습니다.' }
+    ]
+  };
+
+  assert.throws(
+    () => module.__testResolveBriefingPublishPlan({
+      marketResearch,
+      report: {
+        marketSummary: { summary: '증시가 상승했습니다.' },
+        investorFlows: {
+          foreign: '외국인 수급은 아직 공개 대기 상태입니다.',
+          institution: '기관 수급은 집계 중입니다.',
+          retail: '개인 수급은 미확정입니다.'
+        },
+        sectorThemes: { strong: '반도체 강세', weak: '일부 약세' },
+        notableStocks: { surging: ['A', 'C'], plunging: ['B', 'D'] },
+        tomorrowStrategy: { outlook: '변동성을 확인합니다.', checklist: ['수급', '환율', '미국 증시'] }
+      },
+      existingHtml: ''
+    }),
+    /briefing_quality_gate_failed:.*unavailable_investor_flow_copy.*unverified_investor_flow_copy/
   );
 });
 

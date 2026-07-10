@@ -545,6 +545,7 @@ function sanitizeBriefingCopy(value) {
 
 const PLACEHOLDER_COPY_RE = /(수집되지 않았습니다|뉴스 수집 실패|fetch_failed_\d+|재분류해야 합니다|확인되지 않았습니다|확인 불가)/u;
 const STALE_INVESTOR_FLOW_COPY_RE = /(?:전일(?:에는|의)?|전\s*거래일|이전\s*거래일|지난\s*거래일)[^.!?。]*(?:순매수|순매도|매도|매수)|(?:외국인|기관|개인)[^.!?。]*(?:전일(?:에는|의)?|전\s*거래일|이전\s*거래일|지난\s*거래일)[^.!?。]*(?:순매수|순매도|매도|매수)/u;
+const UNAVAILABLE_INVESTOR_FLOW_COPY_RE = /(?:정형\s*수급|투자자별\s*수급)[^.!?。]*(?:완료되지|확정\s*전|미확정|수집\s*(?:중|전|불가|실패)|공개\s*(?:전|대기))|(?:외국인|기관|개인)[^.!?。]*(?:확정\s*전|미확정|수집\s*(?:중|전|불가|실패)|공개\s*(?:전|대기))/u;
 
 function candidateLooksUnavailable(item) {
   const text = `${item?.title ?? ''} ${item?.summary ?? ''}`;
@@ -568,11 +569,40 @@ function reportContainsStaleInvestorFlowCopy(report) {
   return STALE_INVESTOR_FLOW_COPY_RE.test(JSON.stringify(targets ?? {}));
 }
 
+function reportContainsUnavailableInvestorFlowCopy(report) {
+  if (PHASE !== 'post_market') {
+    return false;
+  }
+  return UNAVAILABLE_INVESTOR_FLOW_COPY_RE.test(JSON.stringify(report?.investorFlows ?? {}));
+}
+
 function articleContainsStaleInvestorFlowCopy(article) {
   if (PHASE !== 'post_market') {
     return false;
   }
   return STALE_INVESTOR_FLOW_COPY_RE.test(String(article ?? ''));
+}
+
+function articleContainsUnavailableInvestorFlowCopy(article) {
+  if (PHASE !== 'post_market') {
+    return false;
+  }
+  return UNAVAILABLE_INVESTOR_FLOW_COPY_RE.test(String(article ?? ''));
+}
+
+function hasCurrentPostMarketInvestorFlows(investorFlows) {
+  if (PHASE !== 'post_market' || !isInvestorFlowsAvailable(investorFlows)) {
+    return false;
+  }
+
+  const requiredMarkets = new Map(
+    investorFlows.markets.map((market) => [String(market?.market ?? '').toUpperCase(), market])
+  );
+  return ['KOSPI', 'KOSDAQ'].every((marketName) => {
+    const market = requiredMarkets.get(marketName);
+    return market?.latestDate === dateKey()
+      && ['foreign', 'institution', 'retail'].every((key) => Number.isFinite(market?.netBuy?.[key]));
+  });
 }
 
 function briefingQualityIssues(marketResearch, report) {
@@ -586,10 +616,24 @@ function briefingQualityIssues(marketResearch, report) {
     issues.push('stale_investor_flow_copy');
   }
 
-  const investorFlowUsable = isInvestorFlowsAvailable(marketResearch?.investorFlows)
-    || hasUsableCandidates(marketResearch?.investorFlowNewsCandidates);
-  if (!investorFlowUsable) {
-    issues.push('investor_flow_source_unavailable');
+  if (reportContainsUnavailableInvestorFlowCopy(report)) {
+    issues.push('unavailable_investor_flow_copy');
+  }
+
+  if (PHASE === 'post_market') {
+    const currentStructuredFlows = hasCurrentPostMarketInvestorFlows(marketResearch?.investorFlows);
+    if (!currentStructuredFlows && report?.investorFlows != null) {
+      issues.push('unverified_investor_flow_copy');
+    }
+    if (currentStructuredFlows && report?.investorFlows == null) {
+      issues.push('investor_flow_copy_missing');
+    }
+  } else {
+    const investorFlowUsable = isInvestorFlowsAvailable(marketResearch?.investorFlows)
+      || hasUsableCandidates(marketResearch?.investorFlowNewsCandidates);
+    if (!investorFlowUsable) {
+      issues.push('investor_flow_source_unavailable');
+    }
   }
 
   const sectorThemeUsable = hasUsableCandidates(marketResearch?.sectorThemeNewsCandidates)
@@ -628,6 +672,7 @@ function hasCurrentCompleteReport(existingHtml) {
     markers.every((marker) => article.includes(marker))
     && !PLACEHOLDER_COPY_RE.test(article)
     && !articleContainsStaleInvestorFlowCopy(article)
+    && !articleContainsUnavailableInvestorFlowCopy(article)
   ));
 }
 
@@ -644,20 +689,12 @@ function resolveBriefingPublishPlan({ marketResearch, report, existingHtml }) {
   throw new Error(`briefing_quality_gate_failed:${issues.join(',')}`);
 }
 
-function unavailablePostMarketInvestorFlows() {
-  return {
-    foreign: 'KRX 정형 수급 공개가 아직 완료되지 않아 외국인 당일 순매수/순매도 금액은 확정 전입니다.',
-    institution: 'KRX 정형 수급 공개가 아직 완료되지 않아 기관 당일 순매수/순매도 금액은 확정 전입니다.',
-    retail: 'KRX 정형 수급 공개가 아직 완료되지 않아 개인 당일 순매수/순매도 금액은 확정 전입니다.'
-  };
-}
-
 function prepareReportForPublish(marketResearch, report) {
   const prepared = sanitizeBriefingCopy(report);
-  if (PHASE === 'post_market' && !isInvestorFlowsAvailable(marketResearch?.investorFlows)) {
+  if (PHASE === 'post_market' && !hasCurrentPostMarketInvestorFlows(marketResearch?.investorFlows)) {
     return {
       ...prepared,
-      investorFlows: unavailablePostMarketInvestorFlows()
+      investorFlows: null
     };
   }
   return prepared;
@@ -1498,29 +1535,37 @@ function renderPostMarketReport(report) {
     ? report.notableStocks.plunging.join(' / ')
     : '특징주 뉴스 후보에서 하락 종목을 재분류해야 합니다.';
 
+  const hasInvestorFlows = report.investorFlows != null;
+  const investorFlowSection = hasInvestorFlows
+    ? `<h2>② 투자자별 수급 동향</h2>
+${labeledList([
+  ['외국인', report.investorFlows?.foreign],
+  ['기관', report.investorFlows?.institution],
+  ['개인', report.investorFlows?.retail]
+])}
+`
+    : '';
+  const sectorNumber = hasInvestorFlows ? '③' : '②';
+  const stocksNumber = hasInvestorFlows ? '④' : '③';
+  const strategyNumber = hasInvestorFlows ? '⑤' : '④';
+
   return `<h2>① 시장 총평</h2>
 ${labeledList([
   ['KOSPI', report.marketSummary?.kospi],
   ['KOSDAQ', report.marketSummary?.kosdaq],
   ['요약', report.marketSummary?.summary]
 ])}
-<h2>② 투자자별 수급 동향</h2>
-${labeledList([
-  ['외국인', report.investorFlows?.foreign],
-  ['기관', report.investorFlows?.institution],
-  ['개인', report.investorFlows?.retail]
-])}
-<h2>③ 업종별/테마별 흐름</h2>
+${investorFlowSection}<h2>${sectorNumber} 업종별/테마별 흐름</h2>
 ${labeledList([
   ['✅ 강세 업종', report.sectorThemes?.strong],
   ['❌ 약세 업종', report.sectorThemes?.weak]
 ])}
-<h2>④ 주요 특징주</h2>
+<h2>${stocksNumber} 주요 특징주</h2>
 ${labeledList([
   ['급등 종목', surging],
   ['급락 종목', plunging]
 ])}
-<h2>⑤ 내일의 투자 전략</h2>
+<h2>${strategyNumber} 내일의 투자 전략</h2>
 ${labeledList([
   ['시장 전망', report.tomorrowStrategy?.outlook],
   ['체크리스트', (report.tomorrowStrategy?.checklist ?? []).join(' / ')]
@@ -1722,3 +1767,5 @@ main().catch((error) => {
 export const __testResolveBriefingPublishPlan = resolveBriefingPublishPlan;
 export const __testSanitizeBriefingCopy = sanitizeBriefingCopy;
 export const __testPrepareReportForPublish = prepareReportForPublish;
+export const __testRenderPostMarketReport = renderPostMarketReport;
+export const __testHasCurrentPostMarketInvestorFlows = hasCurrentPostMarketInvestorFlows;
