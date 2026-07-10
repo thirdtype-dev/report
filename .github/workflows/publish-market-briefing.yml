@@ -39,7 +39,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install authenticated KRX fallback
+      - name: Install primary authenticated KRX collector
         env:
           KRX_ID: ${{ secrets.KRX_ID }}
           KRX_PW: ${{ secrets.KRX_PW }}
@@ -47,7 +47,7 @@ jobs:
           if [ -n "$KRX_ID" ] && [ -n "$KRX_PW" ]; then
             python -m pip install --upgrade pykrx==1.2.8
           else
-            echo "Skipping optional pykrx install; NAVER Finance/KRX is the primary investor-flow source."
+            echo "KRX credentials unavailable; NAVER Finance/KRX fallback will be used."
           fi
 
       - name: Evaluate KRX trading day

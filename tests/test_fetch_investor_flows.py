@@ -1,9 +1,12 @@
 import importlib.util
+import io
+import json
 import os
 import unittest
+from contextlib import redirect_stdout
 from datetime import date
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 
 SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "fetch_investor_flows.py"
@@ -90,6 +93,59 @@ class InvestorFlowParserTest(unittest.TestCase):
         with patch.dict(os.environ, {}, clear=True):
             with self.assertRaisesRegex(RuntimeError, "missing_krx_credentials"):
                 MODULE.load_pykrx_stock()
+
+    def test_main_uses_authenticated_krx_before_naver(self):
+        stock = object()
+
+        def krx_market(_stock, market, _today):
+            return {
+                "market": market,
+                "latestDate": "2026-07-10",
+                "netBuy": {"foreign": -1, "institution": 2, "retail": -1},
+                "source": "pykrx/KRX",
+                "sourceUrl": "https://data.krx.co.kr/",
+            }
+
+        naver_market = Mock(side_effect=AssertionError("NAVER fallback must not run after KRX success"))
+        output = io.StringIO()
+        with (
+            patch.object(MODULE, "load_pykrx_stock", return_value=stock),
+            patch.object(MODULE, "fetch_market", side_effect=krx_market) as fetch_krx,
+            patch.object(MODULE, "fetch_naver_market", naver_market),
+            redirect_stdout(output),
+        ):
+            self.assertEqual(MODULE.main(), 0)
+
+        payload = json.loads(output.getvalue())
+        self.assertEqual(fetch_krx.call_count, 2)
+        naver_market.assert_not_called()
+        self.assertEqual(payload["source"], "pykrx/KRX")
+
+    def test_main_uses_naver_only_after_krx_market_failure(self):
+        stock = object()
+
+        def naver_market(market, _today):
+            return {
+                "market": market,
+                "latestDate": "2026-07-10",
+                "netBuy": {"foreign": -1, "institution": 2, "retail": -1},
+                "source": "NAVER Finance/KRX",
+                "sourceUrl": "https://finance.naver.com/",
+            }
+
+        output = io.StringIO()
+        with (
+            patch.object(MODULE, "load_pykrx_stock", return_value=stock),
+            patch.object(MODULE, "fetch_market", side_effect=RuntimeError("krx_failed")) as fetch_krx,
+            patch.object(MODULE, "fetch_naver_market", side_effect=naver_market) as fetch_naver,
+            redirect_stdout(output),
+        ):
+            self.assertEqual(MODULE.main(), 0)
+
+        payload = json.loads(output.getvalue())
+        self.assertEqual(fetch_krx.call_count, 2)
+        self.assertEqual(fetch_naver.call_count, 2)
+        self.assertEqual(payload["source"], "NAVER Finance/KRX")
 
 
 if __name__ == "__main__":

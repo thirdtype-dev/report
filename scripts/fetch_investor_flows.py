@@ -3,7 +3,7 @@ import io
 import json
 import math
 import os
-from contextlib import redirect_stdout
+from contextlib import redirect_stderr, redirect_stdout
 from datetime import datetime, timedelta
 from html.parser import HTMLParser
 from urllib.parse import urlencode
@@ -280,26 +280,26 @@ def main():
     stock = None
     pykrx_load_error = None
 
-    for market in MARKETS:
-        naver_error = None
-        try:
-            markets.append(fetch_naver_market(market, today))
-            continue
-        except Exception as error:
-            naver_error = error
+    try:
+        stock = load_pykrx_stock()
+    except Exception as error:
+        pykrx_load_error = error
 
+    for market in MARKETS:
+        pykrx_error = None
         try:
-            if stock is None and pykrx_load_error is None:
-                try:
-                    stock = load_pykrx_stock()
-                except Exception as error:
-                    pykrx_load_error = error
             if stock is None:
                 raise pykrx_load_error or RuntimeError("pykrx_unavailable")
-            with redirect_stdout(io.StringIO()):
+            with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
                 markets.append(fetch_market(stock, market, today))
-        except Exception as pykrx_error:
-            errors[market] = f"naver:{naver_error}; pykrx:{pykrx_error}"
+            continue
+        except Exception as error:
+            pykrx_error = error
+
+        try:
+            markets.append(fetch_naver_market(market, today))
+        except Exception as naver_error:
+            errors[market] = f"pykrx:{pykrx_error}; naver:{naver_error}"
 
     status = "ok" if len(markets) == len(MARKETS) else "partial" if markets else "unavailable"
     reason = None if status == "ok" else "; ".join(f"{market}:{error}" for market, error in errors.items()) or "no_market_data"
@@ -310,7 +310,7 @@ def main():
             {
                 "status": status,
                 "generatedAt": now_kst().isoformat(),
-                "source": " + ".join(sources) if sources else "NAVER Finance/KRX + pykrx/KRX",
+                "source": " + ".join(sources) if sources else "pykrx/KRX + NAVER Finance/KRX",
                 "sourceUrls": source_urls,
                 "collectionWindow": {
                     "lookbackDays": LOOKBACK_DAYS,

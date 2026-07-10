@@ -18,14 +18,14 @@
 
 - `.github/workflows/publish-market-briefing.yml`
   - 외부 scheduler가 `workflow_dispatch`로 호출하는 브리핑 발행 워크플로.
-  - Node 22, Python 3.12로 생성기를 실행한다. KRX 자격증명이 있을 때만 보조 경로용 `pykrx==1.2.8`을 설치한다.
+  - Node 22, Python 3.12로 생성기를 실행한다. KRX 자격증명이 있을 때 직접 수집용 `pykrx==1.2.8`을 설치한다.
 - `.github/workflows/publish-realtime-surge.yml`
   - 외부 scheduler가 `workflow_dispatch`로 호출하는 실시간급등 슬롯 발행 워크플로.
   - `slot_hour` 입력을 받아 `slot-adapter.json`과 `realtime-surge.json`을 갱신한다.
 - `scripts/generate-market-briefing.mjs`
   - 데이터 수집, LLM 호출, HTML 생성의 핵심 스크립트.
 - `scripts/fetch_investor_flows.py`
-  - 네이버 금융의 KRX 재배포 표를 1차로, 인증된 `pykrx/KRX`를 2차로 사용하는 투자자별 수급 수집 헬퍼.
+  - 인증된 `pykrx/KRX`를 1차로, 네이버 금융의 KRX 재배포 표를 2차로 사용하는 투자자별 수급 수집 헬퍼.
 - `scripts/krx-business-day.mjs`
   - KST 기준 KRX 거래일 여부를 판정하는 휴장일 게이트.
 - `index.html`
@@ -98,12 +98,12 @@ Cloud Scheduler는 Cloud Run relay를 호출하고, relay가 GitHub `workflow_di
 - `OPENROUTER_API_KEY`
 - `GEMINI_API_KEY`
 
-선택 secrets(인증된 KRX 보조 경로):
+필수 secrets(인증된 KRX 1차 경로):
 
 - `KRX_ID`
 - `KRX_PW`
 
-`KRX_ID`, `KRX_PW`는 pykrx/KRX 보조 경로에만 사용한다. 기본 경로는 자격증명 없이 공개되는 네이버 금융 `investorDealTrendDay`의 KRX 제공 표다. 수급 수집이 실패해도 전체 발행은 실패시키지 않는다. 장시작은 뉴스 기반 관전 포인트를 사용할 수 있지만, 장마감은 당일 정형 수급이 완전하지 않으면 수급 섹션을 생략한다.
+`KRX_ID`, `KRX_PW`는 pykrx/KRX 1차 경로에 사용한다. 직접 KRX 호출이 실패할 때만 자격증명 없이 공개되는 네이버 금융 `investorDealTrendDay`의 KRX 제공 표로 폴백한다. 수급 수집이 실패해도 전체 발행은 실패시키지 않는다. 장시작은 뉴스 기반 관전 포인트를 사용할 수 있지만, 장마감은 당일 정형 수급이 완전하지 않으면 수급 섹션을 생략한다.
 
 ## 데이터 수집 구조
 
@@ -348,7 +348,7 @@ REPORT_LLM_MOCK=1 BRIEFING_PHASE=post_market PRESERVE_EXISTING_REPORTS=0 INVESTO
 
 - `pykrx`는 실용적이지만 KRX 페이지 구조/인증 정책 변경에 취약하다.
 - pykrx 1.2.8은 `KRX_ID`와 `KRX_PW`가 없으면 로그인 세션을 만들지 못하며, 하위 빈-DataFrame 처리기가 인증 오류를 데이터 없음처럼 보이게 할 수 있다.
-- 네이버 금융 KRX 표가 정상일 때는 pykrx를 import하지 않는다. 네이버 경로가 실패하고 KRX 자격증명이 있을 때만 pykrx를 보조 호출한다.
+- KRX 자격증명이 있으면 pykrx/KRX를 항상 먼저 호출한다. 시장별 직접 KRX 호출이 실패할 때만 네이버 금융 KRX 표를 보조 호출한다.
 - 최근 14일 안에 수급 데이터가 없으면 오래된 데이터를 사용하지 않는다.
 
 ### LLM 쿼터
