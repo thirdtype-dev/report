@@ -348,6 +348,40 @@ test('post-market briefing keeps investor-flow copy only with complete current K
   }), /투자자별 수급 동향/);
 });
 
+test('writer quality validation routes placeholder copy to fallback before publish planning', async () => {
+  const module = await importBriefingModule();
+  const marketResearch = {
+    investorFlows: {
+      status: 'ok',
+      markets: [
+        { market: 'KOSPI', latestDate: currentDateKey(), netBuy: { foreign: -322600000000, institution: 1131400000000, retail: -772300000000 } },
+        { market: 'KOSDAQ', latestDate: currentDateKey(), netBuy: { foreign: -160100000000, institution: 582500000000, retail: -424500000000 } }
+      ]
+    }
+  };
+
+  assert.throws(
+    () => module.__testPrepareAndValidateWriterReport(marketResearch, {
+      investorFlows: {
+        foreign: '외국인 수급 데이터는 수집되지 않았습니다.',
+        institution: '기관 수급 데이터는 수집되지 않았습니다.',
+        retail: '개인 수급 데이터는 수집되지 않았습니다.'
+      }
+    }),
+    /briefing_writer_quality_failed:placeholder_copy/
+  );
+
+  const accepted = module.__testPrepareAndValidateWriterReport(marketResearch, {
+    investorFlows: {
+      foreign: '외국인은 KOSPI 3,226억원, KOSDAQ 1,601억원 순매도했습니다.',
+      institution: '기관은 KOSPI 1조1,314억원, KOSDAQ 5,825억원 순매수했습니다.',
+      retail: '개인은 KOSPI 7,723억원, KOSDAQ 4,245억원 순매도했습니다.'
+    }
+  });
+
+  assert.match(accepted.investorFlows.foreign, /KOSPI 3,226억원/);
+});
+
 test('post-market quality gate rejects unavailable-flow prose regardless of exact wording', async () => {
   const module = await importBriefingModule();
   const marketResearch = {

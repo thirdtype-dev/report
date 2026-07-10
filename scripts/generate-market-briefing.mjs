@@ -700,6 +700,27 @@ function prepareReportForPublish(marketResearch, report) {
   return prepared;
 }
 
+const WRITER_FALLBACK_QUALITY_ISSUES = new Set([
+  'placeholder_copy',
+  'stale_investor_flow_copy',
+  'unavailable_investor_flow_copy',
+  'unverified_investor_flow_copy',
+  'investor_flow_copy_missing'
+]);
+
+function prepareAndValidateWriterReport(marketResearch, report) {
+  const prepared = prepareReportForPublish(marketResearch, report);
+  const issues = briefingQualityIssues(marketResearch, prepared)
+    .filter((issue) => WRITER_FALLBACK_QUALITY_ISSUES.has(issue));
+  if (issues.length > 0) {
+    const error = new Error(`briefing_writer_quality_failed:${issues.join(',')}`);
+    error.code = 'briefing_writer_quality_failed';
+    error.qualityIssues = issues;
+    throw error;
+  }
+  return prepared;
+}
+
 function reportSchema() {
   if (PHASE === 'post_market') {
     return {
@@ -1440,12 +1461,17 @@ async function writeReportWithFallback(marketResearch) {
 
   const prompt = buildPrompt(marketResearch);
   try {
+    const primaryReport = await withLlmRetry(ANALYST_PROVIDER, () => callPrimaryWriter(prompt));
     return {
-      report: await withLlmRetry(ANALYST_PROVIDER, () => callPrimaryWriter(prompt)),
+      report: prepareAndValidateWriterReport(marketResearch, primaryReport),
       writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
     };
   } catch (error) {
-    const fallbackReason = isQuotaError(error) ? 'primary_quota_exceeded' : 'primary_failed';
+    const fallbackReason = error?.code === 'briefing_writer_quality_failed'
+      ? 'primary_quality_failed'
+      : isQuotaError(error)
+        ? 'primary_quota_exceeded'
+        : 'primary_failed';
     console.warn('[market-briefing] primary writer failed; retrying fallback', {
       provider: ANALYST_PROVIDER,
       model: ANALYST_MODEL,
@@ -1453,8 +1479,9 @@ async function writeReportWithFallback(marketResearch) {
       error: error.message
     });
 
+    const fallbackReport = await withLlmRetry(`${FALLBACK_PROVIDER}-fallback`, () => callFallbackWriter(prompt));
     return {
-      report: await withLlmRetry(`${FALLBACK_PROVIDER}-fallback`, () => callFallbackWriter(prompt)),
+      report: prepareAndValidateWriterReport(marketResearch, fallbackReport),
       writer: { provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason }
     };
   }
@@ -1767,5 +1794,6 @@ main().catch((error) => {
 export const __testResolveBriefingPublishPlan = resolveBriefingPublishPlan;
 export const __testSanitizeBriefingCopy = sanitizeBriefingCopy;
 export const __testPrepareReportForPublish = prepareReportForPublish;
+export const __testPrepareAndValidateWriterReport = prepareAndValidateWriterReport;
 export const __testRenderPostMarketReport = renderPostMarketReport;
 export const __testHasCurrentPostMarketInvestorFlows = hasCurrentPostMarketInvestorFlows;
