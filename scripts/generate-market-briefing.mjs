@@ -985,7 +985,7 @@ function unavailableInvestorFlows(reason) {
   return {
     status: 'unavailable',
     generatedAt: new Date().toISOString(),
-    source: 'pykrx/KRX',
+    source: 'NAVER Finance/KRX + pykrx/KRX',
     reason,
     markets: []
   };
@@ -1098,9 +1098,9 @@ async function collectPublicMarketResearch() {
       status: isInvestorFlowsAvailable(investorFlows) ? 'delayed' : 'unavailable',
       updatedAt: investorFlows.generatedAt ?? null,
       reason: isInvestorFlowsAvailable(investorFlows)
-        ? 'pykrx를 통해 KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.'
-        : `pykrx/KRX 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: ${summarizeNewsCandidates(investorFlowNewsCandidates, 3) ?? investorFlows.reason ?? 'unknown'}`,
-      sourceUrl: 'https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd'
+        ? `${investorFlows.source ?? 'KRX'} 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.`
+        : `KRX 기반 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: ${summarizeNewsCandidates(investorFlowNewsCandidates, 3) ?? investorFlows.reason ?? 'unknown'}`,
+      sourceUrl: investorFlows.sourceUrls?.[0] ?? 'https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd'
     },
     {
       key: 'disclosures',
@@ -1137,13 +1137,13 @@ async function collectPublicMarketResearch() {
     sectorThemeNewsCandidates,
     investorFlows,
     dataQuality: isInvestorFlowsAvailable(investorFlows)
-      ? '공개 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급은 pykrx/KRX 최신 완료 거래일 기준입니다. 공시/일정/업종테마/특징주는 전용 뉴스 후보를 보조 근거로 사용합니다.'
+      ? `공개 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 투자자별 수급은 ${investorFlows.source ?? 'KRX'} 최신 완료 거래일 기준입니다. 공시/일정/업종테마/특징주는 전용 뉴스 후보를 보조 근거로 사용합니다.`
       : '공개 데이터 소스 기반입니다. 지수는 지연 시세일 수 있고, 정형 수급 실패 시 투자자 수급 뉴스 후보를 보조 근거로 사용합니다. 공시/일정/업종테마/특징주는 전용 뉴스 후보를 근거로 작성합니다.',
     sourceStatus,
     sources: [
       { title: 'Yahoo Finance chart API', url: 'https://query1.finance.yahoo.com/v8/finance/chart/', date: null },
       { title: 'Google News RSS', url: 'https://news.google.com/rss', date: null },
-      { title: 'KRX investor trading value via pykrx', url: 'https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd', date: null }
+      { title: 'KRX investor trading value via NAVER Finance or pykrx', url: investorFlows.sourceUrls?.[0] ?? 'https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd', date: null }
     ],
     citations: [],
     searchResults: []

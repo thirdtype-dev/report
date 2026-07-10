@@ -8,12 +8,16 @@ on:
       - 'report/index.html'
       - 'scripts/trim_latest_reports.py'
       - 'scripts/publish_report.sh'
+      - 'scripts/fetch_investor_flows.py'
+      - 'tests/test_fetch_investor_flows.py'
       - '.github/workflows/validate-report.yml'
   pull_request:
     paths:
       - 'report/index.html'
       - 'scripts/trim_latest_reports.py'
       - 'scripts/publish_report.sh'
+      - 'scripts/fetch_investor_flows.py'
+      - 'tests/test_fetch_investor_flows.py'
       - '.github/workflows/validate-report.yml'
 
 jobs:
@@ -26,3 +30,7 @@ jobs:
       - name: Validate report section count
         run: |
           python3 scripts/trim_latest_reports.py --check report/index.html
+
+      - name: Test investor flow parser
+        run: |
+          python3 -m unittest tests/test_fetch_investor_flows.py

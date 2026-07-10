@@ -1,14 +1,33 @@
 #!/usr/bin/env python3
+import io
 import json
 import math
-import sys
+import os
 from contextlib import redirect_stdout
 from datetime import datetime, timedelta
+from html.parser import HTMLParser
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 
 MARKETS = ("KOSPI", "KOSDAQ")
 LOOKBACK_DAYS = 14
+NAVER_INVESTOR_TREND_URL = "https://finance.naver.com/sise/investorDealTrendDay.naver"
+NAVER_MARKET_CODES = {"KOSPI": "01", "KOSDAQ": "02"}
+NAVER_UNIT_KRW = 100_000_000
+NAVER_COLUMNS = (
+    "retail",
+    "foreign",
+    "institution",
+    "financial_investment",
+    "insurance",
+    "investment_trust_private_equity",
+    "bank",
+    "other_finance",
+    "pension_funds",
+    "other_corporations",
+)
 INVESTOR_COLUMNS = {
     "foreign": ("외국인합계", "외국인"),
     "institution": ("기관합계", "기관"),
@@ -22,6 +41,34 @@ INVESTOR_COLUMNS = {
     "pension_funds": ("연기금 등", "연기금등", "연기금"),
     "other_corporations": ("기타법인",),
 }
+
+
+class InvestorTrendTableParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.rows = []
+        self._row = None
+        self._cell = None
+
+    def handle_starttag(self, tag, _attrs):
+        if tag == "tr":
+            self._row = []
+        elif tag == "td" and self._row is not None:
+            self._cell = []
+
+    def handle_data(self, data):
+        if self._cell is not None:
+            self._cell.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "td" and self._cell is not None:
+            self._row.append("".join(self._cell).strip())
+            self._cell = None
+        elif tag == "tr" and self._row is not None:
+            if self._row:
+                self.rows.append(self._row)
+            self._row = None
+            self._cell = None
 
 
 def now_kst():
@@ -39,6 +86,37 @@ def iso_date(value):
     if len(text) == 8 and text.isdigit():
         return f"{text[:4]}-{text[4:6]}-{text[6:]}"
     return text[:10]
+
+
+def parse_naver_date(value):
+    return datetime.strptime(value.strip(), "%y.%m.%d").date()
+
+
+def parse_naver_amount(value):
+    return int(value.replace(",", "").replace("+", "").strip()) * NAVER_UNIT_KRW
+
+
+def parse_naver_investor_rows(html):
+    parser = InvestorTrendTableParser()
+    parser.feed(html)
+    rows = []
+    for cells in parser.rows:
+        if len(cells) < len(NAVER_COLUMNS) + 1:
+            continue
+        try:
+            trading_date = parse_naver_date(cells[0])
+            values = [parse_naver_amount(value) for value in cells[1:11]]
+        except (ValueError, TypeError):
+            continue
+        rows.append(
+            {
+                "date": trading_date.isoformat(),
+                "netBuy": dict(zip(NAVER_COLUMNS, values)),
+            }
+        )
+    if not rows:
+        raise RuntimeError("empty_naver_investor_flow_rows")
+    return sorted(rows, key=lambda row: row["date"])
 
 
 def json_number(value):
@@ -91,6 +169,44 @@ def streak(rows, key):
     return {"direction": latest_direction or "flat", "count": count}
 
 
+def build_market_result(market, rows, source, source_url):
+    latest = rows[-1]
+    return {
+        "market": market,
+        "latestDate": latest["date"],
+        "unit": "KRW",
+        "netBuy": latest["netBuy"],
+        "recent": rows[-5:],
+        "streaks": {
+            "foreign": streak(rows, "foreign"),
+            "institution": streak(rows, "institution"),
+            "retail": streak(rows, "retail"),
+        },
+        "source": source,
+        "sourceUrl": source_url,
+    }
+
+
+def fetch_naver_market(market, end_day, open_url=urlopen):
+    query = urlencode(
+        {
+            "bizdate": ymd(end_day),
+            "sosok": NAVER_MARKET_CODES[market],
+            "page": 1,
+        }
+    )
+    source_url = f"{NAVER_INVESTOR_TREND_URL}?{query}"
+    request = Request(source_url, headers={"User-Agent": "Mozilla/5.0"})
+    with open_url(request, timeout=20) as response:
+        html = response.read().decode("euc-kr", errors="replace")
+    oldest = (end_day - timedelta(days=LOOKBACK_DAYS)).isoformat()
+    latest = end_day.isoformat()
+    rows = [row for row in parse_naver_investor_rows(html) if oldest <= row["date"] <= latest]
+    if not rows:
+        raise RuntimeError(f"no_naver_investor_flow_data_within_{LOOKBACK_DAYS}_days")
+    return build_market_result(market, rows, "NAVER Finance/KRX", source_url)
+
+
 def fetch_market_window(stock, market, start_date, end_date):
     df = stock.get_market_trading_value_by_date(
         start_date,
@@ -125,19 +241,12 @@ def fetch_market_window(stock, market, start_date, end_date):
     if not rows:
         raise RuntimeError("empty_investor_flow_rows")
 
-    latest = rows[-1]
-    return {
-        "market": market,
-        "latestDate": latest["date"],
-        "unit": "KRW",
-        "netBuy": latest["netBuy"],
-        "recent": rows[-5:],
-        "streaks": {
-            "foreign": streak(rows, "foreign"),
-            "institution": streak(rows, "institution"),
-            "retail": streak(rows, "retail"),
-        },
-    }
+    return build_market_result(
+        market,
+        rows,
+        "pykrx/KRX",
+        "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    )
 
 
 def fetch_market(stock, market, end_day):
@@ -156,44 +265,53 @@ def fetch_market(stock, market, end_day):
     raise RuntimeError(f"no_investor_flow_data_within_{LOOKBACK_DAYS}_days:{last_error}")
 
 
-def main():
-    try:
-        with redirect_stdout(sys.stderr):
-            from pykrx import stock
-    except Exception as error:
-        print(
-            json.dumps(
-                {
-                    "status": "unavailable",
-                    "generatedAt": now_kst().isoformat(),
-                    "source": "pykrx/KRX",
-                    "reason": f"import_pykrx_failed:{error}",
-                    "markets": [],
-                },
-                ensure_ascii=False,
-            )
-        )
-        return 0
+def load_pykrx_stock():
+    if not (os.getenv("KRX_ID") and os.getenv("KRX_PW")):
+        raise RuntimeError("missing_krx_credentials")
+    with redirect_stdout(io.StringIO()):
+        from pykrx import stock
+    return stock
 
+
+def main():
     today = now_kst().date()
     markets = []
     errors = {}
+    stock = None
+    pykrx_load_error = None
 
     for market in MARKETS:
+        naver_error = None
         try:
-            with redirect_stdout(sys.stderr):
-                markets.append(fetch_market(stock, market, today))
+            markets.append(fetch_naver_market(market, today))
+            continue
         except Exception as error:
-            errors[market] = str(error)
+            naver_error = error
+
+        try:
+            if stock is None and pykrx_load_error is None:
+                try:
+                    stock = load_pykrx_stock()
+                except Exception as error:
+                    pykrx_load_error = error
+            if stock is None:
+                raise pykrx_load_error or RuntimeError("pykrx_unavailable")
+            with redirect_stdout(io.StringIO()):
+                markets.append(fetch_market(stock, market, today))
+        except Exception as pykrx_error:
+            errors[market] = f"naver:{naver_error}; pykrx:{pykrx_error}"
 
     status = "ok" if len(markets) == len(MARKETS) else "partial" if markets else "unavailable"
-    reason = None if markets else "; ".join(f"{market}:{error}" for market, error in errors.items()) or "no_market_data"
+    reason = None if status == "ok" else "; ".join(f"{market}:{error}" for market, error in errors.items()) or "no_market_data"
+    sources = sorted({market["source"] for market in markets})
+    source_urls = sorted({market["sourceUrl"] for market in markets})
     print(
         json.dumps(
             {
                 "status": status,
                 "generatedAt": now_kst().isoformat(),
-                "source": "pykrx/KRX",
+                "source": " + ".join(sources) if sources else "NAVER Finance/KRX + pykrx/KRX",
+                "sourceUrls": source_urls,
                 "collectionWindow": {
                     "lookbackDays": LOOKBACK_DAYS,
                     "end": iso_date(ymd(today)),
