@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T07:00:28.457Z",
+  "generatedAt": "2026-07-13T07:05:23.969Z",
   "phase": "post_market",
   "sessionLabel": "16:00",
   "summary": {
@@ -34,11 +34,11 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,503.07",
-      "change": "-0.19%",
-      "signal": "yellow",
+      "value": "1,502.68",
+      "change": "-0.21%",
+      "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-07-13T07:00:06.000Z",
+      "updatedAt": "2026-07-13T07:05:05.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,33 +67,33 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "29,640.00",
-      "change": "-1.31%",
+      "value": "29,620.25",
+      "change": "-1.37%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-07-13T06:50:13.000Z",
+      "updatedAt": "2026-07-13T06:55:04.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
     {
       "key": "investor_flow",
       "title": "투자자별 수급",
-      "value": "KOSPI 2026-07-13: 외국인 순매도 16,916억원, 기관 순매도 22,194억원, 개인 순매수 38,889억원 / KOSDAQ 2026-07-13: 외국인 순매도 3,879억원, 기관 순매수 1,736억원, 개인 순매수 2,114억원",
+      "value": "KOSPI 2026-07-13: 외국인 순매도 16,850억원, 기관 순매도 22,194억원, 개인 순매수 38,822억원 / KOSDAQ 2026-07-13: 외국인 순매도 3,879억원, 기관 순매수 1,736억원, 개인 순매수 2,114억원",
       "change": null,
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-07-13T16:00:28.442431+09:00",
+      "updatedAt": "2026-07-13T16:05:23.956767+09:00",
       "reason": "NAVER Finance/KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.",
       "sourceUrl": "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260713&sosok=01&page=1"
     },
     {
       "key": "disclosures",
       "title": "공시",
-      "value": "6월 16일 개장 전 주요 공시 - 서울파이낸스 (서울파이낸스) / [특징주] 대규모 유·무상증자 소식에 대동기어 10% 급락 - 조선비즈 - Chosunbiz (Chosunbiz) / [주요공시] 광전자, 엘앤에프, 썸에이지, 한국첨단소재, 후성 외 - 데일리경제 (데일리경제) / [6.16 개장 전 공시] 두산에너빌리티 오만 5289억 수주, 반도체 장비도 잇단 계약 - 자본시장뉴스 (자본시장뉴스)",
+      "value": "7월 13일 개장 전 주요 공시 - 서울파이낸스 (서울파이낸스) / 오에스피, 관리종목 지정에 주주 서신…\"자본 확충·자사주 매입 추진\" - 뉴시스 (뉴시스) / [특징주] 대규모 유·무상증자 소식에 대동기어 10% 급락 - 조선비즈 - Chosunbiz (Chosunbiz) / [주요공시] 광전자, 엘앤에프, 썸에이지, 한국첨단소재, 후성 외 - 데일리경제 (데일리경제)",
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-07-13T07:00:28.457Z",
+      "updatedAt": "2026-07-13T07:05:23.969Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -124,12 +124,12 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,503.07",
-      "change": "-2.84",
-      "changePercent": "-0.19%",
+      "currentPrice": "1,502.68",
+      "change": "-3.23",
+      "changePercent": "-0.21%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-07-13T07:00:06.000Z",
+      "updatedAt": "2026-07-13T07:05:05.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "29,640.00",
-      "change": "-392.25",
-      "changePercent": "-1.31%",
+      "currentPrice": "29,620.25",
+      "change": "-412.00",
+      "changePercent": "-1.37%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-07-13T06:50:13.000Z",
+      "updatedAt": "2026-07-13T06:55:04.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -494,11 +494,19 @@
   ],
   "disclosureNewsCandidates": [
     {
-      "title": "6월 16일 개장 전 주요 공시 - 서울파이낸스",
-      "summary": "6월 16일 개장 전 주요 공시&nbsp;&nbsp;서울파이낸스",
+      "title": "7월 13일 개장 전 주요 공시 - 서울파이낸스",
+      "summary": "7월 13일 개장 전 주요 공시&nbsp;&nbsp;서울파이낸스",
       "source": "서울파이낸스",
-      "publishedAt": "Tue, 16 Jun 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8tY0Q2OXdXU3QyOGJpUWQwSm5mRG1DUVByc1pMNmJ1QTl2YzJBVUxxNlprclJXaXppUlBjSDhDMFB2ZTB6THdWN2xMaGdYUjZDSTJwLWNOSDBEXzh0WDdob1NubHlHckZDbkE?oc=5",
+      "publishedAt": "Sun, 12 Jul 2026 22:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9SMVE1TWUxQ1NUemtiYWM2b3pFaGhpQXc1VmtwWHZ5d1ZUVmw3YW94ckRTTE1OZFFlS0tfNENaRm9qZHFTV1k4cHlBaVozVHdxdUZMNlhhVE0yb21kZThPYk9yQXVJbHM0dFE?oc=5",
+      "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
+    },
+    {
+      "title": "오에스피, 관리종목 지정에 주주 서신…\"자본 확충·자사주 매입 추진\" - 뉴시스",
+      "summary": "오에스피, 관리종목 지정에 주주 서신…\"자본 확충·자사주 매입 추진\"&nbsp;&nbsp;뉴시스",
+      "source": "뉴시스",
+      "publishedAt": "Fri, 10 Jul 2026 01:14:16 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95LW9YcmtIQWg1TTNhS3Q2b2xTR2lLMEp5bTBxR0R5SDhUQjZOaU1ITmxPN1JoU19FNW9nRG9LWXMyTUs5NzViNVlxRGF3RGNuVU5QRTR0MWI3NjAwUS1JNtIBeEFVX3lxTE5BT0xvOEcyVnZVWlVieURiYnhqcmxzZXV3cFFhaHQ0UmpzM3k1S242QnRzSlNnUk52d2QxQzRGQ081MXVjMWVJV2o3LUczTldGNGR2U2NBbUpfcWN1THdvRmhkUTlpd3d5bU1iVGFQdk1WRzlEdHp3MA?oc=5",
       "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
     },
     {
@@ -526,6 +534,14 @@
       "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
     },
     {
+      "title": "6월 16일 개장 전 주요 공시 - 서울파이낸스",
+      "summary": "6월 16일 개장 전 주요 공시&nbsp;&nbsp;서울파이낸스",
+      "source": "서울파이낸스",
+      "publishedAt": "Tue, 16 Jun 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8tY0Q2OXdXU3QyOGJpUWQwSm5mRG1DUVByc1pMNmJ1QTl2YzJBVUxxNlprclJXaXppUlBjSDhDMFB2ZTB6THdWN2xMaGdYUjZDSTJwLWNOSDBEXzh0WDdob1NubHlHckZDbkE?oc=5",
+      "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
+    },
+    {
       "title": "주가 4배 뛴 티엘비, 1200억 유증…“성장 투자vs주주 부담” - 조선비즈 - Chosunbiz",
       "summary": "주가 4배 뛴 티엘비, 1200억 유증…“성장 투자vs주주 부담” - 조선비즈&nbsp;&nbsp;Chosunbiz",
       "source": "Chosunbiz",
@@ -547,14 +563,6 @@
       "source": "데일리경제",
       "publishedAt": "Wed, 22 Apr 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5qODVkVGF6UmRGaUlrd3pUX2w4OVU2TXFjM1NHSXBaaGVLaDJ5TGdPUzJTNVVMRWViSklvVU9kNUl4c1hKdEdMcC1pd1JWbU1keGl1QVZkeC00ZlFmOGQ2S203dHJ2NS1yZTFrQQ?oc=5",
-      "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
-    },
-    {
-      "title": "4월 27일 개장 전 주요 공시 - 서울파이낸스",
-      "summary": "4월 27일 개장 전 주요 공시&nbsp;&nbsp;서울파이낸스",
-      "source": "서울파이낸스",
-      "publishedAt": "Mon, 27 Apr 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBaZFI2M2FtU2NpZHBlRi1rQzFxZlBHTWYwNjV2U0VsQ05xTXd5bGxOOGtJY1BRSW9IUjB5WG54Y01xRXBJeTAyUHpiQUNkVFp4Ync2cmtuZDB5SmFzOXItM2ZpVi13NUlubmc?oc=5",
       "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
     },
     {
@@ -580,14 +588,6 @@
       "publishedAt": "Mon, 15 Jun 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9wSnhXa3FsWl8yaGFzMF92c3BLUmJTaFNtaHp5RDdpTUc0SjdlWVphWFpTd3p2RVRwR0xsbEpwaTY3RzdaNkJoY1RPUlNaVkR2SHljeQ?oc=5",
       "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
-    },
-    {
-      "title": "KB증권, 엔지켐생명과학 무상증자 발표 후 보유주식 대거 장중 매도 - 시사저널e",
-      "summary": "KB증권, 엔지켐생명과학 무상증자 발표 후 보유주식 대거 장중 매도&nbsp;&nbsp;시사저널e",
-      "source": "시사저널e",
-      "publishedAt": "Fri, 05 Aug 2022 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9qak0wMkdjVE41eVFfekFsMWpWb1F6QTVOSWExUHp6dm96QzdRTGtSUU85S1VrM2FwQ1paNDduLWY1Tndma3VqaTRfRkdEeWNTZkRzTkNLb1MzazFwdC1OY1ZSV2U1aEJLdng2T3FDNW1NQdIBdkFVX3lxTFBhSUllbThfNmdlaFVPbXNScEVsT25jb1JDdVlmWG9wdkZuQTlpSUJuUzFaNkZhUnJxeE1DSjFIWWNmSmNzaWFLWk9tekY0OFZPWXpheVJNZlhCNmROVXBzTzRrNGZ6LS1sTDRpXzU2WElBRjRJY1E?oc=5",
-      "query": "장 마감 후 주요 공시 실적 유상증자 무상증자"
     }
   ],
   "scheduleNewsCandidates": [
@@ -597,6 +597,14 @@
       "source": "인포스탁데일리",
       "publishedAt": "Fri, 20 Mar 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBFN2lOUDhIaGE3TnBLUmp4Zkg2OTF6aGVkOTZmVFMtWGJ5akRYNFlQLVV4LW12b3N2eF84dk1UcFAyUW1ieFF4SzBNejFJSG9VNk5HRTY1OVNjeFJhNGFJNi1VeGNmYTJMd3c5ZVd1N0E0R0xtR3c?oc=5",
+      "query": "오늘 증시 일정 신규상장 보호예수 해제"
+    },
+    {
+      "title": "[스페이스X IPO]상장이 끝이 아니다…증시자금 블랙홀 되나 - 비즈워치",
+      "summary": "[스페이스X IPO]상장이 끝이 아니다…증시자금 블랙홀 되나&nbsp;&nbsp;비즈워치",
+      "source": "비즈워치",
+      "publishedAt": "Thu, 11 Jun 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1TSkJjOW1FRGt3dGRJTS1iM04yRGRaYnFRR2pkYVJzc0hCWWhxX0kzcGxDcGwzQTNaYXRiMVVJdGtUME82bW1zWnhhU2p3T29XSVNJYUlGdm9ra1RQQU9fSVlDa28yR3BIa3c?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
@@ -621,14 +629,6 @@
       "source": "데일리팜",
       "publishedAt": "Mon, 19 Jan 2026 08:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAzUEJINzZyazZMbU1WTHB2QzUtVVBRSXBwQkRxVzVvN2x2RlFkd2l1RkJUVHNqZmY0RV80SzJWeDRyV1puQnNkRDdyOGxyRVZXWmx2WmxYTkhyemZfbEw5RmVB?oc=5",
-      "query": "오늘 증시 일정 신규상장 보호예수 해제"
-    },
-    {
-      "title": "[스페이스X IPO]상장이 끝이 아니다…증시자금 블랙홀 되나 - 비즈워치",
-      "summary": "[스페이스X IPO]상장이 끝이 아니다…증시자금 블랙홀 되나&nbsp;&nbsp;비즈워치",
-      "source": "비즈워치",
-      "publishedAt": "Thu, 11 Jun 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1TSkJjOW1FRGt3dGRJTS1iM04yRGRaYnFRR2pkYVJzc0hCWWhxX0kzcGxDcGwzQTNaYXRiMVVJdGtUME82bW1zWnhhU2p3T29XSVNJYUlGdm9ra1RQQU9fSVlDa28yR3BIa3c?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
@@ -680,11 +680,11 @@
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
-      "title": "시프트업 2대주주 지분 매각제한 풀린다 - 비즈워치",
-      "summary": "시프트업 2대주주 지분 매각제한 풀린다&nbsp;&nbsp;비즈워치",
-      "source": "비즈워치",
-      "publishedAt": "Thu, 02 Jan 2025 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAwdWRhT1hZUldLdkxXWUIzSkVrcHQzRzNHY19KTDdGdWpJd01vdTZOdDZvSEJWb1habm5idi1xdWVUM0ExYWlnME5fbW5Vb0JmVnVBcm5mck5fZEM4SlYtbTVUT1B5bXktclE?oc=5",
+      "title": "외국인 ‘셀코리아’로 코스피 약세…“2900대 밑으로 가지 않을 것” - sisaon.co.kr",
+      "summary": "외국인 ‘셀코리아’로 코스피 약세…“2900대 밑으로 가지 않을 것”&nbsp;&nbsp;sisaon.co.kr",
+      "source": "sisaon.co.kr",
+      "publishedAt": "Tue, 09 Nov 2021 08:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9UaEh6ZkxuU2VsS2hPbXlzQXdVVjJFR3I0T0hGTDFDcTNpUzZNelU1STN4cU1PT2FUR1pHU3dUT2xGMGdiNEk5YkZZdEVza1o0aHlpOFNJQ0lIZ1I3QVh6Z3RMTTBXQ0c0X0dj?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     }
   ],
@@ -804,7 +804,7 @@
   ],
   "investorFlows": {
     "status": "ok",
-    "generatedAt": "2026-07-13T16:00:28.442431+09:00",
+    "generatedAt": "2026-07-13T16:05:23.956767+09:00",
     "source": "NAVER Finance/KRX",
     "sourceUrls": [
       "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260713&sosok=01&page=1",
@@ -820,8 +820,8 @@
         "latestDate": "2026-07-13",
         "unit": "KRW",
         "netBuy": {
-          "retail": 3888900000000,
-          "foreign": -1691600000000,
+          "retail": 3882200000000,
+          "foreign": -1685000000000,
           "institution": -2219400000000,
           "financial_investment": -8300000000,
           "insurance": 6700000000,
@@ -895,8 +895,8 @@
           {
             "date": "2026-07-13",
             "netBuy": {
-              "retail": 3888900000000,
-              "foreign": -1691600000000,
+              "retail": 3882200000000,
+              "foreign": -1685000000000,
               "institution": -2219400000000,
               "financial_investment": -8300000000,
               "insurance": 6700000000,
