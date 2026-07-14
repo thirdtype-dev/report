@@ -1,16 +1,49 @@
 {
-  "generated_at": "2026-07-14T04:00:14.270Z",
+  "generated_at": "2026-07-14T05:00:16.591Z",
   "generated_date": "2026-07-14",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "시장 뉴스 기반 급등 후보 20건",
-    "basedOn": "market-research stock news candidates"
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "시장 뉴스+Google News 기반 급등 후보 20건",
+    "basedOn": "market-research stock news candidates with Google News backfill"
   },
   "signals": [
+    {
+      "stockName": "네오티스",
+      "stockCode": "085910",
+      "summary": "적자 터널 끝나고 황금기…네오티스, 기판 미세화의 숨은 승자 핀포인트뉴스",
+      "headline": "적자 터널 끝나고 황금기…네오티스, 기판 미세화의 숨은 승자",
+      "evidencePoints": [
+        "출처 핀포인트뉴스 기반 기사 1건",
+        "적자 터널 끝나고 황금기…네오티스, 기판 미세화의 숨은 승자"
+      ],
+      "mentionScore": 61.1,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-07-14T05:00:16.591Z",
+      "cycleLabel": "KST_1400",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "적자 터널 끝나고 황금기…네오티스, 기판 미세화의 숨은 승자",
+      "source": "핀포인트뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBDb2hGUU5abkRaVGZJOU14dHFxNTNsNDFTQXJPNnJsMGptX3l5bERlMHdPU3FFSUVxQ2RLRURNenk0MURIZDBqUHRnOU1sa1ZGX3Fuenc1V1RpRlVvcVNrT2E3eXd3VzcyMmg2RFY5ekFhM2PSAXdBVV95cUxNS25CSzQyQnJYTnM1cmNiNlJpT204cUhOZk9Da0lfVkpYbExIZ3lGNnA2N3lrenRnbkdvbVJUOWgtZ3otUUJhaG5JSUpWMFBPdzljSzV3VVU1SmdHRURsdHVFcm43RFpSSjNGQlRycWJvWUxuWW9Waw?oc=5",
+      "publishedAt": "Tue, 14 Jul 2026 04:04:50 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "적자 터널 끝나고 황금기…네오티스, 기판 미세화의 숨은 승자",
+          "source": "핀포인트뉴스",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBDb2hGUU5abkRaVGZJOU14dHFxNTNsNDFTQXJPNnJsMGptX3l5bERlMHdPU3FFSUVxQ2RLRURNenk0MURIZDBqUHRnOU1sa1ZGX3Fuenc1V1RpRlVvcVNrT2E3eXd3VzcyMmg2RFY5ekFhM2PSAXdBVV95cUxNS25CSzQyQnJYTnM1cmNiNlJpT204cUhOZk9Da0lfVkpYbExIZ3lGNnA2N3lrenRnbkdvbVJUOWgtZ3otUUJhaG5JSUpWMFBPdzljSzV3VVU1SmdHRURsdHVFcm43RFpSSjNGQlRycWJvWUxuWW9Waw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "적자 터널 끝나고 황금기…네오티스, 기판 미세화의 숨은 승자",
+      "polishedBody": "네오티스는 적자 터널을 끝내고 기판 미세화 기술로 주목받고 있습니다. 최근 반도체 기판 수요 증가와 미세 공정 전환이 실적 개선의 신호로 해석됩니다. 이 소식은 중립적 평가를 받으며, 기술 경쟁력이 향후 성장 동력이 될 가능성이 있습니다. 투자자들은 기판 미세화 관련 수주 소식과 실적 추이를 주목할 필요가 있습니다."
+    },
     {
       "stockName": "이수페타시스",
       "stockCode": "007660",
@@ -676,40 +709,6 @@
       "polishedBody": "LG전자의 주가가 최근 시장의 전반적인 약세 흐름 속에서 하락세를 보이고 있습니다. 현재 주가는 투자자들의 매도세가 이어지며 이전 대비 낮은 수준에서 거래가 형성되는 중입니다. 이번 하락은 글로벌 가전 수요 둔화에 대한 우려가 반영된 결과로 해석되어 투자 심리가 다소 위축된 상태입니다. 향후 분기 실적 발표와 함께 가전 및 전장 사업 부문의 수익성 개선 여부를 면밀히 지켜봐야 합니다."
     },
     {
-      "stockName": "네오티스",
-      "stockCode": "085910",
-      "summary": "[리포트 브리핑]네오티스, '주가는 조정, 드릴비트 쇼티지는 심화' Not Rated - 메리츠증권 뉴스핌",
-      "headline": "[리포트 브리핑]네오티스, '주가는 조정, 드릴비트 쇼티지는 심화' Not Rated - 메리츠증권",
-      "evidencePoints": [
-        "출처 뉴스핌 기반 기사 1건",
-        "제목 기준 변동률 단서 +52.6%",
-        "[리포트 브리핑]네오티스, '주가는 조정, 드릴비트 쇼티지는 심화' Not Rated - 메리츠증권"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-07-13T06:00:18.093Z",
-      "cycleLabel": "KST_1500",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[리포트 브리핑]네오티스, '주가는 조정, 드릴비트 쇼티지는 심화' Not Rated - 메리츠증권",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5JTUFHWkpLRVI0R19GTGwwMTNLdGp1UVBTYlZyc2pvUURWRkh5X1dzeXduNklXcWt2TGtVOVhCSVJGT3RsazUycDhEWlBNWEdQaGNwSDNDZkgtaEVY?oc=5",
-      "publishedAt": "Sun, 12 Jul 2026 23:55:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[리포트 브리핑]네오티스, '주가는 조정, 드릴비트 쇼티지는 심화' Not Rated - 메리츠증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5JTUFHWkpLRVI0R19GTGwwMTNLdGp1UVBTYlZyc2pvUURWRkh5X1dzeXduNklXcWt2TGtVOVhCSVJGT3RsazUycDhEWlBNWEdQaGNwSDNDZkgtaEVY?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "네오티스, 드릴비트 공급 부족 심화 속 주가 조정 국면",
-      "polishedBody": "네오티스는 현재 드릴비트 공급 부족 현상이 심화되는 가운데 주가 조정을 겪고 있습니다. 시장에서는 주가 흐름이 다소 정체된 상태로 평가하고 있습니다. 공급난이라는 구조적 이슈가 지속되어 중립적인 관점이 유지됩니다. 향후 드릴비트 수급 상황이 개선되어 실적에 미칠 영향을 확인해야 합니다."
-    },
-    {
       "stockName": "LG이노텍",
       "stockCode": "011070",
       "summary": "LG이노텍 주가, 7월 13일 장중 711,000원 4.18% 하락 TopStarNews",
@@ -787,7 +786,30 @@
   ],
   "items": [
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
+      "symbol": "085910",
+      "name": "네오티스",
+      "changeRate": null,
+      "price": null,
+      "summary": "적자 터널 끝나고 황금기…네오티스, 기판 미세화의 숨은 승자 핀포인트뉴스",
+      "source": "핀포인트뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBDb2hGUU5abkRaVGZJOU14dHFxNTNsNDFTQXJPNnJsMGptX3l5bERlMHdPU3FFSUVxQ2RLRURNenk0MURIZDBqUHRnOU1sa1ZGX3Fuenc1V1RpRlVvcVNrT2E3eXd3VzcyMmg2RFY5ekFhM2PSAXdBVV95cUxNS25CSzQyQnJYTnM1cmNiNlJpT204cUhOZk9Da0lfVkpYbExIZ3lGNnA2N3lrenRnbkdvbVJUOWgtZ3otUUJhaG5JSUpWMFBPdzljSzV3VVU1SmdHRURsdHVFcm43RFpSSjNGQlRycWJvWUxuWW9Waw?oc=5",
+      "mentionScore": 61.1,
+      "evidencePoints": [
+        "출처 핀포인트뉴스 기반 기사 1건",
+        "적자 터널 끝나고 황금기…네오티스, 기판 미세화의 숨은 승자"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "적자 터널 끝나고 황금기…네오티스, 기판 미세화의 숨은 승자",
+          "source": "핀포인트뉴스",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBDb2hGUU5abkRaVGZJOU14dHFxNTNsNDFTQXJPNnJsMGptX3l5bERlMHdPU3FFSUVxQ2RLRURNenk0MURIZDBqUHRnOU1sa1ZGX3Fuenc1V1RpRlVvcVNrT2E3eXd3VzcyMmg2RFY5ekFhM2PSAXdBVV95cUxNS25CSzQyQnJYTnM1cmNiNlJpT204cUhOZk9Da0lfVkpYbExIZ3lGNnA2N3lrenRnbkdvbVJUOWgtZ3otUUJhaG5JSUpWMFBPdzljSzV3VVU1SmdHRURsdHVFcm43RFpSSjNGQlRycWJvWUxuWW9Waw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "007660",
       "name": "이수페타시스",
       "changeRate": -1.31,
@@ -811,7 +833,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": null,
@@ -848,7 +870,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
@@ -879,7 +901,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": -7,
@@ -910,7 +932,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "087010",
       "name": "펩트론",
       "changeRate": null,
@@ -940,7 +962,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "035720",
       "name": "카카오",
       "changeRate": null,
@@ -971,7 +993,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "000270",
       "name": "기아",
       "changeRate": null,
@@ -1001,7 +1023,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "105560",
       "name": "KB금융",
       "changeRate": null,
@@ -1032,7 +1054,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "373220",
       "name": "LG에너지솔루션",
       "changeRate": null,
@@ -1062,7 +1084,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "161890",
       "name": "한국콜마",
       "changeRate": null,
@@ -1093,7 +1115,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "278470",
       "name": "에이피알",
       "changeRate": null,
@@ -1123,7 +1145,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -1154,7 +1176,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "034020",
       "name": "두산에너빌리티",
       "changeRate": null,
@@ -1185,7 +1207,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": null,
@@ -1209,7 +1231,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "012330",
       "name": "현대모비스",
       "changeRate": null,
@@ -1233,7 +1255,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "047810",
       "name": "한국항공우주",
       "changeRate": null,
@@ -1257,7 +1279,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": null,
@@ -1281,31 +1303,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
-      "symbol": "085910",
-      "name": "네오티스",
-      "changeRate": null,
-      "price": null,
-      "summary": "[리포트 브리핑]네오티스, '주가는 조정, 드릴비트 쇼티지는 심화' Not Rated - 메리츠증권 뉴스핌",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5JTUFHWkpLRVI0R19GTGwwMTNLdGp1UVBTYlZyc2pvUURWRkh5X1dzeXduNklXcWt2TGtVOVhCSVJGT3RsazUycDhEWlBNWEdQaGNwSDNDZkgtaEVY?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 뉴스핌 기반 기사 1건",
-        "제목 기준 변동률 단서 +52.6%",
-        "[리포트 브리핑]네오티스, '주가는 조정, 드릴비트 쇼티지는 심화' Not Rated - 메리츠증권"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[리포트 브리핑]네오티스, '주가는 조정, 드릴비트 쇼티지는 심화' Not Rated - 메리츠증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5JTUFHWkpLRVI0R19GTGwwMTNLdGp1UVBTYlZyc2pvUURWRkh5X1dzeXduNklXcWt2TGtVOVhCSVJGT3RsazUycDhEWlBNWEdQaGNwSDNDZkgtaEVY?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": -4.18,
@@ -1329,7 +1327,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T04:00:14.270Z",
+      "timestamp": "2026-07-14T05:00:16.591Z",
       "symbol": "003230",
       "name": "삼양식품",
       "changeRate": null,
@@ -1365,8 +1363,8 @@
     "model": "rule-based-extractor-v1"
   },
   "polishWriter": {
-    "provider": "gemini",
-    "model": "gemini-3.1-flash-lite",
-    "fallbackReason": "primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
