@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-07-14T02:00:16.579Z",
+  "generated_at": "2026-07-14T03:00:21.581Z",
   "generated_date": "2026-07-14",
-  "slot_hour": 11,
-  "cycle_label": "KST_1100",
-  "slot_label": "11:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 11:00 실시간 급등",
-    "subtitle": "시장 뉴스 기반 급등 후보 20건",
-    "basedOn": "market-research stock news candidates"
+    "title": "KST 12:00 실시간 급등",
+    "subtitle": "시장 뉴스+Google News 기반 급등 후보 20건",
+    "basedOn": "market-research stock news candidates with Google News backfill"
   },
   "signals": [
+    {
+      "stockName": "이수페타시스",
+      "stockCode": "007660",
+      "summary": "이수페타시스 주가, 7월 14일 장중 98,300원 1.31% 하락 TopStarNews",
+      "headline": "이수페타시스 주가, 7월 14일 장중 98,300원 1.31% 하락",
+      "evidencePoints": [
+        "출처 TopStarNews 기반 기사 1건",
+        "제목 기준 변동률 단서 -1.3%",
+        "이수페타시스 주가, 7월 14일 장중 98,300원 1.31% 하락"
+      ],
+      "mentionScore": 62.5,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-07-14T03:00:21.581Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": -1.31,
+      "latestHeadline": "이수페타시스 주가, 7월 14일 장중 98,300원 1.31% 하락",
+      "source": "TopStarNews",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ndzlLQlhUQzBIOE9BYW1EOFI1a1B3YnlVX3FRYXMxNktIRGozVFQxMG9HaXNMVEpNQnRpMlZWcnVjZTlPbTRpT2I4STAycGNiS3Fuc1Nva2FKMnByQThPV1JCMTNRcnp3TkhWaXNBWERkdw?oc=5",
+      "publishedAt": "Tue, 14 Jul 2026 01:57:24 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "이수페타시스 주가, 7월 14일 장중 98,300원 1.31% 하락",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ndzlLQlhUQzBIOE9BYW1EOFI1a1B3YnlVX3FRYXMxNktIRGozVFQxMG9HaXNMVEpNQnRpMlZWcnVjZTlPbTRpT2I4STAycGNiS3Fuc1Nva2FKMnByQThPV1JCMTNRcnp3TkhWaXNBWERkdw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "이수페타시스, 장중 9만 8천 원대 하락세 기록",
+      "polishedBody": "이수페타시스의 주가가 장중 1.31% 하락하며 98,300원에 거래되었습니다. 최근 상승세를 보이던 주가가 단기 조정 국면에 진입하며 투자자들의 주의가 요구됩니다. 이번 하락은 차익 실현 매물이 출회되면서 나타난 자연스러운 조정 과정으로 분석됩니다. 향후 주가가 10만 원 선을 다시 회복할 수 있을지 거래량 변화를 중심으로 지켜봐야 합니다."
+    },
     {
       "stockName": "SK하이닉스",
       "stockCode": "000660",
@@ -676,40 +710,6 @@
       "polishedBody": "네오티스는 현재 드릴비트 공급 부족 현상이 심화되는 가운데 주가 조정을 겪고 있습니다. 시장에서는 주가 흐름이 다소 정체된 상태로 평가하고 있습니다. 공급난이라는 구조적 이슈가 지속되어 중립적인 관점이 유지됩니다. 향후 드릴비트 수급 상황이 개선되어 실적에 미칠 영향을 확인해야 합니다."
     },
     {
-      "stockName": "이수페타시스",
-      "stockCode": "007660",
-      "summary": "메리츠證 “이수페타시스, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상” v.daum.net",
-      "headline": "메리츠證 “이수페타시스, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상”",
-      "evidencePoints": [
-        "출처 v.daum.net 기반 기사 1건",
-        "제목 기준 변동률 단서 +56.4%",
-        "메리츠證 “이수페타시스, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상”"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-07-13T06:00:18.093Z",
-      "cycleLabel": "KST_1500",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "메리츠證 “이수페타시스, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상”",
-      "source": "v.daum.net",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE8zcnpiWVphODRybGs5b1VOZWpRYkxYa3ViRFdnLUxGNUZEYXlsSzl6bzRFSURzZzhkZTlXa2tnbHJRUWk3UlE?oc=5",
-      "publishedAt": "Sun, 12 Jul 2026 23:10:03 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "메리츠證 “이수페타시스, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상”",
-          "source": "v.daum.net",
-          "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE8zcnpiWVphODRybGs5b1VOZWpRYkxYa3ViRFdnLUxGNUZEYXlsSzl6bzRFSURzZzhkZTlXa2tnbHJRUWk3UlE?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "이수페타시스, 안정적 실적 기반 우상향 흐름 기대",
-      "polishedBody": "이수페타시스는 메리츠證 “, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상” v.daum.net 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 메리츠證 “, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상” v.daum.net 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
       "stockName": "LG이노텍",
       "stockCode": "011070",
       "summary": "LG이노텍 주가, 7월 13일 장중 711,000원 4.18% 하락 TopStarNews",
@@ -787,7 +787,31 @@
   ],
   "items": [
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
+      "symbol": "007660",
+      "name": "이수페타시스",
+      "changeRate": -1.31,
+      "price": null,
+      "summary": "이수페타시스 주가, 7월 14일 장중 98,300원 1.31% 하락 TopStarNews",
+      "source": "TopStarNews",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ndzlLQlhUQzBIOE9BYW1EOFI1a1B3YnlVX3FRYXMxNktIRGozVFQxMG9HaXNMVEpNQnRpMlZWcnVjZTlPbTRpT2I4STAycGNiS3Fuc1Nva2FKMnByQThPV1JCMTNRcnp3TkhWaXNBWERkdw?oc=5",
+      "mentionScore": 62.5,
+      "evidencePoints": [
+        "출처 TopStarNews 기반 기사 1건",
+        "제목 기준 변동률 단서 -1.3%",
+        "이수페타시스 주가, 7월 14일 장중 98,300원 1.31% 하락"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "이수페타시스 주가, 7월 14일 장중 98,300원 1.31% 하락",
+          "source": "TopStarNews",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ndzlLQlhUQzBIOE9BYW1EOFI1a1B3YnlVX3FRYXMxNktIRGozVFQxMG9HaXNMVEpNQnRpMlZWcnVjZTlPbTRpT2I4STAycGNiS3Fuc1Nva2FKMnByQThPV1JCMTNRcnp3TkhWaXNBWERkdw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": null,
@@ -824,7 +848,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
@@ -855,7 +879,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "402340",
       "name": "SK스퀘어",
       "changeRate": -7,
@@ -886,7 +910,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "087010",
       "name": "펩트론",
       "changeRate": null,
@@ -916,7 +940,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "035720",
       "name": "카카오",
       "changeRate": null,
@@ -947,7 +971,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "000270",
       "name": "기아",
       "changeRate": null,
@@ -977,7 +1001,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "105560",
       "name": "KB금융",
       "changeRate": null,
@@ -1008,7 +1032,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "373220",
       "name": "LG에너지솔루션",
       "changeRate": null,
@@ -1038,7 +1062,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "161890",
       "name": "한국콜마",
       "changeRate": null,
@@ -1069,7 +1093,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "278470",
       "name": "에이피알",
       "changeRate": null,
@@ -1099,7 +1123,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -1130,7 +1154,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "034020",
       "name": "두산에너빌리티",
       "changeRate": null,
@@ -1161,7 +1185,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": null,
@@ -1185,7 +1209,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "012330",
       "name": "현대모비스",
       "changeRate": null,
@@ -1209,7 +1233,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "047810",
       "name": "한국항공우주",
       "changeRate": null,
@@ -1233,7 +1257,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": null,
@@ -1257,7 +1281,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "085910",
       "name": "네오티스",
       "changeRate": null,
@@ -1281,31 +1305,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
-      "symbol": "007660",
-      "name": "이수페타시스",
-      "changeRate": null,
-      "price": null,
-      "summary": "메리츠證 “이수페타시스, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상” v.daum.net",
-      "source": "v.daum.net",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE8zcnpiWVphODRybGs5b1VOZWpRYkxYa3ViRFdnLUxGNUZEYXlsSzl6bzRFSURzZzhkZTlXa2tnbHJRUWk3UlE?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 v.daum.net 기반 기사 1건",
-        "제목 기준 변동률 단서 +56.4%",
-        "메리츠證 “이수페타시스, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상”"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "메리츠證 “이수페타시스, 어느 때보다 편안해진 주가⋯안정적 실적 우상향 예상”",
-          "source": "v.daum.net",
-          "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE8zcnpiWVphODRybGs5b1VOZWpRYkxYa3ViRFdnLUxGNUZEYXlsSzl6bzRFSURzZzhkZTlXa2tnbHJRUWk3UlE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": -4.18,
@@ -1329,7 +1329,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-14T02:00:16.579Z",
+      "timestamp": "2026-07-14T03:00:21.581Z",
       "symbol": "003230",
       "name": "삼양식품",
       "changeRate": null,
@@ -1365,8 +1365,8 @@
     "model": "rule-based-extractor-v1"
   },
   "polishWriter": {
-    "provider": "mixed",
-    "model": "deepseek/deepseek-v4-flash, gemini-3.1-flash-lite",
-    "fallbackReason": "partial_primary_failed"
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "fallbackReason": "primary_failed"
   }
 }
