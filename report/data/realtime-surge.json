@@ -1,16 +1,402 @@
 {
-  "generated_at": "2026-07-21T06:00:21.206Z",
-  "generated_date": "2026-07-21",
-  "slot_hour": 15,
-  "cycle_label": "KST_1500",
-  "slot_label": "15:00",
+  "generated_at": "2026-07-22T01:00:19.439Z",
+  "generated_date": "2026-07-22",
+  "slot_hour": 10,
+  "cycle_label": "KST_1000",
+  "slot_label": "10:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 15:00 실시간 급등",
+    "title": "KST 10:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성전기",
+      "stockCode": "009150",
+      "summary": "삼성전기(009150)",
+      "headline": "삼성전기 12% 급반등, 주가 140만원 선 탈환",
+      "evidencePoints": [
+        "출처 2news.co.kr, 매일경제 마켓 기반 기사 2건",
+        "제목 기준 변동률 단서 +12.0%",
+        "삼성전기 12% 급반등, 주가 140만원 선 탈환",
+        "삼성전기(009150)"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": 12,
+      "latestHeadline": "삼성전기 12% 급반등, 주가 140만원 선 탈환",
+      "source": "2news.co.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9ubDJLQzM0NVN1eFRMRHpNRzRFYXl1M29ORFNQVngydXZmbnBWdkl2YmlFdXF6OXgtbzREN05iYTRSMTh5NFgzc291Skc2TjhyOWFxMzZqWmFTc1FySVZjQTBiNjNxdTlp?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 00:49:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 12% 급반등, 주가 140만원 선 탈환",
+          "source": "2news.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9ubDJLQzM0NVN1eFRMRHpNRzRFYXl1M29ORFNQVngydXZmbnBWdkl2YmlFdXF6OXgtbzREN05iYTRSMTh5NFgzc291Skc2TjhyOWFxMzZqWmFTc1FySVZjQTBiNjNxdTlp?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기(009150)",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdmczdHlUcEFCTFpLMTU0bkFpRmIwa3BrdE11eng4azh1RXAtSDRvdVhIOEZXN1lVRkROSzNWMlV6a0RlYTZQb2llSmFsYWtTS3k2NzJJcEh0dUdaejZuZS1PRkc5RWNKR1dISVVtRXNwVjlrXzJvODRxUFRrbWxaelZnc3VsNlZGaVN6d0d4S1Vpdm1pb29j?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전기 12% 급반등, 140만원 선 회복",
+      "polishedBody": "삼성전기가 시장의 주목을 받으며 12% 수준의 큰 폭으로 주가가 반등했습니다. 이번 상승으로 인해 주가는 140만 원 선을 다시 탈환하며 견조한 흐름을 보이고 있습니다. 매수세가 유입되며 투자 심리가 개선된 점이 긍정적인 신호로 해석됩니다. 향후 주가가 140만 원 지지선을 안정적으로 유지할 수 있을지 확인이 필요합니다."
+    },
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+      "headline": "삼성전자 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신, 에너지경제신문, gukjenews.com 기반 기사 3건",
+        "상승/강세 키워드 우세",
+        "삼성전자 주가 상승 중",
+        "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "삼성전자 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBFbVMwWVlqczdHTl9NSUJzNUlUc3pjOGEzcXFDNGc2dTJ0dXBVM0hWUzBiaW9rTVRTaTIyX0pZUkE4OVlaamZaX1ZvYlBWWUlodjExRVFyc2MyYW1r?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 00:32:40 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBFbVMwWVlqczdHTl9NSUJzNUlUc3pjOGEzcXFDNGc2dTJ0dXBVM0hWUzBiaW9rTVRTaTIyX0pZUkE4OVlaamZaX1ZvYlBWWUlodjExRVFyc2MyYW1r?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+          "source": "에너지경제신문",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5taHFXbC1CYzJkTTRMdk1nVm8xODBSR1RCNnpaU2RZMHh3NTE0R3dET2RkWGdxbGNNR2hCNDdWVmxsaTVIMlp4SnhGMWlGYjcwalpLTmNCUG1KYW1sZW9XNkRXaw?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "삼성전자·SK하이닉스 주가 폭등… 코스피 7052.09로 장 출발",
+          "source": "gukjenews.com",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5iY0pXT3BzcXVvM0JzMW8xMXd4TExSdFdGY0ljaV9nWEt5SlJiRGRTaGI4YnhpcHpraDkyTEkwNU1jVU0ta0dYb3Z1LUEybHkwRzdYLXJTVjJEaTBjZjBQeU4tR3JENjRucU5nbEJB?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자, 미국 반도체주 강세에 동반 상승",
+      "polishedBody": "미국 반도체 관련주의 상승세가 국내 시장에도 긍정적인 영향을 미치고 있습니다. 삼성전자는 이러한 대외적 호재를 바탕으로 주가가 오름세를 나타내는 중입니다. 글로벌 반도체 업황에 대한 기대감이 반영되면서 투자자들의 관심이 집중되고 있습니다. 향후 미국 증시의 반도체 섹터 흐름이 국내 주가에 어떤 영향을 줄지 지켜봐야 합니다."
+    },
+    {
+      "stockName": "SK하이닉스",
+      "stockCode": "000660",
+      "summary": "삼성전자·SK하이닉스 주가 폭등… 코스피 7052.09로 장 출발",
+      "headline": "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+      "evidencePoints": [
+        "출처 에너지경제신문, gukjenews.com, 연합인포맥스 기반 기사 3건",
+        "상승/강세 키워드 우세",
+        "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+        "삼성전자·SK하이닉스 주가 폭등… 코스피 7052.09로 장 출발"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+      "source": "에너지경제신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5taHFXbC1CYzJkTTRMdk1nVm8xODBSR1RCNnpaU2RZMHh3NTE0R3dET2RkWGdxbGNNR2hCNDdWVmxsaTVIMlp4SnhGMWlGYjcwalpLTmNCUG1KYW1sZW9XNkRXaw?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 00:31:55 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+          "source": "에너지경제신문",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5taHFXbC1CYzJkTTRMdk1nVm8xODBSR1RCNnpaU2RZMHh3NTE0R3dET2RkWGdxbGNNR2hCNDdWVmxsaTVIMlp4SnhGMWlGYjcwalpLTmNCUG1KYW1sZW9XNkRXaw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자·SK하이닉스 주가 폭등… 코스피 7052.09로 장 출발",
+          "source": "gukjenews.com",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5iY0pXT3BzcXVvM0JzMW8xMXd4TExSdFdGY0ljaV9nWEt5SlJiRGRTaGI4YnhpcHpraDkyTEkwNU1jVU0ta0dYb3Z1LUEybHkwRzdYLXJTVjJEaTBjZjBQeU4tR3JENjRucU5nbEJB?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "SK하이닉스 ADR 하루만에 급반등…반도체株 저가매수에 10%↑",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE85czlWMEFOZm1VRFlRLXk0WVVLakgwYkxpeHROVTU0QzB1YmZtVUxLa2NRVXNPREdDMWtTdFJhcC1XT2lwNVRpOUNJQzVqYmQ4MVRGQndMSGo3M0ZZVVFBeGlpU3JGazFpbHlXTDdsU2U?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "SK하이닉스, 반도체주 강세 속 주가 급등",
+      "polishedBody": "SK하이닉스가 반도체 업종 전반의 강세 흐름을 타고 주가가 크게 상승했습니다. 코스피 지수의 출발과 함께 반도체 대형주들이 시장을 주도하는 모습입니다. 업계 전반의 투자 심리가 회복된 점이 주가 상승의 주요 동력으로 작용하고 있습니다. 향후 반도체 시장의 수급 상황과 지수 변동성을 면밀히 관찰해야 합니다."
+    },
+    {
+      "stockName": "카카오",
+      "stockCode": "035720",
+      "summary": "카카오 주가 상승 중",
+      "headline": "카카오게임즈 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "카카오게임즈 주가 상승 중",
+        "카카오 주가 상승 중"
+      ],
+      "mentionScore": 79.5,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "카카오게임즈 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9TMUY1dnV3UHFqUG9XcnByWVhGSC1mTkFkX2hDREg5ODd2clNrZ082N1FCMnFHRDVnNkhqcFFudEhoOTk3VWFWTjlQRTg0Y3RNZC0yckpZMm5NbjZxLWpwUU9YUXJmTEdWcTE0Q2pWdXVmRXpk?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 00:31:17 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "카카오게임즈 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9TMUY1dnV3UHFqUG9XcnByWVhGSC1mTkFkX2hDREg5ODd2clNrZ082N1FCMnFHRDVnNkhqcFFudEhoOTk3VWFWTjlQRTg0Y3RNZC0yckpZMm5NbjZxLWpwUU9YUXJmTEdWcTE0Q2pWdXVmRXpk?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "카카오 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1wandCQUkyRXhuU2xqa1NzRGRlWGtpUVNKMGZKMF9yTndTX1lOaDBOSE5zSjJPUXB4WjZPNkE3VmNyb2MzUnBrZk9ScGtNVXFLcEhES1R3dlpzNXJP?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "카카오 주가 상승세 지속",
+      "polishedBody": "카카오가 시장 내에서 완만한 주가 상승 흐름을 이어가고 있습니다. 현재 주가는 전반적인 시장 분위기에 발맞추어 긍정적인 움직임을 보입니다. 관련 계열사의 주가 흐름과 함께 동반 상승세를 기록하고 있다는 점이 특징입니다. 향후 주가 상승 추세가 지속될 수 있을지 시장의 수급을 살펴봐야 합니다."
+    },
+    {
+      "stockName": "삼성물산",
+      "stockCode": "028260",
+      "summary": "삼성물산 주가 상승 중 아시아뉴스통신",
+      "headline": "삼성물산 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "삼성물산 주가 상승 중"
+      ],
+      "mentionScore": 61.5,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "삼성물산 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCOHBTWjVRblpJYTZpYmFqOGFsUU9tUGNkeDZqNTBEZldzN1BpaFQyR1ZnSDRPWUNOZW9DTE95WUFvNDBsTndibTd2QkVReHlJY05HTDhGcDRtWlUy?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 00:28:43 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성물산 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCOHBTWjVRblpJYTZpYmFqOGFsUU9tUGNkeDZqNTBEZldzN1BpaFQyR1ZnSDRPWUNOZW9DTE95WUFvNDBsTndibTd2QkVReHlJY05HTDhGcDRtWlUy?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성물산, 주가 상승세 기록",
+      "polishedBody": "삼성물산이 시장의 흐름을 따라 주가 상승세를 나타내고 있습니다. 현재 주가는 안정적인 움직임을 보이며 투자자들의 관심을 받고 있습니다. 시장 전반의 상승 기류가 종목에 긍정적인 영향을 미친 것으로 풀이됩니다. 향후 주가 흐름이 추세적인 상승으로 이어질지 지켜보는 것이 중요합니다."
+    },
+    {
+      "stockName": "한국항공우주",
+      "stockCode": "047810",
+      "summary": "한국항공우주 주가 상승 중 아시아뉴스통신",
+      "headline": "한국항공우주 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "한국항공우주 주가 상승 중"
+      ],
+      "mentionScore": 61.3,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "한국항공우주 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9pMWdoMXBvRDdQRjBSeGhsUW82Tzhub3ZtalBjcUhORkM3RHhuRlQ2aDlGWWpJbFdvUnhib0FCMzF4a0J3ajFLSThpRGp6VGxCeGhZMnFrdEJxck1P?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 00:17:37 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한국항공우주 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9pMWdoMXBvRDdQRjBSeGhsUW82Tzhub3ZtalBjcUhORkM3RHhuRlQ2aDlGWWpJbFdvUnhib0FCMzF4a0J3ajFLSThpRGp6VGxCeGhZMnFrdEJxck1P?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한국항공우주, 시장 내 주가 상승세 지속",
+      "polishedBody": "한국항공우주가 최근 시장에서 주가 상승 흐름을 보이고 있습니다. 현재 거래 상황을 반영하여 투자자들의 관심이 집중되는 모습입니다. 방산 분야의 견조한 실적 기대감이 긍정적인 주가 흐름을 견인하는 것으로 풀이됩니다. 향후 수주 물량 확대와 실적 개선 여부가 주가 향방을 결정할 핵심 변수가 될 것입니다."
+    },
+    {
+      "stockName": "한화에어로스페이스",
+      "stockCode": "012450",
+      "summary": "한화에어로스페이스 주가 하락 중 아시아뉴스통신",
+      "headline": "한화에어로스페이스 주가 하락 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "한화에어로스페이스 주가 하락 중"
+      ],
+      "mentionScore": 61.3,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "한화에어로스페이스 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1OMGczNFNVWlRCNjdLRVo3TjdjSXNmYkJzWUpQSF8ybTlLRDhMSU1JclFOTlhKS2ktWEp2VEpLcUdsMXZ5bkFtbWZURXRXMHpKdkNsNWh6LWpQS1o3?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 00:17:30 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한화에어로스페이스 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1OMGczNFNVWlRCNjdLRVo3TjdjSXNmYkJzWUpQSF8ybTlLRDhMSU1JclFOTlhKS2ktWEp2VEpLcUdsMXZ5bkFtbWZURXRXMHpKdkNsNWh6LWpQS1o3?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한화에어로스페이스, 주가 하락세 기록",
+      "polishedBody": "한화에어로스페이스의 주가가 최근 하락세를 나타내고 있습니다. 시장의 전반적인 조정 분위기 속에서 매도세가 다소 우위를 점하는 상황입니다. 단기적인 수급 불균형이 주가에 부담으로 작용하며 투자 심리가 위축된 것으로 보입니다. 향후 주요 사업 부문의 수주 소식과 시장 수급 변화를 면밀히 살펴봐야 합니다."
+    },
+    {
+      "stockName": "기아",
+      "stockCode": "000270",
+      "summary": "기아 주가 상승 중 아시아뉴스통신",
+      "headline": "기아 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "기아 주가 상승 중"
+      ],
+      "mentionScore": 61.3,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "기아 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5yOE8wcjVQaHN2XzRRcUFQcGZwTU0zdHhrVUxwUDJsbl9RVTNCX3ZEYWVYaXpoekVDQU5DMDNfWWhJMmtsbFZNVTBhcXpkR3VLTWFYcHM2aTJNT0Ez?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 00:16:46 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "기아 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5yOE8wcjVQaHN2XzRRcUFQcGZwTU0zdHhrVUxwUDJsbl9RVTNCX3ZEYWVYaXpoekVDQU5DMDNfWWhJMmtsbFZNVTBhcXpkR3VLTWFYcHM2aTJNT0Ez?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "기아, 주가 상승 흐름 타며 강세",
+      "polishedBody": "기아의 주가가 시장의 주목을 받으며 상승세를 이어가고 있습니다. 자동차 업종 전반의 분위기가 개선되면서 주가에도 긍정적인 영향을 미치고 있습니다. 실적 성장세에 대한 기대감이 매수세를 유입시키며 주가를 밀어 올리는 형국입니다. 앞으로 글로벌 판매 실적과 신차 출시 효과가 주가에 어떤 영향을 줄지 지켜볼 필요가 있습니다."
+    },
+    {
+      "stockName": "두산에너빌리티",
+      "stockCode": "034020",
+      "summary": "[리포트 브리핑]두산에너빌리티, '대만 NDR 후기: 같은 스토리, 다른 렌즈' 목표가 149,000원 - 유안타증권 뉴스핌",
+      "headline": "[리포트 브리핑]두산에너빌리티, '대만 NDR 후기: 같은 스토리, 다른 렌즈' 목표가 149,000원 - 유안타증권",
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[리포트 브리핑]두산에너빌리티, '대만 NDR 후기: 같은 스토리, 다른 렌즈' 목표가 149,000원 - 유안타증권"
+      ],
+      "mentionScore": 60.5,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[리포트 브리핑]두산에너빌리티, '대만 NDR 후기: 같은 스토리, 다른 렌즈' 목표가 149,000원 - 유안타증권",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE55UjVyNGM1bzFGMl94ZjlDMWIwUWZac3MzdUNybXFkQ2xxNExCUzhZWjBFZUwydXJ1ZHpRNU5vT2N3bHNtZUVWTV9pdUVna2dHSXkwNGRHaGlCZktF?oc=5",
+      "publishedAt": "Tue, 21 Jul 2026 23:32:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]두산에너빌리티, '대만 NDR 후기: 같은 스토리, 다른 렌즈' 목표가 149,000원 - 유안타증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE55UjVyNGM1bzFGMl94ZjlDMWIwUWZac3MzdUNybXFkQ2xxNExCUzhZWjBFZUwydXJ1ZHpRNU5vT2N3bHNtZUVWTV9pdUVna2dHSXkwNGRHaGlCZktF?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "두산에너빌리티, 목표가 14만 9천 원 제시",
+      "polishedBody": "두산에너빌리티에 대해 증권가에서 목표주가 14만 9천 원을 제시하는 리포트가 나왔습니다. 대만 NDR 이후 기업의 성장 스토리에 대한 시장의 평가가 이어지고 있습니다. 기업의 본질적인 가치와 성장 잠재력이 중립적인 관점에서 재조명받는 상황입니다. 향후 해외 프로젝트 수주 성과와 사업 다각화 전략의 구체적인 실행 과정을 확인해야 합니다."
+    },
+    {
+      "stockName": "코오롱티슈진",
+      "stockCode": "950160",
+      "summary": "[특징주] 코오롱티슈진, 관절염 치료제 ‘美 3상 유효성 실패’에 이틀 연속 下 - 조선비즈",
+      "headline": "코오롱티슈진 2거래일 연속 하한가, TG-C 미국 임상 3상 실패 여파",
+      "evidencePoints": [
+        "출처 Chosunbiz, 2news.co.kr 기반 기사 2건",
+        "제목 기준 변동률 단서 -30.0%",
+        "[특징주] 코오롱티슈진, 관절염 치료제 ‘美 3상 유효성 실패’에 이틀 연속 下 - 조선비즈",
+        "코오롱티슈진 2거래일 연속 하한가, TG-C 미국 임상 3상 실패 여파"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-07-22T01:00:19.439Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": -30,
+      "latestHeadline": "코오롱티슈진 2거래일 연속 하한가, TG-C 미국 임상 3상 실패 여파",
+      "source": "2news.co.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1aZGxGRjZQUi1SakdhbXBhdzdlTW5kVkVxZW5sdVIydUpOcWk5Mml6Tkc0X01GYl9fMHl0TEgtNFJNekptNVhvWmtCaTc5RTNGb0tZRHVEM2ZNbk9CNjE2NU1LNnFsLVVn?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 00:47:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 코오롱티슈진, 관절염 치료제 ‘美 3상 유효성 실패’에 이틀 연속 下 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOUUxtU2NiRFBSTHVnZUlmVzBLZVBIeWxvc2V1TWlxTzRvZkMxZGI2VTI3aHJpUHR1QVRuVlN5cFZ1cnFaemZpZEI0dG1JYW55UTJERG10ZHc4WHJiazR5SUQ5UHFZRFlPQ1BtZzhnZERhWHhYSDlPRlpZZzhaVDV4dlB6aHJtai1C0gGcAUFVX3lxTE9yQTBhRG5hdThwZzVyLVVpWXdpM19aRkNZcU9oRWI1TGFYWXFKV3NibjYwWi1rZmV5c3ZyYXVzRUpTNFNWN1U4VFgyc0R4N0k0ME0zNldUR3NtYzRJaDFvYkRsR3BPSW1VaGYzQ0xZRGVUek1yNzZORHEwWG4xTTk3SUNDQ3FabGhVZ2lqejRyYzhvMDBGSnRlc0FlcQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "코오롱티슈진 2거래일 연속 하한가, TG-C 미국 임상 3상 실패 여파",
+          "source": "2news.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1aZGxGRjZQUi1SakdhbXBhdzdlTW5kVkVxZW5sdVIydUpOcWk5Mml6Tkc0X01GYl9fMHl0TEgtNFJNekptNVhvWmtCaTc5RTNGb0tZRHVEM2ZNbk9CNjE2NU1LNnFsLVVn?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "코오롱티슈진, 임상 실패 여파로 2일 연속 하한가",
+      "polishedBody": "코오롱티슈진이 관절염 치료제 TG-C의 미국 임상 3상 유효성 확보 실패로 이틀 연속 하한가를 기록했습니다. 임상 결과에 대한 실망 매물이 쏟아지며 주가가 급격히 하락하는 양상입니다. 신약 개발의 불확실성이 현실화되면서 투자자들의 위험 회피 심리가 강하게 작용하고 있습니다. 향후 회사의 대응 방안과 임상 관련 후속 조치가 주가에 미칠 영향을 주시해야 합니다."
+    },
     {
       "stockName": "덕산하이메탈",
       "stockCode": "077360",
@@ -78,40 +464,6 @@
       "polishedBody": "클래시스가 삼성전자 출신의 인수합병 전문가를 신규 임원으로 영입하며 경영 체질 개선에 나섰습니다. 이번 인사는 기업 가치 제고를 위한 전략적 행보로 해석되면서 시장의 이목이 집중되고 있습니다. 전문가 영입이 향후 최대주주의 지분 매각이나 기업 매각을 위한 사전 작업일 가능성이 제기되어 중립적인 시각이 우세합니다. 향후 회사가 추진할 구체적인 사업 재편 방향과 지배구조 변화 여부를 면밀히 지켜봐야 합니다."
     },
     {
-      "stockName": "삼성물산",
-      "stockCode": "028260",
-      "summary": "삼성물산 주가 상승 중 아시아뉴스통신",
-      "headline": "삼성물산 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "삼성물산 주가 상승 중"
-      ],
-      "mentionScore": 59.5,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-07-21T03:00:26.404Z",
-      "cycleLabel": "KST_1200",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "삼성물산 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1YM3h2M1lQaWJEVGhJaHRqR0VNVXFfTFZ2ZmF0czJUS1lpN2h4N1NwdmtGYXQtbWR1Yi1BNmxKNTNXLTZ1WnEtSDR2MVdtN1g5allXek5IN2xCbUVm?oc=5",
-      "publishedAt": "Tue, 21 Jul 2026 00:30:05 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성물산 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1YM3h2M1lQaWJEVGhJaHRqR0VNVXFfTFZ2ZmF0czJUS1lpN2h4N1NwdmtGYXQtbWR1Yi1BNmxKNTNXLTZ1WnEtSDR2MVdtN1g5allXek5IN2xCbUVm?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성물산, 주가 상승세 지속",
-      "polishedBody": "삼성물산의 주가가 최근 시장에서 오름세를 보이며 투자자들의 주목을 받고 있습니다. 현재 주가 흐름은 전반적인 시장 상황과 맞물려 긍정적인 움직임을 나타내는 중입니다. 기업의 안정적인 사업 구조가 투자 심리에 반영되면서 주가 상승을 견인하는 것으로 분석됩니다. 향후 주가 추이가 지속적인 상승 탄력을 유지할 수 있을지 여부를 지켜봐야 합니다."
-    },
-    {
       "stockName": "큐리오시스",
       "stockCode": "494120",
       "summary": "[Company Analysis] [큐리오시스] 시장 관심 확대 '큐리오시스' … 무상증자 이어 실적 확대 기대감도 비즈니스리포트",
@@ -143,217 +495,6 @@
       "hasNews": true,
       "polishedHeadline": "큐리오시스, 무상증자 및 실적 기대감 부각",
       "polishedBody": "큐리오시스가 무상증자 결정과 함께 실적 개선에 대한 기대감으로 시장의 관심을 받고 있습니다. 최근 주가는 이러한 기업 내부의 호재성 이슈를 바탕으로 변동성을 보이며 움직이는 모습입니다. 무상증자를 통한 주주 가치 제고와 실적 성장이 동시에 부각되면서 중립 이상의 평가를 받고 있습니다. 향후 실제 실적 수치가 기대치에 부합하는지 여부가 주가 향방의 핵심이 될 것입니다."
-    },
-    {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "삼성전자에 무슨 일…삼전-한국물 CDS 프리미엄차 6년4개월만 최대",
-      "headline": "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-      "evidencePoints": [
-        "출처 이투데이, 글로벌이코노믹, 파이낸셜뉴스 기반 기사 3건",
-        "상승/강세 키워드 우세",
-        "삼성전자에 무슨 일…삼전-한국물 CDS 프리미엄차 6년4개월만 최대",
-        "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-07-21T02:00:24.208Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-      "source": "글로벌이코노믹",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTEE1cHQ2andRSVZ1Z181YUJmeHlVMTVsZWY2eUZ6Vm1vQnoyUVF6SUxHVk83RVJYNVFrSGJiZnBXaWF3X205d1NYQVU3UERwLVNpMDZLRGZqbUdsSjZhVkdycEtUTWk5VDFhejlVVFlINHZkVGhzakV0WXpvNkFZUTBQcDJJeGQ2?oc=5",
-      "publishedAt": "Tue, 21 Jul 2026 01:02:49 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자에 무슨 일…삼전-한국물 CDS 프리미엄차 6년4개월만 최대",
-          "source": "이투데이",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9UdTlmXy1VZVFQV29oeXlYQXlzbjhmYkdtNWZRS1Y0RFFiejdIN1R5a2tGelU5cTJLV3hRTVZtZ3lRUkhMY3lab2NueU84OGl6V2l2Mg?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTEE1cHQ2andRSVZ1Z181YUJmeHlVMTVsZWY2eUZ6Vm1vQnoyUVF6SUxHVk83RVJYNVFrSGJiZnBXaWF3X205d1NYQVU3UERwLVNpMDZLRGZqbUdsSjZhVkdycEtUTWk5VDFhejlVVFlINHZkVGhzakV0WXpvNkFZUTBQcDJJeGQ2?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "LS證 \"삼성전자·SK하이닉스 낙폭 과대…22일 알파벳 실적 주목\"",
-          "source": "파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9TT2tYVTFVa1N0TnEwLWRBemdDZ0xmVG5seUNFTUZPUE90QkFBUkFpMUZmdWZyTFJuaEE5TEI0TFhmbXEyNkF5dkdWMzY0VzhWZjJBaE9HdlYyQQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전자, 등락 후 상승 전환",
-      "polishedBody": "삼성전자는 등락을 반복하다 상승세로 전환하였습니다. 삼성전자와 한국물 CDS 프리미엄 차이가 6년 4개월 만에 최대를 기록하며 시장의 우려를 반영하였습니다. 이는 긍정적인 신호로 해석되며 투자 심리 회복의 조짐을 보여줍니다. 향후 외국인 자금 흐름과 반도체 업황 회복 여부가 주가에 영향을 미칠 것입니다."
-    },
-    {
-      "stockName": "SK하이닉스",
-      "stockCode": "000660",
-      "summary": "LS證 \"삼성전자·SK하이닉스 낙폭 과대…22일 알파벳 실적 주목\"",
-      "headline": "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-      "evidencePoints": [
-        "출처 글로벌이코노믹, 파이낸셜뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-        "LS證 \"삼성전자·SK하이닉스 낙폭 과대…22일 알파벳 실적 주목\""
-      ],
-      "mentionScore": 87,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-07-21T02:00:24.208Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-      "source": "글로벌이코노믹",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTEE1cHQ2andRSVZ1Z181YUJmeHlVMTVsZWY2eUZ6Vm1vQnoyUVF6SUxHVk83RVJYNVFrSGJiZnBXaWF3X205d1NYQVU3UERwLVNpMDZLRGZqbUdsSjZhVkdycEtUTWk5VDFhejlVVFlINHZkVGhzakV0WXpvNkFZUTBQcDJJeGQ2?oc=5",
-      "publishedAt": "Tue, 21 Jul 2026 01:02:49 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTEE1cHQ2andRSVZ1Z181YUJmeHlVMTVsZWY2eUZ6Vm1vQnoyUVF6SUxHVk83RVJYNVFrSGJiZnBXaWF3X205d1NYQVU3UERwLVNpMDZLRGZqbUdsSjZhVkdycEtUTWk5VDFhejlVVFlINHZkVGhzakV0WXpvNkFZUTBQcDJJeGQ2?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "LS證 \"삼성전자·SK하이닉스 낙폭 과대…22일 알파벳 실적 주목\"",
-          "source": "파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9TT2tYVTFVa1N0TnEwLWRBemdDZ0xmVG5seUNFTUZPUE90QkFBUkFpMUZmdWZyTFJuaEE5TEI0TFhmbXEyNkF5dkdWMzY0VzhWZjJBaE9HdlYyQQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "SK하이닉스, 낙폭 과대 평가",
-      "polishedBody": "SK하이닉스는 등락을 반복하며 상승세로 전환하였습니다. LS증권은 낙폭이 과대하다고 분석하며 22일 알파벳 실적에 주목해야 한다고 밝혔습니다. 이는 중립적인 신호로, 실적 발표 결과에 따라 방향성이 결정될 가능성이 큽니다. 알파벳 실적과 AI 반도체 수요 동향을 주시할 필요가 있습니다."
-    },
-    {
-      "stockName": "삼성전기",
-      "stockCode": "009150",
-      "summary": "“삼성전기 주식 늘리고, 현대차 지분 확 줄였다”…외국인, 韓 대기업 ‘옥석가리기’ 새판 짠다",
-      "headline": "삼성전기 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, CEO스코어데일리 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "삼성전기 주가 하락 중",
-        "“삼성전기 주식 늘리고, 현대차 지분 확 줄였다”…외국인, 韓 대기업 ‘옥석가리기’ 새판 짠다"
-      ],
-      "mentionScore": 86.4,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-07-21T02:00:24.208Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "삼성전기 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5tQ2xfT1dLcFUzX3dBUVRMUTc4RzJqSXc4M2RIaUhGeXFZWDhoeU9jcUtHTnF6TzlJY0haNWVVZVlOenoxeXI5QWhNSWh2Z0taeXVCZGFSWU5zeXFm?oc=5",
-      "publishedAt": "Tue, 21 Jul 2026 00:21:36 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전기 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5tQ2xfT1dLcFUzX3dBUVRMUTc4RzJqSXc4M2RIaUhGeXFZWDhoeU9jcUtHTnF6TzlJY0haNWVVZVlOenoxeXI5QWhNSWh2Z0taeXVCZGFSWU5zeXFm?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "“삼성전기 주식 늘리고, 현대차 지분 확 줄였다”…외국인, 韓 대기업 ‘옥석가리기’ 새판 짠다",
-          "source": "CEO스코어데일리",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5wWnM5UF9Yb2M3RVBFTFNCNGRhLWlMbTJVeVdXYjBGam1uNTdQRFhrVXU0RWtmUjlCaUh3NXJxUHVQZ3FiQ291SDFVQzc4dzdkdkUzamlOYm01dzhpalE0M1VqbjloOVQ0Z3VR?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전기, 외국인 매도에 하락",
-      "polishedBody": "삼성전기 주가가 하락 중입니다. 외국인 투자자들이 삼성전기 지분을 늘리는 반면 현대차 지분을 줄이는 옥석가리기를 진행하고 있습니다. 이는 위험 신호로, 외국인의 선택적 매수에도 불구하고 단기적인 하락 압력이 존재합니다. 외국인 매매 동향과 전방 산업 수요 변화를 지속적으로 확인해야 합니다."
-    },
-    {
-      "stockName": "두산에너빌리티",
-      "stockCode": "034020",
-      "summary": "두산에너빌리티 주가 연속 약세에 '6만빌리티' 사수하나?…52주 최고가 대비 절반 이하로",
-      "headline": "두산에너빌리티 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, CBC뉴스 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "두산에너빌리티 주가 하락 중",
-        "두산에너빌리티 주가 연속 약세에 '6만빌리티' 사수하나?…52주 최고가 대비 절반 이하로"
-      ],
-      "mentionScore": 86.2,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-07-21T02:00:24.208Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "두산에너빌리티 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9oQUt6UVpUdi1QX1hKSm1JT3Y3TmxRVnJDTXVmamRVdTN0NWdRaHdfSm1DQlh3R3dmalRGMXMxb0lvLVByTnBEa09ieVdvZHB5S3pNVHdldnlfZENwdnJmZkhwTEhDTXNtcERYV3BDcTFzMzNC?oc=5",
-      "publishedAt": "Tue, 21 Jul 2026 00:15:14 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산에너빌리티 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9oQUt6UVpUdi1QX1hKSm1JT3Y3TmxRVnJDTXVmamRVdTN0NWdRaHdfSm1DQlh3R3dmalRGMXMxb0lvLVByTnBEa09ieVdvZHB5S3pNVHdldnlfZENwdnJmZkhwTEhDTXNtcERYV3BDcTFzMzNC?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산에너빌리티 주가 연속 약세에 '6만빌리티' 사수하나?…52주 최고가 대비 절반 이하로",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KUTh1VnczQUtoU1QybDFaYnU1ZDRhdkRJaHNHZTZJRVBnQU5IbWphQVRiOHItY0NhdjNKWFRnVjB0eUdsT1lycUhBbVZ2SW1ISmZJc1hFR3BHQkd3TmRXRG4yVEYwR1ox?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "두산에너빌리티, 52주 최고가 대비 반토막",
-      "polishedBody": "두산에너빌리티 주가가 연속 약세를 보이며 52주 최고가 대비 절반 이하로 떨어졌습니다. 시장에서는 '6만빌리티' 지지선을 사수할지 관심이 집중되고 있습니다. 이는 위험 신호로, 추가 하락 가능성에 대한 경계가 필요합니다. 향후 에너지 정책 변화와 수주 모멘텀 회복 여부가 주요 변수입니다."
-    },
-    {
-      "stockName": "카카오",
-      "stockCode": "035720",
-      "summary": "카카오 주가 하락 중",
-      "headline": "카카오게임즈 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "카카오게임즈 주가 하락 중",
-        "카카오 주가 하락 중"
-      ],
-      "mentionScore": 78.6,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-07-21T02:00:24.208Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "카카오게임즈 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16Uko2S3N6VkpCWjZvUS12ZFBKYVh3YVVnSmZNNUk5eE55VE1nTHI1d0dkYllPRlpIWjd2TFh6U2hjOHhVV1h5akZVT2FHRHM2UnlfM3VobVRpTDFR?oc=5",
-      "publishedAt": "Tue, 21 Jul 2026 00:34:34 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "카카오게임즈 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16Uko2S3N6VkpCWjZvUS12ZFBKYVh3YVVnSmZNNUk5eE55VE1nTHI1d0dkYllPRlpIWjd2TFh6U2hjOHhVV1h5akZVT2FHRHM2UnlfM3VobVRpTDFR?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "카카오 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9jTHNSUnd3X0kxbFZJazkwUW54bGNuMDVidi1NMzJJMXdRbkxVV1VndlI1QUFha3lGQXhEWDg4N0FRQ2pXX1dSQVVxQXRvN204U1dZckJ1SDlFUjEt?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "카카오, 주가 하락 지속",
-      "polishedBody": "카카오 주가가 하락 중입니다. 카카오게임즈의 주가 하락이 동반되며 전반적인 약세 흐름을 보이고 있습니다. 이는 부정적인 신호로, 게임 부문의 부진이 전체 실적에 영향을 미칠 수 있습니다. 향후 신규 게임 출시 일정과 플랫폼 사업의 성과를 주목해야 합니다."
     },
     {
       "stockName": "에넥스",
@@ -422,108 +563,6 @@
       "hasNews": true,
       "polishedHeadline": "두산테스나 주가 하락 중",
       "polishedBody": "두산테스나의 주가가 하락하고 있습니다. 구체적인 하락 원인은 아직 확인되지 않았습니다. 이는 단기적인 조정일 가능성도 있지만 추가 하락 가능성도 배제할 수 없습니다. 향후 관련 뉴스와 거래량 변화를 지켜봐야 합니다."
-    },
-    {
-      "stockName": "한국항공우주",
-      "stockCode": "047810",
-      "summary": "한국항공우주 주가 하락중 아시아뉴스통신",
-      "headline": "한국항공우주 주가 하락중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "한국항공우주 주가 하락중"
-      ],
-      "mentionScore": 60.2,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-07-21T02:00:24.208Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "한국항공우주 주가 하락중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVd2o0TmtqQ0xsZkNTS0NDMlBNUnNaR1E0MDBkQlVOY2lIQ1RNWUktc0s5LVlfMUt2WmpBTGJZTERNVTY1OGdDNmVlNVZfNWdZRkpXcjdQYTQ1NjRZ?oc=5",
-      "publishedAt": "Tue, 21 Jul 2026 00:12:43 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국항공우주 주가 하락중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVd2o0TmtqQ0xsZkNTS0NDMlBNUnNaR1E0MDBkQlVOY2lIQ1RNWUktc0s5LVlfMUt2WmpBTGJZTERNVTY1OGdDNmVlNVZfNWdZRkpXcjdQYTQ1NjRZ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한국항공우주 주가 하락 중",
-      "polishedBody": "한국항공우주의 주가가 하락하고 있습니다. 방산 업종 전반의 약세가 영향을 미친 것으로 보입니다. 이는 일시적인 현상일 수 있지만 방산주에 대한 투자 심리가 위축된 신호로 해석됩니다. 향후 방산 수주 소식과 업종 동향을 확인해야 합니다."
-    },
-    {
-      "stockName": "한화에어로스페이스",
-      "stockCode": "012450",
-      "summary": "한화에어로스페이스 주가 하락 중 아시아뉴스통신",
-      "headline": "한화에어로스페이스 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "한화에어로스페이스 주가 하락 중"
-      ],
-      "mentionScore": 60.2,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-07-21T02:00:24.208Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "한화에어로스페이스 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE54X3ItOTJnOEx0d3kzYmJJZDhjUzkxSDF6QXllTmZQYmdxMmwwa1AxMGRhUU0zTUdFTlpmUzdCT3dkd25fNktRaDRsRXRwdFczbUEwMUR0eFZTbzJT?oc=5",
-      "publishedAt": "Tue, 21 Jul 2026 00:12:36 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화에어로스페이스 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE54X3ItOTJnOEx0d3kzYmJJZDhjUzkxSDF6QXllTmZQYmdxMmwwa1AxMGRhUU0zTUdFTlpmUzdCT3dkd25fNktRaDRsRXRwdFczbUEwMUR0eFZTbzJT?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한화에어로스페이스 주가 하락 중",
-      "polishedBody": "한화에어로스페이스의 주가가 하락하고 있습니다. 방산 업종의 전반적인 약세가 주가에 부담을 주고 있습니다. 이는 단기적인 조정으로 볼 수 있지만 추가 하락 가능성도 존재합니다. 향후 방산 업종의 반등 여부와 기업 실적을 주목해야 합니다."
-    },
-    {
-      "stockName": "기아",
-      "stockCode": "000270",
-      "summary": "기아 주가 하락 중 아시아뉴스통신",
-      "headline": "기아 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "기아 주가 하락 중"
-      ],
-      "mentionScore": 60.2,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-07-21T02:00:24.208Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "기아 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5nNV9CSVhNMFplNUw1NUlDSzc4dUlRbUxXTlQ2alRHZVk0SWJ2b1NoRmduYTkxSzhCNllrNXBiNV9Vc0RTWXlFN1ZUSnNhUEQ4cmRKLXJ5b0loWk1u?oc=5",
-      "publishedAt": "Tue, 21 Jul 2026 00:12:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "기아 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5nNV9CSVhNMFplNUw1NUlDSzc4dUlRbUxXTlQ2alRHZVk0SWJ2b1NoRmduYTkxSzhCNllrNXBiNV9Vc0RTWXlFN1ZUSnNhUEQ4cmRKLXJ5b0loWk1u?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "기아 주가 하락 중",
-      "polishedBody": "기아의 주가가 하락하고 있습니다. 자동차 업종의 전반적인 약세가 영향을 미친 것으로 보입니다. 이는 일시적인 현상일 수 있지만 업종 내 경쟁 심화가 우려됩니다. 향후 자동차 판매 실적과 업종 동향을 지켜봐야 합니다."
     },
     {
       "stockName": "KB금융",
@@ -707,45 +746,297 @@
       "hasNews": true,
       "polishedHeadline": "LG이노텍, 고점 대비 주가 하락세 지속하며 변동성 확대",
       "polishedBody": "과거 178만 원까지 치솟았던 주가가 최근 60만 원대로 내려앉으며 큰 폭의 하락세를 보였습니다. 급격한 주가 조정으로 인해 시장에서는 황제주의 추락이라는 우려 섞인 시선이 존재합니다. 현재는 주가 흐름이 불안정한 상태를 유지하고 있어 중립적인 관점에서 접근할 필요가 있습니다. 향후 주가 반등을 이끌어낼 만한 새로운 모멘텀이 확보될 수 있을지 지켜봐야 합니다."
-    },
-    {
-      "stockName": "한솔케미칼",
-      "stockCode": "014680",
-      "summary": "[특징주] 한솔케미칼, 장중 하락세 지속…외인·기관 매도에 투자심리 위축 : 기업주식정보 재경일보",
-      "headline": "[특징주] 한솔케미칼, 장중 하락세 지속…외인·기관 매도에 투자심리 위축 : 기업주식정보",
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "[특징주] 한솔케미칼, 장중 하락세 지속…외인·기관 매도에 투자심리 위축 : 기업주식정보"
-      ],
-      "mentionScore": 59.2,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-07-17T05:00:18.904Z",
-      "cycleLabel": "KST_1400",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "[특징주] 한솔케미칼, 장중 하락세 지속…외인·기관 매도에 투자심리 위축 : 기업주식정보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE81NVpvaXpVTkpma29XX1ZKNWE4dEU4UkVSNy0wTEpBWE1yNDN4X3hKdEQ4UXU5WjVCUDlXZktCMEdNa2NMbmQtdFl3?oc=5",
-      "publishedAt": "Fri, 17 Jul 2026 02:10:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 한솔케미칼, 장중 하락세 지속…외인·기관 매도에 투자심리 위축 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE81NVpvaXpVTkpma29XX1ZKNWE4dEU4UkVSNy0wTEpBWE1yNDN4X3hKdEQ4UXU5WjVCUDlXZktCMEdNa2NMbmQtdFl3?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한솔케미칼, 외국인과 기관의 동반 매도세에 주가 약세",
-      "polishedBody": "한솔케미칼은 장중 외국인과 기관 투자자들의 매도 물량이 집중되면서 하락세를 면치 못하고 있습니다. 수급 주체들의 이탈이 가속화되면서 주가는 하방 압력을 강하게 받는 상황입니다. 대규모 매도세가 이어지며 시장 전반의 투자 심리가 크게 위축된 점이 주가 하락의 배경입니다. 향후 수급 주체들의 매도세가 진정되고 다시 매수세로 전환될 수 있을지 여부를 확인해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "009150",
+      "name": "삼성전기",
+      "changeRate": 12,
+      "price": null,
+      "summary": "삼성전기(009150)",
+      "source": "2news.co.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9ubDJLQzM0NVN1eFRMRHpNRzRFYXl1M29ORFNQVngydXZmbnBWdkl2YmlFdXF6OXgtbzREN05iYTRSMTh5NFgzc291Skc2TjhyOWFxMzZqWmFTc1FySVZjQTBiNjNxdTlp?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 2news.co.kr, 매일경제 마켓 기반 기사 2건",
+        "제목 기준 변동률 단서 +12.0%",
+        "삼성전기 12% 급반등, 주가 140만원 선 탈환",
+        "삼성전기(009150)"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 12% 급반등, 주가 140만원 선 탈환",
+          "source": "2news.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9ubDJLQzM0NVN1eFRMRHpNRzRFYXl1M29ORFNQVngydXZmbnBWdkl2YmlFdXF6OXgtbzREN05iYTRSMTh5NFgzc291Skc2TjhyOWFxMzZqWmFTc1FySVZjQTBiNjNxdTlp?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기(009150)",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdmczdHlUcEFCTFpLMTU0bkFpRmIwa3BrdE11eng4azh1RXAtSDRvdVhIOEZXN1lVRkROSzNWMlV6a0RlYTZQb2llSmFsYWtTS3k2NzJJcEh0dUdaejZuZS1PRkc5RWNKR1dISVVtRXNwVjlrXzJvODRxUFRrbWxaelZnc3VsNlZGaVN6d0d4S1Vpdm1pb29j?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBFbVMwWVlqczdHTl9NSUJzNUlUc3pjOGEzcXFDNGc2dTJ0dXBVM0hWUzBiaW9rTVRTaTIyX0pZUkE4OVlaamZaX1ZvYlBWWUlodjExRVFyc2MyYW1r?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 아시아뉴스통신, 에너지경제신문, gukjenews.com 기반 기사 3건",
+        "상승/강세 키워드 우세",
+        "삼성전자 주가 상승 중",
+        "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBFbVMwWVlqczdHTl9NSUJzNUlUc3pjOGEzcXFDNGc2dTJ0dXBVM0hWUzBiaW9rTVRTaTIyX0pZUkE4OVlaamZaX1ZvYlBWWUlodjExRVFyc2MyYW1r?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+          "source": "에너지경제신문",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5taHFXbC1CYzJkTTRMdk1nVm8xODBSR1RCNnpaU2RZMHh3NTE0R3dET2RkWGdxbGNNR2hCNDdWVmxsaTVIMlp4SnhGMWlGYjcwalpLTmNCUG1KYW1sZW9XNkRXaw?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "삼성전자·SK하이닉스 주가 폭등… 코스피 7052.09로 장 출발",
+          "source": "gukjenews.com",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5iY0pXT3BzcXVvM0JzMW8xMXd4TExSdFdGY0ljaV9nWEt5SlJiRGRTaGI4YnhpcHpraDkyTEkwNU1jVU0ta0dYb3Z1LUEybHkwRzdYLXJTVjJEaTBjZjBQeU4tR3JENjRucU5nbEJB?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "changeRate": null,
+      "price": null,
+      "summary": "삼성전자·SK하이닉스 주가 폭등… 코스피 7052.09로 장 출발",
+      "source": "에너지경제신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5taHFXbC1CYzJkTTRMdk1nVm8xODBSR1RCNnpaU2RZMHh3NTE0R3dET2RkWGdxbGNNR2hCNDdWVmxsaTVIMlp4SnhGMWlGYjcwalpLTmNCUG1KYW1sZW9XNkRXaw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 에너지경제신문, gukjenews.com, 연합인포맥스 기반 기사 3건",
+        "상승/강세 키워드 우세",
+        "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+        "삼성전자·SK하이닉스 주가 폭등… 코스피 7052.09로 장 출발"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성전자·SK하이닉스 강세…美 반도체주 상승 주목",
+          "source": "에너지경제신문",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5taHFXbC1CYzJkTTRMdk1nVm8xODBSR1RCNnpaU2RZMHh3NTE0R3dET2RkWGdxbGNNR2hCNDdWVmxsaTVIMlp4SnhGMWlGYjcwalpLTmNCUG1KYW1sZW9XNkRXaw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자·SK하이닉스 주가 폭등… 코스피 7052.09로 장 출발",
+          "source": "gukjenews.com",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5iY0pXT3BzcXVvM0JzMW8xMXd4TExSdFdGY0ljaV9nWEt5SlJiRGRTaGI4YnhpcHpraDkyTEkwNU1jVU0ta0dYb3Z1LUEybHkwRzdYLXJTVjJEaTBjZjBQeU4tR3JENjRucU5nbEJB?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "SK하이닉스 ADR 하루만에 급반등…반도체株 저가매수에 10%↑",
+          "source": "연합인포맥스",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE85czlWMEFOZm1VRFlRLXk0WVVLakgwYkxpeHROVTU0QzB1YmZtVUxLa2NRVXNPREdDMWtTdFJhcC1XT2lwNVRpOUNJQzVqYmQ4MVRGQndMSGo3M0ZZVVFBeGlpU3JGazFpbHlXTDdsU2U?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "035720",
+      "name": "카카오",
+      "changeRate": null,
+      "price": null,
+      "summary": "카카오 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9TMUY1dnV3UHFqUG9XcnByWVhGSC1mTkFkX2hDREg5ODd2clNrZ082N1FCMnFHRDVnNkhqcFFudEhoOTk3VWFWTjlQRTg0Y3RNZC0yckpZMm5NbjZxLWpwUU9YUXJmTEdWcTE0Q2pWdXVmRXpk?oc=5",
+      "mentionScore": 79.5,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "카카오게임즈 주가 상승 중",
+        "카카오 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "카카오게임즈 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9TMUY1dnV3UHFqUG9XcnByWVhGSC1mTkFkX2hDREg5ODd2clNrZ082N1FCMnFHRDVnNkhqcFFudEhoOTk3VWFWTjlQRTg0Y3RNZC0yckpZMm5NbjZxLWpwUU9YUXJmTEdWcTE0Q2pWdXVmRXpk?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "카카오 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1wandCQUkyRXhuU2xqa1NzRGRlWGtpUVNKMGZKMF9yTndTX1lOaDBOSE5zSjJPUXB4WjZPNkE3VmNyb2MzUnBrZk9ScGtNVXFLcEhES1R3dlpzNXJP?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "028260",
+      "name": "삼성물산",
+      "changeRate": null,
+      "price": null,
+      "summary": "삼성물산 주가 상승 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCOHBTWjVRblpJYTZpYmFqOGFsUU9tUGNkeDZqNTBEZldzN1BpaFQyR1ZnSDRPWUNOZW9DTE95WUFvNDBsTndibTd2QkVReHlJY05HTDhGcDRtWlUy?oc=5",
+      "mentionScore": 61.5,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "삼성물산 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성물산 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCOHBTWjVRblpJYTZpYmFqOGFsUU9tUGNkeDZqNTBEZldzN1BpaFQyR1ZnSDRPWUNOZW9DTE95WUFvNDBsTndibTd2QkVReHlJY05HTDhGcDRtWlUy?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "047810",
+      "name": "한국항공우주",
+      "changeRate": null,
+      "price": null,
+      "summary": "한국항공우주 주가 상승 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9pMWdoMXBvRDdQRjBSeGhsUW82Tzhub3ZtalBjcUhORkM3RHhuRlQ2aDlGWWpJbFdvUnhib0FCMzF4a0J3ajFLSThpRGp6VGxCeGhZMnFrdEJxck1P?oc=5",
+      "mentionScore": 61.3,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "한국항공우주 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한국항공우주 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9pMWdoMXBvRDdQRjBSeGhsUW82Tzhub3ZtalBjcUhORkM3RHhuRlQ2aDlGWWpJbFdvUnhib0FCMzF4a0J3ajFLSThpRGp6VGxCeGhZMnFrdEJxck1P?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "012450",
+      "name": "한화에어로스페이스",
+      "changeRate": null,
+      "price": null,
+      "summary": "한화에어로스페이스 주가 하락 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1OMGczNFNVWlRCNjdLRVo3TjdjSXNmYkJzWUpQSF8ybTlLRDhMSU1JclFOTlhKS2ktWEp2VEpLcUdsMXZ5bkFtbWZURXRXMHpKdkNsNWh6LWpQS1o3?oc=5",
+      "mentionScore": 61.3,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "한화에어로스페이스 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한화에어로스페이스 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1OMGczNFNVWlRCNjdLRVo3TjdjSXNmYkJzWUpQSF8ybTlLRDhMSU1JclFOTlhKS2ktWEp2VEpLcUdsMXZ5bkFtbWZURXRXMHpKdkNsNWh6LWpQS1o3?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "000270",
+      "name": "기아",
+      "changeRate": null,
+      "price": null,
+      "summary": "기아 주가 상승 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5yOE8wcjVQaHN2XzRRcUFQcGZwTU0zdHhrVUxwUDJsbl9RVTNCX3ZEYWVYaXpoekVDQU5DMDNfWWhJMmtsbFZNVTBhcXpkR3VLTWFYcHM2aTJNT0Ez?oc=5",
+      "mentionScore": 61.3,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "기아 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "기아 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5yOE8wcjVQaHN2XzRRcUFQcGZwTU0zdHhrVUxwUDJsbl9RVTNCX3ZEYWVYaXpoekVDQU5DMDNfWWhJMmtsbFZNVTBhcXpkR3VLTWFYcHM2aTJNT0Ez?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "034020",
+      "name": "두산에너빌리티",
+      "changeRate": null,
+      "price": null,
+      "summary": "[리포트 브리핑]두산에너빌리티, '대만 NDR 후기: 같은 스토리, 다른 렌즈' 목표가 149,000원 - 유안타증권 뉴스핌",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE55UjVyNGM1bzFGMl94ZjlDMWIwUWZac3MzdUNybXFkQ2xxNExCUzhZWjBFZUwydXJ1ZHpRNU5vT2N3bHNtZUVWTV9pdUVna2dHSXkwNGRHaGlCZktF?oc=5",
+      "mentionScore": 60.5,
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[리포트 브리핑]두산에너빌리티, '대만 NDR 후기: 같은 스토리, 다른 렌즈' 목표가 149,000원 - 유안타증권"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]두산에너빌리티, '대만 NDR 후기: 같은 스토리, 다른 렌즈' 목표가 149,000원 - 유안타증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE55UjVyNGM1bzFGMl94ZjlDMWIwUWZac3MzdUNybXFkQ2xxNExCUzhZWjBFZUwydXJ1ZHpRNU5vT2N3bHNtZUVWTV9pdUVna2dHSXkwNGRHaGlCZktF?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
+      "symbol": "950160",
+      "name": "코오롱티슈진",
+      "changeRate": -30,
+      "price": null,
+      "summary": "[특징주] 코오롱티슈진, 관절염 치료제 ‘美 3상 유효성 실패’에 이틀 연속 下 - 조선비즈",
+      "source": "2news.co.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1aZGxGRjZQUi1SakdhbXBhdzdlTW5kVkVxZW5sdVIydUpOcWk5Mml6Tkc0X01GYl9fMHl0TEgtNFJNekptNVhvWmtCaTc5RTNGb0tZRHVEM2ZNbk9CNjE2NU1LNnFsLVVn?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 Chosunbiz, 2news.co.kr 기반 기사 2건",
+        "제목 기준 변동률 단서 -30.0%",
+        "[특징주] 코오롱티슈진, 관절염 치료제 ‘美 3상 유효성 실패’에 이틀 연속 下 - 조선비즈",
+        "코오롱티슈진 2거래일 연속 하한가, TG-C 미국 임상 3상 실패 여파"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 코오롱티슈진, 관절염 치료제 ‘美 3상 유효성 실패’에 이틀 연속 下 - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOUUxtU2NiRFBSTHVnZUlmVzBLZVBIeWxvc2V1TWlxTzRvZkMxZGI2VTI3aHJpUHR1QVRuVlN5cFZ1cnFaemZpZEI0dG1JYW55UTJERG10ZHc4WHJiazR5SUQ5UHFZRFlPQ1BtZzhnZERhWHhYSDlPRlpZZzhaVDV4dlB6aHJtai1C0gGcAUFVX3lxTE9yQTBhRG5hdThwZzVyLVVpWXdpM19aRkNZcU9oRWI1TGFYWXFKV3NibjYwWi1rZmV5c3ZyYXVzRUpTNFNWN1U4VFgyc0R4N0k0ME0zNldUR3NtYzRJaDFvYkRsR3BPSW1VaGYzQ0xZRGVUek1yNzZORHEwWG4xTTk3SUNDQ3FabGhVZ2lqejRyYzhvMDBGSnRlc0FlcQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "코오롱티슈진 2거래일 연속 하한가, TG-C 미국 임상 3상 실패 여파",
+          "source": "2news.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1aZGxGRjZQUi1SakdhbXBhdzdlTW5kVkVxZW5sdVIydUpOcWk5Mml6Tkc0X01GYl9fMHl0TEgtNFJNekptNVhvWmtCaTc5RTNGb0tZRHVEM2ZNbk9CNjE2NU1LNnFsLVVn?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "077360",
       "name": "덕산하이메탈",
       "changeRate": null,
@@ -768,7 +1059,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "214150",
       "name": "클래시스",
       "changeRate": null,
@@ -791,31 +1082,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "028260",
-      "name": "삼성물산",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성물산 주가 상승 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1YM3h2M1lQaWJEVGhJaHRqR0VNVXFfTFZ2ZmF0czJUS1lpN2h4N1NwdmtGYXQtbWR1Yi1BNmxKNTNXLTZ1WnEtSDR2MVdtN1g5allXek5IN2xCbUVm?oc=5",
-      "mentionScore": 59.5,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "삼성물산 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성물산 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1YM3h2M1lQaWJEVGhJaHRqR0VNVXFfTFZ2ZmF0czJUS1lpN2h4N1NwdmtGYXQtbWR1Yi1BNmxKNTNXLTZ1WnEtSDR2MVdtN1g5allXek5IN2xCbUVm?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "494120",
       "name": "큐리오시스",
       "changeRate": null,
@@ -838,168 +1105,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성전자에 무슨 일…삼전-한국물 CDS 프리미엄차 6년4개월만 최대",
-      "source": "글로벌이코노믹",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTEE1cHQ2andRSVZ1Z181YUJmeHlVMTVsZWY2eUZ6Vm1vQnoyUVF6SUxHVk83RVJYNVFrSGJiZnBXaWF3X205d1NYQVU3UERwLVNpMDZLRGZqbUdsSjZhVkdycEtUTWk5VDFhejlVVFlINHZkVGhzakV0WXpvNkFZUTBQcDJJeGQ2?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 이투데이, 글로벌이코노믹, 파이낸셜뉴스 기반 기사 3건",
-        "상승/강세 키워드 우세",
-        "삼성전자에 무슨 일…삼전-한국물 CDS 프리미엄차 6년4개월만 최대",
-        "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자에 무슨 일…삼전-한국물 CDS 프리미엄차 6년4개월만 최대",
-          "source": "이투데이",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9UdTlmXy1VZVFQV29oeXlYQXlzbjhmYkdtNWZRS1Y0RFFiejdIN1R5a2tGelU5cTJLV3hRTVZtZ3lRUkhMY3lab2NueU84OGl6V2l2Mg?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTEE1cHQ2andRSVZ1Z181YUJmeHlVMTVsZWY2eUZ6Vm1vQnoyUVF6SUxHVk83RVJYNVFrSGJiZnBXaWF3X205d1NYQVU3UERwLVNpMDZLRGZqbUdsSjZhVkdycEtUTWk5VDFhejlVVFlINHZkVGhzakV0WXpvNkFZUTBQcDJJeGQ2?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "LS證 \"삼성전자·SK하이닉스 낙폭 과대…22일 알파벳 실적 주목\"",
-          "source": "파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9TT2tYVTFVa1N0TnEwLWRBemdDZ0xmVG5seUNFTUZPUE90QkFBUkFpMUZmdWZyTFJuaEE5TEI0TFhmbXEyNkF5dkdWMzY0VzhWZjJBaE9HdlYyQQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": null,
-      "price": null,
-      "summary": "LS證 \"삼성전자·SK하이닉스 낙폭 과대…22일 알파벳 실적 주목\"",
-      "source": "글로벌이코노믹",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTEE1cHQ2andRSVZ1Z181YUJmeHlVMTVsZWY2eUZ6Vm1vQnoyUVF6SUxHVk83RVJYNVFrSGJiZnBXaWF3X205d1NYQVU3UERwLVNpMDZLRGZqbUdsSjZhVkdycEtUTWk5VDFhejlVVFlINHZkVGhzakV0WXpvNkFZUTBQcDJJeGQ2?oc=5",
-      "mentionScore": 87,
-      "evidencePoints": [
-        "출처 글로벌이코노믹, 파이낸셜뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-        "LS證 \"삼성전자·SK하이닉스 낙폭 과대…22일 알파벳 실적 주목\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 삼성전자·SK하이닉스, 등락 반복하다 '상승세' 전환",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTEE1cHQ2andRSVZ1Z181YUJmeHlVMTVsZWY2eUZ6Vm1vQnoyUVF6SUxHVk83RVJYNVFrSGJiZnBXaWF3X205d1NYQVU3UERwLVNpMDZLRGZqbUdsSjZhVkdycEtUTWk5VDFhejlVVFlINHZkVGhzakV0WXpvNkFZUTBQcDJJeGQ2?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "LS證 \"삼성전자·SK하이닉스 낙폭 과대…22일 알파벳 실적 주목\"",
-          "source": "파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9TT2tYVTFVa1N0TnEwLWRBemdDZ0xmVG5seUNFTUZPUE90QkFBUkFpMUZmdWZyTFJuaEE5TEI0TFhmbXEyNkF5dkdWMzY0VzhWZjJBaE9HdlYyQQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "009150",
-      "name": "삼성전기",
-      "changeRate": null,
-      "price": null,
-      "summary": "“삼성전기 주식 늘리고, 현대차 지분 확 줄였다”…외국인, 韓 대기업 ‘옥석가리기’ 새판 짠다",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5tQ2xfT1dLcFUzX3dBUVRMUTc4RzJqSXc4M2RIaUhGeXFZWDhoeU9jcUtHTnF6TzlJY0haNWVVZVlOenoxeXI5QWhNSWh2Z0taeXVCZGFSWU5zeXFm?oc=5",
-      "mentionScore": 86.4,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, CEO스코어데일리 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "삼성전기 주가 하락 중",
-        "“삼성전기 주식 늘리고, 현대차 지분 확 줄였다”…외국인, 韓 대기업 ‘옥석가리기’ 새판 짠다"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전기 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5tQ2xfT1dLcFUzX3dBUVRMUTc4RzJqSXc4M2RIaUhGeXFZWDhoeU9jcUtHTnF6TzlJY0haNWVVZVlOenoxeXI5QWhNSWh2Z0taeXVCZGFSWU5zeXFm?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "“삼성전기 주식 늘리고, 현대차 지분 확 줄였다”…외국인, 韓 대기업 ‘옥석가리기’ 새판 짠다",
-          "source": "CEO스코어데일리",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5wWnM5UF9Yb2M3RVBFTFNCNGRhLWlMbTJVeVdXYjBGam1uNTdQRFhrVXU0RWtmUjlCaUh3NXJxUHVQZ3FiQ291SDFVQzc4dzdkdkUzamlOYm01dzhpalE0M1VqbjloOVQ0Z3VR?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "034020",
-      "name": "두산에너빌리티",
-      "changeRate": null,
-      "price": null,
-      "summary": "두산에너빌리티 주가 연속 약세에 '6만빌리티' 사수하나?…52주 최고가 대비 절반 이하로",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9oQUt6UVpUdi1QX1hKSm1JT3Y3TmxRVnJDTXVmamRVdTN0NWdRaHdfSm1DQlh3R3dmalRGMXMxb0lvLVByTnBEa09ieVdvZHB5S3pNVHdldnlfZENwdnJmZkhwTEhDTXNtcERYV3BDcTFzMzNC?oc=5",
-      "mentionScore": 86.2,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, CBC뉴스 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "두산에너빌리티 주가 하락 중",
-        "두산에너빌리티 주가 연속 약세에 '6만빌리티' 사수하나?…52주 최고가 대비 절반 이하로"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산에너빌리티 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9oQUt6UVpUdi1QX1hKSm1JT3Y3TmxRVnJDTXVmamRVdTN0NWdRaHdfSm1DQlh3R3dmalRGMXMxb0lvLVByTnBEa09ieVdvZHB5S3pNVHdldnlfZENwdnJmZkhwTEhDTXNtcERYV3BDcTFzMzNC?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산에너빌리티 주가 연속 약세에 '6만빌리티' 사수하나?…52주 최고가 대비 절반 이하로",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KUTh1VnczQUtoU1QybDFaYnU1ZDRhdkRJaHNHZTZJRVBnQU5IbWphQVRiOHItY0NhdjNKWFRnVjB0eUdsT1lycUhBbVZ2SW1ISmZJc1hFR3BHQkd3TmRXRG4yVEYwR1ox?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "035720",
-      "name": "카카오",
-      "changeRate": null,
-      "price": null,
-      "summary": "카카오 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16Uko2S3N6VkpCWjZvUS12ZFBKYVh3YVVnSmZNNUk5eE55VE1nTHI1d0dkYllPRlpIWjd2TFh6U2hjOHhVV1h5akZVT2FHRHM2UnlfM3VobVRpTDFR?oc=5",
-      "mentionScore": 78.6,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "카카오게임즈 주가 하락 중",
-        "카카오 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "카카오게임즈 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16Uko2S3N6VkpCWjZvUS12ZFBKYVh3YVVnSmZNNUk5eE55VE1nTHI1d0dkYllPRlpIWjd2TFh6U2hjOHhVV1h5akZVT2FHRHM2UnlfM3VobVRpTDFR?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "카카오 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9jTHNSUnd3X0kxbFZJazkwUW54bGNuMDVidi1NMzJJMXdRbkxVV1VndlI1QUFha3lGQXhEWDg4N0FRQ2pXX1dSQVVxQXRvN204U1dZckJ1SDlFUjEt?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "011090",
       "name": "에넥스",
       "changeRate": null,
@@ -1023,7 +1129,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "131970",
       "name": "두산테스나",
       "changeRate": null,
@@ -1047,79 +1153,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "047810",
-      "name": "한국항공우주",
-      "changeRate": null,
-      "price": null,
-      "summary": "한국항공우주 주가 하락중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVd2o0TmtqQ0xsZkNTS0NDMlBNUnNaR1E0MDBkQlVOY2lIQ1RNWUktc0s5LVlfMUt2WmpBTGJZTERNVTY1OGdDNmVlNVZfNWdZRkpXcjdQYTQ1NjRZ?oc=5",
-      "mentionScore": 60.2,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "한국항공우주 주가 하락중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국항공우주 주가 하락중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBVd2o0TmtqQ0xsZkNTS0NDMlBNUnNaR1E0MDBkQlVOY2lIQ1RNWUktc0s5LVlfMUt2WmpBTGJZTERNVTY1OGdDNmVlNVZfNWdZRkpXcjdQYTQ1NjRZ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "012450",
-      "name": "한화에어로스페이스",
-      "changeRate": null,
-      "price": null,
-      "summary": "한화에어로스페이스 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE54X3ItOTJnOEx0d3kzYmJJZDhjUzkxSDF6QXllTmZQYmdxMmwwa1AxMGRhUU0zTUdFTlpmUzdCT3dkd25fNktRaDRsRXRwdFczbUEwMUR0eFZTbzJT?oc=5",
-      "mentionScore": 60.2,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "한화에어로스페이스 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화에어로스페이스 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE54X3ItOTJnOEx0d3kzYmJJZDhjUzkxSDF6QXllTmZQYmdxMmwwa1AxMGRhUU0zTUdFTlpmUzdCT3dkd25fNktRaDRsRXRwdFczbUEwMUR0eFZTbzJT?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "000270",
-      "name": "기아",
-      "changeRate": null,
-      "price": null,
-      "summary": "기아 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5nNV9CSVhNMFplNUw1NUlDSzc4dUlRbUxXTlQ2alRHZVk0SWJ2b1NoRmduYTkxSzhCNllrNXBiNV9Vc0RTWXlFN1ZUSnNhUEQ4cmRKLXJ5b0loWk1u?oc=5",
-      "mentionScore": 60.2,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "기아 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "기아 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5nNV9CSVhNMFplNUw1NUlDSzc4dUlRbUxXTlQ2alRHZVk0SWJ2b1NoRmduYTkxSzhCNllrNXBiNV9Vc0RTWXlFN1ZUSnNhUEQ4cmRKLXJ5b0loWk1u?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "105560",
       "name": "KB금융",
       "changeRate": null,
@@ -1143,7 +1177,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": null,
@@ -1167,7 +1201,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "353200",
       "name": "대덕전자",
       "changeRate": null,
@@ -1198,7 +1232,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "278470",
       "name": "에이피알",
       "changeRate": -5,
@@ -1229,7 +1263,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-21T06:00:21.206Z",
+      "timestamp": "2026-07-22T01:00:19.439Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": null,
@@ -1248,30 +1282,6 @@
           "title": "[산업썰전] 178만원 찍고 60만원대로…LG이노텍, 가장 빨리 오른 황제주의 가장 빠른 추락",
           "source": "핀포인트뉴스",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1PTllJeVFQcnd3OVdKaHMxRGh0b2F4eTdKRzJ4N0F6QUhtb3JsLTA0UVhqMUhsT2REVnhDbnQtWDdfY00wbTk5RDE3c0poUmdOcXlPcWgydlJaQnFkX1hUVDBEdDEyLTd0bUZ1UmZVb2VzbVnSAXdBVV95cUxPVjVKRnNBdlRqQ1B4cVZkMThSdlY5Wm5pM0dodnZ3RDY3SEhyZmt2U0MtWHdScExqdHU4T2s4ZnZIeXRFSGJGSVl5azktQ1planlvOUdMUzBuVGxlNG0wYVhDdG50QzFUeTVLb05pV2tfMGpaVkNqYw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-21T06:00:21.206Z",
-      "symbol": "014680",
-      "name": "한솔케미칼",
-      "changeRate": null,
-      "price": null,
-      "summary": "[특징주] 한솔케미칼, 장중 하락세 지속…외인·기관 매도에 투자심리 위축 : 기업주식정보 재경일보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE81NVpvaXpVTkpma29XX1ZKNWE4dEU4UkVSNy0wTEpBWE1yNDN4X3hKdEQ4UXU5WjVCUDlXZktCMEdNa2NMbmQtdFl3?oc=5",
-      "mentionScore": 59.2,
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "[특징주] 한솔케미칼, 장중 하락세 지속…외인·기관 매도에 투자심리 위축 : 기업주식정보"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 한솔케미칼, 장중 하락세 지속…외인·기관 매도에 투자심리 위축 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE81NVpvaXpVTkpma29XX1ZKNWE4dEU4UkVSNy0wTEpBWE1yNDN4X3hKdEQ4UXU5WjVCUDlXZktCMEdNa2NMbmQtdFl3?oc=5"
         }
       ]
     }
