@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-07-24T01:00:20.826Z",
+  "generated_at": "2026-07-24T02:00:17.382Z",
   "generated_date": "2026-07-24",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성바이오로직스",
+      "stockCode": "207940",
+      "summary": "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'",
+      "headline": "삼성바이오로직스, 호실적에 6% 가까이 급등",
+      "evidencePoints": [
+        "출처 2news.co.kr, 더구루 기반 기사 2건",
+        "제목 기준 변동률 단서 +6.0%",
+        "삼성바이오로직스, 호실적에 6% 가까이 급등",
+        "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-07-24T02:00:17.382Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 6,
+      "latestHeadline": "삼성바이오로직스, 호실적에 6% 가까이 급등",
+      "source": "2news.co.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GOUdSLXN5OTRzOVkyeDlnWHhra1pEcHlRSFBNY2hjcDB1MXZ2LS1sZzFnMS1IRnZ3REtsTDVnbHN1SGI5TG9GUlJ0Rmotdk92VFBLeXhrU1VUczhMMXRyV3JReHJRWkVB?oc=5",
+      "publishedAt": "Fri, 24 Jul 2026 00:54:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성바이오로직스, 호실적에 6% 가까이 급등",
+          "source": "2news.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GOUdSLXN5OTRzOVkyeDlnWHhra1pEcHlRSFBNY2hjcDB1MXZ2LS1sZzFnMS1IRnZ3REtsTDVnbHN1SGI5TG9GUlJ0Rmotdk92VFBLeXhrU1VUczhMMXRyV3JReHJRWkVB?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'",
+          "source": "더구루",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9WMlJuQ3VaT2RBNEl1OFJZZTJUNGJkM05ycXgtMWFZZUNmZkIzelNkZXZPVWpzUU1vNGlUa1JaTVhqWHB4d1RGdFBUbjlDd201ZUpRZ3g0N1NJX0w5OWZ4Yk0tdw?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "호실적에 6% 급등, 노사 갈등은 평행선",
+      "polishedBody": "삼성바이오로직스가 호실적 발표 후 주가가 6% 가까이 급등했습니다. 이는 시장 기대를 상회하는 실적이 반영된 결과입니다. 긍정적인 실적에도 불구하고 노사 갈등이 3개월째 지속되며 21차 교섭에서도 접점을 찾지 못하고 있습니다. 향후 노사 협상 타결 여부가 추가 주가 방향성을 결정할 주요 변수입니다."
+    },
     {
       "stockName": "KB금융",
       "stockCode": "105560",
@@ -25,8 +66,8 @@
       "mentionScore": 99.9,
       "sentimentLabel": "negative",
       "channelCount": 3,
-      "updatedAt": "2026-07-24T01:00:20.826Z",
-      "cycleLabel": "KST_1000",
+      "updatedAt": "2026-07-24T02:00:17.382Z",
+      "cycleLabel": "KST_1100",
       "direction": "down",
       "changeRate": -5,
       "latestHeadline": "KB금융, 분기 최대 실적에도 5%대 하락 - 머니투데이",
@@ -49,8 +90,8 @@
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "KB금융, 분기 최대 실적에도 5%대 하락",
-      "polishedBody": "KB금융이 분기 최대 실적을 기록했지만 주가는 5% 이상 하락했습니다. 신한투자증권은 목표주가를 20만 원으로 상향 조정하며 긍정적 전망을 유지했습니다. 이러한 괴리는 시장의 기대치를 넘지 못한 실적에 대한 실망감이 반영된 것으로 보입니다. 향후 추가 실적 발표와 증권가 전망 변화에 주목할 필요가 있습니다."
+      "polishedHeadline": "분기 최대 실적에도 5%대 하락",
+      "polishedBody": "KB금융이 분기 최대 실적을 기록했지만 주가는 5%대 하락했습니다. 이는 이미 실적 기대가 선반영된 데다 차익 실현 매물이 출회된 영향으로 보입니다. 신한투자증권은 목표주가를 20만 원으로 상향하며 중장기 전망은 긍정적으로 평가했습니다. 향후 금리 정책 변화와 실적 모멘텀 지속 여부를 주목해야 합니다."
     },
     {
       "stockName": "삼성전기",
@@ -66,8 +107,8 @@
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
       "channelCount": 3,
-      "updatedAt": "2026-07-24T01:00:20.826Z",
-      "cycleLabel": "KST_1000",
+      "updatedAt": "2026-07-24T02:00:17.382Z",
+      "cycleLabel": "KST_1100",
       "direction": "up",
       "changeRate": null,
       "latestHeadline": "올해 주가 5배 뛴 ‘코스피 4위’ 삼성전기…“300만 원까지 더 올라” [줍줍리포트]",
@@ -90,8 +131,90 @@
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "올해 주가 5배 급등한 삼성전기, 추가 상승 기대",
-      "polishedBody": "삼성전기 주가가 올해 5배 급등하며 코스피 시가총액 4위에 올랐습니다. 증권가에서는 목표주가 300만 원 제시하며 추가 상승 여력이 있다고 분석합니다. 이러한 긍정적 전망은 실적 개선과 시장 지배력 강화에 기반한 것으로 평가됩니다. 향후 실적 추이와 증권가 목표가 달성 여부가 주요 관전 포인트입니다."
+      "polishedHeadline": "올해 주가 5배 급등, 증권가 목표가 300만 원",
+      "polishedBody": "삼성전기 주가가 올해 5배 상승하며 코스피 시가총액 4위에 올랐습니다. 증권가에서는 추가 상승 가능성을 제기하며 목표주가 300만 원을 제시하고 있습니다. 이 같은 급등세는 실적 개선과 전방 산업 수요 증가에 기인한 것으로 평가됩니다. 향후 글로벌 경기 둔화 신호와 실적 추이를 면밀히 관찰할 필요가 있습니다."
+    },
+    {
+      "stockName": "두산에너빌리티",
+      "stockCode": "034020",
+      "summary": "두산에너빌리티 주가 상승 중",
+      "headline": "두산에너빌리티 주가, 7월 24일 장중 73,500원대 상승 흐름",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산에너빌리티 주가, 7월 24일 장중 73,500원대 상승 흐름",
+        "두산에너빌리티 주가 상승 중"
+      ],
+      "mentionScore": 87.7,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-07-24T02:00:17.382Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "두산에너빌리티 주가, 7월 24일 장중 73,500원대 상승 흐름",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFA2aTY0bkRtek9rbkZTR0ZpN1ZZa083MFJJbGcwdWpNTFZra0dPNzhybUlpd3pYTHhsYzRmckZUd200QXlFaGtKOU9Qb3ltbGtKZlo4V1hXNFpkYnNRckVsRHZuRVVMNTRfR0ZFcGF5UFZpdw?oc=5",
+      "publishedAt": "Fri, 24 Jul 2026 01:41:10 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산에너빌리티 주가, 7월 24일 장중 73,500원대 상승 흐름",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA2aTY0bkRtek9rbkZTR0ZpN1ZZa083MFJJbGcwdWpNTFZra0dPNzhybUlpd3pYTHhsYzRmckZUd200QXlFaGtKOU9Qb3ltbGtKZlo4V1hXNFpkYnNRckVsRHZuRVVMNTRfR0ZFcGF5UFZpdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산에너빌리티 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBQenNqejlhS28tTlg0akl4ZGVzZWx2cG1IN0ZtVkZKYkd2bnhtRG1PUTdqa2h4N3NoNjFQX2VDNjlKLUtSVFBieFZoMWVkY0l6Z2ZON3g1ZFh4cG1E?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "장중 73,500원대 상승 흐름 지속",
+      "polishedBody": "두산에너빌리티 주가가 장중 73,500원대까지 오르며 상승 흐름을 이어가고 있습니다. 구체적인 상승 요인은 확인되지 않았으나 에너지 관련 업종 전반의 긍정적 분위기가 영향을 준 것으로 보입니다. 별도의 악재 없이 거래량이 동반된 점은 긍정적인 신호로 해석됩니다. 향후 수주 소식이나 정책 발표가 추가 상승 동력이 될 수 있습니다."
+    },
+    {
+      "stockName": "카카오",
+      "stockCode": "035720",
+      "summary": "카카오 주가 하락 중",
+      "headline": "카카오게임즈 주가 하락 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "카카오게임즈 주가 하락 중",
+        "카카오 주가 하락 중"
+      ],
+      "mentionScore": 78.6,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-07-24T02:00:17.382Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "카카오게임즈 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5TaXNtWWlMaFlyVm42NV9yY1hNSjloSTN3ZFpfZ2pweEdoMnB4RTkzTDFPb3BIc0RPV3d5dGFicUJaWVRRcGFPeEJQQkdJZ3NjZTd2WVJkbmJEWk5Kd2x5cUNocHg5ZTdhZ1hhMXBWX3NYT01Z?oc=5",
+      "publishedAt": "Fri, 24 Jul 2026 00:37:49 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "카카오게임즈 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5TaXNtWWlMaFlyVm42NV9yY1hNSjloSTN3ZFpfZ2pweEdoMnB4RTkzTDFPb3BIc0RPV3d5dGFicUJaWVRRcGFPeEJQQkdJZ3NjZTd2WVJkbmJEWk5Kd2x5cUNocHg5ZTdhZ1hhMXBWX3NYT01Z?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "카카오 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLVnBiVElHaFJ4Q3JNWlhsQUtBOHFVSDh4akRNdVctNXlCWTktM3E3M3pEYUgyTU55ZDRIS21FRGtia3RfSUNzZ2xsVVlEQzlIcHJoMWtGeUFkSDNf?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "주가 하락 중, 게임 자회사도 동반 약세",
+      "polishedBody": "카카오 주가가 하락세를 보이며 카카오게임즈 등 자회사도 동반 약세를 나타냈습니다. 뚜렷한 악재는 확인되지 않았으나 최근 기술주 전반의 조정 분위기가 반영된 것으로 보입니다. 거래량이 적은 가운데 하락한 점은 투자 심리 위축을 시사합니다. 향후 신사업 발표나 실적 개선 모멘텀이 주가 반등의 계기가 될 수 있습니다."
     },
     {
       "stockName": "삼성전자",
@@ -538,46 +661,6 @@
       "polishedBody": "클래시스의 윤준오 대표에 관한 인물 분석 기사가 게재되었습니다. 해당 보도는 경영진에 대한 일반적 소개에 가깝습니다. 중립적 방향성은 특별한 이슈나 변동성이 없음을 의미합니다. 향후 신제품 출시나 실적 발표가 주가에 영향을 줄 수 있습니다."
     },
     {
-      "stockName": "삼성바이오로직스",
-      "stockCode": "207940",
-      "summary": "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'",
-      "headline": "삼성바이오로직스, 목표주가 200만 원으로 하향 조정",
-      "evidencePoints": [
-        "출처 2news.co.kr, 더구루 기반 기사 2건",
-        "삼성바이오로직스, 목표주가 200만 원으로 하향 조정",
-        "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-07-24T01:00:20.826Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "삼성바이오로직스, 목표주가 200만 원으로 하향 조정",
-      "source": "2news.co.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE12TWVYWXlJQk5hUmtwbHVkX2hZUUVILWhNUTFDOHkyVmtURm93d2JfTlhqRmxOU2thRmxvTXdaLXE5b2g3VnhDXzltZW1hQXVScEVDN2ZtNGktLUYzUXNORDRXREpoNlJz?oc=5",
-      "publishedAt": "Fri, 24 Jul 2026 00:28:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성바이오로직스, 목표주가 200만 원으로 하향 조정",
-          "source": "2news.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE12TWVYWXlJQk5hUmtwbHVkX2hZUUVILWhNUTFDOHkyVmtURm93d2JfTlhqRmxOU2thRmxvTXdaLXE5b2g3VnhDXzltZW1hQXVScEVDN2ZtNGktLUYzUXNORDRXREpoNlJz?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'",
-          "source": "더구루",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9WMlJuQ3VaT2RBNEl1OFJZZTJUNGJkM05ycXgtMWFZZUNmZkIzelNkZXZPVWpzUU1vNGlUa1JaTVhqWHB4d1RGdFBUbjlDd201ZUpRZ3g0N1NJX0w5OWZ4Yk0tdw?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "삼성바이오로직스, 목표가 하향",
-      "polishedBody": "삼성바이오로직스의 목표주가가 200만 원으로 하향 조정되었습니다. 노사 갈등이 3개월째 지속되며 21차 교섭에도 합의점을 찾지 못하고 있습니다. 이는 실적 불확실성을 높이는 위험 요인입니다. 노사 협상 타결 여부와 수주 활동이 향후 주가에 주요 변수가 될 것입니다."
-    },
-    {
       "stockName": "LG디스플레",
       "stockCode": "034220",
       "summary": "[리포트 브리핑]LG디스플레이, '주가 조정시 트레이딩 관점에서 비중 확대' 목표가 14,000원 - iM증권",
@@ -616,87 +699,6 @@
       "hasNews": true,
       "polishedHeadline": "LG디스플레이, 적자 탈출했지만 유동비율 하락",
       "polishedBody": "LG디스플레이는 고질적인 적자에서 벗어났지만 유동비율이 석 달 만에 다시 60%대로 하락했습니다. iM증권은 목표가 14,000원을 제시하며 주가 조정 시 비중 확대를 권고했습니다. 적자 개선은 긍정적이나 유동성 우려가 동시에 존재해 중립적인 평가를 받고 있습니다. 향후 실적 추이와 재무 안정성 회복 여부를 지켜봐야 합니다."
-    },
-    {
-      "stockName": "두산에너빌리티",
-      "stockCode": "034020",
-      "summary": "KB증권, 두산에너빌리티 목표가↓…\"美 원전 수주 늦어져\"",
-      "headline": "[모닝 리포트] \"두산에너빌리티, 美 원전 프로젝트 가속화 기대\"",
-      "evidencePoints": [
-        "출처 뉴스핌, 연합뉴스 기반 기사 2건",
-        "[모닝 리포트] \"두산에너빌리티, 美 원전 프로젝트 가속화 기대\"",
-        "KB증권, 두산에너빌리티 목표가↓…\"美 원전 수주 늦어져\""
-      ],
-      "mentionScore": 86.7,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-07-23T01:00:19.197Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[모닝 리포트] \"두산에너빌리티, 美 원전 프로젝트 가속화 기대\"",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE40VjFHaEV4Tzk5WngwcTBaNGttLXZtelFIV3YyUHBtV25YazdCUWw1TUlqZWlYdzRVZEk1azdsb3dEbXpQT2M2TS1VMVlMaThxa0ZSN2o4cmdkMkVt?oc=5",
-      "publishedAt": "Wed, 22 Jul 2026 23:41:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[모닝 리포트] \"두산에너빌리티, 美 원전 프로젝트 가속화 기대\"",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE40VjFHaEV4Tzk5WngwcTBaNGttLXZtelFIV3YyUHBtV25YazdCUWw1TUlqZWlYdzRVZEk1azdsb3dEbXpQT2M2TS1VMVlMaThxa0ZSN2o4cmdkMkVt?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "KB증권, 두산에너빌리티 목표가↓…\"美 원전 수주 늦어져\"",
-          "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE10V0ZXMHltcjRFM3VVOWhJcUdDMEFfV0ZMcU4tZXpzam9zMVl1NU9EVE1aLS1MSXFTa0FIUk9Ucm03bVJ1MjlfQW1FTUxXMHphMFNSVFJnN1lnd1HSAWBBVV95cUxPTXVNS0tRQkVPbklNdl9kZ2FYNGR1SWkwQ0laM2g4ZjFoYm1IS1Z1ZGpQS24yZGxpcXB3V09lbVR5dWZ4WkNYZ1hyMXg5ZlZBRW5JbFRUOUNYZE0wV0wtcHE?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "두산에너빌리티, 미국 원전 수주 지연에 목표가 하향",
-      "polishedBody": "KB증권은 미국 원전 프로젝트의 수주가 예상보다 늦어지고 있다는 점을 들어 두산에너빌리티의 목표가를 하향 조정했습니다. 프로젝트 가속화에 대한 기대감은 여전하지만 당장의 수주 지연이 주가에 부담으로 작용하고 있습니다. 수주 시점의 불확실성이 해소되지 않은 점이 이번 평가의 주요 배경입니다. 향후 미국 내 원전 관련 프로젝트가 언제 본격적으로 수주로 이어질지 관찰해야 합니다."
-    },
-    {
-      "stockName": "카카오",
-      "stockCode": "035720",
-      "summary": "카카오 주가 상승 중",
-      "headline": "카카오게임즈 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "카카오게임즈 주가 상승 중",
-        "카카오 주가 상승 중"
-      ],
-      "mentionScore": 79.6,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-07-23T01:00:19.197Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "카카오게임즈 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4zeDg2REk4UGlfdF9jaG1HekdpVEZpTF9tZTk1QkJPLWVzbXp1RnZvMGt0N2p2bFBreVNCNXBhQmJOZkNsVUJhZHFITlRJZm5HRnI4YjBCdmg4Szl2?oc=5",
-      "publishedAt": "Thu, 23 Jul 2026 00:34:47 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "카카오게임즈 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4zeDg2REk4UGlfdF9jaG1HekdpVEZpTF9tZTk1QkJPLWVzbXp1RnZvMGt0N2p2bFBreVNCNXBhQmJOZkNsVUJhZHFITlRJZm5HRnI4YjBCdmg4Szl2?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "카카오 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1iY2ctT0hCNTM3T0hzUThOdE9RdVBiT0tGX3R5WTB1WVBzX1J1SGQ2ZmE2Y1lBTWxGQUlCcFE4QU1jNDJIS05CM3pjU0E0UGgtb0d5R0l3Y3dwQWNk?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "카카오 및 카카오게임즈 주가 동반 상승세",
-      "polishedBody": "카카오와 카카오게임즈의 주가가 시장에서 동반 상승하는 흐름을 보이고 있습니다. 최근 주가 움직임은 투자자들의 관심이 다시 집중되면서 나타난 현상으로 분석됩니다. 전반적인 시장 분위기 개선과 함께 주가 상승세가 이어지고 있다는 점이 특징입니다. 향후 이러한 상승세가 지속적인 추세로 이어질 수 있을지 시장의 흐름을 살펴봐야 합니다."
     },
     {
       "stockName": "에스피지",
@@ -783,7 +785,38 @@
   ],
   "items": [
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
+      "symbol": "207940",
+      "name": "삼성바이오로직스",
+      "changeRate": 6,
+      "price": null,
+      "summary": "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'",
+      "source": "2news.co.kr",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GOUdSLXN5OTRzOVkyeDlnWHhra1pEcHlRSFBNY2hjcDB1MXZ2LS1sZzFnMS1IRnZ3REtsTDVnbHN1SGI5TG9GUlJ0Rmotdk92VFBLeXhrU1VUczhMMXRyV3JReHJRWkVB?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 2news.co.kr, 더구루 기반 기사 2건",
+        "제목 기준 변동률 단서 +6.0%",
+        "삼성바이오로직스, 호실적에 6% 가까이 급등",
+        "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성바이오로직스, 호실적에 6% 가까이 급등",
+          "source": "2news.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9GOUdSLXN5OTRzOVkyeDlnWHhra1pEcHlRSFBNY2hjcDB1MXZ2LS1sZzFnMS1IRnZ3REtsTDVnbHN1SGI5TG9GUlJ0Rmotdk92VFBLeXhrU1VUczhMMXRyV3JReHJRWkVB?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'",
+          "source": "더구루",
+          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9WMlJuQ3VaT2RBNEl1OFJZZTJUNGJkM05ycXgtMWFZZUNmZkIzelNkZXZPVWpzUU1vNGlUa1JaTVhqWHB4d1RGdFBUbjlDd201ZUpRZ3g0N1NJX0w5OWZ4Yk0tdw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "105560",
       "name": "KB금융",
       "changeRate": -5,
@@ -814,7 +847,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
@@ -845,7 +878,69 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
+      "symbol": "034020",
+      "name": "두산에너빌리티",
+      "changeRate": null,
+      "price": null,
+      "summary": "두산에너빌리티 주가 상승 중",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFA2aTY0bkRtek9rbkZTR0ZpN1ZZa083MFJJbGcwdWpNTFZra0dPNzhybUlpd3pYTHhsYzRmckZUd200QXlFaGtKOU9Qb3ltbGtKZlo4V1hXNFpkYnNRckVsRHZuRVVMNTRfR0ZFcGF5UFZpdw?oc=5",
+      "mentionScore": 87.7,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산에너빌리티 주가, 7월 24일 장중 73,500원대 상승 흐름",
+        "두산에너빌리티 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산에너빌리티 주가, 7월 24일 장중 73,500원대 상승 흐름",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA2aTY0bkRtek9rbkZTR0ZpN1ZZa083MFJJbGcwdWpNTFZra0dPNzhybUlpd3pYTHhsYzRmckZUd200QXlFaGtKOU9Qb3ltbGtKZlo4V1hXNFpkYnNRckVsRHZuRVVMNTRfR0ZFcGF5UFZpdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산에너빌리티 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBQenNqejlhS28tTlg0akl4ZGVzZWx2cG1IN0ZtVkZKYkd2bnhtRG1PUTdqa2h4N3NoNjFQX2VDNjlKLUtSVFBieFZoMWVkY0l6Z2ZON3g1ZFh4cG1E?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-24T02:00:17.382Z",
+      "symbol": "035720",
+      "name": "카카오",
+      "changeRate": null,
+      "price": null,
+      "summary": "카카오 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5TaXNtWWlMaFlyVm42NV9yY1hNSjloSTN3ZFpfZ2pweEdoMnB4RTkzTDFPb3BIc0RPV3d5dGFicUJaWVRRcGFPeEJQQkdJZ3NjZTd2WVJkbmJEWk5Kd2x5cUNocHg5ZTdhZ1hhMXBWX3NYT01Z?oc=5",
+      "mentionScore": 78.6,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "카카오게임즈 주가 하락 중",
+        "카카오 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "카카오게임즈 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5TaXNtWWlMaFlyVm42NV9yY1hNSjloSTN3ZFpfZ2pweEdoMnB4RTkzTDFPb3BIc0RPV3d5dGFicUJaWVRRcGFPeEJQQkdJZ3NjZTd2WVJkbmJEWk5Kd2x5cUNocHg5ZTdhZ1hhMXBWX3NYT01Z?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "카카오 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLVnBiVElHaFJ4Q3JNWlhsQUtBOHFVSDh4akRNdVctNXlCWTktM3E3M3pEYUgyTU55ZDRIS21FRGtia3RfSUNzZ2xsVVlEQzlIcHJoMWtGeUFkSDNf?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -882,7 +977,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": 2.56,
@@ -913,7 +1008,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "950160",
       "name": "코오롱티슈진",
       "changeRate": null,
@@ -943,7 +1038,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "055550",
       "name": "신한지주",
       "changeRate": null,
@@ -973,7 +1068,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "028050",
       "name": "삼성E&A",
       "changeRate": null,
@@ -1003,7 +1098,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": null,
@@ -1026,7 +1121,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": null,
@@ -1050,7 +1145,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "047810",
       "name": "한국항공우주",
       "changeRate": null,
@@ -1074,7 +1169,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "012450",
       "name": "한화에어로스페이스",
       "changeRate": null,
@@ -1098,7 +1193,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "000270",
       "name": "기아",
       "changeRate": null,
@@ -1122,7 +1217,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "011070",
       "name": "LG이노텍",
       "changeRate": null,
@@ -1146,7 +1241,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "214150",
       "name": "클래시스",
       "changeRate": null,
@@ -1169,37 +1264,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
-      "symbol": "207940",
-      "name": "삼성바이오로직스",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'",
-      "source": "2news.co.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE12TWVYWXlJQk5hUmtwbHVkX2hZUUVILWhNUTFDOHkyVmtURm93d2JfTlhqRmxOU2thRmxvTXdaLXE5b2g3VnhDXzltZW1hQXVScEVDN2ZtNGktLUYzUXNORDRXREpoNlJz?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 2news.co.kr, 더구루 기반 기사 2건",
-        "삼성바이오로직스, 목표주가 200만 원으로 하향 조정",
-        "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성바이오로직스, 목표주가 200만 원으로 하향 조정",
-          "source": "2news.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE12TWVYWXlJQk5hUmtwbHVkX2hZUUVILWhNUTFDOHkyVmtURm93d2JfTlhqRmxOU2thRmxvTXdaLXE5b2g3VnhDXzltZW1hQXVScEVDN2ZtNGktLUYzUXNORDRXREpoNlJz?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성바이오로직스 노사갈등 3개월…21차 교섭에도 접점 없는 '평행선'",
-          "source": "더구루",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9WMlJuQ3VaT2RBNEl1OFJZZTJUNGJkM05ycXgtMWFZZUNmZkIzelNkZXZPVWpzUU1vNGlUa1JaTVhqWHB4d1RGdFBUbjlDd201ZUpRZ3g0N1NJX0w5OWZ4Yk0tdw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "034220",
       "name": "LG디스플레",
       "changeRate": null,
@@ -1229,68 +1294,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
-      "symbol": "034020",
-      "name": "두산에너빌리티",
-      "changeRate": null,
-      "price": null,
-      "summary": "KB증권, 두산에너빌리티 목표가↓…\"美 원전 수주 늦어져\"",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE40VjFHaEV4Tzk5WngwcTBaNGttLXZtelFIV3YyUHBtV25YazdCUWw1TUlqZWlYdzRVZEk1azdsb3dEbXpQT2M2TS1VMVlMaThxa0ZSN2o4cmdkMkVt?oc=5",
-      "mentionScore": 86.7,
-      "evidencePoints": [
-        "출처 뉴스핌, 연합뉴스 기반 기사 2건",
-        "[모닝 리포트] \"두산에너빌리티, 美 원전 프로젝트 가속화 기대\"",
-        "KB증권, 두산에너빌리티 목표가↓…\"美 원전 수주 늦어져\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[모닝 리포트] \"두산에너빌리티, 美 원전 프로젝트 가속화 기대\"",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE40VjFHaEV4Tzk5WngwcTBaNGttLXZtelFIV3YyUHBtV25YazdCUWw1TUlqZWlYdzRVZEk1azdsb3dEbXpQT2M2TS1VMVlMaThxa0ZSN2o4cmdkMkVt?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "KB증권, 두산에너빌리티 목표가↓…\"美 원전 수주 늦어져\"",
-          "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE10V0ZXMHltcjRFM3VVOWhJcUdDMEFfV0ZMcU4tZXpzam9zMVl1NU9EVE1aLS1MSXFTa0FIUk9Ucm03bVJ1MjlfQW1FTUxXMHphMFNSVFJnN1lnd1HSAWBBVV95cUxPTXVNS0tRQkVPbklNdl9kZ2FYNGR1SWkwQ0laM2g4ZjFoYm1IS1Z1ZGpQS24yZGxpcXB3V09lbVR5dWZ4WkNYZ1hyMXg5ZlZBRW5JbFRUOUNYZE0wV0wtcHE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-24T01:00:20.826Z",
-      "symbol": "035720",
-      "name": "카카오",
-      "changeRate": null,
-      "price": null,
-      "summary": "카카오 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4zeDg2REk4UGlfdF9jaG1HekdpVEZpTF9tZTk1QkJPLWVzbXp1RnZvMGt0N2p2bFBreVNCNXBhQmJOZkNsVUJhZHFITlRJZm5HRnI4YjBCdmg4Szl2?oc=5",
-      "mentionScore": 79.6,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "카카오게임즈 주가 상승 중",
-        "카카오 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "카카오게임즈 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4zeDg2REk4UGlfdF9jaG1HekdpVEZpTF9tZTk1QkJPLWVzbXp1RnZvMGt0N2p2bFBreVNCNXBhQmJOZkNsVUJhZHFITlRJZm5HRnI4YjBCdmg4Szl2?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "카카오 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1iY2ctT0hCNTM3T0hzUThOdE9RdVBiT0tGX3R5WTB1WVBzX1J1SGQ2ZmE2Y1lBTWxGQUlCcFE4QU1jNDJIS05CM3pjU0E0UGgtb0d5R0l3Y3dwQWNk?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "058610",
       "name": "에스피지",
       "changeRate": 30,
@@ -1321,7 +1325,7 @@
       ]
     },
     {
-      "timestamp": "2026-07-24T01:00:20.826Z",
+      "timestamp": "2026-07-24T02:00:17.382Z",
       "symbol": "353200",
       "name": "대덕전자",
       "changeRate": 4.9,
@@ -1357,8 +1361,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "mixed",
-    "model": "deepseek/deepseek-v4-flash, gemini-3.1-flash-lite",
-    "fallbackReason": "partial_primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
