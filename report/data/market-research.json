@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T23:30:30.455Z",
+  "generatedAt": "2026-07-26T23:35:27.143Z",
   "phase": "pre_market",
   "sessionLabel": "08:30",
   "summary": {
@@ -13,7 +13,7 @@
       "key": "kospi",
       "title": "KOSPI",
       "value": "6,690.62",
-      "change": "-1.58%",
+      "change": "-5.72%",
       "signal": "red",
       "status": "delayed",
       "updatedAt": "2026-07-24T09:05:30.000Z",
@@ -24,7 +24,7 @@
       "key": "kosdaq",
       "title": "KOSDAQ",
       "value": "748.22",
-      "change": "-0.38%",
+      "change": "-5.32%",
       "signal": "red",
       "status": "delayed",
       "updatedAt": "2026-07-24T09:05:30.000Z",
@@ -46,7 +46,7 @@
       "key": "nasdaq",
       "title": "NASDAQ",
       "value": "24,975.82",
-      "change": "-2.78%",
+      "change": "-0.64%",
       "signal": "red",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:15:59.000Z",
@@ -57,8 +57,8 @@
       "key": "sp500",
       "title": "S&P 500",
       "value": "7,411.98",
-      "change": "-1.16%",
-      "signal": "red",
+      "change": "+0.05%",
+      "signal": "yellow",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:26:35.000Z",
       "reason": "S&P 500 공개 지연 시세입니다.",
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "28,615.75",
+      "value": "28,617.00",
       "change": "+1.18%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-07-26T23:20:14.000Z",
+      "updatedAt": "2026-07-26T23:25:13.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,7 +82,7 @@
       "change": null,
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-07-27T08:30:30.438458+09:00",
+      "updatedAt": "2026-07-27T08:35:27.123642+09:00",
       "reason": "NAVER Finance/KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.",
       "sourceUrl": "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260727&sosok=01&page=1"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-07-26T23:30:30.455Z",
+      "updatedAt": "2026-07-26T23:35:27.143Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -103,8 +103,8 @@
       "key": "kospi",
       "title": "KOSPI",
       "currentPrice": "6,690.62",
-      "change": "-107.08",
-      "changePercent": "-1.58%",
+      "change": "-406.27",
+      "changePercent": "-5.72%",
       "trend": "down",
       "status": "delayed",
       "updatedAt": "2026-07-24T09:05:30.000Z",
@@ -114,8 +114,8 @@
       "key": "kosdaq",
       "title": "KOSDAQ",
       "currentPrice": "748.22",
-      "change": "-2.87",
-      "changePercent": "-0.38%",
+      "change": "-42.06",
+      "changePercent": "-5.32%",
       "trend": "down",
       "status": "delayed",
       "updatedAt": "2026-07-24T09:05:30.000Z",
@@ -136,8 +136,8 @@
       "key": "nasdaq",
       "title": "NASDAQ",
       "currentPrice": "24,975.82",
-      "change": "-715.08",
-      "changePercent": "-2.78%",
+      "change": "-161.87",
+      "changePercent": "-0.64%",
       "trend": "down",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:15:59.000Z",
@@ -147,9 +147,9 @@
       "key": "sp500",
       "title": "S&P 500",
       "currentPrice": "7,411.98",
-      "change": "-86.98",
-      "changePercent": "-1.16%",
-      "trend": "down",
+      "change": "+3.68",
+      "changePercent": "+0.05%",
+      "trend": "up",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:26:35.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EGSPC"
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "28,615.75",
-      "change": "+333.50",
+      "currentPrice": "28,617.00",
+      "change": "+334.75",
       "changePercent": "+1.18%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-07-26T23:20:14.000Z",
+      "updatedAt": "2026-07-26T23:25:13.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -290,11 +290,11 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
-      "title": "[특징주] SK스퀘어, 자회사 투자 불확실성·수급 악화에 장중 6%대 급락 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] SK스퀘어, 자회사 투자 불확실성·수급 악화에 장중 6%대 급락 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "title": "[특징주] 삼성중공업, 견조한 업황 속 숨 고르기…관망세 짙어져 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 삼성중공업, 견조한 업황 속 숨 고르기…관망세 짙어져 : 기업주식정보&nbsp;&nbsp;재경일보",
       "source": "재경일보",
-      "publishedAt": "Fri, 24 Jul 2026 01:21:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9zSlVWNEZfWTZGRlNUaWRfSENoQURhdzl4VzJrN1J2bkwzV1ZPTnNrOTh1YUJjVklaWm53cmk2TXhvdkU3Q0ZIR1p3?oc=5",
+      "publishedAt": "Fri, 24 Jul 2026 01:34:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBla1ZONFA2d3FISVBVUFNuREJoTG1ZaHdtMlJtNUNoUDAtX19kQlRaaURCMS1tUXZsOWtzU2ZLcmNycEtKcjh5eWln?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
@@ -322,6 +322,14 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
+      "title": "[특징주] 전쟁 공포에 증시 ‘패닉’…인트론바이오, 나홀로 상한가 왜 - 바이오타임즈",
+      "summary": "[특징주] 전쟁 공포에 증시 ‘패닉’…인트론바이오, 나홀로 상한가 왜&nbsp;&nbsp;바이오타임즈",
+      "source": "바이오타임즈",
+      "publishedAt": "Wed, 04 Mar 2026 08:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1sd3g5Q0RLaE9oYXduREV4UGkzTzhveEdQcGFJSDVQMy05X2FJSzdLUHdaRnU4R3dKY3g2Z3FaUWNWUXZfTjJHTjVUb0FTUGRuUkhsb0wyT0J4WWlOREQwVFdvN0xKSVNRenlNRg?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
       "title": "[특징주] 삼전닉스, 美 반도체 폭락 여진에 프리마켓서 급락 - 뉴스핌",
       "summary": "[특징주] 삼전닉스, 美 반도체 폭락 여진에 프리마켓서 급락&nbsp;&nbsp;뉴스핌",
       "source": "뉴스핌",
@@ -330,19 +338,19 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
-      "title": "[특징주] 삼성중공업, 견조한 업황 속 숨 고르기…관망세 짙어져 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 삼성중공업, 견조한 업황 속 숨 고르기…관망세 짙어져 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Fri, 24 Jul 2026 01:34:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBla1ZONFA2d3FISVBVUFNuREJoTG1ZaHdtMlJtNUNoUDAtX19kQlRaaURCMS1tUXZsOWtzU2ZLcmNycEtKcjh5eWln?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
       "title": "[증시 오늘(22일) 주요 특징주] \"삼성 로봇 조직 신설·반도체 호조\"…로봇·반도체 장비주 '불기둥' - thefairnews.co.kr",
       "summary": "[증시 오늘(22일) 주요 특징주] \"삼성 로봇 조직 신설·반도체 호조\"…로봇·반도체 장비주 '불기둥'&nbsp;&nbsp;thefairnews.co.kr",
       "source": "thefairnews.co.kr",
       "publishedAt": "Wed, 22 Jul 2026 01:33:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1LTjZTc05oVElOUWdDQV9lUnBWS05BUDRpbThiWDNCQ2VTNk5lMW9JQ3QxajNKWFlOekNuU0hrUzRfblRCZXhFYXJLX0xQU0dtMjNibUlsdElJa0Q3UVlZUnN3cUh2cFhuYUdFSDFEQWQ?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[특징주] 유한양행, 주식소각 결정에 장중 강세…주주환원 기대감 ↑ : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 유한양행, 주식소각 결정에 장중 강세…주주환원 기대감 ↑ : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Fri, 24 Jul 2026 01:53:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE92bzI3T3dBeDRSY0RrS2dRMXotOFFJbkZvRmgxTmFSUWM0M2tqbFU1dkdUenA2cTdiLThDbnB3c0ZaLTJRTXV1bU9B?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
@@ -362,14 +370,6 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
-      "title": "[특징주] 유한양행, 주식소각 결정에 장중 강세…주주환원 기대감 ↑ : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 유한양행, 주식소각 결정에 장중 강세…주주환원 기대감 ↑ : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Fri, 24 Jul 2026 01:53:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE92bzI3T3dBeDRSY0RrS2dRMXotOFFJbkZvRmgxTmFSUWM0M2tqbFU1dkdUenA2cTdiLThDbnB3c0ZaLTJRTXV1bU9B?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
       "title": "[증시 오늘(16일) 주요 특징주] 하루만에 돌아선 반도체 신화에 코스피 7000선 붕괴…SK텔레콤은 AI 데이터센터 훈풍에 홀로 질주 - thefairnews.co.kr",
       "summary": "[증시 오늘(16일) 주요 특징주] 하루만에 돌아선 반도체 신화에 코스피 7000선 붕괴…SK텔레콤은 AI 데이터센터 훈풍에 홀로 질주&nbsp;&nbsp;thefairnews.co.kr",
       "source": "thefairnews.co.kr",
@@ -378,19 +378,19 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
+      "title": "[특징주] 지주사 LG, 수급 불안정 속 장중 2%대 하락 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 지주사 LG, 수급 불안정 속 장중 2%대 하락 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Fri, 24 Jul 2026 01:40:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE82SnhuMmRDMW5zemNIVHhKdmU0OUgtMllhdV9sR1oyNlRaVnhMZS1CejM2SExmYk5GWno5dUtvekRZTm5PS281ZEZB?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
       "title": "[특징주] 코스피 6200선 상승…기관 매수에 지수 견인 - 뉴스핌",
       "summary": "[특징주] 코스피 6200선 상승…기관 매수에 지수 견인&nbsp;&nbsp;뉴스핌",
       "source": "뉴스핌",
       "publishedAt": "Thu, 16 Apr 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5jSDEtSk9ISGV4ZXdCSkpDVlVkSi1lNUlpVjNpanAzeHJnWHhjMUw3WWxSQjNVWmRfdVQ1ZWZTVGg5cEJndHRoTDVfV25EVi01MjNoNHF1dEZZOGI5?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 - 비즈니스포스트",
-      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려&nbsp;&nbsp;비즈니스포스트",
-      "source": "비즈니스포스트",
-      "publishedAt": "Mon, 02 Feb 2026 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     }
   ],
@@ -804,7 +804,7 @@
   ],
   "investorFlows": {
     "status": "ok",
-    "generatedAt": "2026-07-27T08:30:30.438458+09:00",
+    "generatedAt": "2026-07-27T08:35:27.123642+09:00",
     "source": "NAVER Finance/KRX",
     "sourceUrls": [
       "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260727&sosok=01&page=1",
