@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-26T23:35:27.143Z",
-  "phase": "pre_market",
-  "sessionLabel": "08:30",
+  "generatedAt": "2026-07-27T07:00:32.287Z",
+  "phase": "post_market",
+  "sessionLabel": "16:00",
   "summary": {
     "signal": "yellow",
     "totalScore": 0,
@@ -12,33 +12,33 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "value": "6,690.62",
-      "change": "-5.72%",
+      "value": "6,755.75",
+      "change": "-4.81%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-07-24T09:05:30.000Z",
+      "updatedAt": "2026-07-27T06:33:00.000Z",
       "reason": "KOSPI 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "value": "748.22",
-      "change": "-5.32%",
+      "value": "764.86",
+      "change": "-3.22%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-07-24T09:05:30.000Z",
+      "updatedAt": "2026-07-27T06:33:00.000Z",
       "reason": "KOSDAQ 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,459.42",
-      "change": "-0.99%",
+      "value": "1,469.28",
+      "change": "-0.32%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-07-26T13:49:31.000Z",
+      "updatedAt": "2026-07-27T07:00:16.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -46,7 +46,7 @@
       "key": "nasdaq",
       "title": "NASDAQ",
       "value": "24,975.82",
-      "change": "-0.64%",
+      "change": "-2.78%",
       "signal": "red",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:15:59.000Z",
@@ -57,8 +57,8 @@
       "key": "sp500",
       "title": "S&P 500",
       "value": "7,411.98",
-      "change": "+0.05%",
-      "signal": "yellow",
+      "change": "-1.16%",
+      "signal": "red",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:26:35.000Z",
       "reason": "S&P 500 공개 지연 시세입니다.",
@@ -67,22 +67,22 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "28,617.00",
-      "change": "+1.18%",
+      "value": "28,690.25",
+      "change": "+1.44%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-07-26T23:25:13.000Z",
+      "updatedAt": "2026-07-27T06:50:16.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
     {
       "key": "investor_flow",
       "title": "투자자별 수급",
-      "value": "KOSPI 2026-07-24: 외국인 순매도 32,683억원, 기관 순매도 19,514억원, 개인 순매수 51,782억원 / KOSDAQ 2026-07-24: 외국인 순매도 1,315억원, 기관 순매도 3,580억원, 개인 순매수 4,881억원",
+      "value": "KOSPI 2026-07-27: 외국인 순매도 28,808억원, 기관 순매수 8,592억원, 개인 순매수 19,789억원 / KOSDAQ 2026-07-27: 외국인 순매도 1,295억원, 기관 순매수 2,728억원, 개인 순매도 1,440억원",
       "change": null,
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-07-27T08:35:27.123642+09:00",
+      "updatedAt": "2026-07-27T16:00:32.274213+09:00",
       "reason": "NAVER Finance/KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.",
       "sourceUrl": "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260727&sosok=01&page=1"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-07-26T23:35:27.143Z",
+      "updatedAt": "2026-07-27T07:00:32.287Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -102,42 +102,42 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "currentPrice": "6,690.62",
-      "change": "-406.27",
-      "changePercent": "-5.72%",
+      "currentPrice": "6,755.75",
+      "change": "-341.14",
+      "changePercent": "-4.81%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-07-24T09:05:30.000Z",
+      "updatedAt": "2026-07-27T06:33:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "currentPrice": "748.22",
-      "change": "-42.06",
-      "changePercent": "-5.32%",
+      "currentPrice": "764.86",
+      "change": "-25.42",
+      "changePercent": "-3.22%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-07-24T09:05:30.000Z",
+      "updatedAt": "2026-07-27T06:33:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,459.42",
-      "change": "-14.62",
-      "changePercent": "-0.99%",
+      "currentPrice": "1,469.28",
+      "change": "-4.76",
+      "changePercent": "-0.32%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-07-26T13:49:31.000Z",
+      "updatedAt": "2026-07-27T07:00:16.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
       "key": "nasdaq",
       "title": "NASDAQ",
       "currentPrice": "24,975.82",
-      "change": "-161.87",
-      "changePercent": "-0.64%",
+      "change": "-715.08",
+      "changePercent": "-2.78%",
       "trend": "down",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:15:59.000Z",
@@ -147,9 +147,9 @@
       "key": "sp500",
       "title": "S&P 500",
       "currentPrice": "7,411.98",
-      "change": "+3.68",
-      "changePercent": "+0.05%",
-      "trend": "up",
+      "change": "-86.98",
+      "changePercent": "-1.16%",
+      "trend": "down",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:26:35.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EGSPC"
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "28,617.00",
-      "change": "+334.75",
-      "changePercent": "+1.18%",
+      "currentPrice": "28,690.25",
+      "change": "+408.00",
+      "changePercent": "+1.44%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-07-26T23:25:13.000Z",
+      "updatedAt": "2026-07-27T06:50:16.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -232,19 +232,19 @@
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     },
     {
-      "title": "외국인 7.7조 '팔자 폭탄'에도 코스피 선방···2차전지 폭등에 코스닥 8% 급등 - 스마트비즈",
-      "summary": "외국인 7.7조 '팔자 폭탄'에도 코스피 선방···2차전지 폭등에 코스닥 8% 급등&nbsp;&nbsp;스마트비즈",
-      "source": "스마트비즈",
-      "publishedAt": "Mon, 29 Jun 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE84TVhKa1E5VGxyNDY4eVVVbmk0U0NYYXNlWmNLdnRBOVE1NV9mWGExVnhpcV95aEtQMV9COWVFM1FtYnktNmxIeXJjNnVLMDNubks4bTQ3ZGtUOWo3NGllQ2h1cUwyUTB1eEtRYw?oc=5",
-      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
-    },
-    {
       "title": "[상반기 증시 결산②] 반도체 독주에 밀린 코스닥…대장주 부진·ETF 쏠림에 '소외' - 뉴시안",
       "summary": "[상반기 증시 결산②] 반도체 독주에 밀린 코스닥…대장주 부진·ETF 쏠림에 '소외'&nbsp;&nbsp;뉴시안",
       "source": "뉴시안",
       "publishedAt": "Wed, 01 Jul 2026 09:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9QYVdpM0ZvX0I3cnVxWW5qZkVkcWFSbGkyNUdCN3JMVkdDNy1aM0s0emxVS2lZbmk4THpqT2FXOHFDblpHZExVcFJDWUdIUWp3Q1FOWTZhZVlqOEZEQVEyNWFVTWtmc0xWTHfSAW5BVV95cUxPb1dQZHZHYzdSdFA4ZEJoekpqRk56d2NSSE1hMy1FSjlvZkh4bThZUEZRX3NlUFJXaGt2dHJOR2FUMlBaVGVEZl9JVU9JTFYyZWxxUE04a3RrRGRUZGJhT3dvUE1BazROeGxjOG9tQQ?oc=5",
+      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
+    },
+    {
+      "title": "외국인 7.7조 '팔자 폭탄'에도 코스피 선방···2차전지 폭등에 코스닥 8% 급등 - 스마트비즈",
+      "summary": "외국인 7.7조 '팔자 폭탄'에도 코스피 선방···2차전지 폭등에 코스닥 8% 급등&nbsp;&nbsp;스마트비즈",
+      "source": "스마트비즈",
+      "publishedAt": "Mon, 29 Jun 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE84TVhKa1E5VGxyNDY4eVVVbmk0U0NYYXNlWmNLdnRBOVE1NV9mWGExVnhpcV95aEtQMV9COWVFM1FtYnktNmxIeXJjNnVLMDNubks4bTQ3ZGtUOWo3NGllQ2h1cUwyUTB1eEtRYw?oc=5",
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     }
   ],
@@ -258,11 +258,19 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
-      "title": "[증시 오늘(21일) 핵심 특징주] 반도체 급반등에 6730선 날아오른 코스피…바이오·테마주 급락에 코스닥은 745선 약보합 - thefairnews.co.kr",
-      "summary": "[증시 오늘(21일) 핵심 특징주] 반도체 급반등에 6730선 날아오른 코스피…바이오·테마주 급락에 코스닥은 745선 약보합&nbsp;&nbsp;thefairnews.co.kr",
+      "title": "[증시 오늘(27일) 주요 특징주] \"지수 묶여도 갈 종목은 간다\"…코스피 6550선 숨고르기속 개별 장세 - thefairnews.co.kr",
+      "summary": "[증시 오늘(27일) 주요 특징주] \"지수 묶여도 갈 종목은 간다\"…코스피 6550선 숨고르기속 개별 장세&nbsp;&nbsp;thefairnews.co.kr",
       "source": "thefairnews.co.kr",
-      "publishedAt": "Tue, 21 Jul 2026 01:44:59 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9hV3dqUWxCdHVBdmctU0hUam5NSmpCSHRoQ2Nqck9FWVZaZGRhX3dNTGZNd01POEI1Q0xLVXpRSFp3VnpLWFVWcTdNQWdqQ2x0QWgtU2d2VlFpUHNBVWlZdDJzSE4yc2pQdHFQb0VrcEzSAXRBVV95cUxPS1lPa2dOdWh3OWhOR3h0SUY0a2h6SHlZY19QVGQ5emdYWWdqMXEwR2M5QzUyLXdhbkN3WjJaMzFhMmRYTjIzeXJlQ290dzRRSDA3VEF1WTZJWllLWmhtSG9mcnVjVDNWNTR0bmpIRWw2Tlp0NA?oc=5",
+      "publishedAt": "Mon, 27 Jul 2026 01:35:59 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5NNmRnM0Q0Q04yVlFmNF9HVXBtYlVIZTlPLWhUejVGNzI3Sm5RNFFYTFBFVXhGblJQbFNVcElvYzFWNTRyZ2I0eXIxQ08xNGZVX29TYkk5QmwxOTJEb1pfYmtzamtpV09NeFBzM3dSdkk?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[특징주] SK스퀘어, 자회사 신규 투자 불확실성에 5% 가까이 하락 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] SK스퀘어, 자회사 신규 투자 불확실성에 5% 가까이 하락 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Mon, 27 Jul 2026 01:21:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1DdVBjeG0zczhYcFpZd1NDdWw5N01EbU9nckhLM2l3d3VhSm5PVGZiSEJjY1hyY3BIaGR4X2dNdWloem5HdkFleUxR?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
@@ -279,22 +287,6 @@
       "source": "비즈니스포스트",
       "publishedAt": "Fri, 03 Jul 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFB6VkV4QTNhTldTbXYzUFdZZldCZjhEcnM1SzVVS3RPb3l1cTVDM1cwNHpwTmlSTHZkUF90U0RWcFZZVS1qbG9kb1RrM2l5bGdjQlVBRWlvWFExc1pURk9DQlcxTHBBdHlidW54QjhKeTRJQTA?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 삼전·닉스 주가 '널뛰기'…장초반 급등후 혼조양상(종합) - 연합뉴스",
-      "summary": "[특징주] 삼전·닉스 주가 '널뛰기'…장초반 급등후 혼조양상(종합)&nbsp;&nbsp;연합뉴스",
-      "source": "연합뉴스",
-      "publishedAt": "Tue, 12 May 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBweXB2a3BZekdTVTc0ZHZMME9BNjB0c3VVQ0NUQ1FZRzA1RzlGRXBrUXJEVVM3M2dmcFFMSFhFMS16LXF1b3V1b0xmMlJOUmswc01paGNEN0lsMG_SAWBBVV95cUxQMG9FRm5LR2ZmZDhVa1hHT2FWVTNZMHh1NnhVd1dzdDlFRHR4aC1iajFQUDJ6cjJfOW5aWjdsUHBZelFxSzBsLW96dENfaE55bU4wNEJqcjBEVlJOSzloT2Q?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 삼성중공업, 견조한 업황 속 숨 고르기…관망세 짙어져 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 삼성중공업, 견조한 업황 속 숨 고르기…관망세 짙어져 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Fri, 24 Jul 2026 01:34:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBla1ZONFA2d3FISVBVUFNuREJoTG1ZaHdtMlJtNUNoUDAtX19kQlRaaURCMS1tUXZsOWtzU2ZLcmNycEtKcjh5eWln?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
@@ -322,6 +314,14 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
+      "title": "[증시 오늘(21일) 핵심 특징주] 반도체 급반등에 6730선 날아오른 코스피…바이오·테마주 급락에 코스닥은 745선 약보합 - thefairnews.co.kr",
+      "summary": "[증시 오늘(21일) 핵심 특징주] 반도체 급반등에 6730선 날아오른 코스피…바이오·테마주 급락에 코스닥은 745선 약보합&nbsp;&nbsp;thefairnews.co.kr",
+      "source": "thefairnews.co.kr",
+      "publishedAt": "Tue, 21 Jul 2026 01:44:59 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9hV3dqUWxCdHVBdmctU0hUam5NSmpCSHRoQ2Nqck9FWVZaZGRhX3dNTGZNd01POEI1Q0xLVXpRSFp3VnpLWFVWcTdNQWdqQ2x0QWgtU2d2VlFpUHNBVWlZdDJzSE4yc2pQdHFQb0VrcEzSAXRBVV95cUxPS1lPa2dOdWh3OWhOR3h0SUY0a2h6SHlZY19QVGQ5emdYWWdqMXEwR2M5QzUyLXdhbkN3WjJaMzFhMmRYTjIzeXJlQ290dzRRSDA3VEF1WTZJWllLWmhtSG9mcnVjVDNWNTR0bmpIRWw2Tlp0NA?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
       "title": "[특징주] 전쟁 공포에 증시 ‘패닉’…인트론바이오, 나홀로 상한가 왜 - 바이오타임즈",
       "summary": "[특징주] 전쟁 공포에 증시 ‘패닉’…인트론바이오, 나홀로 상한가 왜&nbsp;&nbsp;바이오타임즈",
       "source": "바이오타임즈",
@@ -335,14 +335,6 @@
       "source": "뉴스핌",
       "publishedAt": "Mon, 08 Jun 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9LbVFZNkMzbmlOWnQzR2ZhRU1VU0o2SmotM3ZFUXJaM1NKYnRyTHRzREk4a2FCRjViYldwLVdUQVJ3XzZaX1lQc1lhS1VxamJQdTE1a0NUVUROa3Rs?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[증시 오늘(22일) 주요 특징주] \"삼성 로봇 조직 신설·반도체 호조\"…로봇·반도체 장비주 '불기둥' - thefairnews.co.kr",
-      "summary": "[증시 오늘(22일) 주요 특징주] \"삼성 로봇 조직 신설·반도체 호조\"…로봇·반도체 장비주 '불기둥'&nbsp;&nbsp;thefairnews.co.kr",
-      "source": "thefairnews.co.kr",
-      "publishedAt": "Wed, 22 Jul 2026 01:33:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1LTjZTc05oVElOUWdDQV9lUnBWS05BUDRpbThiWDNCQ2VTNk5lMW9JQ3QxajNKWFlOekNuU0hrUzRfblRCZXhFYXJLX0xQU0dtMjNibUlsdElJa0Q3UVlZUnN3cUh2cFhuYUdFSDFEQWQ?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
@@ -370,11 +362,11 @@
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
-      "title": "[증시 오늘(16일) 주요 특징주] 하루만에 돌아선 반도체 신화에 코스피 7000선 붕괴…SK텔레콤은 AI 데이터센터 훈풍에 홀로 질주 - thefairnews.co.kr",
-      "summary": "[증시 오늘(16일) 주요 특징주] 하루만에 돌아선 반도체 신화에 코스피 7000선 붕괴…SK텔레콤은 AI 데이터센터 훈풍에 홀로 질주&nbsp;&nbsp;thefairnews.co.kr",
+      "title": "[증시 오늘(22일) 주요 특징주] \"삼성 로봇 조직 신설·반도체 호조\"…로봇·반도체 장비주 '불기둥' - thefairnews.co.kr",
+      "summary": "[증시 오늘(22일) 주요 특징주] \"삼성 로봇 조직 신설·반도체 호조\"…로봇·반도체 장비주 '불기둥'&nbsp;&nbsp;thefairnews.co.kr",
       "source": "thefairnews.co.kr",
-      "publishedAt": "Thu, 16 Jul 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1zMTEyTlh1a1FZcEFTOC1iWDNJaGVld1NpWElSYW9vVmF3TnV5R1N6dGVjNnhPNWFmU3ljRUlJcHNPOW8yN1dZYWFpLTljWk9oNjI4YWFhR01XR1cwaHBUb0hpVW5vT1dIUG9VSlpVSjTSAXRBVV95cUxNYlZCYklsaFNwWG16V0wzT2lsOWtpazU1Sng0U094SmVHU2xqb042QjVsQzlrSkRpSjJ5c19nUHptU0x3dm1RSm5HNWxPU21WQ0Y1S0d5Yl9KVFhmNEpwaDQyYi1PY3Q4MUNJUVFlNkhWVWl2aQ?oc=5",
+      "publishedAt": "Wed, 22 Jul 2026 01:33:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1LTjZTc05oVElOUWdDQV9lUnBWS05BUDRpbThiWDNCQ2VTNk5lMW9JQ3QxajNKWFlOekNuU0hrUzRfblRCZXhFYXJLX0xQU0dtMjNibUlsdElJa0Q3UVlZUnN3cUh2cFhuYUdFSDFEQWQ?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     },
     {
@@ -391,6 +383,14 @@
       "source": "뉴스핌",
       "publishedAt": "Thu, 16 Apr 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5jSDEtSk9ISGV4ZXdCSkpDVlVkSi1lNUlpVjNpanAzeHJnWHhjMUw3WWxSQjNVWmRfdVQ1ZWZTVGg5cEJndHRoTDVfV25EVi01MjNoNHF1dEZZOGI5?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려 - 비즈니스포스트",
+      "summary": "[오늘의 주목주] '금·은 가격 급락' 고려아연 주가 12%대 하락, 코스닥 케어젠도 15%대 내려&nbsp;&nbsp;비즈니스포스트",
+      "source": "비즈니스포스트",
+      "publishedAt": "Mon, 02 Feb 2026 08:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dkZ5cm9OUWQ4NFoyLUFxMXp3a1FTWEFpNDA1WlJ6cXRtT09qM3Y5Wnh1cnh0LXZYb0x3eUtienhGQmw1d050VmwzQnE3ZUtIUmpqVlptcHZCSFo3RktxY1VBeU5iOXJlN0dUR3F6TFVBSDA?oc=5",
       "query": "오늘 특징주 급등 급락 코스피 코스닥"
     }
   ],
@@ -412,19 +412,19 @@
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
-      "title": "[마감시황] 코스피, '외국인·기관' 4조원 순매수에 6800선 사수 - 뉴스핌",
-      "summary": "[마감시황] 코스피, '외국인·기관' 4조원 순매수에 6800선 사수&nbsp;&nbsp;뉴스핌",
-      "source": "뉴스핌",
-      "publishedAt": "Tue, 14 Jul 2026 07:18:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBWa3pqTG5KR05rd25UMVIyMHJwVTJGNE5aLURWTHJnbkRkalR6Q1lGYWpnNG1xVXU3bEJXM3NvVlFGNTlwbW4tNVhpRFZEaGtsWXZ0ZXRMaDNqM1By?oc=5",
-      "query": "코스피 외국인 기관 순매수 순매도"
-    },
-    {
       "title": "코스피, 8700선 탈환…종전 훈풍에 외국인·기관 순매수 - 매일경제 마켓",
       "summary": "코스피, 8700선 탈환…종전 훈풍에 외국인·기관 순매수&nbsp;&nbsp;매일경제 마켓",
       "source": "매일경제 마켓",
       "publishedAt": "Tue, 16 Jun 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE80bGh3a1ZPNlYyalB1WUFZWkx2bDRqMGExdFhWM2JpUXNjcFUxSWhMQWJTWlk0VUI5WExXQVVGSUZnTWpnSE5XYlFvVkE0NEFZNEE?oc=5",
+      "query": "코스피 외국인 기관 순매수 순매도"
+    },
+    {
+      "title": "[마감시황] 코스피, '외국인·기관' 4조원 순매수에 6800선 사수 - 뉴스핌",
+      "summary": "[마감시황] 코스피, '외국인·기관' 4조원 순매수에 6800선 사수&nbsp;&nbsp;뉴스핌",
+      "source": "뉴스핌",
+      "publishedAt": "Tue, 14 Jul 2026 07:18:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBWa3pqTG5KR05rd25UMVIyMHJwVTJGNE5aLURWTHJnbkRkalR6Q1lGYWpnNG1xVXU3bEJXM3NvVlFGNTlwbW4tNVhpRFZEaGtsWXZ0ZXRMaDNqM1By?oc=5",
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
@@ -468,6 +468,14 @@
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
+      "title": "코스피, 매수 사이드카 발동…외국인·기관 순매수에 7% 급등 - 아시아경제",
+      "summary": "코스피, 매수 사이드카 발동…외국인·기관 순매수에 7% 급등&nbsp;&nbsp;아시아경제",
+      "source": "아시아경제",
+      "publishedAt": "Fri, 12 Jun 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4ybllJN1dNUjh0aTRqMkVIYXM3amxPNDRjWi1CV2lzUzNaWTVGV3JCRHBEQ1ViNXM2NUs3c2huTS1sbkVPaUg2VVRsY0pWZGV6RjBBVTNLR2R3bFNqMWZCZA?oc=5",
+      "query": "코스피 외국인 기관 순매수 순매도"
+    },
+    {
       "title": "코스피, 外人·기관 순매도에 6820선 약세 - 소년한국일보",
       "summary": "코스피, 外人·기관 순매도에 6820선 약세&nbsp;&nbsp;소년한국일보",
       "source": "소년한국일보",
@@ -481,14 +489,6 @@
       "source": "thefairnews.co.kr",
       "publishedAt": "Thu, 09 Jul 2026 15:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBKZjlOTEFqMjZlTUZic1ZCSGh0alFTYXZpQzc4VS1WbllCY3huNXBIdXloM1B1T0tVTDJGU0VldUJCbnNXdzYwQkF4S0lIX3c1b2djRnExVEVlR09PbkxMdGFkVXAyUEowSE92VEQyMFrSAXRBVV95cUxQd1VreENuZzlFWHNneTlfUlJpQ3JhQVFMN2w4WUVBZi1CYXRBcVUtSklDc1lsdmVFUkRDb0ZqSTBvVHo4Sm1xcWlJbkhTbFRYWXAtZWprZDRIcWNnbHZyb2Q5N3g3d1Zja0NHeEpON19yUjh4Rw?oc=5",
-      "query": "코스피 외국인 기관 순매수 순매도"
-    },
-    {
-      "title": "코스피, 외국인·기관 2.7조 순매도에 8050선 후퇴…코스닥 2%대 급락 - 이지경제",
-      "summary": "코스피, 외국인·기관 2.7조 순매도에 8050선 후퇴…코스닥 2%대 급락&nbsp;&nbsp;이지경제",
-      "source": "이지경제",
-      "publishedAt": "Mon, 06 Jul 2026 07:07:08 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBsT0tGM3QwSTVsbkcxcXVORzV5LVY3VDhUTXU3b2JRUDFpY282Q3RzSTVCQ21YdWdsMnhLSUEzclVPdXViSF9tV3V4V252RTNxVVBYbDlSQWhtSlFlUzVGaHBBZjBSQWFDV0lhOHNn?oc=5",
       "query": "코스피 외국인 기관 순매수 순매도"
     }
   ],
@@ -592,19 +592,19 @@
   ],
   "scheduleNewsCandidates": [
     {
+      "title": "[0727주요일정] 더불어민주당, 홈플러스 청문회 개최 예정 등 - 인포스탁데일리",
+      "summary": "[0727주요일정] 더불어민주당, 홈플러스 청문회 개최 예정 등&nbsp;&nbsp;인포스탁데일리",
+      "source": "인포스탁데일리",
+      "publishedAt": "Sun, 26 Jul 2026 21:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5EWU00eXNTdHpGcDl0c2trOUhyV3lTbk8yYkx3WTdGeVFBdGVId1NqdDROWjJnM3JtTTNYYWZxMlZvOWh2QjJ4bE82SFNXak5Wa0FQbWFNQnpFUW8zYXRiMzFlTDRMZGdGeDB2dnlQaFVZUkZvTWc?oc=5",
+      "query": "오늘 증시 일정 신규상장 보호예수 해제"
+    },
+    {
       "title": "스페이스X 주주라면 무조건 시청!! 8월 4일 스페이스X 첫 실적발표, 9억개 주식 물량 풀린다 - 머니네버슬립",
       "summary": "스페이스X 주주라면 무조건 시청!! 8월 4일 스페이스X 첫 실적발표, 9억개 주식 물량 풀린다&nbsp;&nbsp;머니네버슬립",
       "source": "머니네버슬립",
       "publishedAt": "Wed, 22 Jul 2026 09:14:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5qbVNwcXJRajJJVkw4U1JDRWNvLUdneEl4eXhXYXlGYUhvNHNqU0Nzd2tWM1dDbzBqNG13SWtKNkxQX1BsaV95V19rTnNqaEpmQjJHMlNKOUFSS2FrN1dEVVo1NjNiQk12d3JfaFVhc0JhRkHSAXdBVV95cUxOZGt2dzNNakFydy1Ta2xaSzEwUFB0NnNlNEJtN1JPbnFLdUhsY0kxcUE1bDNaYnBaLUlGSkRYbmZMaUxUUUhrcllMaG9XamNhaHZ0aGttRm5PRHV0ZktudEJqSllBczVfelkza0FQZ2pQWUpIbW8xRQ?oc=5",
-      "query": "오늘 증시 일정 신규상장 보호예수 해제"
-    },
-    {
-      "title": "[0722주요일정] 美 테슬라 2분기 실적 발표 예정 등 - 인포스탁데일리",
-      "summary": "[0722주요일정] 美 테슬라 2분기 실적 발표 예정 등&nbsp;&nbsp;인포스탁데일리",
-      "source": "인포스탁데일리",
-      "publishedAt": "Tue, 21 Jul 2026 21:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBEWHl3cGswS0RuLXFCejlyZ1ZnTGY5VG9MNjdwUW5VMjZfUzlhRUFKamZVY0hUaVdJbmE2M3RtX0NnTTE5YXFRYjVDaDZnWDJJWWMtWThpYU1tRDZMTERnMWk2T2ZXQ2FsMjBPQ2ZYVjlCREU2T0E?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
@@ -624,19 +624,19 @@
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
+      "title": "[0722주요일정] 美 테슬라 2분기 실적 발표 예정 등 - 인포스탁데일리",
+      "summary": "[0722주요일정] 美 테슬라 2분기 실적 발표 예정 등&nbsp;&nbsp;인포스탁데일리",
+      "source": "인포스탁데일리",
+      "publishedAt": "Tue, 21 Jul 2026 21:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBEWHl3cGswS0RuLXFCejlyZ1ZnTGY5VG9MNjdwUW5VMjZfUzlhRUFKamZVY0hUaVdJbmE2M3RtX0NnTTE5YXFRYjVDaDZnWDJJWWMtWThpYU1tRDZMTERnMWk2T2ZXQ2FsMjBPQ2ZYVjlCREU2T0E?oc=5",
+      "query": "오늘 증시 일정 신규상장 보호예수 해제"
+    },
+    {
       "title": "[0320주요일정] 아이엠바이오로직스 코스닥 신규 상장 예정 등 - 인포스탁데일리",
       "summary": "[0320주요일정] 아이엠바이오로직스 코스닥 신규 상장 예정 등&nbsp;&nbsp;인포스탁데일리",
       "source": "인포스탁데일리",
       "publishedAt": "Fri, 20 Mar 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBFN2lOUDhIaGE3TnBLUmp4Zkg2OTF6aGVkOTZmVFMtWGJ5akRYNFlQLVV4LW12b3N2eF84dk1UcFAyUW1ieFF4SzBNejFJSG9VNk5HRTY1OVNjeFJhNGFJNi1VeGNmYTJMd3c5ZVd1N0E0R0xtR3c?oc=5",
-      "query": "오늘 증시 일정 신규상장 보호예수 해제"
-    },
-    {
-      "title": "[0619주요일정] 미국, 중국, 홍콩, 대만 증시 휴장 등 - 인포스탁데일리",
-      "summary": "[0619주요일정] 미국, 중국, 홍콩, 대만 증시 휴장 등&nbsp;&nbsp;인포스탁데일리",
-      "source": "인포스탁데일리",
-      "publishedAt": "Fri, 19 Jun 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9MclhNaGdWb2R6bzkzT2o3SjcxUkRoWG5UTnRIM0lOSkhwRFdTejhCaU42cms4S05sQXBHOHJKRnNreWpWb1hGNWZoTjZjRm90X3hTLXE2TVhSM1E4SUxlT0ZxamlFX0tubUtXc1pqOVJKYmo5V0E?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
@@ -672,19 +672,19 @@
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     },
     {
+      "title": "[0619주요일정] 미국, 중국, 홍콩, 대만 증시 휴장 등 - 인포스탁데일리",
+      "summary": "[0619주요일정] 미국, 중국, 홍콩, 대만 증시 휴장 등&nbsp;&nbsp;인포스탁데일리",
+      "source": "인포스탁데일리",
+      "publishedAt": "Fri, 19 Jun 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9MclhNaGdWb2R6bzkzT2o3SjcxUkRoWG5UTnRIM0lOSkhwRFdTejhCaU42cms4S05sQXBHOHJKRnNreWpWb1hGNWZoTjZjRm90X3hTLXE2TVhSM1E4SUxlT0ZxamlFX0tubUtXc1pqOVJKYmo5V0E?oc=5",
+      "query": "오늘 증시 일정 신규상장 보호예수 해제"
+    },
+    {
       "title": "[등돌린 K-개미]② “오를만 하면 쏟아내네”…보호예수 해제에 공매도 세력까지 - 오피니언뉴스",
       "summary": "[등돌린 K-개미]② “오를만 하면 쏟아내네”…보호예수 해제에 공매도 세력까지&nbsp;&nbsp;오피니언뉴스",
       "source": "오피니언뉴스",
       "publishedAt": "Wed, 02 Feb 2022 08:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE05dXliRE5COUNiTTRCRmhTWW9iTnEtS1IzOTdieU5jTmRrZGNLeEctY0Y3QW9Del8tc2gtdVZCcS1jSUV4RkNtelE1MW1QX2RHZDdYcHJFU29CNTJIR0d1UHE3VU54M0xNXzJPNnhILWc?oc=5",
-      "query": "오늘 증시 일정 신규상장 보호예수 해제"
-    },
-    {
-      "title": "11/21(월) 오늘의 장전 시황 (美 연준위원들의 매파적 발언, 주요 기업들 호실적) - 네이버 프리미엄콘텐츠",
-      "summary": "11/21(월) 오늘의 장전 시황 (美 연준위원들의 매파적 발언, 주요 기업들 호실적)&nbsp;&nbsp;네이버 프리미엄콘텐츠",
-      "source": "네이버 프리미엄콘텐츠",
-      "publishedAt": "Mon, 21 Nov 2022 08:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQcDlfOG1jSnAzX0tLclV3QTE4NzluOXVhV01SbUx0cVVkX3FhSmxBdFE3SVRCVm1XQ0hNd2xnLTBwU0I1Z2xhRHA5Z2pyX3dJMUpPc2ZhbXBzUk02SmtWeFZNbkVRRDZhSFU1bDhiSDFNZzM4RjlqRTFPRGMwN09lckNQNldFVlU?oc=5",
       "query": "오늘 증시 일정 신규상장 보호예수 해제"
     }
   ],
@@ -804,7 +804,7 @@
   ],
   "investorFlows": {
     "status": "ok",
-    "generatedAt": "2026-07-27T08:35:27.123642+09:00",
+    "generatedAt": "2026-07-27T16:00:32.274213+09:00",
     "source": "NAVER Finance/KRX",
     "sourceUrls": [
       "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260727&sosok=01&page=1",
@@ -817,36 +817,21 @@
     "markets": [
       {
         "market": "KOSPI",
-        "latestDate": "2026-07-24",
+        "latestDate": "2026-07-27",
         "unit": "KRW",
         "netBuy": {
-          "retail": 5178200000000,
-          "foreign": -3268300000000,
-          "institution": -1951400000000,
-          "financial_investment": -874000000000,
-          "insurance": -175300000000,
-          "investment_trust_private_equity": -939300000000,
-          "bank": 1200000000,
-          "other_finance": 3300000000,
-          "pension_funds": 32600000000,
-          "other_corporations": 41600000000
+          "retail": 1978900000000,
+          "foreign": -2880800000000,
+          "institution": 859200000000,
+          "financial_investment": 468800000000,
+          "insurance": 61400000000,
+          "investment_trust_private_equity": 408900000000,
+          "bank": -7000000000,
+          "other_finance": -500000000,
+          "pension_funds": -72400000000,
+          "other_corporations": 42700000000
         },
         "recent": [
-          {
-            "date": "2026-07-20",
-            "netBuy": {
-              "retail": 349000000000,
-              "foreign": 519800000000,
-              "institution": -923500000000,
-              "financial_investment": -493100000000,
-              "insurance": 58400000000,
-              "investment_trust_private_equity": -557600000000,
-              "bank": -700000000,
-              "other_finance": -4800000000,
-              "pension_funds": 74300000000,
-              "other_corporations": 54700000000
-            }
-          },
           {
             "date": "2026-07-21",
             "netBuy": {
@@ -906,20 +891,35 @@
               "pension_funds": 32600000000,
               "other_corporations": 41600000000
             }
+          },
+          {
+            "date": "2026-07-27",
+            "netBuy": {
+              "retail": 1978900000000,
+              "foreign": -2880800000000,
+              "institution": 859200000000,
+              "financial_investment": 468800000000,
+              "insurance": 61400000000,
+              "investment_trust_private_equity": 408900000000,
+              "bank": -7000000000,
+              "other_finance": -500000000,
+              "pension_funds": -72400000000,
+              "other_corporations": 42700000000
+            }
           }
         ],
         "streaks": {
           "foreign": {
             "direction": "sell",
-            "count": 1
+            "count": 2
           },
           "institution": {
-            "direction": "sell",
+            "direction": "buy",
             "count": 1
           },
           "retail": {
             "direction": "buy",
-            "count": 1
+            "count": 2
           }
         },
         "source": "NAVER Finance/KRX",
@@ -927,36 +927,21 @@
       },
       {
         "market": "KOSDAQ",
-        "latestDate": "2026-07-24",
+        "latestDate": "2026-07-27",
         "unit": "KRW",
         "netBuy": {
-          "retail": 488100000000,
-          "foreign": -131500000000,
-          "institution": -358000000000,
-          "financial_investment": -152300000000,
-          "insurance": -16700000000,
-          "investment_trust_private_equity": -101500000000,
-          "bank": -500000000,
-          "other_finance": -7100000000,
-          "pension_funds": -79900000000,
-          "other_corporations": 1400000000
+          "retail": -144000000000,
+          "foreign": -129500000000,
+          "institution": 272800000000,
+          "financial_investment": 212100000000,
+          "insurance": 2000000000,
+          "investment_trust_private_equity": 43800000000,
+          "bank": 0,
+          "other_finance": -2200000000,
+          "pension_funds": 17200000000,
+          "other_corporations": 700000000
         },
         "recent": [
-          {
-            "date": "2026-07-20",
-            "netBuy": {
-              "retail": 190700000000,
-              "foreign": -51800000000,
-              "institution": -133000000000,
-              "financial_investment": -57300000000,
-              "insurance": -4200000000,
-              "investment_trust_private_equity": -37900000000,
-              "bank": -700000000,
-              "other_finance": -2200000000,
-              "pension_funds": -30700000000,
-              "other_corporations": -5900000000
-            }
-          },
           {
             "date": "2026-07-21",
             "netBuy": {
@@ -1016,19 +1001,34 @@
               "pension_funds": -79900000000,
               "other_corporations": 1400000000
             }
+          },
+          {
+            "date": "2026-07-27",
+            "netBuy": {
+              "retail": -144000000000,
+              "foreign": -129500000000,
+              "institution": 272800000000,
+              "financial_investment": 212100000000,
+              "insurance": 2000000000,
+              "investment_trust_private_equity": 43800000000,
+              "bank": 0,
+              "other_finance": -2200000000,
+              "pension_funds": 17200000000,
+              "other_corporations": 700000000
+            }
           }
         ],
         "streaks": {
           "foreign": {
             "direction": "sell",
-            "count": 1
+            "count": 2
           },
           "institution": {
-            "direction": "sell",
+            "direction": "buy",
             "count": 1
           },
           "retail": {
-            "direction": "buy",
+            "direction": "sell",
             "count": 1
           }
         },
