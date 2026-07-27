@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T07:00:32.287Z",
+  "generatedAt": "2026-07-27T07:05:28.922Z",
   "phase": "post_market",
   "sessionLabel": "16:00",
   "summary": {
@@ -13,8 +13,8 @@
       "key": "kospi",
       "title": "KOSPI",
       "value": "6,755.75",
-      "change": "-4.81%",
-      "signal": "red",
+      "change": "+0.97%",
+      "signal": "blue",
       "status": "delayed",
       "updatedAt": "2026-07-27T06:33:00.000Z",
       "reason": "KOSPI 공개 지연 시세입니다.",
@@ -24,8 +24,8 @@
       "key": "kosdaq",
       "title": "KOSDAQ",
       "value": "764.86",
-      "change": "-3.22%",
-      "signal": "red",
+      "change": "+2.22%",
+      "signal": "blue",
       "status": "delayed",
       "updatedAt": "2026-07-27T06:33:00.000Z",
       "reason": "KOSDAQ 공개 지연 시세입니다.",
@@ -34,11 +34,11 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,469.28",
+      "value": "1,469.34",
       "change": "-0.32%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-07-27T07:00:16.000Z",
+      "updatedAt": "2026-07-27T07:05:13.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -46,7 +46,7 @@
       "key": "nasdaq",
       "title": "NASDAQ",
       "value": "24,975.82",
-      "change": "-2.78%",
+      "change": "-0.64%",
       "signal": "red",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:15:59.000Z",
@@ -57,8 +57,8 @@
       "key": "sp500",
       "title": "S&P 500",
       "value": "7,411.98",
-      "change": "-1.16%",
-      "signal": "red",
+      "change": "+0.05%",
+      "signal": "yellow",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:26:35.000Z",
       "reason": "S&P 500 공개 지연 시세입니다.",
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "28,690.25",
+      "value": "28,688.75",
       "change": "+1.44%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-07-27T06:50:16.000Z",
+      "updatedAt": "2026-07-27T06:55:12.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,7 +82,7 @@
       "change": null,
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-07-27T16:00:32.274213+09:00",
+      "updatedAt": "2026-07-27T16:05:28.754495+09:00",
       "reason": "NAVER Finance/KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.",
       "sourceUrl": "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260727&sosok=01&page=1"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-07-27T07:00:32.287Z",
+      "updatedAt": "2026-07-27T07:05:28.922Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -103,9 +103,9 @@
       "key": "kospi",
       "title": "KOSPI",
       "currentPrice": "6,755.75",
-      "change": "-341.14",
-      "changePercent": "-4.81%",
-      "trend": "down",
+      "change": "+65.13",
+      "changePercent": "+0.97%",
+      "trend": "up",
       "status": "delayed",
       "updatedAt": "2026-07-27T06:33:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
@@ -114,9 +114,9 @@
       "key": "kosdaq",
       "title": "KOSDAQ",
       "currentPrice": "764.86",
-      "change": "-25.42",
-      "changePercent": "-3.22%",
-      "trend": "down",
+      "change": "+16.64",
+      "changePercent": "+2.22%",
+      "trend": "up",
       "status": "delayed",
       "updatedAt": "2026-07-27T06:33:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
@@ -124,20 +124,20 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,469.28",
-      "change": "-4.76",
+      "currentPrice": "1,469.34",
+      "change": "-4.70",
       "changePercent": "-0.32%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-07-27T07:00:16.000Z",
+      "updatedAt": "2026-07-27T07:05:13.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
       "key": "nasdaq",
       "title": "NASDAQ",
       "currentPrice": "24,975.82",
-      "change": "-715.08",
-      "changePercent": "-2.78%",
+      "change": "-161.87",
+      "changePercent": "-0.64%",
       "trend": "down",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:15:59.000Z",
@@ -147,9 +147,9 @@
       "key": "sp500",
       "title": "S&P 500",
       "currentPrice": "7,411.98",
-      "change": "-86.98",
-      "changePercent": "-1.16%",
-      "trend": "down",
+      "change": "+3.68",
+      "changePercent": "+0.05%",
+      "trend": "up",
       "status": "delayed",
       "updatedAt": "2026-07-24T21:26:35.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EGSPC"
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "28,690.25",
-      "change": "+408.00",
+      "currentPrice": "28,688.75",
+      "change": "+406.50",
       "changePercent": "+1.44%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-07-27T06:50:16.000Z",
+      "updatedAt": "2026-07-27T06:55:12.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -698,11 +698,11 @@
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
-      "title": "반도체 강세에 코스피 소폭 상승 - KB Think",
-      "summary": "반도체 강세에 코스피 소폭 상승&nbsp;&nbsp;KB Think",
+      "title": "모든 업종 약세로 양 지수 급락↓ - KB Think",
+      "summary": "모든 업종 약세로 양 지수 급락↓&nbsp;&nbsp;KB Think",
       "source": "KB Think",
-      "publishedAt": "Tue, 14 Jul 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9JOXI4RHdUdWVaNFdJbE1IcDdjYjlZVGlRdUhIMmtWZUdlSGxQbHV1RXFMbnVmaG50WXZTYms2c3UtdTF2QjFUbm9vakp2TV9QbGttdlFvQ0huZ1NtX1ZiZGNNZXBqc2hYNThPZg?oc=5",
+      "publishedAt": "Fri, 26 Jun 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBHZXB6QmhYTXE1MlljR0F4YlFSNl95TGJyOEx0c3g0dkEzRk02UURTb1h0S3hhQUE3VzJuc2tWZUZkSjdQSGtPYTlRTG1sTlNwbFdOTGtOU2l6WXFGWk9nQmoxektBU3J4ejByXw?oc=5",
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
@@ -746,11 +746,19 @@
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
-      "title": "모든 업종 약세로 양 지수 급락↓ - KB Think",
-      "summary": "모든 업종 약세로 양 지수 급락↓&nbsp;&nbsp;KB Think",
+      "title": "[이 시각 시황] 반도체 강세 속 코스피 약세 - SBS Biz",
+      "summary": "[이 시각 시황] 반도체 강세 속 코스피 약세&nbsp;&nbsp;SBS Biz",
+      "source": "SBS Biz",
+      "publishedAt": "Mon, 22 Jun 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBvcDNtUVEzVFFCd3VubmVXLUZfLTloN3RVeF95dnJ2NGFld05Xd2VuUHMyRkEteFdsa3dhYUppU3A4czlEdDFqZVBLZGRaNUdwbDJJ?oc=5",
+      "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
+    },
+    {
+      "title": "코스피 약보합, 코스닥 1,200선 돌파 - KB Think",
+      "summary": "코스피 약보합, 코스닥 1,200선 돌파&nbsp;&nbsp;KB Think",
       "source": "KB Think",
-      "publishedAt": "Fri, 26 Jun 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBHZXB6QmhYTXE1MlljR0F4YlFSNl95TGJyOEx0c3g0dkEzRk02UURTb1h0S3hhQUE3VzJuc2tWZUZkSjdQSGtPYTlRTG1sTlNwbFdOTGtOU2l6WXFGWk9nQmoxektBU3J4ejByXw?oc=5",
+      "publishedAt": "Fri, 24 Apr 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9PVXZyMk1QSVp6Ui1VTklraFVQT21ORHo0ZmFGN1FMQ0tTYUk3LUE0ZTRpcUlvTHh3VDR5MkVxdmlJWjhHRU5mTTNzU2xoNW9oalVnTElsRWRfTGtKUERDazBPR2dwb2xHa1Bxeg?oc=5",
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
@@ -778,11 +786,11 @@
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
-      "title": "코스피 약보합, 코스닥 1,200선 돌파 - KB Think",
-      "summary": "코스피 약보합, 코스닥 1,200선 돌파&nbsp;&nbsp;KB Think",
+      "title": "코스피 신고가 경신, 대형주 강세 - KB Think",
+      "summary": "코스피 신고가 경신, 대형주 강세&nbsp;&nbsp;KB Think",
       "source": "KB Think",
-      "publishedAt": "Fri, 24 Apr 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9PVXZyMk1QSVp6Ui1VTklraFVQT21ORHo0ZmFGN1FMQ0tTYUk3LUE0ZTRpcUlvTHh3VDR5MkVxdmlJWjhHRU5mTTNzU2xoNW9oalVnTElsRWRfTGtKUERDazBPR2dwb2xHa1Bxeg?oc=5",
+      "publishedAt": "Tue, 21 Apr 2026 07:00:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82SE16TFZvTlNJc2ZCWHRaRm9MS3RCREMzWUNOQXFvd2ctZkJZYTIxRkxpV3V0bkgxNG94cjU2MFlCU0F3NXU5dzdTOEJiTGlUZTFTZi1KQzFXWkVYMUhZX2hiLW1LR1JSYXlZWg?oc=5",
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
@@ -792,19 +800,11 @@
       "publishedAt": "Fri, 19 Jun 2026 07:00:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE45MDc4aXBFYUFzemZfcXVuSmlNMktIbVlHdzJzMWpkaGVWLUJhb0pDTmR3eUxjeFNyR1B3TlZOeHhnVGNDTlM5czdQNGJCN0I4SDl4dFBDLXVUdw?oc=5",
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
-    },
-    {
-      "title": "코스피 신고가 경신, 대형주 강세 - KB Think",
-      "summary": "코스피 신고가 경신, 대형주 강세&nbsp;&nbsp;KB Think",
-      "source": "KB Think",
-      "publishedAt": "Tue, 21 Apr 2026 07:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82SE16TFZvTlNJc2ZCWHRaRm9MS3RCREMzWUNOQXFvd2ctZkJZYTIxRkxpV3V0bkgxNG94cjU2MFlCU0F3NXU5dzdTOEJiTGlUZTFTZi1KQzFXWkVYMUhZX2hiLW1LR1JSYXlZWg?oc=5",
-      "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     }
   ],
   "investorFlows": {
     "status": "ok",
-    "generatedAt": "2026-07-27T16:00:32.274213+09:00",
+    "generatedAt": "2026-07-27T16:05:28.754495+09:00",
     "source": "NAVER Finance/KRX",
     "sourceUrls": [
       "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260727&sosok=01&page=1",
