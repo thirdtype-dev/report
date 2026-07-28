@@ -16,6 +16,8 @@ const INVESTOR_FLOW_TIMEOUT_MS = Number.parseInt(process.env.INVESTOR_FLOW_TIMEO
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
 const LLM_MAX_ATTEMPTS = Number.parseInt(process.env.LLM_MAX_ATTEMPTS ?? '3', 10);
 const LLM_RETRY_BASE_DELAY_MS = Number.parseInt(process.env.LLM_RETRY_BASE_DELAY_MS ?? '1500', 10);
+const NEWS_MAX_AGE_MS = 96 * 60 * 60 * 1000;
+const NEWS_FUTURE_TOLERANCE_MS = 10 * 60 * 1000;
 const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*\breport-(?:pre|post)-market\b[^"]*">[\s\S]*?<\/article>/g;
 const YAHOO_SYMBOLS = [
   { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
@@ -30,6 +32,12 @@ const NEWS_QUERIES = [
   '한국 증시 외국인 기관 수급',
   '한국 주식시장 공시 실적 유상증자 M&A',
   '한국 증시 신규상장 보호예수 주주총회'
+];
+const SEMICONDUCTOR_RISK_NEWS_QUERIES = [
+  '삼성전자 SK하이닉스 프리마켓 하락 급락 약세',
+  'CXMT 창신메모리 DUV 삼성전자 SK하이닉스',
+  '엔비디아 마이크론 필라델피아 반도체지수 SK하이닉스 ADR',
+  '중국 메모리 공급과잉 삼성전자 SK하이닉스 수익성'
 ];
 const NOTABLE_STOCK_QUERIES = [
   '오늘 특징주 급등 급락 코스피 코스닥',
@@ -683,15 +691,182 @@ function resolveBriefingPublishPlan({ marketResearch, report, existingHtml }) {
   throw new Error(`briefing_quality_gate_failed:${issues.join(',')}`);
 }
 
+const SEMICONDUCTOR_COMPANY_RE = /(삼성전자|SK\s*하이닉스|SK하이닉스|삼전닉스)/iu;
+const SEMICONDUCTOR_CHINA_RISK_RE = /(CXMT|창신메모리|DUV|중국[^.!?。]{0,30}반도체|메모리[^.!?。]{0,20}공급\s*(?:확대|과잉))/iu;
+const SEMICONDUCTOR_US_RISK_RE = /(엔비디아|마이크론|필라델피아\s*반도체|반도체\s*지수|SK\s*하이닉스\s*ADR)/iu;
+const SEMICONDUCTOR_DOWNSIDE_RE = /(하락|급락|폭락|약세|내려|떨어|↓|쇼크|투매|우려|부담|공급\s*(?:확대|과잉)|가격\s*하락|수익성[^.!?。]{0,20}하방|경쟁\s*(?:심화|확대))/iu;
+const DIRECT_PRICE_DOWNSIDE_RE = /(하락|급락|폭락|약세|내려|떨어|↓|투매)/iu;
+
+function candidateText(item) {
+  return `${item?.title ?? ''} ${item?.summary ?? ''}`.trim();
+}
+
+function freshNewsCandidates(items, referenceTimeMs) {
+  return rankFreshNewsCandidates(items, items.length, referenceTimeMs)
+    .filter((item) => item?.status !== 'unavailable');
+}
+
+function semiconductorRiskScore(item) {
+  const text = candidateText(item);
+  let score = 0;
+  if (SEMICONDUCTOR_COMPANY_RE.test(text)) score += 4;
+  if (SEMICONDUCTOR_CHINA_RISK_RE.test(text)) score += 3;
+  if (SEMICONDUCTOR_US_RISK_RE.test(text)) score += 2;
+  if (SEMICONDUCTOR_DOWNSIDE_RE.test(text)) score += 4;
+  if (SEMICONDUCTOR_COMPANY_RE.test(item?.title ?? '') && DIRECT_PRICE_DOWNSIDE_RE.test(item?.title ?? '')) score += 6;
+  return score;
+}
+
+function collectSemiconductorRiskEvidence(marketResearch) {
+  const referenceTimeMs = Date.parse(marketResearch?.generatedAt ?? '') || Date.now();
+  const candidates = [
+    ...(marketResearch?.semiconductorRiskNewsCandidates ?? []),
+    ...(marketResearch?.marketNews ?? []),
+    ...(marketResearch?.stockNewsCandidates ?? []),
+    ...(marketResearch?.sectorThemeNewsCandidates ?? [])
+  ];
+  const seen = new Set();
+
+  return freshNewsCandidates(candidates, referenceTimeMs)
+    .filter((item) => {
+      const text = candidateText(item);
+      return SEMICONDUCTOR_DOWNSIDE_RE.test(text)
+        && (SEMICONDUCTOR_COMPANY_RE.test(text)
+          || SEMICONDUCTOR_CHINA_RISK_RE.test(text)
+          || SEMICONDUCTOR_US_RISK_RE.test(text));
+    })
+    .filter((item) => {
+      const key = item?.sourceUrl || item?.title;
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .sort((left, right) => {
+      const scoreDifference = semiconductorRiskScore(right) - semiconductorRiskScore(left);
+      if (scoreDifference !== 0) return scoreDifference;
+      return (newsPublishedAtMs(right) ?? 0) - (newsPublishedAtMs(left) ?? 0);
+    });
+}
+
+function semiconductorRiskState(marketResearch) {
+  const evidence = collectSemiconductorRiskEvidence(marketResearch);
+  const referenceTimeMs = Date.parse(marketResearch?.generatedAt ?? '') || Date.now();
+  const withinHours = (item, hours) => {
+    const publishedAtMs = newsPublishedAtMs(item);
+    return publishedAtMs != null && referenceTimeMs - publishedAtMs <= hours * 60 * 60 * 1000;
+  };
+  const structuralEvidence = evidence.filter((item) => withinHours(item, 24));
+  const overnightEvidence = evidence.filter((item) => withinHours(item, 18));
+  const structuralTexts = structuralEvidence.map(candidateText);
+  const overnightTexts = overnightEvidence.map(candidateText);
+  const directTitles = overnightEvidence.map((item) => String(item?.title ?? ''));
+  const hasCompanyRisk = structuralTexts.some((text) => SEMICONDUCTOR_COMPANY_RE.test(text));
+  const hasChinaRisk = structuralTexts.some((text) => SEMICONDUCTOR_CHINA_RISK_RE.test(text));
+  const hasUsRisk = overnightTexts.some((text) => SEMICONDUCTOR_US_RISK_RE.test(text));
+  const hasDirectPriceDownside = directTitles.some((title) => (
+    SEMICONDUCTOR_COMPANY_RE.test(title) && DIRECT_PRICE_DOWNSIDE_RE.test(title)
+  ));
+  const highRisk = hasDirectPriceDownside
+    || (hasCompanyRisk && (hasChinaRisk || hasUsRisk))
+    || (hasChinaRisk && hasUsRisk);
+
+  return {
+    evidence,
+    highRisk,
+    hasChinaRisk,
+    hasUsRisk,
+    samsungDown: directTitles.some((title) => /삼성전자/u.test(title) && DIRECT_PRICE_DOWNSIDE_RE.test(title)),
+    hynixDown: directTitles.some((title) => /SK\s*하이닉스|SK하이닉스/iu.test(title) && DIRECT_PRICE_DOWNSIDE_RE.test(title))
+  };
+}
+
+function semiconductorRiskSummary(state) {
+  const causes = [];
+  if (state.hasChinaRisk) causes.push('CXMT·중국 메모리 공급 확대와 경쟁 심화 우려');
+  if (state.hasUsRisk) causes.push('미국 주요 반도체주 약세');
+  if (state.samsungDown || state.hynixDown) causes.push('삼성전자·SK하이닉스 직접 하락 신호');
+  return causes.join(', ');
+}
+
+function applyPreMarketSemiconductorRiskGuard(report, state) {
+  if (!state.highRisk) return report;
+  const summary = semiconductorRiskSummary(state);
+
+  return {
+    ...report,
+    openingStrategy: {
+      ...report.openingStrategy,
+      keywords: '삼성전자·SK하이닉스 하방 위험, 중국 메모리 경쟁, 반도체 변동성 확대',
+      oneLineStrategy: `${summary}가 함께 확인돼 반도체 대형주의 하방 위험과 장 초반 변동성을 우선 점검해야 합니다.`,
+      expectedOpen: '삼성전자·SK하이닉스 중심 하락 출발 및 높은 변동성 경계'
+    },
+    sectorWeather: {
+      ...report.sectorWeather,
+      sunny: /반도체|삼성전자|SK\s*하이닉스/iu.test(report.sectorWeather?.sunny ?? '')
+        ? '상대강도 확인 - 반도체 위험과 분리되는 업종 흐름을 확인해야 합니다.'
+        : report.sectorWeather?.sunny,
+      rainy: `반도체 - ${summary}로 대형주 하방 변동성이 확대될 수 있습니다.`
+    },
+    disclosuresAndNews: {
+      ...report.disclosuresAndNews,
+      majorNews: `${summary}가 국내 반도체 투자심리의 핵심 위험 요인입니다.`
+    },
+    watchlist: {
+      ...report.watchlist,
+      leaders: '삼성전자, SK하이닉스 - 주도주 후보가 아니라 하방 위험과 프리마켓 변동성 우선 확인 대상'
+    }
+  };
+}
+
+function applyPostMarketSemiconductorRiskGuard(report, state) {
+  if (!state.samsungDown && !state.hynixDown) return report;
+  const summary = semiconductorRiskSummary(state);
+  const forcedPlunging = [];
+  if (state.samsungDown) forcedPlunging.push(`삼성전자, ${summary} 여파로 하락`);
+  if (state.hynixDown) forcedPlunging.push(`SK하이닉스, ${summary} 여파로 하락`);
+
+  return {
+    ...report,
+    marketSummary: {
+      ...report.marketSummary,
+      summary: `국내 증시는 ${summary}가 반도체 대형주와 지수에 하방 압력으로 작용했습니다.`
+    },
+    sectorThemes: {
+      ...report.sectorThemes,
+      weak: `반도체 - ${summary}로 삼성전자·SK하이닉스를 중심으로 약세가 확대됐습니다.`
+    },
+    notableStocks: {
+      ...report.notableStocks,
+      surging: (report.notableStocks?.surging ?? []).filter((entry) => (
+        !/삼성전자|SK\s*하이닉스|SK하이닉스/iu.test(entry)
+      )),
+      plunging: [
+        ...forcedPlunging,
+        ...(report.notableStocks?.plunging ?? []).filter((entry) => (
+          !/삼성전자|SK\s*하이닉스|SK하이닉스/iu.test(entry)
+        ))
+      ].slice(0, Math.max(2, forcedPlunging.length))
+    },
+    tomorrowStrategy: {
+      ...report.tomorrowStrategy,
+      outlook: `${summary}의 지속 여부와 삼성전자·SK하이닉스 수급 안정 여부가 다음 거래일의 핵심 변수입니다.`
+    }
+  };
+}
+
 function prepareReportForPublish(marketResearch, report) {
   const prepared = sanitizeBriefingCopy(report);
+  const semiconductorRisk = semiconductorRiskState(marketResearch);
+  const riskGuarded = PHASE === 'pre_market'
+    ? applyPreMarketSemiconductorRiskGuard(prepared, semiconductorRisk)
+    : applyPostMarketSemiconductorRiskGuard(prepared, semiconductorRisk);
   if (PHASE === 'post_market' && !hasCurrentPostMarketInvestorFlows(marketResearch?.investorFlows)) {
     return {
-      ...prepared,
+      ...riskGuarded,
       investorFlows: null
     };
   }
-  return prepared;
+  return riskGuarded;
 }
 
 const WRITER_REJECTED_QUALITY_ISSUES = new Set([
@@ -781,6 +956,8 @@ function buildPrompt(marketResearch) {
     '입력 JSON은 공개 데이터 소스(Yahoo Finance chart, Google News RSS, pykrx/KRX 투자자별 거래대금)를 정규화한 것이다.',
     'status가 unavailable인 항목은 확인 필요로 처리하고, 수치나 사실을 추정해 채우지 않는다.',
     '각 문장의 근거는 sources, marketNews, investorFlows, investorFlowNewsCandidates, disclosureNewsCandidates, scheduleNewsCandidates, sectorThemeNewsCandidates, stockNewsCandidates 범위 안에서만 사용한다.',
+    'semiconductorRiskNewsCandidates에 삼성전자·SK하이닉스 직접 하락, 중국 메모리 공급 확대, 미국 반도체주 급락 근거가 있으면 이를 장시작 방향성과 장마감 원인 판단에서 최우선으로 반영한다.',
+    '삼성전자·SK하이닉스 직접 하락 근거가 있는데 약보합, 반도체 강세 전환, 주도주 후보처럼 위험을 축소하거나 반대로 해석하는 표현은 금지한다.',
     '장시작 외국인/기관 수급 관전 포인트는 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 당일 장 전후 맥락만 추출해 작성한다.',
     '장마감 투자자별 수급 동향은 investorFlows의 당일 정형 수급만 사용한다. investorFlows가 unavailable이거나 최신 거래일이 오늘이 아니면 전일/과거 수급을 현재 장마감 수급처럼 쓰지 않는다.',
     '수급 코멘트가 뉴스 기반일 때도 "뉴스 기준", "보도 기준" 같은 메타 표현은 쓰지 말고, 확인된 흐름만 자연스럽게 서술한다.',
@@ -820,6 +997,7 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
     indicators: Array.isArray(raw.indicators) ? raw.indicators : [],
     majorIndices: Array.isArray(raw.majorIndices) ? raw.majorIndices : [],
     marketNews: Array.isArray(raw.marketNews) ? raw.marketNews : [],
+    semiconductorRiskNewsCandidates: Array.isArray(raw.semiconductorRiskNewsCandidates) ? raw.semiconductorRiskNewsCandidates : [],
     stockNewsCandidates: Array.isArray(raw.stockNewsCandidates) ? raw.stockNewsCandidates : [],
     investorFlowNewsCandidates: Array.isArray(raw.investorFlowNewsCandidates) ? raw.investorFlowNewsCandidates : [],
     disclosureNewsCandidates: Array.isArray(raw.disclosureNewsCandidates) ? raw.disclosureNewsCandidates : [],
@@ -957,6 +1135,35 @@ function parseGoogleNewsRss(xml) {
   }).filter((item) => item.title && item.sourceUrl);
 }
 
+function newsPublishedAtMs(item) {
+  const parsed = Date.parse(item?.publishedAt ?? '');
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function rankFreshNewsCandidates(items, limit = 10, referenceTimeMs = Date.now()) {
+  const fresh = [];
+  const unavailable = [];
+
+  for (const item of items) {
+    if (item?.status === 'unavailable') {
+      unavailable.push(item);
+      continue;
+    }
+
+    const publishedAtMs = newsPublishedAtMs(item);
+    if (publishedAtMs == null) continue;
+    const ageMs = referenceTimeMs - publishedAtMs;
+    if (ageMs < -NEWS_FUTURE_TOLERANCE_MS || ageMs > NEWS_MAX_AGE_MS) continue;
+    fresh.push({ item, publishedAtMs });
+  }
+
+  fresh.sort((left, right) => right.publishedAtMs - left.publishedAtMs);
+  return [
+    ...fresh.map(({ item }) => item),
+    ...unavailable
+  ].slice(0, limit);
+}
+
 async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10) {
   const collected = [];
   for (const query of queries) {
@@ -977,18 +1184,21 @@ async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10) {
   }
 
   const seen = new Set();
-  return collected.filter((item) => {
+  const deduplicated = collected.filter((item) => {
     const key = item.sourceUrl || item.title;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
-  }).slice(0, limit);
+  });
+  return rankFreshNewsCandidates(deduplicated, limit);
 }
 
 async function fetchNewsCandidateGroup(queries, limit, statusKey, sourceStatus) {
   try {
     const items = await fetchGoogleNews(queries, limit);
-    sourceStatus[statusKey] = items.some((item) => item.status === 'unavailable') ? 'partial' : 'ok';
+    sourceStatus[statusKey] = items.length === 0
+      ? 'empty'
+      : items.some((item) => item.status === 'unavailable') ? 'partial' : 'ok';
     return items;
   } catch (error) {
     sourceStatus[statusKey] = `unavailable:${error.message}`;
@@ -1079,6 +1289,12 @@ async function collectPublicMarketResearch() {
   }
 
   const marketNews = await fetchNewsCandidateGroup(NEWS_QUERIES, 10, 'googleNews', sourceStatus);
+  const semiconductorRiskNewsCandidates = await fetchNewsCandidateGroup(
+    SEMICONDUCTOR_RISK_NEWS_QUERIES,
+    12,
+    'semiconductorRiskNewsCandidates',
+    sourceStatus
+  );
   const stockNewsCandidates = await fetchNewsCandidateGroup(NOTABLE_STOCK_QUERIES, 18, 'stockNewsCandidates', sourceStatus);
   const investorFlowNewsCandidates = await fetchNewsCandidateGroup(INVESTOR_FLOW_NEWS_QUERIES, 12, 'investorFlowNewsCandidates', sourceStatus);
   const disclosureNewsCandidates = await fetchNewsCandidateGroup(DISCLOSURE_NEWS_QUERIES, 12, 'disclosureNewsCandidates', sourceStatus);
@@ -1145,6 +1361,7 @@ async function collectPublicMarketResearch() {
     indicators,
     majorIndices: indices,
     marketNews,
+    semiconductorRiskNewsCandidates,
     stockNewsCandidates,
     investorFlowNewsCandidates,
     disclosureNewsCandidates,
@@ -1713,3 +1930,5 @@ export const __testPrepareAndValidateWriterReport = prepareAndValidateWriterRepo
 export const __testRenderPostMarketReport = renderPostMarketReport;
 export const __testHasCurrentPostMarketInvestorFlows = hasCurrentPostMarketInvestorFlows;
 export const __testIsTransientLlmError = isTransientLlmError;
+export const __testRankFreshNewsCandidates = rankFreshNewsCandidates;
+export const __testSemiconductorRiskState = semiconductorRiskState;

@@ -514,6 +514,157 @@ test('pre-market briefing allows prior-session investor-flow watch copy', async 
   assert.deepEqual(plan.issues, []);
 });
 
+test('news ranking removes stale candidates and orders the remaining articles by publication time', async () => {
+  const module = await importBriefingModule('pre_market');
+  const referenceTime = Date.parse('2026-07-27T23:35:32.392Z');
+  const ranked = module.__testRankFreshNewsCandidates([
+    {
+      title: '나흘 이전 반도체 강세 기사',
+      publishedAt: 'Thu, 23 Jul 2026 01:01:00 GMT',
+      sourceUrl: 'https://example.com/stale'
+    },
+    {
+      title: 'CXMT 상장으로 국내 반도체 수익성 하방 우려',
+      publishedAt: 'Mon, 27 Jul 2026 07:24:00 GMT',
+      sourceUrl: 'https://example.com/cxmt'
+    },
+    {
+      title: '중국발 반도체 우려에 삼성전자 5%·SK하이닉스 7% 하락',
+      publishedAt: 'Mon, 27 Jul 2026 23:23:00 GMT',
+      sourceUrl: 'https://example.com/premarket'
+    }
+  ], 10, referenceTime);
+
+  assert.deepEqual(
+    ranked.map((item) => item.sourceUrl),
+    ['https://example.com/premarket', 'https://example.com/cxmt']
+  );
+});
+
+test('pre-market semiconductor risk guard overrides the July 28 weak-open and leader contradiction', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    generatedAt: '2026-07-27T23:35:32.392Z',
+    semiconductorRiskNewsCandidates: [
+      {
+        title: '중국 최대 D램 업체 CXMT 상장…한국 반도체 업계 영향은?',
+        summary: '삼성전자와 SK하이닉스에 D램 공급 증가, 가격 하락, 수익성 하방 압력으로 작용할 수 있습니다.',
+        publishedAt: 'Mon, 27 Jul 2026 07:24:00 GMT',
+        sourceUrl: 'https://example.com/cxmt'
+      },
+      {
+        title: '중국발 반도체 우려에…프리마켓서 삼성전자 5%·SK하이닉스 7%↓',
+        summary: '중국발 반도체 경쟁 심화 우려와 미국 기술주 급락이 투자심리를 눌렀습니다.',
+        publishedAt: 'Mon, 27 Jul 2026 23:23:00 GMT',
+        sourceUrl: 'https://example.com/premarket'
+      }
+    ]
+  };
+  const report = {
+    openingStrategy: {
+      keywords: '외국인 순매도, 반도체 강세',
+      oneLineStrategy: '반도체 업종의 강세 전환 가능성에 주목해야 합니다.',
+      expectedOpen: '약보합 출발 예상'
+    },
+    sectorWeather: {
+      sunny: '반도체 업종이 강세를 보일 전망입니다.',
+      cloudy: '코스닥은 혼조가 예상됩니다.',
+      rainy: '일부 개별주 변동성이 예상됩니다.'
+    },
+    disclosuresAndNews: {
+      corporateDisclosure: '주요 공시를 확인합니다.',
+      majorNews: 'AI 투자 흐름을 확인합니다.',
+      schedule: '주요 실적 발표가 예정되어 있습니다.'
+    },
+    watchlist: {
+      leaders: 'SK하이닉스, 삼성전기',
+      technicals: '지수 지지선을 확인합니다.',
+      eventDriven: '실적 발표 종목을 확인합니다.'
+    }
+  };
+
+  const prepared = module.__testPrepareReportForPublish(marketResearch, report);
+  const serialized = JSON.stringify(prepared);
+
+  assert.match(prepared.openingStrategy.expectedOpen, /하락 출발.*높은 변동성/);
+  assert.match(prepared.openingStrategy.oneLineStrategy, /CXMT.*하방 위험/);
+  assert.match(prepared.watchlist.leaders, /주도주 후보가 아니라 하방 위험/);
+  assert.equal(serialized.includes('약보합'), false);
+  assert.equal(serialized.includes('강세 전환 가능성'), false);
+  assert.equal(serialized.includes('반도체 업종이 강세를 보일 전망'), false);
+});
+
+test('pre-market semiconductor risk guard does not promote an old direct decline into a new opening alert', async () => {
+  const module = await importBriefingModule('pre_market');
+  const report = {
+    openingStrategy: {
+      keywords: '실적 발표',
+      oneLineStrategy: '당일 수급을 확인해야 합니다.',
+      expectedOpen: '보합권 출발 예상'
+    },
+    sectorWeather: { sunny: '자동차 강세', cloudy: '반도체 혼조', rainy: '건설 약세' },
+    disclosuresAndNews: { corporateDisclosure: '실적 공시', majorNews: '주요 일정', schedule: '실적 발표' },
+    watchlist: { leaders: '자동차', technicals: '지수', eventDriven: '실적주' }
+  };
+
+  const prepared = module.__testPrepareReportForPublish({
+    generatedAt: '2026-07-27T23:35:32.392Z',
+    semiconductorRiskNewsCandidates: [
+      {
+        title: '삼성전자·SK하이닉스 급락',
+        summary: '미국 반도체주 약세가 영향을 줬습니다.',
+        publishedAt: 'Fri, 24 Jul 2026 06:00:00 GMT',
+        sourceUrl: 'https://example.com/old-decline'
+      }
+    ]
+  }, report);
+
+  assert.deepEqual(prepared, report);
+});
+
+test('post-market semiconductor risk guard restores Samsung and SK hynix as the primary plunging stocks', async () => {
+  const module = await importBriefingModule();
+  const marketResearch = {
+    generatedAt: '2026-07-28T07:05:31.476Z',
+    investorFlows: { status: 'unavailable', markets: [] },
+    semiconductorRiskNewsCandidates: [
+      {
+        title: '중국발 반도체 우려에 삼성전자 13%·SK하이닉스 14% 급락',
+        summary: 'CXMT 공급 확대와 미국 엔비디아·마이크론 약세가 반도체 투자심리를 위축시켰습니다.',
+        publishedAt: 'Tue, 28 Jul 2026 06:30:00 GMT',
+        sourceUrl: 'https://example.com/close'
+      }
+    ]
+  };
+  const report = {
+    marketSummary: { summary: '글로벌 변동성 확대로 시장이 하락했습니다.' },
+    investorFlows: {
+      foreign: '외국인은 순매도했습니다.',
+      institution: '기관은 순매수했습니다.',
+      retail: '개인은 순매수했습니다.'
+    },
+    sectorThemes: { strong: '일부 종목 강세', weak: '주력 업종 약세' },
+    notableStocks: {
+      surging: ['인트론바이오 상승', 'LG전자 상승'],
+      plunging: ['대한전선 하락', '이수페타시스 하락']
+    },
+    tomorrowStrategy: {
+      outlook: '기술적 반등 가능성을 확인합니다.',
+      checklist: ['외국인 수급', '환율', '미국 증시']
+    }
+  };
+
+  const prepared = module.__testPrepareReportForPublish(marketResearch, report);
+
+  assert.equal(prepared.investorFlows, null);
+  assert.match(prepared.marketSummary.summary, /CXMT.*삼성전자·SK하이닉스 직접 하락 신호/);
+  assert.match(prepared.sectorThemes.weak, /삼성전자·SK하이닉스/);
+  assert.deepEqual(
+    prepared.notableStocks.plunging.map((entry) => entry.split(',')[0]),
+    ['삼성전자', 'SK하이닉스']
+  );
+});
+
 test('writer retries an incomplete report shape instead of failing the publish immediately', async () => {
   const module = await importBriefingModule();
 
