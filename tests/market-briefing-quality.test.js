@@ -513,3 +513,16 @@ test('pre-market briefing allows prior-session investor-flow watch copy', async 
   assert.equal(plan.action, 'publish_new');
   assert.deepEqual(plan.issues, []);
 });
+
+test('writer retries an incomplete report shape instead of failing the publish immediately', async () => {
+  const module = await importBriefingModule();
+
+  assert.equal(
+    module.__testIsTransientLlmError(new Error('invalid_report_shape:notableStocks.surging')),
+    true
+  );
+  assert.equal(
+    module.__testIsTransientLlmError(new Error('briefing_quality_gate_failed:placeholder_copy')),
+    false
+  );
+});

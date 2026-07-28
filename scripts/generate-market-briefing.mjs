@@ -363,6 +363,7 @@ function isQuotaError(error) {
 function isTransientLlmError(error) {
   const text = `${error?.message ?? ''} ${error?.body ?? ''}`.toLowerCase();
   return [
+    text.startsWith('invalid_report_shape:'),
     error?.name === 'TimeoutError',
     error?.name === 'AbortError',
     error?.status === 408,
@@ -1797,3 +1798,4 @@ export const __testPrepareReportForPublish = prepareReportForPublish;
 export const __testPrepareAndValidateWriterReport = prepareAndValidateWriterReport;
 export const __testRenderPostMarketReport = renderPostMarketReport;
 export const __testHasCurrentPostMarketInvestorFlows = hasCurrentPostMarketInvestorFlows;
+export const __testIsTransientLlmError = isTransientLlmError;
