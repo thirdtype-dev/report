@@ -19,8 +19,6 @@ const outputRealtimePath = path.join(publicDataDir, 'realtime-surge.json');
 const REPORT_TIMEZONE = 'Asia/Seoul';
 const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
 const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash';
-const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
-const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-3.1-flash-lite';
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
 const OPENCODE_ZEN_BASE_URL = process.env.OPENCODE_ZEN_BASE_URL ?? 'https://opencode.ai/zen/v1';
 const GOOGLE_NEWS_TIMEOUT_MS = Number.parseInt(process.env.GOOGLE_NEWS_TIMEOUT_MS ?? '20000', 10);
@@ -1255,10 +1253,6 @@ function resolveRealtimePolishBatchSize() {
     : REALTIME_POLISH_BATCH_SIZE;
 }
 
-function extractGeminiText(body) {
-  return body?.candidates?.[0]?.content?.parts?.map((part) => part?.text ?? '').join('') ?? '';
-}
-
 function normalizePolishedResponse(payload, fallbackSignals) {
   const rows = Array.isArray(payload?.signals) ? payload.signals : Array.isArray(payload) ? payload : [];
   const byStock = new Map(rows.map((item) => [cleanText(item?.stockName), item]));
@@ -1297,22 +1291,12 @@ function buildPolishChatRequest(prompt, model = ANALYST_MODEL, options = {}) {
   return request;
 }
 
-function buildOpenRouterPolishRequest(prompt, model = FALLBACK_MODEL) {
+function buildOpenRouterPolishRequest(prompt, model = ANALYST_MODEL) {
   return buildPolishChatRequest(prompt, model);
 }
 
 function buildOpenCodeZenPolishRequest(prompt, model = ANALYST_MODEL) {
   return buildPolishChatRequest(prompt, model, { disableThinking: true });
-}
-
-function buildGeminiPolishRequest(prompt) {
-  return {
-    contents: [{ role: 'user', parts: [{ text: prompt }] }],
-    generationConfig: {
-      temperature: 0,
-      responseMimeType: 'application/json'
-    }
-  };
 }
 
 async function callOpenCodeZenPolish(prompt, fallbackSignals, options = {}) {
@@ -1365,55 +1349,10 @@ async function callOpenRouterPolish(prompt, fallbackSignals, options = {}) {
   return normalizePolishedResponse(JSON.parse(extractJsonBlock(JSON.parse(body)?.choices?.[0]?.message?.content ?? '')), fallbackSignals);
 }
 
-async function callGeminiPolish(prompt, fallbackSignals, options = {}) {
-  const apiKey = options.apiKey ?? process.env.GEMINI_API_KEY;
-  const model = options.model ?? FALLBACK_MODEL;
-  if (!apiKey) throw new Error('missing_gemini_api_key');
-
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
-    method: 'POST',
-    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
-    headers: {
-      'content-type': 'application/json',
-      'x-goog-api-key': apiKey
-    },
-    body: JSON.stringify(buildGeminiPolishRequest(prompt))
-  });
-
-  const body = await response.text();
-  if (!response.ok) {
-    const error = new Error(`gemini_polish_failed_${response.status}`);
-    error.status = response.status;
-    error.body = body;
-    throw error;
-  }
-
-  return normalizePolishedResponse(JSON.parse(extractJsonBlock(extractGeminiText(JSON.parse(body)))), fallbackSignals);
-}
-
 async function callPrimaryPolish(prompt, fallbackSignals) {
   if (ANALYST_PROVIDER === 'opencode-zen') return callOpenCodeZenPolish(prompt, fallbackSignals);
   if (ANALYST_PROVIDER === 'openrouter') return callOpenRouterPolish(prompt, fallbackSignals);
   throw new Error(`unsupported_analyst_provider_${ANALYST_PROVIDER}`);
-}
-
-function getFallbackOpenRouterApiKey() {
-  return process.env.OPENROUTER_FALLBACK_API_KEY ?? process.env.OPENROUTER_API_KEY;
-}
-
-async function callOpenRouterFallbackPolish(prompt, fallbackSignals) {
-  const apiKey = getFallbackOpenRouterApiKey();
-  if (!apiKey) throw new Error('missing_openrouter_fallback_api_key');
-  return callOpenRouterPolish(prompt, fallbackSignals, {
-    apiKey,
-    model: FALLBACK_MODEL
-  });
-}
-
-async function callFallbackPolish(prompt, fallbackSignals) {
-  if (FALLBACK_PROVIDER === 'gemini') return callGeminiPolish(prompt, fallbackSignals, { model: FALLBACK_MODEL });
-  if (FALLBACK_PROVIDER === 'openrouter') return callOpenRouterFallbackPolish(prompt, fallbackSignals);
-  throw new Error(`unsupported_fallback_provider_${FALLBACK_PROVIDER}`);
 }
 
 async function polishSignals(signals) {
@@ -1443,33 +1382,16 @@ async function polishSignals(signals) {
       batchWriters.push({ provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null });
       continue;
     } catch (error) {
-      console.warn('[realtime-surge] primary polish failed; retrying fallback model', {
+      console.warn('[realtime-surge] primary polish failed; using rule-based output', {
         provider: ANALYST_PROVIDER,
         model: ANALYST_MODEL,
-        fallbackProvider: FALLBACK_PROVIDER,
-        fallbackModel: FALLBACK_MODEL,
         batchIndex: batchIndex + 1,
         batchCount: batches.length,
         batchSize: batchSignals.length,
         error: error?.message ?? String(error)
       });
-    }
-
-    try {
-      const polished = await callFallbackPolish(prompt, batchSignals);
-      mergedSignals.push(...batchSignals.map((signal, index) => ({ ...signal, ...polished[index] })));
-      batchWriters.push({ provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason: 'primary_failed' });
-    } catch (fallbackError) {
-      console.warn('[realtime-surge] fallback polish failed; using rule-based fallback', {
-        provider: FALLBACK_PROVIDER,
-        model: FALLBACK_MODEL,
-        batchIndex: batchIndex + 1,
-        batchCount: batches.length,
-        batchSize: batchSignals.length,
-        error: fallbackError?.message ?? String(fallbackError)
-      });
       mergedSignals.push(...batchSignals.map((signal) => ({ ...signal, ...buildFallbackPolish(signal) })));
-      batchWriters.push({ provider: 'rule-based-fallback', model: 'signal-polish-v1', fallbackReason: 'all_failed' });
+      batchWriters.push({ provider: 'rule-based', model: 'signal-polish-v1', fallbackReason: 'primary_failed' });
     }
   }
 
@@ -1478,13 +1400,12 @@ async function polishSignals(signals) {
     return { signals: mergedSignals, writer: batchWriters[0] };
   }
 
-  const fallbackReasons = [...new Set(batchWriters.map((writer) => writer.fallbackReason).filter(Boolean))];
   return {
     signals: mergedSignals,
     writer: {
       provider: 'mixed',
       model: [...new Set(batchWriters.map((writer) => writer.model))].join(', '),
-      fallbackReason: fallbackReasons.includes('all_failed') ? 'mixed_with_fallback' : 'partial_primary_failed'
+      fallbackReason: 'partial_primary_failed'
     }
   };
 }
@@ -1766,10 +1687,6 @@ export function __testBuildOpenRouterPolishRequest(prompt, model) {
 
 export function __testBuildOpenCodeZenPolishRequest(prompt, model) {
   return buildOpenCodeZenPolishRequest(prompt, model);
-}
-
-export function __testBuildGeminiPolishRequest(prompt) {
-  return buildGeminiPolishRequest(prompt);
 }
 
 export function __testExtractJsonBlock(raw) {

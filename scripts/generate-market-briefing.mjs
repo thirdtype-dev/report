@@ -8,8 +8,6 @@ const DATA_DIR = resolve(OUTPUT_DIR, 'data');
 const execFileAsync = promisify(execFile);
 const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
 const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash';
-const FALLBACK_PROVIDER = process.env.ANALYST_FALLBACK_PROVIDER ?? 'gemini';
-const FALLBACK_MODEL = process.env.ANALYST_FALLBACK_MODEL ?? 'gemini-3.1-flash-lite';
 const OPENCODE_ZEN_BASE_URL = process.env.OPENCODE_ZEN_BASE_URL ?? 'https://opencode.ai/zen/v1';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
@@ -355,11 +353,6 @@ function normalizePhase(value) {
   return 'pre_market';
 }
 
-function isQuotaError(error) {
-  const text = `${error?.message ?? ''} ${error?.body ?? ''}`.toLowerCase();
-  return error?.status === 429 || text.includes('quota') || text.includes('rate limit') || text.includes('resource exhausted');
-}
-
 function isTransientLlmError(error) {
   const text = `${error?.message ?? ''} ${error?.body ?? ''}`.toLowerCase();
   return [
@@ -701,7 +694,7 @@ function prepareReportForPublish(marketResearch, report) {
   return prepared;
 }
 
-const WRITER_FALLBACK_QUALITY_ISSUES = new Set([
+const WRITER_REJECTED_QUALITY_ISSUES = new Set([
   'placeholder_copy',
   'stale_investor_flow_copy',
   'unavailable_investor_flow_copy',
@@ -712,7 +705,7 @@ const WRITER_FALLBACK_QUALITY_ISSUES = new Set([
 function prepareAndValidateWriterReport(marketResearch, report) {
   const prepared = prepareReportForPublish(marketResearch, report);
   const issues = briefingQualityIssues(marketResearch, prepared)
-    .filter((issue) => WRITER_FALLBACK_QUALITY_ISSUES.has(issue));
+    .filter((issue) => WRITER_REJECTED_QUALITY_ISSUES.has(issue));
   if (issues.length > 0) {
     const error = new Error(`briefing_writer_quality_failed:${issues.join(',')}`);
     error.code = 'briefing_writer_quality_failed';
@@ -1269,20 +1262,6 @@ function buildOpenCodeZenBriefingRequest(prompt, model = ANALYST_MODEL) {
   return buildBriefingChatRequest(prompt, model, { disableThinking: true });
 }
 
-function buildGeminiBriefingRequest(prompt) {
-  return {
-    contents: [{ role: 'user', parts: [{ text: prompt }] }],
-    generationConfig: {
-      temperature: 0.35,
-      responseMimeType: 'application/json'
-    }
-  };
-}
-
-function extractGeminiText(body) {
-  return body?.candidates?.[0]?.content?.parts?.map((part) => part?.text ?? '').join('') ?? '';
-}
-
 async function callOpenCodeZen(prompt, options = {}) {
   const apiKey = options.apiKey ?? process.env.OPENCODE_ZEN_API_KEY;
   if (!apiKey) throw new Error('missing_opencode_zen_api_key');
@@ -1337,55 +1316,10 @@ async function callOpenRouter(prompt, options = {}) {
   return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
 }
 
-async function callGemini(prompt, options = {}) {
-  const apiKey = options.apiKey ?? process.env.GEMINI_API_KEY;
-  const model = options.model ?? FALLBACK_MODEL;
-  if (!apiKey) throw new Error('missing_gemini_api_key');
-
-  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
-    method: 'POST',
-    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
-    headers: {
-      'content-type': 'application/json',
-      'x-goog-api-key': apiKey
-    },
-    body: JSON.stringify(buildGeminiBriefingRequest(prompt))
-  });
-
-  const body = await res.text();
-  if (!res.ok) {
-    const error = new Error(`gemini_failed_${res.status}`);
-    error.status = res.status;
-    error.body = body;
-    throw error;
-  }
-
-  return validateReportShape(extractJson(extractGeminiText(JSON.parse(body))));
-}
-
 async function callPrimaryWriter(prompt) {
   if (ANALYST_PROVIDER === 'opencode-zen') return callOpenCodeZen(prompt);
   if (ANALYST_PROVIDER === 'openrouter') return callOpenRouter(prompt);
   throw new Error(`unsupported_analyst_provider_${ANALYST_PROVIDER}`);
-}
-
-function getFallbackOpenRouterApiKey() {
-  return process.env.OPENROUTER_FALLBACK_API_KEY ?? process.env.OPENROUTER_API_KEY;
-}
-
-async function callOpenRouterFallback(prompt) {
-  const apiKey = getFallbackOpenRouterApiKey();
-  if (!apiKey) throw new Error('missing_openrouter_fallback_api_key');
-  return callOpenRouter(prompt, {
-    apiKey,
-    model: FALLBACK_MODEL
-  });
-}
-
-async function callFallbackWriter(prompt) {
-  if (FALLBACK_PROVIDER === 'gemini') return callGemini(prompt, { model: FALLBACK_MODEL });
-  if (FALLBACK_PROVIDER === 'openrouter') return callOpenRouterFallback(prompt);
-  throw new Error(`unsupported_fallback_provider_${FALLBACK_PROVIDER}`);
 }
 
 function mockReport(marketResearch) {
@@ -1455,37 +1389,17 @@ function mockReport(marketResearch) {
   };
 }
 
-async function writeReportWithFallback(marketResearch) {
+async function writeReport(marketResearch) {
   if (process.env.REPORT_LLM_MOCK === '1') {
     return { report: mockReport(marketResearch), writer: { provider: 'mock', model: 'mock', fallbackReason: null } };
   }
 
   const prompt = buildPrompt(marketResearch);
-  try {
-    const primaryReport = await withLlmRetry(ANALYST_PROVIDER, () => callPrimaryWriter(prompt));
-    return {
-      report: prepareAndValidateWriterReport(marketResearch, primaryReport),
-      writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
-    };
-  } catch (error) {
-    const fallbackReason = error?.code === 'briefing_writer_quality_failed'
-      ? 'primary_quality_failed'
-      : isQuotaError(error)
-        ? 'primary_quota_exceeded'
-        : 'primary_failed';
-    console.warn('[market-briefing] primary writer failed; retrying fallback', {
-      provider: ANALYST_PROVIDER,
-      model: ANALYST_MODEL,
-      reason: fallbackReason,
-      error: error.message
-    });
-
-    const fallbackReport = await withLlmRetry(`${FALLBACK_PROVIDER}-fallback`, () => callFallbackWriter(prompt));
-    return {
-      report: prepareAndValidateWriterReport(marketResearch, fallbackReport),
-      writer: { provider: FALLBACK_PROVIDER, model: FALLBACK_MODEL, fallbackReason }
-    };
-  }
+  const report = await withLlmRetry(ANALYST_PROVIDER, () => callPrimaryWriter(prompt));
+  return {
+    report: prepareAndValidateWriterReport(marketResearch, report),
+    writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
+  };
 }
 
 function escapeHtml(value) {
@@ -1758,7 +1672,7 @@ ${articles}
 
 async function main() {
   const marketResearch = process.env.REPORT_LLM_MOCK === '1' ? mockMarketResearch() : await collectPublicMarketResearch();
-  const { report: generatedReport, writer } = await writeReportWithFallback(marketResearch);
+  const { report: generatedReport, writer } = await writeReport(marketResearch);
   const report = prepareReportForPublish(marketResearch, generatedReport);
   const publishPlan = resolveBriefingPublishPlan({
     marketResearch,

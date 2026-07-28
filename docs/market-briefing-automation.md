@@ -91,12 +91,11 @@ Cloud Scheduler는 Cloud Run relay를 호출하고, relay가 GitHub `workflow_di
 현재 writer 설정:
 
 - Primary: `openrouter/deepseek/deepseek-v4-flash`
-- Fallback: `gemini/gemini-3.1-flash-lite`
+- Fallback: 없음
 
 필수 secrets:
 
 - `OPENROUTER_API_KEY`
-- `GEMINI_API_KEY`
 
 필수 secrets(인증된 KRX 1차 경로):
 
@@ -353,9 +352,9 @@ REPORT_LLM_MOCK=1 BRIEFING_PHASE=post_market PRESERVE_EXISTING_REPORTS=0 INVESTO
 
 ### LLM 쿼터
 
-- primary writer가 실패하거나 쿼터에 걸리면 Gemini 3.1 Flash Lite로 fallback한다.
-- fallback도 실패하면 발행이 실패한다.
-- 쿼터 이슈가 반복되면 발행 재시도 또는 provider/model 정책을 다시 봐야 한다.
+- primary writer는 일시적 오류와 불완전 응답을 최대 3회까지 재시도한다.
+- 세 번 모두 실패하면 다른 LLM으로 전환하지 않고 해당 실행을 실패 처리한다.
+- 브리핑은 5분 뒤 독립 백업 실행이 다시 시도하며, 쿼터 이슈가 반복되면 provider/model 정책을 다시 봐야 한다.
 
 ### 투자 자문 리스크
 

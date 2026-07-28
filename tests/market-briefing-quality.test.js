@@ -348,7 +348,7 @@ test('post-market briefing keeps investor-flow copy only with complete current K
   }), /투자자별 수급 동향/);
 });
 
-test('writer quality validation routes placeholder copy to fallback before publish planning', async () => {
+test('writer quality validation rejects placeholder copy before publish planning', async () => {
   const module = await importBriefingModule();
   const marketResearch = {
     investorFlows: {
