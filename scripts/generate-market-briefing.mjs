@@ -662,15 +662,6 @@ function briefingQualityIssues(marketResearch, report) {
     issues.push('notable_stock_source_unavailable');
   }
 
-  if (PHASE === 'pre_market') {
-    if (!hasUsableCandidates(marketResearch?.disclosureNewsCandidates)) {
-      issues.push('disclosure_source_unavailable');
-    }
-    if (!hasUsableCandidates(marketResearch?.scheduleNewsCandidates)) {
-      issues.push('schedule_source_unavailable');
-    }
-  }
-
   return issues;
 }
 
@@ -874,6 +865,20 @@ function prepareReportForPublish(marketResearch, report) {
   const riskGuarded = PHASE === 'pre_market'
     ? applyPreMarketSemiconductorRiskGuard(prepared, semiconductorRisk)
     : applyPostMarketSemiconductorRiskGuard(prepared, semiconductorRisk);
+  if (PHASE === 'pre_market') {
+    return {
+      ...riskGuarded,
+      disclosuresAndNews: {
+        ...riskGuarded.disclosuresAndNews,
+        corporateDisclosure: hasUsableCandidates(marketResearch?.disclosureNewsCandidates)
+          ? riskGuarded.disclosuresAndNews?.corporateDisclosure
+          : null,
+        schedule: hasUsableCandidates(marketResearch?.scheduleNewsCandidates)
+          ? riskGuarded.disclosuresAndNews?.schedule
+          : null
+      }
+    };
+  }
   if (PHASE === 'post_market' && !hasCurrentPostMarketInvestorFlows(marketResearch?.investorFlows)) {
     return {
       ...riskGuarded,
@@ -1645,7 +1650,8 @@ function escapeHtml(value) {
 }
 
 function labeledList(entries) {
-  return `<ul class="brief-list">${entries.map(([label, value]) => `<li><span class="item-label">${escapeHtml(label)}</span><span class="item-value">${escapeHtml(value ?? '')}</span></li>`).join('')}</ul>`;
+  const visibleEntries = entries.filter(([, value]) => isNonEmptyString(value));
+  return `<ul class="brief-list">${visibleEntries.map(([label, value]) => `<li><span class="item-label">${escapeHtml(label)}</span><span class="item-value">${escapeHtml(value)}</span></li>`).join('')}</ul>`;
 }
 
 function dateKey(value = new Date()) {
@@ -1944,6 +1950,7 @@ export const __testSanitizeBriefingCopy = sanitizeBriefingCopy;
 export const __testPrepareReportForPublish = prepareReportForPublish;
 export const __testPrepareAndValidateWriterReport = prepareAndValidateWriterReport;
 export const __testRenderPostMarketReport = renderPostMarketReport;
+export const __testRenderPreMarketReport = renderPreMarketReport;
 export const __testHasCurrentPostMarketInvestorFlows = hasCurrentPostMarketInvestorFlows;
 export const __testIsTransientLlmError = isTransientLlmError;
 export const __testRankFreshNewsCandidates = rankFreshNewsCandidates;

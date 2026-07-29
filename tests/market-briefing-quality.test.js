@@ -514,6 +514,65 @@ test('pre-market briefing allows prior-session investor-flow watch copy', async 
   assert.deepEqual(plan.issues, []);
 });
 
+test('pre-market briefing omits unsupported disclosure and schedule copy instead of preserving a stale report', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    investorFlows: {
+      status: 'ok',
+      markets: [{ market: 'KOSPI' }]
+    },
+    sectorThemeNewsCandidates: [
+      { title: '반도체 업종 변동성 확대', summary: '반도체 업종 변동성이 확대됐습니다.' }
+    ],
+    disclosureNewsCandidates: [],
+    scheduleNewsCandidates: []
+  };
+  const report = {
+    openingStrategy: {
+      keywords: '반도체 변동성',
+      oneLineStrategy: '반도체 위험을 우선 확인합니다.',
+      expectedOpen: '변동성 확대가 예상됩니다.'
+    },
+    investorFlowWatch: {
+      continuity: '외국인 수급을 확인합니다.',
+      keyInvestor: '외국인이 핵심입니다.',
+      checkPoint: '장 초반 매매 방향을 확인합니다.'
+    },
+    sectorWeather: {
+      sunny: '방어주 상대 강세',
+      cloudy: '대형주 혼조',
+      rainy: '반도체 변동성 확대'
+    },
+    disclosuresAndNews: {
+      corporateDisclosure: '근거 없는 공시 문구',
+      majorNews: '반도체 변동성 확대',
+      schedule: '근거 없는 일정 문구'
+    },
+    watchlist: {
+      leaders: '방어주 수급 확인',
+      technicals: '지수 지지선 확인',
+      eventDriven: '반도체 변동성 확인'
+    }
+  };
+
+  const prepared = module.__testPrepareReportForPublish(marketResearch, report);
+  const plan = module.__testResolveBriefingPublishPlan({
+    marketResearch,
+    report: prepared,
+    existingHtml: ''
+  });
+  const html = module.__testRenderPreMarketReport(prepared);
+
+  assert.equal(prepared.disclosuresAndNews.corporateDisclosure, null);
+  assert.equal(prepared.disclosuresAndNews.schedule, null);
+  assert.equal(prepared.disclosuresAndNews.majorNews, '반도체 변동성 확대');
+  assert.equal(plan.action, 'publish_new');
+  assert.deepEqual(plan.issues, []);
+  assert.equal(html.includes('기업 공시'), false);
+  assert.equal(html.includes('주요 일정'), false);
+  assert.equal(html.includes('주요 뉴스'), true);
+});
+
 test('news ranking removes stale candidates and orders the remaining articles by publication time', async () => {
   const module = await importBriefingModule('pre_market');
   const referenceTime = Date.parse('2026-07-27T23:35:32.392Z');
@@ -609,6 +668,12 @@ test('pre-market semiconductor risk guard does not promote an old direct decline
 
   const prepared = module.__testPrepareReportForPublish({
     generatedAt: '2026-07-27T23:35:32.392Z',
+    disclosureNewsCandidates: [
+      { title: '실적 공시', summary: '실적 공시가 발표됐습니다.' }
+    ],
+    scheduleNewsCandidates: [
+      { title: '실적 발표 일정', summary: '실적 발표가 예정돼 있습니다.' }
+    ],
     semiconductorRiskNewsCandidates: [
       {
         title: '삼성전자·SK하이닉스 급락',
