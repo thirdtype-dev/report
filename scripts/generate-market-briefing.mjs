@@ -729,6 +729,8 @@ const MARKET_POSITIVE_CONTEXT_RE = /(호조|개선|회복|성공|흑자|상향|(
 const MARKET_STRONG_MOVE_RE = /(급락|폭락|하한가|투매|붕괴|쇼크|급등|폭등|상한가)/iu;
 const MARKET_FACTOR_NEGATIVE_RE = /(?:(?:원\/달러|원달러|환율|유가|원유|금리|국채금리)[^.!?。]{0,24}(?:급등|상승|고공행진|불안)|(?:관세|수출규제|수입규제)[^.!?。]{0,24}(?:부과|인상|확대|강화)|(?:전쟁|공습|분쟁|충돌|제재)[^.!?。]{0,24}(?:확대|격화|강화|발발))/iu;
 const MARKET_FACTOR_POSITIVE_RE = /(?:(?:원\/달러|원달러|환율|유가|원유|금리|국채금리)[^.!?。]{0,24}(?:하락|안정|진정)|(?:관세|수출규제|수입규제)[^.!?。]{0,24}(?:철회|인하|완화)|(?:전쟁|공습|분쟁|충돌|제재)[^.!?。]{0,24}(?:휴전|완화|종료|해제))/iu;
+const MARKET_SECURITY_MOVE_CONTEXT_RE = /(?:주가|주식|증시|지수|코스피|코스닥|KOSPI|KOSDAQ|ADR|선물|ETF|특징주|상한가|하한가|[가-힣A-Za-z0-9]+주(?:가|는|의|들|로|에서|\s|·|,|$))/iu;
+const MARKET_LOW_CONFIDENCE_HEADLINE_RE = /(?:[?？]|전망|가능성|관측|분석|진단|왜\s|(?:무엇|어디)에\s*달렸|탓일까|재검토\s*탓)/iu;
 const MARKET_DIRECT_EVENT_MAX_AGE_MS = 18 * 60 * 60 * 1000;
 const MARKET_STRUCTURAL_EVENT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
@@ -819,16 +821,22 @@ function buildMarketEventSignals(marketResearch) {
       const text = candidateText(item);
       const title = String(item?.title ?? '');
       const direction = marketEventDirection(text, title);
-      const direct = MARKET_NEGATIVE_DIRECT_RE.test(title)
-        || MARKET_POSITIVE_DIRECT_RE.test(title)
-        || MARKET_FACTOR_NEGATIVE_RE.test(title)
-        || MARKET_FACTOR_POSITIVE_RE.test(title);
+      const targets = marketEventTargets(text);
+      const primaryTarget = primaryMarketEventTarget(targets);
+      const hasDirectionalMove = MARKET_NEGATIVE_DIRECT_RE.test(title)
+        || MARKET_POSITIVE_DIRECT_RE.test(title);
+      const hasMeasuredMove = /\d+(?:\.\d+)?\s*%/u.test(title);
+      const direct = MARKET_FACTOR_NEGATIVE_RE.test(title)
+        || MARKET_FACTOR_POSITIVE_RE.test(title)
+        || (hasDirectionalMove && (
+          MARKET_SECURITY_MOVE_CONTEXT_RE.test(title)
+          || hasMeasuredMove
+          || primaryTarget.scope === 'stock'
+        ));
       if (direction === 'neutral' || ageMs < -NEWS_FUTURE_TOLERANCE_MS) return null;
       if (direct && ageMs > MARKET_DIRECT_EVENT_MAX_AGE_MS) return null;
       if (!direct && ageMs > MARKET_STRUCTURAL_EVENT_MAX_AGE_MS) return null;
 
-      const targets = marketEventTargets(text);
-      const primaryTarget = primaryMarketEventTarget(targets);
       const ageHours = ageMs / (60 * 60 * 1000);
       let score = direct ? 5 : 2;
       if (MARKET_STRONG_MOVE_RE.test(title)) score += 4;
@@ -839,10 +847,14 @@ function buildMarketEventSignals(marketResearch) {
       else if (primaryTarget.scope === 'factor') score += 3;
       else if (primaryTarget.scope === 'sector') score += 2;
       else score += 1;
-      if (/\d+(?:\.\d+)?\s*%/u.test(title)) score += 2;
+      if (hasMeasuredMove) score += 2;
+      if (MARKET_LOW_CONFIDENCE_HEADLINE_RE.test(title)) {
+        score -= direct ? 1 : 3;
+      }
 
       return {
         direction,
+        direct,
         targets,
         primaryTarget,
         headline: title,
@@ -873,7 +885,12 @@ function buildMarketEventSignals(marketResearch) {
         ...signal,
         score,
         corroboration,
-        severity: score >= 11 ? 'high' : score >= 7 ? 'medium' : 'low'
+        severity: score >= 11 ? 'high' : score >= 7 ? 'medium' : 'low',
+        evidenceConfidence: score >= 11 && (signal.direct || corroboration > 1)
+          ? 'high'
+          : score >= 7
+            ? 'medium'
+            : 'low'
       };
     })
     .sort((left, right) => {
@@ -909,15 +926,99 @@ function buildMarketEventSignals(marketResearch) {
   return [...scopedSignals, ...stockSignals].sort((left, right) => right.score - left.score);
 }
 
+function marketSignalDominanceScore(signal) {
+  return signal.score
+    + (signal.direct ? 3 : 0)
+    + (signal.evidenceConfidence === 'low' ? -2 : 0);
+}
+
+function resolveMarketEventSignals(signals) {
+  const stockSignals = signals
+    .filter((signal) => signal.primaryTarget?.scope === 'stock')
+    .map((signal) => ({
+      ...signal,
+      confidence: signal.evidenceConfidence,
+      resolutionReason: 'individual_stock_only',
+      counterEvidence: []
+    }));
+  const grouped = new Map();
+  for (const signal of signals.filter((item) => item.primaryTarget?.scope !== 'stock')) {
+    const key = signal.primaryTarget?.key ?? 'unknown';
+    const group = grouped.get(key) ?? [];
+    group.push(signal);
+    grouped.set(key, group);
+  }
+
+  const conclusions = [];
+  for (const group of grouped.values()) {
+    const ranked = [...group].sort((left, right) => (
+      marketSignalDominanceScore(right) - marketSignalDominanceScore(left)
+    ));
+    const leader = ranked[0];
+    const runnerUp = ranked.find((signal) => signal.direction !== leader.direction);
+    const leaderWeight = marketSignalDominanceScore(leader);
+    const runnerUpWeight = runnerUp ? marketSignalDominanceScore(runnerUp) : Number.NEGATIVE_INFINITY;
+    const margin = leaderWeight - runnerUpWeight;
+    const hasOpposingDirections = ranked.some((signal) => signal.direction === 'negative')
+      && ranked.some((signal) => signal.direction === 'positive');
+    const unresolvedConflict = runnerUp
+      && (
+        leader.direction === 'mixed'
+        || (runnerUp.direction === 'mixed' && margin < 3)
+        || (hasOpposingDirections && margin < 3)
+      );
+    const direction = unresolvedConflict ? 'mixed' : leader.direction;
+    const confidence = !runnerUp
+      ? leader.evidenceConfidence
+      : unresolvedConflict
+        ? 'medium'
+        : margin >= 5
+          ? 'high'
+          : 'medium';
+    const targets = [
+      ...new Map(
+        ranked.flatMap((signal) => signal.targets ?? [])
+          .map((target) => [target.key, target])
+      ).values()
+    ];
+
+    conclusions.push({
+      ...leader,
+      direction,
+      targets,
+      confidence,
+      dominanceMargin: Number.isFinite(margin) ? margin : null,
+      resolutionReason: !runnerUp
+        ? 'single_direction'
+        : unresolvedConflict
+          ? 'conflicting_evidence'
+          : leader.direct
+            ? 'dominant_direct_price'
+            : 'dominant_evidence',
+      counterEvidence: ranked
+        .filter((signal) => signal.direction !== direction)
+        .slice(0, 3)
+        .map((signal) => signal.headline)
+    });
+  }
+
+  return [...conclusions, ...stockSignals]
+    .sort((left, right) => marketSignalDominanceScore(right) - marketSignalDominanceScore(left));
+}
+
 function marketEventState(marketResearch) {
   const signals = Array.isArray(marketResearch?.marketEventSignals)
     ? marketResearch.marketEventSignals
     : buildMarketEventSignals(marketResearch);
-  const highSignals = signals.filter((signal) => (
+  const conclusions = Array.isArray(marketResearch?.marketEventConclusions)
+    ? marketResearch.marketEventConclusions
+    : resolveMarketEventSignals(signals);
+  const highSignals = conclusions.filter((signal) => (
     signal.severity === 'high' && signal.primaryTarget?.scope !== 'stock'
   ));
   return {
     signals,
+    conclusions,
     negative: highSignals.filter((signal) => signal.direction === 'negative'),
     positive: highSignals.filter((signal) => signal.direction === 'positive'),
     mixed: highSignals.filter((signal) => signal.direction === 'mixed')
@@ -964,6 +1065,11 @@ function signalTargetsText(signal, text) {
   });
 }
 
+function signalPrimaryTargetText(signal, text) {
+  const topic = MARKET_EVENT_TOPICS.find((entry) => entry.key === signal.primaryTarget?.key);
+  return topic?.pattern.test(String(text ?? '')) ?? false;
+}
+
 function applyPreMarketEventGuard(report, state) {
   const negative = uniqueTopMarketSignals(state.negative);
   const positive = uniqueTopMarketSignals(state.positive);
@@ -993,12 +1099,6 @@ function applyPreMarketEventGuard(report, state) {
         : `${labels.join('·')} 중심 약세와 높은 변동성 경계`
     };
     next.sectorWeather.rainy = `${labels.join('·')} - ${summary}`;
-    if (negative.some((signal) => (
-      signalTargetsText(signal, next.sectorWeather.sunny)
-      && MARKET_POSITIVE_DIRECT_RE.test(next.sectorWeather.sunny ?? '')
-    ))) {
-      next.sectorWeather.sunny = '상대강도 확인 - 상위 하방 사건과 분리되는 업종 흐름만 확인해야 합니다.';
-    }
     if (broadRisk || negative.some((signal) => signalTargetsText(signal, next.watchlist.leaders))) {
       next.watchlist.leaders = `${labels.join(', ')} - 주도주 추격보다 하방 위험과 변동성 우선 확인 대상`;
     }
@@ -1020,6 +1120,15 @@ function applyPreMarketEventGuard(report, state) {
         expectedOpen: `${labels.join('·')} 영향으로 방향성 혼조와 높은 변동성 경계`
       };
     }
+  }
+  if ([...negative, ...mixed].some((signal) => signalPrimaryTargetText(signal, next.sectorWeather.sunny))) {
+    next.sectorWeather.sunny = '상대강도 확인 - 상위 하방·혼조 사건과 분리되는 업종 흐름만 확인해야 합니다.';
+  }
+  if ([...negative, ...positive].some((signal) => signalPrimaryTargetText(signal, next.sectorWeather.cloudy))) {
+    next.sectorWeather.cloudy = '방향성 혼조 - 지배 방향이 확정되지 않은 업종만 확인해야 합니다.';
+  }
+  if ([...positive, ...mixed].some((signal) => signalPrimaryTargetText(signal, next.sectorWeather.rainy))) {
+    next.sectorWeather.rainy = '하방 위험 확인 - 상방·혼조 결론과 분리되는 업종만 확인해야 합니다.';
   }
 
   const eventSummary = [
@@ -1062,6 +1171,12 @@ function applyPostMarketEventGuard(report, state) {
   }
   if (mixed.length > 0) {
     next.sectorThemes.weak = `${next.sectorThemes.weak} / 혼조: ${marketSignalLabels(mixed).join('·')} - ${marketEventSummary(mixed)}`;
+  }
+  if ([...negative, ...mixed].some((signal) => signalPrimaryTargetText(signal, next.sectorThemes.strong))) {
+    next.sectorThemes.strong = '상대강도 확인 - 하방·혼조 결론과 분리되는 업종만 확인해야 합니다.';
+  }
+  if (positive.some((signal) => signalPrimaryTargetText(signal, next.sectorThemes.weak))) {
+    next.sectorThemes.weak = '약세 업종 확인 - 상방 결론과 분리되는 업종만 확인해야 합니다.';
   }
   return next;
 }
@@ -1181,11 +1296,12 @@ function buildPrompt(marketResearch) {
     '아래 JSON에 포함된 수치와 문장만 근거로 사용한다.',
     '입력 JSON은 공개 데이터 소스(Yahoo Finance chart, Google News RSS, pykrx/KRX 투자자별 거래대금)를 정규화한 것이다.',
     'status가 unavailable인 항목은 확인 필요로 처리하고, 수치나 사실을 추정해 채우지 않는다.',
-    '각 문장의 근거는 sources, marketNews, marketEventNewsCandidates, marketEventSignals, investorFlows, investorFlowNewsCandidates, disclosureNewsCandidates, scheduleNewsCandidates, sectorThemeNewsCandidates, stockNewsCandidates 범위 안에서만 사용한다.',
+    '각 문장의 근거는 sources, marketNews, marketEventNewsCandidates, marketEventSignals, marketEventConclusions, investorFlows, investorFlowNewsCandidates, disclosureNewsCandidates, scheduleNewsCandidates, sectorThemeNewsCandidates, stockNewsCandidates 범위 안에서만 사용한다.',
     'marketEventSignals는 모든 최신 뉴스에서 대상, 방향, 범위, 강도, 복수 출처 확인 수를 계산한 우선순위 사건 목록이다.',
-    'severity가 high인 사건을 최우선으로 반영하되, 업종 사건을 전체 지수 방향으로 과장하거나 개별 종목 사건을 업종 전체로 일반화하지 않는다.',
+    'marketEventConclusions는 같은 대상의 상충 신호를 직접 가격 움직임, 시의성, 복수 출처, 제목 신뢰도로 합산한 최종 방향이다. 브리핑 방향과 업종 날씨는 이 결론을 우선한다.',
+    'severity가 high인 결론을 최우선으로 반영하되, 업종 사건을 전체 지수 방향으로 과장하거나 개별 종목 사건을 업종 전체로 일반화하지 않는다.',
     '직접 가격 신호는 18시간, 구조적 사건은 24시간 안의 근거만 사용하며, 직접 가격 신호가 오래된 전망 기사보다 우선한다.',
-    '같은 대상에 상방·하방 사건이 함께 있으면 혼조와 변동성으로 표현하고 한 방향으로 단정하지 않는다.',
+    '같은 대상은 marketEventConclusions의 최종 방향에 해당하는 날씨 한 곳에만 배치한다. counterEvidence는 결론을 뒤집지 않는 보조 위험으로만 서술한다.',
     '하방 사건 대상은 강세 전환이나 주도주 후보로, 상방 사건 대상은 약세 업종으로 반대로 해석하지 않는다.',
     '장시작 외국인/기관 수급 관전 포인트는 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 당일 장 전후 맥락만 추출해 작성한다.',
     '장마감 투자자별 수급 동향은 investorFlows의 당일 정형 수급만 사용한다. investorFlows가 unavailable이거나 최신 거래일이 오늘이 아니면 전일/과거 수급을 현재 장마감 수급처럼 쓰지 않는다.',
@@ -1228,6 +1344,7 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
     marketNews: Array.isArray(raw.marketNews) ? raw.marketNews : [],
     marketEventNewsCandidates: Array.isArray(raw.marketEventNewsCandidates) ? raw.marketEventNewsCandidates : [],
     marketEventSignals: Array.isArray(raw.marketEventSignals) ? raw.marketEventSignals : [],
+    marketEventConclusions: Array.isArray(raw.marketEventConclusions) ? raw.marketEventConclusions : [],
     stockNewsCandidates: Array.isArray(raw.stockNewsCandidates) ? raw.stockNewsCandidates : [],
     investorFlowNewsCandidates: Array.isArray(raw.investorFlowNewsCandidates) ? raw.investorFlowNewsCandidates : [],
     disclosureNewsCandidates: Array.isArray(raw.disclosureNewsCandidates) ? raw.disclosureNewsCandidates : [],
@@ -1243,6 +1360,9 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
   normalized.marketEventSignals = normalized.marketEventSignals.length > 0
     ? normalized.marketEventSignals
     : buildMarketEventSignals(normalized);
+  normalized.marketEventConclusions = normalized.marketEventConclusions.length > 0
+    ? normalized.marketEventConclusions
+    : resolveMarketEventSignals(normalized.marketEventSignals);
   return normalized;
 }
 
@@ -2170,5 +2290,6 @@ export const __testHasCurrentPostMarketInvestorFlows = hasCurrentPostMarketInves
 export const __testIsTransientLlmError = isTransientLlmError;
 export const __testRankFreshNewsCandidates = rankFreshNewsCandidates;
 export const __testBuildMarketEventSignals = buildMarketEventSignals;
+export const __testResolveMarketEventSignals = resolveMarketEventSignals;
 export const __testMarketEventState = marketEventState;
 export const __testBuildPrompt = buildPrompt;

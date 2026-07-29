@@ -775,6 +775,103 @@ test('general market-event ranking reserves room for market factors when stock h
   assert.ok(signals.filter((signal) => signal.primaryTarget.scope === 'stock').length <= 11);
 });
 
+test('market-event conclusions let corroborated direct downside outrank an ambiguous question headline', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    generatedAt: '2026-07-29T01:10:00.000Z',
+    marketEventNewsCandidates: [
+      {
+        title: '美반도체주 투매 지속…마이크론·SK하이닉스 ADR 9% 급락',
+        summary: '미국 반도체주 약세가 국내 반도체 투자심리에 부담으로 작용했습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 01:00:00 GMT',
+        source: 'Downside News A',
+        sourceUrl: 'https://example.com/semiconductor-down-a'
+      },
+      {
+        title: '반도체주 급락 지속…삼성전자·SK하이닉스 약세',
+        summary: '반도체 업종 전반에 매도세가 이어졌습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:55:00 GMT',
+        source: 'Downside News B',
+        sourceUrl: 'https://example.com/semiconductor-down-b'
+      },
+      {
+        title: '반도체 가격 폭등은 보조금 재검토 탓일까?',
+        summary: '공급망 병목이 반도체 가격에 미칠 영향을 분석했습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:50:00 GMT',
+        source: 'Analysis News',
+        sourceUrl: 'https://example.com/semiconductor-question'
+      }
+    ]
+  };
+  const signals = module.__testBuildMarketEventSignals(marketResearch);
+  const conclusions = module.__testResolveMarketEventSignals(signals);
+  const semiconductorSignals = signals.filter((signal) => signal.primaryTarget.key === 'semiconductor');
+  const conclusion = conclusions.find((signal) => signal.primaryTarget.key === 'semiconductor');
+  const report = {
+    openingStrategy: { keywords: '반도체', oneLineStrategy: '반도체 반등을 봅니다.', expectedOpen: '강보합 예상' },
+    investorFlowWatch: { continuity: '외국인 수급', keyInvestor: '외국인', checkPoint: '선물 수급' },
+    sectorWeather: { sunny: '반도체 강세', cloudy: '반도체 혼조', rainy: '건설 약세' },
+    disclosuresAndNews: { corporateDisclosure: '실적 공시', majorNews: '반도체 가격 상승', schedule: '실적 발표' },
+    watchlist: { leaders: '반도체 주도주', technicals: '지수', eventDriven: '실적주' }
+  };
+  const prepared = module.__testPrepareReportForPublish(marketResearch, report);
+
+  assert.deepEqual(
+    new Set(semiconductorSignals.map((signal) => signal.direction)),
+    new Set(['negative', 'positive'])
+  );
+  assert.equal(
+    semiconductorSignals.find((signal) => signal.direction === 'positive').direct,
+    false
+  );
+  assert.equal(
+    semiconductorSignals.find((signal) => signal.direction === 'positive').severity,
+    'medium'
+  );
+  assert.equal(conclusion.direction, 'negative');
+  assert.equal(conclusion.confidence, 'high');
+  assert.equal(conclusion.resolutionReason, 'dominant_direct_price');
+  assert.match(conclusion.counterEvidence.join(' '), /보조금 재검토 탓일까/);
+  assert.match(prepared.sectorWeather.rainy, /반도체/);
+  assert.equal(prepared.sectorWeather.sunny.includes('반도체'), false);
+  assert.equal(prepared.sectorWeather.cloudy.includes('반도체'), false);
+  assert.equal(prepared.disclosuresAndNews.majorNews.includes('상방:'), false);
+});
+
+test('market-event conclusions keep evenly matched direct opposition in one mixed bucket', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    generatedAt: '2026-07-29T01:10:00.000Z',
+    marketEventNewsCandidates: [
+      {
+        title: '2차전지주 수주 호조에 8% 급등',
+        summary: '배터리 업종이 강세를 보였습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 01:00:00 GMT',
+        source: 'Battery News A',
+        sourceUrl: 'https://example.com/battery-up'
+      },
+      {
+        title: '2차전지주 수요 둔화 우려에 8% 급락',
+        summary: '배터리 업종이 약세를 보였습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:59:00 GMT',
+        source: 'Battery News B',
+        sourceUrl: 'https://example.com/battery-down'
+      }
+    ]
+  };
+  const signals = module.__testBuildMarketEventSignals(marketResearch);
+  const conclusion = module.__testResolveMarketEventSignals(signals)
+    .find((signal) => signal.primaryTarget.key === 'secondary_battery');
+  const state = module.__testMarketEventState(marketResearch);
+
+  assert.equal(conclusion.direction, 'mixed');
+  assert.equal(conclusion.confidence, 'medium');
+  assert.equal(conclusion.resolutionReason, 'conflicting_evidence');
+  assert.deepEqual(state.negative, []);
+  assert.deepEqual(state.positive, []);
+  assert.equal(state.mixed.length, 1);
+});
+
 test('writer prompt uses the general market-event model without semiconductor-only instructions', async () => {
   const module = await importBriefingModule('pre_market');
   const prompt = module.__testBuildPrompt({
@@ -783,6 +880,8 @@ test('writer prompt uses the general market-event model without semiconductor-on
   });
 
   assert.match(prompt, /모든 최신 뉴스에서 대상, 방향, 범위, 강도/);
+  assert.match(prompt, /marketEventConclusions.*최종 방향/);
+  assert.match(prompt, /최종 방향에 해당하는 날씨 한 곳에만 배치/);
   assert.match(prompt, /업종 사건을 전체 지수 방향으로 과장/);
   assert.match(prompt, /"openingStrategy"/);
   assert.equal(prompt.includes('semiconductorRiskNewsCandidates'), false);
@@ -897,7 +996,7 @@ test('post-market general event guard reflects semiconductor downside without st
       institution: '기관은 순매수했습니다.',
       retail: '개인은 순매수했습니다.'
     },
-    sectorThemes: { strong: '일부 종목 강세', weak: '주력 업종 약세' },
+    sectorThemes: { strong: '반도체 기술적 반등', weak: '주력 업종 약세' },
     notableStocks: {
       surging: ['인트론바이오 상승', 'LG전자 상승'],
       plunging: ['대한전선 하락', '이수페타시스 하락']
@@ -913,6 +1012,7 @@ test('post-market general event guard reflects semiconductor downside without st
   assert.equal(prepared.investorFlows, null);
   assert.match(prepared.marketSummary.summary, /반도체.*중국발 반도체 우려/);
   assert.match(prepared.sectorThemes.weak, /반도체.*중국발 반도체 우려/);
+  assert.equal(prepared.sectorThemes.strong.includes('반도체'), false);
   assert.deepEqual(prepared.notableStocks.plunging, ['대한전선 하락', '이수페타시스 하락']);
 });
 
