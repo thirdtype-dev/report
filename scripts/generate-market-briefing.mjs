@@ -377,6 +377,8 @@ function isTransientLlmError(error) {
     text.includes('temporarily unavailable'),
     text.includes('experiencing high demand'),
     text.includes('please try again later'),
+    text.includes('invalid_json_response'),
+    text.includes('empty_llm_response'),
     text.includes('overloaded')
   ].some(Boolean);
 }
@@ -467,6 +469,17 @@ function extractJson(text) {
   }
 
   return JSON.parse(trimmed);
+}
+
+function parseWriterResponse(body, provider) {
+  try {
+    return JSON.parse(body);
+  } catch (cause) {
+    const error = new Error(`${provider}_invalid_json_response`);
+    error.bodyLength = String(body ?? '').length;
+    error.cause = cause;
+    throw error;
+  }
 }
 
 function isNonEmptyString(value) {
@@ -1501,7 +1514,7 @@ async function callOpenCodeZen(prompt, options = {}) {
     throw error;
   }
 
-  const json = JSON.parse(body);
+  const json = parseWriterResponse(body, 'opencode_zen');
   return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
 }
 
@@ -1529,7 +1542,7 @@ async function callOpenRouter(prompt, options = {}) {
     throw error;
   }
 
-  const json = JSON.parse(body);
+  const json = parseWriterResponse(body, 'openrouter');
   return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
 }
 

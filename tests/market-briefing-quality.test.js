@@ -673,6 +673,14 @@ test('writer retries an incomplete report shape instead of failing the publish i
     true
   );
   assert.equal(
+    module.__testIsTransientLlmError(new Error('openrouter_invalid_json_response')),
+    true
+  );
+  assert.equal(
+    module.__testIsTransientLlmError(new Error('empty_llm_response')),
+    true
+  );
+  assert.equal(
     module.__testIsTransientLlmError(new Error('briefing_quality_gate_failed:placeholder_copy')),
     false
   );
