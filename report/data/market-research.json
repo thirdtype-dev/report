@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-29T01:16:25.614Z",
-  "phase": "pre_market",
-  "sessionLabel": "08:30",
+  "generatedAt": "2026-07-29T07:00:36.701Z",
+  "phase": "post_market",
+  "sessionLabel": "16:00",
   "summary": {
     "signal": "yellow",
     "totalScore": 0,
@@ -12,33 +12,33 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "value": "6,122.43",
-      "change": "-9.37%",
+      "value": "5,663.24",
+      "change": "-5.98%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-07-29T00:56:00.000Z",
+      "updatedAt": "2026-07-29T06:33:00.000Z",
       "reason": "KOSPI 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "value": "698.53",
-      "change": "-8.67%",
+      "value": "662.68",
+      "change": "-6.12%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-07-29T00:56:10.000Z",
+      "updatedAt": "2026-07-29T06:33:00.000Z",
       "reason": "KOSDAQ 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,453.98",
-      "change": "-0.71%",
+      "value": "1,448.04",
+      "change": "-1.12%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-07-29T01:16:09.000Z",
+      "updatedAt": "2026-07-29T07:00:17.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,34 +67,34 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "28,018.25",
-      "change": "-0.61%",
-      "signal": "red",
+      "value": "27,929.75",
+      "change": "+0.03%",
+      "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-07-29T01:06:08.000Z",
+      "updatedAt": "2026-07-29T06:50:20.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
     {
       "key": "investor_flow",
       "title": "투자자별 수급",
-      "value": "KOSPI 2026-07-29: 외국인 순매수 2,138억원, 기관 순매수 10,192억원, 개인 순매도 12,435억원 / KOSDAQ 2026-07-29: 외국인 순매도 44억원, 기관 순매도 627억원, 개인 순매수 612억원",
+      "value": "KOSPI 2026-07-29: 외국인 순매도 12,343억원, 기관 순매수 31,604억원, 개인 순매도 19,695억원 / KOSDAQ 2026-07-29: 외국인 순매수 3,083억원, 기관 순매수 1,471억원, 개인 순매도 4,578억원",
       "change": null,
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-07-29T10:16:25.597683+09:00",
+      "updatedAt": "2026-07-29T16:00:36.688985+09:00",
       "reason": "NAVER Finance/KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.",
       "sourceUrl": "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260729&sosok=01&page=1"
     },
     {
       "key": "disclosures",
       "title": "공시",
-      "value": null,
+      "value": "[윤병운의 M&A 팩트폭격 2] 비상장기업의 가업승계와 신사업 진출, 상장사M&A로 풀다 - CEONEWS (CEONEWS)",
       "change": null,
       "signal": "yellow",
-      "status": "unavailable",
-      "updatedAt": "2026-07-29T01:16:25.614Z",
-      "reason": "공시 전용 뉴스 후보를 수집하지 못했습니다.",
+      "status": "news_based",
+      "updatedAt": "2026-07-29T07:00:36.701Z",
+      "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
   ],
@@ -102,34 +102,34 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "currentPrice": "6,122.43",
-      "change": "-633.32",
-      "changePercent": "-9.37%",
+      "currentPrice": "5,663.24",
+      "change": "-360.42",
+      "changePercent": "-5.98%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-07-29T00:56:00.000Z",
+      "updatedAt": "2026-07-29T06:33:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "currentPrice": "698.53",
-      "change": "-66.33",
-      "changePercent": "-8.67%",
+      "currentPrice": "662.68",
+      "change": "-43.17",
+      "changePercent": "-6.12%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-07-29T00:56:10.000Z",
+      "updatedAt": "2026-07-29T06:33:00.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,453.98",
-      "change": "-10.46",
-      "changePercent": "-0.71%",
+      "currentPrice": "1,448.04",
+      "change": "-16.40",
+      "changePercent": "-1.12%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-07-29T01:16:09.000Z",
+      "updatedAt": "2026-07-29T07:00:17.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,16 +157,48 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "28,018.25",
-      "change": "-171.75",
-      "changePercent": "-0.61%",
-      "trend": "down",
+      "currentPrice": "27,929.75",
+      "change": "+7.75",
+      "changePercent": "+0.03%",
+      "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-07-29T01:06:08.000Z",
+      "updatedAt": "2026-07-29T06:50:20.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
   "marketNews": [
+    {
+      "title": "노무라 \"코스피 급락은 수급 충격 탓…반등 열쇠는 주주환원\" - 글로벌이코노믹",
+      "summary": "노무라 \"코스피 급락은 수급 충격 탓…반등 열쇠는 주주환원\"&nbsp;&nbsp;글로벌이코노믹",
+      "source": "글로벌이코노믹",
+      "publishedAt": "Wed, 29 Jul 2026 04:18:34 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYjZRNU8zNW03SkpXVWxQNjJydUxzb0l6NGtsSVhfczBBdmhKWHJzZ3FpX2xWaXNaRnVoNXlwWE5fXzZpVW1WclhuUTV4ZlBxcG9BcjYtdThEblpQc0RDcXh4aXBJMVV6VkVlWGFEbm41Y0FjLVNsanBmaGFKOGRaWUhTRDVZQ2J3?oc=5",
+      "query": "한국 증시 외국인 기관 수급"
+    },
+    {
+      "title": "[윤병운의 M&A 팩트폭격 2] 비상장기업의 가업승계와 신사업 진출, 상장사M&A로 풀다 - CEONEWS",
+      "summary": "[윤병운의 M&A 팩트폭격 2] 비상장기업의 가업승계와 신사업 진출, 상장사M&A로 풀다&nbsp;&nbsp;CEONEWS",
+      "source": "CEONEWS",
+      "publishedAt": "Wed, 29 Jul 2026 03:20:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1XMEVFMDBGU1l4S1laZVk5bXJ1ZllVaHYwWF93UDNVbjNxTzA2QTR5TjA5bV9YQmJxaW8wZWYzZWZFY3lnMWV5Qk00VEFiQWIzMndpTUdPcXlRaWdrOTZF?oc=5",
+      "query": "한국 주식시장 공시 실적 유상증자 M&A"
+    },
+    {
+      "title": "노무라 \"코스피 급락 배경, 외인 대규모 매도·국민연금발 수급공백\" - 뉴시스",
+      "summary": "노무라 \"코스피 급락 배경, 외인 대규모 매도·국민연금발 수급공백\"&nbsp;&nbsp;뉴시스",
+      "source": "뉴시스",
+      "publishedAt": "Wed, 29 Jul 2026 02:47:52 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9ENHhSLTdPME1sbTQzSUJLRW1wV2xETmtlVGJMX0lGMmJlamtwSFBWdXFTUnJzYjc2SEpmdFF5WmhRcTBBcHZ3VWZSYm9TSmlsd3Y4cExPV05JekYzTkFCOdIBeEFVX3lxTE9nTDR6b2tZVWFWbVZQZGZhTm5fN1ZYWHFkRXNrWG5nQkFGYVhmd2tDZWVjd3p0b2VfVVlIam8xRE10ZkJteVFxM01wQzRxU1JMbTZ3WGlja0lET2pnMTd0aHk2Z2FESVc5eEhFeTgwMFM5MXlnVEo2MA?oc=5",
+      "query": "한국 증시 외국인 기관 수급"
+    },
+    {
+      "title": "[특징주] 기업은행, 잠정실적 기대감에 상승세…외국인·기관 수급 주시 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 기업은행, 잠정실적 기대감에 상승세…외국인·기관 수급 주시 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Wed, 29 Jul 2026 01:37:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBnUC1tZjhRT1FuUE42QnV0eGc2QnlGR01tWXdGVFBKNS1vVDMzRVkwVnRWVzFFdTdaVGU5X2dJcGE4ZWIyanBUNEJB?oc=5",
+      "query": "한국 증시 외국인 기관 수급"
+    },
     {
       "title": "[톺아보기] 최대실적 KB금융 양종희號···적재적소 '자본배분' 전략 적중 - 서울파이낸스",
       "summary": "[톺아보기] 최대실적 KB금융 양종희號···적재적소 '자본배분' 전략 적중&nbsp;&nbsp;서울파이낸스",
@@ -174,14 +206,6 @@
       "publishedAt": "Tue, 28 Jul 2026 22:30:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBSZjBUYjVYTFgwOTI2VW9kTzRfaGFLSm9MZVpEeHNyR2ItVHVDZVhPM2tUZVFKcHl2a0RaV0RwaFFvTFhrdkgwbTRXdEJmRU9lZ2NpOEh1YUdPUmVZUk1Ka0lkWmp5SVJYdmc?oc=5",
       "query": "한국 주식시장 공시 실적 유상증자 M&A"
-    },
-    {
-      "title": "아시아 증시 일제히 하락, 한국 코스피 11% 급락…삼성·SK하이닉스 13%↓ (+BTC, 코스피, 삼성전자, SK하이닉스) - 민심뉴스",
-      "summary": "아시아 증시 일제히 하락, 한국 코스피 11% 급락…삼성·SK하이닉스 13%↓ (+BTC, 코스피, 삼성전자, SK하이닉스)&nbsp;&nbsp;민심뉴스",
-      "source": "민심뉴스",
-      "publishedAt": "Tue, 28 Jul 2026 07:12:47 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9nckNBLUNCVXB5OVZCX2hGSWN4TlBKMC1BX2ctaGlfR25LWkFaUlgzUzc1dE1zSmRzYThDSDdrbDFHbVBycFIwX2pGd0tQUUlzS0I3b2QzSlRIRlAwa0p2UmZVU1ZPczFpZGREdA?oc=5",
-      "query": "한국 증시 외국인 기관 수급"
     },
     {
       "title": "삼전·SK하닉 와르르...5000피·600닥 눈앞 - 뉴스톱",
@@ -209,6 +233,30 @@
     }
   ],
   "marketEventNewsCandidates": [
+    {
+      "title": "중국 창신메모리 상장에 범용 D램 수익성 악화 전망 등 ‘차이나 쇼크’ 우려 - 우먼타임스",
+      "summary": "중국 창신메모리 상장에 범용 D램 수익성 악화 전망 등 ‘차이나 쇼크’ 우려&nbsp;&nbsp;우먼타임스",
+      "source": "우먼타임스",
+      "publishedAt": "Wed, 29 Jul 2026 05:46:19 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1qamtqNWota3JRMjdfZDJOc3U5Nm9sNk5pS0VuTzJvdjZqN0k3dWhNa2hxamVveGhsXzZ0c0pVZDBVV0VVeFNNY2Z1aTNzWERuWW1vQ0J1WDRkOUJiYW5rOUEzYnVqZWpMMHF0cFdfZEPSAXRBVV95cUxPdlBXdG1mVDRVamNsb0pEc2RWcllSVngzQmlXWUVycDh1bmNNVGY1NUdLdTZoWmFTdE1pQ3dTaGFKOTRLYW85emVEWFNOam1hb1NIMnRpQWZEMWZhTC1LU1R0VFd3NGxQZWsxRWFOSkpXbXBNbA?oc=5",
+      "query": "중국 메모리 공급과잉 삼성전자 SK하이닉스 수익성"
+    },
+    {
+      "title": "머니 인사이트ㅣ한국일보 - 한국일보",
+      "summary": "머니 인사이트ㅣ한국일보&nbsp;&nbsp;한국일보",
+      "source": "한국일보",
+      "publishedAt": "Wed, 29 Jul 2026 02:59:19 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9xbkZQeWJrdHpmWTVZdi1feUhjWVFYbEN1cHVHWnpSRkRrWGZwNHdPN21yamtwWDV2S2NtRzBoUkRGVzFiMnhuOVk3TVgycjNWb1ptTG1BQ1ZpU1laajVqbmVKSTh4Q0hoZ2U5LUU2N2JaWks4SjNhZDFtcw?oc=5",
+      "query": "중국 메모리 공급과잉 삼성전자 SK하이닉스 수익성"
+    },
+    {
+      "title": "창신메모리發 대공습에 삼전닉스 '와르르'…반도체株 발목잡나 - 더팩트",
+      "summary": "창신메모리發 대공습에 삼전닉스 '와르르'…반도체株 발목잡나&nbsp;&nbsp;더팩트",
+      "source": "더팩트",
+      "publishedAt": "Wed, 29 Jul 2026 02:42:56 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1VX0YxMjUzdElfRWg4eS1LU0gyQ3FYak1EUTJCMzYzcVNMakZWUnZIVURSdDhMMWNjeG5ZUklMZUMxXzlfcE9TOUJtbTN1NTJ2aTZPWG9nd0owQdIBVEFVX3lxTE5Cc01RRHpFaGZ0ZWstNFVaWE9UdzJfQm94RzJXa2dPQjZ4RVpzYjcxWVNHbDJCN2tJWFVCQXhtZjlrbWRneVBacEVPTEMzQmlGSFpYRw?oc=5",
+      "query": "CXMT 창신메모리 DUV 삼성전자 SK하이닉스"
+    },
     {
       "title": "[미디어분석]코스피 '검은 수요일'에 멈춘 경제지 1면…'중국 반도체 쇼크'가 덮쳤다 - 미디어인뉴스",
       "summary": "[미디어분석]코스피 '검은 수요일'에 멈춘 경제지 1면…'중국 반도체 쇼크'가 덮쳤다&nbsp;&nbsp;미디어인뉴스",
@@ -306,14 +354,6 @@
       "query": "CXMT 창신메모리 DUV 삼성전자 SK하이닉스"
     },
     {
-      "title": "메모리 IPO 릴레이에 중국산 DUV까지…中반도체 굴기 '2막' 여파는 - 뉴시스",
-      "summary": "메모리 IPO 릴레이에 중국산 DUV까지…中반도체 굴기 '2막' 여파는&nbsp;&nbsp;뉴시스",
-      "source": "뉴시스",
-      "publishedAt": "Tue, 28 Jul 2026 20:30:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMieEFVX3lxTE45ZDhJOEdXREc3MDZLQzRyb3RiN0R4WGMzelg5Nlc2Qm9BSldrdE40a0VMREFtUDNnSHc3RDRFaFlDQTdFeWxKQ0c0dTRwbHF3eGdneVUzTzNZbVh5M09FLV9xT05tN1RwUnpSbV9NSTVMSXpiNENldNIBeEFVX3lxTE45ZDhJOEdXREc3MDZLQzRyb3RiN0R4WGMzelg5Nlc2Qm9BSldrdE40a0VMREFtUDNnSHc3RDRFaFlDQTdFeWxKQ0c0dTRwbHF3eGdneVUzTzNZbVh5M09FLV9xT05tN1RwUnpSbV9NSTVMSXpiNENldA?oc=5",
-      "query": "CXMT 창신메모리 DUV 삼성전자 SK하이닉스"
-    },
-    {
       "title": "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락 - 뉴스1",
       "summary": "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락&nbsp;&nbsp;뉴스1",
       "source": "뉴스1",
@@ -338,39 +378,53 @@
       "query": "중국 메모리 공급과잉 삼성전자 SK하이닉스 수익성"
     },
     {
+      "title": "‘중국 반도체 자립’ 신호탄…CXMT 상장에 첨단 노광장비도 직접 생산 - 한겨레",
+      "summary": "‘중국 반도체 자립’ 신호탄…CXMT 상장에 첨단 노광장비도 직접 생산&nbsp;&nbsp;한겨레",
+      "source": "한겨레",
+      "publishedAt": "Tue, 28 Jul 2026 15:34:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBLQV8ta2dMV0RpcEhaLTl2UzlIUVQ5Z2F0U3Nqa2JBaWp2cDY3cDJVS2JOM3hjSG9EY0dWeXU1bk5Ka0dlVUNDX3JQQTJvdnlxcndKQXBSUmd0ZW9yN1B6eXVRTWZCYXVuVTM5LQ?oc=5",
+      "query": "CXMT 창신메모리 DUV 삼성전자 SK하이닉스"
+    },
+    {
       "title": "SK하이닉스 ADR 7% 급락…반도체 투자심리 악화에 사흘째 '뚝' - KB Think",
       "summary": "SK하이닉스 ADR 7% 급락…반도체 투자심리 악화에 사흘째 '뚝'&nbsp;&nbsp;KB Think",
       "source": "KB Think",
       "publishedAt": "Tue, 28 Jul 2026 14:09:55 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE03d2FQOFc5b3EwdVNRdzdqckh5Y3BZTE5RSnByUnVFcDZ0TnJhdF9JX3R4MnVXcEpkNGdOdnBVc3VKNGoyX2thQ0JrNzZOSDZsUzBRdGpPRDBCTlcwZk9jcjlLUllobksxLV9zaEFSUWdxZw?oc=5",
       "query": "엔비디아 마이크론 필라델피아 반도체지수 SK하이닉스 ADR"
-    },
-    {
-      "title": "\"中 CXMT 상장보다 '이것' 개발이 더 큰 충격\"…반도체주 흔든 주범, 따로 있었다 - 네이트",
-      "summary": "\"中 CXMT 상장보다 '이것' 개발이 더 큰 충격\"…반도체주 흔든 주범, 따로 있었다&nbsp;&nbsp;네이트",
-      "source": "네이트",
-      "publishedAt": "Tue, 28 Jul 2026 12:49:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5iWE1ZTVVvb3NGR1ZLT2NEdU15cjRpeE92SElwT01YdXY4eFFMRWxPNjRueHZsZmhqclowTDU5TV9YZ0t3cTZPd0RmWm5UblhBQmV1YkxiZ2diMEZXMUkwdg?oc=5",
-      "query": "CXMT 창신메모리 DUV 삼성전자 SK하이닉스"
-    },
-    {
-      "title": "中 CXMT 때문?…“美 반도체주 흔든 주범 따로 있다” - 뉴시스",
-      "summary": "中 CXMT 때문?…“美 반도체주 흔든 주범 따로 있다”&nbsp;&nbsp;뉴시스",
-      "source": "뉴시스",
-      "publishedAt": "Tue, 28 Jul 2026 12:11:44 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0tRnZMbXRscW85YllRMTd1eXkya2RBeUlsbFh2dVZjR3FVTjVrNndXdGtubUVIN1NHbTRkWkVXTHdIMFRfeUlBS2lhQ2RpUnhkd2tlM3BGdEpHRUYyd3dJZFlRdVdYWjYxckhHSV9rQy1XWWcwWkxVddIBeEFVX3lxTE0tRnZMbXRscW85YllRMTd1eXkya2RBeUlsbFh2dVZjR3FVTjVrNndXdGtubUVIN1NHbTRkWkVXTHdIMFRfeUlBS2lhQ2RpUnhkd2tlM3BGdEpHRUYyd3dJZFlRdVdYWjYxckhHSV9rQy1XWWcwWkxVdQ?oc=5",
-      "query": "CXMT 창신메모리 DUV 삼성전자 SK하이닉스"
-    },
-    {
-      "title": "DUV 양산땐 기술 격차 더 좁혀…CXMT 범용 D램 점유율도 날개 - 서울경제",
-      "summary": "DUV 양산땐 기술 격차 더 좁혀…CXMT 범용 D램 점유율도 날개&nbsp;&nbsp;서울경제",
-      "source": "서울경제",
-      "publishedAt": "Tue, 28 Jul 2026 10:04:28 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5oR3FMUllkN29QblZ4WGpTR1IwLWxwMVdySEZXNlhPdFlxVU9Iak1kTGh0dnNDMWxaaE1FWlZZQ0tJYjNoWXBHbnRkSUFJQkJFX2fSAVNBVV95cUxPbnlPalpSYTR3RjFvY002OExaekE5c0c4RHpuVzNLOE85NHpWazVaWHhkaUg3dlRMdWZDUEVyYVZZOFV6cU13WlJLVnBHWVF4VVZMaw?oc=5",
-      "query": "CXMT 창신메모리 DUV 삼성전자 SK하이닉스"
     }
   ],
   "marketEventSignals": [
+    {
+      "direction": "negative",
+      "direct": true,
+      "targets": [
+        {
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
+        }
+      ],
+      "primaryTarget": {
+        "key": "domestic_market",
+        "label": "국내 증시",
+        "scope": "market"
+      },
+      "headline": "코스피·코스닥 8%대 ‘급락’…이틀 연속 동반 서킷브레이커 - 한겨레",
+      "summary": "코스피·코스닥 8%대 ‘급락’…이틀 연속 동반 서킷브레이커&nbsp;&nbsp;한겨레",
+      "source": "한겨레",
+      "publishedAt": "Wed, 29 Jul 2026 05:11:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBNZm9xTXh2LThUSG1EaUV4cEdUNVUzNzJwQmhzYzFqX2g1NGdobVZMYnlWVkh6MW9XUXp6dkxoM2FQa1RMWHVvMEdZV1lBOUdidGF0S243REdtQ1lpRzMyVWRqWDZyX2htSkI3NjNtNWFIZw?oc=5",
+      "score": 23,
+      "corroboration": 3,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "코스피·코스닥 8%대 ‘급락’…이틀 연속 동반 서킷브레이커 - 한겨레",
+        "노무라 \"코스피 급락 배경, 외인 대규모 매도·국민연금발 수급공백\" - 뉴시스",
+        "코스피·코스닥 이틀째 매도 사이드카…증시 급락 - 네이트"
+      ]
+    },
     {
       "direction": "negative",
       "direct": true,
@@ -381,14 +435,14 @@
           "scope": "sector"
         },
         {
-          "key": "domestic_market",
-          "label": "국내 증시",
-          "scope": "market"
-        },
-        {
           "key": "global_market",
           "label": "해외 증시",
           "scope": "factor"
+        },
+        {
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
         }
       ],
       "primaryTarget": {
@@ -401,8 +455,8 @@
       "source": "뉴스1",
       "publishedAt": "Tue, 28 Jul 2026 20:22:29 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBtTVlIdDRvV3hZVGNacm5LcTZPcXZoXzNnQnlNVHVoaG9EYmRqT1h2aWJUTWFXZVZmc3gyWEUxNVd1NjZlUW80WEdubDR0Tk8wRnVZVHNEN2dIR3loV3hHdGhLazdzckE?oc=5",
-      "score": 21,
-      "corroboration": 9,
+      "score": 20,
+      "corroboration": 12,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
@@ -412,31 +466,61 @@
       ]
     },
     {
-      "direction": "negative",
+      "direction": "positive",
       "direct": true,
       "targets": [
         {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
+          "key": "semiconductor",
+          "label": "반도체",
+          "scope": "sector"
         }
       ],
       "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
+        "key": "semiconductor",
+        "label": "반도체",
+        "scope": "sector"
       },
-      "headline": "[특징주] SK디앤디, 대규모 유상증자 결정에 27%대 급락…52주 신저가 - 매일경제 마켓",
-      "summary": "[특징주] SK디앤디, 대규모 유상증자 결정에 27%대 급락…52주 신저가&nbsp;&nbsp;매일경제 마켓",
-      "source": "매일경제 마켓",
-      "publishedAt": "Wed, 29 Jul 2026 00:28:17 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1pRTdnRkZmVVdaRldVX0U0UkFRdkFFaXhWeG9TTEN0M2NUV254TXp3UElDMWFpQmxpRGxCQUh0X3FtSlVxS2t3RE1qNktmcWZzTlE?oc=5",
-      "score": 16,
+      "headline": "[美증시 특징주] 반도체 팔고 가치주로 '엑소더스'…셔윈·코카콜라·보잉 급등 - 미디어펜",
+      "summary": "[美증시 특징주] 반도체 팔고 가치주로 '엑소더스'…셔윈·코카콜라·보잉 급등&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Tue, 28 Jul 2026 21:51:46 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9HdkNCYzV0ckZiVWtkbHFabGZ5OHdUbnZhQTM1U01IajYzaXBuYmRpRlNpUnRaaFB4cWJRYWpVdEc3eVdaRkNmSzVKMUxPbWNxVTAweVNURnjSAVhBVV95cUxPR3ZDQmM1dHJGYlVrZGxxWmxmeTh3VG52YUEzNVNNSGo2M2lwbmJkaUZTaVJ0WmhQeHFiUWFqVXRHN3lXWkZDZks1SjFMT21jcVUwMHlTVEZ4?oc=5",
+      "score": 18,
+      "corroboration": 3,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[美증시 특징주] 반도체 팔고 가치주로 '엑소더스'…셔윈·코카콜라·보잉 급등 - 미디어펜",
+        "[AI MY 증시전망] SK하이닉스 실적 주목…반도체株 반등 시험대 - 뉴스핌",
+        "반도체 가격 폭등은 트럼프의 보조금 재검토 탓? 진짜 병목은 애플의 ‘공급사 쥐어짜기’ 관행 - The Economy Korea"
+      ]
+    },
+    {
+      "direction": "mixed",
+      "direct": true,
+      "targets": [
+        {
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
+        }
+      ],
+      "primaryTarget": {
+        "key": "domestic_market",
+        "label": "국내 증시",
+        "scope": "market"
+      },
+      "headline": "노무라 \"코스피 급락은 수급 충격 탓…반등 열쇠는 주주환원\" - 글로벌이코노믹",
+      "summary": "노무라 \"코스피 급락은 수급 충격 탓…반등 열쇠는 주주환원\"&nbsp;&nbsp;글로벌이코노믹",
+      "source": "글로벌이코노믹",
+      "publishedAt": "Wed, 29 Jul 2026 04:18:34 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYjZRNU8zNW03SkpXVWxQNjJydUxzb0l6NGtsSVhfczBBdmhKWHJzZ3FpX2xWaXNaRnVoNXlwWE5fXzZpVW1WclhuUTV4ZlBxcG9BcjYtdThEblpQc0RDcXh4aXBJMVV6VkVlWGFEbm41Y0FjLVNsanBmaGFKOGRaWUhTRDVZQ2J3?oc=5",
+      "score": 17,
       "corroboration": 1,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[특징주] SK디앤디, 대규모 유상증자 결정에 27%대 급락…52주 신저가 - 매일경제 마켓"
+        "노무라 \"코스피 급락은 수급 충격 탓…반등 열쇠는 주주환원\" - 글로벌이코노믹"
       ]
     },
     {
@@ -447,6 +531,16 @@
           "key": "semiconductor",
           "label": "반도체",
           "scope": "sector"
+        },
+        {
+          "key": "consumer",
+          "label": "소비·유통",
+          "scope": "sector"
+        },
+        {
+          "key": "global_market",
+          "label": "해외 증시",
+          "scope": "factor"
         }
       ],
       "primaryTarget": {
@@ -459,44 +553,17 @@
       "source": "네이트",
       "publishedAt": "Tue, 28 Jul 2026 23:12:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5LTUYxTEd2XzBKVURESWdpVExJdnJJUHdCeTBPYUQ5eVJsZjlEdUxGTmVCYl92RUtFanp2RHRFckpFeWJXSE9VSGdTWk1VZU9rMUk0?oc=5",
-      "score": 15,
-      "corroboration": 1,
+      "score": 16,
+      "corroboration": 2,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "미래에셋證, \"삼성전자, 주가 급락에 배당 매력↑···목표가 37만원 하향\" - 네이트"
+        "미래에셋證, \"삼성전자, 주가 급락에 배당 매력↑···목표가 37만원 하향\" - 네이트",
+        "[美증시] 반도체 폭락 쇼크 나스닥 또 '조정'…소비재 선전 다우는 강세 - 미디어펜"
       ]
     },
     {
       "direction": "negative",
-      "direct": true,
-      "targets": [
-        {
-          "key": "finance",
-          "label": "금융",
-          "scope": "sector"
-        }
-      ],
-      "primaryTarget": {
-        "key": "finance",
-        "label": "금융",
-        "scope": "sector"
-      },
-      "headline": "[특징주] 폭락장에 증권주 줄줄이 하락 마감(종합) - 네이트",
-      "summary": "[특징주] 폭락장에 증권주 줄줄이 하락 마감(종합)&nbsp;&nbsp;네이트",
-      "source": "네이트",
-      "publishedAt": "Tue, 28 Jul 2026 07:37:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1kd1dLM1R4eWRDZVJ0ZHFQN1c4dHFYRGx0UjhrdDhpaXM4OC00NlllRzE4WlFfcGgzNDlWZ2M4YW5YY3pEWjMyX1ljT0ctbzZWcFJF?oc=5",
-      "score": 14,
-      "corroboration": 1,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 폭락장에 증권주 줄줄이 하락 마감(종합) - 네이트"
-      ]
-    },
-    {
-      "direction": "positive",
       "direct": true,
       "targets": [
         {
@@ -510,122 +577,78 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "[美증시 특징주] AI 스토리지 씨게이트, 실적 폭발에 시간외 급등 - 미디어펜",
-      "summary": "[美증시 특징주] AI 스토리지 씨게이트, 실적 폭발에 시간외 급등&nbsp;&nbsp;미디어펜",
-      "source": "미디어펜",
-      "publishedAt": "Tue, 28 Jul 2026 21:30:05 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBtbXVkYWlsQmZsdDBRZVNENXU0WE1IalpnNjVtOXFVS2lZWGpHM1cyYnBwVEoxX0ZmWVBwV21ITU5DY1dmT01FVlhGMUxqcHl2ZU9PTNIBWEFVX3lxTE5wVjlNVkF4QWM1WUdxMktIWTBfTS12bWJNbzI0dXJQOURqWWlaNjM0aVNzNjM3b0pyckwzUXRqRTZ3dG9sSDNVNzRfNzZPNFNkYUN4T2ZTVms?oc=5",
-      "score": 14,
+      "headline": "[특징주] 일진전기, 과열 논란 속 11% 급락…밸류에이션 부담 가중 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 일진전기, 과열 논란 속 11% 급락…밸류에이션 부담 가중 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Wed, 29 Jul 2026 02:17:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE0zMjJ0QUdJa3cza3kweFdNanZIVXJ2RHJGM010R01ianYyUGpUcEMtbVZUVExORm8zNmVOMzhhaEpYRjZXSG9qQUZn?oc=5",
+      "score": 16,
       "corroboration": 1,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[美증시 특징주] AI 스토리지 씨게이트, 실적 폭발에 시간외 급등 - 미디어펜"
+        "[특징주] 일진전기, 과열 논란 속 11% 급락…밸류에이션 부담 가중 : 기업주식정보 - 재경일보"
       ]
     },
-    {
-      "direction": "positive",
-      "direct": false,
-      "targets": [
-        {
-          "key": "finance",
-          "label": "금융",
-          "scope": "sector"
-        }
-      ],
-      "primaryTarget": {
-        "key": "finance",
-        "label": "금융",
-        "scope": "sector"
-      },
-      "headline": "[톺아보기] 최대실적 KB금융 양종희號···적재적소 '자본배분' 전략 적중 - 서울파이낸스",
-      "summary": "[톺아보기] 최대실적 KB금융 양종희號···적재적소 '자본배분' 전략 적중&nbsp;&nbsp;서울파이낸스",
-      "source": "서울파이낸스",
-      "publishedAt": "Tue, 28 Jul 2026 22:30:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBSZjBUYjVYTFgwOTI2VW9kTzRfaGFLSm9MZVpEeHNyR2ItVHVDZVhPM2tUZVFKcHl2a0RaV0RwaFFvTFhrdkgwbTRXdEJmRU9lZ2NpOEh1YUdPUmVZUk1Ka0lkWmp5SVJYdmc?oc=5",
-      "score": 8,
-      "corroboration": 1,
-      "severity": "medium",
-      "evidenceConfidence": "medium",
-      "evidenceHeadlines": [
-        "[톺아보기] 최대실적 KB금융 양종희號···적재적소 '자본배분' 전략 적중 - 서울파이낸스"
-      ]
-    },
-    {
-      "direction": "positive",
-      "direct": false,
-      "targets": [
-        {
-          "key": "semiconductor",
-          "label": "반도체",
-          "scope": "sector"
-        }
-      ],
-      "primaryTarget": {
-        "key": "semiconductor",
-        "label": "반도체",
-        "scope": "sector"
-      },
-      "headline": "반도체 가격 폭등은 트럼프의 보조금 재검토 탓? 진짜 병목은 애플의 ‘공급사 쥐어짜기’ 관행 - The Economy Korea",
-      "summary": "반도체 가격 폭등은 트럼프의 보조금 재검토 탓? 진짜 병목은 애플의 ‘공급사 쥐어짜기’ 관행&nbsp;&nbsp;The Economy Korea",
-      "source": "The Economy Korea",
-      "publishedAt": "Tue, 28 Jul 2026 18:27:34 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBEQVZzOWFCS3ZQSEJYNWhBeVhwZlAwSlpUd2tINnZ4RDdYUVVaQ3gyS1VYcEdHcGRSSEtlYTRrM1NVcmZXczZ4VkNiOU9DOEFLT3RHNGFNT0RRWGM?oc=5",
-      "score": 8,
-      "corroboration": 1,
-      "severity": "medium",
-      "evidenceConfidence": "medium",
-      "evidenceHeadlines": [
-        "반도체 가격 폭등은 트럼프의 보조금 재검토 탓? 진짜 병목은 애플의 ‘공급사 쥐어짜기’ 관행 - The Economy Korea"
-      ]
-    }
-  ],
-  "marketEventConclusions": [
     {
       "direction": "negative",
       "direct": true,
       "targets": [
         {
-          "key": "semiconductor",
-          "label": "반도체",
-          "scope": "sector"
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] SK디앤디, 대규모 유상증자 결정 소식에 29%대 급락 - 아주경제",
+      "summary": "[특징주] SK디앤디, 대규모 유상증자 결정 소식에 29%대 급락&nbsp;&nbsp;아주경제",
+      "source": "아주경제",
+      "publishedAt": "Wed, 29 Jul 2026 01:10:14 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9sbVpvYXFOUGFiOUZUWW1kNEpRbkwyLXd3ckNWVzZXVjNuVnhPazY1SnVaR1VMeXpXTXBNYmpxd1lDcVQ1OGpqbVB5LUtVQVhLM1J3Y1EwdjPSAVhBVV95cUxPbG1ab2FxTlBhYjlGVFltZDRKUW5MMi13d3JDVlc2V1YzblZ4T2s2NUp1WkdVTHl6V01wTWJqcXdZQ3FUNThqam1QeS1LVUFYSzNSd2NRMHYz?oc=5",
+      "score": 16,
+      "corroboration": 1,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] SK디앤디, 대규모 유상증자 결정 소식에 29%대 급락 - 아주경제"
+      ]
+    },
+    {
+      "direction": "mixed",
+      "direct": true,
+      "targets": [
+        {
+          "key": "foreign_flow",
+          "label": "외국인 수급",
+          "scope": "factor"
         },
         {
           "key": "domestic_market",
           "label": "국내 증시",
           "scope": "market"
-        },
-        {
-          "key": "global_market",
-          "label": "해외 증시",
-          "scope": "factor"
         }
       ],
       "primaryTarget": {
-        "key": "semiconductor",
-        "label": "반도체",
-        "scope": "sector"
+        "key": "foreign_flow",
+        "label": "외국인 수급",
+        "scope": "factor"
       },
-      "headline": "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락 - 뉴스1",
-      "summary": "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락&nbsp;&nbsp;뉴스1",
-      "source": "뉴스1",
-      "publishedAt": "Tue, 28 Jul 2026 20:22:29 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBtTVlIdDRvV3hZVGNacm5LcTZPcXZoXzNnQnlNVHVoaG9EYmRqT1h2aWJUTWFXZVZmc3gyWEUxNVd1NjZlUW80WEdubDR0Tk8wRnVZVHNEN2dIR3loV3hHdGhLazdzckE?oc=5",
-      "score": 21,
-      "corroboration": 9,
+      "headline": "코스피, 역대급 폭락 뒤 반등…외인·기관 사자에 6120선 회복 - 미디어펜",
+      "summary": "코스피, 역대급 폭락 뒤 반등…외인·기관 사자에 6120선 회복&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Wed, 29 Jul 2026 00:55:30 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9ReG55VnFudlpZek4wSHNkMjJuME5QLWozTExfTUYza3cwMzFUUmgtUXh2ZlpKSWFaU3BZVFNvcEtxcmZGanV4UW1zLTZNY0VxbVpfN9IBWEFVX3lxTE45NmliNWFsTF9LcHhJOFl5eXNWQ0NyT2NFQkJpTldBRzVnbmRGNXh3QmZQVXIxTVQteTAydTAyUENsZlBZOVFzZjROY2FoWkJBMEh5TzlJTzM?oc=5",
+      "score": 15,
+      "corroboration": 1,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락 - 뉴스1",
-        "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락 - 뉴스1",
-        "SK하이닉스 ADR 7% 급락…반도체 투자심리 악화에 사흘째 '뚝' - KB Think"
-      ],
-      "confidence": "high",
-      "dominanceMargin": 6,
-      "resolutionReason": "dominant_direct_price",
-      "counterEvidence": [
-        "미래에셋證, \"삼성전자, 주가 급락에 배당 매력↑···목표가 37만원 하향\" - 네이트",
-        "반도체 가격 폭등은 트럼프의 보조금 재검토 탓? 진짜 병목은 애플의 ‘공급사 쥐어짜기’ 관행 - The Economy Korea"
+        "코스피, 역대급 폭락 뒤 반등…외인·기관 사자에 6120선 회복 - 미디어펜"
       ]
     },
     {
@@ -648,25 +671,27 @@
       "source": "매일경제 마켓",
       "publishedAt": "Wed, 29 Jul 2026 00:28:17 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1pRTdnRkZmVVdaRldVX0U0UkFRdkFFaXhWeG9TTEN0M2NUV254TXp3UElDMWFpQmxpRGxCQUh0X3FtSlVxS2t3RE1qNktmcWZzTlE?oc=5",
-      "score": 16,
+      "score": 15,
       "corroboration": 1,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
         "[특징주] SK디앤디, 대규모 유상증자 결정에 27%대 급락…52주 신저가 - 매일경제 마켓"
-      ],
-      "confidence": "high",
-      "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
+      ]
     },
     {
-      "direction": "negative",
+      "direction": "positive",
       "direct": true,
       "targets": [
         {
           "key": "finance",
           "label": "금융",
           "scope": "sector"
+        },
+        {
+          "key": "foreign_flow",
+          "label": "외국인 수급",
+          "scope": "factor"
         }
       ],
       "primaryTarget": {
@@ -674,22 +699,17 @@
         "label": "금융",
         "scope": "sector"
       },
-      "headline": "[특징주] 폭락장에 증권주 줄줄이 하락 마감(종합) - 네이트",
-      "summary": "[특징주] 폭락장에 증권주 줄줄이 하락 마감(종합)&nbsp;&nbsp;네이트",
-      "source": "네이트",
-      "publishedAt": "Tue, 28 Jul 2026 07:37:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1kd1dLM1R4eWRDZVJ0ZHFQN1c4dHFYRGx0UjhrdDhpaXM4OC00NlllRzE4WlFfcGgzNDlWZ2M4YW5YY3pEWjMyX1ljT0ctbzZWcFJF?oc=5",
-      "score": 14,
-      "corroboration": 1,
+      "headline": "[특징주] 기업은행, 잠정실적 기대감에 상승세…외국인·기관 수급 주시 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 기업은행, 잠정실적 기대감에 상승세…외국인·기관 수급 주시 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Wed, 29 Jul 2026 01:37:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBnUC1tZjhRT1FuUE42QnV0eGc2QnlGR01tWXdGVFBKNS1vVDMzRVkwVnRWVzFFdTdaVGU5X2dJcGE4ZWIyanBUNEJB?oc=5",
+      "score": 13,
+      "corroboration": 2,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[특징주] 폭락장에 증권주 줄줄이 하락 마감(종합) - 네이트"
-      ],
-      "confidence": "high",
-      "dominanceMargin": 9,
-      "resolutionReason": "dominant_direct_price",
-      "counterEvidence": [
+        "[특징주] 기업은행, 잠정실적 기대감에 상승세…외국인·기관 수급 주시 : 기업주식정보 - 재경일보",
         "[톺아보기] 최대실적 KB금융 양종희號···적재적소 '자본배분' 전략 적중 - 서울파이낸스"
       ]
     },
@@ -708,17 +728,338 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "[美증시 특징주] AI 스토리지 씨게이트, 실적 폭발에 시간외 급등 - 미디어펜",
-      "summary": "[美증시 특징주] AI 스토리지 씨게이트, 실적 폭발에 시간외 급등&nbsp;&nbsp;미디어펜",
+      "headline": "[美증시 특징주] 테라다인 압도적 실적 시간외 폭등…메모리 수요폭발 입증 - 미디어펜",
+      "summary": "[美증시 특징주] 테라다인 압도적 실적 시간외 폭등…메모리 수요폭발 입증&nbsp;&nbsp;미디어펜",
       "source": "미디어펜",
-      "publishedAt": "Tue, 28 Jul 2026 21:30:05 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBtbXVkYWlsQmZsdDBRZVNENXU0WE1IalpnNjVtOXFVS2lZWGpHM1cyYnBwVEoxX0ZmWVBwV21ITU5DY1dmT01FVlhGMUxqcHl2ZU9PTNIBWEFVX3lxTE5wVjlNVkF4QWM1WUdxMktIWTBfTS12bWJNbzI0dXJQOURqWWlaNjM0aVNzNjM3b0pyckwzUXRqRTZ3dG9sSDNVNzRfNzZPNFNkYUN4T2ZTVms?oc=5",
-      "score": 14,
+      "publishedAt": "Tue, 28 Jul 2026 22:14:49 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5fX3BITm8tbzBVVkZsWXByak1pZE5hZ2NDeDFwODV4UjQ1VjVMdGcwOG1CMnlwVTRLNllsSEpFcm5QRDBXbDNwVWNBMkxDODNJQy1Yc9IBWEFVX3lxTE5TYVUtSkM3TXJ2SWpFcTE2VTVXMXZpeHdoeFNCMU9vc1E1YUF1STFqWEctNFU4alVMQ3hqR3pjZlFqYVN5SUI3R0E2ejd5aTdlWHVOYVJrbHc?oc=5",
+      "score": 13,
       "corroboration": 1,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[美증시 특징주] AI 스토리지 씨게이트, 실적 폭발에 시간외 급등 - 미디어펜"
+        "[美증시 특징주] 테라다인 압도적 실적 시간외 폭등…메모리 수요폭발 입증 - 미디어펜"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "foreign_flow",
+          "label": "외국인 수급",
+          "scope": "factor"
+        },
+        {
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
+        }
+      ],
+      "primaryTarget": {
+        "key": "foreign_flow",
+        "label": "외국인 수급",
+        "scope": "factor"
+      },
+      "headline": "[개장시황] 코스피 6159선 반등…기관 4062억 매수 개인은 차익 실현 - 자본시장뉴스",
+      "summary": "[개장시황] 코스피 6159선 반등…기관 4062억 매수 개인은 차익 실현&nbsp;&nbsp;자본시장뉴스",
+      "source": "자본시장뉴스",
+      "publishedAt": "Wed, 29 Jul 2026 01:25:12 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5tZ2xlOVE0eW5kVVZHSU5fOVMwbHBLcmF2QTBrTHUwRU1zSkRDMTdIek1DSGY4UkNHRVMwajBWTFFhZHotOWM5LXRKM25sT0lzR29Zc0lKRU9hdFhUcUhuUU00ekRZenM?oc=5",
+      "score": 12,
+      "corroboration": 1,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[개장시황] 코스피 6159선 반등…기관 4062억 매수 개인은 차익 실현 - 자본시장뉴스"
+      ]
+    }
+  ],
+  "marketEventConclusions": [
+    {
+      "direction": "negative",
+      "direct": true,
+      "targets": [
+        {
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
+        }
+      ],
+      "primaryTarget": {
+        "key": "domestic_market",
+        "label": "국내 증시",
+        "scope": "market"
+      },
+      "headline": "코스피·코스닥 8%대 ‘급락’…이틀 연속 동반 서킷브레이커 - 한겨레",
+      "summary": "코스피·코스닥 8%대 ‘급락’…이틀 연속 동반 서킷브레이커&nbsp;&nbsp;한겨레",
+      "source": "한겨레",
+      "publishedAt": "Wed, 29 Jul 2026 05:11:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBNZm9xTXh2LThUSG1EaUV4cEdUNVUzNzJwQmhzYzFqX2g1NGdobVZMYnlWVkh6MW9XUXp6dkxoM2FQa1RMWHVvMEdZV1lBOUdidGF0S243REdtQ1lpRzMyVWRqWDZyX2htSkI3NjNtNWFIZw?oc=5",
+      "score": 23,
+      "corroboration": 3,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "코스피·코스닥 8%대 ‘급락’…이틀 연속 동반 서킷브레이커 - 한겨레",
+        "노무라 \"코스피 급락 배경, 외인 대규모 매도·국민연금발 수급공백\" - 뉴시스",
+        "코스피·코스닥 이틀째 매도 사이드카…증시 급락 - 네이트"
+      ],
+      "confidence": "high",
+      "dominanceMargin": 6,
+      "resolutionReason": "dominant_direct_price",
+      "counterEvidence": [
+        "노무라 \"코스피 급락은 수급 충격 탓…반등 열쇠는 주주환원\" - 글로벌이코노믹"
+      ]
+    },
+    {
+      "direction": "mixed",
+      "direct": true,
+      "targets": [
+        {
+          "key": "semiconductor",
+          "label": "반도체",
+          "scope": "sector"
+        },
+        {
+          "key": "global_market",
+          "label": "해외 증시",
+          "scope": "factor"
+        },
+        {
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
+        },
+        {
+          "key": "consumer",
+          "label": "소비·유통",
+          "scope": "sector"
+        }
+      ],
+      "primaryTarget": {
+        "key": "semiconductor",
+        "label": "반도체",
+        "scope": "sector"
+      },
+      "headline": "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락 - 뉴스1",
+      "summary": "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락&nbsp;&nbsp;뉴스1",
+      "source": "뉴스1",
+      "publishedAt": "Tue, 28 Jul 2026 20:22:29 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBtTVlIdDRvV3hZVGNacm5LcTZPcXZoXzNnQnlNVHVoaG9EYmRqT1h2aWJUTWFXZVZmc3gyWEUxNVd1NjZlUW80WEdubDR0Tk8wRnVZVHNEN2dIR3loV3hHdGhLazdzckE?oc=5",
+      "score": 20,
+      "corroboration": 12,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락 - 뉴스1",
+        "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락 - 뉴스1",
+        "SK하이닉스 ADR 7% 급락…반도체 투자심리 악화에 사흘째 '뚝' - KB Think"
+      ],
+      "confidence": "medium",
+      "dominanceMargin": 2,
+      "resolutionReason": "conflicting_evidence",
+      "counterEvidence": [
+        "美반도체주 투매 지속…마이크론·SK하닉 ADR 9% 가까이 급락 - 뉴스1",
+        "[美증시 특징주] 반도체 팔고 가치주로 '엑소더스'…셔윈·코카콜라·보잉 급등 - 미디어펜"
+      ]
+    },
+    {
+      "direction": "negative",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] 일진전기, 과열 논란 속 11% 급락…밸류에이션 부담 가중 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 일진전기, 과열 논란 속 11% 급락…밸류에이션 부담 가중 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Wed, 29 Jul 2026 02:17:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE0zMjJ0QUdJa3cza3kweFdNanZIVXJ2RHJGM010R01ianYyUGpUcEMtbVZUVExORm8zNmVOMzhhaEpYRjZXSG9qQUZn?oc=5",
+      "score": 16,
+      "corroboration": 1,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] 일진전기, 과열 논란 속 11% 급락…밸류에이션 부담 가중 : 기업주식정보 - 재경일보"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "negative",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] SK디앤디, 대규모 유상증자 결정 소식에 29%대 급락 - 아주경제",
+      "summary": "[특징주] SK디앤디, 대규모 유상증자 결정 소식에 29%대 급락&nbsp;&nbsp;아주경제",
+      "source": "아주경제",
+      "publishedAt": "Wed, 29 Jul 2026 01:10:14 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9sbVpvYXFOUGFiOUZUWW1kNEpRbkwyLXd3ckNWVzZXVjNuVnhPazY1SnVaR1VMeXpXTXBNYmpxd1lDcVQ1OGpqbVB5LUtVQVhLM1J3Y1EwdjPSAVhBVV95cUxPbG1ab2FxTlBhYjlGVFltZDRKUW5MMi13d3JDVlc2V1YzblZ4T2s2NUp1WkdVTHl6V01wTWJqcXdZQ3FUNThqam1QeS1LVUFYSzNSd2NRMHYz?oc=5",
+      "score": 16,
+      "corroboration": 1,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] SK디앤디, 대규모 유상증자 결정 소식에 29%대 급락 - 아주경제"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "mixed",
+      "direct": true,
+      "targets": [
+        {
+          "key": "foreign_flow",
+          "label": "외국인 수급",
+          "scope": "factor"
+        },
+        {
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
+        }
+      ],
+      "primaryTarget": {
+        "key": "foreign_flow",
+        "label": "외국인 수급",
+        "scope": "factor"
+      },
+      "headline": "코스피, 역대급 폭락 뒤 반등…외인·기관 사자에 6120선 회복 - 미디어펜",
+      "summary": "코스피, 역대급 폭락 뒤 반등…외인·기관 사자에 6120선 회복&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Wed, 29 Jul 2026 00:55:30 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9ReG55VnFudlpZek4wSHNkMjJuME5QLWozTExfTUYza3cwMzFUUmgtUXh2ZlpKSWFaU3BZVFNvcEtxcmZGanV4UW1zLTZNY0VxbVpfN9IBWEFVX3lxTE45NmliNWFsTF9LcHhJOFl5eXNWQ0NyT2NFQkJpTldBRzVnbmRGNXh3QmZQVXIxTVQteTAydTAyUENsZlBZOVFzZjROY2FoWkJBMEh5TzlJTzM?oc=5",
+      "score": 15,
+      "corroboration": 1,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "코스피, 역대급 폭락 뒤 반등…외인·기관 사자에 6120선 회복 - 미디어펜"
+      ],
+      "confidence": "medium",
+      "dominanceMargin": 3,
+      "resolutionReason": "conflicting_evidence",
+      "counterEvidence": [
+        "[개장시황] 코스피 6159선 반등…기관 4062억 매수 개인은 차익 실현 - 자본시장뉴스"
+      ]
+    },
+    {
+      "direction": "negative",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] SK디앤디, 대규모 유상증자 결정에 27%대 급락…52주 신저가 - 매일경제 마켓",
+      "summary": "[특징주] SK디앤디, 대규모 유상증자 결정에 27%대 급락…52주 신저가&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 29 Jul 2026 00:28:17 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1pRTdnRkZmVVdaRldVX0U0UkFRdkFFaXhWeG9TTEN0M2NUV254TXp3UElDMWFpQmxpRGxCQUh0X3FtSlVxS2t3RE1qNktmcWZzTlE?oc=5",
+      "score": 15,
+      "corroboration": 1,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] SK디앤디, 대규모 유상증자 결정에 27%대 급락…52주 신저가 - 매일경제 마켓"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "finance",
+          "label": "금융",
+          "scope": "sector"
+        },
+        {
+          "key": "foreign_flow",
+          "label": "외국인 수급",
+          "scope": "factor"
+        }
+      ],
+      "primaryTarget": {
+        "key": "finance",
+        "label": "금융",
+        "scope": "sector"
+      },
+      "headline": "[특징주] 기업은행, 잠정실적 기대감에 상승세…외국인·기관 수급 주시 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 기업은행, 잠정실적 기대감에 상승세…외국인·기관 수급 주시 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Wed, 29 Jul 2026 01:37:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBnUC1tZjhRT1FuUE42QnV0eGc2QnlGR01tWXdGVFBKNS1vVDMzRVkwVnRWVzFFdTdaVGU5X2dJcGE4ZWIyanBUNEJB?oc=5",
+      "score": 13,
+      "corroboration": 2,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] 기업은행, 잠정실적 기대감에 상승세…외국인·기관 수급 주시 : 기업주식정보 - 재경일보",
+        "[톺아보기] 최대실적 KB금융 양종희號···적재적소 '자본배분' 전략 적중 - 서울파이낸스"
+      ],
+      "confidence": "high",
+      "dominanceMargin": null,
+      "resolutionReason": "single_direction",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[美증시 특징주] 테라다인 압도적 실적 시간외 폭등…메모리 수요폭발 입증 - 미디어펜",
+      "summary": "[美증시 특징주] 테라다인 압도적 실적 시간외 폭등…메모리 수요폭발 입증&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Tue, 28 Jul 2026 22:14:49 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5fX3BITm8tbzBVVkZsWXByak1pZE5hZ2NDeDFwODV4UjQ1VjVMdGcwOG1CMnlwVTRLNllsSEpFcm5QRDBXbDNwVWNBMkxDODNJQy1Yc9IBWEFVX3lxTE5TYVUtSkM3TXJ2SWpFcTE2VTVXMXZpeHdoeFNCMU9vc1E1YUF1STFqWEctNFU4alVMQ3hqR3pjZlFqYVN5SUI3R0E2ejd5aTdlWHVOYVJrbHc?oc=5",
+      "score": 13,
+      "corroboration": 1,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[美증시 특징주] 테라다인 압도적 실적 시간외 폭등…메모리 수요폭발 입증 - 미디어펜"
       ],
       "confidence": "high",
       "resolutionReason": "individual_stock_only",
@@ -726,6 +1067,70 @@
     }
   ],
   "stockNewsCandidates": [
+    {
+      "title": "코스피·코스닥 8%대 ‘급락’…이틀 연속 동반 서킷브레이커 - 한겨레",
+      "summary": "코스피·코스닥 8%대 ‘급락’…이틀 연속 동반 서킷브레이커&nbsp;&nbsp;한겨레",
+      "source": "한겨레",
+      "publishedAt": "Wed, 29 Jul 2026 05:11:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBNZm9xTXh2LThUSG1EaUV4cEdUNVUzNzJwQmhzYzFqX2g1NGdobVZMYnlWVkh6MW9XUXp6dkxoM2FQa1RMWHVvMEdZV1lBOUdidGF0S243REdtQ1lpRzMyVWRqWDZyX2htSkI3NjNtNWFIZw?oc=5",
+      "query": "코스닥 특징주 급락 하락 이유"
+    },
+    {
+      "title": "반도체는 와르르, 애플은 5조달러 터치…마이크론·SK하이닉스 ADR 9%↓ [뉴욕증시 특징주] - citytimes.co.kr",
+      "summary": "반도체는 와르르, 애플은 5조달러 터치…마이크론·SK하이닉스 ADR 9%↓ [뉴욕증시 특징주]&nbsp;&nbsp;citytimes.co.kr",
+      "source": "citytimes.co.kr",
+      "publishedAt": "Wed, 29 Jul 2026 02:30:27 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9QWU5PQ1JsLW5JOENLTmNfaW9tSEpKSUlQNVNmZzV6YllCaEFFaDJNRXFfaWhLdFF2UFhud1lIck9GVkJQSXlETUJvaERNVnV3OGJVdE9NNUpRNGlSamdTNlZVakF3R1dvUFVOeG5Fb3lnQdIBckFVX3lxTE9QWU5PQ1JsLW5JOENLTmNfaW9tSEpKSUlQNVNmZzV6YllCaEFFaDJNRXFfaWhLdFF2UFhud1lIck9GVkJQSXlETUJvaERNVnV3OGJVdE9NNUpRNGlSamdTNlZVakF3R1dvUFVOeG5Fb3lnQQ?oc=5",
+      "query": "시간외 특징주 급등 급락"
+    },
+    {
+      "title": "코스피·코스닥 이틀째 매도 사이드카…증시 급락 - 네이트",
+      "summary": "코스피·코스닥 이틀째 매도 사이드카…증시 급락&nbsp;&nbsp;네이트",
+      "source": "네이트",
+      "publishedAt": "Wed, 29 Jul 2026 02:19:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBqUVgtYUJFbmQ2eXFtQUVabGRqNXhkemRxOTA1dW5YR1ZnVjd5ODA5Y3MzOTQ3WkNNWlNIN2xwcFFDUTI0dU9KMkdnUkxhMnlkSGdCWjdLcWtFWVlZVjVveQ?oc=5",
+      "query": "코스닥 특징주 급락 하락 이유"
+    },
+    {
+      "title": "[특징주] 일진전기, 과열 논란 속 11% 급락…밸류에이션 부담 가중 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 일진전기, 과열 논란 속 11% 급락…밸류에이션 부담 가중 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Wed, 29 Jul 2026 02:17:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE0zMjJ0QUdJa3cza3kweFdNanZIVXJ2RHJGM010R01ianYyUGpUcEMtbVZUVExORm8zNmVOMzhhaEpYRjZXSG9qQUZn?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[특징주] 에스원, 결산실적 공시 예고에 장중 하락 전환 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 에스원, 결산실적 공시 예고에 장중 하락 전환 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Wed, 29 Jul 2026 02:12:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5wdGkzc1ZzR1BuWGlwdmp5WmVRMnRLSFFMNTBxTjBuMkJ1aE1qUEltYTRKendVQ0FSRFZURWdkRW9hNkQ4LUhfLV9n?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[특징주] 한화시스템, 고점 부담에 하락 전환…7%대 낙폭 : 기업주식정보 - 재경일보",
+      "summary": "[특징주] 한화시스템, 고점 부담에 하락 전환…7%대 낙폭 : 기업주식정보&nbsp;&nbsp;재경일보",
+      "source": "재경일보",
+      "publishedAt": "Wed, 29 Jul 2026 01:43:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBidnQ5cjdreGhTNTlEanpHemttQ0xxQ1JNNmVTNWp0X3RoeHgwSzdqVDkzNU9CS0d5MTQzUGpmQ0x3SldYN0VRelF3?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[특징주] SK디앤디, 대규모 유상증자 결정 소식에 29%대 급락 - 아주경제",
+      "summary": "[특징주] SK디앤디, 대규모 유상증자 결정 소식에 29%대 급락&nbsp;&nbsp;아주경제",
+      "source": "아주경제",
+      "publishedAt": "Wed, 29 Jul 2026 01:10:14 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9sbVpvYXFOUGFiOUZUWW1kNEpRbkwyLXd3ckNWVzZXVjNuVnhPazY1SnVaR1VMeXpXTXBNYmpxd1lDcVQ1OGpqbVB5LUtVQVhLM1J3Y1EwdjPSAVhBVV95cUxPbG1ab2FxTlBhYjlGVFltZDRKUW5MMi13d3JDVlc2V1YzblZ4T2s2NUp1WkdVTHl6V01wTWJqcXdZQ3FUNThqam1QeS1LVUFYSzNSd2NRMHYz?oc=5",
+      "query": "증시 마감 특징주 상한가 하한가"
+    },
+    {
+      "title": "코스피, 역대급 폭락 뒤 반등…외인·기관 사자에 6120선 회복 - 미디어펜",
+      "summary": "코스피, 역대급 폭락 뒤 반등…외인·기관 사자에 6120선 회복&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Wed, 29 Jul 2026 00:55:30 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9ReG55VnFudlpZek4wSHNkMjJuME5QLWozTExfTUYza3cwMzFUUmgtUXh2ZlpKSWFaU3BZVFNvcEtxcmZGanV4UW1zLTZNY0VxbVpfN9IBWEFVX3lxTE45NmliNWFsTF9LcHhJOFl5eXNWQ0NyT2NFQkJpTldBRzVnbmRGNXh3QmZQVXIxTVQteTAydTAyUENsZlBZOVFzZjROY2FoWkJBMEh5TzlJTzM?oc=5",
+      "query": "시간외 특징주 급등 급락"
+    },
     {
       "title": "[특징주] SK디앤디, 대규모 유상증자 결정에 27%대 급락…52주 신저가 - 매일경제 마켓",
       "summary": "[특징주] SK디앤디, 대규모 유상증자 결정에 27%대 급락…52주 신저가&nbsp;&nbsp;매일경제 마켓",
@@ -735,11 +1140,59 @@
       "query": "코스닥 특징주 급락 하락 이유"
     },
     {
+      "title": "[AI MY 증시전망] SK하이닉스 실적 주목…반도체株 반등 시험대 - 뉴스핌",
+      "summary": "[AI MY 증시전망] SK하이닉스 실적 주목…반도체株 반등 시험대&nbsp;&nbsp;뉴스핌",
+      "source": "뉴스핌",
+      "publishedAt": "Tue, 28 Jul 2026 23:51:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5jTTVuVnk2elFIS1drQXhabHhBODNJakxvRTFickNidUhxbUJuUTBpZ25zMUoxSzBHcjhqekFwaVRsSlZWcGxucTRmUmttakVVQVV6YTBvdFY5LXhr?oc=5",
+      "query": "오늘 특징주 급등 급락 코스피 코스닥"
+    },
+    {
+      "title": "[美증시 특징주] 반도체 장비 KLA 어닝서프에도 시간외 급락…보수적 가이던스 악재 - 미디어펜",
+      "summary": "[美증시 특징주] 반도체 장비 KLA 어닝서프에도 시간외 급락…보수적 가이던스 악재&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Tue, 28 Jul 2026 22:38:37 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFAyQ0VFaC1YeGsxeF9vQTR3S3dwYjRLM3RmcGplOXFrNVM0dkoxci1EeTQ2MVpqRlFpclRUejB4VWVBc3ZjVmJfVTFlWXEtcEhfdF9YMdIBWEFVX3lxTE93b0xQbVhhOVEzaTY2Szh6R0ZWUy0wb1BhcldDY19naWhEUDRZNzZYdkM3alJwa3pJS3RSWjBINl9WY3F2RVVWajZDdkZfaDVfVDFTc2JEUnI?oc=5",
+      "query": "시간외 특징주 급등 급락"
+    },
+    {
+      "title": "[美증시 특징주] 테라다인 압도적 실적 시간외 폭등…메모리 수요폭발 입증 - 미디어펜",
+      "summary": "[美증시 특징주] 테라다인 압도적 실적 시간외 폭등…메모리 수요폭발 입증&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Tue, 28 Jul 2026 22:14:49 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5fX3BITm8tbzBVVkZsWXByak1pZE5hZ2NDeDFwODV4UjQ1VjVMdGcwOG1CMnlwVTRLNllsSEpFcm5QRDBXbDNwVWNBMkxDODNJQy1Yc9IBWEFVX3lxTE5TYVUtSkM3TXJ2SWpFcTE2VTVXMXZpeHdoeFNCMU9vc1E1YUF1STFqWEctNFU4alVMQ3hqR3pjZlFqYVN5SUI3R0E2ejd5aTdlWHVOYVJrbHc?oc=5",
+      "query": "시간외 특징주 급등 급락"
+    },
+    {
+      "title": "[美증시 특징주] 반도체 팔고 가치주로 '엑소더스'…셔윈·코카콜라·보잉 급등 - 미디어펜",
+      "summary": "[美증시 특징주] 반도체 팔고 가치주로 '엑소더스'…셔윈·코카콜라·보잉 급등&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Tue, 28 Jul 2026 21:51:46 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9HdkNCYzV0ckZiVWtkbHFabGZ5OHdUbnZhQTM1U01IajYzaXBuYmRpRlNpUnRaaFB4cWJRYWpVdEc3eVdaRkNmSzVKMUxPbWNxVTAweVNURnjSAVhBVV95cUxPR3ZDQmM1dHJGYlVrZGxxWmxmeTh3VG52YUEzNVNNSGo2M2lwbmJkaUZTaVJ0WmhQeHFiUWFqVXRHN3lXWkZDZks1SjFMT21jcVUwMHlTVEZ4?oc=5",
+      "query": "시간외 특징주 급등 급락"
+    },
+    {
       "title": "[美증시 특징주] AI 스토리지 씨게이트, 실적 폭발에 시간외 급등 - 미디어펜",
       "summary": "[美증시 특징주] AI 스토리지 씨게이트, 실적 폭발에 시간외 급등&nbsp;&nbsp;미디어펜",
       "source": "미디어펜",
       "publishedAt": "Tue, 28 Jul 2026 21:30:05 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBtbXVkYWlsQmZsdDBRZVNENXU0WE1IalpnNjVtOXFVS2lZWGpHM1cyYnBwVEoxX0ZmWVBwV21ITU5DY1dmT01FVlhGMUxqcHl2ZU9PTNIBWEFVX3lxTE5wVjlNVkF4QWM1WUdxMktIWTBfTS12bWJNbzI0dXJQOURqWWlaNjM0aVNzNjM3b0pyckwzUXRqRTZ3dG9sSDNVNzRfNzZPNFNkYUN4T2ZTVms?oc=5",
+      "query": "시간외 특징주 급등 급락"
+    },
+    {
+      "title": "[美증시] 반도체 폭락 쇼크 나스닥 또 '조정'…소비재 선전 다우는 강세 - 미디어펜",
+      "summary": "[美증시] 반도체 폭락 쇼크 나스닥 또 '조정'…소비재 선전 다우는 강세&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Tue, 28 Jul 2026 20:44:29 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1wckR2RHc4ZEJ4bW1zLU4wNHY4cjlISHhIc2g3Uk5ORmdIS3JqZDJzXzc4bzVTcTg4bE5iS3R2LVpsMG00NlR3UVJmRk1QQ3VjMFY2VVhqZU7SAVhBVV95cUxNcHJEdkR3OGRCeG1tcy1OMDR2OHI5SEh4SHNoN1JOTkZnSEtyamQyc183OG81U3E4OGxOYkt0di1abDBtNDZUd1FSZkZNUEN1YzBWNlVYamVO?oc=5",
+      "query": "시간외 특징주 급등 급락"
+    },
+    {
+      "title": "[美증시 특징주] 삼전닉스 폭락에 반도체 '묻지마 매도'...하이닉스·마이크론 급락 - 미디어펜",
+      "summary": "[美증시 특징주] 삼전닉스 폭락에 반도체 '묻지마 매도'...하이닉스·마이크론 급락&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Tue, 28 Jul 2026 19:45:09 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9lZ2ZyVlhLbjludFQ4NHZuNEIyRVlDajNVQ3RyYXFfRTlmREJBZVhFTnRYbkQ0bVlRVE9jejJWR0ZfUTFuSGxXNVM1YTdXeDU2STJXZlN3X1DSAVhBVV95cUxPZWdmclZYS245bnRUODR2bjRCMkVZQ2ozVUN0cmFxX0U5ZkRCQWVYRU50WG5ENG1ZUVRPY3oyVkdGX1ExbkhsVzVTNWE3V3g1NkkyV2ZTd19Q?oc=5",
       "query": "시간외 특징주 급등 급락"
     },
     {
@@ -757,121 +1210,25 @@
       "publishedAt": "Tue, 28 Jul 2026 05:42:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiggJBVV95cUxORWxyd0QxVTBud19jTHNkQXo5SHVvX1R4X25RbUtlUFM2MmdBdTlkek1IelJsVHZ0NVphZTJabzEzQmdUUzI3YmpwcWdUSGlfX0dQOUtQbnptd0wtUERLMUllUVVJTzZYS0JqYWNqLUl3b2xib2JQM0p1Sm9rVm85REFidVdMYWxRYi1ZNTJmbWdLeDkyRnB0d05FN3ZLcFA4SFpiOGIySnc5SGRRVncxZEhnZGdpbks3NzBSQWZIWEl2aUlZWEZELVRDUTVpdkp0QkNKMHcta0dmVHFNdHhwZXcxMExKbEpRQmJjVUY1S2p4bEtqQWFfckEwVW9zSmtpVWc?oc=5",
       "query": "코스닥 특징주 급락 하락 이유"
-    },
-    {
-      "title": "[특징주] 에스원, 결산실적 공시 예고 속 투자심리 위축 장중 약세 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 에스원, 결산실적 공시 예고 속 투자심리 위축 장중 약세 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Tue, 28 Jul 2026 02:15:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFA5bXpkMmpGZmxXaGVfanJrbTAtZ3h4MGkzWExTQlVkNkY0MmJid1N2aEp3TU5kNjdQRWlTeEQtbGtJUzAwR183eXlB?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 삼성에스디에스, 임원 지분 변동 공시에 장중 6%대 하락 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 삼성에스디에스, 임원 지분 변동 공시에 장중 6%대 하락 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Tue, 28 Jul 2026 01:38:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFA1TGhzcUNRUEFVY3JNbm5zTWEtNlQ2UnhIZkZqeUpUR0RqN0dkUmRrQkM1a2JwQzlCN0dnYXZsYXBGWmtwclg4LUxR?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 삼성전자우, 외국인·기관 동반 매도에 장중 8%대 급락 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 삼성전자우, 외국인·기관 동반 매도에 장중 8%대 급락 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Tue, 28 Jul 2026 01:21:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9rSjU5Zk5oU2hvT3lFWXE3ZlJBeEtXQ3ZhTGNtVU9CSkU5WjA1WXJiV3J0N1VSbExtOGZtc2pyTHNVMWNMM0dHLWh3?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 급락장에 증권주 줄하락…키움증권·미래에셋증권 8%↓ - 네이트",
-      "summary": "[특징주] 급락장에 증권주 줄하락…키움증권·미래에셋증권 8%↓&nbsp;&nbsp;네이트",
-      "source": "네이트",
-      "publishedAt": "Tue, 28 Jul 2026 01:11:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE44R29lMHY4OFFDOUZidzZpQmZCYlVsUFVYV3B5dERZQ0o5dndQcnRIaXBybGJNU0NRRF9jNWlpMGU2b25MVTREckFPUmJWUnZRUnpF?oc=5",
-      "query": "코스닥 특징주 급락 하락 이유"
-    },
-    {
-      "title": "[특징주] 급락장에 증권주 줄줄이 하락 - 네이트",
-      "summary": "[특징주] 급락장에 증권주 줄줄이 하락&nbsp;&nbsp;네이트",
-      "source": "네이트",
-      "publishedAt": "Tue, 28 Jul 2026 00:21:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB0UUplRFFicHhZcUhKTlI2TlZ0cHhFYXZBRjZvS1hZTm1RYXdlY1ZyQlZXX0tRcUxzSjI3aEVyUHFickpMTUpUUFI4akRtUkdlYWRV?oc=5",
-      "query": "코스닥 특징주 급락 하락 이유"
-    },
-    {
-      "title": "7월27일 월요일 시간외 특징주 (AI,폭염,로봇) - 네이버 프리미엄콘텐츠",
-      "summary": "7월27일 월요일 시간외 특징주 (AI,폭염,로봇)&nbsp;&nbsp;네이버 프리미엄콘텐츠",
-      "source": "네이버 프리미엄콘텐츠",
-      "publishedAt": "Mon, 27 Jul 2026 10:21:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQT3ZSNW5pZ0N0RWsxNzQxVndNeGdqcTdCam9NNWpQX2t1dDVqeTNBWVJQN2xOaTROU2lNTmZXUkNhUjMxd0NjX0dxaG42OERTYjFzTk5QeGlVRFV1Uk9BUkF5b1VlbjUyUnBTU1c0b1ZodU9RalkwcW9DSkVHQjhtejdfNkREZ09E?oc=5",
-      "query": "시간외 특징주 급등 급락"
-    },
-    {
-      "title": "[오늘의 주목주] '엔비디아의 지분 투자' 네이버 주가 8%대 올라, 코스피 개인·기관 매수에 6750선 강보합 마감 - 비즈니스포스트",
-      "summary": "[오늘의 주목주] '엔비디아의 지분 투자' 네이버 주가 8%대 올라, 코스피 개인·기관 매수에 6750선 강보합 마감&nbsp;&nbsp;비즈니스포스트",
-      "source": "비즈니스포스트",
-      "publishedAt": "Mon, 27 Jul 2026 08:03:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA3enNFYmlaTzYyQmFvM2xSZVlqLVBnaWlsMHRsS2xxakRHRl9FLXlBRTF3dF81WTlETjVheVZPNkt6N2Z5RzR0ZmxpNDk0eUVYVjhYdG91WlFteVVUSEN6ZW9fSWhFRVNNLXJxM3JUMUIwQTA?oc=5",
-      "query": "오늘의 특징주 종목 상승 하락"
-    },
-    {
-      "title": "[특징주] 금호타이어, 견조한 시장 흐름 속 상승 시도… 수급 개선 기대감 주목 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 금호타이어, 견조한 시장 흐름 속 상승 시도… 수급 개선 기대감 주목 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Mon, 27 Jul 2026 02:29:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1XWGNheVc4aHRXT2F2dEZSVjhxenZoc0RLUW5Db1NnMlNDeGhaVGtYTFVKOG5WdHFpRmI0T2ZJcjJoY0VtTGwwTzJ3?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 에스엘, 미래차 부품 성장 기대감 속 장중 상승세 지속 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 에스엘, 미래차 부품 성장 기대감 속 장중 상승세 지속 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Mon, 27 Jul 2026 02:14:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFB0dHJROEdVYzBuZjRSaktjcXlobzdZZWw3VzFiMjBnZFhRUWdhZUF2R0VnZjJ2dmlDQUxXRkREUFhsal9OQVFrbENB?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] OCI홀딩스, 잠정 실적 충격에 장중 18%대 급락 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] OCI홀딩스, 잠정 실적 충격에 장중 18%대 급락 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Mon, 27 Jul 2026 02:04:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9uSlZPV2xST0lSWmtQSHhIMHpLUzB3QUw5SU1DRkFQNmljZGNGZ3VQUFJLUWgxWnRaNVZJM0syNlBSUy04RjZjMlF3?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 산일전기, 차익실현 매물에 하락 전환…단기 밸류에이션 부담 부각 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 산일전기, 차익실현 매물에 하락 전환…단기 밸류에이션 부담 부각 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Mon, 27 Jul 2026 01:57:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5HUERFZ0RERmJULWdielBCNWlLRl84cXBaU2xsZ2NnU3BaVjY0NDgzRnhnT0ZpQTVsOS0tNC1UZ3g4N3NIZDJha1ZB?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 오리온, 견조한 실적 기반으로 장중 소폭 상승 흐름 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 오리온, 견조한 실적 기반으로 장중 소폭 상승 흐름 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Mon, 27 Jul 2026 01:57:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9RWTMyRnFGeUN5V3pRQjl6SG5ESnpwV1Z6QnFONkQyak1lcHdhS3RUR0lqQlZZTGFTY3JCNGVfb0FLcWRLNlBzZmNB?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 가온전선, 차익 실현 매물 출회에 장중 5%대 하락 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 가온전선, 차익 실현 매물 출회에 장중 5%대 하락 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Mon, 27 Jul 2026 01:56:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE93ak00a3ZFalNRODRkX0E4QUxyRUxpem9NdTg5c193N2J0VUFJaG90YUFpNkhzdVRpV0I4bnVuLWlndXp2M0RCanN3?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
-    },
-    {
-      "title": "[특징주] 대한전선, 장중 견조한 상승세... 전력 인프라 투자 기대감 유효 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 대한전선, 장중 견조한 상승세... 전력 인프라 투자 기대감 유효 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Mon, 27 Jul 2026 01:56:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5zajZUd3lacnZTeXc2S2c2TVlzaldCbUdFQXJral9mcGx5N29RV09Ta3N1ODFZQmxfMHZucWlyZEZoTVFtbWtNWFZn?oc=5",
-      "query": "오늘 특징주 급등 급락 코스피 코스닥"
     }
   ],
   "investorFlowNewsCandidates": [
+    {
+      "title": "코스피 5300~5700 '최대 매물대'…DB증권 \"핵심 지지선 될 것\" - 비즈워치",
+      "summary": "코스피 5300~5700 '최대 매물대'…DB증권 \"핵심 지지선 될 것\"&nbsp;&nbsp;비즈워치",
+      "source": "비즈워치",
+      "publishedAt": "Wed, 29 Jul 2026 01:26:02 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE90WjBlVmxETWwxMWJJYmVsQ3U1VzJHUXIxT1RNb2t6dWlLQlRTUFpBSFI3UTltRWRiU3dxZlhEZlk2RVJ4Y3pkNGd4TF9pcXJCUXk4NjhLOFJjOTVKTk10cWRJMl9iUWlQ?oc=5",
+      "query": "증시 수급 외국인 기관 개인 순매수"
+    },
+    {
+      "title": "[개장시황] 코스피 6159선 반등…기관 4062억 매수 개인은 차익 실현 - 자본시장뉴스",
+      "summary": "[개장시황] 코스피 6159선 반등…기관 4062억 매수 개인은 차익 실현&nbsp;&nbsp;자본시장뉴스",
+      "source": "자본시장뉴스",
+      "publishedAt": "Wed, 29 Jul 2026 01:25:12 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5tZ2xlOVE0eW5kVVZHSU5fOVMwbHBLcmF2QTBrTHUwRU1zSkRDMTdIek1DSGY4UkNHRVMwajBWTFFhZHotOWM5LXRKM25sT0lzR29Zc0lKRU9hdFhUcUhuUU00ekRZenM?oc=5",
+      "query": "증시 수급 외국인 기관 개인 순매수"
+    },
     {
       "title": "코스피, 외국인·기관 순매도에 6400선대 급락 - 소년한국일보",
       "summary": "코스피, 외국인·기관 순매도에 6400선대 급락&nbsp;&nbsp;소년한국일보",
@@ -879,14 +1236,6 @@
       "publishedAt": "Tue, 28 Jul 2026 00:28:58 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1BUkR1YXVDV2tvNDJmbElGcTRyamhRVGdRVEp2cFdEQWJkSXR1bWpkWU9ONl9pLWlqRUVJV3ZKVEgtMEZCdGZNUXlOenRhSEIwSFltSWVvcGtGX1VKNVJqLVFmMURpZm45d1JjdtIBcEFVX3lxTFBwSVNnUXVZcjZRNGQ0RENNcTZLeFdrai0tUUhzWTlZMFZyNHVpU2FwZk45OHVhS1VIVVhFSjhhUzFSVTk0NW9mMDZiSXd5WHV1cG0xQVVVY01Hc2cyY3NWTm9CUlhJdU9LUkllVVptMms?oc=5",
       "query": "코스피 외국인 기관 순매수 순매도"
-    },
-    {
-      "title": "[투데이증시] “변심한 외국인”...수급 공백 지킨 개미 덕에 코스피 0.97↑ - 투데이신문",
-      "summary": "[투데이증시] “변심한 외국인”...수급 공백 지킨 개미 덕에 코스피 0.97↑&nbsp;&nbsp;투데이신문",
-      "source": "투데이신문",
-      "publishedAt": "Mon, 27 Jul 2026 07:43:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBGTmFVRHNGRzY5N0N4dkdoX0pMNzBUTG1MYUR2cW1vcVZ1U2dHNGl4NU5ubmtqT0pkSjZGNnlhckdSc2JLVjFuMW45WjZpN2tMUTFhaW1EZG95VldfQWoxV2N2UmV6akgwVWVr0gFvQVVfeXFMUE1Sdm94Y3dSOUE0LUZSa2FnZFJYcXlPNUxINmcxTW1CeVFiZERwWHE4RXJXS1c4T1lJRVdQTTJjeEtTNkFaNUxsTHg0dlR2Q2dSUmJPTF9DeTJ2dkNlUXQxLXp6Uk1NSFAxbWU5Y3ZR?oc=5",
-      "query": "증시 수급 외국인 기관 개인 순매수"
     },
     {
       "title": "[개장시황] 코스피 1%대 반등…코스닥 776선 3.72% 급등 - 자본시장뉴스",
@@ -905,7 +1254,16 @@
       "query": "코스피 외국인 기관 순매수 순매도"
     }
   ],
-  "disclosureNewsCandidates": [],
+  "disclosureNewsCandidates": [
+    {
+      "title": "[윤병운의 M&A 팩트폭격 2] 비상장기업의 가업승계와 신사업 진출, 상장사M&A로 풀다 - CEONEWS",
+      "summary": "[윤병운의 M&A 팩트폭격 2] 비상장기업의 가업승계와 신사업 진출, 상장사M&A로 풀다&nbsp;&nbsp;CEONEWS",
+      "source": "CEONEWS",
+      "publishedAt": "Wed, 29 Jul 2026 03:20:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1XMEVFMDBGU1l4S1laZVk5bXJ1ZllVaHYwWF93UDNVbjNxTzA2QTR5TjA5bV9YQmJxaW8wZWYzZWZFY3lnMWV5Qk00VEFiQWIzMndpTUdPcXlRaWdrOTZF?oc=5",
+      "query": "상장사 주요 공시 합병 인수 분할"
+    }
+  ],
   "scheduleNewsCandidates": [
     {
       "title": "PA 데일리 | 미 상원, Clarity 법안 일시 보류; X Money, 미국 Premium 및 Premium+ 구독자에게 출시 시작 - PANews",
@@ -934,6 +1292,14 @@
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     },
     {
+      "title": "코스피, 급락딛고 반등했지만 상승폭 제한…0.97%↑ 마감(종합) - 연합뉴스",
+      "summary": "코스피, 급락딛고 반등했지만 상승폭 제한…0.97%↑ 마감(종합)&nbsp;&nbsp;연합뉴스",
+      "source": "연합뉴스",
+      "publishedAt": "Mon, 27 Jul 2026 07:15:42 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9lVEJOZndhbHpBNm9yM1UxOF9iYmZSSjVCZVg2ZGdhb3l5a1c0TWhZNlFlUkxZY0hteUd5dVMzNi1jVEZEYVBidjJzUTE1WW04UEo2QjlwNExudnVlUnozdtIBYEFVX3lxTE9lVEJOZndhbHpBNm9yM1UxOF9iYmZSSjVCZVg2ZGdhb3l5a1c0TWhZNlFlUkxZY0hteUd5dVMzNi1jVEZEYVBidjJzUTE1WW04UEo2QjlwNExudnVlUnozdg?oc=5",
+      "query": "코스피 코스닥 업종별 흐름 마감"
+    },
+    {
       "title": "[이 시각 시황] 코스피 상승폭 축소…로봇·AI株 강세 - SBS Biz",
       "summary": "[이 시각 시황] 코스피 상승폭 축소…로봇·AI株 강세&nbsp;&nbsp;SBS Biz",
       "source": "SBS Biz",
@@ -944,7 +1310,7 @@
   ],
   "investorFlows": {
     "status": "ok",
-    "generatedAt": "2026-07-29T10:16:25.597683+09:00",
+    "generatedAt": "2026-07-29T16:00:36.688985+09:00",
     "source": "NAVER Finance/KRX",
     "sourceUrls": [
       "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260729&sosok=01&page=1",
@@ -960,16 +1326,16 @@
         "latestDate": "2026-07-29",
         "unit": "KRW",
         "netBuy": {
-          "retail": -1243500000000,
-          "foreign": 213800000000,
-          "institution": 1019200000000,
-          "financial_investment": 494200000000,
-          "insurance": 13100000000,
-          "investment_trust_private_equity": 362800000000,
-          "bank": -2200000000,
-          "other_finance": 3000000000,
-          "pension_funds": 148500000000,
-          "other_corporations": 10500000000
+          "retail": -1969500000000,
+          "foreign": -1234300000000,
+          "institution": 3160400000000,
+          "financial_investment": 1839800000000,
+          "insurance": 126000000000,
+          "investment_trust_private_equity": 863900000000,
+          "bank": -12600000000,
+          "other_finance": 5300000000,
+          "pension_funds": 338100000000,
+          "other_corporations": 43300000000
         },
         "recent": [
           {
@@ -1035,23 +1401,23 @@
           {
             "date": "2026-07-29",
             "netBuy": {
-              "retail": -1243500000000,
-              "foreign": 213800000000,
-              "institution": 1019200000000,
-              "financial_investment": 494200000000,
-              "insurance": 13100000000,
-              "investment_trust_private_equity": 362800000000,
-              "bank": -2200000000,
-              "other_finance": 3000000000,
-              "pension_funds": 148500000000,
-              "other_corporations": 10500000000
+              "retail": -1969500000000,
+              "foreign": -1234300000000,
+              "institution": 3160400000000,
+              "financial_investment": 1839800000000,
+              "insurance": 126000000000,
+              "investment_trust_private_equity": 863900000000,
+              "bank": -12600000000,
+              "other_finance": 5300000000,
+              "pension_funds": 338100000000,
+              "other_corporations": 43300000000
             }
           }
         ],
         "streaks": {
           "foreign": {
-            "direction": "buy",
-            "count": 1
+            "direction": "sell",
+            "count": 4
           },
           "institution": {
             "direction": "buy",
@@ -1070,16 +1436,16 @@
         "latestDate": "2026-07-29",
         "unit": "KRW",
         "netBuy": {
-          "retail": 61200000000,
-          "foreign": -4400000000,
-          "institution": -62700000000,
-          "financial_investment": -78800000000,
-          "insurance": -200000000,
-          "investment_trust_private_equity": 14100000000,
-          "bank": 0,
-          "other_finance": -300000000,
-          "pension_funds": 2400000000,
-          "other_corporations": 5900000000
+          "retail": -457800000000,
+          "foreign": 308300000000,
+          "institution": 147100000000,
+          "financial_investment": 194900000000,
+          "insurance": -3600000000,
+          "investment_trust_private_equity": -700000000,
+          "bank": -300000000,
+          "other_finance": -2100000000,
+          "pension_funds": -41100000000,
+          "other_corporations": 2400000000
         },
         "recent": [
           {
@@ -1145,31 +1511,31 @@
           {
             "date": "2026-07-29",
             "netBuy": {
-              "retail": 61200000000,
-              "foreign": -4400000000,
-              "institution": -62700000000,
-              "financial_investment": -78800000000,
-              "insurance": -200000000,
-              "investment_trust_private_equity": 14100000000,
-              "bank": 0,
-              "other_finance": -300000000,
-              "pension_funds": 2400000000,
-              "other_corporations": 5900000000
+              "retail": -457800000000,
+              "foreign": 308300000000,
+              "institution": 147100000000,
+              "financial_investment": 194900000000,
+              "insurance": -3600000000,
+              "investment_trust_private_equity": -700000000,
+              "bank": -300000000,
+              "other_finance": -2100000000,
+              "pension_funds": -41100000000,
+              "other_corporations": 2400000000
             }
           }
         ],
         "streaks": {
           "foreign": {
-            "direction": "sell",
-            "count": 1
-          },
-          "institution": {
-            "direction": "sell",
-            "count": 2
-          },
-          "retail": {
             "direction": "buy",
             "count": 2
+          },
+          "institution": {
+            "direction": "buy",
+            "count": 1
+          },
+          "retail": {
+            "direction": "sell",
+            "count": 1
           }
         },
         "source": "NAVER Finance/KRX",
@@ -1190,7 +1556,7 @@
     "marketEventNewsCandidates": "ok",
     "stockNewsCandidates": "ok",
     "investorFlowNewsCandidates": "ok",
-    "disclosureNewsCandidates": "empty",
+    "disclosureNewsCandidates": "ok",
     "scheduleNewsCandidates": "ok",
     "sectorThemeNewsCandidates": "ok",
     "investorFlows": "ok"
