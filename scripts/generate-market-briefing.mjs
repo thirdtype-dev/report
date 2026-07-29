@@ -33,7 +33,11 @@ const NEWS_QUERIES = [
   '한국 주식시장 공시 실적 유상증자 M&A',
   '한국 증시 신규상장 보호예수 주주총회'
 ];
-const SEMICONDUCTOR_RISK_NEWS_QUERIES = [
+const MARKET_EVENT_NEWS_QUERIES = [
+  '한국 증시 프리마켓 급등 급락 환율 유가 금리 관세',
+  '미국 증시 급등 급락 한국 증시 영향',
+  '원달러 환율 유가 금리 관세 수출규제 지정학 증시',
+  '2차전지 바이오 자동차 조선 금융 건설 해운 방산 급등 급락',
   '삼성전자 SK하이닉스 프리마켓 하락 급락 약세',
   'CXMT 창신메모리 DUV 삼성전자 SK하이닉스',
   '엔비디아 마이크론 필라델피아 반도체지수 SK하이닉스 ADR',
@@ -696,11 +700,37 @@ function resolveBriefingPublishPlan({ marketResearch, report, existingHtml }) {
   throw new Error(`briefing_quality_gate_failed:${issues.join(',')}`);
 }
 
-const SEMICONDUCTOR_COMPANY_RE = /(삼성전자|SK\s*하이닉스|SK하이닉스|삼전닉스)/iu;
-const SEMICONDUCTOR_CHINA_RISK_RE = /(CXMT|창신메모리|DUV|중국[^.!?。]{0,30}반도체|메모리[^.!?。]{0,20}공급\s*(?:확대|과잉))/iu;
-const SEMICONDUCTOR_US_RISK_RE = /(엔비디아|마이크론|필라델피아\s*반도체|반도체\s*지수|SK\s*하이닉스\s*ADR)/iu;
-const SEMICONDUCTOR_DOWNSIDE_RE = /(하락|급락|폭락|약세|내려|떨어|↓|쇼크|투매|우려|부담|공급\s*(?:확대|과잉)|가격\s*하락|수익성[^.!?。]{0,20}하방|경쟁\s*(?:심화|확대))/iu;
-const DIRECT_PRICE_DOWNSIDE_RE = /(하락|급락|폭락|약세|내려|떨어|↓|투매)/iu;
+const MARKET_EVENT_TOPICS = [
+  { key: 'semiconductor', label: '반도체', scope: 'sector', pattern: /(반도체|삼성전자|SK\s*하이닉스|SK하이닉스|엔비디아|마이크론|CXMT|창신메모리|D램|낸드|HBM)/iu },
+  { key: 'secondary_battery', label: '2차전지', scope: 'sector', pattern: /(2차전지|이차전지|배터리|리튬|양극재|음극재|전기차)/iu },
+  { key: 'bio', label: '바이오·제약', scope: 'sector', pattern: /(바이오|제약|신약|임상|헬스케어)/iu },
+  { key: 'automobile', label: '자동차', scope: 'sector', pattern: /(자동차|완성차|현대차|기아|전기차)/iu },
+  { key: 'shipbuilding', label: '조선', scope: 'sector', pattern: /(조선|선박|수주|LNG선)/iu },
+  { key: 'finance', label: '금융', scope: 'sector', pattern: /(금융|은행|증권|보험|카드)/iu },
+  { key: 'construction', label: '건설·부동산', scope: 'sector', pattern: /(건설|부동산|PF|주택|시멘트)/iu },
+  { key: 'energy', label: '에너지', scope: 'sector', pattern: /(정유|에너지|석유|가스)/iu },
+  { key: 'shipping', label: '해운', scope: 'sector', pattern: /(해운|운임|컨테이너|홍해)/iu },
+  { key: 'defense', label: '방산', scope: 'sector', pattern: /(방산|무기|국방|미사일|전투기)/iu },
+  { key: 'platform', label: '인터넷·플랫폼', scope: 'sector', pattern: /(인터넷|플랫폼|네이버|카카오|게임)/iu },
+  { key: 'consumer', label: '소비·유통', scope: 'sector', pattern: /(소비|유통|면세|화장품|의류|백화점)/iu },
+  { key: 'oil', label: '유가', scope: 'factor', pattern: /(원유|유가|WTI|브렌트)/iu },
+  { key: 'fx', label: '원/달러 환율', scope: 'factor', pattern: /(원\/달러|원달러|환율|달러\s*강세|달러\s*약세|원화\s*강세|원화\s*약세)/iu },
+  { key: 'rates', label: '금리·채권', scope: 'factor', pattern: /(금리|국채|채권|연준|FOMC|기준금리)/iu },
+  { key: 'trade', label: '관세·무역', scope: 'factor', pattern: /(관세|무역|수출규제|수입규제|보복관세|무역분쟁)/iu },
+  { key: 'geopolitics', label: '지정학', scope: 'factor', pattern: /(전쟁|공습|분쟁|충돌|휴전|제재|지정학)/iu },
+  { key: 'foreign_flow', label: '외국인 수급', scope: 'factor', pattern: /(외국인|기관|연기금|프로그램\s*매매|선물\s*수급)/iu },
+  { key: 'global_market', label: '해외 증시', scope: 'factor', pattern: /(미국\s*증시|뉴욕증시|나스닥|S&P\s*500|다우\s*지수|필라델피아\s*반도체)/iu },
+  { key: 'domestic_market', label: '국내 증시', scope: 'market', pattern: /(코스피|코스닥|KOSPI|KOSDAQ|국내\s*(?:증시|주식시장)|한국\s*(?:증시|주식시장))/iu }
+];
+const MARKET_NEGATIVE_DIRECT_RE = /(급락|폭락|하락|약세|하한가|투매|붕괴|쇼크|내려|떨어|↓)/iu;
+const MARKET_POSITIVE_DIRECT_RE = /(급등|폭등|상승|강세|상한가|반등|랠리|뛰어|올라|↑)/iu;
+const MARKET_NEGATIVE_CONTEXT_RE = /(우려|부담|둔화|악화|위축|실패|적자|하향|(?:수요|매출|이익|실적)\s*감소|공급\s*(?:증가|확대|과잉)|경쟁\s*(?:심화|확대)|추격|수익성[^.!?。]{0,20}하방)/iu;
+const MARKET_POSITIVE_CONTEXT_RE = /(호조|개선|회복|성공|흑자|상향|(?:수요|매출|이익|실적|수주)\s*증가|완화|해소|수주|최대\s*실적)/iu;
+const MARKET_STRONG_MOVE_RE = /(급락|폭락|하한가|투매|붕괴|쇼크|급등|폭등|상한가)/iu;
+const MARKET_FACTOR_NEGATIVE_RE = /(?:(?:원\/달러|원달러|환율|유가|원유|금리|국채금리)[^.!?。]{0,24}(?:급등|상승|고공행진|불안)|(?:관세|수출규제|수입규제)[^.!?。]{0,24}(?:부과|인상|확대|강화)|(?:전쟁|공습|분쟁|충돌|제재)[^.!?。]{0,24}(?:확대|격화|강화|발발))/iu;
+const MARKET_FACTOR_POSITIVE_RE = /(?:(?:원\/달러|원달러|환율|유가|원유|금리|국채금리)[^.!?。]{0,24}(?:하락|안정|진정)|(?:관세|수출규제|수입규제)[^.!?。]{0,24}(?:철회|인하|완화)|(?:전쟁|공습|분쟁|충돌|제재)[^.!?。]{0,24}(?:휴전|완화|종료|해제))/iu;
+const MARKET_DIRECT_EVENT_MAX_AGE_MS = 18 * 60 * 60 * 1000;
+const MARKET_STRUCTURAL_EVENT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function candidateText(item) {
   return `${item?.title ?? ''} ${item?.summary ?? ''}`.trim();
@@ -711,160 +741,337 @@ function freshNewsCandidates(items, referenceTimeMs) {
     .filter((item) => item?.status !== 'unavailable');
 }
 
-function semiconductorRiskScore(item) {
-  const text = candidateText(item);
-  let score = 0;
-  if (SEMICONDUCTOR_COMPANY_RE.test(text)) score += 4;
-  if (SEMICONDUCTOR_CHINA_RISK_RE.test(text)) score += 3;
-  if (SEMICONDUCTOR_US_RISK_RE.test(text)) score += 2;
-  if (SEMICONDUCTOR_DOWNSIDE_RE.test(text)) score += 4;
-  if (SEMICONDUCTOR_COMPANY_RE.test(item?.title ?? '') && DIRECT_PRICE_DOWNSIDE_RE.test(item?.title ?? '')) score += 6;
-  return score;
+function marketEventDirection(text, title = text) {
+  const normalized = String(text)
+    .replace(/(?:우려|부담)\s*(?:완화|해소)/giu, '호재')
+    .replace(/(?:낙폭|하락폭)\s*(?:축소|감소)/giu, '반등');
+  const normalizedTitle = String(title)
+    .replace(/(?:우려|부담)\s*(?:완화|해소)/giu, '호재')
+    .replace(/(?:낙폭|하락폭)\s*(?:축소|감소)/giu, '반등');
+  const factorNegative = MARKET_FACTOR_NEGATIVE_RE.test(normalizedTitle);
+  const factorPositive = MARKET_FACTOR_POSITIVE_RE.test(normalizedTitle);
+  if (factorNegative !== factorPositive) {
+    const factorPattern = factorNegative ? MARKET_FACTOR_NEGATIVE_RE : MARKET_FACTOR_POSITIVE_RE;
+    const residual = normalizedTitle.replace(new RegExp(factorPattern.source, 'giu'), ' ');
+    if (factorNegative && MARKET_POSITIVE_DIRECT_RE.test(residual)) return 'mixed';
+    if (factorPositive && MARKET_NEGATIVE_DIRECT_RE.test(residual)) return 'mixed';
+    return factorNegative ? 'negative' : 'positive';
+  }
+
+  const negative = MARKET_NEGATIVE_DIRECT_RE.test(normalized) || MARKET_NEGATIVE_CONTEXT_RE.test(normalized);
+  const positive = MARKET_POSITIVE_DIRECT_RE.test(normalized) || MARKET_POSITIVE_CONTEXT_RE.test(normalized);
+  if (negative && positive) return 'mixed';
+  if (negative) return 'negative';
+  if (positive) return 'positive';
+  return 'neutral';
 }
 
-function collectSemiconductorRiskEvidence(marketResearch) {
+function marketEventTargets(text) {
+  const targets = MARKET_EVENT_TOPICS
+    .filter((topic) => topic.pattern.test(text))
+    .map(({ key, label, scope }) => ({ key, label, scope }));
+  if (targets.length > 0) return targets;
+  return [{ key: 'individual_stock', label: '개별 종목', scope: 'stock' }];
+}
+
+function primaryMarketEventTarget(targets) {
+  return targets.find((target) => target.scope !== 'market') ?? targets[0];
+}
+
+function eventSourceKey(item) {
+  if (item?.source) return String(item.source).toLowerCase();
+  try {
+    return new URL(item?.sourceUrl ?? '').hostname.toLowerCase();
+  } catch {
+    return String(item?.sourceUrl ?? item?.title ?? '').toLowerCase();
+  }
+}
+
+function marketEventClusterKey(signal) {
+  if (signal.primaryTarget?.scope === 'stock') {
+    return `stock:${signal.sourceUrl ?? signal.headline}`;
+  }
+  return `${signal.primaryTarget?.key ?? 'unknown'}:${signal.direction}`;
+}
+
+function buildMarketEventSignals(marketResearch) {
   const referenceTimeMs = Date.parse(marketResearch?.generatedAt ?? '') || Date.now();
   const candidates = [
-    ...(marketResearch?.semiconductorRiskNewsCandidates ?? []),
+    ...(marketResearch?.marketEventNewsCandidates ?? []),
     ...(marketResearch?.marketNews ?? []),
     ...(marketResearch?.stockNewsCandidates ?? []),
-    ...(marketResearch?.sectorThemeNewsCandidates ?? [])
+    ...(marketResearch?.sectorThemeNewsCandidates ?? []),
+    ...(marketResearch?.investorFlowNewsCandidates ?? []),
+    ...(marketResearch?.disclosureNewsCandidates ?? []),
+    ...(marketResearch?.scheduleNewsCandidates ?? [])
   ];
   const seen = new Set();
-
-  return freshNewsCandidates(candidates, referenceTimeMs)
-    .filter((item) => {
-      const text = candidateText(item);
-      return SEMICONDUCTOR_DOWNSIDE_RE.test(text)
-        && (SEMICONDUCTOR_COMPANY_RE.test(text)
-          || SEMICONDUCTOR_CHINA_RISK_RE.test(text)
-          || SEMICONDUCTOR_US_RISK_RE.test(text));
-    })
+  const provisional = freshNewsCandidates(candidates, referenceTimeMs)
     .filter((item) => {
       const key = item?.sourceUrl || item?.title;
       if (!key || seen.has(key)) return false;
       seen.add(key);
       return true;
     })
+    .map((item) => {
+      const publishedAtMs = newsPublishedAtMs(item);
+      const ageMs = publishedAtMs == null ? Number.POSITIVE_INFINITY : referenceTimeMs - publishedAtMs;
+      const text = candidateText(item);
+      const title = String(item?.title ?? '');
+      const direction = marketEventDirection(text, title);
+      const direct = MARKET_NEGATIVE_DIRECT_RE.test(title)
+        || MARKET_POSITIVE_DIRECT_RE.test(title)
+        || MARKET_FACTOR_NEGATIVE_RE.test(title)
+        || MARKET_FACTOR_POSITIVE_RE.test(title);
+      if (direction === 'neutral' || ageMs < -NEWS_FUTURE_TOLERANCE_MS) return null;
+      if (direct && ageMs > MARKET_DIRECT_EVENT_MAX_AGE_MS) return null;
+      if (!direct && ageMs > MARKET_STRUCTURAL_EVENT_MAX_AGE_MS) return null;
+
+      const targets = marketEventTargets(text);
+      const primaryTarget = primaryMarketEventTarget(targets);
+      const ageHours = ageMs / (60 * 60 * 1000);
+      let score = direct ? 5 : 2;
+      if (MARKET_STRONG_MOVE_RE.test(title)) score += 4;
+      if (ageHours <= 6) score += 4;
+      else if (ageHours <= 18) score += 3;
+      else score += 1;
+      if (primaryTarget.scope === 'market') score += 4;
+      else if (primaryTarget.scope === 'factor') score += 3;
+      else if (primaryTarget.scope === 'sector') score += 2;
+      else score += 1;
+      if (/\d+(?:\.\d+)?\s*%/u.test(title)) score += 2;
+
+      return {
+        direction,
+        targets,
+        primaryTarget,
+        headline: title,
+        summary: String(item?.summary ?? ''),
+        source: item?.source ?? null,
+        publishedAt: item?.publishedAt ?? null,
+        sourceUrl: item?.sourceUrl ?? null,
+        score,
+        corroboration: 1
+      };
+    })
+    .filter(Boolean);
+
+  const corroboratingSources = new Map();
+  for (const signal of provisional) {
+    const clusterKey = marketEventClusterKey(signal);
+    const sources = corroboratingSources.get(clusterKey) ?? new Set();
+    sources.add(eventSourceKey(signal));
+    corroboratingSources.set(clusterKey, sources);
+  }
+
+  const ranked = provisional
+    .map((signal) => {
+      const clusterKey = marketEventClusterKey(signal);
+      const corroboration = corroboratingSources.get(clusterKey)?.size ?? 1;
+      const score = signal.score + Math.min(4, Math.max(0, corroboration - 1) * 2);
+      return {
+        ...signal,
+        score,
+        corroboration,
+        severity: score >= 11 ? 'high' : score >= 7 ? 'medium' : 'low'
+      };
+    })
     .sort((left, right) => {
-      const scoreDifference = semiconductorRiskScore(right) - semiconductorRiskScore(left);
-      if (scoreDifference !== 0) return scoreDifference;
+      if (right.score !== left.score) return right.score - left.score;
       return (newsPublishedAtMs(right) ?? 0) - (newsPublishedAtMs(left) ?? 0);
     });
+  const clustered = [];
+  const clusteredKeys = new Set();
+  for (const signal of ranked) {
+    const clusterKey = marketEventClusterKey(signal);
+    if (clusteredKeys.has(clusterKey)) continue;
+    clusteredKeys.add(clusterKey);
+    const related = ranked.filter((candidate) => marketEventClusterKey(candidate) === clusterKey);
+    const targets = [
+      ...new Map(
+        related.flatMap((candidate) => candidate.targets ?? [])
+          .map((target) => [target.key, target])
+      ).values()
+    ];
+    clustered.push({
+      ...signal,
+      targets,
+      evidenceHeadlines: related.slice(0, 3).map((candidate) => candidate.headline)
+    });
+  }
+
+  const scopedSignals = clustered
+    .filter((signal) => signal.primaryTarget.scope !== 'stock')
+    .slice(0, 10);
+  const stockSignals = clustered
+    .filter((signal) => signal.primaryTarget.scope === 'stock')
+    .slice(0, 12 - scopedSignals.length);
+  return [...scopedSignals, ...stockSignals].sort((left, right) => right.score - left.score);
 }
 
-function semiconductorRiskState(marketResearch) {
-  const evidence = collectSemiconductorRiskEvidence(marketResearch);
-  const referenceTimeMs = Date.parse(marketResearch?.generatedAt ?? '') || Date.now();
-  const withinHours = (item, hours) => {
-    const publishedAtMs = newsPublishedAtMs(item);
-    return publishedAtMs != null && referenceTimeMs - publishedAtMs <= hours * 60 * 60 * 1000;
-  };
-  const structuralEvidence = evidence.filter((item) => withinHours(item, 24));
-  const overnightEvidence = evidence.filter((item) => withinHours(item, 18));
-  const structuralTexts = structuralEvidence.map(candidateText);
-  const overnightTexts = overnightEvidence.map(candidateText);
-  const directTitles = overnightEvidence.map((item) => String(item?.title ?? ''));
-  const hasCompanyRisk = structuralTexts.some((text) => SEMICONDUCTOR_COMPANY_RE.test(text));
-  const hasChinaRisk = structuralTexts.some((text) => SEMICONDUCTOR_CHINA_RISK_RE.test(text));
-  const hasUsRisk = overnightTexts.some((text) => SEMICONDUCTOR_US_RISK_RE.test(text));
-  const hasDirectPriceDownside = directTitles.some((title) => (
-    SEMICONDUCTOR_COMPANY_RE.test(title) && DIRECT_PRICE_DOWNSIDE_RE.test(title)
+function marketEventState(marketResearch) {
+  const signals = Array.isArray(marketResearch?.marketEventSignals)
+    ? marketResearch.marketEventSignals
+    : buildMarketEventSignals(marketResearch);
+  const highSignals = signals.filter((signal) => (
+    signal.severity === 'high' && signal.primaryTarget?.scope !== 'stock'
   ));
-  const highRisk = hasDirectPriceDownside
-    || (hasCompanyRisk && (hasChinaRisk || hasUsRisk))
-    || (hasChinaRisk && hasUsRisk);
-
   return {
-    evidence,
-    highRisk,
-    hasChinaRisk,
-    hasUsRisk,
-    samsungDown: directTitles.some((title) => /삼성전자/u.test(title) && DIRECT_PRICE_DOWNSIDE_RE.test(title)),
-    hynixDown: directTitles.some((title) => /SK\s*하이닉스|SK하이닉스/iu.test(title) && DIRECT_PRICE_DOWNSIDE_RE.test(title))
+    signals,
+    negative: highSignals.filter((signal) => signal.direction === 'negative'),
+    positive: highSignals.filter((signal) => signal.direction === 'positive'),
+    mixed: highSignals.filter((signal) => signal.direction === 'mixed')
   };
 }
 
-function semiconductorRiskSummary(state) {
-  const causes = [];
-  if (state.hasChinaRisk) causes.push('CXMT·중국 메모리 공급 확대와 경쟁 심화 우려');
-  if (state.hasUsRisk) causes.push('미국 주요 반도체주 약세');
-  if (state.samsungDown || state.hynixDown) causes.push('삼성전자·SK하이닉스 직접 하락 신호');
-  return causes.join(', ');
+function uniqueTopMarketSignals(signals, limit = 3) {
+  const seen = new Set();
+  return signals.filter((signal) => {
+    const key = signal.primaryTarget?.key ?? 'unknown';
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).slice(0, limit);
 }
 
-function applyPreMarketSemiconductorRiskGuard(report, state) {
-  if (!state.highRisk) return report;
-  const summary = semiconductorRiskSummary(state);
+function marketSignalLabels(signals) {
+  const labels = signals.flatMap((signal) => {
+    const specificTargets = (signal.targets ?? []).filter((target) => target.scope !== 'market');
+    return (specificTargets.length > 0 ? specificTargets : [signal.primaryTarget])
+      .map((target) => target?.label)
+      .filter(Boolean);
+  });
+  return [...new Set(labels)].slice(0, 4);
+}
 
-  return {
+function cleanMarketEventHeadline(value) {
+  return String(value ?? '')
+    .replace(/^\[[^\]]+\]\s*/u, '')
+    .replace(/\s+-\s+[^-]{1,40}$/u, '')
+    .trim();
+}
+
+function marketEventSummary(signals) {
+  return signals.map((signal) => (
+    `${signal.primaryTarget?.label ?? '시장'}: ${cleanMarketEventHeadline(signal.headline)}`
+  )).join(' / ');
+}
+
+function signalTargetsText(signal, text) {
+  return (signal.targets ?? []).some((target) => {
+    const topic = MARKET_EVENT_TOPICS.find((entry) => entry.key === target.key);
+    return topic?.pattern.test(String(text ?? '')) ?? false;
+  });
+}
+
+function applyPreMarketEventGuard(report, state) {
+  const negative = uniqueTopMarketSignals(state.negative);
+  const positive = uniqueTopMarketSignals(state.positive);
+  const mixed = uniqueTopMarketSignals(state.mixed);
+  if (negative.length === 0 && positive.length === 0 && mixed.length === 0) return report;
+
+  const next = {
     ...report,
-    openingStrategy: {
-      ...report.openingStrategy,
-      keywords: '삼성전자·SK하이닉스 하방 위험, 중국 메모리 경쟁, 반도체 변동성 확대',
-      oneLineStrategy: `${summary}가 함께 확인돼 반도체 대형주의 하방 위험과 장 초반 변동성을 우선 점검해야 합니다.`,
-      expectedOpen: '삼성전자·SK하이닉스 중심 하락 출발 및 높은 변동성 경계'
-    },
-    sectorWeather: {
-      ...report.sectorWeather,
-      sunny: /반도체|삼성전자|SK\s*하이닉스/iu.test(report.sectorWeather?.sunny ?? '')
-        ? '상대강도 확인 - 반도체 위험과 분리되는 업종 흐름을 확인해야 합니다.'
-        : report.sectorWeather?.sunny,
-      rainy: `반도체 - ${summary}로 대형주 하방 변동성이 확대될 수 있습니다.`
-    },
-    disclosuresAndNews: {
-      ...report.disclosuresAndNews,
-      majorNews: `${summary}가 국내 반도체 투자심리의 핵심 위험 요인입니다.`
-    },
-    watchlist: {
-      ...report.watchlist,
-      leaders: '삼성전자, SK하이닉스 - 주도주 후보가 아니라 하방 위험과 프리마켓 변동성 우선 확인 대상'
-    }
+    openingStrategy: { ...report.openingStrategy },
+    sectorWeather: { ...report.sectorWeather },
+    disclosuresAndNews: { ...report.disclosuresAndNews },
+    watchlist: { ...report.watchlist }
   };
+
+  if (negative.length > 0) {
+    const labels = marketSignalLabels(negative);
+    const summary = marketEventSummary(negative);
+    const broadRisk = negative.some((signal) => (
+      (signal.targets ?? []).some((target) => ['market', 'factor'].includes(target.scope))
+    ));
+    next.openingStrategy = {
+      ...next.openingStrategy,
+      keywords: `${labels.join(', ')} 하방 위험, 변동성 확대`,
+      oneLineStrategy: `${summary}가 확인돼 ${broadRisk ? '국내 증시' : '관련 업종'}의 하방 위험과 장 초반 변동성을 우선 점검해야 합니다.`,
+      expectedOpen: broadRisk
+        ? '하락 출발 가능성과 높은 변동성 경계'
+        : `${labels.join('·')} 중심 약세와 높은 변동성 경계`
+    };
+    next.sectorWeather.rainy = `${labels.join('·')} - ${summary}`;
+    if (negative.some((signal) => (
+      signalTargetsText(signal, next.sectorWeather.sunny)
+      && MARKET_POSITIVE_DIRECT_RE.test(next.sectorWeather.sunny ?? '')
+    ))) {
+      next.sectorWeather.sunny = '상대강도 확인 - 상위 하방 사건과 분리되는 업종 흐름만 확인해야 합니다.';
+    }
+    if (broadRisk || negative.some((signal) => signalTargetsText(signal, next.watchlist.leaders))) {
+      next.watchlist.leaders = `${labels.join(', ')} - 주도주 추격보다 하방 위험과 변동성 우선 확인 대상`;
+    }
+  }
+
+  if (positive.length > 0) {
+    const labels = marketSignalLabels(positive);
+    next.sectorWeather.sunny = `${labels.join('·')} - ${marketEventSummary(positive)}`;
+  }
+  if (mixed.length > 0) {
+    const labels = marketSignalLabels(mixed);
+    const summary = marketEventSummary(mixed);
+    next.sectorWeather.cloudy = `${labels.join('·')} - ${summary}`;
+    if (negative.length === 0) {
+      next.openingStrategy = {
+        ...next.openingStrategy,
+        keywords: `${labels.join(', ')} 방향성 혼조, 변동성 확대`,
+        oneLineStrategy: `${summary}처럼 상·하방 영향이 함께 확인돼 대상별 수혜와 시장 부담을 분리해 해석해야 합니다.`,
+        expectedOpen: `${labels.join('·')} 영향으로 방향성 혼조와 높은 변동성 경계`
+      };
+    }
+  }
+
+  const eventSummary = [
+    negative.length > 0 ? `하방: ${marketEventSummary(negative)}` : null,
+    positive.length > 0 ? `상방: ${marketEventSummary(positive)}` : null,
+    mixed.length > 0 ? `혼조: ${marketEventSummary(mixed)}` : null
+  ].filter(Boolean).join(' / ');
+  next.disclosuresAndNews.majorNews = eventSummary;
+  return next;
 }
 
-function applyPostMarketSemiconductorRiskGuard(report, state) {
-  if (!state.samsungDown && !state.hynixDown) return report;
-  const summary = semiconductorRiskSummary(state);
-  const forcedPlunging = [];
-  if (state.samsungDown) forcedPlunging.push(`삼성전자, ${summary} 여파로 하락`);
-  if (state.hynixDown) forcedPlunging.push(`SK하이닉스, ${summary} 여파로 하락`);
+function applyPostMarketEventGuard(report, state) {
+  const negative = uniqueTopMarketSignals(state.negative);
+  const positive = uniqueTopMarketSignals(state.positive);
+  const mixed = uniqueTopMarketSignals(state.mixed);
+  if (negative.length === 0 && positive.length === 0 && mixed.length === 0) return report;
 
-  return {
+  const summaries = [
+    negative.length > 0 ? `하방: ${marketEventSummary(negative)}` : null,
+    positive.length > 0 ? `상방: ${marketEventSummary(positive)}` : null,
+    mixed.length > 0 ? `혼조: ${marketEventSummary(mixed)}` : null
+  ].filter(Boolean);
+  const next = {
     ...report,
     marketSummary: {
       ...report.marketSummary,
-      summary: `국내 증시는 ${summary}가 반도체 대형주와 지수에 하방 압력으로 작용했습니다.`
+      summary: `핵심 시장 사건은 ${summaries.join(' / ')}입니다.`
     },
-    sectorThemes: {
-      ...report.sectorThemes,
-      weak: `반도체 - ${summary}로 삼성전자·SK하이닉스를 중심으로 약세가 확대됐습니다.`
-    },
-    notableStocks: {
-      ...report.notableStocks,
-      surging: (report.notableStocks?.surging ?? []).filter((entry) => (
-        !/삼성전자|SK\s*하이닉스|SK하이닉스/iu.test(entry)
-      )),
-      plunging: [
-        ...forcedPlunging,
-        ...(report.notableStocks?.plunging ?? []).filter((entry) => (
-          !/삼성전자|SK\s*하이닉스|SK하이닉스/iu.test(entry)
-        ))
-      ].slice(0, Math.max(2, forcedPlunging.length))
-    },
+    sectorThemes: { ...report.sectorThemes },
     tomorrowStrategy: {
       ...report.tomorrowStrategy,
-      outlook: `${summary}의 지속 여부와 삼성전자·SK하이닉스 수급 안정 여부가 다음 거래일의 핵심 변수입니다.`
+      outlook: `${summaries.join(' / ')}의 지속 여부가 다음 거래일의 핵심 변수입니다.`
     }
   };
+  if (negative.length > 0) {
+    next.sectorThemes.weak = `${marketSignalLabels(negative).join('·')} - ${marketEventSummary(negative)}`;
+  }
+  if (positive.length > 0) {
+    next.sectorThemes.strong = `${marketSignalLabels(positive).join('·')} - ${marketEventSummary(positive)}`;
+  }
+  if (mixed.length > 0) {
+    next.sectorThemes.weak = `${next.sectorThemes.weak} / 혼조: ${marketSignalLabels(mixed).join('·')} - ${marketEventSummary(mixed)}`;
+  }
+  return next;
 }
 
 function prepareReportForPublish(marketResearch, report) {
   const prepared = sanitizeBriefingCopy(report);
-  const semiconductorRisk = semiconductorRiskState(marketResearch);
+  const eventState = marketEventState(marketResearch);
   const riskGuarded = PHASE === 'pre_market'
-    ? applyPreMarketSemiconductorRiskGuard(prepared, semiconductorRisk)
-    : applyPostMarketSemiconductorRiskGuard(prepared, semiconductorRisk);
+    ? applyPreMarketEventGuard(prepared, eventState)
+    : applyPostMarketEventGuard(prepared, eventState);
   if (PHASE === 'pre_market') {
     return {
       ...riskGuarded,
@@ -974,9 +1181,12 @@ function buildPrompt(marketResearch) {
     '아래 JSON에 포함된 수치와 문장만 근거로 사용한다.',
     '입력 JSON은 공개 데이터 소스(Yahoo Finance chart, Google News RSS, pykrx/KRX 투자자별 거래대금)를 정규화한 것이다.',
     'status가 unavailable인 항목은 확인 필요로 처리하고, 수치나 사실을 추정해 채우지 않는다.',
-    '각 문장의 근거는 sources, marketNews, investorFlows, investorFlowNewsCandidates, disclosureNewsCandidates, scheduleNewsCandidates, sectorThemeNewsCandidates, stockNewsCandidates 범위 안에서만 사용한다.',
-    'semiconductorRiskNewsCandidates에 삼성전자·SK하이닉스 직접 하락, 중국 메모리 공급 확대, 미국 반도체주 급락 근거가 있으면 이를 장시작 방향성과 장마감 원인 판단에서 최우선으로 반영한다.',
-    '삼성전자·SK하이닉스 직접 하락 근거가 있는데 약보합, 반도체 강세 전환, 주도주 후보처럼 위험을 축소하거나 반대로 해석하는 표현은 금지한다.',
+    '각 문장의 근거는 sources, marketNews, marketEventNewsCandidates, marketEventSignals, investorFlows, investorFlowNewsCandidates, disclosureNewsCandidates, scheduleNewsCandidates, sectorThemeNewsCandidates, stockNewsCandidates 범위 안에서만 사용한다.',
+    'marketEventSignals는 모든 최신 뉴스에서 대상, 방향, 범위, 강도, 복수 출처 확인 수를 계산한 우선순위 사건 목록이다.',
+    'severity가 high인 사건을 최우선으로 반영하되, 업종 사건을 전체 지수 방향으로 과장하거나 개별 종목 사건을 업종 전체로 일반화하지 않는다.',
+    '직접 가격 신호는 18시간, 구조적 사건은 24시간 안의 근거만 사용하며, 직접 가격 신호가 오래된 전망 기사보다 우선한다.',
+    '같은 대상에 상방·하방 사건이 함께 있으면 혼조와 변동성으로 표현하고 한 방향으로 단정하지 않는다.',
+    '하방 사건 대상은 강세 전환이나 주도주 후보로, 상방 사건 대상은 약세 업종으로 반대로 해석하지 않는다.',
     '장시작 외국인/기관 수급 관전 포인트는 investorFlows를 우선 사용하고, unavailable이면 investorFlowNewsCandidates에서 당일 장 전후 맥락만 추출해 작성한다.',
     '장마감 투자자별 수급 동향은 investorFlows의 당일 정형 수급만 사용한다. investorFlows가 unavailable이거나 최신 거래일이 오늘이 아니면 전일/과거 수급을 현재 장마감 수급처럼 쓰지 않는다.',
     '수급 코멘트가 뉴스 기반일 때도 "뉴스 기준", "보도 기준" 같은 메타 표현은 쓰지 말고, 확인된 흐름만 자연스럽게 서술한다.',
@@ -1008,7 +1218,7 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
     ? raw.sources
     : searchResults.map((item) => ({ title: item.title ?? item.url, url: item.url, date: item.date ?? item.last_updated ?? null }));
 
-  return {
+  const normalized = {
     generatedAt: raw.generatedAt ?? new Date().toISOString(),
     phase: raw.phase ?? PHASE,
     sessionLabel: raw.sessionLabel ?? PHASE_CONFIG[PHASE].sessionLabel,
@@ -1016,7 +1226,8 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
     indicators: Array.isArray(raw.indicators) ? raw.indicators : [],
     majorIndices: Array.isArray(raw.majorIndices) ? raw.majorIndices : [],
     marketNews: Array.isArray(raw.marketNews) ? raw.marketNews : [],
-    semiconductorRiskNewsCandidates: Array.isArray(raw.semiconductorRiskNewsCandidates) ? raw.semiconductorRiskNewsCandidates : [],
+    marketEventNewsCandidates: Array.isArray(raw.marketEventNewsCandidates) ? raw.marketEventNewsCandidates : [],
+    marketEventSignals: Array.isArray(raw.marketEventSignals) ? raw.marketEventSignals : [],
     stockNewsCandidates: Array.isArray(raw.stockNewsCandidates) ? raw.stockNewsCandidates : [],
     investorFlowNewsCandidates: Array.isArray(raw.investorFlowNewsCandidates) ? raw.investorFlowNewsCandidates : [],
     disclosureNewsCandidates: Array.isArray(raw.disclosureNewsCandidates) ? raw.disclosureNewsCandidates : [],
@@ -1029,6 +1240,10 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
     citations,
     searchResults
   };
+  normalized.marketEventSignals = normalized.marketEventSignals.length > 0
+    ? normalized.marketEventSignals
+    : buildMarketEventSignals(normalized);
+  return normalized;
 }
 
 async function fetchJson(url) {
@@ -1308,10 +1523,10 @@ async function collectPublicMarketResearch() {
   }
 
   const marketNews = await fetchNewsCandidateGroup(NEWS_QUERIES, 10, 'googleNews', sourceStatus);
-  const semiconductorRiskNewsCandidates = await fetchNewsCandidateGroup(
-    SEMICONDUCTOR_RISK_NEWS_QUERIES,
-    12,
-    'semiconductorRiskNewsCandidates',
+  const marketEventNewsCandidates = await fetchNewsCandidateGroup(
+    MARKET_EVENT_NEWS_QUERIES,
+    20,
+    'marketEventNewsCandidates',
     sourceStatus
   );
   const stockNewsCandidates = await fetchNewsCandidateGroup(NOTABLE_STOCK_QUERIES, 18, 'stockNewsCandidates', sourceStatus);
@@ -1380,7 +1595,7 @@ async function collectPublicMarketResearch() {
     indicators,
     majorIndices: indices,
     marketNews,
-    semiconductorRiskNewsCandidates,
+    marketEventNewsCandidates,
     stockNewsCandidates,
     investorFlowNewsCandidates,
     disclosureNewsCandidates,
@@ -1954,4 +2169,6 @@ export const __testRenderPreMarketReport = renderPreMarketReport;
 export const __testHasCurrentPostMarketInvestorFlows = hasCurrentPostMarketInvestorFlows;
 export const __testIsTransientLlmError = isTransientLlmError;
 export const __testRankFreshNewsCandidates = rankFreshNewsCandidates;
-export const __testSemiconductorRiskState = semiconductorRiskState;
+export const __testBuildMarketEventSignals = buildMarketEventSignals;
+export const __testMarketEventState = marketEventState;
+export const __testBuildPrompt = buildPrompt;

@@ -600,11 +600,200 @@ test('news ranking removes stale candidates and orders the remaining articles by
   );
 });
 
-test('pre-market semiconductor risk guard overrides the July 28 weak-open and leader contradiction', async () => {
+test('general market-event engine separates FX downside, bio upside, and oil mixed impact', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    generatedAt: '2026-07-29T00:40:00.000Z',
+    disclosureNewsCandidates: [{ title: 'A사 실적 공시', summary: 'A사가 실적을 공시했습니다.' }],
+    scheduleNewsCandidates: [{ title: '오늘 상장 일정', summary: '신규 상장이 예정돼 있습니다.' }],
+    marketEventNewsCandidates: [
+      {
+        title: '원/달러 환율 4% 급등에 코스피 급락',
+        summary: '원화 약세와 외국인 이탈이 국내 증시에 부담으로 작용했습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:30:00 GMT',
+        source: 'FX News A',
+        sourceUrl: 'https://example.com/fx-a'
+      },
+      {
+        title: '환율 급등·외국인 매도에 국내 증시 약세',
+        summary: '코스피와 코스닥이 동반 하락했습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:25:00 GMT',
+        source: 'FX News B',
+        sourceUrl: 'https://example.com/fx-b'
+      },
+      {
+        title: '임상 3상 성공에 바이오주 12% 급등',
+        summary: '신약 임상 성공으로 제약·바이오 업종이 강세를 보였습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:20:00 GMT',
+        source: 'Bio News',
+        sourceUrl: 'https://example.com/bio'
+      },
+      {
+        title: '국제유가 급등에도 정유주 강세',
+        summary: '유가 상승은 시장 비용 부담이지만 정유 업종에는 수혜로 작용했습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:15:00 GMT',
+        source: 'Energy News',
+        sourceUrl: 'https://example.com/oil'
+      }
+    ]
+  };
+  const signals = module.__testBuildMarketEventSignals(marketResearch);
+  const fxSignal = signals.find((signal) => signal.primaryTarget.key === 'fx');
+  const bioSignal = signals.find((signal) => signal.primaryTarget.key === 'bio');
+  const oilSignal = signals.find((signal) => signal.primaryTarget.key === 'energy');
+  const report = {
+    openingStrategy: {
+      keywords: '업종별 차별화',
+      oneLineStrategy: '강세 업종을 확인합니다.',
+      expectedOpen: '보합 출발 예상'
+    },
+    investorFlowWatch: {
+      continuity: '외국인 수급을 확인합니다.',
+      keyInvestor: '외국인',
+      checkPoint: '장 초반 매매 방향을 확인합니다.'
+    },
+    sectorWeather: {
+      sunny: '금융 강세',
+      cloudy: '업종 혼조',
+      rainy: '일부 종목 약세'
+    },
+    disclosuresAndNews: {
+      corporateDisclosure: 'A사 실적 공시',
+      majorNews: '업종별 차별화',
+      schedule: '오늘 상장 일정'
+    },
+    watchlist: {
+      leaders: '바이오 주도주',
+      technicals: '지수 지지선',
+      eventDriven: '환율 민감주'
+    }
+  };
+
+  const prepared = module.__testPrepareReportForPublish(marketResearch, report);
+
+  assert.equal(fxSignal.direction, 'negative');
+  assert.equal(fxSignal.severity, 'high');
+  assert.ok(fxSignal.corroboration >= 2);
+  assert.equal(bioSignal.direction, 'positive');
+  assert.equal(bioSignal.severity, 'high');
+  assert.equal(oilSignal.direction, 'mixed');
+  assert.equal(oilSignal.severity, 'high');
+  assert.match(prepared.openingStrategy.expectedOpen, /하락 출발 가능성.*높은 변동성/);
+  assert.match(prepared.sectorWeather.rainy, /원\/달러 환율/);
+  assert.match(prepared.sectorWeather.sunny, /바이오·제약/);
+  assert.match(prepared.sectorWeather.cloudy, /에너지/);
+  assert.match(prepared.disclosuresAndNews.majorNews, /하방:.*상방:.*혼조:/);
+});
+
+test('general market-event engine treats tariff shock as a broad factor without losing the automobile target', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    generatedAt: '2026-07-29T00:40:00.000Z',
+    disclosureNewsCandidates: [{ title: '완성차 실적 공시', summary: '완성차 기업이 실적을 공시했습니다.' }],
+    scheduleNewsCandidates: [{ title: '무역 협상 일정', summary: '무역 협상이 예정돼 있습니다.' }],
+    marketEventNewsCandidates: [
+      {
+        title: '미국 관세 인상에 자동차주 급락',
+        summary: '수출 비용 부담으로 완성차 업종 투자심리가 악화했습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:30:00 GMT',
+        source: 'Trade News A',
+        sourceUrl: 'https://example.com/tariff-a'
+      },
+      {
+        title: '보복관세 확대 우려에 자동차·부품주 약세',
+        summary: '무역분쟁 확대가 국내 수출주에 부담으로 작용했습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:20:00 GMT',
+        source: 'Trade News B',
+        sourceUrl: 'https://example.com/tariff-b'
+      }
+    ]
+  };
+  const report = {
+    openingStrategy: { keywords: '수출주', oneLineStrategy: '수출주 반등을 봅니다.', expectedOpen: '강보합 출발 예상' },
+    investorFlowWatch: { continuity: '외국인 수급', keyInvestor: '외국인', checkPoint: '선물 수급' },
+    sectorWeather: { sunny: '자동차 강세 전환', cloudy: '대형주 혼조', rainy: '건설 약세' },
+    disclosuresAndNews: { corporateDisclosure: '완성차 실적 공시', majorNews: '수출 회복', schedule: '무역 협상 일정' },
+    watchlist: { leaders: '자동차 주도주 후보', technicals: '지수', eventDriven: '관세 민감주' }
+  };
+
+  const prepared = module.__testPrepareReportForPublish(marketResearch, report);
+
+  assert.match(prepared.openingStrategy.keywords, /자동차.*관세·무역.*하방 위험/);
+  assert.match(prepared.openingStrategy.expectedOpen, /하락 출발 가능성/);
+  assert.equal(prepared.sectorWeather.sunny.includes('자동차 강세 전환'), false);
+  assert.match(prepared.watchlist.leaders, /주도주 추격보다 하방 위험/);
+});
+
+test('general market-event engine does not promote a single foreign stock move into the domestic market outlook', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    generatedAt: '2026-07-29T00:40:00.000Z',
+    marketEventNewsCandidates: [
+      {
+        title: '[美증시 특징주] 테라다인 실적 발표 후 시간외 18% 급등',
+        summary: '테라다인 개별 종목의 실적 호조가 확인됐습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:30:00 GMT',
+        source: 'US Stock News',
+        sourceUrl: 'https://example.com/teradyne'
+      }
+    ]
+  };
+
+  const signals = module.__testBuildMarketEventSignals(marketResearch);
+  const state = module.__testMarketEventState(marketResearch);
+
+  assert.equal(signals[0].primaryTarget.scope, 'stock');
+  assert.equal(signals[0].severity, 'high');
+  assert.deepEqual(state.positive, []);
+  assert.deepEqual(state.negative, []);
+});
+
+test('general market-event ranking reserves room for market factors when stock headlines dominate', async () => {
+  const module = await importBriefingModule('pre_market');
+  const stockEvents = Array.from({ length: 12 }, (_, index) => ({
+    title: `개별기업${index + 1} 실적 호조에 15% 급등`,
+    summary: `개별기업${index + 1}의 개별 종목 재료입니다.`,
+    publishedAt: 'Wed, 29 Jul 2026 00:35:00 GMT',
+    source: `Stock News ${index + 1}`,
+    sourceUrl: `https://example.com/stock-${index + 1}`
+  }));
+  const signals = module.__testBuildMarketEventSignals({
+    generatedAt: '2026-07-29T00:40:00.000Z',
+    marketEventNewsCandidates: [
+      ...stockEvents,
+      {
+        title: '미국 국채금리 부담에 성장주 투자심리 위축',
+        summary: '금리 부담이 국내 성장주에도 영향을 줄 수 있습니다.',
+        publishedAt: 'Wed, 29 Jul 2026 00:30:00 GMT',
+        source: 'Rates News',
+        sourceUrl: 'https://example.com/rates'
+      }
+    ]
+  });
+
+  assert.ok(signals.some((signal) => signal.primaryTarget.key === 'rates'));
+  assert.ok(signals.filter((signal) => signal.primaryTarget.scope === 'stock').length <= 11);
+});
+
+test('writer prompt uses the general market-event model without semiconductor-only instructions', async () => {
+  const module = await importBriefingModule('pre_market');
+  const prompt = module.__testBuildPrompt({
+    marketEventNewsCandidates: [],
+    marketEventSignals: []
+  });
+
+  assert.match(prompt, /모든 최신 뉴스에서 대상, 방향, 범위, 강도/);
+  assert.match(prompt, /업종 사건을 전체 지수 방향으로 과장/);
+  assert.match(prompt, /"openingStrategy"/);
+  assert.equal(prompt.includes('semiconductorRiskNewsCandidates'), false);
+  assert.equal(prompt.includes('삼성전자·SK하이닉스 직접 하락'), false);
+});
+
+test('general market-event guard corrects the July 28 semiconductor contradiction', async () => {
   const module = await importBriefingModule('pre_market');
   const marketResearch = {
     generatedAt: '2026-07-27T23:35:32.392Z',
-    semiconductorRiskNewsCandidates: [
+    marketEventNewsCandidates: [
       {
         title: '중국 최대 D램 업체 CXMT 상장…한국 반도체 업계 영향은?',
         summary: '삼성전자와 SK하이닉스에 D램 공급 증가, 가격 하락, 수익성 하방 압력으로 작용할 수 있습니다.',
@@ -645,15 +834,15 @@ test('pre-market semiconductor risk guard overrides the July 28 weak-open and le
   const prepared = module.__testPrepareReportForPublish(marketResearch, report);
   const serialized = JSON.stringify(prepared);
 
-  assert.match(prepared.openingStrategy.expectedOpen, /하락 출발.*높은 변동성/);
-  assert.match(prepared.openingStrategy.oneLineStrategy, /CXMT.*하방 위험/);
-  assert.match(prepared.watchlist.leaders, /주도주 후보가 아니라 하방 위험/);
+  assert.match(prepared.openingStrategy.expectedOpen, /반도체 중심 약세.*높은 변동성/);
+  assert.match(prepared.openingStrategy.oneLineStrategy, /반도체:.*하방 위험/);
+  assert.match(prepared.watchlist.leaders, /주도주 추격보다 하방 위험/);
   assert.equal(serialized.includes('약보합'), false);
   assert.equal(serialized.includes('강세 전환 가능성'), false);
   assert.equal(serialized.includes('반도체 업종이 강세를 보일 전망'), false);
 });
 
-test('pre-market semiconductor risk guard does not promote an old direct decline into a new opening alert', async () => {
+test('general market-event guard does not promote an old direct decline into a new opening alert', async () => {
   const module = await importBriefingModule('pre_market');
   const report = {
     openingStrategy: {
@@ -674,7 +863,7 @@ test('pre-market semiconductor risk guard does not promote an old direct decline
     scheduleNewsCandidates: [
       { title: '실적 발표 일정', summary: '실적 발표가 예정돼 있습니다.' }
     ],
-    semiconductorRiskNewsCandidates: [
+    marketEventNewsCandidates: [
       {
         title: '삼성전자·SK하이닉스 급락',
         summary: '미국 반도체주 약세가 영향을 줬습니다.',
@@ -687,12 +876,12 @@ test('pre-market semiconductor risk guard does not promote an old direct decline
   assert.deepEqual(prepared, report);
 });
 
-test('post-market semiconductor risk guard restores Samsung and SK hynix as the primary plunging stocks', async () => {
+test('post-market general event guard reflects semiconductor downside without stock-specific injection', async () => {
   const module = await importBriefingModule();
   const marketResearch = {
     generatedAt: '2026-07-28T07:05:31.476Z',
     investorFlows: { status: 'unavailable', markets: [] },
-    semiconductorRiskNewsCandidates: [
+    marketEventNewsCandidates: [
       {
         title: '중국발 반도체 우려에 삼성전자 13%·SK하이닉스 14% 급락',
         summary: 'CXMT 공급 확대와 미국 엔비디아·마이크론 약세가 반도체 투자심리를 위축시켰습니다.',
@@ -722,12 +911,9 @@ test('post-market semiconductor risk guard restores Samsung and SK hynix as the 
   const prepared = module.__testPrepareReportForPublish(marketResearch, report);
 
   assert.equal(prepared.investorFlows, null);
-  assert.match(prepared.marketSummary.summary, /CXMT.*삼성전자·SK하이닉스 직접 하락 신호/);
-  assert.match(prepared.sectorThemes.weak, /삼성전자·SK하이닉스/);
-  assert.deepEqual(
-    prepared.notableStocks.plunging.map((entry) => entry.split(',')[0]),
-    ['삼성전자', 'SK하이닉스']
-  );
+  assert.match(prepared.marketSummary.summary, /반도체.*중국발 반도체 우려/);
+  assert.match(prepared.sectorThemes.weak, /반도체.*중국발 반도체 우려/);
+  assert.deepEqual(prepared.notableStocks.plunging, ['대한전선 하락', '이수페타시스 하락']);
 });
 
 test('writer retries an incomplete report shape instead of failing the publish immediately', async () => {
