@@ -680,6 +680,12 @@ test('writer retries an incomplete report shape instead of failing the publish i
     module.__testIsTransientLlmError(new Error('empty_llm_response')),
     true
   );
+  const writerQualityError = new Error('briefing_writer_quality_failed:placeholder_copy');
+  writerQualityError.code = 'briefing_writer_quality_failed';
+  assert.equal(
+    module.__testIsTransientLlmError(writerQualityError),
+    true
+  );
   assert.equal(
     module.__testIsTransientLlmError(new Error('briefing_quality_gate_failed:placeholder_copy')),
     false

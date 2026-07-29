@@ -365,6 +365,7 @@ function isTransientLlmError(error) {
   const text = `${error?.message ?? ''} ${error?.body ?? ''}`.toLowerCase();
   return [
     text.startsWith('invalid_report_shape:'),
+    error?.code === 'briefing_writer_quality_failed',
     error?.name === 'TimeoutError',
     error?.name === 'AbortError',
     error?.status === 408,
@@ -1625,9 +1626,11 @@ async function writeReport(marketResearch) {
   }
 
   const prompt = buildPrompt(marketResearch);
-  const report = await withLlmRetry(ANALYST_PROVIDER, () => callPrimaryWriter(prompt));
+  const report = await withLlmRetry(ANALYST_PROVIDER, async () => (
+    prepareAndValidateWriterReport(marketResearch, await callPrimaryWriter(prompt))
+  ));
   return {
-    report: prepareAndValidateWriterReport(marketResearch, report),
+    report,
     writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
   };
 }
