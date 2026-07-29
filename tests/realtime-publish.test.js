@@ -21,7 +21,7 @@ test('market briefing workflow is dispatch-only for external scheduler control',
   const workflow = read('.github/workflows/publish-market-briefing.yml');
   includes(workflow, 'workflow_dispatch:');
   excludes(workflow, 'schedule:');
-  includes(workflow, "LLM_TIMEOUT_MS: '45000'");
+  includes(workflow, "LLM_TIMEOUT_MS: '90000'");
   includes(workflow, 'ANALYST_PROVIDER: openrouter');
   includes(workflow, 'ANALYST_MODEL: deepseek/deepseek-v4-flash');
   includes(workflow, 'OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}');

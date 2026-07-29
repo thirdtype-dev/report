@@ -352,7 +352,7 @@ REPORT_LLM_MOCK=1 BRIEFING_PHASE=post_market PRESERVE_EXISTING_REPORTS=0 INVESTO
 
 ### LLM 쿼터
 
-- primary writer는 일시적 오류와 불완전 응답을 최대 3회까지 재시도한다.
+- primary writer는 요청당 최대 90초를 기다리고, 일시적 오류와 불완전 응답을 최대 3회까지 재시도한다.
 - 세 번 모두 실패하면 다른 LLM으로 전환하지 않고 해당 실행을 실패 처리한다.
 - 브리핑은 5분 뒤 독립 백업 실행이 다시 시도하며, 쿼터 이슈가 반복되면 provider/model 정책을 다시 봐야 한다.
 

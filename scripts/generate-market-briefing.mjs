@@ -989,10 +989,10 @@ function buildPrompt(marketResearch) {
     '반드시 JSON만 출력한다. 마크다운, 코드펜스, 설명 문장을 붙이지 않는다.',
     '',
     '출력 스키마:',
-    JSON.stringify(reportSchema(), null, 2),
+    JSON.stringify(reportSchema()),
     '',
     '입력 데이터:',
-    JSON.stringify(marketResearch, null, 2)
+    JSON.stringify(marketResearch)
   ].join('\n');
 }
 
