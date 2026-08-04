@@ -1,55 +1,271 @@
 {
-  "generated_at": "2026-08-03T06:00:22.009Z",
-  "generated_date": "2026-08-03",
-  "slot_hour": 15,
-  "cycle_label": "KST_1500",
-  "slot_label": "15:00",
+  "generated_at": "2026-08-04T01:00:19.301Z",
+  "generated_date": "2026-08-04",
+  "slot_hour": 10,
+  "cycle_label": "KST_1000",
+  "slot_label": "10:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 15:00 실시간 급등",
+    "title": "KST 10:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "한투, 삼성전자 목표가 65만원으로 상향… 흔들리는 주가에도 왜?",
+      "headline": "삼성전자 주가 하락 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신, 금강일보 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "삼성전자 주가 하락 중",
+        "한투, 삼성전자 목표가 65만원으로 상향… 흔들리는 주가에도 왜?"
+      ],
+      "mentionScore": 87.6,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-08-04T01:00:19.301Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "삼성전자 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE10YWk2NUVndEtFRUUwVW9MczhfdnFNSFRBZUloU1FhOVdpRUplRHhvblRvQV90dHNQV19CejM5blI1bXFGT0pFZzBhYWZhaTlKM2d1ZmxNeWtrVTNs?oc=5",
+      "publishedAt": "Tue, 04 Aug 2026 00:35:35 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE10YWk2NUVndEtFRUUwVW9MczhfdnFNSFRBZUloU1FhOVdpRUplRHhvblRvQV90dHNQV19CejM5blI1bXFGT0pFZzBhYWZhaTlKM2d1ZmxNeWtrVTNs?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한투, 삼성전자 목표가 65만원으로 상향… 흔들리는 주가에도 왜?",
+          "source": "금강일보",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1wbHRzcmZZSDlHTzhhTTZVLXRLN2tpcjhoZDJrdHVMNFRyYThENjZPS0tnUk4zZGJ1NXpwU1pZMFlNbkl6ZUFOS2pEYnJoTkl1ZHBHWU5adG8wOEFsVXBfaE9nSlJYV2FZT3c?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자 주가 하락 중",
+      "polishedBody": "삼성전자는 목표가 65만원으로 상향… 흔들리는 주가에도 왜 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
       "stockName": "두산",
       "stockCode": "000150",
-      "summary": "두산, SK실트론 인수에 목표주가 상향-유진투자증권 - 머니투데이",
-      "headline": "두산, SK실트론 품고 `반도체 퍼즐` 완성…AI 시대 승부수 통했다",
+      "summary": "두산에너빌리티, 주가 보합권 움직임…4일 주가 향방에 쏠리는 시선",
+      "headline": "두산로보틱스 주가 상승 중",
       "evidencePoints": [
-        "출처 디지털데일리, 머니투데이 기반 기사 2건",
-        "두산, SK실트론 품고 `반도체 퍼즐` 완성…AI 시대 승부수 통했다",
-        "두산, SK실트론 인수에 목표주가 상향-유진투자증권 - 머니투데이"
+        "출처 아시아뉴스통신, CBC뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산로보틱스 주가 상승 중",
+        "두산에너빌리티, 주가 보합권 움직임…4일 주가 향방에 쏠리는 시선"
+      ],
+      "mentionScore": 87.3,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-08-04T01:00:19.301Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "두산로보틱스 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MV09SZmgtUEhsdFB3VVMyU1JLZEVDOHZHMTZOakxfNWh0UTNsN2F5OVN2QW9yY2Vvalg2VHBOS2QwNlVZekVqRUd1Yk5fbXJTZmZ2ZmNWUVlXWXVL?oc=5",
+      "publishedAt": "Tue, 04 Aug 2026 00:17:53 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산로보틱스 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MV09SZmgtUEhsdFB3VVMyU1JLZEVDOHZHMTZOakxfNWh0UTNsN2F5OVN2QW9yY2Vvalg2VHBOS2QwNlVZekVqRUd1Yk5fbXJTZmZ2ZmNWUVlXWXVL?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산에너빌리티, 주가 보합권 움직임…4일 주가 향방에 쏠리는 시선",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1YUmhGUEVtUHFJeThkNjlqWVJYLTNiemljLTJOVE84LTg0YlB5ZldISEFwTGRMQWIzU1VVUFpENTRzSlEzbWNZM3cyWU95cTlLSnRyR1RpbmFXVFpiYWsxZDNWdW1ERE9z?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "두산 로보틱스 주가 상승 중",
+      "polishedBody": "두산은 로보틱스 주가 상승 중 재료가 부각되며 단기 모멘텀을 형성했습니다. 로보틱스 주가 상승 중 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "삼성SDI",
+      "stockCode": "006400",
+      "summary": "삼성SDI 주가 상승 중 아시아뉴스통신",
+      "headline": "삼성SDI 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "삼성SDI 주가 상승 중"
+      ],
+      "mentionScore": 61.5,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-08-04T01:00:19.301Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "삼성SDI 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBUTRzZGlwNW9uZ1hmeE80ZG1fd2JqeFZuU2F0ajRIbFBTZ19WRnVEMkdfYjdXWDd6QkVpNF9pTW5TREJYOGR1bVQ2RngwWGlBLWxZcXZGcEwyZnZN?oc=5",
+      "publishedAt": "Tue, 04 Aug 2026 00:28:01 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBUTRzZGlwNW9uZ1hmeE80ZG1fd2JqeFZuU2F0ajRIbFBTZ19WRnVEMkdfYjdXWDd6QkVpNF9pTW5TREJYOGR1bVQ2RngwWGlBLWxZcXZGcEwyZnZN?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성SDI 주가 상승 중",
+      "polishedBody": "삼성SDI는 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "한화시스템",
+      "stockCode": "272210",
+      "summary": "한화시스템 주가 상승 중 아시아뉴스통신",
+      "headline": "한화시스템 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "한화시스템 주가 상승 중"
+      ],
+      "mentionScore": 61.3,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-08-04T01:00:19.301Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "한화시스템 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5Yd0QxVzRsX0s0WDZleXhfRE9mMEFQSDFhSlNjUmo5SlZDVnBVdVNXZ2NtNW1jMHNTczhFWGJXQ2NpZGJnMjBOeXY0eGNZWU9QY2FLUUxJM0YxM19l?oc=5",
+      "publishedAt": "Tue, 04 Aug 2026 00:15:30 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한화시스템 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5Yd0QxVzRsX0s0WDZleXhfRE9mMEFQSDFhSlNjUmo5SlZDVnBVdVNXZ2NtNW1jMHNTczhFWGJXQ2NpZGJnMjBOeXY0eGNZWU9QY2FLUUxJM0YxM19l?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한화시스템 주가 상승 중",
+      "polishedBody": "한화시스템은 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "한화엔진",
+      "stockCode": "082740",
+      "summary": "“2분기 쇼크는 미끼일 뿐…한화엔진, 주가 2.5배 뛸 하반기 반격 시나리오” 뉴스퀘스트",
+      "headline": "“2분기 쇼크는 미끼일 뿐…한화엔진, 주가 2.5배 뛸 하반기 반격 시나리오”",
+      "evidencePoints": [
+        "출처 뉴스퀘스트 기반 기사 1건",
+        "“2분기 쇼크는 미끼일 뿐…한화엔진, 주가 2.5배 뛸 하반기 반격 시나리오”"
+      ],
+      "mentionScore": 54.3,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-08-04T01:00:19.301Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "“2분기 쇼크는 미끼일 뿐…한화엔진, 주가 2.5배 뛸 하반기 반격 시나리오”",
+      "source": "뉴스퀘스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9Ud09fRW54RkMydEdkWXF3UkRMTUlKS0hzUC1MN3JOSDloSjcxeFZaWXUxX3g2c2NjWTl0MV9UOHlGQW5MMGpEcWFnNnZiTEtPWk5oVzVtYjI1YVpqQ1NuZ0x2aXVual9xT1RpVldZcFJmNGfSAXNBVV95cUxPVHdPX0VueEZDMnRHZFlxd1JETE1JSktIc1AtTDdyTkg5aEo3MXhWWll1MV94NnNjY1k5dDFfVDh5RkFuTDBqRHFhZzZ2YkxLT1pOaFc1bWIyNWFaakNTbmdMdml1bmpfcU9UaVZXWXBSZjRn?oc=5",
+      "publishedAt": "Mon, 03 Aug 2026 17:20:11 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "“2분기 쇼크는 미끼일 뿐…한화엔진, 주가 2.5배 뛸 하반기 반격 시나리오”",
+          "source": "뉴스퀘스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9Ud09fRW54RkMydEdkWXF3UkRMTUlKS0hzUC1MN3JOSDloSjcxeFZaWXUxX3g2c2NjWTl0MV9UOHlGQW5MMGpEcWFnNnZiTEtPWk5oVzVtYjI1YVpqQ1NuZ0x2aXVual9xT1RpVldZcFJmNGfSAXNBVV95cUxPVHdPX0VueEZDMnRHZFlxd1JETE1JSktIc1AtTDdyTkg5aEo3MXhWWll1MV94NnNjY1k5dDFfVDh5RkFuTDBqRHFhZzZ2YkxLT1pOaFc1bWIyNWFaakNTbmdMdml1bmpfcU9UaVZXWXBSZjRn?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한화엔진 2.5배 뛸 하반기 반격 시나리오”",
+      "polishedBody": "한화엔진은 “2분기 쇼크는 미끼일 뿐 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 “2분기 쇼크는 미끼일 뿐 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 2.5배 뛸 하반기 반격 시나리오” 뉴스퀘스트 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "대덕전자",
+      "stockCode": "353200",
+      "summary": "FC-BGA 날개 단 대덕전자…2027년 실적 성장 기대감 확대 핀포인트뉴스",
+      "headline": "FC-BGA 날개 단 대덕전자…2027년 실적 성장 기대감 확대",
+      "evidencePoints": [
+        "출처 핀포인트뉴스 기반 기사 1건",
+        "FC-BGA 날개 단 대덕전자…2027년 실적 성장 기대감 확대"
+      ],
+      "mentionScore": 52.6,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-08-04T01:00:19.301Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "FC-BGA 날개 단 대덕전자…2027년 실적 성장 기대감 확대",
+      "source": "핀포인트뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBXNUFVR011SVMxMUdPNTZkU0ktSHhFZnJTcGxzY2k2aTVmbGpJOWs3VXdDM1ZkaUI3NHRBVDVfcGpTVF9pSS1GNmpjVlRZZVlTWGlGNkpjRE9LOGNYVzJWbDVCdm11aWpIVUpFRGdoS09ZNmRvcWVJ0gF3QVVfeXFMUFc1QVVHTXVJUzExR081NmRTSS1IeEVmclNwbHNjaTZpNWZsakk5azdVd0MzVmRpQjc0dEFUNV9walNUX2lJLUY2amNWVFllWVNYaUY2SmNET0s4Y1hXMlZsNUJ2bXVpakhVSkVEZ2hLT1k2ZG9xZUk?oc=5",
+      "publishedAt": "Mon, 03 Aug 2026 15:37:57 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "FC-BGA 날개 단 대덕전자…2027년 실적 성장 기대감 확대",
+          "source": "핀포인트뉴스",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBXNUFVR011SVMxMUdPNTZkU0ktSHhFZnJTcGxzY2k2aTVmbGpJOWs3VXdDM1ZkaUI3NHRBVDVfcGpTVF9pSS1GNmpjVlRZZVlTWGlGNkpjRE9LOGNYVzJWbDVCdm11aWpIVUpFRGdoS09ZNmRvcWVJ0gF3QVVfeXFMUFc1QVVHTXVJUzExR081NmRTSS1IeEVmclNwbHNjaTZpNWZsakk5azdVd0MzVmRpQjc0dEFUNV9walNUX2lJLUY2amNWVFllWVNYaUY2SmNET0s4Y1hXMlZsNUJ2bXVpakhVSkVEZ2hLT1k2ZG9xZUk?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "대덕전자 BGA 날개 단 대덕전자…2027년 실적 성장 기대감 확대",
+      "polishedBody": "대덕전자는 BGA 날개 단 …2027년 실적 성장 기대감 확대 핀포인트뉴스 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 BGA 날개 단 …2027년 실적 성장 기대감 확대 핀포인트뉴스 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 FC. BGA 날개 단 …2027년 실적 성장 기대감 확대 핀포인트뉴스 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "한화비전",
+      "stockCode": "489790",
+      "summary": "키움證 “한화비전, 향후 HBM 시장 성장성 고려하면 매력적인 주가” - 조선비즈",
+      "headline": "[리포트 브리핑]한화비전, 'HBM 성장성에 다시 주목해야 할 시기' 목표가 100,000원 - 키움증권",
+      "evidencePoints": [
+        "출처 뉴스핌, Chosunbiz 기반 기사 2건",
+        "[리포트 브리핑]한화비전, 'HBM 성장성에 다시 주목해야 할 시기' 목표가 100,000원 - 키움증권",
+        "키움證 “한화비전, 향후 HBM 시장 성장성 고려하면 매력적인 주가” - 조선비즈"
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "neutral",
       "channelCount": 3,
-      "updatedAt": "2026-08-03T06:00:22.009Z",
-      "cycleLabel": "KST_1500",
+      "updatedAt": "2026-08-04T01:00:19.301Z",
+      "cycleLabel": "KST_1000",
       "direction": "neutral",
       "changeRate": null,
-      "latestHeadline": "두산, SK실트론 품고 `반도체 퍼즐` 완성…AI 시대 승부수 통했다",
-      "source": "디지털데일리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9xcFFtMHg5T2kxYW5HckY0d0sxUVdzekd4cE9MajZKNUZiV3RvQ2tKdlBnYWdVUURqQlNPbHJxYWpNVjdUSUVsbXdFUzF0VjhWeTdMQVFoS1BYWTRVVlR6dUV0Rzk?oc=5",
-      "publishedAt": "Mon, 03 Aug 2026 04:37:29 GMT",
+      "latestHeadline": "[리포트 브리핑]한화비전, 'HBM 성장성에 다시 주목해야 할 시기' 목표가 100,000원 - 키움증권",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLcldyZlJfQ2RXa0NjTDVhZi1WTXNjZXcyaDJYUmlOUmV2WEgtNTl3YUEzcmswNEp5bV8zOThibS16YjVuN2cxWkpTamVuQTd4SEFjS204QWpqMjVG?oc=5",
+      "publishedAt": "Mon, 03 Aug 2026 23:47:00 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "두산, SK실트론 품고 `반도체 퍼즐` 완성…AI 시대 승부수 통했다",
-          "source": "디지털데일리",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9xcFFtMHg5T2kxYW5HckY0d0sxUVdzekd4cE9MajZKNUZiV3RvQ2tKdlBnYWdVUURqQlNPbHJxYWpNVjdUSUVsbXdFUzF0VjhWeTdMQVFoS1BYWTRVVlR6dUV0Rzk?oc=5"
+          "title": "[리포트 브리핑]한화비전, 'HBM 성장성에 다시 주목해야 할 시기' 목표가 100,000원 - 키움증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLcldyZlJfQ2RXa0NjTDVhZi1WTXNjZXcyaDJYUmlOUmV2WEgtNTl3YUEzcmswNEp5bV8zOThibS16YjVuN2cxWkpTamVuQTd4SEFjS204QWpqMjVG?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "두산, SK실트론 인수에 목표주가 상향-유진투자증권 - 머니투데이",
-          "source": "머니투데이",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1kNFFEdE9SMnRkU2NGVFhNeUNXUll2QUlUUWVnU1p3Vjljb2tXdjBnQXBRS3BIcHVldjRpVE9xSnhMZnJJUFRuRXVSNUl6ZTlrbVR5d3NGRHNhNXpSQU05QnNOa3BBcE5tZUtNV3V30gFuQVVfeXFMTWQ0UUR0T1IydGRTY0ZUWE15Q1dSWXZBSVRRZWdTWndWOWNva1d2MGdBcFFLcEhwdWV2NGlUT3FKeExmcklQVG5FdVI1SXplOWttVHl3c0ZEc2E1elJBTTlCc05rcEFwTm1lS01XdXc?oc=5"
+          "title": "키움證 “한화비전, 향후 HBM 시장 성장성 고려하면 매력적인 주가” - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOLTlPeVgtYjhpVXdPWDYyMkw1cGRiRFZnVG9FX1dKdk1kV2RFZjhOXy1jbVA5YXNVdWl1UzBPMEtwSEVfYkp0NDFwbFFpTm9XWnpvbTNpemc4QU9pczdwVXpNUzZTUXlMWVJyb1VUcGFHT1RnY1BDdEN6R1hPWGFfbTBWNDZKQ2dh0gGcAUFVX3lxTFBCYXRfa25pYUY4RHZIS1Rsc0tFS3VwV0lOMk52Q1BPUHFjaUF5RFJIcWNJSktFQW1KY2VRQ2F5TUwyNDdMYm56QTktNDdYNW5DZk9oQnRrMHB1NWxuN0NZMXYybHBlNUd0NjBERkpRVWVDZHl3OTg4YThyXzFEaWg2ZTVTVk9kdWFFeU9zR1FGQlExS1I3b1dVbTY5VA?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "두산 SK실트론 품고 `반도체 퍼즐` 완성…AI 시대 승부수 통했다",
-      "polishedBody": "두산은 SK실트론 인수에 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 SK실트론 인수 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 SK실트론 품고 `반도체 퍼즐` 완성…AI 시대 승부수 통했다 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+      "polishedHeadline": "한화비전 'HBM 성장성에 다시 주목해야 할 시기'",
+      "polishedBody": "한화비전은 키움證 “, 향후 HBM 시장 성장성 고려하면 매력적인 주가” 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 키움證 “, 향후 HBM 시장 성장성 고려하면 매력적인 주가” 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 'HBM 성장성에 다시 주목해야 할 시기' 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
       "stockName": "엘앤씨바이오",
@@ -132,122 +348,6 @@
       "hasNews": true,
       "polishedHeadline": "한솔제지 수익성 반등 본격화…16분기 만에 OPM 8%대",
       "polishedBody": "한솔제지는 2분기 영업익 163% 급증…목표주가↑ 재료가 부각되며 단기 모멘텀을 형성했습니다. 2분기 영업익 급증…목표주가↑ 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 수익성 반등 본격화…16분기 만에 OPM 8%대 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "대덕전자",
-      "stockCode": "353200",
-      "summary": "[모닝 리포트] \"대덕전자 전 사업부 호황…목표가 24만원\"",
-      "headline": "대덕전자, 패키지 기판 호황에 실적 개선 기대",
-      "evidencePoints": [
-        "출처 현대경제신문, 뉴스핌 기반 기사 2건",
-        "제목 기준 변동률 단서 +30.0%",
-        "대덕전자, 패키지 기판 호황에 실적 개선 기대",
-        "[모닝 리포트] \"대덕전자 전 사업부 호황…목표가 24만원\""
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-08-03T06:00:22.009Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": 30,
-      "latestHeadline": "대덕전자, 패키지 기판 호황에 실적 개선 기대",
-      "source": "현대경제신문",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9JQkdwd0Y3NjRpR2t2MkF0TFJyR3N3bVBDT3d6eGNmQ1ZBRzJXUlg1cFluYnljOXlqX0ZlREhCMXZFN2RzOUdzOU51WXdVUjJ2RHVzLXdKTjJKeVFGNUR3RmZ2eHV4NkhCam000gFrQVVfeXFMT0lCR3B3Rjc2NGlHa3YyQXRMUnJHc3dtUENPd3p4Y2ZDVkFHMldSWDVwWW5ieWM5eWpfRmVESEIxdkU3ZHM5R3M5TnVZd1VSMnZEdXMtd0pOMkp5UUY1RHdGZnZ4dXg2SEJqbTQ?oc=5",
-      "publishedAt": "Mon, 03 Aug 2026 01:16:26 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "대덕전자, 패키지 기판 호황에 실적 개선 기대",
-          "source": "현대경제신문",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9JQkdwd0Y3NjRpR2t2MkF0TFJyR3N3bVBDT3d6eGNmQ1ZBRzJXUlg1cFluYnljOXlqX0ZlREhCMXZFN2RzOUdzOU51WXdVUjJ2RHVzLXdKTjJKeVFGNUR3RmZ2eHV4NkhCam000gFrQVVfeXFMT0lCR3B3Rjc2NGlHa3YyQXRMUnJHc3dtUENPd3p4Y2ZDVkFHMldSWDVwWW5ieWM5eWpfRmVESEIxdkU3ZHM5R3M5TnVZd1VSMnZEdXMtd0pOMkp5UUY1RHdGZnZ4dXg2SEJqbTQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[모닝 리포트] \"대덕전자 전 사업부 호황…목표가 24만원\"",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5LSXVkdUd3TGJkTHk5OWtVWkNtbF8zcFRQTWtGYmxvb3kwWVo2WjV0a29yZ0s3dnJ4LXUwV1JWNUhFTHFoMVRFLTlXcTlDTkFkUzVJZlh6STY1Q0NG?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "대덕전자 패키지 기판 호황에 실적 개선 기대",
-      "polishedBody": "대덕전자는 \"전 사업부 호황…목표가 24만원\" 재료가 부각되며 단기 모멘텀을 형성했습니다. \"전 사업부 호황…목표가 24만원\" 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 패키지 기판 호황에 실적 개선 기대 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "한화엔진",
-      "stockCode": "082740",
-      "summary": "[특징주] 한화엔진, 차익실현 매물 출회에 장중 하락세 전환 : 기업주식정보 재경일보",
-      "headline": "[특징주] 한화엔진, 차익실현 매물 출회에 장중 하락세 전환 : 기업주식정보",
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "[특징주] 한화엔진, 차익실현 매물 출회에 장중 하락세 전환 : 기업주식정보"
-      ],
-      "mentionScore": 84.2,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-08-03T06:00:22.009Z",
-      "cycleLabel": "KST_1500",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "[특징주] 한화엔진, 차익실현 매물 출회에 장중 하락세 전환 : 기업주식정보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5BQnNMNXRfZmVqZ1BwRkwwRjd4NjdTbmFOemZBb1c3UFNFWU1JUWZwS1pDVFIzZF9WLTFaajRuT0hqSnd2RVNVbXln?oc=5",
-      "publishedAt": "Mon, 03 Aug 2026 02:12:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 한화엔진, 차익실현 매물 출회에 장중 하락세 전환 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5BQnNMNXRfZmVqZ1BwRkwwRjd4NjdTbmFOemZBb1c3UFNFWU1JUWZwS1pDVFIzZF9WLTFaajRuT0hqSnd2RVNVbXln?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "한화엔진 차익실현 매물 출회에 장중 하락세 전환 기업주식정보",
-      "polishedBody": "한화엔진은 차익실현 매물 출회에 장중 하락세 전환 기업주식정보 재경일보 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "[특징주] 삼성전자·하이닉스, 장 초반 8% 급락",
-      "headline": "삼성전자 주가 장중 6%대 내려, 급등 이후 차익실현 매물에 SK하이닉스도 약세",
-      "evidencePoints": [
-        "출처 비즈니스포스트, 에너지경제신문 기반 기사 2건",
-        "제목 기준 변동률 단서 -6.0%",
-        "삼성전자 주가 장중 6%대 내려, 급등 이후 차익실현 매물에 SK하이닉스도 약세",
-        "[특징주] 삼성전자·하이닉스, 장 초반 8% 급락"
-      ],
-      "mentionScore": 93.1,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-08-03T06:00:22.009Z",
-      "cycleLabel": "KST_1500",
-      "direction": "down",
-      "changeRate": -6,
-      "latestHeadline": "삼성전자 주가 장중 6%대 내려, 급등 이후 차익실현 매물에 SK하이닉스도 약세",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA4NE1HVmU3QVdRQXp6ZlFMZVF6NFJMM1A5Z1p1Q0tYVzJ6ZzZOQlFDOExOTzdlMFhjdEVEME53ei1hOHlxTEN6QUhRWm9qZnRURkRibWpxc2Y0RzMyZk9uSU1Id3E3THNlTy01V0JZRmR3MzQ?oc=5",
-      "publishedAt": "Mon, 03 Aug 2026 01:30:14 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자 주가 장중 6%대 내려, 급등 이후 차익실현 매물에 SK하이닉스도 약세",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA4NE1HVmU3QVdRQXp6ZlFMZVF6NFJMM1A5Z1p1Q0tYVzJ6ZzZOQlFDOExOTzdlMFhjdEVEME53ei1hOHlxTEN6QUhRWm9qZnRURkRibWpxc2Y0RzMyZk9uSU1Id3E3THNlTy01V0JZRmR3MzQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[특징주] 삼성전자·하이닉스, 장 초반 8% 급락",
-          "source": "에너지경제신문",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9IeThISGJRdk9JWkQzb3U3bF9rdG45RTlDb2hzS1ExMW01ZkJRSnVDdXpXbmVRTVZvVzFsa3dBRVV2UGlHbjRZTzF3eVowbW95M2M3MThvd0tfaE0?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전자 장중 6%대 내려, 급등 이후 차익실현 매물에 SK하이닉스도 약세",
-      "polishedBody": "삼성전자는 하이닉스, 장 초반 8% 급락 이슈로 단기 변동성이 확대됐습니다. 하이닉스, 장 초반 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 주가 장중 6%대 내려 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
       "stockName": "유한양행",
@@ -432,47 +532,6 @@
       "polishedBody": "대웅제약은 잠정실적 발표에도 장중 보합세 유지…시장 관망심리 지속 기업주식정보 재경일보 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 잠정실적 발표에도 장중 보합세 유지…시장 관망심리 지속 기업주식정보 재경일보 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
-      "stockName": "삼성SDI",
-      "stockCode": "006400",
-      "summary": "삼성SDI, 실적 회복 기대감 커져…ESS·전고체 배터리가 핵심 변수",
-      "headline": "삼성SDI, 잠정 실적 실망감에 장중 하락세 지속 : 기업주식정보",
-      "evidencePoints": [
-        "출처 재경일보, 증권일보 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "삼성SDI, 잠정 실적 실망감에 장중 하락세 지속 : 기업주식정보",
-        "삼성SDI, 실적 회복 기대감 커져…ESS·전고체 배터리가 핵심 변수"
-      ],
-      "mentionScore": 87.5,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-08-03T02:00:13.745Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "삼성SDI, 잠정 실적 실망감에 장중 하락세 지속 : 기업주식정보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9LQmZNbzdCbzFnZjFtNEV4UUpSRjZoRG5FLXpZYW1iZWJYcFhfTnJfNjl6YjRMdFM0aERSQmVIQUpEdGFLSVJISkN3?oc=5",
-      "publishedAt": "Mon, 03 Aug 2026 01:29:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI, 잠정 실적 실망감에 장중 하락세 지속 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9LQmZNbzdCbzFnZjFtNEV4UUpSRjZoRG5FLXpZYW1iZWJYcFhfTnJfNjl6YjRMdFM0aERSQmVIQUpEdGFLSVJISkN3?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성SDI, 실적 회복 기대감 커져…ESS·전고체 배터리가 핵심 변수",
-          "source": "증권일보",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE04dW9QNllFckhZQTZmaUxMNmdwY3lRT2EzRFEyN2wxMWpXQ0FwdXNqTU1wQm9aQzF2WEVDanpHLXBhcU54ejg5RHJ1VUJnTTNkX0lXNEk1OGo1SDZzZ09Uag?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성SDI, 잠정 실적 실망감에 장중 하락세",
-      "polishedBody": "삼성SDI가 발표한 잠정 실적이 시장 기대치를 밑돌면서 주가가 장중 하락세를 보이고 있습니다. 다만 ESS와 전고체 배터리 부문에서 회복 기대감이 제기되며 중장기 전망은 엇갈리고 있습니다. 이번 실적 부진은 일시적 요인으로 분석되며 주가는 중립적 신호를 나타냅니다. 향후 ESS 수주와 전고체 배터리 기술 개발 속도가 주가 반등의 핵심 관전 포인트입니다."
-    },
-    {
       "stockName": "크래프톤",
       "stockCode": "259960",
       "summary": "[특징주] 크래프톤, 실적 실망감에 하락세 지속…주주환원책 효과 미미 : 기업주식정보 재경일보",
@@ -505,40 +564,6 @@
       "hasNews": true,
       "polishedHeadline": "크래프톤, 실적 실망감에 하락…주주환원책 효과 미미",
       "polishedBody": "크래프톤이 실적 실망감으로 하락세를 지속하며 주주환원책 효과가 미미한 모습입니다. 시장은 기대에 못 미치는 실적에 실망하며 차익 실현에 나선 것으로 보입니다. 이는 단기적인 실적 부진이 주가에 부정적 영향을 미친 사례로 평가됩니다. 향후 신작 게임 출시 일정과 글로벌 이용자 지표가 주가 반등의 핵심 관전 포인트입니다."
-    },
-    {
-      "stockName": "한화시스템",
-      "stockCode": "272210",
-      "summary": "[특징주] 한화시스템, 정정 공시 및 잠정 실적에 소폭 상승세 : 기업주식정보 재경일보",
-      "headline": "[특징주] 한화시스템, 정정 공시 및 잠정 실적에 소폭 상승세 : 기업주식정보",
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "[특징주] 한화시스템, 정정 공시 및 잠정 실적에 소폭 상승세 : 기업주식정보"
-      ],
-      "mentionScore": 61.8,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-08-03T02:00:13.745Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "[특징주] 한화시스템, 정정 공시 및 잠정 실적에 소폭 상승세 : 기업주식정보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFAyamt1WU0yLXdndlJJYm5QVFJITlRQMGdMdjVvMGg1U19Jd21nWDZFYW9RX29OUV9HeWdacjNqRll6ZVhKS0JOd3Nn?oc=5",
-      "publishedAt": "Mon, 03 Aug 2026 01:46:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 한화시스템, 정정 공시 및 잠정 실적에 소폭 상승세 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFAyamt1WU0yLXdndlJJYm5QVFJITlRQMGdMdjVvMGg1U19Jd21nWDZFYW9RX29OUV9HeWdacjNqRll6ZVhKS0JOd3Nn?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한화시스템, 정정 공시와 잠정 실적에 소폭 상승",
-      "polishedBody": "한화시스템은 정정 공시 및 잠정 실적에 소폭 상승세 기업주식정보 재경일보 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "한화오션",
@@ -728,74 +753,197 @@
       "hasNews": true,
       "polishedHeadline": "코오롱티슈진 연속 급등…14,000원선 회복, 상승세 이어질까",
       "polishedBody": "코오롱티슈진은 주가 연속 급등…14 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 연속 급등…14 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 연속 급등…14,000원선 회복, 상승세 이어질까 CBC뉴스 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "LG이노텍",
-      "stockCode": "011070",
-      "summary": "MSCI 8월 정기변경 임박…'편입 유력' LG이노텍 '최대 수혜' 예상 조세일보",
-      "headline": "MSCI 8월 정기변경 임박…'편입 유력' LG이노텍 '최대 수혜' 예상",
-      "evidencePoints": [
-        "출처 조세일보 기반 기사 1건",
-        "MSCI 8월 정기변경 임박…'편입 유력' LG이노텍 '최대 수혜' 예상"
-      ],
-      "mentionScore": 58.8,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-08-03T01:00:14.354Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "MSCI 8월 정기변경 임박…'편입 유력' LG이노텍 '최대 수혜' 예상",
-      "source": "조세일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5XOHU0UUxBTlhHLWZFLTg4bDVVVDR4SFNvTXhLSmlhaFduc1d5eEc5YU5PdXNuNkNMaHNob0xlSXItdkMyaXhKY0NvXzloVUgtWFNfQkRNRC1tSnZkd2hsaWI1N2J4cS1nT2tRZE9FSQ?oc=5",
-      "publishedAt": "Sun, 02 Aug 2026 21:50:01 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "MSCI 8월 정기변경 임박…'편입 유력' LG이노텍 '최대 수혜' 예상",
-          "source": "조세일보",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5XOHU0UUxBTlhHLWZFLTg4bDVVVDR4SFNvTXhLSmlhaFduc1d5eEc5YU5PdXNuNkNMaHNob0xlSXItdkMyaXhKY0NvXzloVUgtWFNfQkRNRC1tSnZkd2hsaWI1N2J4cS1nT2tRZE9FSQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "LG이노텍 MSCI 8월 정기변경 임박…'편입 유력' LG이노텍 '최대 수혜' 예상",
-      "polishedBody": "LG이노텍은 MSCI 8월 정기변경 임박…'편입 유력' '최대 수혜' 예상 조세일보 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 MSCI 8월 정기변경 임박…'편입 유력' '최대 수혜' 예상 조세일보 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
-      "symbol": "000150",
-      "name": "두산",
+      "timestamp": "2026-08-04T01:00:19.301Z",
+      "symbol": "005930",
+      "name": "삼성전자",
       "changeRate": null,
       "price": null,
-      "summary": "두산, SK실트론 인수에 목표주가 상향-유진투자증권 - 머니투데이",
-      "source": "디지털데일리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9xcFFtMHg5T2kxYW5HckY0d0sxUVdzekd4cE9MajZKNUZiV3RvQ2tKdlBnYWdVUURqQlNPbHJxYWpNVjdUSUVsbXdFUzF0VjhWeTdMQVFoS1BYWTRVVlR6dUV0Rzk?oc=5",
-      "mentionScore": 99.9,
+      "summary": "한투, 삼성전자 목표가 65만원으로 상향… 흔들리는 주가에도 왜?",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE10YWk2NUVndEtFRUUwVW9MczhfdnFNSFRBZUloU1FhOVdpRUplRHhvblRvQV90dHNQV19CejM5blI1bXFGT0pFZzBhYWZhaTlKM2d1ZmxNeWtrVTNs?oc=5",
+      "mentionScore": 87.6,
       "evidencePoints": [
-        "출처 디지털데일리, 머니투데이 기반 기사 2건",
-        "두산, SK실트론 품고 `반도체 퍼즐` 완성…AI 시대 승부수 통했다",
-        "두산, SK실트론 인수에 목표주가 상향-유진투자증권 - 머니투데이"
+        "출처 아시아뉴스통신, 금강일보 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "삼성전자 주가 하락 중",
+        "한투, 삼성전자 목표가 65만원으로 상향… 흔들리는 주가에도 왜?"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "두산, SK실트론 품고 `반도체 퍼즐` 완성…AI 시대 승부수 통했다",
-          "source": "디지털데일리",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9xcFFtMHg5T2kxYW5HckY0d0sxUVdzekd4cE9MajZKNUZiV3RvQ2tKdlBnYWdVUURqQlNPbHJxYWpNVjdUSUVsbXdFUzF0VjhWeTdMQVFoS1BYWTRVVlR6dUV0Rzk?oc=5"
+          "title": "삼성전자 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE10YWk2NUVndEtFRUUwVW9MczhfdnFNSFRBZUloU1FhOVdpRUplRHhvblRvQV90dHNQV19CejM5blI1bXFGT0pFZzBhYWZhaTlKM2d1ZmxNeWtrVTNs?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "두산, SK실트론 인수에 목표주가 상향-유진투자증권 - 머니투데이",
-          "source": "머니투데이",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1kNFFEdE9SMnRkU2NGVFhNeUNXUll2QUlUUWVnU1p3Vjljb2tXdjBnQXBRS3BIcHVldjRpVE9xSnhMZnJJUFRuRXVSNUl6ZTlrbVR5d3NGRHNhNXpSQU05QnNOa3BBcE5tZUtNV3V30gFuQVVfeXFMTWQ0UUR0T1IydGRTY0ZUWE15Q1dSWXZBSVRRZWdTWndWOWNva1d2MGdBcFFLcEhwdWV2NGlUT3FKeExmcklQVG5FdVI1SXplOWttVHl3c0ZEc2E1elJBTTlCc05rcEFwTm1lS01XdXc?oc=5"
+          "title": "한투, 삼성전자 목표가 65만원으로 상향… 흔들리는 주가에도 왜?",
+          "source": "금강일보",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1wbHRzcmZZSDlHTzhhTTZVLXRLN2tpcjhoZDJrdHVMNFRyYThENjZPS0tnUk4zZGJ1NXpwU1pZMFlNbkl6ZUFOS2pEYnJoTkl1ZHBHWU5adG8wOEFsVXBfaE9nSlJYV2FZT3c?oc=5"
         }
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
+      "symbol": "000150",
+      "name": "두산",
+      "changeRate": null,
+      "price": null,
+      "summary": "두산에너빌리티, 주가 보합권 움직임…4일 주가 향방에 쏠리는 시선",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MV09SZmgtUEhsdFB3VVMyU1JLZEVDOHZHMTZOakxfNWh0UTNsN2F5OVN2QW9yY2Vvalg2VHBOS2QwNlVZekVqRUd1Yk5fbXJTZmZ2ZmNWUVlXWXVL?oc=5",
+      "mentionScore": 87.3,
+      "evidencePoints": [
+        "출처 아시아뉴스통신, CBC뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산로보틱스 주가 상승 중",
+        "두산에너빌리티, 주가 보합권 움직임…4일 주가 향방에 쏠리는 시선"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산로보틱스 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1MV09SZmgtUEhsdFB3VVMyU1JLZEVDOHZHMTZOakxfNWh0UTNsN2F5OVN2QW9yY2Vvalg2VHBOS2QwNlVZekVqRUd1Yk5fbXJTZmZ2ZmNWUVlXWXVL?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산에너빌리티, 주가 보합권 움직임…4일 주가 향방에 쏠리는 시선",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1YUmhGUEVtUHFJeThkNjlqWVJYLTNiemljLTJOVE84LTg0YlB5ZldISEFwTGRMQWIzU1VVUFpENTRzSlEzbWNZM3cyWU95cTlLSnRyR1RpbmFXVFpiYWsxZDNWdW1ERE9z?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-04T01:00:19.301Z",
+      "symbol": "006400",
+      "name": "삼성SDI",
+      "changeRate": null,
+      "price": null,
+      "summary": "삼성SDI 주가 상승 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBUTRzZGlwNW9uZ1hmeE80ZG1fd2JqeFZuU2F0ajRIbFBTZ19WRnVEMkdfYjdXWDd6QkVpNF9pTW5TREJYOGR1bVQ2RngwWGlBLWxZcXZGcEwyZnZN?oc=5",
+      "mentionScore": 61.5,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "삼성SDI 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBUTRzZGlwNW9uZ1hmeE80ZG1fd2JqeFZuU2F0ajRIbFBTZ19WRnVEMkdfYjdXWDd6QkVpNF9pTW5TREJYOGR1bVQ2RngwWGlBLWxZcXZGcEwyZnZN?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-04T01:00:19.301Z",
+      "symbol": "272210",
+      "name": "한화시스템",
+      "changeRate": null,
+      "price": null,
+      "summary": "한화시스템 주가 상승 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5Yd0QxVzRsX0s0WDZleXhfRE9mMEFQSDFhSlNjUmo5SlZDVnBVdVNXZ2NtNW1jMHNTczhFWGJXQ2NpZGJnMjBOeXY0eGNZWU9QY2FLUUxJM0YxM19l?oc=5",
+      "mentionScore": 61.3,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "한화시스템 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한화시스템 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5Yd0QxVzRsX0s0WDZleXhfRE9mMEFQSDFhSlNjUmo5SlZDVnBVdVNXZ2NtNW1jMHNTczhFWGJXQ2NpZGJnMjBOeXY0eGNZWU9QY2FLUUxJM0YxM19l?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-04T01:00:19.301Z",
+      "symbol": "082740",
+      "name": "한화엔진",
+      "changeRate": null,
+      "price": null,
+      "summary": "“2분기 쇼크는 미끼일 뿐…한화엔진, 주가 2.5배 뛸 하반기 반격 시나리오” 뉴스퀘스트",
+      "source": "뉴스퀘스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9Ud09fRW54RkMydEdkWXF3UkRMTUlKS0hzUC1MN3JOSDloSjcxeFZaWXUxX3g2c2NjWTl0MV9UOHlGQW5MMGpEcWFnNnZiTEtPWk5oVzVtYjI1YVpqQ1NuZ0x2aXVual9xT1RpVldZcFJmNGfSAXNBVV95cUxPVHdPX0VueEZDMnRHZFlxd1JETE1JSktIc1AtTDdyTkg5aEo3MXhWWll1MV94NnNjY1k5dDFfVDh5RkFuTDBqRHFhZzZ2YkxLT1pOaFc1bWIyNWFaakNTbmdMdml1bmpfcU9UaVZXWXBSZjRn?oc=5",
+      "mentionScore": 54.3,
+      "evidencePoints": [
+        "출처 뉴스퀘스트 기반 기사 1건",
+        "“2분기 쇼크는 미끼일 뿐…한화엔진, 주가 2.5배 뛸 하반기 반격 시나리오”"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "“2분기 쇼크는 미끼일 뿐…한화엔진, 주가 2.5배 뛸 하반기 반격 시나리오”",
+          "source": "뉴스퀘스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9Ud09fRW54RkMydEdkWXF3UkRMTUlKS0hzUC1MN3JOSDloSjcxeFZaWXUxX3g2c2NjWTl0MV9UOHlGQW5MMGpEcWFnNnZiTEtPWk5oVzVtYjI1YVpqQ1NuZ0x2aXVual9xT1RpVldZcFJmNGfSAXNBVV95cUxPVHdPX0VueEZDMnRHZFlxd1JETE1JSktIc1AtTDdyTkg5aEo3MXhWWll1MV94NnNjY1k5dDFfVDh5RkFuTDBqRHFhZzZ2YkxLT1pOaFc1bWIyNWFaakNTbmdMdml1bmpfcU9UaVZXWXBSZjRn?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-04T01:00:19.301Z",
+      "symbol": "353200",
+      "name": "대덕전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "FC-BGA 날개 단 대덕전자…2027년 실적 성장 기대감 확대 핀포인트뉴스",
+      "source": "핀포인트뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBXNUFVR011SVMxMUdPNTZkU0ktSHhFZnJTcGxzY2k2aTVmbGpJOWs3VXdDM1ZkaUI3NHRBVDVfcGpTVF9pSS1GNmpjVlRZZVlTWGlGNkpjRE9LOGNYVzJWbDVCdm11aWpIVUpFRGdoS09ZNmRvcWVJ0gF3QVVfeXFMUFc1QVVHTXVJUzExR081NmRTSS1IeEVmclNwbHNjaTZpNWZsakk5azdVd0MzVmRpQjc0dEFUNV9walNUX2lJLUY2amNWVFllWVNYaUY2SmNET0s4Y1hXMlZsNUJ2bXVpakhVSkVEZ2hLT1k2ZG9xZUk?oc=5",
+      "mentionScore": 52.6,
+      "evidencePoints": [
+        "출처 핀포인트뉴스 기반 기사 1건",
+        "FC-BGA 날개 단 대덕전자…2027년 실적 성장 기대감 확대"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "FC-BGA 날개 단 대덕전자…2027년 실적 성장 기대감 확대",
+          "source": "핀포인트뉴스",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBXNUFVR011SVMxMUdPNTZkU0ktSHhFZnJTcGxzY2k2aTVmbGpJOWs3VXdDM1ZkaUI3NHRBVDVfcGpTVF9pSS1GNmpjVlRZZVlTWGlGNkpjRE9LOGNYVzJWbDVCdm11aWpIVUpFRGdoS09ZNmRvcWVJ0gF3QVVfeXFMUFc1QVVHTXVJUzExR081NmRTSS1IeEVmclNwbHNjaTZpNWZsakk5azdVd0MzVmRpQjc0dEFUNV9walNUX2lJLUY2amNWVFllWVNYaUY2SmNET0s4Y1hXMlZsNUJ2bXVpakhVSkVEZ2hLT1k2ZG9xZUk?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-04T01:00:19.301Z",
+      "symbol": "489790",
+      "name": "한화비전",
+      "changeRate": null,
+      "price": null,
+      "summary": "키움證 “한화비전, 향후 HBM 시장 성장성 고려하면 매력적인 주가” - 조선비즈",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLcldyZlJfQ2RXa0NjTDVhZi1WTXNjZXcyaDJYUmlOUmV2WEgtNTl3YUEzcmswNEp5bV8zOThibS16YjVuN2cxWkpTamVuQTd4SEFjS204QWpqMjVG?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌, Chosunbiz 기반 기사 2건",
+        "[리포트 브리핑]한화비전, 'HBM 성장성에 다시 주목해야 할 시기' 목표가 100,000원 - 키움증권",
+        "키움證 “한화비전, 향후 HBM 시장 성장성 고려하면 매력적인 주가” - 조선비즈"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]한화비전, 'HBM 성장성에 다시 주목해야 할 시기' 목표가 100,000원 - 키움증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLcldyZlJfQ2RXa0NjTDVhZi1WTXNjZXcyaDJYUmlOUmV2WEgtNTl3YUEzcmswNEp5bV8zOThibS16YjVuN2cxWkpTamVuQTd4SEFjS204QWpqMjVG?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "키움證 “한화비전, 향후 HBM 시장 성장성 고려하면 매력적인 주가” - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOLTlPeVgtYjhpVXdPWDYyMkw1cGRiRFZnVG9FX1dKdk1kV2RFZjhOXy1jbVA5YXNVdWl1UzBPMEtwSEVfYkp0NDFwbFFpTm9XWnpvbTNpemc4QU9pczdwVXpNUzZTUXlMWVJyb1VUcGFHT1RnY1BDdEN6R1hPWGFfbTBWNDZKQ2dh0gGcAUFVX3lxTFBCYXRfa25pYUY4RHZIS1Rsc0tFS3VwV0lOMk52Q1BPUHFjaUF5RFJIcWNJSktFQW1KY2VRQ2F5TUwyNDdMYm56QTktNDdYNW5DZk9oQnRrMHB1NWxuN0NZMXYybHBlNUd0NjBERkpRVWVDZHl3OTg4YThyXzFEaWg2ZTVTVk9kdWFFeU9zR1FGQlExS1I3b1dVbTY5VA?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "290650",
       "name": "엘앤씨바이오",
       "changeRate": -12,
@@ -826,7 +974,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "213500",
       "name": "한솔제지",
       "changeRate": 8,
@@ -857,93 +1005,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
-      "symbol": "353200",
-      "name": "대덕전자",
-      "changeRate": 30,
-      "price": null,
-      "summary": "[모닝 리포트] \"대덕전자 전 사업부 호황…목표가 24만원\"",
-      "source": "현대경제신문",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9JQkdwd0Y3NjRpR2t2MkF0TFJyR3N3bVBDT3d6eGNmQ1ZBRzJXUlg1cFluYnljOXlqX0ZlREhCMXZFN2RzOUdzOU51WXdVUjJ2RHVzLXdKTjJKeVFGNUR3RmZ2eHV4NkhCam000gFrQVVfeXFMT0lCR3B3Rjc2NGlHa3YyQXRMUnJHc3dtUENPd3p4Y2ZDVkFHMldSWDVwWW5ieWM5eWpfRmVESEIxdkU3ZHM5R3M5TnVZd1VSMnZEdXMtd0pOMkp5UUY1RHdGZnZ4dXg2SEJqbTQ?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 현대경제신문, 뉴스핌 기반 기사 2건",
-        "제목 기준 변동률 단서 +30.0%",
-        "대덕전자, 패키지 기판 호황에 실적 개선 기대",
-        "[모닝 리포트] \"대덕전자 전 사업부 호황…목표가 24만원\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "대덕전자, 패키지 기판 호황에 실적 개선 기대",
-          "source": "현대경제신문",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9JQkdwd0Y3NjRpR2t2MkF0TFJyR3N3bVBDT3d6eGNmQ1ZBRzJXUlg1cFluYnljOXlqX0ZlREhCMXZFN2RzOUdzOU51WXdVUjJ2RHVzLXdKTjJKeVFGNUR3RmZ2eHV4NkhCam000gFrQVVfeXFMT0lCR3B3Rjc2NGlHa3YyQXRMUnJHc3dtUENPd3p4Y2ZDVkFHMldSWDVwWW5ieWM5eWpfRmVESEIxdkU3ZHM5R3M5TnVZd1VSMnZEdXMtd0pOMkp5UUY1RHdGZnZ4dXg2SEJqbTQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[모닝 리포트] \"대덕전자 전 사업부 호황…목표가 24만원\"",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5LSXVkdUd3TGJkTHk5OWtVWkNtbF8zcFRQTWtGYmxvb3kwWVo2WjV0a29yZ0s3dnJ4LXUwV1JWNUhFTHFoMVRFLTlXcTlDTkFkUzVJZlh6STY1Q0NG?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-03T06:00:22.009Z",
-      "symbol": "082740",
-      "name": "한화엔진",
-      "changeRate": null,
-      "price": null,
-      "summary": "[특징주] 한화엔진, 차익실현 매물 출회에 장중 하락세 전환 : 기업주식정보 재경일보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5BQnNMNXRfZmVqZ1BwRkwwRjd4NjdTbmFOemZBb1c3UFNFWU1JUWZwS1pDVFIzZF9WLTFaajRuT0hqSnd2RVNVbXln?oc=5",
-      "mentionScore": 84.2,
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "[특징주] 한화엔진, 차익실현 매물 출회에 장중 하락세 전환 : 기업주식정보"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 한화엔진, 차익실현 매물 출회에 장중 하락세 전환 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5BQnNMNXRfZmVqZ1BwRkwwRjd4NjdTbmFOemZBb1c3UFNFWU1JUWZwS1pDVFIzZF9WLTFaajRuT0hqSnd2RVNVbXln?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-03T06:00:22.009Z",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": -6,
-      "price": null,
-      "summary": "[특징주] 삼성전자·하이닉스, 장 초반 8% 급락",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA4NE1HVmU3QVdRQXp6ZlFMZVF6NFJMM1A5Z1p1Q0tYVzJ6ZzZOQlFDOExOTzdlMFhjdEVEME53ei1hOHlxTEN6QUhRWm9qZnRURkRibWpxc2Y0RzMyZk9uSU1Id3E3THNlTy01V0JZRmR3MzQ?oc=5",
-      "mentionScore": 93.1,
-      "evidencePoints": [
-        "출처 비즈니스포스트, 에너지경제신문 기반 기사 2건",
-        "제목 기준 변동률 단서 -6.0%",
-        "삼성전자 주가 장중 6%대 내려, 급등 이후 차익실현 매물에 SK하이닉스도 약세",
-        "[특징주] 삼성전자·하이닉스, 장 초반 8% 급락"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자 주가 장중 6%대 내려, 급등 이후 차익실현 매물에 SK하이닉스도 약세",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA4NE1HVmU3QVdRQXp6ZlFMZVF6NFJMM1A5Z1p1Q0tYVzJ6ZzZOQlFDOExOTzdlMFhjdEVEME53ei1hOHlxTEN6QUhRWm9qZnRURkRibWpxc2Y0RzMyZk9uSU1Id3E3THNlTy01V0JZRmR3MzQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[특징주] 삼성전자·하이닉스, 장 초반 8% 급락",
-          "source": "에너지경제신문",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9IeThISGJRdk9JWkQzb3U3bF9rdG45RTlDb2hzS1ExMW01ZkJRSnVDdXpXbmVRTVZvVzFsa3dBRVV2UGlHbjRZTzF3eVowbW95M2M3MThvd0tfaE0?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "000100",
       "name": "유한양행",
       "changeRate": null,
@@ -973,7 +1035,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "090430",
       "name": "아모레퍼시픽",
       "changeRate": null,
@@ -1004,7 +1066,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "373220",
       "name": "LG에너지솔루션",
       "changeRate": -4,
@@ -1028,7 +1090,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "128940",
       "name": "한미약품",
       "changeRate": null,
@@ -1052,7 +1114,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "069620",
       "name": "대웅제약",
       "changeRate": null,
@@ -1075,38 +1137,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
-      "symbol": "006400",
-      "name": "삼성SDI",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성SDI, 실적 회복 기대감 커져…ESS·전고체 배터리가 핵심 변수",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9LQmZNbzdCbzFnZjFtNEV4UUpSRjZoRG5FLXpZYW1iZWJYcFhfTnJfNjl6YjRMdFM0aERSQmVIQUpEdGFLSVJISkN3?oc=5",
-      "mentionScore": 87.5,
-      "evidencePoints": [
-        "출처 재경일보, 증권일보 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "삼성SDI, 잠정 실적 실망감에 장중 하락세 지속 : 기업주식정보",
-        "삼성SDI, 실적 회복 기대감 커져…ESS·전고체 배터리가 핵심 변수"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI, 잠정 실적 실망감에 장중 하락세 지속 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9LQmZNbzdCbzFnZjFtNEV4UUpSRjZoRG5FLXpZYW1iZWJYcFhfTnJfNjl6YjRMdFM0aERSQmVIQUpEdGFLSVJISkN3?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성SDI, 실적 회복 기대감 커져…ESS·전고체 배터리가 핵심 변수",
-          "source": "증권일보",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE04dW9QNllFckhZQTZmaUxMNmdwY3lRT2EzRFEyN2wxMWpXQ0FwdXNqTU1wQm9aQzF2WEVDanpHLXBhcU54ejg5RHJ1VUJnTTNkX0lXNEk1OGo1SDZzZ09Uag?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "259960",
       "name": "크래프톤",
       "changeRate": null,
@@ -1130,31 +1161,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
-      "symbol": "272210",
-      "name": "한화시스템",
-      "changeRate": null,
-      "price": null,
-      "summary": "[특징주] 한화시스템, 정정 공시 및 잠정 실적에 소폭 상승세 : 기업주식정보 재경일보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFAyamt1WU0yLXdndlJJYm5QVFJITlRQMGdMdjVvMGg1U19Jd21nWDZFYW9RX29OUV9HeWdacjNqRll6ZVhKS0JOd3Nn?oc=5",
-      "mentionScore": 61.8,
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "[특징주] 한화시스템, 정정 공시 및 잠정 실적에 소폭 상승세 : 기업주식정보"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 한화시스템, 정정 공시 및 잠정 실적에 소폭 상승세 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFAyamt1WU0yLXdndlJJYm5QVFJITlRQMGdMdjVvMGg1U19Jd21nWDZFYW9RX29OUV9HeWdacjNqRll6ZVhKS0JOd3Nn?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "042660",
       "name": "한화오션",
       "changeRate": null,
@@ -1177,7 +1184,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
@@ -1208,7 +1215,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "068270",
       "name": "셀트리온",
       "changeRate": null,
@@ -1239,7 +1246,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "012450",
       "name": "한화에어로스페이스",
       "changeRate": null,
@@ -1269,7 +1276,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-03T06:00:22.009Z",
+      "timestamp": "2026-08-04T01:00:19.301Z",
       "symbol": "950160",
       "name": "코오롱티슈진",
       "changeRate": null,
@@ -1291,29 +1298,6 @@
           "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1MSl9pby1hMV9vV183WjdCWHdNRGZMcTBFQ0szV1RlN3duX3o1OUhoN2F0anA0RWMtRWNpR25MeGdDd2IyR3N4WHc4bFdWWGZPc2JPc2FBbEV1OVRyaGdGZkxvVm0xRmJt?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "2026-08-03T06:00:22.009Z",
-      "symbol": "011070",
-      "name": "LG이노텍",
-      "changeRate": null,
-      "price": null,
-      "summary": "MSCI 8월 정기변경 임박…'편입 유력' LG이노텍 '최대 수혜' 예상 조세일보",
-      "source": "조세일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5XOHU0UUxBTlhHLWZFLTg4bDVVVDR4SFNvTXhLSmlhaFduc1d5eEc5YU5PdXNuNkNMaHNob0xlSXItdkMyaXhKY0NvXzloVUgtWFNfQkRNRC1tSnZkd2hsaWI1N2J4cS1nT2tRZE9FSQ?oc=5",
-      "mentionScore": 58.8,
-      "evidencePoints": [
-        "출처 조세일보 기반 기사 1건",
-        "MSCI 8월 정기변경 임박…'편입 유력' LG이노텍 '최대 수혜' 예상"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "MSCI 8월 정기변경 임박…'편입 유력' LG이노텍 '최대 수혜' 예상",
-          "source": "조세일보",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5XOHU0UUxBTlhHLWZFLTg4bDVVVDR4SFNvTXhLSmlhaFduc1d5eEc5YU5PdXNuNkNMaHNob0xlSXItdkMyaXhKY0NvXzloVUgtWFNfQkRNRC1tSnZkd2hsaWI1N2J4cS1nT2tRZE9FSQ?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -1322,7 +1306,7 @@
   },
   "polishWriter": {
     "provider": "mixed",
-    "model": "deepseek/deepseek-v4-flash, signal-polish-v1",
+    "model": "signal-polish-v1, deepseek/deepseek-v4-flash",
     "fallbackReason": "partial_primary_failed"
   }
 }
