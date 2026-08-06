@@ -1046,7 +1046,7 @@ function marketSignalLabels(signals) {
 }
 
 function cleanMarketEventHeadline(value) {
-  return String(value ?? '')
+  return normalizeRepairEvidence(value)
     .replace(/^\[[^\]]+\]\s*/u, '')
     .replace(/\s+-\s+[^-]{1,40}$/u, '')
     .trim();
@@ -1199,27 +1199,44 @@ function firstUsableCandidate(...groups) {
     .find((item) => !candidateLooksUnavailable(item) && isNonEmptyString(candidateText(item)));
 }
 
+function normalizeRepairEvidence(value) {
+  return stripHtml(value)
+    .replace(/&nbsp;/giu, ' ')
+    .replace(/\u00a0/gu, ' ')
+    .replace(/\s+/gu, ' ')
+    .trim();
+}
+
 function candidateEvidenceText(item) {
   if (!item || candidateLooksUnavailable(item)) return null;
-  const title = String(item.title ?? '').trim();
-  const summary = String(item.summary ?? '').trim();
+  const title = normalizeRepairEvidence(item.title);
+  const summary = normalizeRepairEvidence(item.summary);
   if (!title && !summary) return null;
   if (!title || title === summary) return title || summary;
   return summary ? `${title} - ${summary}` : title;
 }
 
 function eventEvidenceEntries(marketResearch) {
-  const supplied = [
-    ...(Array.isArray(marketResearch?.marketEventConclusions) ? marketResearch.marketEventConclusions : []),
-    ...(Array.isArray(marketResearch?.marketEventSignals) ? marketResearch.marketEventSignals : [])
-  ];
-  let signals = supplied;
-  if (signals.length === 0) {
+  const conclusions = Array.isArray(marketResearch?.marketEventConclusions)
+    ? marketResearch.marketEventConclusions
+    : [];
+  const suppliedSignals = Array.isArray(marketResearch?.marketEventSignals)
+    ? marketResearch.marketEventSignals
+    : [];
+  let resolved = conclusions;
+  const hasDirectionalConclusion = resolved.some((signal) => (
+    ['positive', 'negative', 'mixed'].includes(signal?.direction)
+    && signal?.primaryTarget?.scope !== 'stock'
+  ));
+  if (!hasDirectionalConclusion && suppliedSignals.length > 0) {
+    resolved = resolveMarketEventSignals(suppliedSignals);
+  }
+  if (resolved.length === 0) {
     const derived = buildMarketEventSignals(marketResearch);
-    signals = resolveMarketEventSignals(derived);
+    resolved = resolveMarketEventSignals(derived);
   }
 
-  const entries = signals
+  const entries = resolved
     .filter((signal) => (
       ['positive', 'negative', 'mixed'].includes(signal?.direction)
       && signal?.primaryTarget?.scope !== 'stock'
@@ -1280,6 +1297,32 @@ function firstEvidenceForDirection(entries, direction) {
   return entries.find((entry) => entry.direction === direction) ?? null;
 }
 
+function weatherFallback(entries, category) {
+  const directions = new Set(entries.map((entry) => entry.direction));
+
+  if (directions.has('mixed')) {
+    if (category === 'sunny') return '혼조 결론 안에서 상대강도가 높은 업종을 확인합니다.';
+    if (category === 'rainy') return '혼조 결론 안에서 하방 위험이 큰 업종을 확인합니다.';
+    return '혼조 결론 안에서 업종별 선별 흐름을 확인합니다.';
+  }
+
+  if (directions.has('positive') && directions.has('negative')) {
+    return '상방·하방 흐름이 엇갈려 업종별 차별화를 확인합니다.';
+  }
+
+  if (directions.has('positive')) {
+    if (category === 'rainy') return '상방 흐름에서 상대 약세는 제한적이며 분리되는 업종을 점검합니다.';
+    if (category === 'cloudy') return '상방 흐름 안에서 업종별 차별화를 확인합니다.';
+  }
+
+  if (directions.has('negative')) {
+    if (category === 'sunny') return '하방 흐름에서 상대 강세는 제한적이며 분리되는 업종을 점검합니다.';
+    if (category === 'cloudy') return '하방 흐름 안에서 업종별 차별화를 확인합니다.';
+  }
+
+  return null;
+}
+
 function firstInvestorFlowEvidence(marketResearch) {
   const flow = marketResearch?.investorFlows;
   const hasValues = Array.isArray(flow?.markets)
@@ -1331,9 +1374,9 @@ function repairPreMarketWriterReport(marketResearch, report) {
   const eventEntries = eventEvidenceEntries(marketResearch);
   const candidateEntries = candidateEvidenceEntries(marketResearch);
   const allEntries = [...eventEntries, ...candidateEntries];
-  const positive = firstEvidenceForDirection(allEntries, 'positive');
-  const negative = firstEvidenceForDirection(allEntries, 'negative');
-  const mixed = firstEvidenceForDirection(allEntries, 'mixed');
+  const positive = firstEvidenceForDirection(eventEntries, 'positive');
+  const negative = firstEvidenceForDirection(eventEntries, 'negative');
+  const mixed = firstEvidenceForDirection(eventEntries, 'mixed');
   const primary = allEntries[0] ?? null;
   const positiveText = formatEventEvidence(positive);
   const negativeText = formatEventEvidence(negative);
@@ -1344,13 +1387,13 @@ function repairPreMarketWriterReport(marketResearch, report) {
     repaired,
     'sectorWeather',
     'sunny',
-    positiveText
+    positiveText ?? weatherFallback(eventEntries, 'sunny')
   );
   setBlankWriterField(
     repaired,
     'sectorWeather',
     'rainy',
-    negativeText
+    negativeText ?? weatherFallback(eventEntries, 'rainy')
   );
   setBlankWriterField(
     repaired,
@@ -1359,7 +1402,7 @@ function repairPreMarketWriterReport(marketResearch, report) {
     mixedText
       ?? (positiveText && negativeText
         ? `${positiveText}와 ${negativeText}의 방향이 엇갈려 업종별 차별화를 확인합니다.`
-        : null)
+        : weatherFallback(eventEntries, 'cloudy'))
   );
 
   const flowEvidence = firstInvestorFlowEvidence(marketResearch);

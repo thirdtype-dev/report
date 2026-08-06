@@ -687,6 +687,67 @@ test('pre-market writer fills a broader incomplete report only from supplied evi
   assert.doesNotThrow(() => module.__testValidateReportShape(repaired));
 });
 
+test('pre-market weather repair trusts resolved direction and strips candidate markup', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    marketEventConclusions: [
+      {
+        direction: 'positive',
+        primaryTarget: { key: 'domestic_market', label: '국내 증시', scope: 'market' },
+        headline: '국내 증시 상승 전망&nbsp;',
+        score: 12
+      }
+    ],
+    marketEventSignals: [
+      {
+        direction: 'negative',
+        primaryTarget: { key: 'oil', label: '유가', scope: 'factor' },
+        headline: '유가 급락',
+        score: 99
+      }
+    ],
+    marketEventNewsCandidates: [
+      {
+        title: '[오늘의 투자전략] 美 증시 신고가·유가 급락…국내 증시 상승 전망',
+        summary: '<b>국내 증시</b>&nbsp;상승 재료가 이어집니다.'
+      }
+    ],
+    investorFlowNewsCandidates: [
+      { title: '외국인&nbsp;순매수 전환', summary: '외국인 수급이 개선됐습니다.' }
+    ],
+    majorIndices: [
+      { title: 'KOSPI', currentPrice: '2,700.00', changePercent: '+0.30%' }
+    ],
+    disclosureNewsCandidates: [
+      { title: 'A사&nbsp;공급계약 공시', summary: '계약을 발표했습니다.' }
+    ],
+    scheduleNewsCandidates: [
+      { title: '오늘&nbsp;신규상장 일정', summary: '신규 상장이 예정돼 있습니다.' }
+    ],
+    stockNewsCandidates: [
+      { title: '삼성전자&nbsp;상승', summary: '<em>반도체</em> 업황 기대가 반영됐습니다.' }
+    ]
+  };
+  const report = {
+    openingStrategy: {},
+    investorFlowWatch: {},
+    sectorWeather: {},
+    disclosuresAndNews: {},
+    watchlist: {}
+  };
+
+  const repaired = module.__testRepairPreMarketWriterReport(marketResearch, report);
+  const serialized = JSON.stringify(repaired);
+
+  assert.match(repaired.sectorWeather.sunny, /국내 증시 상승 전망/);
+  assert.match(repaired.sectorWeather.rainy, /상대 약세는 제한적/);
+  assert.doesNotMatch(repaired.sectorWeather.rainy, /유가 급락/);
+  assert.equal(serialized.includes('&nbsp;'), false);
+  assert.equal(serialized.includes('<b>'), false);
+  assert.equal(serialized.includes('<em>'), false);
+  assert.doesNotThrow(() => module.__testValidateReportShape(repaired));
+});
+
 test('pre-market writer leaves an ungrounded required field for strict validation to reject', async () => {
   const module = await importBriefingModule('pre_market');
   const report = {
