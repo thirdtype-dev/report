@@ -573,6 +573,139 @@ test('pre-market briefing omits unsupported disclosure and schedule copy instead
   assert.equal(html.includes('주요 뉴스'), true);
 });
 
+test('pre-market writer repairs blank cloudy and rainy weather fields from market-event evidence', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    marketEventConclusions: [
+      {
+        direction: 'negative',
+        primaryTarget: { label: '건설·부동산' },
+        headline: '건설 업종 약세',
+        score: 12
+      },
+      {
+        direction: 'positive',
+        primaryTarget: { label: '반도체' },
+        headline: '반도체 업종 강세',
+        score: 10
+      }
+    ]
+  };
+  const report = {
+    openingStrategy: {
+      keywords: '기존 키워드',
+      oneLineStrategy: '기존 전략',
+      expectedOpen: '기존 출발 전망'
+    },
+    investorFlowWatch: {
+      continuity: '기존 연속성',
+      keyInvestor: '기존 핵심 투자자',
+      checkPoint: '기존 체크포인트'
+    },
+    sectorWeather: {
+      sunny: '기존 강세 날씨',
+      cloudy: '  ',
+      rainy: ''
+    },
+    disclosuresAndNews: {
+      corporateDisclosure: '기존 공시',
+      majorNews: '기존 주요 뉴스',
+      schedule: '기존 일정'
+    },
+    watchlist: {
+      leaders: '기존 주도주',
+      technicals: '기존 기술적 포인트',
+      eventDriven: '기존 이벤트'
+    }
+  };
+
+  const repaired = module.__testRepairPreMarketWriterReport(marketResearch, report);
+
+  assert.equal(repaired.sectorWeather.sunny, report.sectorWeather.sunny);
+  assert.match(repaired.sectorWeather.cloudy, /반도체 업종 강세/);
+  assert.match(repaired.sectorWeather.cloudy, /건설 업종 약세/);
+  assert.equal(repaired.sectorWeather.rainy, '건설·부동산 - 건설 업종 약세');
+  assert.equal(report.sectorWeather.cloudy, '  ');
+  assert.doesNotThrow(() => module.__testValidateReportShape(repaired));
+});
+
+test('pre-market writer fills a broader incomplete report only from supplied evidence and preserves non-empty fields', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    marketEventConclusions: [
+      {
+        direction: 'positive',
+        primaryTarget: { label: '반도체' },
+        headline: '반도체 업종 강세',
+        score: 11
+      },
+      {
+        direction: 'negative',
+        primaryTarget: { label: '건설·부동산' },
+        headline: '건설 업종 약세',
+        score: 9
+      }
+    ],
+    investorFlowNewsCandidates: [
+      { title: '외국인 순매수 전환', summary: '외국인 수급이 개선됐습니다.' }
+    ],
+    majorIndices: [
+      { title: 'KOSPI', currentPrice: '2,700.00', changePercent: '-0.30%' }
+    ],
+    disclosureNewsCandidates: [
+      { title: 'A사 공급계약 공시', summary: '대규모 계약을 발표했습니다.' }
+    ],
+    scheduleNewsCandidates: [
+      { title: '오늘 신규상장 일정', summary: '신규 상장이 예정돼 있습니다.' }
+    ],
+    stockNewsCandidates: [
+      { title: '삼성전자 상승', summary: '반도체 업황 기대가 반영됐습니다.' }
+    ]
+  };
+  const report = {
+    openingStrategy: { keywords: '보존 키워드', oneLineStrategy: '', expectedOpen: '' },
+    investorFlowWatch: { continuity: '', keyInvestor: '보존 핵심 투자자', checkPoint: '' },
+    sectorWeather: { sunny: '', cloudy: '', rainy: '보존 약세 날씨' },
+    disclosuresAndNews: { corporateDisclosure: '', majorNews: '', schedule: '' },
+    watchlist: { leaders: '', technicals: '', eventDriven: '' }
+  };
+
+  const repaired = module.__testRepairPreMarketWriterReport(marketResearch, report);
+
+  assert.equal(repaired.openingStrategy.keywords, '보존 키워드');
+  assert.equal(repaired.investorFlowWatch.keyInvestor, '보존 핵심 투자자');
+  assert.equal(repaired.sectorWeather.rainy, '보존 약세 날씨');
+  assert.match(repaired.openingStrategy.oneLineStrategy, /반도체 업종 강세/);
+  assert.match(repaired.openingStrategy.expectedOpen, /KOSPI 2,700\.00 -0\.30%/);
+  assert.match(repaired.investorFlowWatch.continuity, /외국인 순매수 전환/);
+  assert.match(repaired.investorFlowWatch.checkPoint, /외국인/);
+  assert.match(repaired.disclosuresAndNews.corporateDisclosure, /A사 공급계약 공시/);
+  assert.match(repaired.disclosuresAndNews.schedule, /오늘 신규상장 일정/);
+  assert.match(repaired.watchlist.leaders, /삼성전자 상승/);
+  assert.match(repaired.watchlist.technicals, /KOSPI 2,700\.00/);
+  assert.match(repaired.watchlist.eventDriven, /반도체 업종 강세/);
+  assert.doesNotThrow(() => module.__testValidateReportShape(repaired));
+});
+
+test('pre-market writer leaves an ungrounded required field for strict validation to reject', async () => {
+  const module = await importBriefingModule('pre_market');
+  const report = {
+    openingStrategy: { keywords: '키워드', oneLineStrategy: '전략', expectedOpen: '출발' },
+    investorFlowWatch: { continuity: '연속성', keyInvestor: '핵심 투자자', checkPoint: '체크포인트' },
+    sectorWeather: { sunny: '강세', cloudy: '혼조', rainy: '' },
+    disclosuresAndNews: { corporateDisclosure: '공시', majorNews: '주요 뉴스', schedule: '일정' },
+    watchlist: { leaders: '주도주', technicals: '기술적 포인트', eventDriven: '이벤트' }
+  };
+
+  const repaired = module.__testRepairPreMarketWriterReport({ marketNews: [] }, report);
+
+  assert.equal(repaired.sectorWeather.rainy, '');
+  assert.throws(
+    () => module.__testValidateReportShape(repaired),
+    /invalid_report_shape:sectorWeather\.rainy/
+  );
+});
+
 test('news ranking removes stale candidates and orders the remaining articles by publication time', async () => {
   const module = await importBriefingModule('pre_market');
   const referenceTime = Date.parse('2026-07-27T23:35:32.392Z');

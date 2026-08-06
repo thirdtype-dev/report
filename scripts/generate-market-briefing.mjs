@@ -1181,6 +1181,262 @@ function applyPostMarketEventGuard(report, state) {
   return next;
 }
 
+const PRE_MARKET_WRITER_SECTIONS = [
+  'openingStrategy',
+  'investorFlowWatch',
+  'sectorWeather',
+  'disclosuresAndNews',
+  'watchlist'
+];
+
+function isRecord(value) {
+  return value && typeof value === 'object' && !Array.isArray(value);
+}
+
+function firstUsableCandidate(...groups) {
+  return groups
+    .flatMap((items) => Array.isArray(items) ? items : [])
+    .find((item) => !candidateLooksUnavailable(item) && isNonEmptyString(candidateText(item)));
+}
+
+function candidateEvidenceText(item) {
+  if (!item || candidateLooksUnavailable(item)) return null;
+  const title = String(item.title ?? '').trim();
+  const summary = String(item.summary ?? '').trim();
+  if (!title && !summary) return null;
+  if (!title || title === summary) return title || summary;
+  return summary ? `${title} - ${summary}` : title;
+}
+
+function eventEvidenceEntries(marketResearch) {
+  const supplied = [
+    ...(Array.isArray(marketResearch?.marketEventConclusions) ? marketResearch.marketEventConclusions : []),
+    ...(Array.isArray(marketResearch?.marketEventSignals) ? marketResearch.marketEventSignals : [])
+  ];
+  let signals = supplied;
+  if (signals.length === 0) {
+    const derived = buildMarketEventSignals(marketResearch);
+    signals = resolveMarketEventSignals(derived);
+  }
+
+  const entries = signals
+    .filter((signal) => (
+      ['positive', 'negative', 'mixed'].includes(signal?.direction)
+      && signal?.primaryTarget?.scope !== 'stock'
+    ))
+    .map((signal) => {
+      const text = cleanMarketEventHeadline(signal.headline ?? signal.summary ?? '');
+      if (!isNonEmptyString(text) || PLACEHOLDER_COPY_RE.test(text)) return null;
+      return {
+        direction: signal.direction,
+        label: signal.primaryTarget?.label ?? null,
+        text,
+        score: Number.isFinite(signal.score) ? signal.score : 0
+      };
+    })
+    .filter(Boolean);
+
+  const seen = new Set();
+  return entries
+    .sort((left, right) => right.score - left.score)
+    .filter((entry) => {
+      const key = `${entry.direction}:${entry.label ?? ''}:${entry.text}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+function candidateEvidenceEntries(marketResearch) {
+  const candidates = [
+    ...(Array.isArray(marketResearch?.marketEventNewsCandidates) ? marketResearch.marketEventNewsCandidates : []),
+    ...(Array.isArray(marketResearch?.sectorThemeNewsCandidates) ? marketResearch.sectorThemeNewsCandidates : []),
+    ...(Array.isArray(marketResearch?.marketNews) ? marketResearch.marketNews : [])
+  ];
+  return candidates
+    .map((item) => {
+      const text = candidateEvidenceText(item);
+      const targets = marketEventTargets(candidateText(item));
+      if (!text || targets.every((target) => target.scope === 'stock')) return null;
+      return {
+        direction: marketEventDirection(candidateText(item), item.title),
+        label: null,
+        text,
+        score: 0
+      };
+    })
+    .filter(Boolean);
+}
+
+function formatEventEvidence(entry) {
+  if (!entry) return null;
+  if (entry.label && !entry.text.includes(entry.label)) {
+    return `${entry.label} - ${entry.text}`;
+  }
+  return entry.text;
+}
+
+function firstEvidenceForDirection(entries, direction) {
+  return entries.find((entry) => entry.direction === direction) ?? null;
+}
+
+function firstInvestorFlowEvidence(marketResearch) {
+  const flow = marketResearch?.investorFlows;
+  const hasValues = Array.isArray(flow?.markets)
+    && flow.markets.some((market) => (
+      ['foreign', 'institution', 'retail'].some((key) => Number.isFinite(market?.netBuy?.[key]))
+    ));
+  if (hasValues) {
+    const summary = summarizeInvestorFlows(flow);
+    if (isNonEmptyString(summary) && !PLACEHOLDER_COPY_RE.test(summary)) return summary;
+  }
+  return candidateEvidenceText(firstUsableCandidate(marketResearch?.investorFlowNewsCandidates));
+}
+
+function investorFlowActors(text) {
+  return [...new Set(String(text ?? '').match(/외국인|기관|개인|연기금|프로그램(?:\s*매매)?|선물(?:\s*포지션)?/gu) ?? [])];
+}
+
+function firstIndexEvidence(marketResearch) {
+  const indicators = [
+    ...(Array.isArray(marketResearch?.majorIndices) ? marketResearch.majorIndices : []),
+    ...(Array.isArray(marketResearch?.indicators) ? marketResearch.indicators : [])
+  ];
+  const item = indicators.find((entry) => (
+    isNonEmptyString(entry?.title)
+    && (isNonEmptyString(entry?.changePercent) || isNonEmptyString(entry?.change) || isNonEmptyString(entry?.value))
+  ));
+  if (!item) return null;
+  const value = [item.currentPrice ?? item.value, item.changePercent ?? item.change]
+    .filter((entry) => isNonEmptyString(entry))
+    .join(' ');
+  return `${item.title}${value ? ` ${value}` : ''}`.trim();
+}
+
+function setBlankWriterField(target, section, field, value) {
+  if (!isRecord(target[section])) target[section] = {};
+  if (!isNonEmptyString(target[section][field]) && isNonEmptyString(value)) {
+    target[section][field] = value;
+  }
+}
+
+function repairPreMarketWriterReport(marketResearch, report) {
+  if (PHASE !== 'pre_market') return report;
+
+  const repaired = isRecord(report) ? { ...report } : {};
+  for (const section of PRE_MARKET_WRITER_SECTIONS) {
+    repaired[section] = isRecord(repaired[section]) ? { ...repaired[section] } : {};
+  }
+
+  const eventEntries = eventEvidenceEntries(marketResearch);
+  const candidateEntries = candidateEvidenceEntries(marketResearch);
+  const allEntries = [...eventEntries, ...candidateEntries];
+  const positive = firstEvidenceForDirection(allEntries, 'positive');
+  const negative = firstEvidenceForDirection(allEntries, 'negative');
+  const mixed = firstEvidenceForDirection(allEntries, 'mixed');
+  const primary = allEntries[0] ?? null;
+  const positiveText = formatEventEvidence(positive);
+  const negativeText = formatEventEvidence(negative);
+  const mixedText = formatEventEvidence(mixed);
+  const primaryText = formatEventEvidence(primary);
+
+  setBlankWriterField(
+    repaired,
+    'sectorWeather',
+    'sunny',
+    positiveText
+  );
+  setBlankWriterField(
+    repaired,
+    'sectorWeather',
+    'rainy',
+    negativeText
+  );
+  setBlankWriterField(
+    repaired,
+    'sectorWeather',
+    'cloudy',
+    mixedText
+      ?? (positiveText && negativeText
+        ? `${positiveText}와 ${negativeText}의 방향이 엇갈려 업종별 차별화를 확인합니다.`
+        : null)
+  );
+
+  const flowEvidence = firstInvestorFlowEvidence(marketResearch);
+  const actors = investorFlowActors(flowEvidence);
+  const actorLabel = actors.slice(0, 2).join('·') || '투자자별';
+  setBlankWriterField(
+    repaired,
+    'investorFlowWatch',
+    'continuity',
+    flowEvidence ? `장 초반 ${flowEvidence} 흐름의 연속성을 확인합니다.` : null
+  );
+  setBlankWriterField(
+    repaired,
+    'investorFlowWatch',
+    'keyInvestor',
+    flowEvidence ? `${actorLabel} 흐름을 우선 확인합니다.` : null
+  );
+  setBlankWriterField(
+    repaired,
+    'investorFlowWatch',
+    'checkPoint',
+    flowEvidence ? `제공된 ${actorLabel} 흐름이 장 초반에도 이어지는지 확인합니다.` : null
+  );
+
+  const indexEvidence = firstIndexEvidence(marketResearch);
+  const keywordEvidence = eventEntries
+    .map((entry) => entry.label)
+    .filter(Boolean)
+    .slice(0, 3);
+  setBlankWriterField(
+    repaired,
+    'openingStrategy',
+    'keywords',
+    keywordEvidence.length > 0
+      ? keywordEvidence.join(', ')
+      : primaryText
+  );
+  setBlankWriterField(
+    repaired,
+    'openingStrategy',
+    'oneLineStrategy',
+    primaryText ? `${primaryText}를 근거로 장 초반 방향성과 변동성을 확인합니다.` : null
+  );
+  setBlankWriterField(
+    repaired,
+    'openingStrategy',
+    'expectedOpen',
+    indexEvidence
+      ? `${indexEvidence}를 반영한 장 초반 출발 방향성을 확인합니다.`
+      : primaryText ? `${primaryText}를 반영한 장 초반 출발 방향성을 확인합니다.` : null
+  );
+
+  const disclosureEvidence = candidateEvidenceText(firstUsableCandidate(marketResearch?.disclosureNewsCandidates));
+  const scheduleEvidence = candidateEvidenceText(firstUsableCandidate(marketResearch?.scheduleNewsCandidates));
+  const majorNewsEvidence = primaryText
+    ?? candidateEvidenceText(firstUsableCandidate(
+      marketResearch?.marketEventNewsCandidates,
+      marketResearch?.marketNews,
+      marketResearch?.sectorThemeNewsCandidates
+    ));
+  setBlankWriterField(repaired, 'disclosuresAndNews', 'corporateDisclosure', disclosureEvidence);
+  setBlankWriterField(repaired, 'disclosuresAndNews', 'majorNews', majorNewsEvidence);
+  setBlankWriterField(repaired, 'disclosuresAndNews', 'schedule', scheduleEvidence);
+
+  const stockEvidence = candidateEvidenceText(firstUsableCandidate(marketResearch?.stockNewsCandidates));
+  const technicalEvidence = indexEvidence
+    ?? candidateEvidenceText(firstUsableCandidate(marketResearch?.sectorThemeNewsCandidates));
+  const eventDrivenEvidence = primaryText
+    ?? disclosureEvidence
+    ?? scheduleEvidence;
+  setBlankWriterField(repaired, 'watchlist', 'leaders', stockEvidence ?? positiveText);
+  setBlankWriterField(repaired, 'watchlist', 'technicals', technicalEvidence);
+  setBlankWriterField(repaired, 'watchlist', 'eventDriven', eventDrivenEvidence);
+
+  return repaired;
+}
+
 function prepareReportForPublish(marketResearch, report) {
   const prepared = sanitizeBriefingCopy(report);
   const eventState = marketEventState(marketResearch);
@@ -1219,7 +1475,10 @@ const WRITER_REJECTED_QUALITY_ISSUES = new Set([
 ]);
 
 function prepareAndValidateWriterReport(marketResearch, report) {
-  const prepared = prepareReportForPublish(marketResearch, report);
+  const prepared = prepareReportForPublish(
+    marketResearch,
+    repairPreMarketWriterReport(marketResearch, report)
+  );
   const issues = briefingQualityIssues(marketResearch, prepared)
     .filter((issue) => WRITER_REJECTED_QUALITY_ISSUES.has(issue));
   if (issues.length > 0) {
@@ -1856,7 +2115,8 @@ async function callOpenCodeZen(prompt, options = {}) {
   }
 
   const json = parseWriterResponse(body, 'opencode_zen');
-  return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
+  const rawReport = extractJson(json?.choices?.[0]?.message?.content ?? '');
+  return validateReportShape(repairPreMarketWriterReport(options.marketResearch, rawReport));
 }
 
 async function callOpenRouter(prompt, options = {}) {
@@ -1884,12 +2144,13 @@ async function callOpenRouter(prompt, options = {}) {
   }
 
   const json = parseWriterResponse(body, 'openrouter');
-  return validateReportShape(extractJson(json?.choices?.[0]?.message?.content ?? ''));
+  const rawReport = extractJson(json?.choices?.[0]?.message?.content ?? '');
+  return validateReportShape(repairPreMarketWriterReport(options.marketResearch, rawReport));
 }
 
-async function callPrimaryWriter(prompt) {
-  if (ANALYST_PROVIDER === 'opencode-zen') return callOpenCodeZen(prompt);
-  if (ANALYST_PROVIDER === 'openrouter') return callOpenRouter(prompt);
+async function callPrimaryWriter(prompt, options = {}) {
+  if (ANALYST_PROVIDER === 'opencode-zen') return callOpenCodeZen(prompt, options);
+  if (ANALYST_PROVIDER === 'openrouter') return callOpenRouter(prompt, options);
   throw new Error(`unsupported_analyst_provider_${ANALYST_PROVIDER}`);
 }
 
@@ -1967,7 +2228,7 @@ async function writeReport(marketResearch) {
 
   const prompt = buildPrompt(marketResearch);
   const report = await withLlmRetry(ANALYST_PROVIDER, async () => (
-    prepareAndValidateWriterReport(marketResearch, await callPrimaryWriter(prompt))
+    prepareAndValidateWriterReport(marketResearch, await callPrimaryWriter(prompt, { marketResearch }))
   ));
   return {
     report,
@@ -2282,6 +2543,8 @@ main().catch((error) => {
 
 export const __testResolveBriefingPublishPlan = resolveBriefingPublishPlan;
 export const __testSanitizeBriefingCopy = sanitizeBriefingCopy;
+export const __testValidateReportShape = validateReportShape;
+export const __testRepairPreMarketWriterReport = repairPreMarketWriterReport;
 export const __testPrepareReportForPublish = prepareReportForPublish;
 export const __testPrepareAndValidateWriterReport = prepareAndValidateWriterReport;
 export const __testRenderPostMarketReport = renderPostMarketReport;
