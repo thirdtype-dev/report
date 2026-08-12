@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T23:30:33.210Z",
+  "generatedAt": "2026-08-12T23:35:23.876Z",
   "phase": "pre_market",
   "sessionLabel": "08:30",
   "summary": {
@@ -34,11 +34,11 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,417.13",
+      "value": "1,417.16",
       "change": "+0.35%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-08-12T23:30:12.000Z",
+      "updatedAt": "2026-08-12T23:35:08.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "29,810.75",
+      "value": "29,808.25",
       "change": "+0.62%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-08-12T23:20:16.000Z",
+      "updatedAt": "2026-08-12T23:25:05.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,7 +82,7 @@
       "change": null,
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-08-13T08:30:33.197211+09:00",
+      "updatedAt": "2026-08-13T08:35:23.864223+09:00",
       "reason": "NAVER Finance/KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.",
       "sourceUrl": "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260813&sosok=01&page=1"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-08-12T23:30:33.210Z",
+      "updatedAt": "2026-08-12T23:35:23.876Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -124,12 +124,12 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,417.13",
-      "change": "+4.95",
+      "currentPrice": "1,417.16",
+      "change": "+4.98",
       "changePercent": "+0.35%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-08-12T23:30:12.000Z",
+      "updatedAt": "2026-08-12T23:35:08.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "29,810.75",
-      "change": "+184.75",
+      "currentPrice": "29,808.25",
+      "change": "+182.25",
       "changePercent": "+0.62%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-08-12T23:20:16.000Z",
+      "updatedAt": "2026-08-12T23:25:05.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -425,7 +425,7 @@
       "publishedAt": "Wed, 12 Aug 2026 22:13:40 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBiMG5DTDJmVkEzaGhySG16NHdPZDZsenFsSV9kOVpLWktCYkJGelZSUFh2cnJvaTRqbDd1LS1sRFJwQW5ITWNjZ0VtUUhMeEJjRWNtT3RtYTVlUdIBWEFVX3lxTE9tckx5dG1VMVNhZE9IODBMRlBYTlFkTy1Fb2toSE5CeEtVUmJaRXhiVTZzNm9HN2JpT1JxT3hYX1pFaWZBaGo3TGZCV2c2Wnc0WGdieWQzYXo?oc=5",
       "score": 21,
-      "corroboration": 8,
+      "corroboration": 7,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
@@ -729,7 +729,7 @@
       "publishedAt": "Wed, 12 Aug 2026 22:13:40 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBiMG5DTDJmVkEzaGhySG16NHdPZDZsenFsSV9kOVpLWktCYkJGelZSUFh2cnJvaTRqbDd1LS1sRFJwQW5ITWNjZ0VtUUhMeEJjRWNtT3RtYTVlUdIBWEFVX3lxTE9tckx5dG1VMVNhZE9IODBMRlBYTlFkTy1Fb2toSE5CeEtVUmJaRXhiVTZzNm9HN2JpT1JxT3hYX1pFaWZBaGo3TGZCV2c2Wnc0WGdieWQzYXo?oc=5",
       "score": 21,
-      "corroboration": 8,
+      "corroboration": 7,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
@@ -1364,14 +1364,6 @@
       "query": "코스피 코스닥 업종별 흐름 마감"
     },
     {
-      "title": "[속보] 코스피, 외인 3조 순매수와 반도체주 강세에 3.6% 반등…코스닥 0.12%↑ - 매일경제",
-      "summary": "[속보] 코스피, 외인 3조 순매수와 반도체주 강세에 3.6% 반등…코스닥 0.12%↑&nbsp;&nbsp;매일경제",
-      "source": "매일경제",
-      "publishedAt": "Wed, 12 Aug 2026 06:36:03 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9mZEo0azNnbzVScHdWNE1Gb1FtQXRPY0toLWtONWZscFh2WDVmZTlYU1M2ZXEtdklNMG0tWDNIOGFodVVvVEE?oc=5",
-      "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
-    },
-    {
       "title": "외국인 반도체 매수에 코스피 2%대 급등…코스닥은 1%대 하락 - 산경투데이",
       "summary": "외국인 반도체 매수에 코스피 2%대 급등…코스닥은 1%대 하락&nbsp;&nbsp;산경투데이",
       "source": "산경투데이",
@@ -1434,11 +1426,19 @@
       "publishedAt": "Tue, 11 Aug 2026 07:08:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9RSlVJdjJaWjFwWUF2MWxyQWlERWhTbGlhQUQ4ZmdtaTd3U0NuOThnQ3IyQ01oTXNkbHNxa2pZS3FiRmhuSEgyY1VfWQ?oc=5",
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
+    },
+    {
+      "title": "[거래소 외국인] 삼성전자 SK스퀘어 셀트리온 SK 삼성바이오로직스 집중매수 왜? - 핀포인트뉴스",
+      "summary": "[거래소 외국인] 삼성전자 SK스퀘어 셀트리온 SK 삼성바이오로직스 집중매수 왜?&nbsp;&nbsp;핀포인트뉴스",
+      "source": "핀포인트뉴스",
+      "publishedAt": "Tue, 11 Aug 2026 07:02:58 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9pWlFIbU5nNm9KM0t0RExacUh2bjk2SXpOQTkzbDlXaHBkemphWWxDd09oWjRzQ08zSWl1bmZWQy1qS0xiY0ktVDd3MjR5RUF2Nm1EWEhWdEQwYjRvakljZWFDNGVCOG9aNG9rX05pa2dWWkXSAXdBVV95cUxQLWplRUhkalBYNUJ4Yk8zTFZ2UXR4dkVlTHpzVkxlckNDX21RMFVua2pOblBWcGNFdGFfN05MQTdTb1ZCTUgydzd2UFY4aXlfQkRUTjRsSHNuM0Y2Zy1IWkJBd2puTXJZSXJwZ0VuMVRzNnZkYWNwUQ?oc=5",
+      "query": "반도체 2차전지 바이오 자동차 조선 업종 흐름"
     }
   ],
   "investorFlows": {
     "status": "ok",
-    "generatedAt": "2026-08-13T08:30:33.197211+09:00",
+    "generatedAt": "2026-08-13T08:35:23.864223+09:00",
     "source": "NAVER Finance/KRX",
     "sourceUrls": [
       "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260813&sosok=01&page=1",
