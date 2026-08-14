@@ -1,15 +1,15 @@
 {
   "schema": "urn:hermes:slot-adapter:v1",
   "scheduleKey": "09:00-15:00",
-  "cycleLabel": "KST_1100",
-  "slot": "11:00",
+  "cycleLabel": "KST_1200",
+  "slot": "12:00",
   "state": "market-open",
-  "slotHour": 11,
-  "title": "KST 11:00 슬롯",
-  "subtitle": "11:00 기준 실시간 급등 상세 데이터",
-  "generatedAt": "2026-08-14T02:00:14.401Z",
+  "slotHour": 12,
+  "title": "KST 12:00 슬롯",
+  "subtitle": "12:00 기준 실시간 급등 상세 데이터",
+  "generatedAt": "2026-08-14T03:00:20.647Z",
   "generatedDate": "2026-08-14",
-  "kstGeneratedAt": "2026. 08. 14. AM 11:00",
+  "kstGeneratedAt": "2026. 08. 14. PM 12:00",
   "reportRef": "./realtime-surge.json",
   "itemCount": 20,
   "writer": {
@@ -17,8 +17,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "mixed",
-    "model": "deepseek/deepseek-v4-flash, signal-polish-v1",
-    "fallbackReason": "partial_primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
