@@ -1,16 +1,91 @@
 {
-  "generated_at": "2026-08-14T06:00:15.713Z",
-  "generated_date": "2026-08-14",
-  "slot_hour": 15,
-  "cycle_label": "KST_1500",
-  "slot_label": "15:00",
+  "generated_at": "2026-08-18T01:00:17.295Z",
+  "generated_date": "2026-08-18",
+  "slot_hour": 10,
+  "cycle_label": "KST_1000",
+  "slot_label": "10:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 15:00 실시간 급등",
+    "title": "KST 10:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "한국금융지주",
+      "stockCode": "071050",
+      "summary": "한국금융지주 주가 하락중 아시아뉴스통신",
+      "headline": "한국금융지주 주가 하락중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "한국금융지주 주가 하락중"
+      ],
+      "mentionScore": 61.5,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-08-18T01:00:17.295Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "한국금융지주 주가 하락중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9POGhMVmJMLUFhTFpTTHRjeW9MdTJrQzlhcFNkOG5WeW5RQXEwcktLaWpEcDZrSFVXeHJjWG94QVBlMmoxck14b05jenY4NmdnZU1tU0M1QkhqeUtv?oc=5",
+      "publishedAt": "Tue, 18 Aug 2026 00:33:11 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한국금융지주 주가 하락중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9POGhMVmJMLUFhTFpTTHRjeW9MdTJrQzlhcFNkOG5WeW5RQXEwcktLaWpEcDZrSFVXeHJjWG94QVBlMmoxck14b05jenY4NmdnZU1tU0M1QkhqeUtv?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한국금융지주 주가 하락중",
+      "polishedBody": "한국금융지주는 주가 하락중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "[ LG전자 주가전망] 7시 33분 나왔던 \"긴급속보\" !! 화요일 \"난리\" !! Youri Chassin (nBWRF6zNcL)",
+      "headline": "LG전자 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신, Mshale 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "LG전자 주가 상승 중",
+        "[ LG전자 주가전망] 7시 33분 나왔던 \"긴급속보\" !! 화요일 \"난리\" !! Youri Chassin (nBWRF6zNcL)"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 4,
+      "updatedAt": "2026-08-18T01:00:17.295Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "LG전자 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBNZ2Zsa2JLUFU4RXdNSFp2ZkxjNXl6THBTWXhwbWhiOTI5ZjRDdHFsQ2c2dEhRcFpPQlNGVHlIam1mdHhjZ0pyLWtkYkx2ZUdGd0poRTlZQk1nOS1J?oc=5",
+      "publishedAt": "Tue, 18 Aug 2026 00:39:20 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBNZ2Zsa2JLUFU4RXdNSFp2ZkxjNXl6THBTWXhwbWhiOTI5ZjRDdHFsQ2c2dEhRcFpPQlNGVHlIam1mdHhjZ0pyLWtkYkx2ZUdGd0poRTlZQk1nOS1J?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[ LG전자 주가전망] 7시 33분 나왔던 \"긴급속보\" !! 화요일 \"난리\" !! Youri Chassin (nBWRF6zNcL)",
+          "source": "Mshale",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBoM2ZabkVFX2phWEVIT0c4UFhtRU05bnBxdG5RSWVkYkRjRU9yQnA0dHhoTk5pMGlsRXZQVmpKdjdLSVhwYmZITk9JS3hYWE5HR01UenoyNWUwb1VMMWdqOQ?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "LG전자 주가 상승 중",
+      "polishedBody": "LG전자는 7시 33분 나왔던 \"긴급속보\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 7시 33분 나왔던 \"긴급속보\" 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 Youri Chassin (nBWRF6zNcL) 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
     {
       "stockName": "파미셀",
       "stockCode": "005690",
@@ -44,46 +119,6 @@
       "hasNews": true,
       "polishedHeadline": "파미셀 주가 상승 중",
       "polishedBody": "파미셀의 주가가 현재 상승 흐름을 보이고 있습니다. 별도의 변동률 데이터는 확인되지 않았지만 긍정적인 방향성으로 평가됩니다. 이는 투자자들의 관심이 집중되고 있음을 시사합니다. 향후 추가적인 거래량 변화와 관련 공시를 주목할 필요가 있습니다."
-    },
-    {
-      "stockName": "한국금융지주",
-      "stockCode": "071050",
-      "summary": "[모닝 리포트] \"한국금융지주, KDB생명 인수로 종합금융그룹 도약…목표주가 30만원 유지\"",
-      "headline": "한국금융지주, KDB생명 인수 검토…종합금융그룹 도약 노려 [주가동향]",
-      "evidencePoints": [
-        "출처 조세일보, 뉴스핌 기반 기사 2건",
-        "한국금융지주, KDB생명 인수 검토…종합금융그룹 도약 노려 [주가동향]",
-        "[모닝 리포트] \"한국금융지주, KDB생명 인수로 종합금융그룹 도약…목표주가 30만원 유지\""
-      ],
-      "mentionScore": 82.4,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-08-14T06:00:15.713Z",
-      "cycleLabel": "KST_1500",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "한국금융지주, KDB생명 인수 검토…종합금융그룹 도약 노려 [주가동향]",
-      "source": "조세일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA5UlZENDJjRHY5b3dlNUFlSmxTXzhEQi1jYzRpaUx4UlhEb0kwR2I1MzF0VHVfb1FKWnpQeEsweUdjcHNWLWlUZFRkQzhQQXFjb3ZRMW50Rkl4RXk1c3Rz?oc=5",
-      "publishedAt": "Fri, 14 Aug 2026 00:23:27 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국금융지주, KDB생명 인수 검토…종합금융그룹 도약 노려 [주가동향]",
-          "source": "조세일보",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA5UlZENDJjRHY5b3dlNUFlSmxTXzhEQi1jYzRpaUx4UlhEb0kwR2I1MzF0VHVfb1FKWnpQeEsweUdjcHNWLWlUZFRkQzhQQXFjb3ZRMW50Rkl4RXk1c3Rz?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[모닝 리포트] \"한국금융지주, KDB생명 인수로 종합금융그룹 도약…목표주가 30만원 유지\"",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5TeWM2V2M1U0k4RmVYa2tTSTFVTDM4NGNzUGV2ci1FOHh1SzRxYWFUREdmbjAzUE8xYTFyQ3FZTGJiQktUNXdpbjJhUmVMSTQyUlVHeUZSNFRQcnVi?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한국금융지주, KDB생명 인수 검토",
-      "polishedBody": "한국금융지주가 KDB생명 인수를 검토 중이라는 소식이 전해졌습니다. 이는 종합금융그룹으로 도약하려는 전략적 움직임으로 해석됩니다. 업계에서는 이번 인수 추진이 회사에 중립적인 영향을 줄 것으로 보고 있습니다. 앞으로 인수 절차의 구체적인 진행 상황과 업계 반응을 지켜봐야 합니다."
     },
     {
       "stockName": "한국콜마",
@@ -702,44 +737,66 @@
       "hasNews": true,
       "polishedHeadline": "엘앤씨바이오 '대주주 블록딜' 청약 흥행 암초되나…주주들 '부글부글'①",
       "polishedBody": "엘앤씨바이오는 '대주주 블록딜' 청약 흥행 암초되나…주주들 '부글부글'① 녹색경제신문 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 '대주주 블록딜' 청약 흥행 암초되나…주주들 '부글부글'① 녹색경제신문 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "파인엠텍",
-      "stockCode": "441270",
-      "summary": "파인엠텍 투자분석 2026. 08. 12 주달",
-      "headline": "파인엠텍 투자분석 2026. 08. 12",
-      "evidencePoints": [
-        "출처 주달 기반 기사 1건",
-        "파인엠텍 투자분석 2026. 08. 12"
-      ],
-      "mentionScore": 57.2,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-08-13T01:00:17.280Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "파인엠텍 투자분석 2026. 08. 12",
-      "source": "주달",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5ENUZVT2tmUHhOdUd1RGtESEVwQkd4LVlqN2ZDY09IZ3htWUhxUTBSbEkzTUNGT29peWowOVY4cXV4Y0pxUzcxWEw4Tmdka1N3WHhLTXVFUUt6Qkc4MkU4clkyYVpLN0EyVnFvSGJrWFAyTFE?oc=5",
-      "publishedAt": "Wed, 12 Aug 2026 20:14:42 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "파인엠텍 투자분석 2026. 08. 12",
-          "source": "주달",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5ENUZVT2tmUHhOdUd1RGtESEVwQkd4LVlqN2ZDY09IZ3htWUhxUTBSbEkzTUNGT29peWowOVY4cXV4Y0pxUzcxWEw4Tmdka1N3WHhLTXVFUUt6Qkc4MkU4clkyYVpLN0EyVnFvSGJrWFAyTFE?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "파인엠텍 투자분석 2026. 08. 12",
-      "polishedBody": "파인엠텍은 투자분석 2026 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 투자분석 2026 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 투자분석 2026. 08. 12 주달 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
+      "symbol": "071050",
+      "name": "한국금융지주",
+      "changeRate": null,
+      "price": null,
+      "summary": "한국금융지주 주가 하락중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9POGhMVmJMLUFhTFpTTHRjeW9MdTJrQzlhcFNkOG5WeW5RQXEwcktLaWpEcDZrSFVXeHJjWG94QVBlMmoxck14b05jenY4NmdnZU1tU0M1QkhqeUtv?oc=5",
+      "mentionScore": 61.5,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "한국금융지주 주가 하락중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한국금융지주 주가 하락중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9POGhMVmJMLUFhTFpTTHRjeW9MdTJrQzlhcFNkOG5WeW5RQXEwcktLaWpEcDZrSFVXeHJjWG94QVBlMmoxck14b05jenY4NmdnZU1tU0M1QkhqeUtv?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-18T01:00:17.295Z",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "[ LG전자 주가전망] 7시 33분 나왔던 \"긴급속보\" !! 화요일 \"난리\" !! Youri Chassin (nBWRF6zNcL)",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBNZ2Zsa2JLUFU4RXdNSFp2ZkxjNXl6THBTWXhwbWhiOTI5ZjRDdHFsQ2c2dEhRcFpPQlNGVHlIam1mdHhjZ0pyLWtkYkx2ZUdGd0poRTlZQk1nOS1J?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 아시아뉴스통신, Mshale 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "LG전자 주가 상승 중",
+        "[ LG전자 주가전망] 7시 33분 나왔던 \"긴급속보\" !! 화요일 \"난리\" !! Youri Chassin (nBWRF6zNcL)"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBNZ2Zsa2JLUFU4RXdNSFp2ZkxjNXl6THBTWXhwbWhiOTI5ZjRDdHFsQ2c2dEhRcFpPQlNGVHlIam1mdHhjZ0pyLWtkYkx2ZUdGd0poRTlZQk1nOS1J?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[ LG전자 주가전망] 7시 33분 나왔던 \"긴급속보\" !! 화요일 \"난리\" !! Youri Chassin (nBWRF6zNcL)",
+          "source": "Mshale",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBoM2ZabkVFX2phWEVIT0c4UFhtRU05bnBxdG5RSWVkYkRjRU9yQnA0dHhoTk5pMGlsRXZQVmpKdjdLSVhwYmZITk9JS3hYWE5HR01UenoyNWUwb1VMMWdqOQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "005690",
       "name": "파미셀",
       "changeRate": null,
@@ -763,37 +820,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
-      "symbol": "071050",
-      "name": "한국금융지주",
-      "changeRate": null,
-      "price": null,
-      "summary": "[모닝 리포트] \"한국금융지주, KDB생명 인수로 종합금융그룹 도약…목표주가 30만원 유지\"",
-      "source": "조세일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA5UlZENDJjRHY5b3dlNUFlSmxTXzhEQi1jYzRpaUx4UlhEb0kwR2I1MzF0VHVfb1FKWnpQeEsweUdjcHNWLWlUZFRkQzhQQXFjb3ZRMW50Rkl4RXk1c3Rz?oc=5",
-      "mentionScore": 82.4,
-      "evidencePoints": [
-        "출처 조세일보, 뉴스핌 기반 기사 2건",
-        "한국금융지주, KDB생명 인수 검토…종합금융그룹 도약 노려 [주가동향]",
-        "[모닝 리포트] \"한국금융지주, KDB생명 인수로 종합금융그룹 도약…목표주가 30만원 유지\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국금융지주, KDB생명 인수 검토…종합금융그룹 도약 노려 [주가동향]",
-          "source": "조세일보",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA5UlZENDJjRHY5b3dlNUFlSmxTXzhEQi1jYzRpaUx4UlhEb0kwR2I1MzF0VHVfb1FKWnpQeEsweUdjcHNWLWlUZFRkQzhQQXFjb3ZRMW50Rkl4RXk1c3Rz?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[모닝 리포트] \"한국금융지주, KDB생명 인수로 종합금융그룹 도약…목표주가 30만원 유지\"",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5TeWM2V2M1U0k4RmVYa2tTSTFVTDM4NGNzUGV2ci1FOHh1SzRxYWFUREdmbjAzUE8xYTFyQ3FZTGJiQktUNXdpbjJhUmVMSTQyUlVHeUZSNFRQcnVi?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "161890",
       "name": "한국콜마",
       "changeRate": null,
@@ -817,7 +844,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "353200",
       "name": "대덕전자",
       "changeRate": null,
@@ -841,7 +868,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "042660",
       "name": "한화오션",
       "changeRate": 3,
@@ -872,7 +899,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": 2.13,
@@ -903,7 +930,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "068270",
       "name": "셀트리온",
       "changeRate": null,
@@ -934,7 +961,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "222800",
       "name": "심텍",
       "changeRate": null,
@@ -965,7 +992,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "240810",
       "name": "원익IPS",
       "changeRate": -7.33,
@@ -989,7 +1016,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "012450",
       "name": "한화에어로스페이스",
       "changeRate": -2.36,
@@ -1013,7 +1040,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "950160",
       "name": "코오롱티슈진",
       "changeRate": -0.39,
@@ -1037,7 +1064,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "088350",
       "name": "한화생명",
       "changeRate": null,
@@ -1061,7 +1088,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "181710",
       "name": "NHN",
       "changeRate": 30,
@@ -1085,7 +1112,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "000150",
       "name": "두산",
       "changeRate": null,
@@ -1116,7 +1143,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -1147,7 +1174,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "097950",
       "name": "CJ제일제당",
       "changeRate": null,
@@ -1171,7 +1198,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "484120",
       "name": "도우인시스",
       "changeRate": null,
@@ -1194,7 +1221,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "009240",
       "name": "한샘",
       "changeRate": null,
@@ -1218,7 +1245,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-14T06:00:15.713Z",
+      "timestamp": "2026-08-18T01:00:17.295Z",
       "symbol": "290650",
       "name": "엘앤씨바이오",
       "changeRate": null,
@@ -1239,29 +1266,6 @@
           "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9WYjBhOVAzdnFZaTlhZThsZ2Q2WENZbUpndk91T002ZFg0Sk1kaHBnVllFUmFXS08yQS03SkwwYjVzUHJZMG9Vb3Z4RDZQRE1XbEZ5WVRSdzUzeTlRaTZlV19lSTZjTTM2?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "2026-08-14T06:00:15.713Z",
-      "symbol": "441270",
-      "name": "파인엠텍",
-      "changeRate": null,
-      "price": null,
-      "summary": "파인엠텍 투자분석 2026. 08. 12 주달",
-      "source": "주달",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5ENUZVT2tmUHhOdUd1RGtESEVwQkd4LVlqN2ZDY09IZ3htWUhxUTBSbEkzTUNGT29peWowOVY4cXV4Y0pxUzcxWEw4Tmdka1N3WHhLTXVFUUt6Qkc4MkU4clkyYVpLN0EyVnFvSGJrWFAyTFE?oc=5",
-      "mentionScore": 57.2,
-      "evidencePoints": [
-        "출처 주달 기반 기사 1건",
-        "파인엠텍 투자분석 2026. 08. 12"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "파인엠텍 투자분석 2026. 08. 12",
-          "source": "주달",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5ENUZVT2tmUHhOdUd1RGtESEVwQkd4LVlqN2ZDY09IZ3htWUhxUTBSbEkzTUNGT29peWowOVY4cXV4Y0pxUzcxWEw4Tmdka1N3WHhLTXVFUUt6Qkc4MkU4clkyYVpLN0EyVnFvSGJrWFAyTFE?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -1269,8 +1273,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "openrouter",
-    "model": "deepseek/deepseek-v4-flash",
-    "fallbackReason": null
+    "provider": "rule-based",
+    "model": "signal-polish-v1",
+    "fallbackReason": "primary_failed"
   }
 }
