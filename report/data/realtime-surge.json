@@ -1,32 +1,73 @@
 {
-  "generated_at": "2026-08-20T02:00:16.054Z",
+  "generated_at": "2026-08-20T03:00:17.903Z",
   "generated_date": "2026-08-20",
-  "slot_hour": 11,
-  "cycle_label": "KST_1100",
-  "slot_label": "11:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 11:00 실시간 급등",
+    "title": "KST 12:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
+      "stockName": "한화에어로스페이스",
+      "stockCode": "012450",
+      "summary": "한화에어로스페이스 주가 하락 중",
+      "headline": "한화에어로스페이스 주가, 8월 20일 장중 1,170,000원 0.60% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -0.6%",
+        "한화에어로스페이스 주가, 8월 20일 장중 1,170,000원 0.60% 하락",
+        "한화에어로스페이스 주가 하락 중"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-08-20T03:00:17.903Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": -0.6,
+      "latestHeadline": "한화에어로스페이스 주가, 8월 20일 장중 1,170,000원 0.60% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1qb2NSM1BzNGZ1VldNdkRNU19XakJXUFZWSktMU0NST2ZuNjFtQzFmSGkyenRCVWU4a2JaQzRsdXRjeFcwdER6MW15ckN6dTEzOFN3MEF2R3BUZUdYQm54RE1oYkZoVzBzaEREWUg1eF9rQQ?oc=5",
+      "publishedAt": "Thu, 20 Aug 2026 01:51:19 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한화에어로스페이스 주가, 8월 20일 장중 1,170,000원 0.60% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1qb2NSM1BzNGZ1VldNdkRNU19XakJXUFZWSktMU0NST2ZuNjFtQzFmSGkyenRCVWU4a2JaQzRsdXRjeFcwdER6MW15ckN6dTEzOFN3MEF2R3BUZUdYQm54RE1oYkZoVzBzaEREWUg1eF9rQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한화에어로스페이스 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9SNzY3WUI1dG82ckplWFlFcVhzX3hQOHJvT1hSbm5yUFhZc1ZlZHlBTGdPcTFpNE9Ua3RlT0lfVmp5d2hDcWtLeE1fc0dUV01TLVlhd1ZUZVR6YzZ5?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "한화에어로스페이스 주가, 8월 20일 장중 1,170,000원 0.60% 하락",
+      "polishedBody": "한화에어로스페이스는 주가, 8월 20일 장중 1,170,000원 0.60% 하락 이슈로 단기 변동성이 확대됐습니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
       "stockName": "SK하이닉스",
       "stockCode": "000660",
-      "summary": "“삼성전자 차례지?”…SK하이닉스 ‘40조’ 주주환원에 삼전 주주 기대감도 ‘쑥’",
+      "summary": "전날 급락 코스피, 하루 만에 3% 반등 출발…SK하이닉스 6%↑",
       "headline": "SK하이닉스 주가, 오늘 급등하는 이유는?",
       "evidencePoints": [
-        "출처 매일경제 마켓, 매일신문, Investing.com 한국어, YTN, 조선일보 기반 기사 5건",
+        "출처 Investing.com 한국어, 매일경제 마켓, 조선일보 기반 기사 3건",
         "상승/강세 키워드 우세",
-        "“삼성전자 차례지?”…SK하이닉스 ‘40조’ 주주환원에 삼전 주주 기대감도 ‘쑥’",
-        "\"반도체 투심 회복될까\"…SK하이닉스 역대 최대 주주환원에 삼성전자도 기대감↑"
+        "SK하이닉스 주가, 오늘 급등하는 이유는?",
+        "전날 급락 코스피, 하루 만에 3% 반등 출발…SK하이닉스 6%↑"
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
-      "channelCount": 9,
-      "updatedAt": "2026-08-20T02:00:16.054Z",
-      "cycleLabel": "KST_1100",
+      "channelCount": 7,
+      "updatedAt": "2026-08-20T03:00:17.903Z",
+      "cycleLabel": "KST_1200",
       "direction": "up",
       "changeRate": null,
       "latestHeadline": "SK하이닉스 주가, 오늘 급등하는 이유는?",
@@ -36,27 +77,27 @@
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "“삼성전자 차례지?”…SK하이닉스 ‘40조’ 주주환원에 삼전 주주 기대감도 ‘쑥’",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5oSng2QWM2ZHd1dlk5VExITDFfSEFzZGdWTTE0alpVS01tTWtkMUZfcnVGX2d3X2ltaUo1UnFtRmxwU1I3ME5NdnotbktwQXFiRnc?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"반도체 투심 회복될까\"…SK하이닉스 역대 최대 주주환원에 삼성전자도 기대감↑",
-          "source": "매일신문",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB4XzRSNk1qSWJrcU9ITHVVUXFEcVlrWTFrSWNsd3NycG90UjhXVm5tdGtWQ3NIcmlSd0N1VlJFcV9YTlQ0RlU1cFVtMVZkd1NsLVZlQzRfVHNGRE9rTGgxaFF3?oc=5"
-        },
-        {
-          "label": "관련기사3",
           "title": "SK하이닉스 주가, 오늘 급등하는 이유는?",
           "source": "Investing.com 한국어",
           "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE10bDU1ZS01eHZLR0JteFQ0NmpCMFhlNnRyMFk5eUd4bkNSd3g4MTNFWUpTa2ViZE5jM2U4cmRiOS1EbnBHeFdtdEthaDNDa2ZPY0RiM21sSXRfN3VxN3IwMlBnZkhUVmJicVR2M3Zzblh4NWlJVGVz?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "전날 급락 코스피, 하루 만에 3% 반등 출발…SK하이닉스 6%↑",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0xcTV4d3FtZ0paSURhMm5aSkRiMWt4SmVBVGh1TXBSbTF3THd1NFJTcVVCdDkzbXJYTU4tTTk1aFM4N1p0Rmk5emU0cHNnVURGNDF2aEhtOFVpLWdyLWRxVQ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "“SK하이닉스 자사주 40조원 소각은 시작일뿐”...주가 상승 기대감 ‘쑥’",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQN3JaLVdDS1RIZEV3eDk5RmhSbEZWZEcwUEhzRTIwcXZpUmVvaEhtUmdoNnlyOUE5a2hQX3pXb19TdmV1bEN3Vk5zM2dWQlJMZHVEYW5UeG1kZEUtZ1FCN2pRM3NQbjBMTjNIMTkyeTlDOGxHdDhEZFloQ1ZCMU5OVw?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
       "polishedHeadline": "SK하이닉스 주가, 오늘",
-      "polishedBody": "SK하이닉스는 “삼성전자 차례지?”…‘40조’ 주주환원에 삼전 주주 기대감도 ‘쑥’ 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 \"반도체 투심 회복될까\"…역대 최대 주주환원에 삼성전자도 기대감↑ 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+      "polishedBody": "SK하이닉스는 하루 만에 3% 반등 출발…6%↑ 재료가 부각되며 단기 모멘텀을 형성했습니다. 하루 만에 반등 출발…↑ 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 “자사주 40조원 소각은 시작일뿐” 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "에이피알",
@@ -68,11 +109,11 @@
         "하락/약세 키워드 우세",
         "[특징주] 에이피알, 차익실현 매물 출회 속 장중 하락세 지속 : 기업주식정보"
       ],
-      "mentionScore": 87.7,
+      "mentionScore": 86.7,
       "sentimentLabel": "negative",
       "channelCount": 2,
-      "updatedAt": "2026-08-20T02:00:16.054Z",
-      "cycleLabel": "KST_1100",
+      "updatedAt": "2026-08-20T03:00:17.903Z",
+      "cycleLabel": "KST_1200",
       "direction": "down",
       "changeRate": null,
       "latestHeadline": "[특징주] 에이피알, 차익실현 매물 출회 속 장중 하락세 지속 : 기업주식정보",
@@ -91,6 +132,73 @@
       "hasNews": true,
       "polishedHeadline": "에이피알 차익실현 매물 출회 속 장중 하락세 지속 기업주식정보",
       "polishedBody": "에이피알은 차익실현 매물 출회 속 장중 하락세 지속 기업주식정보 재경일보 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "로보티즈",
+      "stockCode": "108490",
+      "summary": "로보티즈 주가, 8월 20일 장중 264,500원 0.94% 하락 톱스타뉴스",
+      "headline": "로보티즈 주가, 8월 20일 장중 264,500원 0.94% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -0.9%",
+        "로보티즈 주가, 8월 20일 장중 264,500원 0.94% 하락"
+      ],
+      "mentionScore": 62,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-08-20T03:00:17.903Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": -0.94,
+      "latestHeadline": "로보티즈 주가, 8월 20일 장중 264,500원 0.94% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBhY1hpcWdCU2J3WTNoaFA0RjNGMnppekxpU2NfYlpDT2dlcjRQY1J0OXNzbmQzYUNRMF9iUlFmSUxGQnk1MVExTm9TQWItRTF2QlF6NUgzQzV4Q2lpNmc3a3dvaFd0MmdyZGkwNDdTTXpkdw?oc=5",
+      "publishedAt": "Thu, 20 Aug 2026 01:54:41 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "로보티즈 주가, 8월 20일 장중 264,500원 0.94% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBhY1hpcWdCU2J3WTNoaFA0RjNGMnppekxpU2NfYlpDT2dlcjRQY1J0OXNzbmQzYUNRMF9iUlFmSUxGQnk1MVExTm9TQWItRTF2QlF6NUgzQzV4Q2lpNmc3a3dvaFd0MmdyZGkwNDdTTXpkdw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "로보티즈 주가, 8월 20일 장중 264,500원 0.94% 하락",
+      "polishedBody": "로보티즈는 주가, 8월 20일 장중 264,500원 0.94% 하락 톱스타뉴스 이슈로 단기 변동성이 확대됐습니다. 주가, 8월 20일 장중 264,500원 톱스타뉴스 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "이수페타시스",
+      "stockCode": "007660",
+      "summary": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유 한국경제",
+      "headline": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유",
+      "evidencePoints": [
+        "출처 한국경제 기반 기사 1건",
+        "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유"
+      ],
+      "mentionScore": 58.4,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-08-20T03:00:17.903Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유",
+      "source": "한국경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83NzMzTWxrT0tfOFVvR2wwTHdMLXFRa0NSTFUtQ2ttSjJxSVZEcUt3c0ZEVnBXSDR6UWhFWmVPcklGQ0RUVWxnZU5aNDc0eU9adTNuUHpVaXZpZw?oc=5",
+      "publishedAt": "Wed, 19 Aug 2026 23:22:31 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83NzMzTWxrT0tfOFVvR2wwTHdMLXFRa0NSTFUtQ2ttSjJxSVZEcUt3c0ZEVnBXSDR6UWhFWmVPcklGQ0RUVWxnZU5aNDc0eU9adTNuUHpVaXZpZw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "이수페타시스 이달 들어서만",
+      "polishedBody": "이수페타시스는 이달 들어서만 주가 50% 가까이 뛴 3가지 이유 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 이달 들어서만 주가 가까이 뛴 3가지 이유 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
       "stockName": "LG전자",
@@ -341,80 +449,6 @@
       "hasNews": true,
       "polishedHeadline": "한국금융지주, 금융주 훈풍 속 기관 매수",
       "polishedBody": "한국금융지주는 금융주 훈풍 속 기관 매수세 유입 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 금융주 훈풍 속 기관 매수세 유입 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 신고가 경신 기대감 기업주식정보 재경일보 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "이수페타시스",
-      "stockCode": "007660",
-      "summary": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유 한국경제",
-      "headline": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유",
-      "evidencePoints": [
-        "출처 한국경제 기반 기사 1건",
-        "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유"
-      ],
-      "mentionScore": 59.4,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-08-20T02:00:16.054Z",
-      "cycleLabel": "KST_1100",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유",
-      "source": "한국경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83NzMzTWxrT0tfOFVvR2wwTHdMLXFRa0NSTFUtQ2ttSjJxSVZEcUt3c0ZEVnBXSDR6UWhFWmVPcklGQ0RUVWxnZU5aNDc0eU9adTNuUHpVaXZpZw?oc=5",
-      "publishedAt": "Wed, 19 Aug 2026 23:22:31 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83NzMzTWxrT0tfOFVvR2wwTHdMLXFRa0NSTFUtQ2ttSjJxSVZEcUt3c0ZEVnBXSDR6UWhFWmVPcklGQ0RUVWxnZU5aNDc0eU9adTNuUHpVaXZpZw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "이수페타시스, 이달 주가 50% 급등",
-      "polishedBody": "이수페타시스는 이달 들어서만 주가 50% 가까이 뛴 3가지 이유 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 이달 들어서만 주가 가까이 뛴 3가지 이유 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "한화에어로스페이스",
-      "stockCode": "012450",
-      "summary": "한화에어로스페이스, 첫 10조원대 美 차륜형 자주포 시장 진출-다올",
-      "headline": "한화에어로스페이스 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 인포스탁데일리 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "한화에어로스페이스 주가 하락 중",
-        "한화에어로스페이스, 첫 10조원대 美 차륜형 자주포 시장 진출-다올"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 3,
-      "updatedAt": "2026-08-20T02:00:16.054Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "한화에어로스페이스 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9SNzY3WUI1dG82ckplWFlFcVhzX3hQOHJvT1hSbm5yUFhZc1ZlZHlBTGdPcTFpNE9Ua3RlT0lfVmp5d2hDcWtLeE1fc0dUV01TLVlhd1ZUZVR6YzZ5?oc=5",
-      "publishedAt": "Thu, 20 Aug 2026 00:35:02 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화에어로스페이스 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9SNzY3WUI1dG82ckplWFlFcVhzX3hQOHJvT1hSbm5yUFhZc1ZlZHlBTGdPcTFpNE9Ua3RlT0lfVmp5d2hDcWtLeE1fc0dUV01TLVlhd1ZUZVR6YzZ5?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한화에어로스페이스, 첫 10조원대 美 차륜형 자주포 시장 진출-다올",
-          "source": "인포스탁데일리",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9QWkl1YWVSYjAwbmxEM0ZiMnlCTGhYYmYxRDZpOUZxa2JuWGZNR3ZPV2dQZE53Rk9OdkFFaXZmenpZTUVnVmkydmxFZjlYQk9EYnI4ejVobnBXemx5MTNobDVfNVRxTzQzeXhqU29UcU5zTzhFeFE?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "한화에어로스페이스 주가 하락 중",
-      "polishedBody": "한화에어로스페이스는 첫 10조원대 美 차륜형 자주포 시장 진출 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
       "stockName": "삼성전기",
@@ -682,46 +716,6 @@
       "polishedBody": "티앤엘은 키움 \", 단기 실적 모멘텀 지속\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 키움 \", 단기 실적 모멘텀 지속\" 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 키움證, 관세 환급 없이도 수익성 개선…목표가↑ 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "로보티즈",
-      "stockCode": "108490",
-      "summary": "삼성證 로보티즈, 중국향 매출 고성장·신사업 본격화…목표주가 9.4%↑",
-      "headline": "[종목 포커스] 로보티즈, 캐파 130만개 확대로 대량양산 개시…주가 회복할까",
-      "evidencePoints": [
-        "출처 데일리인베스트, 아주경제 기반 기사 2건",
-        "[종목 포커스] 로보티즈, 캐파 130만개 확대로 대량양산 개시…주가 회복할까",
-        "삼성證 로보티즈, 중국향 매출 고성장·신사업 본격화…목표주가 9.4%↑"
-      ],
-      "mentionScore": 83.4,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-08-19T06:00:20.528Z",
-      "cycleLabel": "KST_1500",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[종목 포커스] 로보티즈, 캐파 130만개 확대로 대량양산 개시…주가 회복할까",
-      "source": "데일리인베스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WU1NJTE12aUlRc3ZGN3FWMUNFSWRWdnZCMlBTcWk3UzZkd1ZiMTFTRUhvU0FqVUI0UGhkRmtpMlZaTVMzWUdxN2JEeEotNTNuNUhHVk5OZC16cWtRY0lJY1FiRU1BdmgzR0NCdlljSdIBb0FVX3lxTE1WU1NJTE12aUlRc3ZGN3FWMUNFSWRWdnZCMlBTcWk3UzZkd1ZiMTFTRUhvU0FqVUI0UGhkRmtpMlZaTVMzWUdxN2JEeEotNTNuNUhHVk5OZC16cWtRY0lJY1FiRU1BdmgzR0NCdlljSQ?oc=5",
-      "publishedAt": "Wed, 19 Aug 2026 01:22:08 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[종목 포커스] 로보티즈, 캐파 130만개 확대로 대량양산 개시…주가 회복할까",
-          "source": "데일리인베스트",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WU1NJTE12aUlRc3ZGN3FWMUNFSWRWdnZCMlBTcWk3UzZkd1ZiMTFTRUhvU0FqVUI0UGhkRmtpMlZaTVMzWUdxN2JEeEotNTNuNUhHVk5OZC16cWtRY0lJY1FiRU1BdmgzR0NCdlljSdIBb0FVX3lxTE1WU1NJTE12aUlRc3ZGN3FWMUNFSWRWdnZCMlBTcWk3UzZkd1ZiMTFTRUhvU0FqVUI0UGhkRmtpMlZaTVMzWUdxN2JEeEotNTNuNUhHVk5OZC16cWtRY0lJY1FiRU1BdmgzR0NCdlljSQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성證 로보티즈, 중국향 매출 고성장·신사업 본격화…목표주가 9.4%↑",
-          "source": "아주경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB3OGs2ZUFlbmNMbWhaUUM4bWJMMU1VeUowV1BRVHBWT2VVdU5PZGVJa1FzclJJY0tENV9ZeWRESmVEYjRKZ2RYVUE5WTJCeDJjc1F2Ui1jYTRKd9IBWEFVX3lxTE9zU29hRzV2YjVRU242U2hUNHNib1ptYWtENjJnemJSRDZ2NVlyeHNFWEpvakxDNE1mOVhnbGZnY2tmYnZ0eVltYThweDh3bk9iTGh2WGVqZlE?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "로보티즈, 캐파 130만개 확대…대량양산 개시",
-      "polishedBody": "로보티즈는 삼성證, 중국향 매출 고성장·신사업 본격화…목표주가 9.4%↑ 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 삼성證, 중국향 매출 고성장·신사업 본격화…목표주가 ↑ 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 캐파 130만개 확대로 대량양산 개시…주가 회복할까 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
       "stockName": "티엘비",
       "stockCode": "356860",
       "summary": "[서치 e종목] 티엘비, 소캠 양산 본격화로 매출 비중↑…하반기 영업이익 급증할까 데일리인베스트",
@@ -757,44 +751,75 @@
   ],
   "items": [
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": null,
+      "timestamp": "2026-08-20T03:00:17.903Z",
+      "symbol": "012450",
+      "name": "한화에어로스페이스",
+      "changeRate": -0.6,
       "price": null,
-      "summary": "“삼성전자 차례지?”…SK하이닉스 ‘40조’ 주주환원에 삼전 주주 기대감도 ‘쑥’",
-      "source": "Investing.com 한국어",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMid0FVX3lxTE10bDU1ZS01eHZLR0JteFQ0NmpCMFhlNnRyMFk5eUd4bkNSd3g4MTNFWUpTa2ViZE5jM2U4cmRiOS1EbnBHeFdtdEthaDNDa2ZPY0RiM21sSXRfN3VxN3IwMlBnZkhUVmJicVR2M3Zzblh4NWlJVGVz?oc=5",
+      "summary": "한화에어로스페이스 주가 하락 중",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1qb2NSM1BzNGZ1VldNdkRNU19XakJXUFZWSktMU0NST2ZuNjFtQzFmSGkyenRCVWU4a2JaQzRsdXRjeFcwdER6MW15ckN6dTEzOFN3MEF2R3BUZUdYQm54RE1oYkZoVzBzaEREWUg1eF9rQQ?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 매일경제 마켓, 매일신문, Investing.com 한국어, YTN, 조선일보 기반 기사 5건",
-        "상승/강세 키워드 우세",
-        "“삼성전자 차례지?”…SK하이닉스 ‘40조’ 주주환원에 삼전 주주 기대감도 ‘쑥’",
-        "\"반도체 투심 회복될까\"…SK하이닉스 역대 최대 주주환원에 삼성전자도 기대감↑"
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -0.6%",
+        "한화에어로스페이스 주가, 8월 20일 장중 1,170,000원 0.60% 하락",
+        "한화에어로스페이스 주가 하락 중"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "“삼성전자 차례지?”…SK하이닉스 ‘40조’ 주주환원에 삼전 주주 기대감도 ‘쑥’",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5oSng2QWM2ZHd1dlk5VExITDFfSEFzZGdWTTE0alpVS01tTWtkMUZfcnVGX2d3X2ltaUo1UnFtRmxwU1I3ME5NdnotbktwQXFiRnc?oc=5"
+          "title": "한화에어로스페이스 주가, 8월 20일 장중 1,170,000원 0.60% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1qb2NSM1BzNGZ1VldNdkRNU19XakJXUFZWSktMU0NST2ZuNjFtQzFmSGkyenRCVWU4a2JaQzRsdXRjeFcwdER6MW15ckN6dTEzOFN3MEF2R3BUZUdYQm54RE1oYkZoVzBzaEREWUg1eF9rQQ?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "\"반도체 투심 회복될까\"…SK하이닉스 역대 최대 주주환원에 삼성전자도 기대감↑",
-          "source": "매일신문",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB4XzRSNk1qSWJrcU9ITHVVUXFEcVlrWTFrSWNsd3NycG90UjhXVm5tdGtWQ3NIcmlSd0N1VlJFcV9YTlQ0RlU1cFVtMVZkd1NsLVZlQzRfVHNGRE9rTGgxaFF3?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "SK하이닉스 주가, 오늘 급등하는 이유는?",
-          "source": "Investing.com 한국어",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE10bDU1ZS01eHZLR0JteFQ0NmpCMFhlNnRyMFk5eUd4bkNSd3g4MTNFWUpTa2ViZE5jM2U4cmRiOS1EbnBHeFdtdEthaDNDa2ZPY0RiM21sSXRfN3VxN3IwMlBnZkhUVmJicVR2M3Zzblh4NWlJVGVz?oc=5"
+          "title": "한화에어로스페이스 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9SNzY3WUI1dG82ckplWFlFcVhzX3hQOHJvT1hSbm5yUFhZc1ZlZHlBTGdPcTFpNE9Ua3RlT0lfVmp5d2hDcWtLeE1fc0dUV01TLVlhd1ZUZVR6YzZ5?oc=5"
         }
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "changeRate": null,
+      "price": null,
+      "summary": "전날 급락 코스피, 하루 만에 3% 반등 출발…SK하이닉스 6%↑",
+      "source": "Investing.com 한국어",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMid0FVX3lxTE10bDU1ZS01eHZLR0JteFQ0NmpCMFhlNnRyMFk5eUd4bkNSd3g4MTNFWUpTa2ViZE5jM2U4cmRiOS1EbnBHeFdtdEthaDNDa2ZPY0RiM21sSXRfN3VxN3IwMlBnZkhUVmJicVR2M3Zzblh4NWlJVGVz?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 Investing.com 한국어, 매일경제 마켓, 조선일보 기반 기사 3건",
+        "상승/강세 키워드 우세",
+        "SK하이닉스 주가, 오늘 급등하는 이유는?",
+        "전날 급락 코스피, 하루 만에 3% 반등 출발…SK하이닉스 6%↑"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "SK하이닉스 주가, 오늘 급등하는 이유는?",
+          "source": "Investing.com 한국어",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE10bDU1ZS01eHZLR0JteFQ0NmpCMFhlNnRyMFk5eUd4bkNSd3g4MTNFWUpTa2ViZE5jM2U4cmRiOS1EbnBHeFdtdEthaDNDa2ZPY0RiM21sSXRfN3VxN3IwMlBnZkhUVmJicVR2M3Zzblh4NWlJVGVz?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "전날 급락 코스피, 하루 만에 3% 반등 출발…SK하이닉스 6%↑",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0xcTV4d3FtZ0paSURhMm5aSkRiMWt4SmVBVGh1TXBSbTF3THd1NFJTcVVCdDkzbXJYTU4tTTk1aFM4N1p0Rmk5emU0cHNnVURGNDF2aEhtOFVpLWdyLWRxVQ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "“SK하이닉스 자사주 40조원 소각은 시작일뿐”...주가 상승 기대감 ‘쑥’",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQN3JaLVdDS1RIZEV3eDk5RmhSbEZWZEcwUEhzRTIwcXZpUmVvaEhtUmdoNnlyOUE5a2hQX3pXb19TdmV1bEN3Vk5zM2dWQlJMZHVEYW5UeG1kZEUtZ1FCN2pRM3NQbjBMTjNIMTkyeTlDOGxHdDhEZFloQ1ZCMU5OVw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "278470",
       "name": "에이피알",
       "changeRate": null,
@@ -802,7 +827,7 @@
       "summary": "[특징주] 에이피알, 차익실현 매물 출회 속 장중 하락세 지속 : 기업주식정보 재경일보",
       "source": "재경일보",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5GNGRObTR0azR1VW9teGFUYTdqR3dxZERkUUo4VE1mdVd6eWJHYnV3YkFGeWk2U3BheU5ETXQtR3ljWVJyeWR2d0tB?oc=5",
-      "mentionScore": 87.7,
+      "mentionScore": 86.7,
       "evidencePoints": [
         "출처 재경일보 기반 기사 1건",
         "하락/약세 키워드 우세",
@@ -818,7 +843,54 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
+      "symbol": "108490",
+      "name": "로보티즈",
+      "changeRate": -0.94,
+      "price": null,
+      "summary": "로보티즈 주가, 8월 20일 장중 264,500원 0.94% 하락 톱스타뉴스",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBhY1hpcWdCU2J3WTNoaFA0RjNGMnppekxpU2NfYlpDT2dlcjRQY1J0OXNzbmQzYUNRMF9iUlFmSUxGQnk1MVExTm9TQWItRTF2QlF6NUgzQzV4Q2lpNmc3a3dvaFd0MmdyZGkwNDdTTXpkdw?oc=5",
+      "mentionScore": 62,
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -0.9%",
+        "로보티즈 주가, 8월 20일 장중 264,500원 0.94% 하락"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "로보티즈 주가, 8월 20일 장중 264,500원 0.94% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBhY1hpcWdCU2J3WTNoaFA0RjNGMnppekxpU2NfYlpDT2dlcjRQY1J0OXNzbmQzYUNRMF9iUlFmSUxGQnk1MVExTm9TQWItRTF2QlF6NUgzQzV4Q2lpNmc3a3dvaFd0MmdyZGkwNDdTTXpkdw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-20T03:00:17.903Z",
+      "symbol": "007660",
+      "name": "이수페타시스",
+      "changeRate": null,
+      "price": null,
+      "summary": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유 한국경제",
+      "source": "한국경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83NzMzTWxrT0tfOFVvR2wwTHdMLXFRa0NSTFUtQ2ttSjJxSVZEcUt3c0ZEVnBXSDR6UWhFWmVPcklGQ0RUVWxnZU5aNDc0eU9adTNuUHpVaXZpZw?oc=5",
+      "mentionScore": 58.4,
+      "evidencePoints": [
+        "출처 한국경제 기반 기사 1건",
+        "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83NzMzTWxrT0tfOFVvR2wwTHdMLXFRa0NSTFUtQ2ttSjJxSVZEcUt3c0ZEVnBXSDR6UWhFWmVPcklGQ0RUVWxnZU5aNDc0eU9adTNuUHpVaXZpZw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "066570",
       "name": "LG전자",
       "changeRate": 1.49,
@@ -849,7 +921,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
@@ -879,7 +951,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "003230",
       "name": "삼양식품",
       "changeRate": 7,
@@ -903,7 +975,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "161890",
       "name": "한국콜마",
       "changeRate": 4.15,
@@ -927,7 +999,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "005830",
       "name": "DB손해보험",
       "changeRate": -4,
@@ -951,7 +1023,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "222800",
       "name": "심텍",
       "changeRate": 3.79,
@@ -975,7 +1047,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "071050",
       "name": "한국금융지주",
       "changeRate": null,
@@ -998,61 +1070,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
-      "symbol": "007660",
-      "name": "이수페타시스",
-      "changeRate": null,
-      "price": null,
-      "summary": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유 한국경제",
-      "source": "한국경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83NzMzTWxrT0tfOFVvR2wwTHdMLXFRa0NSTFUtQ2ttSjJxSVZEcUt3c0ZEVnBXSDR6UWhFWmVPcklGQ0RUVWxnZU5aNDc0eU9adTNuUHpVaXZpZw?oc=5",
-      "mentionScore": 59.4,
-      "evidencePoints": [
-        "출처 한국경제 기반 기사 1건",
-        "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "이수페타시스, 이달 들어서만 주가 50% 가까이 뛴 3가지 이유",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE83NzMzTWxrT0tfOFVvR2wwTHdMLXFRa0NSTFUtQ2ttSjJxSVZEcUt3c0ZEVnBXSDR6UWhFWmVPcklGQ0RUVWxnZU5aNDc0eU9adTNuUHpVaXZpZw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-20T02:00:16.054Z",
-      "symbol": "012450",
-      "name": "한화에어로스페이스",
-      "changeRate": null,
-      "price": null,
-      "summary": "한화에어로스페이스, 첫 10조원대 美 차륜형 자주포 시장 진출-다올",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9SNzY3WUI1dG82ckplWFlFcVhzX3hQOHJvT1hSbm5yUFhZc1ZlZHlBTGdPcTFpNE9Ua3RlT0lfVmp5d2hDcWtLeE1fc0dUV01TLVlhd1ZUZVR6YzZ5?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 인포스탁데일리 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "한화에어로스페이스 주가 하락 중",
-        "한화에어로스페이스, 첫 10조원대 美 차륜형 자주포 시장 진출-다올"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화에어로스페이스 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9SNzY3WUI1dG82ckplWFlFcVhzX3hQOHJvT1hSbm5yUFhZc1ZlZHlBTGdPcTFpNE9Ua3RlT0lfVmp5d2hDcWtLeE1fc0dUV01TLVlhd1ZUZVR6YzZ5?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한화에어로스페이스, 첫 10조원대 美 차륜형 자주포 시장 진출-다올",
-          "source": "인포스탁데일리",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9QWkl1YWVSYjAwbmxEM0ZiMnlCTGhYYmYxRDZpOUZxa2JuWGZNR3ZPV2dQZE53Rk9OdkFFaXZmenpZTUVnVmkydmxFZjlYQk9EYnI4ejVobnBXemx5MTNobDVfNVRxTzQzeXhqU29UcU5zTzhFeFE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": 1.73,
@@ -1083,7 +1101,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "042660",
       "name": "한화오션",
       "changeRate": null,
@@ -1113,7 +1131,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "068270",
       "name": "셀트리온",
       "changeRate": null,
@@ -1137,7 +1155,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "067310",
       "name": "하나마이크론",
       "changeRate": null,
@@ -1161,7 +1179,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "011200",
       "name": "HMM",
       "changeRate": null,
@@ -1185,7 +1203,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "095340",
       "name": "ISC",
       "changeRate": null,
@@ -1216,7 +1234,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "340570",
       "name": "티앤엘",
       "changeRate": 2,
@@ -1247,37 +1265,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-20T02:00:16.054Z",
-      "symbol": "108490",
-      "name": "로보티즈",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성證 로보티즈, 중국향 매출 고성장·신사업 본격화…목표주가 9.4%↑",
-      "source": "데일리인베스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WU1NJTE12aUlRc3ZGN3FWMUNFSWRWdnZCMlBTcWk3UzZkd1ZiMTFTRUhvU0FqVUI0UGhkRmtpMlZaTVMzWUdxN2JEeEotNTNuNUhHVk5OZC16cWtRY0lJY1FiRU1BdmgzR0NCdlljSdIBb0FVX3lxTE1WU1NJTE12aUlRc3ZGN3FWMUNFSWRWdnZCMlBTcWk3UzZkd1ZiMTFTRUhvU0FqVUI0UGhkRmtpMlZaTVMzWUdxN2JEeEotNTNuNUhHVk5OZC16cWtRY0lJY1FiRU1BdmgzR0NCdlljSQ?oc=5",
-      "mentionScore": 83.4,
-      "evidencePoints": [
-        "출처 데일리인베스트, 아주경제 기반 기사 2건",
-        "[종목 포커스] 로보티즈, 캐파 130만개 확대로 대량양산 개시…주가 회복할까",
-        "삼성證 로보티즈, 중국향 매출 고성장·신사업 본격화…목표주가 9.4%↑"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[종목 포커스] 로보티즈, 캐파 130만개 확대로 대량양산 개시…주가 회복할까",
-          "source": "데일리인베스트",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WU1NJTE12aUlRc3ZGN3FWMUNFSWRWdnZCMlBTcWk3UzZkd1ZiMTFTRUhvU0FqVUI0UGhkRmtpMlZaTVMzWUdxN2JEeEotNTNuNUhHVk5OZC16cWtRY0lJY1FiRU1BdmgzR0NCdlljSdIBb0FVX3lxTE1WU1NJTE12aUlRc3ZGN3FWMUNFSWRWdnZCMlBTcWk3UzZkd1ZiMTFTRUhvU0FqVUI0UGhkRmtpMlZaTVMzWUdxN2JEeEotNTNuNUhHVk5OZC16cWtRY0lJY1FiRU1BdmgzR0NCdlljSQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성證 로보티즈, 중국향 매출 고성장·신사업 본격화…목표주가 9.4%↑",
-          "source": "아주경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB3OGs2ZUFlbmNMbWhaUUM4bWJMMU1VeUowV1BRVHBWT2VVdU5PZGVJa1FzclJJY0tENV9ZeWRESmVEYjRKZ2RYVUE5WTJCeDJjc1F2Ui1jYTRKd9IBWEFVX3lxTE9zU29hRzV2YjVRU242U2hUNHNib1ptYWtENjJnemJSRDZ2NVlyeHNFWEpvakxDNE1mOVhnbGZnY2tmYnZ0eVltYThweDh3bk9iTGh2WGVqZlE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-20T02:00:16.054Z",
+      "timestamp": "2026-08-20T03:00:17.903Z",
       "symbol": "356860",
       "name": "티엘비",
       "changeRate": null,
@@ -1305,8 +1293,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "mixed",
-    "model": "signal-polish-v1, deepseek/deepseek-v4-flash",
-    "fallbackReason": "partial_primary_failed"
+    "provider": "rule-based",
+    "model": "signal-polish-v1",
+    "fallbackReason": "primary_failed"
   }
 }
