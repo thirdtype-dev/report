@@ -27,6 +27,7 @@ const YAHOO_SYMBOLS = [
   { key: 'sp500', title: 'S&P 500', symbol: '^GSPC' },
   { key: 'nasdaq_futures', title: 'Nasdaq Futures', symbol: 'NQ=F' }
 ];
+const NPAY_KOSPI_URL = 'https://finance.naver.com/sise/sise_index.naver?code=KOSPI';
 const NEWS_QUERIES = [
   '한국 증시 코스피 코스닥 반도체 2차전지',
   '한국 증시 외국인 기관 수급',
@@ -563,7 +564,7 @@ function sanitizeBriefingCopy(value) {
   return value;
 }
 
-const PLACEHOLDER_COPY_RE = /(수집되지 않았습니다|뉴스 수집 실패|fetch_failed_\d+|재분류해야 합니다|확인되지 않았습니다|확인 불가)/u;
+const PLACEHOLDER_COPY_RE = /(수집되지 않았습니다|뉴스 수집 실패|fetch_failed_\d+|재분류해야 합니다|확인되지 않았습니다|확인 불가|확인\s*필요)/u;
 const STALE_INVESTOR_FLOW_COPY_RE = /(?:전일(?:에는|의)?|전\s*거래일|이전\s*거래일|지난\s*거래일)[^.!?。]*(?:순매수|순매도|매도|매수)|(?:외국인|기관|개인)[^.!?。]*(?:전일(?:에는|의)?|전\s*거래일|이전\s*거래일|지난\s*거래일)[^.!?。]*(?:순매수|순매도|매도|매수)/u;
 const UNAVAILABLE_INVESTOR_FLOW_COPY_RE = /(?:정형\s*수급|투자자별\s*수급)[^.!?。]*(?:완료되지|확정\s*전|미확정|수집\s*(?:중|전|불가|실패)|공개\s*(?:전|대기))|(?:외국인|기관|개인)[^.!?。]*(?:확정\s*전|미확정|수집\s*(?:중|전|불가|실패)|공개\s*(?:전|대기))/u;
 
@@ -1744,6 +1745,139 @@ function signalFromChangePercent(value) {
   return 'yellow';
 }
 
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function extractElementById(html, id) {
+  const source = String(html ?? '');
+  const openingTag = new RegExp(
+    `<([a-z][\\w:-]*)\\b[^>]*\\bid\\s*=\\s*["']${escapeRegExp(id)}["'][^>]*>`,
+    'iu'
+  ).exec(source);
+  if (!openingTag) return null;
+
+  const tagName = openingTag[1].toLowerCase();
+  const contentStart = openingTag.index + openingTag[0].length;
+  const tagPattern = /<\/?([a-z][\w:-]*)(?:\s[^>]*)?>/giu;
+  tagPattern.lastIndex = contentStart;
+  let depth = 1;
+  let token;
+
+  while ((token = tagPattern.exec(source)) !== null) {
+    const tokenTagName = token[1].toLowerCase();
+    if (token[0].startsWith('</')) {
+      if (tokenTagName !== tagName) continue;
+      depth -= 1;
+      if (depth === 0) {
+        return {
+          content: source.slice(contentStart, token.index),
+          openTag: openingTag[0]
+        };
+      }
+    } else if (!token[0].endsWith('/>') && tokenTagName === tagName) {
+      depth += 1;
+    }
+  }
+
+  return {
+    content: source.slice(contentStart),
+    openTag: openingTag[0]
+  };
+}
+
+function numericTokens(value) {
+  return [...String(value ?? '').matchAll(/[+-]?\d[\d,]*(?:\.\d+)?%?/g)]
+    .map((match) => ({
+      raw: match[0],
+      value: Number(match[0].replaceAll(',', '').replace(/%$/u, '')),
+      isPercent: match[0].endsWith('%')
+    }))
+    .filter((token) => Number.isFinite(token.value));
+}
+
+function applyNpayDirection(value, raw, direction) {
+  if (/^[+-]/u.test(raw)) return value;
+  if (direction === 'dn' || direction === 'down') return -Math.abs(value);
+  if (direction === 'up') return Math.abs(value);
+  if (direction === 'same' || direction === 'no') return value;
+  throw new Error('npay_invalid_kospi_markup:missing_direction');
+}
+
+function parseNpayKospiIndex(html) {
+  const quotient = extractElementById(html, 'quotient');
+  const nowValue = extractElementById(html, 'now_value');
+  const changeAndRate = extractElementById(html, 'change_value_and_rate');
+  const direction = quotient?.openTag.match(/\b(up|dn|down|same|no)\b/iu)?.[1]?.toLowerCase();
+  const current = numericTokens(stripHtml(nowValue?.content ?? ''))[0]?.value;
+  const changes = numericTokens(stripHtml(changeAndRate?.content ?? ''));
+  const changeToken = changes.find((token) => !token.isPercent);
+  const percentToken = changes.find((token) => token.isPercent);
+
+  if (!quotient || !nowValue || !changeAndRate || !Number.isFinite(current) || current <= 0 || !changeToken || !percentToken) {
+    throw new Error('npay_invalid_kospi_markup:missing_grounded_value');
+  }
+
+  const change = applyNpayDirection(changeToken.value, changeToken.raw, direction);
+  const changePercent = applyNpayDirection(percentToken.value, percentToken.raw, direction);
+
+  return {
+    key: 'kospi',
+    title: 'KOSPI',
+    currentPrice: formatNumber(current),
+    change: formatChange(change),
+    changePercent: `${formatChange(changePercent)}%`,
+    trend: trendFromChange(change),
+    status: 'live',
+    updatedAt: null,
+    sourceUrl: NPAY_KOSPI_URL
+  };
+}
+
+function isGroundedMajorIndex(index) {
+  const toNumber = (value) => Number.parseFloat(String(value ?? '').replaceAll(',', '').replace(/%$/u, ''));
+  return index?.key === 'kospi'
+    && index.status !== 'unavailable'
+    && Number.isFinite(toNumber(index.currentPrice))
+    && toNumber(index.currentPrice) > 0
+    && Number.isFinite(toNumber(index.change))
+    && Number.isFinite(toNumber(index.changePercent));
+}
+
+function errorReason(error) {
+  return String(error?.message ?? error ?? 'unknown').replace(/\s+/g, ' ').slice(0, 240);
+}
+
+async function fetchNpayKospiIndex({ fetcher = fetchText } = {}) {
+  return parseNpayKospiIndex(await fetcher(NPAY_KOSPI_URL));
+}
+
+async function fetchKospiIndexWithFallback({
+  primary = () => fetchYahooIndex(YAHOO_SYMBOLS.find((item) => item.key === 'kospi')),
+  fallback = () => fetchNpayKospiIndex()
+} = {}) {
+  let primaryError;
+  try {
+    const primaryIndex = await primary();
+    if (isGroundedMajorIndex(primaryIndex)) {
+      return { index: primaryIndex, source: 'yahoo' };
+    }
+    primaryError = new Error('unusable_index');
+  } catch (error) {
+    primaryError = error;
+  }
+
+  try {
+    const fallbackIndex = await fallback();
+    if (isGroundedMajorIndex(fallbackIndex)) {
+      return { index: fallbackIndex, source: 'npay', primaryError: errorReason(primaryError) };
+    }
+    throw new Error('unusable_index');
+  } catch (error) {
+    throw new Error(`market_source_unavailable:kospi:yahoo=${errorReason(primaryError)};npay=${errorReason(error)}`);
+  }
+}
+
 function summarizeNewsCandidates(items, limit = 4) {
   if (!Array.isArray(items) || items.length === 0) return null;
   return items
@@ -1925,6 +2059,16 @@ async function collectPublicMarketResearch() {
   const sourceStatus = {};
 
   for (const item of YAHOO_SYMBOLS) {
+    if (item.key === 'kospi') {
+      const selected = await fetchKospiIndexWithFallback();
+      indices.push(selected.index);
+      sourceStatus[`yahoo:${item.key}`] = selected.source === 'yahoo'
+        ? 'ok'
+        : `unavailable:${selected.primaryError}`;
+      sourceStatus['npay:kospi'] = selected.source === 'npay' ? 'ok' : 'not_needed';
+      continue;
+    }
+
     try {
       indices.push(await fetchYahooIndex(item));
       sourceStatus[`yahoo:${item.key}`] = 'ok';
@@ -2030,6 +2174,7 @@ async function collectPublicMarketResearch() {
     sourceStatus,
     sources: [
       { title: 'Yahoo Finance chart API', url: 'https://query1.finance.yahoo.com/v8/finance/chart/', date: null },
+      { title: 'Npay Finance KOSPI (KRX-backed fallback)', url: NPAY_KOSPI_URL, date: null },
       { title: 'Google News RSS', url: 'https://news.google.com/rss', date: null },
       { title: 'KRX investor trading value via NAVER Finance or pykrx', url: investorFlows.sourceUrls?.[0] ?? 'https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd', date: null }
     ],
@@ -2599,3 +2744,5 @@ export const __testBuildMarketEventSignals = buildMarketEventSignals;
 export const __testResolveMarketEventSignals = resolveMarketEventSignals;
 export const __testMarketEventState = marketEventState;
 export const __testBuildPrompt = buildPrompt;
+export const __testParseNpayKospiIndex = parseNpayKospiIndex;
+export const __testFetchKospiIndexWithFallback = fetchKospiIndexWithFallback;

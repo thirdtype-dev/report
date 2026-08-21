@@ -19,6 +19,126 @@ async function importBriefingModule(phase = 'post_market') {
   return module;
 }
 
+test('Npay KOSPI fallback parser normalizes grounded current, change, and rate values', async () => {
+  const module = await importBriefingModule();
+  const parsed = module.__testParseNpayKospiIndex(`
+    <div class="quotient up" id ="quotient">
+      <em id ="now_value">2,745.12</em>
+      <span id ="change_value_and_rate">
+        <span class="tah p11">12.34</span>
+        <span class="tah p11">0.45%</span>
+      </span>
+    </div>
+  `);
+
+  assert.deepEqual(parsed, {
+    key: 'kospi',
+    title: 'KOSPI',
+    currentPrice: '2,745.12',
+    change: '+12.34',
+    changePercent: '+0.45%',
+    trend: 'up',
+    status: 'live',
+    updatedAt: null,
+    sourceUrl: 'https://finance.naver.com/sise/sise_index.naver?code=KOSPI'
+  });
+});
+
+test('KOSPI source selection keeps Yahoo primary and calls Npay only after primary failure', async () => {
+  const module = await importBriefingModule();
+  const yahooIndex = {
+    key: 'kospi',
+    title: 'KOSPI',
+    currentPrice: '2,700.00',
+    change: '-8.20',
+    changePercent: '-0.30%',
+    trend: 'down',
+    status: 'delayed',
+    updatedAt: '2026-08-20T07:00:00.000Z',
+    sourceUrl: 'https://finance.yahoo.com/quote/%5EKS11'
+  };
+  const npayIndex = {
+    ...yahooIndex,
+    currentPrice: '2,701.00',
+    sourceUrl: 'https://finance.naver.com/sise/sise_index.naver?code=KOSPI',
+    status: 'live'
+  };
+  const primaryCalls = [];
+  const primaryResult = await module.__testFetchKospiIndexWithFallback({
+    primary: async () => {
+      primaryCalls.push('yahoo');
+      return yahooIndex;
+    },
+    fallback: async () => {
+      primaryCalls.push('npay');
+      return npayIndex;
+    }
+  });
+
+  assert.equal(primaryResult.source, 'yahoo');
+  assert.equal(primaryResult.index, yahooIndex);
+  assert.deepEqual(primaryCalls, ['yahoo']);
+
+  const fallbackCalls = [];
+  const fallbackResult = await module.__testFetchKospiIndexWithFallback({
+    primary: async () => {
+      fallbackCalls.push('yahoo');
+      throw new Error('yahoo_failed');
+    },
+    fallback: async () => {
+      fallbackCalls.push('npay');
+      return npayIndex;
+    }
+  });
+
+  assert.equal(fallbackResult.source, 'npay');
+  assert.equal(fallbackResult.index, npayIndex);
+  assert.deepEqual(fallbackCalls, ['yahoo', 'npay']);
+});
+
+test('KOSPI fallback rejects markup without grounded percentage data and stops after both sources fail', async () => {
+  const module = await importBriefingModule();
+  assert.throws(
+    () => module.__testParseNpayKospiIndex(`
+      <div class="quotient dn" id="quotient">
+        <em id="now_value">2,745.12</em>
+        <span id="change_value_and_rate"><span>-12.34</span></span>
+      </div>
+    `),
+    /npay_invalid_kospi_markup:missing_grounded_value/
+  );
+
+  await assert.rejects(
+    () => module.__testFetchKospiIndexWithFallback({
+      primary: async () => { throw new Error('yahoo_failed'); },
+      fallback: async () => { throw new Error('npay_failed'); }
+    }),
+    /market_source_unavailable:kospi/
+  );
+});
+
+test('post-market quality gate rejects KOSPI placeholder copy containing 확인 필요', async () => {
+  const module = await importBriefingModule();
+  assert.throws(
+    () => module.__testResolveBriefingPublishPlan({
+      marketResearch: {
+        investorFlows: { status: 'unavailable', markets: [] },
+        sectorThemeNewsCandidates: [{ title: '반도체 업종 강세', summary: '반도체 업종이 강세였습니다.' }],
+        stockNewsCandidates: [
+          { title: 'A 상승', summary: 'A가 상승했습니다.' },
+          { title: 'B 하락', summary: 'B가 하락했습니다.' }
+        ]
+      },
+      report: {
+        marketSummary: { kospi: '0,000.00 (확인 필요)' },
+        investorFlows: null
+      },
+      existingHtml: ''
+    }),
+    /briefing_quality_gate_failed:placeholder_copy/
+  );
+});
+
 function currentDateKey() {
   return new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Seoul',
