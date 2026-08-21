@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T07:00:41.117Z",
+  "generatedAt": "2026-08-21T07:05:39.910Z",
   "phase": "post_market",
   "sessionLabel": "16:00",
   "summary": {
@@ -34,11 +34,11 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,385.71",
+      "value": "1,385.70",
       "change": "-0.27%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-08-21T07:00:24.000Z",
+      "updatedAt": "2026-08-21T07:05:21.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,22 +67,22 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "29,381.25",
+      "value": "29,381.50",
       "change": "+0.28%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-08-21T06:50:25.000Z",
+      "updatedAt": "2026-08-21T06:55:20.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
     {
       "key": "investor_flow",
       "title": "투자자별 수급",
-      "value": "KOSPI 2026-08-21: 외국인 순매도 1,761억원, 기관 순매수 2,482억원, 개인 순매도 11,653억원 / KOSDAQ 2026-08-21: 외국인 순매도 2,836억원, 기관 순매도 3,464억원, 개인 순매수 6,235억원",
+      "value": "KOSPI 2026-08-21: 외국인 순매도 1,761억원, 기관 순매수 2,482억원, 개인 순매도 11,652억원 / KOSDAQ 2026-08-21: 외국인 순매도 2,836억원, 기관 순매도 3,464억원, 개인 순매수 6,235억원",
       "change": null,
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-08-21T16:00:41.100757+09:00",
+      "updatedAt": "2026-08-21T16:05:39.893414+09:00",
       "reason": "NAVER Finance/KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.",
       "sourceUrl": "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260821&sosok=01&page=1"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-08-21T07:00:41.117Z",
+      "updatedAt": "2026-08-21T07:05:39.910Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -124,12 +124,12 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,385.71",
-      "change": "-3.69",
+      "currentPrice": "1,385.70",
+      "change": "-3.70",
       "changePercent": "-0.27%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-08-21T07:00:24.000Z",
+      "updatedAt": "2026-08-21T07:05:21.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "29,381.25",
-      "change": "+80.75",
+      "currentPrice": "29,381.50",
+      "change": "+81.00",
       "changePercent": "+0.28%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-08-21T06:50:25.000Z",
+      "updatedAt": "2026-08-21T06:55:20.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -1269,7 +1269,7 @@
   ],
   "investorFlows": {
     "status": "ok",
-    "generatedAt": "2026-08-21T16:00:41.100757+09:00",
+    "generatedAt": "2026-08-21T16:05:39.893414+09:00",
     "source": "NAVER Finance/KRX",
     "sourceUrls": [
       "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260821&sosok=01&page=1",
@@ -1285,7 +1285,7 @@
         "latestDate": "2026-08-21",
         "unit": "KRW",
         "netBuy": {
-          "retail": -1165300000000,
+          "retail": -1165200000000,
           "foreign": -176100000000,
           "institution": 248200000000,
           "financial_investment": 111900000000,
@@ -1360,7 +1360,7 @@
           {
             "date": "2026-08-21",
             "netBuy": {
-              "retail": -1165300000000,
+              "retail": -1165200000000,
               "foreign": -176100000000,
               "institution": 248200000000,
               "financial_investment": 111900000000,
