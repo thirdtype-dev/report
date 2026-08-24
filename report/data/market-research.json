@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T07:00:28.879Z",
+  "generatedAt": "2026-08-24T07:05:30.294Z",
   "phase": "post_market",
   "sessionLabel": "16:00",
   "summary": {
@@ -34,11 +34,11 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,382.58",
+      "value": "1,382.57",
       "change": "-0.59%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-08-24T07:00:14.000Z",
+      "updatedAt": "2026-08-24T07:05:14.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,11 +67,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "29,155.25",
-      "change": "-0.79%",
+      "value": "29,176.25",
+      "change": "-0.72%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-08-24T06:50:15.000Z",
+      "updatedAt": "2026-08-24T06:55:11.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -82,7 +82,7 @@
       "change": null,
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-08-24T16:00:28.866743+09:00",
+      "updatedAt": "2026-08-24T16:05:30.282221+09:00",
       "reason": "NAVER Finance/KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.",
       "sourceUrl": "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260824&sosok=01&page=1"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-08-24T07:00:28.879Z",
+      "updatedAt": "2026-08-24T07:05:30.294Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -124,12 +124,12 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,382.58",
-      "change": "-8.21",
+      "currentPrice": "1,382.57",
+      "change": "-8.22",
       "changePercent": "-0.59%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-08-24T07:00:14.000Z",
+      "updatedAt": "2026-08-24T07:05:14.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,12 +157,12 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "29,155.25",
-      "change": "-232.50",
-      "changePercent": "-0.79%",
+      "currentPrice": "29,176.25",
+      "change": "-211.50",
+      "changePercent": "-0.72%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-08-24T06:50:15.000Z",
+      "updatedAt": "2026-08-24T06:55:11.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
@@ -950,6 +950,14 @@
       "query": "증시 수급 외국인 기관 개인 순매수"
     },
     {
+      "title": "코스피, 주주환원 모멘텀에 2일 연속↑··· 반도체·보험 강세, 코스닥은 4%대 급락 - 더리포트",
+      "summary": "코스피, 주주환원 모멘텀에 2일 연속↑··· 반도체·보험 강세, 코스닥은 4%대 급락&nbsp;&nbsp;더리포트",
+      "source": "더리포트",
+      "publishedAt": "Fri, 21 Aug 2026 08:22:58 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBNNWl1d0MteFY2b2pXVUtBZkUtZkZldVAxVFpZVDNmMm1uY3dfaGhhdkh5bFE2THRpMVVpYXhCTTB6WEV0Zk5SWlJjX2EwcUQwZEp0X2M0SFVEcXVvS2pGRkt0dEV5WWRPckNMR09B?oc=5",
+      "query": "외국인 선물 순매수 프로그램 매매"
+    },
+    {
       "title": "코스피, 주주환원 효과에 이틀째 강세…6900선 회복 - 서울경제TV",
       "summary": "코스피, 주주환원 효과에 이틀째 강세…6900선 회복&nbsp;&nbsp;서울경제TV",
       "source": "서울경제TV",
@@ -972,6 +980,14 @@
       "publishedAt": "Fri, 21 Aug 2026 06:46:44 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1YYUVYQ3I2SHgtVTYwR2lEMWNJbDFzQ1J4Z0plRUFSNzdyYm1Qd2JiNy1kMHNoUF9MVksxcDZGeERMQnN4b1hqVFdtd0FuaG9ZOVRqVkpOYzEtOG_SAVtBVV95cUxNWGFFWENyNkh4LVU2MEdpRDFjSWwxc0NSeGdKZUVBUjc3cmJtUHdiYjctZDBzaFBfTFZLMXA2RnhETEJzeG9YalRXbXdBbmhvWTlUalZKTmMxLThv?oc=5",
       "query": "연기금 투신 금융투자 순매수 증시"
+    },
+    {
+      "title": "코스피 5% 이상 올라 6850선…반도체 급반등에 매수 사이드카 - 이코노미사이언스",
+      "summary": "코스피 5% 이상 올라 6850선…반도체 급반등에 매수 사이드카&nbsp;&nbsp;이코노미사이언스",
+      "source": "이코노미사이언스",
+      "publishedAt": "Thu, 20 Aug 2026 09:24:50 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1MVU4wa0tfVXZkWXNpN3dmbWlWYzFOYllDT09rajVGbVRqSlNXNVlIcFhwTHI1QnY5azJHa2hGbk50VkhnYk9QbmxXNzBHd3h1Wm4zYU9hWmZYaHdCdXFiMENMX1hfQUJxZUVEbE13cw?oc=5",
+      "query": "외국인 선물 순매수 프로그램 매매"
     },
     {
       "title": "코스피 5.89% 급등···외국인 전기·전자 대량 매수 - 더리포트",
@@ -1126,7 +1142,7 @@
   ],
   "investorFlows": {
     "status": "ok",
-    "generatedAt": "2026-08-24T16:00:28.866743+09:00",
+    "generatedAt": "2026-08-24T16:05:30.282221+09:00",
     "source": "NAVER Finance/KRX",
     "sourceUrls": [
       "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260824&sosok=01&page=1",
