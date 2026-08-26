@@ -1,81 +1,47 @@
 {
-  "generated_at": "2026-08-26T01:00:16.261Z",
+  "generated_at": "2026-08-26T03:00:23.463Z",
   "generated_date": "2026-08-26",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 12:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 20건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
-      "stockName": "카카오",
-      "stockCode": "035720",
-      "summary": "카카오 쪼개기에 주가 '뚝'…증권가에 신중론 번지는 이유 [종목+]",
-      "headline": "카카오페이 주가 하락 중",
+      "stockName": "한미약품",
+      "stockCode": "128940",
+      "summary": "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억",
+      "headline": "한미약품 주가, 8월 26일 장중 551,000원 9.98% 상승",
       "evidencePoints": [
-        "출처 아시아뉴스통신, 한국경제 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "카카오페이 주가 하락 중",
-        "카카오 쪼개기에 주가 '뚝'…증권가에 신중론 번지는 이유 [종목+]"
+        "출처 톱스타뉴스, 데일리팜 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "한미약품 주가, 8월 26일 장중 551,000원 9.98% 상승",
+        "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억"
       ],
       "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 3,
-      "updatedAt": "2026-08-26T01:00:16.261Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "카카오페이 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uRklFeUEtNDRWZC1iZ2RwTWRXZVpEMGtjVHVQaDV4aXFhMGpPT0dINnZKYTJ5SEIwN3FKMHFtYVJhRlRzQ1l5eVRocTBvdGh3X0dFMnlJYWg5QjBK?oc=5",
-      "publishedAt": "Wed, 26 Aug 2026 00:24:38 GMT",
+      "sentimentLabel": "positive",
+      "channelCount": 4,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "up",
+      "changeRate": 9.98,
+      "latestHeadline": "한미약품 주가, 8월 26일 장중 551,000원 9.98% 상승",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5OSzNnaHRFbjNnY2NpTFNQTTU5blV3UEluY1JhWlZtQVdqTnBTYk41SFpDbGxNTlZIU1hiaS1Nb2RJLUg5UDl3QVBuRXAtRVFnSTZQQWZfWDBCa29uaG90QWxBM2Y3TmU3RWdKSHBTNnVtdw?oc=5",
+      "publishedAt": "Wed, 26 Aug 2026 00:57:52 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "카카오페이 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uRklFeUEtNDRWZC1iZ2RwTWRXZVpEMGtjVHVQaDV4aXFhMGpPT0dINnZKYTJ5SEIwN3FKMHFtYVJhRlRzQ1l5eVRocTBvdGh3X0dFMnlJYWg5QjBK?oc=5"
+          "title": "한미약품 주가, 8월 26일 장중 551,000원 9.98% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5OSzNnaHRFbjNnY2NpTFNQTTU5blV3UEluY1JhWlZtQVdqTnBTYk41SFpDbGxNTlZIU1hiaS1Nb2RJLUg5UDl3QVBuRXAtRVFnSTZQQWZfWDBCa29uaG90QWxBM2Y3TmU3RWdKSHBTNnVtdw?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "카카오 쪼개기에 주가 '뚝'…증권가에 신중론 번지는 이유 [종목+]",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBJRWhIY1FULVZTMGVsUFk5Y3ppZlhiUkdCUnNuSVNqTlhfU0s2UlBvbWFDaXRZZEJxMHFTWUdJREdteHFXNUFQVDdldUxaUDg1ZV91TTNmSEdTUQ?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "카카오페이 주가 하락, 증권가 신중론 확산",
-      "polishedBody": "카카오페이 주가가 하락하며 시장의 우려를 사고 있습니다. 이는 카카오의 사업 구조 조정이 주가에 부정적 영향을 미친 것으로 분석됩니다. 해당 소식은 부정적 신호로 받아들여지며 투자 심리를 위축시키고 있습니다. 향후 추가적인 구조조정 계획과 실적 발표가 주가 방향을 결정할 변수입니다."
-    },
-    {
-      "stockName": "한미약품",
-      "stockCode": "128940",
-      "summary": "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억 데일리팜",
-      "headline": "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억",
-      "evidencePoints": [
-        "출처 데일리팜 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억"
-      ],
-      "mentionScore": 84,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-08-26T01:00:16.261Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억",
-      "source": "데일리팜",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9xM3pJZERuSml5S0Zocm4tdWRlVEdIbXRHa0lERGlIN2JBSWVqeEVpTTdvYVB3aEtwMXhjRGhZcW5OTnNpdW9jOTBuWkJDandP?oc=5",
-      "publishedAt": "Tue, 25 Aug 2026 21:00:54 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
           "title": "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억",
           "source": "데일리팜",
           "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9xM3pJZERuSml5S0Zocm4tdWRlVEdIbXRHa0lERGlIN2JBSWVqeEVpTTdvYVB3aEtwMXhjRGhZcW5OTnNpdW9jOTBuWkJDandP?oc=5"
@@ -83,8 +49,355 @@
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "한미약품 주가 1년간 73% 상승, 신동국 회장 평가액 5562억",
-      "polishedBody": "한미약품 주가가 1년 새 73% 급등하며 신동국 회장의 지분 가치가 5562억 원에 달합니다. 이는 신약 개발 성과와 실적 개선에 대한 기대감이 반영된 결과입니다. 주가 상승세는 긍정적 신호로 평가되나 추가 상승 동력이 필요합니다. 향후 신약 임상 결과와 실적 추이가 주가 향방을 가를 핵심입니다."
+      "polishedHeadline": "한미약품 주가 1년새 73% 상승",
+      "polishedBody": "한미약품 주가가 장중 9.98% 급등하며 551,000원을 기록했습니다. 신동국 회장 측의 평가액이 5562억 원에 달하는 점이 주가 상승의 배경으로 작용했습니다. 이는 긍정적인 재료로 평가되며 투자 심리를 자극하고 있습니다. 향후 신동국 회장 측의 추가 행보가 주가에 영향을 줄 수 있습니다."
+    },
+    {
+      "stockName": "카카오",
+      "stockCode": "035720",
+      "summary": "“쪼개기 상장 못하니 회사 둘로 나누나” 카카오 주주들 ‘인적 분할’에 거센 비판",
+      "headline": "카카오 주가, 8월 26일 장중 36,300원 0.69% 상승",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 조선일보 기반 기사 2건",
+        "제목 기준 변동률 단서 +0.7%",
+        "카카오 주가, 8월 26일 장중 36,300원 0.69% 상승",
+        "“쪼개기 상장 못하니 회사 둘로 나누나” 카카오 주주들 ‘인적 분할’에 거센 비판"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "up",
+      "changeRate": 0.69,
+      "latestHeadline": "카카오 주가, 8월 26일 장중 36,300원 0.69% 상승",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5heFowaFozVTVOajQ3c0FEQUhlaFJmNzNrXzh1V21lSDFBQmY2WFFaQUJCcmY3UkxhcUZCMmFfVHF1QjFJTWtUTzI0QkNCN3U5ck4yX0ZDU3RaNE13R0pzenJiV2NjSjNZdzZ2d3RUWkMxQQ?oc=5",
+      "publishedAt": "Wed, 26 Aug 2026 01:55:22 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "카카오 주가, 8월 26일 장중 36,300원 0.69% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5heFowaFozVTVOajQ3c0FEQUhlaFJmNzNrXzh1V21lSDFBQmY2WFFaQUJCcmY3UkxhcUZCMmFfVHF1QjFJTWtUTzI0QkNCN3U5ck4yX0ZDU3RaNE13R0pzenJiV2NjSjNZdzZ2d3RUWkMxQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "“쪼개기 상장 못하니 회사 둘로 나누나” 카카오 주주들 ‘인적 분할’에 거센 비판",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ2xqOEE2QTFwQV9YN05MdTJXQWdDckh3NzdxVnloaFJnaklvdGI3RjdRUTlpNEs2RkdNMHlSTXVURGItZnFwTFlxQkJwN0c1SENfaU9tc3VkQVg2WmJneFJDVkEzOGJBVEpyYlBSendxRVRwQm5EN1ZDcEFpYVZoOHRwMA?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "카카오 인적 분할에 주주 비판",
+      "polishedBody": "카카오 주가가 장중 0.69% 상승하며 36,300원에 거래되었습니다. 인적 분할 계획에 대해 주주들의 거센 비판이 제기되고 있습니다. 이는 중립적인 재료로 시장의 의견이 엇갈리는 상황입니다. 분할 관련 후속 조치와 주주 반응을 주목할 필요가 있습니다."
+    },
+    {
+      "stockName": "에이피알",
+      "stockCode": "278470",
+      "summary": "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\"",
+      "headline": "[애널픽] \"코스피 0.8% 오를 때 화장품 32.7%↑…실리콘투·에이피알 주목\"",
+      "evidencePoints": [
+        "출처 뷰어스, 뉴스1 기반 기사 2건",
+        "제목 기준 변동률 단서 +15.0%",
+        "[애널픽] \"코스피 0.8% 오를 때 화장품 32.7%↑…실리콘투·에이피알 주목\"",
+        "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\""
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 3,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[애널픽] \"코스피 0.8% 오를 때 화장품 32.7%↑…실리콘투·에이피알 주목\"",
+      "source": "뷰어스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA0enZoaUVDZlBWZi1iOEwtR2dGYmhjb0JiQ04ybUh6enNBOG9Xd2RTUTd5YnJ2NUJxSnp2a3dpejkwRXR4NVFsX3V5MjVGQnhWcUF2VHZYLVY?oc=5",
+      "publishedAt": "Wed, 26 Aug 2026 00:20:02 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[애널픽] \"코스피 0.8% 오를 때 화장품 32.7%↑…실리콘투·에이피알 주목\"",
+          "source": "뷰어스",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA0enZoaUVDZlBWZi1iOEwtR2dGYmhjb0JiQ04ybUh6enNBOG9Xd2RTUTd5YnJ2NUJxSnp2a3dpejkwRXR4NVFsX3V5MjVGQnhWcUF2VHZYLVY?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\"",
+          "source": "뉴스1",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE84anZpb0Y3QjFuWWhmTmdtajk0eFZ6Q1MtWTZaRGlhdHFRYTBVM0ZMa0pHcG13QllWQURpWDctWHk5U3NUVnFPS1VucnNfYjBnT0Y4Y3NsQXpNNW9pR2hV0gFkQVVfeXFMTU1zaklzcWRhYnFGN1B2MGFuQ3lfRzgzdW1mTFAxOTl6enRrN3NTR1hjcTlJNW5jS0hRVHEyR052WVI5dHd1NnNpZUJQM0VQaUpROFJIZnZfNFVIQWUyTzBPMUc3SQ?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "화장품주 강세 속 에이피알 주목",
+      "polishedBody": "화장품 업종이 코스피 대비 32.7% 상승하며 강세를 보이고 있습니다. 한국투자증권은 에이피알의 밸류에이션 매력이 높다고 분석했습니다. 이는 중립적인 신호로 추가 상승 여력에 대한 기대감이 반영된 것입니다. 향후 실적 발표와 업종 동향이 주요 관전 포인트입니다."
+    },
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "\"과도한 주가 조정\" 삼성전자, 목표주가 37만원…대우건설, 대규모 신규 수주 자신감 [株토피아]",
+      "headline": "미래에셋證 삼성전자, 주가 하락 과도…공포에 중심잡아야",
+      "evidencePoints": [
+        "출처 v.daum.net, 아주경제 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "\"과도한 주가 조정\" 삼성전자, 목표주가 37만원…대우건설, 대규모 신규 수주 자신감 [株토피아]",
+        "미래에셋證 삼성전자, 주가 하락 과도…공포에 중심잡아야"
+      ],
+      "mentionScore": 87.1,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "미래에셋證 삼성전자, 주가 하락 과도…공포에 중심잡아야",
+      "source": "아주경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1waWd1LTVhXzdpYVBjQkc1bXhkYkMwaVpRR0NXUkpKUU1DakhrTkJpVVl3aUlQc1RzVDMwY2FaRTNvQk5rVXV4MENnMV80YnNNQ0cwZmV6WWRyQdIBWEFVX3lxTE01TkNCVGNsUmxZODgwYnVUSDVMUnVtSkVQQTNCbmowb1dOVUtidWJsVGFfZjVlR0pualprQjRsYlBOT0M5SkVxUGhuNHFoY0JMYXZXbkRXd3g?oc=5",
+      "publishedAt": "Tue, 25 Aug 2026 23:01:59 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "\"과도한 주가 조정\" 삼성전자, 목표주가 37만원…대우건설, 대규모 신규 수주 자신감 [株토피아]",
+          "source": "v.daum.net",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9RTGRNbERHeWw3Slo3Zmtic0dYVHdtdDE4bnNCRkxoZ1BjR1F0VmRzdVJZM2RHM0V6ZFU3STlxSTVDWWRfendVbUt6SDByMnM?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "미래에셋證 삼성전자, 주가 하락 과도…공포에 중심잡아야",
+          "source": "아주경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1waWd1LTVhXzdpYVBjQkc1bXhkYkMwaVpRR0NXUkpKUU1DakhrTkJpVVl3aUlQc1RzVDMwY2FaRTNvQk5rVXV4MENnMV80YnNNQ0cwZmV6WWRyQdIBWEFVX3lxTE01TkNCVGNsUmxZODgwYnVUSDVMUnVtSkVQQTNCbmowb1dOVUtidWJsVGFfZjVlR0pualprQjRsYlBOT0M5SkVxUGhuNHFoY0JMYXZXbkRXd3g?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자 주가 하락 과도 분석",
+      "polishedBody": "미래에셋증권은 삼성전자의 주가 하락이 과도하다고 평가했습니다. 목표주가를 37만 원으로 제시하며 저가 매수 기회를 강조했습니다. 이는 위험 신호로 인식되나 일부 증권사는 긍정적 전망을 유지하고 있습니다. 향후 반도체 업황과 실적 추이가 주가 방향을 결정할 것입니다."
+    },
+    {
+      "stockName": "한화엔진",
+      "stockCode": "082740",
+      "summary": "한화엔진, 친환경 선박 엔진 기대감에 장중 1%대 오름세 : 기업주식정보",
+      "headline": "한화엔진, 증권가 목표가 10만7000원 제시…장초반 상승 흐름",
+      "evidencePoints": [
+        "출처 재경일보, CBC뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "한화엔진, 친환경 선박 엔진 기대감에 장중 1%대 오름세 : 기업주식정보",
+        "한화엔진, 증권가 목표가 10만7000원 제시…장초반 상승 흐름"
+      ],
+      "mentionScore": 87,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "한화엔진, 증권가 목표가 10만7000원 제시…장초반 상승 흐름",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5fQXNMRzRWQW53ZGI1RVlsbHprd2xUNklIWTdxQnlva3RGcU5uME9ubW5Pa2hyUG0wMnc4a3R1TmNoem5BX0o3NXVSbFNsYXdTbld1MG9QRi1DTnR5VlExZGJfNEpwUlY2?oc=5",
+      "publishedAt": "Wed, 26 Aug 2026 01:51:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한화엔진, 친환경 선박 엔진 기대감에 장중 1%대 오름세 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBuQmRoempHT2dBUDJaS2h5d1lpZUN6T2UyUkFWbTdiNWdZRHh6Tk9ZWTExY1ZLQUYxZnRFVmtYLVota3B4eFg5Wm13?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한화엔진, 증권가 목표가 10만7000원 제시…장초반 상승 흐름",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5fQXNMRzRWQW53ZGI1RVlsbHprd2xUNklIWTdxQnlva3RGcU5uME9ubW5Pa2hyUG0wMnc4a3R1TmNoem5BX0o3NXVSbFNsYXdTbld1MG9QRi1DTnR5VlExZGJfNEpwUlY2?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한화엔진 목표가 10만7000원 제시",
+      "polishedBody": "한화엔진이 장중 1%대 상승하며 긍정적인 흐름을 보였습니다. 증권가에서 목표주가 10만7000원을 제시하며 친환경 선박 엔진 기대감을 반영했습니다. 이는 긍정적인 재료로 시장의 관심을 받고 있습니다. 향후 수주 소식과 실적 발표가 주가에 중요한 변수가 될 것입니다."
+    },
+    {
+      "stockName": "삼성SDI",
+      "stockCode": "006400",
+      "summary": "상상인증권 \"삼성SDI, ESS와 소형전지사업 호조로 2026년 흑자전환 전망\"",
+      "headline": "삼성SDI, 주가 반등에 수급 양호...EV 부진 딛고 ESS·AI 수요 확대",
+      "evidencePoints": [
+        "출처 증권일보, 비즈니스포스트 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "삼성SDI, 주가 반등에 수급 양호...EV 부진 딛고 ESS·AI 수요 확대",
+        "상상인증권 \"삼성SDI, ESS와 소형전지사업 호조로 2026년 흑자전환 전망\""
+      ],
+      "mentionScore": 86.8,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "삼성SDI, 주가 반등에 수급 양호...EV 부진 딛고 ESS·AI 수요 확대",
+      "source": "증권일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4yTGpMZFpyd0NEMXRRdGE5QmRVSkJrV3BhWmxHRnhFcGlkclY5QUFVbmZlRFlmTWlQS3BFa3lySlk5a0g5VnRySDhYR2tVWWRaN0d2STNNNnd2UTNDaTc5Yg?oc=5",
+      "publishedAt": "Wed, 26 Aug 2026 01:50:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI, 주가 반등에 수급 양호...EV 부진 딛고 ESS·AI 수요 확대",
+          "source": "증권일보",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4yTGpMZFpyd0NEMXRRdGE5QmRVSkJrV3BhWmxHRnhFcGlkclY5QUFVbmZlRFlmTWlQS3BFa3lySlk5a0g5VnRySDhYR2tVWWRaN0d2STNNNnd2UTNDaTc5Yg?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "상상인증권 \"삼성SDI, ESS와 소형전지사업 호조로 2026년 흑자전환 전망\"",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5ZWEtrbGtPTVo5TXhEaFlMOUZIbDVJeEtiSC0zVmFjdkoycTV1Ukk0LUxIZUJaYWhmTy05Y0RpX1hyeFJrc182WDU2UlhOVm9wOTVHVWZELXUwM3lobkdGZU9hWjh5NGRXR2d6YW9HazQwZVE?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성SDI 반등에 수급 양호...EV 부진 딛고 ESS·AI 수요 확대",
+      "polishedBody": "삼성SDI는 상상인증권 \", ESS와 소형전지사업 호조로 2026년 흑자전환 전망\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 반등에 수급 양호...EV 부진 딛고 ESS·AI 수요 확대 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "디앤디파마텍",
+      "stockCode": "347850",
+      "summary": "디앤디파마텍 주가, 8월 26일 장중 57,300원 1.96% 상승 톱스타뉴스",
+      "headline": "디앤디파마텍 주가, 8월 26일 장중 57,300원 1.96% 상승",
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +2.0%",
+        "디앤디파마텍 주가, 8월 26일 장중 57,300원 1.96% 상승"
+      ],
+      "mentionScore": 63.2,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "up",
+      "changeRate": 1.96,
+      "latestHeadline": "디앤디파마텍 주가, 8월 26일 장중 57,300원 1.96% 상승",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5EQnVTZHVZeHRGNjNKZFEtZ3g3QjBKVlpBTGdIekxmbGNQcVA0eHIyYmp3clBTZGtxVTRHMWNqQVpqeXpacFpzTnRRamtXcXNnOFBXekdQWkNRdi1hUGR3WUlZZUw0cHJDRmFzQkgzTVpDdw?oc=5",
+      "publishedAt": "Wed, 26 Aug 2026 01:51:33 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "디앤디파마텍 주가, 8월 26일 장중 57,300원 1.96% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5EQnVTZHVZeHRGNjNKZFEtZ3g3QjBKVlpBTGdIekxmbGNQcVA0eHIyYmp3clBTZGtxVTRHMWNqQVpqeXpacFpzTnRRamtXcXNnOFBXekdQWkNRdi1hUGR3WUlZZUw0cHJDRmFzQkgzTVpDdw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "디앤디파마텍 주가, 8월 26일 장중 57,300원 1.96% 상승",
+      "polishedBody": "디앤디파마텍은 주가, 8월 26일 장중 57,300원 1.96% 상승 톱스타뉴스 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가, 8월 26일 장중 57,300원 톱스타뉴스 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "HMM",
+      "stockCode": "011200",
+      "summary": "[특징주] HMM, 목표주가 2만9000 상향…지정학적 병목 수혜 지속 전망 뉴스티앤티",
+      "headline": "[특징주] HMM, 목표주가 2만9000 상향…지정학적 병목 수혜 지속 전망",
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] HMM, 목표주가 2만9000 상향…지정학적 병목 수혜 지속 전망"
+      ],
+      "mentionScore": 60.4,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[특징주] HMM, 목표주가 2만9000 상향…지정학적 병목 수혜 지속 전망",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5IU09UdGduNWhWeW52YzI4OTdHUGJXbExJcDAwWktiUXBxamk0aG1HZXBpTVhDS2NEUWpHM1RMS2t5UWJvcE1rNkQtdC0xV25Sa3V2M2Q3Q1BHREd1SjRNNWlidE5EMk80SHc?oc=5",
+      "publishedAt": "Wed, 26 Aug 2026 01:23:17 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] HMM, 목표주가 2만9000 상향…지정학적 병목 수혜 지속 전망",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5IU09UdGduNWhWeW52YzI4OTdHUGJXbExJcDAwWktiUXBxamk0aG1HZXBpTVhDS2NEUWpHM1RMS2t5UWJvcE1rNkQtdC0xV25Sa3V2M2Q3Q1BHREd1SjRNNWlidE5EMk80SHc?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "HMM 2만9000 상향…지정학적 병목 수혜 지속 전망",
+      "polishedBody": "HMM는 2만9000 상향…지정학적 병목 수혜 지속 전망 뉴스티앤티 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 2만9000 상향…지정학적 병목 수혜 지속 전망 뉴스티앤티 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 목표주가 2만9000 상향…지정학적 병목 수혜 지속 전망 뉴스티앤티 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "하나마이크론",
+      "stockCode": "067310",
+      "summary": "하나마이크론 주가 하락중 아시아뉴스통신",
+      "headline": "하나마이크론 주가 하락중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "하나마이크론 주가 하락중"
+      ],
+      "mentionScore": 59.3,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "하나마이크론 주가 하락중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE82enhfZzdCVjJ0dnJlSUEtenpyR3RpRWJhQ184bGRFUTIxdUJtR1c5eENqekl6U0lPRWpVMFA1ay1WRTVyczhUYnJ5bzVpSkhDbkcxWlY0NTJSbTB0?oc=5",
+      "publishedAt": "Wed, 26 Aug 2026 00:16:10 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "하나마이크론 주가 하락중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE82enhfZzdCVjJ0dnJlSUEtenpyR3RpRWJhQ184bGRFUTIxdUJtR1c5eENqekl6U0lPRWpVMFA1ay1WRTVyczhUYnJ5bzVpSkhDbkcxWlY0NTJSbTB0?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "하나마이크론 주가 하락중",
+      "polishedBody": "하나마이크론은 주가 하락중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "심텍",
+      "stockCode": "222800",
+      "summary": "하나證 “심텍 2700억 시설 투자, 단기적으로 주식가치 희석 불가피” - 조선비즈",
+      "headline": "[모닝 리포트] \"심텍 2742억 규모 증설은 부담 아닌 수요 증거\"",
+      "evidencePoints": [
+        "출처 뉴스핌, Chosunbiz 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "[모닝 리포트] \"심텍 2742억 규모 증설은 부담 아닌 수요 증거\"",
+        "하나證 “심텍 2700억 시설 투자, 단기적으로 주식가치 희석 불가피” - 조선비즈"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 3,
+      "updatedAt": "2026-08-26T03:00:23.463Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[모닝 리포트] \"심텍 2742억 규모 증설은 부담 아닌 수요 증거\"",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xNWNWeF9YcnQ3M1VWQS1kNnhDRDVMeWIzT0Vkdk5RZDM0dzhtbVFlWUE4VUJsMnVWYWV4aHBWSTQ4U05vamRlSGk3ZVltWmdDUXZEOWw1dncwRGtf?oc=5",
+      "publishedAt": "Tue, 25 Aug 2026 23:38:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[모닝 리포트] \"심텍 2742억 규모 증설은 부담 아닌 수요 증거\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xNWNWeF9YcnQ3M1VWQS1kNnhDRDVMeWIzT0Vkdk5RZDM0dzhtbVFlWUE4VUJsMnVWYWV4aHBWSTQ4U05vamRlSGk3ZVltWmdDUXZEOWw1dncwRGtf?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "하나證 “심텍 2700억 시설 투자, 단기적으로 주식가치 희석 불가피” - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTHRqVXlSdWdyZTF6cXZTRWZlV05ta3BaenptMmxjQ2UtTWpIa0hyYkZMOTRaVUVWYm16a09vZFlkOHFDM2dqNUJqVFFtazl0QWNrbmNZQUt3M3J4Nk43MEtKWjRzQVExd1FzM2NrQ2RWYlY1M2pPWWlvV01HSDZBdmVjTEYydGFs0gGcAUFVX3lxTE1kcGdzOG9XYy1TalhBaFQwdHZhTzdLQ0RhTm1KRkV5TkFibVh5ZXFWcjZsVWp1a1pCUzZOR1I0WjVDejZEb0ZmWkJjTVo4bUNVZ0tqNnd5dmdrcDZGc0JidlZpaE8xeWxlNEdueWZDdGpCQUZBSU9BYm5ybmhFclZzeFlWQmZtY2NiZmVkeXIzZzlCblBDc2dGZGxOdg?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "심텍 \"심텍 2742억 규모",
+      "polishedBody": "심텍은 하나證 “2700억 시설 투자 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 하나證 “2700억 시설 투자 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 \"2742억 규모 증설은 부담 아닌 수요 증거\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
       "stockName": "SK하이닉스",
@@ -250,47 +563,6 @@
       "polishedBody": "삼성물산은 '가장 안정적인 Pick' 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 '가장 안정적인 Pick' 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 \", 하이테크·원전·배당까지…가장 안정적인 픽\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "삼성전자, 매크로 불확실성에 과민반응…목표가 37만원 유지-미래에셋",
-      "headline": "110조 주주환원에도 하락한 삼전 주가…“목표가 37만원” [줍줍리포트]",
-      "evidencePoints": [
-        "출처 서울경제, 마켓인 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "110조 주주환원에도 하락한 삼전 주가…“목표가 37만원” [줍줍리포트]",
-        "삼성전자, 매크로 불확실성에 과민반응…목표가 37만원 유지-미래에셋"
-      ],
-      "mentionScore": 86.6,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-08-26T01:00:16.261Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "110조 주주환원에도 하락한 삼전 주가…“목표가 37만원” [줍줍리포트]",
-      "source": "서울경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5JOFo5WFpFdzZyVmN5NDE0M1RGZVNENUo5UHMyOUR1b0pITHpqaHpGTDBtVDRTakRkcEtkVXFrNjB0YzE0aTY4NEJxMWhrNk9zSkE?oc=5",
-      "publishedAt": "Tue, 25 Aug 2026 23:37:56 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "110조 주주환원에도 하락한 삼전 주가…“목표가 37만원” [줍줍리포트]",
-          "source": "서울경제",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5JOFo5WFpFdzZyVmN5NDE0M1RGZVNENUo5UHMyOUR1b0pITHpqaHpGTDBtVDRTakRkcEtkVXFrNjB0YzE0aTY4NEJxMWhrNk9zSkE?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전자, 매크로 불확실성에 과민반응…목표가 37만원 유지-미래에셋",
-          "source": "마켓인",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8yMThwUnltRXVXZmt3T0l4eUw3N3RDZTZIOHZPa25WYUctWUZFMTVwRmExMW1JYnVrdE9LQng0d1Jqck1IclhzazEwdWw2M1hxd3FxUS1BT2hRVmtJQUc1dFZSNnMtVlgxODg1SkxFRXd1Z2M?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전자 110조 주주환원에도 하락한 삼전 주가…“목표가 37만원”",
-      "polishedBody": "삼성전자는 매크로 불확실성에 과민반응…목표가 37만원 유지 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 110조 주주환원에도 하락한 삼전 주가…“목표가 37만원” 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
       "stockName": "삼성전기",
       "stockCode": "009150",
       "summary": "삼성전기 주가 하락 중 아시아뉴스통신",
@@ -393,122 +665,6 @@
       "polishedBody": "이수페타시스는 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "삼성SDI",
-      "stockCode": "006400",
-      "summary": "삼성SDI 주가 하락 중 아시아뉴스통신",
-      "headline": "삼성SDI 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "삼성SDI 주가 하락 중"
-      ],
-      "mentionScore": 61.2,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-08-26T01:00:16.261Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "삼성SDI 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5BMnBXVlVBZi1sNGpSVHF5SWtfaW1Oanp1REQydkYzMXpzTUxmVmxWSVhOQ3dHODVEQ0hBREo4cXYxUWdGV2hvekhRdHB2NHg1cmlDSWhCTTlhUUE5?oc=5",
-      "publishedAt": "Wed, 26 Aug 2026 00:14:41 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5BMnBXVlVBZi1sNGpSVHF5SWtfaW1Oanp1REQydkYzMXpzTUxmVmxWSVhOQ3dHODVEQ0hBREo4cXYxUWdGV2hvekhRdHB2NHg1cmlDSWhCTTlhUUE5?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성SDI 주가 하락세",
-      "polishedBody": "삼성SDI의 주가가 최근 하락 흐름을 보이고 있습니다. 시장 전반의 수급 악화와 투자 심리 위축이 주요 원인으로 지목됩니다. 이는 당사가 속한 업종에 대한 부정적 시각이 반영된 결과로 판단됩니다. 향후 기업의 실적 발표와 배터리 업황 회복 여부를 주목할 필요가 있습니다."
-    },
-    {
-      "stockName": "에이피알",
-      "stockCode": "278470",
-      "summary": "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\"",
-      "headline": "에이피알 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 뉴스1 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "에이피알 주가 상승 중",
-        "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\""
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-08-26T01:00:16.261Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "에이피알 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE56Szc4Mm44ODYxZXNOX3BpTXlMSzNEdUxlWHVidkZaMHhPNWhMSmE4OGxtZmM1bV9ZbS1QSllOQ04yVEwwcnpKV0VEdkJwdjEyRk5jemc1ZzdtS0Zz?oc=5",
-      "publishedAt": "Wed, 26 Aug 2026 00:28:21 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "에이피알 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE56Szc4Mm44ODYxZXNOX3BpTXlMSzNEdUxlWHVidkZaMHhPNWhMSmE4OGxtZmM1bV9ZbS1QSllOQ04yVEwwcnpKV0VEdkJwdjEyRk5jemc1ZzdtS0Zz?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\"",
-          "source": "뉴스1",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE84anZpb0Y3QjFuWWhmTmdtajk0eFZ6Q1MtWTZaRGlhdHFRYTBVM0ZMa0pHcG13QllWQURpWDctWHk5U3NUVnFPS1VucnNfYjBnT0Y4Y3NsQXpNNW9pR2hV0gFkQVVfeXFMTU1zaklzcWRhYnFGN1B2MGFuQ3lfRzgzdW1mTFAxOTl6enRrN3NTR1hjcTlJNW5jS0hRVHEyR052WVI5dHd1NnNpZUJQM0VQaUpROFJIZnZfNFVIQWUyTzBPMUc3SQ?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "에이피알 주가 상승세",
-      "polishedBody": "에이피알의 주가가 상승하고 있습니다. 한국투자증권은 화장품 업종 내 밸류에이션 매력을 강조하며 에이피알을 주목할 종목으로 제시했습니다. 이러한 증권사 호평은 긍정적인 투자 심리를 자극하고 있습니다. 향후 실적 개선과 브랜드 경쟁력 강화 여부가 추가 상승의 관건이 될 것입니다."
-    },
-    {
-      "stockName": "한화엔진",
-      "stockCode": "082740",
-      "summary": "유안타증권 \"한화엔진, 그룹사 북미 발전시장 진출 핵심 상장사\"",
-      "headline": "한화엔진, 그룹사 북미 발전시장 진출 핵심...주가 상승 기대",
-      "evidencePoints": [
-        "출처 증권일보, 연합뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "한화엔진, 그룹사 북미 발전시장 진출 핵심...주가 상승 기대",
-        "유안타증권 \"한화엔진, 그룹사 북미 발전시장 진출 핵심 상장사\""
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-08-25T06:00:16.696Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "한화엔진, 그룹사 북미 발전시장 진출 핵심...주가 상승 기대",
-      "source": "증권일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA4cnVqVHdRUmx0ZGFuRGw4N1F2ZXVHNGJYbmYzSGhDc2Y0YmY0V2lKWlNQZ1BNYm5YdHlETWNIX21iSXVuNnYteHdvRjBWX0hBNTEwU05UX3Vpd3ZyOTVFZA?oc=5",
-      "publishedAt": "Mon, 24 Aug 2026 23:42:55 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화엔진, 그룹사 북미 발전시장 진출 핵심...주가 상승 기대",
-          "source": "증권일보",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA4cnVqVHdRUmx0ZGFuRGw4N1F2ZXVHNGJYbmYzSGhDc2Y0YmY0V2lKWlNQZ1BNYm5YdHlETWNIX21iSXVuNnYteHdvRjBWX0hBNTEwU05UX3Vpd3ZyOTVFZA?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "유안타증권 \"한화엔진, 그룹사 북미 발전시장 진출 핵심 상장사\"",
-          "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8wLWVZMEsxSl9QTkJTUGJkVjd4QkdKMmZqV183SWdEa1RfTUNUS3E5VVozUlo0ZXpaSUlXMXNrWHc0eUVoVWdUZFFtblNWZFlPNzNyeDd1UmdPbkxLSWUxbdIBYEFVX3lxTE8wLWVZMEsxSl9QTkJTUGJkVjd4QkdKMmZqV183SWdEa1RfTUNUS3E5VVozUlo0ZXpaSUlXMXNrWHc0eUVoVWdUZFFtblNWZFlPNzNyeDd1UmdPbkxLSWUxbQ?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "한화엔진 그룹사 북미 발전시장 진출 핵심...주가 상승 기대",
-      "polishedBody": "한화엔진은 유안타증권 \", 그룹사 북미 발전시장 진출 핵심 상장사\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 그룹사 북미 발전시장 진출 핵심...주가 상승 기대 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
       "stockName": "한솔케미칼",
       "stockCode": "014680",
       "summary": "[특징주] 한솔케미칼, 차익실현 매물 출회에 장중 하락 전환 : 기업주식정보 재경일보",
@@ -541,81 +697,6 @@
       "hasNews": true,
       "polishedHeadline": "한솔케미칼 차익실현 매물 출회에 장중 하락 전환 기업주식정보",
       "polishedBody": "한솔케미칼은 차익실현 매물 출회에 장중 하락 전환 기업주식정보 재경일보 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "디앤디파마텍",
-      "stockCode": "347850",
-      "summary": "디앤디파마텍 주가 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고 CBC뉴스",
-      "headline": "디앤디파마텍 주가 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고",
-      "evidencePoints": [
-        "출처 CBC뉴스 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "디앤디파마텍 주가 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고"
-      ],
-      "mentionScore": 57,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-08-25T06:00:16.696Z",
-      "cycleLabel": "KST_1500",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "디앤디파마텍 주가 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5LbW1LNkJIQ0paRWpReG9rQWtWejFQTERVSGVRZ29ERkFwT1YxWFRvbGc5eFZwdHlkNXA1eW1jODgwZ09sekJzeGM3MjAzUnR0d09XSDJTRmtpQzdTaVRZdUNFODdoUkU?oc=5",
-      "publishedAt": "Tue, 25 Aug 2026 01:01:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "디앤디파마텍 주가 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5LbW1LNkJIQ0paRWpReG9rQWtWejFQTERVSGVRZ29ERkFwT1YxWFRvbGc5eFZwdHlkNXA1eW1jODgwZ09sekJzeGM3MjAzUnR0d09XSDJTRmtpQzdTaVRZdUNFODdoUkU?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "디앤디파마텍 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고",
-      "polishedBody": "디앤디파마텍은 주가 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고 CBC뉴스 이슈로 단기 변동성이 확대됐습니다. 주가 5만5100원 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "HMM",
-      "stockCode": "011200",
-      "summary": "\"HMM, 지정학 수혜 이어질 것…투자의견·목표가↑\"-대신",
-      "headline": "HMM, 병목현상 장기화로 해상운임 강세 수혜..투자의견 ↑ 목표주가 ↑ -대신證",
-      "evidencePoints": [
-        "출처 파이낸셜뉴스, 한국경제 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "HMM, 병목현상 장기화로 해상운임 강세 수혜..투자의견 ↑ 목표주가 ↑ -대신證",
-        "\"HMM, 지정학 수혜 이어질 것…투자의견·목표가↑\"-대신"
-      ],
-      "mentionScore": 87.1,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-08-25T01:00:26.007Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "HMM, 병목현상 장기화로 해상운임 강세 수혜..투자의견 ↑ 목표주가 ↑ -대신證",
-      "source": "파이낸셜뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iMkNPbG93WnBjU1Vkc2Jfb2V6bkFCcjNyRENzNTM1NlZKMFpTZ1ZMZlhXVEZIelF5aFQ5NHAxcXozcXBYaHJHMUtOT1F0NlpEM1RMSDNJNUtFQQ?oc=5",
-      "publishedAt": "Tue, 25 Aug 2026 00:09:26 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "HMM, 병목현상 장기화로 해상운임 강세 수혜..투자의견 ↑ 목표주가 ↑ -대신證",
-          "source": "파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iMkNPbG93WnBjU1Vkc2Jfb2V6bkFCcjNyRENzNTM1NlZKMFpTZ1ZMZlhXVEZIelF5aFQ5NHAxcXozcXBYaHJHMUtOT1F0NlpEM1RMSDNJNUtFQQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"HMM, 지정학 수혜 이어질 것…투자의견·목표가↑\"-대신",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1LbXYyNHV3Y0RvNllLZU1TekZFRFgzTkZPQ2JSSGl3UnhiLUtrR05aTmZhLUUxRlVPNnRLaTZzcDZzaTVYeExtbUJfbzB1Mm5VYUVldVJEUkFQdw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "HMM 병목현상 장기화로 해상운임 강세 수혜..투자의견 ↑",
-      "polishedBody": "HMM는 \", 지정학 수혜 이어질 것…투자의견·목표가↑\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 병목현상 장기화로 해상운임 강세 수혜..투자의견 ↑ 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "DB손해보험",
@@ -682,126 +763,34 @@
       "hasNews": true,
       "polishedHeadline": "GST 외국인 기관 동시 순매수…",
       "polishedBody": "GST는 외국인 기관 동시 순매수 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 외국인 기관 동시 순매수 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 외국인 기관 동시 순매수… 주가 +5.58% 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "코미코",
-      "stockCode": "183300",
-      "summary": "[애프터마켓 리뷰] 코미코, 액면분할 후 거래 재개 첫날 급등 · 시장 영향은? supple.kr",
-      "headline": "[애프터마켓 리뷰] 코미코, 액면분할 후 거래 재개 첫날 급등 · 시장 영향은?",
-      "evidencePoints": [
-        "출처 supple.kr 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "[애프터마켓 리뷰] 코미코, 액면분할 후 거래 재개 첫날 급등 · 시장 영향은?"
-      ],
-      "mentionScore": 55,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-08-24T06:00:17.150Z",
-      "cycleLabel": "KST_1500",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "[애프터마켓 리뷰] 코미코, 액면분할 후 거래 재개 첫날 급등 · 시장 영향은?",
-      "source": "supple.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE41NlhnMzVNUUZ1a3VzTDFKYW5tVXBlU1hoVVdpanlTdkJkZDVXaWR1OVFhcDc3bWlvcU9NMFJWU1E1Nm5EZ3pqTnNMMDZOeEZZdnQ2OFFScEI1R2R1?oc=5",
-      "publishedAt": "Sun, 23 Aug 2026 22:58:17 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[애프터마켓 리뷰] 코미코, 액면분할 후 거래 재개 첫날 급등 · 시장 영향은?",
-          "source": "supple.kr",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE41NlhnMzVNUUZ1a3VzTDFKYW5tVXBlU1hoVVdpanlTdkJkZDVXaWR1OVFhcDc3bWlvcU9NMFJWU1E1Nm5EZ3pqTnNMMDZOeEZZdnQ2OFFScEI1R2R1?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "코미코 액면분할 후 거래 재개 첫날 급등 · 시장 영향은?",
-      "polishedBody": "코미코는 액면분할 후 거래 재개 첫날 급등 · 시장 영향은 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "하나마이크론",
-      "stockCode": "067310",
-      "summary": "하나마이크론 주가 상승 중 아시아뉴스통신",
-      "headline": "하나마이크론 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "하나마이크론 주가 상승 중"
-      ],
-      "mentionScore": 59.2,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-08-24T03:00:23.743Z",
-      "cycleLabel": "KST_1200",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "하나마이크론 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCRy1aUGhXbHV6cHR2NEJFclhORER6V2RGQk1hdllScWlIQUYxa0FzVjRZSDVZZ3dWemU1SlNJbVNoZ1hJTEVwVXBfWDhVUTdmSTFoRzdTWUcxOFZ0?oc=5",
-      "publishedAt": "Mon, 24 Aug 2026 00:15:02 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "하나마이크론 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCRy1aUGhXbHV6cHR2NEJFclhORER6V2RGQk1hdllScWlIQUYxa0FzVjRZSDVZZ3dWemU1SlNJbVNoZ1hJTEVwVXBfWDhVUTdmSTFoRzdTWUcxOFZ0?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "하나마이크론 주가 상승 중",
-      "polishedBody": "하나마이크론은 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
-      "symbol": "035720",
-      "name": "카카오",
-      "changeRate": null,
-      "price": null,
-      "summary": "카카오 쪼개기에 주가 '뚝'…증권가에 신중론 번지는 이유 [종목+]",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uRklFeUEtNDRWZC1iZ2RwTWRXZVpEMGtjVHVQaDV4aXFhMGpPT0dINnZKYTJ5SEIwN3FKMHFtYVJhRlRzQ1l5eVRocTBvdGh3X0dFMnlJYWg5QjBK?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 한국경제 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "카카오페이 주가 하락 중",
-        "카카오 쪼개기에 주가 '뚝'…증권가에 신중론 번지는 이유 [종목+]"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "카카오페이 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uRklFeUEtNDRWZC1iZ2RwTWRXZVpEMGtjVHVQaDV4aXFhMGpPT0dINnZKYTJ5SEIwN3FKMHFtYVJhRlRzQ1l5eVRocTBvdGh3X0dFMnlJYWg5QjBK?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "카카오 쪼개기에 주가 '뚝'…증권가에 신중론 번지는 이유 [종목+]",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBJRWhIY1FULVZTMGVsUFk5Y3ppZlhiUkdCUnNuSVNqTlhfU0s2UlBvbWFDaXRZZEJxMHFTWUdJREdteHFXNUFQVDdldUxaUDg1ZV91TTNmSEdTUQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "128940",
       "name": "한미약품",
-      "changeRate": null,
+      "changeRate": 9.98,
       "price": null,
-      "summary": "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억 데일리팜",
-      "source": "데일리팜",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9xM3pJZERuSml5S0Zocm4tdWRlVEdIbXRHa0lERGlIN2JBSWVqeEVpTTdvYVB3aEtwMXhjRGhZcW5OTnNpdW9jOTBuWkJDandP?oc=5",
-      "mentionScore": 84,
+      "summary": "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5OSzNnaHRFbjNnY2NpTFNQTTU5blV3UEluY1JhWlZtQVdqTnBTYk41SFpDbGxNTlZIU1hiaS1Nb2RJLUg5UDl3QVBuRXAtRVFnSTZQQWZfWDBCa29uaG90QWxBM2Y3TmU3RWdKSHBTNnVtdw?oc=5",
+      "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 데일리팜 기반 기사 1건",
+        "출처 톱스타뉴스, 데일리팜 기반 기사 2건",
         "상승/강세 키워드 우세",
+        "한미약품 주가, 8월 26일 장중 551,000원 9.98% 상승",
         "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
+          "title": "한미약품 주가, 8월 26일 장중 551,000원 9.98% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5OSzNnaHRFbjNnY2NpTFNQTTU5blV3UEluY1JhWlZtQVdqTnBTYk41SFpDbGxNTlZIU1hiaS1Nb2RJLUg5UDl3QVBuRXAtRVFnSTZQQWZfWDBCa29uaG90QWxBM2Y3TmU3RWdKSHBTNnVtdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
           "title": "한미약품 주가 1년새 73%↑…신동국 회장 측 평가액 5562억",
           "source": "데일리팜",
           "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9xM3pJZERuSml5S0Zocm4tdWRlVEdIbXRHa0lERGlIN2JBSWVqeEVpTTdvYVB3aEtwMXhjRGhZcW5OTnNpdW9jOTBuWkJDandP?oc=5"
@@ -809,7 +798,264 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
+      "symbol": "035720",
+      "name": "카카오",
+      "changeRate": 0.69,
+      "price": null,
+      "summary": "“쪼개기 상장 못하니 회사 둘로 나누나” 카카오 주주들 ‘인적 분할’에 거센 비판",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5heFowaFozVTVOajQ3c0FEQUhlaFJmNzNrXzh1V21lSDFBQmY2WFFaQUJCcmY3UkxhcUZCMmFfVHF1QjFJTWtUTzI0QkNCN3U5ck4yX0ZDU3RaNE13R0pzenJiV2NjSjNZdzZ2d3RUWkMxQQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 조선일보 기반 기사 2건",
+        "제목 기준 변동률 단서 +0.7%",
+        "카카오 주가, 8월 26일 장중 36,300원 0.69% 상승",
+        "“쪼개기 상장 못하니 회사 둘로 나누나” 카카오 주주들 ‘인적 분할’에 거센 비판"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "카카오 주가, 8월 26일 장중 36,300원 0.69% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5heFowaFozVTVOajQ3c0FEQUhlaFJmNzNrXzh1V21lSDFBQmY2WFFaQUJCcmY3UkxhcUZCMmFfVHF1QjFJTWtUTzI0QkNCN3U5ck4yX0ZDU3RaNE13R0pzenJiV2NjSjNZdzZ2d3RUWkMxQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "“쪼개기 상장 못하니 회사 둘로 나누나” 카카오 주주들 ‘인적 분할’에 거센 비판",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ2xqOEE2QTFwQV9YN05MdTJXQWdDckh3NzdxVnloaFJnaklvdGI3RjdRUTlpNEs2RkdNMHlSTXVURGItZnFwTFlxQkJwN0c1SENfaU9tc3VkQVg2WmJneFJDVkEzOGJBVEpyYlBSendxRVRwQm5EN1ZDcEFpYVZoOHRwMA?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T03:00:23.463Z",
+      "symbol": "278470",
+      "name": "에이피알",
+      "changeRate": null,
+      "price": null,
+      "summary": "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\"",
+      "source": "뷰어스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA0enZoaUVDZlBWZi1iOEwtR2dGYmhjb0JiQ04ybUh6enNBOG9Xd2RTUTd5YnJ2NUJxSnp2a3dpejkwRXR4NVFsX3V5MjVGQnhWcUF2VHZYLVY?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뷰어스, 뉴스1 기반 기사 2건",
+        "제목 기준 변동률 단서 +15.0%",
+        "[애널픽] \"코스피 0.8% 오를 때 화장품 32.7%↑…실리콘투·에이피알 주목\"",
+        "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[애널픽] \"코스피 0.8% 오를 때 화장품 32.7%↑…실리콘투·에이피알 주목\"",
+          "source": "뷰어스",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA0enZoaUVDZlBWZi1iOEwtR2dGYmhjb0JiQ04ybUh6enNBOG9Xd2RTUTd5YnJ2NUJxSnp2a3dpejkwRXR4NVFsX3V5MjVGQnhWcUF2VHZYLVY?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\"",
+          "source": "뉴스1",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE84anZpb0Y3QjFuWWhmTmdtajk0eFZ6Q1MtWTZaRGlhdHFRYTBVM0ZMa0pHcG13QllWQURpWDctWHk5U3NUVnFPS1VucnNfYjBnT0Y4Y3NsQXpNNW9pR2hV0gFkQVVfeXFMTU1zaklzcWRhYnFGN1B2MGFuQ3lfRzgzdW1mTFAxOTl6enRrN3NTR1hjcTlJNW5jS0hRVHEyR052WVI5dHd1NnNpZUJQM0VQaUpROFJIZnZfNFVIQWUyTzBPMUc3SQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T03:00:23.463Z",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "\"과도한 주가 조정\" 삼성전자, 목표주가 37만원…대우건설, 대규모 신규 수주 자신감 [株토피아]",
+      "source": "아주경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1waWd1LTVhXzdpYVBjQkc1bXhkYkMwaVpRR0NXUkpKUU1DakhrTkJpVVl3aUlQc1RzVDMwY2FaRTNvQk5rVXV4MENnMV80YnNNQ0cwZmV6WWRyQdIBWEFVX3lxTE01TkNCVGNsUmxZODgwYnVUSDVMUnVtSkVQQTNCbmowb1dOVUtidWJsVGFfZjVlR0pualprQjRsYlBOT0M5SkVxUGhuNHFoY0JMYXZXbkRXd3g?oc=5",
+      "mentionScore": 87.1,
+      "evidencePoints": [
+        "출처 v.daum.net, 아주경제 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "\"과도한 주가 조정\" 삼성전자, 목표주가 37만원…대우건설, 대규모 신규 수주 자신감 [株토피아]",
+        "미래에셋證 삼성전자, 주가 하락 과도…공포에 중심잡아야"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "\"과도한 주가 조정\" 삼성전자, 목표주가 37만원…대우건설, 대규모 신규 수주 자신감 [株토피아]",
+          "source": "v.daum.net",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9RTGRNbERHeWw3Slo3Zmtic0dYVHdtdDE4bnNCRkxoZ1BjR1F0VmRzdVJZM2RHM0V6ZFU3STlxSTVDWWRfendVbUt6SDByMnM?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "미래에셋證 삼성전자, 주가 하락 과도…공포에 중심잡아야",
+          "source": "아주경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1waWd1LTVhXzdpYVBjQkc1bXhkYkMwaVpRR0NXUkpKUU1DakhrTkJpVVl3aUlQc1RzVDMwY2FaRTNvQk5rVXV4MENnMV80YnNNQ0cwZmV6WWRyQdIBWEFVX3lxTE01TkNCVGNsUmxZODgwYnVUSDVMUnVtSkVQQTNCbmowb1dOVUtidWJsVGFfZjVlR0pualprQjRsYlBOT0M5SkVxUGhuNHFoY0JMYXZXbkRXd3g?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T03:00:23.463Z",
+      "symbol": "082740",
+      "name": "한화엔진",
+      "changeRate": null,
+      "price": null,
+      "summary": "한화엔진, 친환경 선박 엔진 기대감에 장중 1%대 오름세 : 기업주식정보",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5fQXNMRzRWQW53ZGI1RVlsbHprd2xUNklIWTdxQnlva3RGcU5uME9ubW5Pa2hyUG0wMnc4a3R1TmNoem5BX0o3NXVSbFNsYXdTbld1MG9QRi1DTnR5VlExZGJfNEpwUlY2?oc=5",
+      "mentionScore": 87,
+      "evidencePoints": [
+        "출처 재경일보, CBC뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "한화엔진, 친환경 선박 엔진 기대감에 장중 1%대 오름세 : 기업주식정보",
+        "한화엔진, 증권가 목표가 10만7000원 제시…장초반 상승 흐름"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한화엔진, 친환경 선박 엔진 기대감에 장중 1%대 오름세 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBuQmRoempHT2dBUDJaS2h5d1lpZUN6T2UyUkFWbTdiNWdZRHh6Tk9ZWTExY1ZLQUYxZnRFVmtYLVota3B4eFg5Wm13?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한화엔진, 증권가 목표가 10만7000원 제시…장초반 상승 흐름",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5fQXNMRzRWQW53ZGI1RVlsbHprd2xUNklIWTdxQnlva3RGcU5uME9ubW5Pa2hyUG0wMnc4a3R1TmNoem5BX0o3NXVSbFNsYXdTbld1MG9QRi1DTnR5VlExZGJfNEpwUlY2?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T03:00:23.463Z",
+      "symbol": "006400",
+      "name": "삼성SDI",
+      "changeRate": null,
+      "price": null,
+      "summary": "상상인증권 \"삼성SDI, ESS와 소형전지사업 호조로 2026년 흑자전환 전망\"",
+      "source": "증권일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4yTGpMZFpyd0NEMXRRdGE5QmRVSkJrV3BhWmxHRnhFcGlkclY5QUFVbmZlRFlmTWlQS3BFa3lySlk5a0g5VnRySDhYR2tVWWRaN0d2STNNNnd2UTNDaTc5Yg?oc=5",
+      "mentionScore": 86.8,
+      "evidencePoints": [
+        "출처 증권일보, 비즈니스포스트 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "삼성SDI, 주가 반등에 수급 양호...EV 부진 딛고 ESS·AI 수요 확대",
+        "상상인증권 \"삼성SDI, ESS와 소형전지사업 호조로 2026년 흑자전환 전망\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI, 주가 반등에 수급 양호...EV 부진 딛고 ESS·AI 수요 확대",
+          "source": "증권일보",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4yTGpMZFpyd0NEMXRRdGE5QmRVSkJrV3BhWmxHRnhFcGlkclY5QUFVbmZlRFlmTWlQS3BFa3lySlk5a0g5VnRySDhYR2tVWWRaN0d2STNNNnd2UTNDaTc5Yg?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "상상인증권 \"삼성SDI, ESS와 소형전지사업 호조로 2026년 흑자전환 전망\"",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5ZWEtrbGtPTVo5TXhEaFlMOUZIbDVJeEtiSC0zVmFjdkoycTV1Ukk0LUxIZUJaYWhmTy05Y0RpX1hyeFJrc182WDU2UlhOVm9wOTVHVWZELXUwM3lobkdGZU9hWjh5NGRXR2d6YW9HazQwZVE?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T03:00:23.463Z",
+      "symbol": "347850",
+      "name": "디앤디파마텍",
+      "changeRate": 1.96,
+      "price": null,
+      "summary": "디앤디파마텍 주가, 8월 26일 장중 57,300원 1.96% 상승 톱스타뉴스",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5EQnVTZHVZeHRGNjNKZFEtZ3g3QjBKVlpBTGdIekxmbGNQcVA0eHIyYmp3clBTZGtxVTRHMWNqQVpqeXpacFpzTnRRamtXcXNnOFBXekdQWkNRdi1hUGR3WUlZZUw0cHJDRmFzQkgzTVpDdw?oc=5",
+      "mentionScore": 63.2,
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +2.0%",
+        "디앤디파마텍 주가, 8월 26일 장중 57,300원 1.96% 상승"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "디앤디파마텍 주가, 8월 26일 장중 57,300원 1.96% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5EQnVTZHVZeHRGNjNKZFEtZ3g3QjBKVlpBTGdIekxmbGNQcVA0eHIyYmp3clBTZGtxVTRHMWNqQVpqeXpacFpzTnRRamtXcXNnOFBXekdQWkNRdi1hUGR3WUlZZUw0cHJDRmFzQkgzTVpDdw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T03:00:23.463Z",
+      "symbol": "011200",
+      "name": "HMM",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주] HMM, 목표주가 2만9000 상향…지정학적 병목 수혜 지속 전망 뉴스티앤티",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5IU09UdGduNWhWeW52YzI4OTdHUGJXbExJcDAwWktiUXBxamk0aG1HZXBpTVhDS2NEUWpHM1RMS2t5UWJvcE1rNkQtdC0xV25Sa3V2M2Q3Q1BHREd1SjRNNWlidE5EMk80SHc?oc=5",
+      "mentionScore": 60.4,
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] HMM, 목표주가 2만9000 상향…지정학적 병목 수혜 지속 전망"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] HMM, 목표주가 2만9000 상향…지정학적 병목 수혜 지속 전망",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5IU09UdGduNWhWeW52YzI4OTdHUGJXbExJcDAwWktiUXBxamk0aG1HZXBpTVhDS2NEUWpHM1RMS2t5UWJvcE1rNkQtdC0xV25Sa3V2M2Q3Q1BHREd1SjRNNWlidE5EMk80SHc?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T03:00:23.463Z",
+      "symbol": "067310",
+      "name": "하나마이크론",
+      "changeRate": null,
+      "price": null,
+      "summary": "하나마이크론 주가 하락중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE82enhfZzdCVjJ0dnJlSUEtenpyR3RpRWJhQ184bGRFUTIxdUJtR1c5eENqekl6U0lPRWpVMFA1ay1WRTVyczhUYnJ5bzVpSkhDbkcxWlY0NTJSbTB0?oc=5",
+      "mentionScore": 59.3,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "하나마이크론 주가 하락중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "하나마이크론 주가 하락중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE82enhfZzdCVjJ0dnJlSUEtenpyR3RpRWJhQ184bGRFUTIxdUJtR1c5eENqekl6U0lPRWpVMFA1ay1WRTVyczhUYnJ5bzVpSkhDbkcxWlY0NTJSbTB0?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T03:00:23.463Z",
+      "symbol": "222800",
+      "name": "심텍",
+      "changeRate": null,
+      "price": null,
+      "summary": "하나證 “심텍 2700억 시설 투자, 단기적으로 주식가치 희석 불가피” - 조선비즈",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xNWNWeF9YcnQ3M1VWQS1kNnhDRDVMeWIzT0Vkdk5RZDM0dzhtbVFlWUE4VUJsMnVWYWV4aHBWSTQ4U05vamRlSGk3ZVltWmdDUXZEOWw1dncwRGtf?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌, Chosunbiz 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "[모닝 리포트] \"심텍 2742억 규모 증설은 부담 아닌 수요 증거\"",
+        "하나證 “심텍 2700억 시설 투자, 단기적으로 주식가치 희석 불가피” - 조선비즈"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[모닝 리포트] \"심텍 2742억 규모 증설은 부담 아닌 수요 증거\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xNWNWeF9YcnQ3M1VWQS1kNnhDRDVMeWIzT0Vkdk5RZDM0dzhtbVFlWUE4VUJsMnVWYWV4aHBWSTQ4U05vamRlSGk3ZVltWmdDUXZEOWw1dncwRGtf?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "하나證 “심텍 2700억 시설 투자, 단기적으로 주식가치 희석 불가피” - 조선비즈",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTHRqVXlSdWdyZTF6cXZTRWZlV05ta3BaenptMmxjQ2UtTWpIa0hyYkZMOTRaVUVWYm16a09vZFlkOHFDM2dqNUJqVFFtazl0QWNrbmNZQUt3M3J4Nk43MEtKWjRzQVExd1FzM2NrQ2RWYlY1M2pPWWlvV01HSDZBdmVjTEYydGFs0gGcAUFVX3lxTE1kcGdzOG9XYy1TalhBaFQwdHZhTzdLQ0RhTm1KRkV5TkFibVh5ZXFWcjZsVWp1a1pCUzZOR1I0WjVDejZEb0ZmWkJjTVo4bUNVZ0tqNnd5dmdrcDZGc0JidlZpaE8xeWxlNEdueWZDdGpCQUZBSU9BYm5ybmhFclZzeFlWQmZtY2NiZmVkeXIzZzlCblBDc2dGZGxOdg?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": 0.6,
@@ -840,7 +1086,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "079900",
       "name": "전진건설로봇",
       "changeRate": null,
@@ -871,7 +1117,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "003230",
       "name": "삼양식품",
       "changeRate": null,
@@ -902,7 +1148,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "028260",
       "name": "삼성물산",
       "changeRate": null,
@@ -932,38 +1178,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성전자, 매크로 불확실성에 과민반응…목표가 37만원 유지-미래에셋",
-      "source": "서울경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5JOFo5WFpFdzZyVmN5NDE0M1RGZVNENUo5UHMyOUR1b0pITHpqaHpGTDBtVDRTakRkcEtkVXFrNjB0YzE0aTY4NEJxMWhrNk9zSkE?oc=5",
-      "mentionScore": 86.6,
-      "evidencePoints": [
-        "출처 서울경제, 마켓인 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "110조 주주환원에도 하락한 삼전 주가…“목표가 37만원” [줍줍리포트]",
-        "삼성전자, 매크로 불확실성에 과민반응…목표가 37만원 유지-미래에셋"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "110조 주주환원에도 하락한 삼전 주가…“목표가 37만원” [줍줍리포트]",
-          "source": "서울경제",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5JOFo5WFpFdzZyVmN5NDE0M1RGZVNENUo5UHMyOUR1b0pITHpqaHpGTDBtVDRTakRkcEtkVXFrNjB0YzE0aTY4NEJxMWhrNk9zSkE?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전자, 매크로 불확실성에 과민반응…목표가 37만원 유지-미래에셋",
-          "source": "마켓인",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8yMThwUnltRXVXZmt3T0l4eUw3N3RDZTZIOHZPa25WYUctWUZFMTVwRmExMW1JYnVrdE9LQng0d1Jqck1IclhzazEwdWw2M1hxd3FxUS1BT2hRVmtJQUc1dFZSNnMtVlgxODg1SkxFRXd1Z2M?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "009150",
       "name": "삼성전기",
       "changeRate": null,
@@ -987,7 +1202,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "012450",
       "name": "한화에어로스페이스",
       "changeRate": null,
@@ -1011,7 +1226,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "007660",
       "name": "이수페타시스",
       "changeRate": null,
@@ -1035,93 +1250,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
-      "symbol": "006400",
-      "name": "삼성SDI",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성SDI 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5BMnBXVlVBZi1sNGpSVHF5SWtfaW1Oanp1REQydkYzMXpzTUxmVmxWSVhOQ3dHODVEQ0hBREo4cXYxUWdGV2hvekhRdHB2NHg1cmlDSWhCTTlhUUE5?oc=5",
-      "mentionScore": 61.2,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "삼성SDI 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5BMnBXVlVBZi1sNGpSVHF5SWtfaW1Oanp1REQydkYzMXpzTUxmVmxWSVhOQ3dHODVEQ0hBREo4cXYxUWdGV2hvekhRdHB2NHg1cmlDSWhCTTlhUUE5?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-26T01:00:16.261Z",
-      "symbol": "278470",
-      "name": "에이피알",
-      "changeRate": null,
-      "price": null,
-      "summary": "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\"",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE56Szc4Mm44ODYxZXNOX3BpTXlMSzNEdUxlWHVidkZaMHhPNWhMSmE4OGxtZmM1bV9ZbS1QSllOQ04yVEwwcnpKV0VEdkJwdjEyRk5jemc1ZzdtS0Zz?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 뉴스1 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "에이피알 주가 상승 중",
-        "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "에이피알 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE56Szc4Mm44ODYxZXNOX3BpTXlMSzNEdUxlWHVidkZaMHhPNWhMSmE4OGxtZmM1bV9ZbS1QSllOQ04yVEwwcnpKV0VEdkJwdjEyRk5jemc1ZzdtS0Zz?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한투證 \"화장품주, 밸류 매력 높아야…실리콘투·에이피알 주목\"",
-          "source": "뉴스1",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE84anZpb0Y3QjFuWWhmTmdtajk0eFZ6Q1MtWTZaRGlhdHFRYTBVM0ZMa0pHcG13QllWQURpWDctWHk5U3NUVnFPS1VucnNfYjBnT0Y4Y3NsQXpNNW9pR2hV0gFkQVVfeXFMTU1zaklzcWRhYnFGN1B2MGFuQ3lfRzgzdW1mTFAxOTl6enRrN3NTR1hjcTlJNW5jS0hRVHEyR052WVI5dHd1NnNpZUJQM0VQaUpROFJIZnZfNFVIQWUyTzBPMUc3SQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-26T01:00:16.261Z",
-      "symbol": "082740",
-      "name": "한화엔진",
-      "changeRate": null,
-      "price": null,
-      "summary": "유안타증권 \"한화엔진, 그룹사 북미 발전시장 진출 핵심 상장사\"",
-      "source": "증권일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA4cnVqVHdRUmx0ZGFuRGw4N1F2ZXVHNGJYbmYzSGhDc2Y0YmY0V2lKWlNQZ1BNYm5YdHlETWNIX21iSXVuNnYteHdvRjBWX0hBNTEwU05UX3Vpd3ZyOTVFZA?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 증권일보, 연합뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "한화엔진, 그룹사 북미 발전시장 진출 핵심...주가 상승 기대",
-        "유안타증권 \"한화엔진, 그룹사 북미 발전시장 진출 핵심 상장사\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화엔진, 그룹사 북미 발전시장 진출 핵심...주가 상승 기대",
-          "source": "증권일보",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA4cnVqVHdRUmx0ZGFuRGw4N1F2ZXVHNGJYbmYzSGhDc2Y0YmY0V2lKWlNQZ1BNYm5YdHlETWNIX21iSXVuNnYteHdvRjBWX0hBNTEwU05UX3Vpd3ZyOTVFZA?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "유안타증권 \"한화엔진, 그룹사 북미 발전시장 진출 핵심 상장사\"",
-          "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8wLWVZMEsxSl9QTkJTUGJkVjd4QkdKMmZqV183SWdEa1RfTUNUS3E5VVozUlo0ZXpaSUlXMXNrWHc0eUVoVWdUZFFtblNWZFlPNzNyeDd1UmdPbkxLSWUxbdIBYEFVX3lxTE8wLWVZMEsxSl9QTkJTUGJkVjd4QkdKMmZqV183SWdEa1RfTUNUS3E5VVozUlo0ZXpaSUlXMXNrWHc0eUVoVWdUZFFtblNWZFlPNzNyeDd1UmdPbkxLSWUxbQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "014680",
       "name": "한솔케미칼",
       "changeRate": null,
@@ -1145,62 +1274,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
-      "symbol": "347850",
-      "name": "디앤디파마텍",
-      "changeRate": null,
-      "price": null,
-      "summary": "디앤디파마텍 주가 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고 CBC뉴스",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5LbW1LNkJIQ0paRWpReG9rQWtWejFQTERVSGVRZ29ERkFwT1YxWFRvbGc5eFZwdHlkNXA1eW1jODgwZ09sekJzeGM3MjAzUnR0d09XSDJTRmtpQzdTaVRZdUNFODdoUkU?oc=5",
-      "mentionScore": 57,
-      "evidencePoints": [
-        "출처 CBC뉴스 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "디앤디파마텍 주가 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "디앤디파마텍 주가 5만5100원으로 하락…비만 신약 후보 DD18 전임상 결과 공개 예고",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5LbW1LNkJIQ0paRWpReG9rQWtWejFQTERVSGVRZ29ERkFwT1YxWFRvbGc5eFZwdHlkNXA1eW1jODgwZ09sekJzeGM3MjAzUnR0d09XSDJTRmtpQzdTaVRZdUNFODdoUkU?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-26T01:00:16.261Z",
-      "symbol": "011200",
-      "name": "HMM",
-      "changeRate": null,
-      "price": null,
-      "summary": "\"HMM, 지정학 수혜 이어질 것…투자의견·목표가↑\"-대신",
-      "source": "파이낸셜뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iMkNPbG93WnBjU1Vkc2Jfb2V6bkFCcjNyRENzNTM1NlZKMFpTZ1ZMZlhXVEZIelF5aFQ5NHAxcXozcXBYaHJHMUtOT1F0NlpEM1RMSDNJNUtFQQ?oc=5",
-      "mentionScore": 87.1,
-      "evidencePoints": [
-        "출처 파이낸셜뉴스, 한국경제 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "HMM, 병목현상 장기화로 해상운임 강세 수혜..투자의견 ↑ 목표주가 ↑ -대신證",
-        "\"HMM, 지정학 수혜 이어질 것…투자의견·목표가↑\"-대신"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "HMM, 병목현상 장기화로 해상운임 강세 수혜..투자의견 ↑ 목표주가 ↑ -대신證",
-          "source": "파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iMkNPbG93WnBjU1Vkc2Jfb2V6bkFCcjNyRENzNTM1NlZKMFpTZ1ZMZlhXVEZIelF5aFQ5NHAxcXozcXBYaHJHMUtOT1F0NlpEM1RMSDNJNUtFQQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"HMM, 지정학 수혜 이어질 것…투자의견·목표가↑\"-대신",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1LbXYyNHV3Y0RvNllLZU1TekZFRFgzTkZPQ2JSSGl3UnhiLUtrR05aTmZhLUUxRlVPNnRLaTZzcDZzaTVYeExtbUJfbzB1Mm5VYUVldVJEUkFQdw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "005830",
       "name": "DB손해보험",
       "changeRate": null,
@@ -1223,7 +1297,7 @@
       ]
     },
     {
-      "timestamp": "2026-08-26T01:00:16.261Z",
+      "timestamp": "2026-08-26T03:00:23.463Z",
       "symbol": "083450",
       "name": "GST",
       "changeRate": null,
@@ -1242,54 +1316,6 @@
           "title": "[장중수급포착] GST, 외국인/기관 동시 순매수… 주가 +5.58%",
           "source": "뉴스핌",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1nLS1wSElTVjZkUXk0S09yaGZBRWkzYzJXQUl6SUV3YlJubVhCb0pHeXFsNlVGbExlSVBPY1JxNGV5WmZXcG1MTU5rMkpJLWFRRUdadXNhUEw5ekJF?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-26T01:00:16.261Z",
-      "symbol": "183300",
-      "name": "코미코",
-      "changeRate": null,
-      "price": null,
-      "summary": "[애프터마켓 리뷰] 코미코, 액면분할 후 거래 재개 첫날 급등 · 시장 영향은? supple.kr",
-      "source": "supple.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE41NlhnMzVNUUZ1a3VzTDFKYW5tVXBlU1hoVVdpanlTdkJkZDVXaWR1OVFhcDc3bWlvcU9NMFJWU1E1Nm5EZ3pqTnNMMDZOeEZZdnQ2OFFScEI1R2R1?oc=5",
-      "mentionScore": 55,
-      "evidencePoints": [
-        "출처 supple.kr 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "[애프터마켓 리뷰] 코미코, 액면분할 후 거래 재개 첫날 급등 · 시장 영향은?"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[애프터마켓 리뷰] 코미코, 액면분할 후 거래 재개 첫날 급등 · 시장 영향은?",
-          "source": "supple.kr",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE41NlhnMzVNUUZ1a3VzTDFKYW5tVXBlU1hoVVdpanlTdkJkZDVXaWR1OVFhcDc3bWlvcU9NMFJWU1E1Nm5EZ3pqTnNMMDZOeEZZdnQ2OFFScEI1R2R1?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-08-26T01:00:16.261Z",
-      "symbol": "067310",
-      "name": "하나마이크론",
-      "changeRate": null,
-      "price": null,
-      "summary": "하나마이크론 주가 상승 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCRy1aUGhXbHV6cHR2NEJFclhORER6V2RGQk1hdllScWlIQUYxa0FzVjRZSDVZZ3dWemU1SlNJbVNoZ1hJTEVwVXBfWDhVUTdmSTFoRzdTWUcxOFZ0?oc=5",
-      "mentionScore": 59.2,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "하나마이크론 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "하나마이크론 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCRy1aUGhXbHV6cHR2NEJFclhORER6V2RGQk1hdllScWlIQUYxa0FzVjRZSDVZZ3dWemU1SlNJbVNoZ1hJTEVwVXBfWDhVUTdmSTFoRzdTWUcxOFZ0?oc=5"
         }
       ]
     }
