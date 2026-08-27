@@ -35,7 +35,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: realtime-surge-publish
+  group: report-publish
   cancel-in-progress: false
 
 jobs:
@@ -72,25 +72,13 @@ jobs:
           cp public/report/data/slot-adapter.json report/data/slot-adapter.json
           cp public/report/data/realtime-surge.json report/data/realtime-surge.json
 
+      - name: Validate generated realtime data
+        run: node scripts/validate-realtime-publish.mjs --realtime report/data/realtime-surge.json --slot report/data/slot-adapter.json
+
       - name: Commit and push
+        env:
+          PUBLISH_COMMIT_MESSAGE: Publish realtime surge slot
         run: |
-          temp_dir="$(mktemp -d)"
-          cp report/data/slot-adapter.json "$temp_dir/slot-adapter.json"
-          cp report/data/realtime-surge.json "$temp_dir/realtime-surge.json"
-
-          git fetch origin main
-          git reset --hard origin/main
-
-          mkdir -p report/data
-          cp "$temp_dir/slot-adapter.json" report/data/slot-adapter.json
-          cp "$temp_dir/realtime-surge.json" report/data/realtime-surge.json
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add report/data/slot-adapter.json report/data/realtime-surge.json
-          if git diff --cached --quiet; then
-            echo "Latest realtime surge payload already matches remote main."
-            exit 0
-          fi
-          git commit -m "Publish realtime surge slot"
-          git push origin main
+          node scripts/publish-generated-report.mjs report/data/slot-adapter.json report/data/realtime-surge.json

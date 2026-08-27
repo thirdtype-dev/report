@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: market-briefing-publish
+  group: report-publish
   cancel-in-progress: false
 
 jobs:
@@ -83,30 +83,17 @@ jobs:
           cp public/report/data/market-research.json report/data/market-research.json
           cp public/report/data/report.json report/data/report.json
 
+      - name: Validate generated briefing
+        if: steps.trading_day.outputs.is_trading_day == 'true'
+        env:
+          BRIEFING_PHASE: ${{ inputs.phase || 'pre_market' }}
+        run: node scripts/check-briefing-recovery.mjs --require-valid
+
       - name: Commit and push
         if: steps.trading_day.outputs.is_trading_day == 'true'
+        env:
+          PUBLISH_COMMIT_MESSAGE: Publish market briefing
         run: |
-          temp_dir="$(mktemp -d)"
-          cp index.html "$temp_dir/index.html"
-          cp report/index.html "$temp_dir/report-index.html"
-          cp report/data/market-research.json "$temp_dir/market-research.json"
-          cp report/data/report.json "$temp_dir/report.json"
-
-          git fetch origin main
-          git reset --hard origin/main
-
-          mkdir -p report/data
-          cp "$temp_dir/index.html" index.html
-          cp "$temp_dir/report-index.html" report/index.html
-          cp "$temp_dir/market-research.json" report/data/market-research.json
-          cp "$temp_dir/report.json" report/data/report.json
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html report/index.html report/data/market-research.json report/data/report.json
-          if git diff --cached --quiet; then
-            echo "Latest published briefing already matches remote main."
-            exit 0
-          fi
-          git commit -m "Publish market briefing"
-          git push origin main
+          node scripts/publish-generated-report.mjs index.html report/index.html report/data/market-research.json report/data/report.json

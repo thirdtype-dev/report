@@ -106,6 +106,63 @@ test('realtime shell pages exist, are member-only, and route back to briefing', 
   excludes(rootRealtime, '브리핑 페이지에서 버튼으로 열리는 별도 페이지');
 });
 
+test('realtime article links allow only absolute https URLs with a host', () => {
+  const rootRealtime = read('realtime.html');
+  const reportRealtime = read('report/realtime.html');
+  assert.equal(rootRealtime, reportRealtime, 'root/report realtime shells must stay identical');
+
+  const helperStart = rootRealtime.indexOf('function normalizeAllowedArticleUrl');
+  const builderStart = rootRealtime.indexOf('function buildRelatedLinks');
+  const supportingStart = rootRealtime.indexOf('function buildSupportingText');
+  assert.ok(helperStart >= 0, 'article URL allowlist helper must exist');
+  assert.ok(builderStart > helperStart, 'article URL builder must follow allowlist helper');
+  assert.ok(supportingStart > builderStart, 'supporting-text helper must follow link builder');
+
+  const helperSource = rootRealtime.slice(helperStart, builderStart);
+  const builderSource = rootRealtime.slice(builderStart, supportingStart);
+  const normalizeAllowedArticleUrl = new Function(
+    `${helperSource}\nreturn normalizeAllowedArticleUrl;`
+  )();
+  const buildRelatedLinks = new Function(
+    `${helperSource}\n${builderSource}\nreturn buildRelatedLinks;`
+  )();
+
+  assert.equal(
+    normalizeAllowedArticleUrl('https://news.example.com/item'),
+    'https://news.example.com/item'
+  );
+  for (const unsafeUrl of [
+    'http://news.example.com/item',
+    'javascript:alert(1)',
+    'data:text/html,<script>alert(1)</script>',
+    'file:///sdcard/report.html',
+    'intent://news.example.com/item#Intent;scheme=https;end',
+    'blob:https://news.example.com/id',
+    '/relative/item',
+    'not a valid target',
+    'https://',
+  ]) {
+    assert.equal(normalizeAllowedArticleUrl(unsafeUrl), null, unsafeUrl);
+  }
+
+  assert.deepEqual(
+    buildRelatedLinks({
+      relatedPosts: [
+        { label: '안전 기사', url: 'https://news.example.com/item' },
+        { label: 'HTTP 기사', url: 'http://news.example.com/item' },
+        { label: '스크립트', url: 'javascript:alert(1)' },
+      ],
+      sourceUrl: 'javascript:alert(2)',
+    }),
+    [{ label: '안전 기사', url: 'https://news.example.com/item' }]
+  );
+  assert.deepEqual(
+    buildRelatedLinks({ relatedPosts: [], sourceUrl: 'https://news.example.com/fallback' }),
+    [{ label: '관련기사1', url: 'https://news.example.com/fallback' }]
+  );
+  assert.deepEqual(buildRelatedLinks({ relatedPosts: [], sourceUrl: 'http://news.example.com/fallback' }), []);
+});
+
 test('operations doc describes realtime as a separate page, not a toast placeholder', () => {
   const doc = read('docs/market-briefing-automation.md');
   includes(doc, '`실시간급등` 버튼은 `realtime.html`과 `report/realtime.html` 별도 페이지로 이동한다.');

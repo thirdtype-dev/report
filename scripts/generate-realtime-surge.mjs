@@ -25,6 +25,7 @@ const GOOGLE_NEWS_TIMEOUT_MS = Number.parseInt(process.env.GOOGLE_NEWS_TIMEOUT_M
 const REALTIME_POLISH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_POLISH_BATCH_SIZE ?? '5', 10);
 const REALTIME_FRESH_BATCH_SIZE = Number.parseInt(process.env.REALTIME_FRESH_BATCH_SIZE ?? '2', 10);
 const REALTIME_VISIBLE_LIMIT = Number.parseInt(process.env.REALTIME_VISIBLE_LIMIT ?? '20', 10);
+const REALTIME_MAX_EVIDENCE_AGE_MS = 24 * 60 * 60 * 1000;
 const REALTIME_GOOGLE_BACKFILL_COMPANY_LIMIT = Number.parseInt(process.env.REALTIME_GOOGLE_BACKFILL_COMPANY_LIMIT ?? '20', 10);
 const REALTIME_GOOGLE_BACKFILL_ARTICLES_PER_COMPANY = Number.parseInt(process.env.REALTIME_GOOGLE_BACKFILL_ARTICLES_PER_COMPANY ?? '2', 10);
 const MARKET_RESEARCH_WRITER = {
@@ -155,6 +156,45 @@ function publishedKstDate(value) {
   const time = Date.parse(value ?? '');
   if (!Number.isFinite(time)) return null;
   return formatKstDate(new Date(time));
+}
+
+function parseDateValue(value) {
+  const time = Date.parse(value ?? '');
+  return Number.isFinite(time) ? time : 0;
+}
+
+function signalEvidenceCandidates(signal) {
+  const relatedPosts = Array.isArray(signal?.relatedPosts) ? signal.relatedPosts : [];
+  return [
+    signal?.publishedAt,
+    signal?.evidenceAt,
+    signal?.evidenceTime,
+    signal?.evidenceTimestamp,
+    signal?.evidence?.publishedAt,
+    ...relatedPosts.flatMap((item) => [item?.publishedAt, item?.evidenceAt, item?.evidenceTime, item?.evidenceTimestamp])
+  ];
+}
+
+function signalEvidenceRecord(signal) {
+  return signalEvidenceCandidates(signal)
+    .map((value) => ({ value, time: parseDateValue(value) }))
+    .filter((record) => record.time)
+    .sort((left, right) => right.time - left.time)[0] ?? null;
+}
+
+function signalEvidenceTime(signal) {
+  return signalEvidenceRecord(signal)?.time ?? 0;
+}
+
+function signalEvidenceTimestamp(signal) {
+  return signalEvidenceRecord(signal)?.value ?? null;
+}
+
+function isFreshRealtimeEvidence(signal, generatedAt) {
+  const generatedTime = parseDateValue(generatedAt);
+  const evidenceTime = signalEvidenceTime(signal);
+  if (!generatedTime || !evidenceTime) return false;
+  return evidenceTime <= generatedTime && generatedTime - evidenceTime <= REALTIME_MAX_EVIDENCE_AGE_MS;
 }
 
 function resolveSlotHour() {
@@ -633,7 +673,7 @@ function extractCompanyName(headline) {
   return tokens[0] ?? null;
 }
 
-function toArticleCandidate(article, index) {
+function toArticleCandidate(article, index, generatedAt = null) {
   const headline = stripPublisher(article.title);
   const companyName = normalizeCompanyName(article.companyName ?? '') || extractCompanyName(headline);
   if (!companyName) return null;
@@ -641,7 +681,8 @@ function toArticleCandidate(article, index) {
   const direction = inferDirection(headline, companyName);
   const changeRate = inferChangeRate(headline, direction, companyName);
   const publishedAt = article.publishedAt ? new Date(article.publishedAt) : null;
-  const recencyHours = publishedAt ? Math.max(0, (Date.now() - publishedAt.getTime()) / (1000 * 60 * 60)) : 999;
+  const generatedTime = parseDateValue(generatedAt) || Date.now();
+  const recencyHours = publishedAt ? Math.max(0, (generatedTime - publishedAt.getTime()) / (1000 * 60 * 60)) : 999;
 
   return {
     id: `${companyName}-${index}`,
@@ -660,7 +701,7 @@ function toArticleCandidate(article, index) {
 
 function isCurrentSlotNewsCandidate(candidate, generatedDate) {
   const candidateDate = publishedKstDate(candidate?.publishedAt);
-  return !candidateDate || candidateDate === generatedDate;
+  return Boolean(candidateDate) && (!generatedDate || candidateDate === generatedDate);
 }
 
 function buildEvidence(articleGroup, displayArticleGroup = articleGroup) {
@@ -793,19 +834,6 @@ function isNewsBackedSignal(signal) {
   return Boolean(signal.sourceUrl) && !isTelegramSource(signal.source);
 }
 
-function signalEvidenceTime(signal) {
-  const candidates = [
-    signal?.updatedAt,
-    signal?.publishedAt,
-    signal?.generatedAt,
-    signal?.timestamp
-  ];
-  const times = candidates
-    .map((value) => Date.parse(value ?? ''))
-    .filter(Number.isFinite);
-  return times.length ? Math.max(...times) : 0;
-}
-
 function signalEvidenceSignature(signal) {
   const relatedUrls = Array.isArray(signal?.relatedPosts)
     ? signal.relatedPosts.map((item) => cleanText(item?.url)).filter(Boolean)
@@ -819,6 +847,18 @@ function signalEvidenceSignature(signal) {
   ].join('|');
 }
 
+function signalComparisonTime(signal, strictEvidence = false) {
+  if (strictEvidence) return signalEvidenceTime(signal);
+  const candidates = [
+    signal?.updatedAt,
+    signal?.publishedAt,
+    signal?.generatedAt,
+    signal?.timestamp
+  ];
+  const times = candidates.map(parseDateValue).filter(Boolean);
+  return times.length ? Math.max(...times) : 0;
+}
+
 function isOppositeDirectionalSignal(incoming, previous) {
   const incomingDirection = incoming?.direction;
   const previousDirection = previous?.direction;
@@ -826,10 +866,10 @@ function isOppositeDirectionalSignal(incoming, previous) {
     || (incomingDirection === 'down' && previousDirection === 'up');
 }
 
-function shouldRefreshExistingSignal(incoming, previous) {
+function shouldRefreshExistingSignal(incoming, previous, { strictEvidence = false } = {}) {
   if (!incoming || !previous) return false;
-  const incomingTime = signalEvidenceTime(incoming);
-  const previousTime = signalEvidenceTime(previous);
+  const incomingTime = signalComparisonTime(incoming, strictEvidence);
+  const previousTime = signalComparisonTime(previous, strictEvidence);
   if (incomingTime && previousTime && incomingTime > previousTime) return true;
   if (incomingTime && previousTime && incomingTime < previousTime) return false;
   if (incomingTime && previousTime && isOppositeDirectionalSignal(incoming, previous)) return true;
@@ -938,28 +978,33 @@ async function fetchGoogleNewsBackfillCandidates(telegramCandidates, existingNew
 
 function mergeRealtimeSignals(newSignals, previousSignals, {
   freshBatchSize = REALTIME_FRESH_BATCH_SIZE,
-  visibleLimit = REALTIME_VISIBLE_LIMIT
+  visibleLimit = REALTIME_VISIBLE_LIMIT,
+  generatedAt = null
 } = {}) {
   const previousList = Array.isArray(previousSignals) ? previousSignals.map(hydrateSignalMetadata) : [];
   const hydratedNewSignals = Array.isArray(newSignals) ? newSignals.map(hydrateSignalMetadata) : [];
-  const filteredPreviousList = previousList.filter(isDisplayableSignal).filter(isNewsBackedSignal);
+  const freshFilter = generatedAt
+    ? (signal) => isFreshRealtimeEvidence(signal, generatedAt)
+    : () => true;
+  const filteredPreviousList = previousList.filter(isDisplayableSignal).filter(isNewsBackedSignal).filter(freshFilter);
+  const filteredNewList = hydratedNewSignals.filter(freshFilter);
   const previousByKey = new Map(filteredPreviousList.map((signal) => [getSignalKey(signal), signal]));
   const previousKeys = new Set(previousByKey.keys());
   const freshSignals = [];
   const freshKeys = new Set();
   const targetFreshCount = Math.max(freshBatchSize, visibleLimit - filteredPreviousList.length);
 
-  for (const signal of hydratedNewSignals) {
+  for (const signal of filteredNewList) {
     if (!isDisplayableSignal(signal)) continue;
     const key = getSignalKey(signal);
     if (freshKeys.has(key)) continue;
     if (!previousKeys.has(key)) continue;
-    if (!shouldRefreshExistingSignal(signal, previousByKey.get(key))) continue;
+    if (!shouldRefreshExistingSignal(signal, previousByKey.get(key), { strictEvidence: Boolean(generatedAt) })) continue;
     freshSignals.push(signal);
     freshKeys.add(key);
   }
 
-  for (const signal of hydratedNewSignals) {
+  for (const signal of filteredNewList) {
     if (!isDisplayableSignal(signal)) continue;
     const key = getSignalKey(signal);
     if (freshKeys.has(key) || previousKeys.has(key)) continue;
@@ -1018,7 +1063,7 @@ function buildItemsFromSignals(signals, generatedAt) {
   return signals.map((rawSignal) => {
     const signal = hydrateSignalMetadata(rawSignal);
     return ({
-    timestamp: generatedAt,
+    timestamp: signalEvidenceTimestamp(signal),
     symbol: signal.stockCode,
     name: signal.stockName,
     changeRate: signal.changeRate,
@@ -1083,8 +1128,17 @@ function shouldRefreshPolishedBody(value) {
   return !text || hasFallbackBoilerplate(text) || countDetailSentences(text) < 4;
 }
 
-function refreshRealtimeDescriptions(payload, generatedAt = new Date().toISOString(), polishedSignals = [], polishWriter = null) {
-  const signals = Array.isArray(payload?.signals) ? payload.signals : [];
+function refreshRealtimeDescriptions(
+  payload,
+  generatedAt = new Date().toISOString(),
+  polishedSignals = [],
+  polishWriter = null,
+  freshnessAt = null
+) {
+  const sourceSignals = Array.isArray(payload?.signals) ? payload.signals : [];
+  const signals = freshnessAt
+    ? sourceSignals.filter((signal) => isFreshRealtimeEvidence(signal, freshnessAt))
+    : sourceSignals;
   const polishedByKey = new Map();
   for (const signal of (Array.isArray(polishedSignals) ? polishedSignals : [])) {
     const rawName = cleanText(signal?.stockName).toLowerCase();
@@ -1413,9 +1467,9 @@ async function polishSignals(signals) {
 function buildRealtimePayload(articleSource, slotHour, generatedAt, generatedDate, options = {}) {
   const slotLabel = SLOT_LABELS[slotHour];
   const candidates = (articleSource.stockNewsCandidates ?? [])
-    .map(toArticleCandidate)
+    .map((article, index) => toArticleCandidate(article, index, generatedAt))
     .filter(Boolean)
-    .filter((candidate) => isCurrentSlotNewsCandidate(candidate, generatedDate))
+    .filter((candidate) => isFreshRealtimeEvidence(candidate, generatedAt))
     .sort((left, right) => left.recencyHours - right.recencyHours);
 
   const grouped = new Map();
@@ -1551,7 +1605,7 @@ async function main() {
 
   if (process.env.REALTIME_DESCRIPTION_ONLY === '1') {
     const descriptionTargets = Array.isArray(previousPayload?.signals)
-      ? previousPayload.signals.map(hydrateSignalMetadata)
+      ? previousPayload.signals.filter((signal) => isFreshRealtimeEvidence(signal, generatedAt)).map(hydrateSignalMetadata)
       : [];
     const polished = descriptionTargets.length
       ? await polishSignals(descriptionTargets)
@@ -1560,7 +1614,8 @@ async function main() {
       previousPayload ?? { signals: [] },
       generatedAt,
       polished.signals,
-      polished.writer
+      polished.writer,
+      generatedAt
     );
     let slotAdapter = {};
     try {
@@ -1612,7 +1667,7 @@ async function main() {
     generatedDate,
     writer
   });
-  const { freshSignals, mergedSignals } = mergeRealtimeSignals(nextPayload.signals, previousSignals);
+  const { freshSignals, mergedSignals } = mergeRealtimeSignals(nextPayload.signals, previousSignals, { generatedAt });
   const polishTargets = freshSignals.map(hydrateSignalMetadata);
   const polished = polishTargets.length
     ? await polishSignals(polishTargets)
@@ -1739,4 +1794,16 @@ export function __testBuildNextRealtimePayload(options) {
 
 export function __testNormalizeSignalDisplaySources(signal) {
   return normalizeSignalDisplaySources(signal);
+}
+
+export function __testIsFreshRealtimeEvidence(signal, generatedAt) {
+  return isFreshRealtimeEvidence(signal, generatedAt);
+}
+
+export function __testBuildItemsFromSignals(signals, generatedAt) {
+  return buildItemsFromSignals(signals, generatedAt);
+}
+
+export function __testSignalEvidenceTimestamp(signal) {
+  return signalEvidenceTimestamp(signal);
 }

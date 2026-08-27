@@ -324,6 +324,17 @@
           .replace(/'/g, '&#39;');
       }
 
+      function normalizeAllowedArticleUrl(value) {
+        if (typeof value !== 'string' || !value.trim()) return null;
+        try {
+          const url = new URL(value.trim());
+          if (url.protocol !== 'https:' || !url.hostname) return null;
+          return url.href;
+        } catch {
+          return null;
+        }
+      }
+
       function formatBadge(signal) {
         if (signal.direction === 'up') return { className: 'is-up', label: '긍정' };
         if (signal.direction === 'down') return { className: 'is-down', label: '우려' };
@@ -339,11 +350,18 @@
 
       function buildRelatedLinks(signal) {
         const relatedPosts = Array.isArray(signal.relatedPosts) ? signal.relatedPosts : [];
-        const links = relatedPosts.filter((item) => item?.url).slice(0, 3);
-        if (!links.length && signal.sourceUrl) {
+        const links = relatedPosts
+          .map((item) => {
+            const url = normalizeAllowedArticleUrl(item?.url);
+            return url ? { ...item, url } : null;
+          })
+          .filter(Boolean)
+          .slice(0, 3);
+        const sourceUrl = normalizeAllowedArticleUrl(signal.sourceUrl);
+        if (!links.length && sourceUrl) {
           return [{
             label: '관련기사1',
-            url: signal.sourceUrl
+            url: sourceUrl
           }];
         }
         return links.map((item, index) => ({
