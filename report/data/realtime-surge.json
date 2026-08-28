@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-08-28T03:00:17.750Z",
+  "generated_at": "2026-08-28T04:00:19.849Z",
   "generated_date": "2026-08-28",
-  "slot_hour": 12,
-  "cycle_label": "KST_1200",
-  "slot_label": "12:00",
+  "slot_hour": 13,
+  "cycle_label": "KST_1300",
+  "slot_label": "13:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 12:00 실시간 급등",
+    "title": "KST 13:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 12건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성SDI",
+      "stockCode": "006400",
+      "summary": "삼성SDI 주가 하락 중",
+      "headline": "삼성SDI 주가, 8월 28일 장중 568,000원 0.18% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -0.2%",
+        "삼성SDI 주가, 8월 28일 장중 568,000원 0.18% 하락",
+        "삼성SDI 주가 하락 중"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-08-28T04:00:19.849Z",
+      "cycleLabel": "KST_1300",
+      "direction": "down",
+      "changeRate": -0.18,
+      "latestHeadline": "삼성SDI 주가, 8월 28일 장중 568,000원 0.18% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ZUlpEMndwMVpyNDU2ZnFwaW85Qy1SdzhaazB2Z29qT0hJcUpqeDFJYTRmR1lDak1CVURSalNTVWlzLWhlaHRhb28taGRzNTlIQ2ljVjlGTENDcFpadnN0alVyTU5IWFUtcFVvX0t2M3RNQQ?oc=5",
+      "publishedAt": "Fri, 28 Aug 2026 01:35:39 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가, 8월 28일 장중 568,000원 0.18% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ZUlpEMndwMVpyNDU2ZnFwaW85Qy1SdzhaazB2Z29qT0hJcUpqeDFJYTRmR1lDak1CVURSalNTVWlzLWhlaHRhb28taGRzNTlIQ2ljVjlGTENDcFpadnN0alVyTU5IWFUtcFVvX0t2M3RNQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성SDI 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1ZT2FWTmt5OWlRMm9EbWY0OWlpazJ5bWdoWUwyYjZVNXlMbV9xR2tidmpaNkZKYlIxTDNEeTNzNnkycmhQZ0djcDlfZ2dqRDZmNGpULUJHZTRfbHc4?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "삼성SDI 주가, 8월 28일 장중 568,000원 0.18% 하락",
+      "polishedBody": "삼성SDI는 주가, 8월 28일 장중 568,000원 0.18% 하락 이슈로 단기 변동성이 확대됐습니다. 주가, 8월 28일 장중 568,000원 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "두산",
       "stockCode": "000150",
@@ -257,47 +298,6 @@
       "polishedBody": "카카오는 인적분할 한화·, 재료가 부각되며 단기 모멘텀을 형성했습니다. 인적분할 한화·, 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "삼성SDI",
-      "stockCode": "006400",
-      "summary": "4조대 현금만든 '삼성SDI', SKIET품은 'SK이노'…배터리사 '자본 재배치'",
-      "headline": "삼성SDI 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 신아일보 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "삼성SDI 주가 하락 중",
-        "4조대 현금만든 '삼성SDI', SKIET품은 'SK이노'…배터리사 '자본 재배치'"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 4,
-      "updatedAt": "2026-08-28T01:00:17.511Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "삼성SDI 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1ZT2FWTmt5OWlRMm9EbWY0OWlpazJ5bWdoWUwyYjZVNXlMbV9xR2tidmpaNkZKYlIxTDNEeTNzNnkycmhQZ0djcDlfZ2dqRDZmNGpULUJHZTRfbHc4?oc=5",
-      "publishedAt": "Fri, 28 Aug 2026 00:12:30 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1ZT2FWTmt5OWlRMm9EbWY0OWlpazJ5bWdoWUwyYjZVNXlMbV9xR2tidmpaNkZKYlIxTDNEeTNzNnkycmhQZ0djcDlfZ2dqRDZmNGpULUJHZTRfbHc4?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "4조대 현금만든 '삼성SDI', SKIET품은 'SK이노'…배터리사 '자본 재배치'",
-          "source": "신아일보",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9GMFFnRjhnaGZQdzhJZjQybDFxOGlvQzd2N1RFclZuZUVoTkZUQkx3LXlqTW5SVDBObm9Lb1J0ekhNM3JzUlh5alExRndlMTdwVnR1OGZyLWs5clBIanQ2ZkpocEdPZ3E3RFYwSUZ0Qmg?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "삼성SDI 주가 하락 중",
-      "polishedBody": "삼성SDI는 4조대 현금만든 '' 이슈로 단기 변동성이 확대됐습니다. 4조대 현금만든 '' 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 'SK이노'…배터리사 '자본 재배치' 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
       "stockName": "SK하이닉스",
       "stockCode": "000660",
       "summary": "SK하이닉스, 美 첫 HBM 패키징 공장 착공…주가 강세",
@@ -484,6 +484,37 @@
   ],
   "items": [
     {
+      "timestamp": "Fri, 28 Aug 2026 01:35:39 GMT",
+      "symbol": "006400",
+      "name": "삼성SDI",
+      "changeRate": -0.18,
+      "price": null,
+      "summary": "삼성SDI 주가 하락 중",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ZUlpEMndwMVpyNDU2ZnFwaW85Qy1SdzhaazB2Z29qT0hJcUpqeDFJYTRmR1lDak1CVURSalNTVWlzLWhlaHRhb28taGRzNTlIQ2ljVjlGTENDcFpadnN0alVyTU5IWFUtcFVvX0t2M3RNQQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -0.2%",
+        "삼성SDI 주가, 8월 28일 장중 568,000원 0.18% 하락",
+        "삼성SDI 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가, 8월 28일 장중 568,000원 0.18% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ZUlpEMndwMVpyNDU2ZnFwaW85Qy1SdzhaazB2Z29qT0hJcUpqeDFJYTRmR1lDak1CVURSalNTVWlzLWhlaHRhb28taGRzNTlIQ2ljVjlGTENDcFpadnN0alVyTU5IWFUtcFVvX0t2M3RNQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성SDI 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1ZT2FWTmt5OWlRMm9EbWY0OWlpazJ5bWdoWUwyYjZVNXlMbV9xR2tidmpaNkZKYlIxTDNEeTNzNnkycmhQZ0djcDlfZ2dqRDZmNGpULUJHZTRfbHc4?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Fri, 28 Aug 2026 01:33:00 GMT",
       "symbol": "000150",
       "name": "두산",
@@ -665,37 +696,6 @@
           "title": "인적분할 한화·카카오, 주가 엇갈린 까닭은?",
           "source": "네이트",
           "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9sV3FaNGF3UFlFQ256T1U0cklLYjgxbjNld2l6UDNsc2pVRU1EbjgxaGhVOF9IWHF5b3phTHlhOGZ4bk1reVpMbEpyTHVxdWJrd1VJ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Fri, 28 Aug 2026 00:12:30 GMT",
-      "symbol": "006400",
-      "name": "삼성SDI",
-      "changeRate": null,
-      "price": null,
-      "summary": "4조대 현금만든 '삼성SDI', SKIET품은 'SK이노'…배터리사 '자본 재배치'",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1ZT2FWTmt5OWlRMm9EbWY0OWlpazJ5bWdoWUwyYjZVNXlMbV9xR2tidmpaNkZKYlIxTDNEeTNzNnkycmhQZ0djcDlfZ2dqRDZmNGpULUJHZTRfbHc4?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 신아일보 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "삼성SDI 주가 하락 중",
-        "4조대 현금만든 '삼성SDI', SKIET품은 'SK이노'…배터리사 '자본 재배치'"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1ZT2FWTmt5OWlRMm9EbWY0OWlpazJ5bWdoWUwyYjZVNXlMbV9xR2tidmpaNkZKYlIxTDNEeTNzNnkycmhQZ0djcDlfZ2dqRDZmNGpULUJHZTRfbHc4?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "4조대 현금만든 '삼성SDI', SKIET품은 'SK이노'…배터리사 '자본 재배치'",
-          "source": "신아일보",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9GMFFnRjhnaGZQdzhJZjQybDFxOGlvQzd2N1RFclZuZUVoTkZUQkx3LXlqTW5SVDBObm9Lb1J0ekhNM3JzUlh5alExRndlMTdwVnR1OGZyLWs5clBIanQ2ZkpocEdPZ3E3RFYwSUZ0Qmg?oc=5"
         }
       ]
     },
