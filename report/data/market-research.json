@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-28T07:00:32.864Z",
-  "phase": "post_market",
-  "sessionLabel": "16:00",
+  "generatedAt": "2026-08-28T07:07:27.330Z",
+  "phase": "pre_market",
+  "sessionLabel": "08:30",
   "summary": {
     "signal": "yellow",
     "totalScore": 0,
@@ -34,11 +34,11 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,371.98",
-      "change": "-0.83%",
+      "value": "1,372.58",
+      "change": "-0.79%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-08-28T07:00:12.000Z",
+      "updatedAt": "2026-08-28T07:07:08.000Z",
       "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
@@ -67,22 +67,22 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "29,623.25",
-      "change": "-0.24%",
-      "signal": "red",
+      "value": "29,637.75",
+      "change": "-0.20%",
+      "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-08-28T06:50:10.000Z",
+      "updatedAt": "2026-08-28T06:57:11.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
     {
       "key": "investor_flow",
       "title": "투자자별 수급",
-      "value": "KOSPI 2026-08-28: 외국인 순매도 17,563억원, 기관 순매도 2,842억원, 개인 순매수 4,242억원 / KOSDAQ 2026-08-28: 외국인 순매도 937억원, 기관 순매도 34억원, 개인 순매수 981억원",
+      "value": "KOSPI 2026-08-28: 외국인 순매도 17,562억원, 기관 순매도 2,842억원, 개인 순매수 4,242억원 / KOSDAQ 2026-08-28: 외국인 순매도 937억원, 기관 순매도 35억원, 개인 순매수 981억원",
       "change": null,
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-08-28T16:00:32.851796+09:00",
+      "updatedAt": "2026-08-28T16:07:27.317394+09:00",
       "reason": "NAVER Finance/KRX 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.",
       "sourceUrl": "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260828&sosok=01&page=1"
     },
@@ -93,7 +93,7 @@
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-08-28T07:00:32.864Z",
+      "updatedAt": "2026-08-28T07:07:27.330Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -124,12 +124,12 @@
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,371.98",
-      "change": "-11.51",
-      "changePercent": "-0.83%",
+      "currentPrice": "1,372.58",
+      "change": "-10.91",
+      "changePercent": "-0.79%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-08-28T07:00:12.000Z",
+      "updatedAt": "2026-08-28T07:07:08.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -157,24 +157,16 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "29,623.25",
-      "change": "-72.50",
-      "changePercent": "-0.24%",
+      "currentPrice": "29,637.75",
+      "change": "-58.00",
+      "changePercent": "-0.20%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-08-28T06:50:10.000Z",
+      "updatedAt": "2026-08-28T06:57:11.000Z",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
   "marketNews": [
-    {
-      "title": "[증시 오늘(28일) 주요 특징주] 코스피·코스닥 약세속 반도체·2차전지 흔들…대형 악재·호재별 차별화 - thefairnews.co.kr",
-      "summary": "[증시 오늘(28일) 주요 특징주] 코스피·코스닥 약세속 반도체·2차전지 흔들…대형 악재·호재별 차별화&nbsp;&nbsp;thefairnews.co.kr",
-      "source": "thefairnews.co.kr",
-      "publishedAt": "Fri, 28 Aug 2026 05:06:13 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBJcnJXMjkzZjFmeWVQQkZ0OU9HQ2ZrSEtFdzUtVENPNTI5TE1FaW4wa1FfczJSUUZPbU52WS14RlpHN0F1eHAzSEpjV0lIaEZEeU5fQUdsa3ZwdFBOamJiUnZfUjVMZDdpOWNVZEh0LTcwekd10gF0QVVfeXFMUElyclcyOTNmMWZ5ZVBCRnQ5T0dDZmtIS0V3NS1UQ081MjlMTUVpbjBrUV9zMlJRRk9tTnZZLXhGWkc3QXV4cDNISmNXSUhoRkR5Tl9BR2xrdnB0UE5qYmJSdl9SNUxkN2k5Y1VkSHQtNzB6R3U?oc=5",
-      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
-    },
     {
       "title": "삼성바이오로직스 'M&A·증설' 3조 유상증자 - 네이트",
       "summary": "삼성바이오로직스 'M&A·증설' 3조 유상증자&nbsp;&nbsp;네이트",
@@ -246,17 +238,17 @@
       "publishedAt": "Thu, 27 Aug 2026 07:44:45 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE40T3BOaU9maGtVT3Nab1dpbTF6WFVHd3ljWnR3RFNmOWRFUEMxUXlMRmZQY3pVUFhScXRoaE9SNm1lT0o3LWQ5ZFd3Ui1tbWJrUl9r?oc=5",
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
+    },
+    {
+      "title": "[마감시황] 엔비디아 vs 금리 인상 줄다리기…코스피 6912.37 상승 마감 - 뉴스핌",
+      "summary": "[마감시황] 엔비디아 vs 금리 인상 줄다리기…코스피 6912.37 상승 마감&nbsp;&nbsp;뉴스핌",
+      "source": "뉴스핌",
+      "publishedAt": "Thu, 27 Aug 2026 06:55:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1jX1k5Ul9fWXBaOHpaMlNvVk1hMUdxN0FQZmRidV9BVi1BNS05VjJvcFFubXhPS3plNjZtR3F2YTBWM280YkEwRUNaamdHUlh4T1JPQ3NSVXY0NjRq?oc=5",
+      "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     }
   ],
   "marketEventNewsCandidates": [
-    {
-      "title": "CXMT, 범용 DRAM 증산 가속…韓 위협 'LCD 전략' 재현 : 네이버 블로그 - Naver Blog",
-      "summary": "CXMT, 범용 DRAM 증산 가속…韓 위협 'LCD 전략' 재현 : 네이버 블로그&nbsp;&nbsp;Naver Blog",
-      "source": "Naver Blog",
-      "publishedAt": "Fri, 28 Aug 2026 02:14:11 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9fSE9qVlNCSVMyMUdGaXdKMkFZSHlndjh5dFU2OWJvS19CSGRzbFdzNFVrdzJoWm1OWTJTQnJXQjBKQ196d1B4TEtwakJEWjRaQkVCLU9qREU2N01NVTV3NjJBYlR4aGc?oc=5",
-      "query": "중국 메모리 공급과잉 삼성전자 SK하이닉스 수익성"
-    },
     {
       "title": "중국 YMTC의 294단 낸드 공습과 삼성·하이닉스를 겨냥한 위협적 실체 - 데일리머니",
       "summary": "중국 YMTC의 294단 낸드 공습과 삼성·하이닉스를 겨냥한 위협적 실체&nbsp;&nbsp;데일리머니",
@@ -306,12 +298,12 @@
       "query": "CXMT 창신메모리 DUV 삼성전자 SK하이닉스"
     },
     {
-      "title": "러 국영 통신사 미·이란 휴전 보도에…재건株 일제히 상승 [마켓시그널] - 서울경제",
-      "summary": "러 국영 통신사 미·이란 휴전 보도에…재건株 일제히 상승 [마켓시그널]&nbsp;&nbsp;서울경제",
-      "source": "서울경제",
-      "publishedAt": "Wed, 26 Aug 2026 01:45:57 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE85MGJvN1dIbjNhem9iUm5hVlF3MmVWUkZad0YyR0VsbDd0ZlZvbHNBdlhTTXpqUExyNE1pRUFnRmtpalNXTm1hcmNSb0ladlBpQXc?oc=5",
-      "query": "한국 증시 프리마켓 급등 급락 환율 유가 금리 관세"
+      "title": "CXMT, 범용 DRAM 증산 가속…韓 위협 'LCD 전략' 재현 : 네이버 블로그 - Naver Blog",
+      "summary": "CXMT, 범용 DRAM 증산 가속…韓 위협 'LCD 전략' 재현 : 네이버 블로그&nbsp;&nbsp;Naver Blog",
+      "source": "Naver Blog",
+      "publishedAt": "Wed, 26 Aug 2026 01:17:29 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZFNHX2R5UlFqeWVDTldZazFxRXptb0oyQnYtYkJEcXV3NTkyQ3k0ZHVzcy1hRWQwRHl5RmtQRER5ZUZmUU5CZW02Y05iTHZtdk40NEdENndydlAzWUV4THdZQ0NWZVhpa0VYLTZrWmNaSGhDTnlqOEhzeDJmU3pRVDU0VTJ0YjkxeHg0Ul9tUQ?oc=5",
+      "query": "중국 메모리 공급과잉 삼성전자 SK하이닉스 수익성"
     },
     {
       "title": "롤러코스터 장세에 멈춘 투자심리…증시 대기자금 100조원 유지 - mstoday.co.kr",
@@ -400,55 +392,6 @@
       "direct": true,
       "targets": [
         {
-          "key": "semiconductor",
-          "label": "반도체",
-          "scope": "sector"
-        },
-        {
-          "key": "secondary_battery",
-          "label": "2차전지",
-          "scope": "sector"
-        },
-        {
-          "key": "domestic_market",
-          "label": "국내 증시",
-          "scope": "market"
-        },
-        {
-          "key": "defense",
-          "label": "방산",
-          "scope": "sector"
-        },
-        {
-          "key": "platform",
-          "label": "인터넷·플랫폼",
-          "scope": "sector"
-        }
-      ],
-      "primaryTarget": {
-        "key": "semiconductor",
-        "label": "반도체",
-        "scope": "sector"
-      },
-      "headline": "[증시 오늘(28일) 주요 특징주] 코스피·코스닥 약세속 반도체·2차전지 흔들…대형 악재·호재별 차별화 - thefairnews.co.kr",
-      "summary": "[증시 오늘(28일) 주요 특징주] 코스피·코스닥 약세속 반도체·2차전지 흔들…대형 악재·호재별 차별화&nbsp;&nbsp;thefairnews.co.kr",
-      "source": "thefairnews.co.kr",
-      "publishedAt": "Fri, 28 Aug 2026 05:06:13 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBJcnJXMjkzZjFmeWVQQkZ0OU9HQ2ZrSEtFdzUtVENPNTI5TE1FaW4wa1FfczJSUUZPbU52WS14RlpHN0F1eHAzSEpjV0lIaEZEeU5fQUdsa3ZwdFBOamJiUnZfUjVMZDdpOWNVZEh0LTcwekd10gF0QVVfeXFMUElyclcyOTNmMWZ5ZVBCRnQ5T0dDZmtIS0V3NS1UQ081MjlMTUVpbjBrUV9zMlJRRk9tTnZZLXhGWkc3QXV4cDNISmNXSUhoRkR5Tl9BR2xrdnB0UE5qYmJSdl9SNUxkN2k5Y1VkSHQtNzB6R3U?oc=5",
-      "score": 13,
-      "corroboration": 2,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[증시 오늘(28일) 주요 특징주] 코스피·코스닥 약세속 반도체·2차전지 흔들…대형 악재·호재별 차별화 - thefairnews.co.kr",
-        "中 YMTC, 294단 3D 낸드와 상장 자금 무기로 내년 말 세계 1위 정조준 -> 특허 침해 및 기술 탈취 논란 속에서도 보조금 업고 78%대 마진율 기록한 충격적 실적 => 범용 낸드 가격 하방 압력 가중 >> 글로벌 공급 과잉과 치킨게임 재발 우려의 메가톤급 변수 | - 데일리머니"
-      ]
-    },
-    {
-      "direction": "negative",
-      "direct": true,
-      "targets": [
-        {
           "key": "individual_stock",
           "label": "개별 종목",
           "scope": "stock"
@@ -526,6 +469,44 @@
       "evidenceConfidence": "medium",
       "evidenceHeadlines": [
         "ACM 리서치 상하이, 상반기 신규 수주 105% 급증…장비 포트폴리오 확대 - 데이터투자"
+      ]
+    },
+    {
+      "direction": "negative",
+      "direct": false,
+      "targets": [
+        {
+          "key": "semiconductor",
+          "label": "반도체",
+          "scope": "sector"
+        },
+        {
+          "key": "defense",
+          "label": "방산",
+          "scope": "sector"
+        },
+        {
+          "key": "platform",
+          "label": "인터넷·플랫폼",
+          "scope": "sector"
+        }
+      ],
+      "primaryTarget": {
+        "key": "semiconductor",
+        "label": "반도체",
+        "scope": "sector"
+      },
+      "headline": "中 YMTC, 294단 3D 낸드와 상장 자금 무기로 내년 말 세계 1위 정조준 -> 특허 침해 및 기술 탈취 논란 속에서도 보조금 업고 78%대 마진율 기록한 충격적 실적 => 범용 낸드 가격 하방 압력 가중 >> 글로벌 공급 과잉과 치킨게임 재발 우려의 메가톤급 변수 | - 데일리머니",
+      "summary": "中 YMTC, 294단 3D 낸드와 상장 자금 무기로 내년 말 세계 1위 정조준 -> 특허 침해 및 기술 탈취 논란 속에서도 보조금 업고 78%대 마진율 기록한 충격적 실적 => 범용 낸드 가격 하방 압력 가중 >> 글로벌 공급 과잉과 치킨게임 재발 우려의 메가톤급 변수 |&nbsp;&nbsp;데일리머니",
+      "source": "데일리머니",
+      "publishedAt": "Thu, 27 Aug 2026 11:49:10 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1meFNFbWhBeEp5UEpseGRnay1penJZZlJ6SmMtVGR4NzFzTUZFNzhxYVNldXkwM1BIdEJDMDBGdzBJek9LRklsdDlBT19Fa0Y5LVhLYkd0Q2pHVEtndmJCNU9sVG9uTUd5S1hGTTR0SDVfTmg0T1E?oc=5",
+      "score": 7,
+      "corroboration": 1,
+      "severity": "medium",
+      "evidenceConfidence": "medium",
+      "evidenceHeadlines": [
+        "中 YMTC, 294단 3D 낸드와 상장 자금 무기로 내년 말 세계 1위 정조준 -> 특허 침해 및 기술 탈취 논란 속에서도 보조금 업고 78%대 마진율 기록한 충격적 실적 => 범용 낸드 가격 하방 압력 가중 >> 글로벌 공급 과잉과 치킨게임 재발 우려의 메가톤급 변수 | - 데일리머니"
       ]
     }
   ],
@@ -535,59 +516,6 @@
       "direct": true,
       "targets": [
         {
-          "key": "semiconductor",
-          "label": "반도체",
-          "scope": "sector"
-        },
-        {
-          "key": "secondary_battery",
-          "label": "2차전지",
-          "scope": "sector"
-        },
-        {
-          "key": "domestic_market",
-          "label": "국내 증시",
-          "scope": "market"
-        },
-        {
-          "key": "defense",
-          "label": "방산",
-          "scope": "sector"
-        },
-        {
-          "key": "platform",
-          "label": "인터넷·플랫폼",
-          "scope": "sector"
-        }
-      ],
-      "primaryTarget": {
-        "key": "semiconductor",
-        "label": "반도체",
-        "scope": "sector"
-      },
-      "headline": "[증시 오늘(28일) 주요 특징주] 코스피·코스닥 약세속 반도체·2차전지 흔들…대형 악재·호재별 차별화 - thefairnews.co.kr",
-      "summary": "[증시 오늘(28일) 주요 특징주] 코스피·코스닥 약세속 반도체·2차전지 흔들…대형 악재·호재별 차별화&nbsp;&nbsp;thefairnews.co.kr",
-      "source": "thefairnews.co.kr",
-      "publishedAt": "Fri, 28 Aug 2026 05:06:13 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBJcnJXMjkzZjFmeWVQQkZ0OU9HQ2ZrSEtFdzUtVENPNTI5TE1FaW4wa1FfczJSUUZPbU52WS14RlpHN0F1eHAzSEpjV0lIaEZEeU5fQUdsa3ZwdFBOamJiUnZfUjVMZDdpOWNVZEh0LTcwekd10gF0QVVfeXFMUElyclcyOTNmMWZ5ZVBCRnQ5T0dDZmtIS0V3NS1UQ081MjlMTUVpbjBrUV9zMlJRRk9tTnZZLXhGWkc3QXV4cDNISmNXSUhoRkR5Tl9BR2xrdnB0UE5qYmJSdl9SNUxkN2k5Y1VkSHQtNzB6R3U?oc=5",
-      "score": 13,
-      "corroboration": 2,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[증시 오늘(28일) 주요 특징주] 코스피·코스닥 약세속 반도체·2차전지 흔들…대형 악재·호재별 차별화 - thefairnews.co.kr",
-        "中 YMTC, 294단 3D 낸드와 상장 자금 무기로 내년 말 세계 1위 정조준 -> 특허 침해 및 기술 탈취 논란 속에서도 보조금 업고 78%대 마진율 기록한 충격적 실적 => 범용 낸드 가격 하방 압력 가중 >> 글로벌 공급 과잉과 치킨게임 재발 우려의 메가톤급 변수 | - 데일리머니"
-      ],
-      "confidence": "high",
-      "dominanceMargin": null,
-      "resolutionReason": "single_direction",
-      "counterEvidence": []
-    },
-    {
-      "direction": "negative",
-      "direct": true,
-      "targets": [
-        {
           "key": "individual_stock",
           "label": "개별 종목",
           "scope": "stock"
@@ -671,6 +599,48 @@
       "evidenceConfidence": "medium",
       "evidenceHeadlines": [
         "ACM 리서치 상하이, 상반기 신규 수주 105% 급증…장비 포트폴리오 확대 - 데이터투자"
+      ],
+      "confidence": "medium",
+      "dominanceMargin": null,
+      "resolutionReason": "single_direction",
+      "counterEvidence": []
+    },
+    {
+      "direction": "negative",
+      "direct": false,
+      "targets": [
+        {
+          "key": "semiconductor",
+          "label": "반도체",
+          "scope": "sector"
+        },
+        {
+          "key": "defense",
+          "label": "방산",
+          "scope": "sector"
+        },
+        {
+          "key": "platform",
+          "label": "인터넷·플랫폼",
+          "scope": "sector"
+        }
+      ],
+      "primaryTarget": {
+        "key": "semiconductor",
+        "label": "반도체",
+        "scope": "sector"
+      },
+      "headline": "中 YMTC, 294단 3D 낸드와 상장 자금 무기로 내년 말 세계 1위 정조준 -> 특허 침해 및 기술 탈취 논란 속에서도 보조금 업고 78%대 마진율 기록한 충격적 실적 => 범용 낸드 가격 하방 압력 가중 >> 글로벌 공급 과잉과 치킨게임 재발 우려의 메가톤급 변수 | - 데일리머니",
+      "summary": "中 YMTC, 294단 3D 낸드와 상장 자금 무기로 내년 말 세계 1위 정조준 -> 특허 침해 및 기술 탈취 논란 속에서도 보조금 업고 78%대 마진율 기록한 충격적 실적 => 범용 낸드 가격 하방 압력 가중 >> 글로벌 공급 과잉과 치킨게임 재발 우려의 메가톤급 변수 |&nbsp;&nbsp;데일리머니",
+      "source": "데일리머니",
+      "publishedAt": "Thu, 27 Aug 2026 11:49:10 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1meFNFbWhBeEp5UEpseGRnay1penJZZlJ6SmMtVGR4NzFzTUZFNzhxYVNldXkwM1BIdEJDMDBGdzBJek9LRklsdDlBT19Fa0Y5LVhLYkd0Q2pHVEtndmJCNU9sVG9uTUd5S1hGTTR0SDVfTmg0T1E?oc=5",
+      "score": 7,
+      "corroboration": 1,
+      "severity": "medium",
+      "evidenceConfidence": "medium",
+      "evidenceHeadlines": [
+        "中 YMTC, 294단 3D 낸드와 상장 자금 무기로 내년 말 세계 1위 정조준 -> 특허 침해 및 기술 탈취 논란 속에서도 보조금 업고 78%대 마진율 기록한 충격적 실적 => 범용 낸드 가격 하방 압력 가중 >> 글로벌 공급 과잉과 치킨게임 재발 우려의 메가톤급 변수 | - 데일리머니"
       ],
       "confidence": "medium",
       "dominanceMargin": null,
@@ -882,20 +852,20 @@
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
-      "title": "이비엔(EBN)뉴스센터 - ebn.co.kr",
-      "summary": "이비엔(EBN)뉴스센터&nbsp;&nbsp;ebn.co.kr",
+      "title": "[외국인 놀이터 코스피②] 클릭 한 번에 수조원…프로그램 매매가 키운 '외국인 장세' - ebn.co.kr",
+      "summary": "[외국인 놀이터 코스피②] 클릭 한 번에 수조원…프로그램 매매가 키운 '외국인 장세'&nbsp;&nbsp;ebn.co.kr",
       "source": "ebn.co.kr",
       "publishedAt": "Tue, 25 Aug 2026 16:25:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9WNVRKZm1ocHBmQWFvdHpQTHJWUlB6dnE1Y1FTUVJVRi0xSEpYTmhxWDZaN2RPNVh3aGVKYzdjcDJXZlVpRmUxV1ExcTdROXFHOE96ZEFOV3R0OTdka2l4bHZyMFFlc25wYnFleFNLc3l1YWQwcUtkMlBsdFFJUQ?oc=5",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5wbkYycjNKMURoOTY5R3JBMmk0ZjBmTnFSclJTckh0eDlGYjd2Tnl4dXBQekIzLW9XcHUxTEpYY051X3FjejRaRXdjQUdpbjk4ZkMwVEZqSzFiNFo2OEJJaEJmOWNhRzdn?oc=5",
       "query": "외국인 선물 순매수 프로그램 매매"
     },
     {
-      "title": "증시, 하루 만에 반등···건설·기계 중심 순환매 뚜렷 - 더리포트",
-      "summary": "증시, 하루 만에 반등···건설·기계 중심 순환매 뚜렷&nbsp;&nbsp;더리포트",
-      "source": "더리포트",
-      "publishedAt": "Tue, 25 Aug 2026 09:10:18 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE16MG52eU1LMG13TzN2NXdQMkZQRHlURldTcjVQU3YxeFBSNzg5X0xqUkJ2Y1JxTElaMmt1MWxabFg5SFFtV3YyRUlmcUdPaWQxaGJpTThtQ2stTUxaZlBjN0R4ZjlkQVNBY25KUU13?oc=5",
-      "query": "외국인 선물 순매수 프로그램 매매"
+      "title": "코스닥, 외국인·기관 순매수에 상승 전환…코스피도 낙폭 줄여 - 네이트",
+      "summary": "코스닥, 외국인·기관 순매수에 상승 전환…코스피도 낙폭 줄여&nbsp;&nbsp;네이트",
+      "source": "네이트",
+      "publishedAt": "Tue, 25 Aug 2026 05:03:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1UTW9XS1dzX1JjdTdQYW8tYTVzd3J1WnJNaTV0bWRyTGVlSEQ3VmU0OW9pNlhIQV9VN0I1TVB4VFUydFI0ZFliOG1PWGhkeHpiamlmY1RLV01XS29ZdW5ReA?oc=5",
+      "query": "코스닥 외국인 기관 순매수 순매도"
     },
     {
       "title": "코스닥, 외국인·기관 순매수에 상승 전환…코스피도 낙폭 줄여 - 머니투데이 - 머니투데이",
@@ -988,6 +958,14 @@
       "publishedAt": "Thu, 27 Aug 2026 02:48:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBMdHFCOGNXb3BjbTFUdVh3M3JpT2plVUdISHhqLW1rbHRrQnY5eDF1YVplOUZtWFpBcVhrNkYtak1NNjBtY2FQQzJnVVo0SmFvQ0tR?oc=5",
       "query": "오늘 상장폐지 거래정지 변경상장 일정"
+    },
+    {
+      "title": "8.26 초보 투자자를 위한 오늘의 경제 브리핑 - 브런치",
+      "summary": "8.26 초보 투자자를 위한 오늘의 경제 브리핑&nbsp;&nbsp;브런치",
+      "source": "브런치",
+      "publishedAt": "Wed, 26 Aug 2026 16:53:48 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1iYlRsR0Y1SWN1R21RTHVpcHBoV2gtY3hUMDUxdENjWG5jVk1feDVOT1lQbjhvTTNhZVZVMFFOU1IyTXJScUE?oc=5",
+      "query": "오늘 경제지표 발표 증시 일정 한국 미국"
     },
     {
       "title": "오늘 밤 9시30분 미국 PCE｜근원 3.3% 유지 전망, 9월 금리 인상 다시 살릴까 - 네이버 프리미엄콘텐츠",
@@ -1086,19 +1064,11 @@
       "publishedAt": "Mon, 24 Aug 2026 08:36:48 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5YMHhUbkZLUjBXTzZwZWtzOGoyb0NvTExiVjJpc2dDWi1MeUxZZ3hkejJOYlhQNUpvNENlRWpweFh2dTBVbkQycEp5UmRqZWxHa1diQ2I3VzlKM3ZKd0tBSG1acDhIWk4wcWE4aGd6ZXFRQ1U?oc=5",
       "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
-    },
-    {
-      "title": "코스피 -3%대↓, 코스닥은 반등 성공 - KB Think",
-      "summary": "코스피 -3%대↓, 코스닥은 반등 성공&nbsp;&nbsp;KB Think",
-      "source": "KB Think",
-      "publishedAt": "Mon, 24 Aug 2026 07:03:33 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1oYXJpZGN3X0hlR2w0SUozX1VpZFdiZ3V5VTFYRHFOR1dKdXh6cnotZ1pTZ0l3cDNDNnlNSEFtMDZ2SzJTYUtzVGRpdmZSVDA2eHhiSEJ0dnkzWUdWZEtwQTlvQW4zdlVTNVJFYQ?oc=5",
-      "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
     }
   ],
   "investorFlows": {
     "status": "ok",
-    "generatedAt": "2026-08-28T16:00:32.851796+09:00",
+    "generatedAt": "2026-08-28T16:07:27.317394+09:00",
     "source": "NAVER Finance/KRX",
     "sourceUrls": [
       "https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=20260828&sosok=01&page=1",
@@ -1115,7 +1085,7 @@
         "unit": "KRW",
         "netBuy": {
           "retail": 424200000000,
-          "foreign": -1756300000000,
+          "foreign": -1756200000000,
           "institution": -284200000000,
           "financial_investment": 616000000000,
           "insurance": 24400000000,
@@ -1190,7 +1160,7 @@
             "date": "2026-08-28",
             "netBuy": {
               "retail": 424200000000,
-              "foreign": -1756300000000,
+              "foreign": -1756200000000,
               "institution": -284200000000,
               "financial_investment": 616000000000,
               "insurance": 24400000000,
@@ -1226,7 +1196,7 @@
         "netBuy": {
           "retail": 98100000000,
           "foreign": -93700000000,
-          "institution": -3400000000,
+          "institution": -3500000000,
           "financial_investment": -20400000000,
           "insurance": 3800000000,
           "investment_trust_private_equity": 9500000000,
@@ -1301,7 +1271,7 @@
             "netBuy": {
               "retail": 98100000000,
               "foreign": -93700000000,
-              "institution": -3400000000,
+              "institution": -3500000000,
               "financial_investment": -20400000000,
               "insurance": 3800000000,
               "investment_trust_private_equity": 9500000000,
