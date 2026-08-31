@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-08-31T03:00:19.843Z",
+  "generated_at": "2026-08-31T04:00:21.889Z",
   "generated_date": "2026-08-31",
-  "slot_hour": 12,
-  "cycle_label": "KST_1200",
-  "slot_label": "12:00",
+  "slot_hour": 13,
+  "cycle_label": "KST_1300",
+  "slot_label": "13:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 12:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 8건",
+    "title": "KST 13:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 9건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "한미약품",
+      "stockCode": "128940",
+      "summary": "한미약품 주가, 8월 31일 장중 478,000원 6.09% 하락 톱스타뉴스",
+      "headline": "한미약품 주가, 8월 31일 장중 478,000원 6.09% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -6.1%",
+        "한미약품 주가, 8월 31일 장중 478,000원 6.09% 하락"
+      ],
+      "mentionScore": 67.2,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-08-31T04:00:21.889Z",
+      "cycleLabel": "KST_1300",
+      "direction": "down",
+      "changeRate": -6.09,
+      "latestHeadline": "한미약품 주가, 8월 31일 장중 478,000원 6.09% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5BM2xLV2ZSOWxCOWIzWF8zWl9Md1R6dXR0VWhlVld2RVlHRk9MWmFYNUt1ZFlTVW01YWF3aUt0NEZNWjg3Qmk4VEZPek1jYnhQTnFyODhFZ1BxZDZ4TlVxLVQwX3JQNmc1OUpVU2Qwd2s5QQ?oc=5",
+      "publishedAt": "Mon, 31 Aug 2026 01:54:44 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한미약품 주가, 8월 31일 장중 478,000원 6.09% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5BM2xLV2ZSOWxCOWIzWF8zWl9Md1R6dXR0VWhlVld2RVlHRk9MWmFYNUt1ZFlTVW01YWF3aUt0NEZNWjg3Qmk4VEZPek1jYnhQTnFyODhFZ1BxZDZ4TlVxLVQwX3JQNmc1OUpVU2Qwd2s5QQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한미약품 주가, 8월 31일 장중 478,000원 6.09% 하락",
+      "polishedBody": "한미약품은 주가, 8월 31일 장중 478,000원 6.09% 하락 톱스타뉴스 이슈로 단기 변동성이 확대됐습니다. 주가, 8월 31일 장중 478,000원 톱스타뉴스 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "삼성SDI",
       "stockCode": "006400",
@@ -337,6 +371,30 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Mon, 31 Aug 2026 01:54:44 GMT",
+      "symbol": "128940",
+      "name": "한미약품",
+      "changeRate": -6.09,
+      "price": null,
+      "summary": "한미약품 주가, 8월 31일 장중 478,000원 6.09% 하락 톱스타뉴스",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5BM2xLV2ZSOWxCOWIzWF8zWl9Md1R6dXR0VWhlVld2RVlHRk9MWmFYNUt1ZFlTVW01YWF3aUt0NEZNWjg3Qmk4VEZPek1jYnhQTnFyODhFZ1BxZDZ4TlVxLVQwX3JQNmc1OUpVU2Qwd2s5QQ?oc=5",
+      "mentionScore": 67.2,
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -6.1%",
+        "한미약품 주가, 8월 31일 장중 478,000원 6.09% 하락"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한미약품 주가, 8월 31일 장중 478,000원 6.09% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5BM2xLV2ZSOWxCOWIzWF8zWl9Md1R6dXR0VWhlVld2RVlHRk9MWmFYNUt1ZFlTVW01YWF3aUt0NEZNWjg3Qmk4VEZPek1jYnhQTnFyODhFZ1BxZDZ4TlVxLVQwX3JQNmc1OUpVU2Qwd2s5QQ?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Mon, 31 Aug 2026 00:44:14 GMT",
       "symbol": "006400",
