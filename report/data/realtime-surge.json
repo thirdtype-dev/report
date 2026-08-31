@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-08-31T01:00:17.875Z",
+  "generated_at": "2026-08-31T02:00:17.618Z",
   "generated_date": "2026-08-31",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 8건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성SDI",
+      "stockCode": "006400",
+      "summary": "삼성SDI 주가 하락 중",
+      "headline": "삼성SDI 주가, 8월 31일 장중 579,000원 1.40% 상승",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.4%",
+        "삼성SDI 주가, 8월 31일 장중 579,000원 1.40% 상승",
+        "삼성SDI 주가 하락 중"
+      ],
+      "mentionScore": 88.4,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-08-31T02:00:17.618Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 1.4,
+      "latestHeadline": "삼성SDI 주가, 8월 31일 장중 579,000원 1.40% 상승",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE10X0lPUjV0bGFET3R0eWp2UmZqeFJTTGt3cndUZGVZY3RZQVpGQ2Y3RXNPNVZxTUV1ZkZ2YXZWem1ITGVNVFhjV3N2LUFYNDdtOFNYMC1qTVZLWDk5cFRLOW9TOTJUN1RSSDd1RkVMUG9NUQ?oc=5",
+      "publishedAt": "Mon, 31 Aug 2026 00:44:14 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가, 8월 31일 장중 579,000원 1.40% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE10X0lPUjV0bGFET3R0eWp2UmZqeFJTTGt3cndUZGVZY3RZQVpGQ2Y3RXNPNVZxTUV1ZkZ2YXZWem1ITGVNVFhjV3N2LUFYNDdtOFNYMC1qTVZLWDk5cFRLOW9TOTJUN1RSSDd1RkVMUG9NUQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성SDI 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE51YjJTLXN3VXhpRGtkVjktR3AtNnJzQWtNU2VpdThzNjM5bnlwWUNVRGNybTVIcDd2ei1ZelgwekdRZEVuUE9vWUhkZjRGSjJZQXhyT2lPLVQzQkt6?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성SDI 주가, 8월 31일 장중 579,000원 1.40% 상승",
+      "polishedBody": "삼성SDI는 주가, 8월 31일 장중 579,000원 1.40% 상승 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가, 8월 31일 장중 579,000원 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
     {
       "stockName": "SK하이닉스",
       "stockCode": "000660",
@@ -261,40 +302,6 @@
       "polishedBody": "두산은 밥캣 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 밥캣 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
-      "stockName": "삼성SDI",
-      "stockCode": "006400",
-      "summary": "삼성SDI 주가 하락 중 아시아뉴스통신",
-      "headline": "삼성SDI 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "삼성SDI 주가 하락 중"
-      ],
-      "mentionScore": 61.1,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-08-31T01:00:17.875Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "삼성SDI 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE51YjJTLXN3VXhpRGtkVjktR3AtNnJzQWtNU2VpdThzNjM5bnlwWUNVRGNybTVIcDd2ei1ZelgwekdRZEVuUE9vWUhkZjRGSjJZQXhyT2lPLVQzQkt6?oc=5",
-      "publishedAt": "Mon, 31 Aug 2026 00:08:20 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE51YjJTLXN3VXhpRGtkVjktR3AtNnJzQWtNU2VpdThzNjM5bnlwWUNVRGNybTVIcDd2ei1ZelgwekdRZEVuUE9vWUhkZjRGSjJZQXhyT2lPLVQzQkt6?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성SDI 주가 하락 중",
-      "polishedBody": "삼성SDI는 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
       "stockName": "HMM",
       "stockCode": "011200",
       "summary": "HMM주가 하락 중 아시아뉴스통신",
@@ -330,6 +337,37 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Mon, 31 Aug 2026 00:44:14 GMT",
+      "symbol": "006400",
+      "name": "삼성SDI",
+      "changeRate": 1.4,
+      "price": null,
+      "summary": "삼성SDI 주가 하락 중",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE10X0lPUjV0bGFET3R0eWp2UmZqeFJTTGt3cndUZGVZY3RZQVpGQ2Y3RXNPNVZxTUV1ZkZ2YXZWem1ITGVNVFhjV3N2LUFYNDdtOFNYMC1qTVZLWDk5cFRLOW9TOTJUN1RSSDd1RkVMUG9NUQ?oc=5",
+      "mentionScore": 88.4,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.4%",
+        "삼성SDI 주가, 8월 31일 장중 579,000원 1.40% 상승",
+        "삼성SDI 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가, 8월 31일 장중 579,000원 1.40% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE10X0lPUjV0bGFET3R0eWp2UmZqeFJTTGt3cndUZGVZY3RZQVpGQ2Y3RXNPNVZxTUV1ZkZ2YXZWem1ITGVNVFhjV3N2LUFYNDdtOFNYMC1qTVZLWDk5cFRLOW9TOTJUN1RSSDd1RkVMUG9NUQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성SDI 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE51YjJTLXN3VXhpRGtkVjktR3AtNnJzQWtNU2VpdThzNjM5bnlwWUNVRGNybTVIcDd2ei1ZelgwekdRZEVuUE9vWUhkZjRGSjJZQXhyT2lPLVQzQkt6?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Mon, 31 Aug 2026 00:08:14 GMT",
       "symbol": "000660",
@@ -516,30 +554,6 @@
           "title": "두산밥캣 주가 하락 중",
           "source": "아시아뉴스통신",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBoeXZyTXplTXZVM2ZhbWwzNXowYmROSWpTa3dFUXNFUFFkbTZyaEhrUnA1azVYd0NfM1NXck9GRVRwaVF1ekozOXpxMk9pTGdzZVphRFBKRFZ6Szhm?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 31 Aug 2026 00:08:20 GMT",
-      "symbol": "006400",
-      "name": "삼성SDI",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성SDI 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE51YjJTLXN3VXhpRGtkVjktR3AtNnJzQWtNU2VpdThzNjM5bnlwWUNVRGNybTVIcDd2ei1ZelgwekdRZEVuUE9vWUhkZjRGSjJZQXhyT2lPLVQzQkt6?oc=5",
-      "mentionScore": 61.1,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "삼성SDI 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE51YjJTLXN3VXhpRGtkVjktR3AtNnJzQWtNU2VpdThzNjM5bnlwWUNVRGNybTVIcDd2ei1ZelgwekdRZEVuUE9vWUhkZjRGSjJZQXhyT2lPLVQzQkt6?oc=5"
         }
       ]
     },
