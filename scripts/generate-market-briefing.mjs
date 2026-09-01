@@ -16,6 +16,12 @@ const INVESTOR_FLOW_TIMEOUT_MS = Number.parseInt(process.env.INVESTOR_FLOW_TIMEO
 const LLM_TIMEOUT_MS = Number.parseInt(process.env.LLM_TIMEOUT_MS ?? '45000', 10);
 const LLM_MAX_ATTEMPTS = Number.parseInt(process.env.LLM_MAX_ATTEMPTS ?? '3', 10);
 const LLM_RETRY_BASE_DELAY_MS = Number.parseInt(process.env.LLM_RETRY_BASE_DELAY_MS ?? '1500', 10);
+const MARKET_SOURCE_MAX_ATTEMPTS = 3;
+const MARKET_SOURCE_RETRY_BASE_DELAY_MS = 250;
+const MARKET_SOURCE_RETRY_MAX_DELAY_MS = 5000;
+const MARKET_SOURCE_RETRY_JITTER_RATIO = 0.2;
+const INDEX_PERCENT_TOLERANCE_PP = 0.05;
+const INDEX_ROUNDED_ZERO_PERCENT_LIMIT_PP = 0.005;
 const NEWS_MAX_AGE_MS = 96 * 60 * 60 * 1000;
 const NEWS_FUTURE_TOLERANCE_MS = 10 * 60 * 1000;
 const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*\breport-(?:pre|post)-market\b[^"]*">[\s\S]*?<\/article>/g;
@@ -413,6 +419,124 @@ async function withLlmRetry(label, operation) {
         error: error.message
       });
       await sleep(delayMs);
+    }
+  }
+
+  throw lastError;
+}
+
+const TRANSIENT_MARKET_SOURCE_CODES = new Set([
+  'ECONNRESET',
+  'ECONNREFUSED',
+  'ENETDOWN',
+  'ENETUNREACH',
+  'ENOTFOUND',
+  'EAI_AGAIN',
+  'ETIMEDOUT',
+  'ECONNABORTED',
+  'ERR_NETWORK',
+  'UND_ERR_CONNECT_TIMEOUT',
+  'UND_ERR_SOCKET'
+]);
+
+function isTransientMarketSourceError(error) {
+  const status = Number(error?.status);
+  if ([408, 425, 429].includes(status) || (status >= 500 && status <= 599)) {
+    return true;
+  }
+
+  if (error?.name === 'AbortError' || error?.name === 'TimeoutError') {
+    return true;
+  }
+
+  if (TRANSIENT_MARKET_SOURCE_CODES.has(String(error?.code ?? '').toUpperCase())) {
+    return true;
+  }
+
+  const message = String(error?.message ?? '').toLowerCase();
+  if (!message || Number.isFinite(status)) return false;
+  if (/^fetch_failed_(408|425|429|5\d{2})$/u.test(message)) return true;
+  return /(fetch failed|network|socket|connection|connect|timed out|timeout|temporarily unavailable|try again|econnreset|econnrefused|enotfound|eai_again|etimedout)/u.test(message);
+}
+
+function parseRetryAfterMs(value, now = Date.now()) {
+  if (typeof value === 'number' && Number.isFinite(value) && value >= 0) {
+    return value * 1000;
+  }
+
+  const raw = String(value ?? '').trim();
+  if (!raw) return null;
+
+  const seconds = Number(raw);
+  if (Number.isFinite(seconds) && seconds >= 0) return seconds * 1000;
+
+  const timestamp = Date.parse(raw);
+  if (!Number.isFinite(timestamp)) return null;
+  return Math.max(0, timestamp - now);
+}
+
+function retryAfterFromError(error, now = Date.now()) {
+  if (Number.isFinite(error?.retryAfterMs) && error.retryAfterMs >= 0) {
+    return error.retryAfterMs;
+  }
+
+  const headers = error?.headers ?? error?.response?.headers;
+  const headerValue = headers?.get?.('retry-after')
+    ?? headers?.get?.('Retry-After')
+    ?? headers?.['retry-after']
+    ?? headers?.['Retry-After']
+    ?? error?.retryAfter;
+  return parseRetryAfterMs(headerValue, now);
+}
+
+function marketSourceRetryDelayMs(error, attempt, {
+  random = Math.random,
+  now = Date.now
+} = {}) {
+  const retryAfterMs = retryAfterFromError(error, now());
+  if (Number.isFinite(retryAfterMs)) {
+    return Math.round(Math.min(MARKET_SOURCE_RETRY_MAX_DELAY_MS, retryAfterMs));
+  }
+
+  const exponentialMs = Math.min(
+    MARKET_SOURCE_RETRY_MAX_DELAY_MS,
+    MARKET_SOURCE_RETRY_BASE_DELAY_MS * (2 ** Math.max(0, attempt - 1))
+  );
+  const randomValue = Number(random());
+  const jitter = exponentialMs * MARKET_SOURCE_RETRY_JITTER_RATIO * (
+    Number.isFinite(randomValue) ? Math.max(0, Math.min(1, randomValue)) : 0
+  );
+  return Math.round(Math.min(MARKET_SOURCE_RETRY_MAX_DELAY_MS, exponentialMs + jitter));
+}
+
+async function withMarketSourceRetry(label, operation, options = {}) {
+  const requestedAttempts = Number.isFinite(options.maxAttempts)
+    ? Math.trunc(options.maxAttempts)
+    : MARKET_SOURCE_MAX_ATTEMPTS;
+  const maxAttempts = Math.max(1, Math.min(MARKET_SOURCE_MAX_ATTEMPTS, requestedAttempts));
+  const sleepFn = options.sleepFn ?? options.sleep ?? sleep;
+  const random = options.random ?? Math.random;
+  const now = options.now ?? Date.now;
+  let lastError;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      return await operation(attempt);
+    } catch (error) {
+      lastError = error;
+      if (attempt >= maxAttempts || !isTransientMarketSourceError(error)) {
+        throw error;
+      }
+
+      const delayMs = marketSourceRetryDelayMs(error, attempt, { random, now });
+      console.warn(`[market-briefing] ${label} transient failure; retrying`, {
+        attempt,
+        nextAttempt: attempt + 1,
+        maxAttempts,
+        delayMs,
+        error: error.message
+      });
+      await sleepFn(delayMs);
     }
   }
 
@@ -1681,6 +1805,7 @@ async function fetchJson(url) {
     const error = new Error(`fetch_failed_${res.status}`);
     error.status = res.status;
     error.body = body.slice(0, 500);
+    error.retryAfter = res.headers?.get?.('retry-after') ?? null;
     throw error;
   }
   return JSON.parse(body);
@@ -1698,6 +1823,7 @@ async function fetchText(url) {
     const error = new Error(`fetch_failed_${res.status}`);
     error.status = res.status;
     error.body = body.slice(0, 500);
+    error.retryAfter = res.headers?.get?.('retry-after') ?? null;
     throw error;
   }
   return body;
@@ -1797,11 +1923,59 @@ function numericTokens(value) {
 }
 
 function applyNpayDirection(value, raw, direction) {
-  if (/^[+-]/u.test(raw)) return value;
-  if (direction === 'dn' || direction === 'down') return -Math.abs(value);
-  if (direction === 'up') return Math.abs(value);
-  if (direction === 'same' || direction === 'no') return value;
+  const hasExplicitSign = /^[+-]/u.test(raw);
+  if (!direction) {
+    if (value === 0) return 0;
+    throw new Error('npay_invalid_kospi_markup:missing_direction');
+  }
+
+  if (direction === 'dn' || direction === 'down') {
+    if (hasExplicitSign && value > 0) {
+      throw new Error('npay_invalid_kospi_markup:inconsistent_direction');
+    }
+    return -Math.abs(value);
+  }
+
+  if (direction === 'up') {
+    if (hasExplicitSign && value < 0) {
+      throw new Error('npay_invalid_kospi_markup:inconsistent_direction');
+    }
+    return Math.abs(value);
+  }
+
+  if (direction === 'same' || direction === 'no') {
+    if (value !== 0) {
+      throw new Error('npay_invalid_kospi_markup:inconsistent_direction');
+    }
+    return 0;
+  }
+
   throw new Error('npay_invalid_kospi_markup:missing_direction');
+}
+
+function explicitNumericSign(raw) {
+  if (/^\+/u.test(raw)) return 1;
+  if (/^-/u.test(raw)) return -1;
+  return null;
+}
+
+function assertNpayDirectionAgreement(changeToken, percentToken, change, direction) {
+  if (change === 0) return;
+
+  const changeSign = Math.sign(change);
+  const directionSign = direction === 'dn' || direction === 'down'
+    ? -1
+    : direction === 'up' ? 1 : null;
+  if (directionSign !== null && directionSign !== changeSign) {
+    throw new Error('npay_invalid_kospi_markup:inconsistent_direction');
+  }
+
+  for (const token of [changeToken, percentToken]) {
+    const rawSign = explicitNumericSign(token.raw);
+    if (rawSign !== null && rawSign !== changeSign) {
+      throw new Error('npay_invalid_kospi_markup:inconsistent_direction');
+    }
+  }
 }
 
 function parseNpayKospiIndex(html) {
@@ -1820,8 +1994,9 @@ function parseNpayKospiIndex(html) {
 
   const change = applyNpayDirection(changeToken.value, changeToken.raw, direction);
   const changePercent = applyNpayDirection(percentToken.value, percentToken.raw, direction);
+  assertNpayDirectionAgreement(changeToken, percentToken, change, direction);
 
-  return {
+  const parsed = {
     key: 'kospi',
     title: 'KOSPI',
     currentPrice: formatNumber(current),
@@ -1832,16 +2007,61 @@ function parseNpayKospiIndex(html) {
     updatedAt: null,
     sourceUrl: NPAY_KOSPI_URL
   };
+
+  if (!isGroundedMajorIndex(parsed)) {
+    throw new Error('npay_invalid_kospi_markup:inconsistent_values');
+  }
+  return parsed;
+}
+
+function parseIndexNumber(value) {
+  const parsed = Number.parseFloat(String(value ?? '').replaceAll(',', '').replace(/%$/u, ''));
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function isRawIndexMovementCoherent(current, change, changePercent) {
+  if (![current, change, changePercent].every(Number.isFinite) || current <= 0) {
+    return false;
+  }
+  const previous = current - change;
+  if (!(previous > 0)) return false;
+  const expectedPercent = (change / previous) * 100;
+  if (change !== 0
+    && changePercent === 0
+    && Math.abs(expectedPercent) >= INDEX_ROUNDED_ZERO_PERCENT_LIMIT_PP) {
+    return false;
+  }
+  return Math.abs(expectedPercent - changePercent) <= INDEX_PERCENT_TOLERANCE_PP + 1e-9;
+}
+
+function isCoherentIndex(index) {
+  const current = parseIndexNumber(index?.currentPrice);
+  const change = parseIndexNumber(index?.change);
+  const changePercent = parseIndexNumber(index?.changePercent);
+  if (!isRawIndexMovementCoherent(current, change, changePercent)) return false;
+
+  const expectedTrend = trendFromChange(change);
+  const actualTrend = String(index?.trend ?? '').toLowerCase();
+  if (actualTrend !== expectedTrend) return false;
+
+  const previous = current - change;
+  const expectedPercent = (change / previous) * 100;
+  const acceptsRoundedZeroPercent = change !== 0
+    && changePercent === 0
+    && Math.abs(expectedPercent) < INDEX_ROUNDED_ZERO_PERCENT_LIMIT_PP;
+
+  if ((expectedTrend === 'up' && changePercent <= 0 && !acceptsRoundedZeroPercent)
+    || (expectedTrend === 'down' && changePercent >= 0 && !acceptsRoundedZeroPercent)
+    || (expectedTrend === 'flat' && changePercent !== 0)) {
+    return false;
+  }
+  return true;
 }
 
 function isGroundedMajorIndex(index) {
-  const toNumber = (value) => Number.parseFloat(String(value ?? '').replaceAll(',', '').replace(/%$/u, ''));
   return index?.key === 'kospi'
     && index.status !== 'unavailable'
-    && Number.isFinite(toNumber(index.currentPrice))
-    && toNumber(index.currentPrice) > 0
-    && Number.isFinite(toNumber(index.change))
-    && Number.isFinite(toNumber(index.changePercent));
+    && isCoherentIndex(index);
 }
 
 function errorReason(error) {
@@ -1854,11 +2074,14 @@ async function fetchNpayKospiIndex({ fetcher = fetchText } = {}) {
 
 async function fetchKospiIndexWithFallback({
   primary = () => fetchYahooIndex(YAHOO_SYMBOLS.find((item) => item.key === 'kospi')),
-  fallback = () => fetchNpayKospiIndex()
+  fallback = () => fetchNpayKospiIndex(),
+  retry = {},
+  ...retryOverrides
 } = {}) {
+  const retryOptions = { ...retry, ...retryOverrides };
   let primaryError;
   try {
-    const primaryIndex = await primary();
+    const primaryIndex = await withMarketSourceRetry('yahoo:kospi', primary, retryOptions);
     if (isGroundedMajorIndex(primaryIndex)) {
       return { index: primaryIndex, source: 'yahoo' };
     }
@@ -1868,7 +2091,7 @@ async function fetchKospiIndexWithFallback({
   }
 
   try {
-    const fallbackIndex = await fallback();
+    const fallbackIndex = await withMarketSourceRetry('npay:kospi', fallback, retryOptions);
     if (isGroundedMajorIndex(fallbackIndex)) {
       return { index: fallbackIndex, source: 'npay', primaryError: errorReason(primaryError) };
     }
@@ -1886,31 +2109,92 @@ function summarizeNewsCandidates(items, limit = 4) {
     .join(' / ');
 }
 
-async function fetchYahooIndex({ key, title, symbol }) {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=1d`;
-  const json = await fetchJson(url);
+function normalizeYahooIndex({ key, title, symbol }, json) {
   const result = json?.chart?.result?.[0];
   const meta = result?.meta ?? {};
   const quote = result?.indicators?.quote?.[0] ?? {};
   const closes = Array.isArray(quote.close) ? quote.close.filter(Number.isFinite) : [];
   const current = Number.isFinite(meta.regularMarketPrice) ? meta.regularMarketPrice : closes.at(-1);
-  const previous = Number.isFinite(meta.previousClose) ? meta.previousClose : closes.at(-2);
-  const change = Number.isFinite(meta.regularMarketChange) ? meta.regularMarketChange : current - previous;
-  const changePercent = Number.isFinite(meta.regularMarketChangePercent)
+  const metadataPrevious = Number.isFinite(meta.previousClose) && meta.previousClose > 0
+    ? meta.previousClose
+    : null;
+  const metadataChange = Number.isFinite(meta.regularMarketChange) ? meta.regularMarketChange : null;
+  const metadataChangePercent = Number.isFinite(meta.regularMarketChangePercent)
     ? meta.regularMarketChangePercent
-    : previous ? (change / previous) * 100 : null;
+    : null;
 
-  return {
+  let change = null;
+  let changePercent = null;
+  if (Number.isFinite(current) && current > 0) {
+    if (metadataChangePercent !== null) {
+      if (metadataChangePercent <= -100) {
+        throw new Error('yahoo_inconsistent_index:invalid_percent');
+      }
+      const previousFromPercent = current / (1 + (metadataChangePercent / 100));
+      const changeFromPercent = current - previousFromPercent;
+      if (!(previousFromPercent > 0) || !isRawIndexMovementCoherent(current, changeFromPercent, metadataChangePercent)) {
+        throw new Error('yahoo_inconsistent_index:invalid_percent');
+      }
+
+      if (metadataChange !== null && !isRawIndexMovementCoherent(current, metadataChange, metadataChangePercent)) {
+        throw new Error('yahoo_inconsistent_index:change_percent_conflict');
+      }
+      if (metadataPrevious !== null && !isRawIndexMovementCoherent(
+        current,
+        current - metadataPrevious,
+        metadataChangePercent
+      )) {
+        throw new Error('yahoo_inconsistent_index:previous_close_conflict');
+      }
+
+      change = changeFromPercent;
+      changePercent = metadataChangePercent;
+    } else if (metadataChange !== null) {
+      const previousFromChange = current - metadataChange;
+      if (!(previousFromChange > 0)) {
+        throw new Error('yahoo_inconsistent_index:invalid_change');
+      }
+      const changePercentFromChange = (metadataChange / previousFromChange) * 100;
+      if (metadataPrevious !== null && !isRawIndexMovementCoherent(
+        current,
+        current - metadataPrevious,
+        changePercentFromChange
+      )) {
+        throw new Error('yahoo_inconsistent_index:previous_close_conflict');
+      }
+
+      change = metadataChange;
+      changePercent = changePercentFromChange;
+    } else {
+      const previous = metadataPrevious ?? closes.at(-2);
+      if (Number.isFinite(previous) && previous > 0) {
+        change = current - previous;
+        changePercent = (change / previous) * 100;
+      }
+    }
+  }
+
+  const normalized = {
     key,
     title,
-    currentPrice: formatNumber(current, key === 'usdkrw' ? 2 : 2),
-    change: formatChange(change),
+    currentPrice: Number.isFinite(current) ? formatNumber(current, 2) : null,
+    change: Number.isFinite(change) ? formatChange(change) : null,
     changePercent: Number.isFinite(changePercent) ? `${formatChange(changePercent)}%` : null,
-    trend: trendFromChange(change),
+    trend: Number.isFinite(change) ? trendFromChange(change) : 'unknown',
     status: Number.isFinite(current) ? 'delayed' : 'unavailable',
     updatedAt: meta.regularMarketTime ? new Date(meta.regularMarketTime * 1000).toISOString() : null,
     sourceUrl: `https://finance.yahoo.com/quote/${encodeURIComponent(symbol)}`
   };
+
+  if (Number.isFinite(change) && Number.isFinite(changePercent) && !isCoherentIndex(normalized)) {
+    throw new Error('yahoo_inconsistent_index:normalized_values');
+  }
+  return normalized;
+}
+
+async function fetchYahooIndex({ key, title, symbol }) {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=1d`;
+  return normalizeYahooIndex({ key, title, symbol }, await fetchJson(url));
 }
 
 function parseGoogleNewsRss(xml) {
@@ -2070,7 +2354,7 @@ async function collectPublicMarketResearch() {
     }
 
     try {
-      indices.push(await fetchYahooIndex(item));
+      indices.push(await withMarketSourceRetry(`yahoo:${item.key}`, () => fetchYahooIndex(item)));
       sourceStatus[`yahoo:${item.key}`] = 'ok';
     } catch (error) {
       indices.push({
@@ -2746,3 +3030,11 @@ export const __testMarketEventState = marketEventState;
 export const __testBuildPrompt = buildPrompt;
 export const __testParseNpayKospiIndex = parseNpayKospiIndex;
 export const __testFetchKospiIndexWithFallback = fetchKospiIndexWithFallback;
+export const __testIsTransientMarketSourceError = isTransientMarketSourceError;
+export const __testParseRetryAfterMs = parseRetryAfterMs;
+export const __testMarketSourceRetryDelayMs = marketSourceRetryDelayMs;
+export const __testWithMarketSourceRetry = withMarketSourceRetry;
+export const __testNormalizeYahooIndex = normalizeYahooIndex;
+export const __testFetchYahooIndex = fetchYahooIndex;
+export const __testIsCoherentIndex = isCoherentIndex;
+export const __testIsGroundedMajorIndex = isGroundedMajorIndex;

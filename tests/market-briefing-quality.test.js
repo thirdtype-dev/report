@@ -44,6 +44,210 @@ test('Npay KOSPI fallback parser normalizes grounded current, change, and rate v
   });
 });
 
+test('Npay KOSPI parser accepts directionless zero movement but rejects directionless nonzero movement', async () => {
+  const module = await importBriefingModule();
+  const neutral = module.__testParseNpayKospiIndex(`
+    <div id="quotient">
+      <em id="now_value">2,745.12</em>
+      <span id="change_value_and_rate"><span>0.00</span><span>0.00%</span></span>
+    </div>
+  `);
+
+  assert.equal(neutral.change, '0.00');
+  assert.equal(neutral.changePercent, '0.00%');
+  assert.equal(neutral.trend, 'flat');
+  assert.throws(
+    () => module.__testParseNpayKospiIndex(`
+      <div id="quotient">
+        <em id="now_value">2,745.12</em>
+        <span id="change_value_and_rate"><span>12.34</span><span>0.45%</span></span>
+      </div>
+    `),
+    /npay_invalid_kospi_markup:missing_direction/
+  );
+});
+
+test('Npay KOSPI parser keeps the observed directed move when its percent rounds to zero', async () => {
+  const module = await importBriefingModule();
+  const parsed = module.__testParseNpayKospiIndex(`
+    <div class="quotient dn" id="quotient">
+      <em id="now_value">6,819.89</em>
+      <span id="change_value_and_rate"><span>0.13</span><span>-0.00%</span></span>
+    </div>
+  `);
+
+  assert.equal(parsed.change, '-0.13');
+  assert.equal(parsed.changePercent, '-0.00%');
+  assert.equal(parsed.trend, 'down');
+  assert.equal(module.__testIsGroundedMajorIndex(parsed), true);
+
+  assert.throws(
+    () => module.__testParseNpayKospiIndex(`
+      <div class="quotient dn" id="quotient">
+        <em id="now_value">6,819.89</em>
+        <span id="change_value_and_rate"><span>0.13</span><span>+0.00%</span></span>
+      </div>
+    `),
+    /npay_invalid_kospi_markup:inconsistent_direction/
+  );
+});
+
+test('coherent-index gate does not treat a non-tiny zero percent as grounded', async () => {
+  const module = await importBriefingModule();
+  assert.equal(module.__testIsCoherentIndex({
+    key: 'kospi',
+    currentPrice: '100.00',
+    change: '-0.01',
+    changePercent: '-0.00%',
+    trend: 'down'
+  }), false);
+});
+
+test('Yahoo normalization derives one coherent movement from the same baseline', async () => {
+  const module = await importBriefingModule();
+  const spec = { key: 'kospi', title: 'KOSPI', symbol: '^KS11' };
+  const normalized = module.__testNormalizeYahooIndex(spec, {
+    chart: {
+      result: [{
+        meta: {
+          regularMarketPrice: 2745.12,
+          previousClose: 2732.78,
+          regularMarketChange: 12.34,
+          regularMarketChangePercent: 0.451554826953
+        },
+        indicators: { quote: [{ close: [2732.78, 2745.12] }] }
+      }]
+    }
+  });
+
+  assert.equal(normalized.change, '+12.34');
+  assert.equal(normalized.changePercent, '+0.45%');
+  assert.equal(normalized.trend, 'up');
+  assert.equal(module.__testIsGroundedMajorIndex(normalized), true);
+
+  assert.throws(
+    () => module.__testNormalizeYahooIndex(spec, {
+      chart: {
+        result: [{
+          meta: {
+            regularMarketPrice: 2745.12,
+            previousClose: 2732.78,
+            regularMarketChange: -8.20,
+            regularMarketChangePercent: -0.30
+          },
+          indicators: { quote: [{ close: [2732.78, 2745.12] }] }
+        }]
+      }
+    }),
+    /yahoo_inconsistent_index:previous_close_conflict/
+  );
+});
+
+test('Yahoo normalization prefers current metadata percent over sparse historical closes', async () => {
+  const module = await importBriefingModule();
+  const normalized = module.__testNormalizeYahooIndex(
+    { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
+    {
+      chart: {
+        result: [{
+          meta: {
+            regularMarketPrice: 6820.02,
+            regularMarketChangePercent: 0.46
+          },
+          indicators: { quote: [{ close: [6808.21, 6912.37, null, null, 6820.02] }] }
+        }]
+      }
+    }
+  );
+
+  assert.equal(normalized.currentPrice, '6,820.02');
+  assert.equal(normalized.change, '+31.23');
+  assert.equal(normalized.changePercent, '+0.46%');
+  assert.equal(normalized.trend, 'up');
+  assert.equal(module.__testIsGroundedMajorIndex(normalized), true);
+});
+
+test('KOSPI source retry handles transient failures at most three times without sleeping in tests', async () => {
+  const module = await importBriefingModule();
+  const calls = [];
+  const delays = [];
+  const fallbackIndex = {
+    key: 'kospi',
+    title: 'KOSPI',
+    currentPrice: '2,745.12',
+    change: '0.00',
+    changePercent: '0.00%',
+    trend: 'flat',
+    status: 'live'
+  };
+
+  const result = await module.__testFetchKospiIndexWithFallback({
+    primary: async () => {
+      calls.push('yahoo');
+      const error = new Error('fetch_failed_503');
+      error.status = 503;
+      throw error;
+    },
+    fallback: async () => {
+      calls.push('npay');
+      return fallbackIndex;
+    },
+    sleepFn: async (delayMs) => delays.push(delayMs),
+    random: () => 0
+  });
+
+  assert.equal(result.source, 'npay');
+  assert.deepEqual(calls, ['yahoo', 'yahoo', 'yahoo', 'npay']);
+  assert.deepEqual(delays, [250, 500]);
+});
+
+test('KOSPI source retry honors Retry-After and does not retry permanent errors', async () => {
+  const module = await importBriefingModule();
+  const retryAfterDelays = [];
+  const fallbackIndex = {
+    key: 'kospi',
+    title: 'KOSPI',
+    currentPrice: '2,745.12',
+    change: '0.00',
+    changePercent: '0.00%',
+    trend: 'flat',
+    status: 'live'
+  };
+
+  let attempts = 0;
+  const retryAfterResult = await module.__testFetchKospiIndexWithFallback({
+    primary: async () => {
+      attempts += 1;
+      if (attempts === 1) {
+        const error = new Error('fetch_failed_429');
+        error.status = 429;
+        error.retryAfter = '1';
+        throw error;
+      }
+      return fallbackIndex;
+    },
+    fallback: async () => { throw new Error('fallback_should_not_run'); },
+    sleepFn: async (delayMs) => retryAfterDelays.push(delayMs)
+  });
+  assert.equal(retryAfterResult.source, 'yahoo');
+  assert.deepEqual(retryAfterDelays, [1000]);
+  assert.equal(attempts, 2);
+
+  let permanentAttempts = 0;
+  const permanentResult = await module.__testFetchKospiIndexWithFallback({
+      primary: async () => {
+        permanentAttempts += 1;
+        const error = new Error('fetch_failed_403');
+        error.status = 403;
+        throw error;
+      },
+      fallback: async () => fallbackIndex,
+      sleepFn: async () => { throw new Error('permanent_error_should_not_sleep'); }
+    });
+  assert.equal(permanentResult.source, 'npay');
+  assert.equal(permanentAttempts, 1);
+});
+
 test('KOSPI source selection keeps Yahoo primary and calls Npay only after primary failure', async () => {
   const module = await importBriefingModule();
   const yahooIndex = {

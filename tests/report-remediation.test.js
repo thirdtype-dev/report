@@ -127,3 +127,20 @@ test('publish workflows share the collision-safe group and bounded helper', () =
   assert.doesNotMatch(helper, /--force/);
   assert.doesNotMatch(helper, /reset --hard/);
 });
+
+test('all official workflow actions use the locked full commit SHAs', () => {
+  const workflowDir = path.join(repoRoot, '.github/workflows');
+  const expected = new Set([
+    'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1',
+    'actions/setup-node@820762786026740c76f36085b0efc47a31fe5020',
+    'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97'
+  ]);
+  const refs = fs.readdirSync(workflowDir)
+    .filter((name) => /\.ya?ml$/u.test(name))
+    .flatMap((name) => fs.readFileSync(path.join(workflowDir, name), 'utf8').match(/uses:\s*([^\s#]+)/gu) ?? [])
+    .map((entry) => entry.replace(/^uses:\s*/u, ''));
+
+  assert.ok(refs.length > 0);
+  assert.deepEqual(new Set(refs), expected);
+  refs.forEach((ref) => assert.match(ref, /@[0-9a-f]{40}$/u));
+});
