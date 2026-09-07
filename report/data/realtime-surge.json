@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-09-07T03:00:27.980Z",
+  "generated_at": "2026-09-07T04:00:20.938Z",
   "generated_date": "2026-09-07",
-  "slot_hour": 12,
-  "cycle_label": "KST_1200",
-  "slot_label": "12:00",
+  "slot_hour": 13,
+  "cycle_label": "KST_1300",
+  "slot_label": "13:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 12:00 실시간 급등",
+    "title": "KST 13:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 10건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "한화에어로스페이스",
+      "stockCode": "012450",
+      "summary": "한화에어로스페이스 주가 상승 중",
+      "headline": "[특징주] 한화에어로스페이스, 장중 하락세…미확정 풍문 해명 공시 영향 관측 : 기업주식정보",
+      "evidencePoints": [
+        "출처 재경일보, 아시아뉴스통신 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "[특징주] 한화에어로스페이스, 장중 하락세…미확정 풍문 해명 공시 영향 관측 : 기업주식정보",
+        "한화에어로스페이스 주가 상승 중"
+      ],
+      "mentionScore": 85.4,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-09-07T04:00:20.938Z",
+      "cycleLabel": "KST_1300",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 한화에어로스페이스, 장중 하락세…미확정 풍문 해명 공시 영향 관측 : 기업주식정보",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBvM1Z0QVpxZ1FJV0pLbkNpeVl5X1hDWnVpUjlORUtuZkFLWHZXa1ctSTVYT0ZRWHljbmZaTVRNS0hMRkNqUDlGX0RR?oc=5",
+      "publishedAt": "Mon, 07 Sep 2026 01:24:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 한화에어로스페이스, 장중 하락세…미확정 풍문 해명 공시 영향 관측 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBvM1Z0QVpxZ1FJV0pLbkNpeVl5X1hDWnVpUjlORUtuZkFLWHZXa1ctSTVYT0ZRWHljbmZaTVRNS0hMRkNqUDlGX0RR?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한화에어로스페이스 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE43Q3M5cTExSHNFOGJTblhsU011R2VmcGVIdjBwZ2szUGVlMHVWZ2NjclBLTDRpUDF0S1A3U29kZWxqWk1JRXdVSUFxZ0ZTbmFKQ1BxNXQwRVM5UVoz?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한화에어로스페이스 장중 하락세…미확정 풍문 해명 공시 영향 관측 기업주식정보",
+      "polishedBody": "한화에어로스페이스는 장중 하락세…미확정 풍문 해명 공시 영향 관측 기업주식정보 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "삼성전자",
       "stockCode": "005930",
@@ -317,40 +358,6 @@
       "polishedBody": "삼성전기는 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "한화에어로스페이스",
-      "stockCode": "012450",
-      "summary": "한화에어로스페이스 주가 상승 중 아시아뉴스통신",
-      "headline": "한화에어로스페이스 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "한화에어로스페이스 주가 상승 중"
-      ],
-      "mentionScore": 61.6,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-09-07T01:00:18.437Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "한화에어로스페이스 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE43Q3M5cTExSHNFOGJTblhsU011R2VmcGVIdjBwZ2szUGVlMHVWZ2NjclBLTDRpUDF0S1A3U29kZWxqWk1JRXdVSUFxZ0ZTbmFKQ1BxNXQwRVM5UVoz?oc=5",
-      "publishedAt": "Mon, 07 Sep 2026 00:38:17 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화에어로스페이스 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE43Q3M5cTExSHNFOGJTblhsU011R2VmcGVIdjBwZ2szUGVlMHVWZ2NjclBLTDRpUDF0S1A3U29kZWxqWk1JRXdVSUFxZ0ZTbmFKQ1BxNXQwRVM5UVoz?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한화에어로스페이스 주가 상승 중",
-      "polishedBody": "한화에어로스페이스는 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
       "stockName": "알테오젠",
       "stockCode": "196170",
       "summary": "알테오젠 주가 하락 중 아시아뉴스통신",
@@ -386,6 +393,37 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Mon, 07 Sep 2026 01:24:00 GMT",
+      "symbol": "012450",
+      "name": "한화에어로스페이스",
+      "changeRate": null,
+      "price": null,
+      "summary": "한화에어로스페이스 주가 상승 중",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBvM1Z0QVpxZ1FJV0pLbkNpeVl5X1hDWnVpUjlORUtuZkFLWHZXa1ctSTVYT0ZRWHljbmZaTVRNS0hMRkNqUDlGX0RR?oc=5",
+      "mentionScore": 85.4,
+      "evidencePoints": [
+        "출처 재경일보, 아시아뉴스통신 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "[특징주] 한화에어로스페이스, 장중 하락세…미확정 풍문 해명 공시 영향 관측 : 기업주식정보",
+        "한화에어로스페이스 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 한화에어로스페이스, 장중 하락세…미확정 풍문 해명 공시 영향 관측 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBvM1Z0QVpxZ1FJV0pLbkNpeVl5X1hDWnVpUjlORUtuZkFLWHZXa1ctSTVYT0ZRWHljbmZaTVRNS0hMRkNqUDlGX0RR?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한화에어로스페이스 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE43Q3M5cTExSHNFOGJTblhsU011R2VmcGVIdjBwZ2szUGVlMHVWZ2NjclBLTDRpUDF0S1A3U29kZWxqWk1JRXdVSUFxZ0ZTbmFKQ1BxNXQwRVM5UVoz?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Mon, 07 Sep 2026 01:02:07 GMT",
       "symbol": "005930",
@@ -608,30 +646,6 @@
           "title": "삼성전기 주가 상승 중",
           "source": "아시아뉴스통신",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFByS29tR29jdUNubkdaUzEwZDMzSWNpTFEybTlYNmdzbHlBVmwxRFNVX3pmZFA3NTV2Mzd6OVhxV3lxUUhsUTFkSWRqV1BvSFlqRlgxVFhxdERBMFIt?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 07 Sep 2026 00:38:17 GMT",
-      "symbol": "012450",
-      "name": "한화에어로스페이스",
-      "changeRate": null,
-      "price": null,
-      "summary": "한화에어로스페이스 주가 상승 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE43Q3M5cTExSHNFOGJTblhsU011R2VmcGVIdjBwZ2szUGVlMHVWZ2NjclBLTDRpUDF0S1A3U29kZWxqWk1JRXdVSUFxZ0ZTbmFKQ1BxNXQwRVM5UVoz?oc=5",
-      "mentionScore": 61.6,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "한화에어로스페이스 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화에어로스페이스 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE43Q3M5cTExSHNFOGJTblhsU011R2VmcGVIdjBwZ2szUGVlMHVWZ2NjclBLTDRpUDF0S1A3U29kZWxqWk1JRXdVSUFxZ0ZTbmFKQ1BxNXQwRVM5UVoz?oc=5"
         }
       ]
     },
