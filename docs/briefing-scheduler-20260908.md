@@ -20,3 +20,11 @@ The Signal server changes require a Cloud Run deployment. They use public HTML v
 The known static 2026 calendars are aligned. Signal still adds its GCS-synced calendar and manual holidays; report still uses static/manual holidays. A common calendar authority and stale-calendar failure handling remain required to eliminate temporary-holiday divergence. Unsupported-year rejection alone does not resolve this risk.
 
 Cloud runtime rollback anchors and IAM/secret boundaries are recorded in Signal HANDOFF.md; re-read live state before deployment. Do not expose private admin routes or credentials publicly.
+
+## Verification evidence
+
+- Local complete report suite:121/121 passed against the latest main plus this patch.
+- GitHub regression run34167243229:success.
+- Actual duplicate-slot publish run34167247031, job101880615518:success. Frozen target2026-09-07 post_market; generation and commit steps skipped because committed slot was complete; actual public publication check succeeded.
+- Source implementation6e39092c17a1f40e06176ba2e2ed7e5cd3169dca. The one-off smoke dispatcher is removed after verification.
+- Signal server source60d445413241654a2421d722e40c5af45561304e:21 observer tests plus25 related calendar/scheduler/security/history cases passed, typecheck passed; Cloud Run deployment still pending authentication.
