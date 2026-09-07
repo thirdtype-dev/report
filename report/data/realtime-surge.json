@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-09-07T04:00:20.938Z",
+  "generated_at": "2026-09-07T05:00:17.769Z",
   "generated_date": "2026-09-07",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 10건",
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 11건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "두산",
+      "stockCode": "000150",
+      "summary": "[뉴스락 주식네비] 두산퓨얼셀, 美 데이터센터 뚫었다... PAFC 수주 본격화",
+      "headline": "두산로보틱스 주가, 9월 7일 장중 70,600원 3.22% 상승",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 뉴스락 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산로보틱스 주가, 9월 7일 장중 70,600원 3.22% 상승",
+        "[뉴스락 주식네비] 두산퓨얼셀, 美 데이터센터 뚫었다... PAFC 수주 본격화"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 4,
+      "updatedAt": "2026-09-07T05:00:17.769Z",
+      "cycleLabel": "KST_1400",
+      "direction": "up",
+      "changeRate": 3.22,
+      "latestHeadline": "두산로보틱스 주가, 9월 7일 장중 70,600원 3.22% 상승",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5PNWQ5RXVmVUFWOEJ6R2tCSWJjbnZZcTlHSXJ1aWV2RXJSZHc4OEdDTy1JSG53N1FXOFJnVEIxWFkzZ3phSnhTUWc4a3lTYlNuMmxJZkpwSTBkY2Etd3M3ajR5eWk0UFozYjVweEhMWjlTdw?oc=5",
+      "publishedAt": "Mon, 07 Sep 2026 01:29:12 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산로보틱스 주가, 9월 7일 장중 70,600원 3.22% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5PNWQ5RXVmVUFWOEJ6R2tCSWJjbnZZcTlHSXJ1aWV2RXJSZHc4OEdDTy1JSG53N1FXOFJnVEIxWFkzZ3phSnhTUWc4a3lTYlNuMmxJZkpwSTBkY2Etd3M3ajR5eWk0UFozYjVweEhMWjlTdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[뉴스락 주식네비] 두산퓨얼셀, 美 데이터센터 뚫었다... PAFC 수주 본격화",
+          "source": "뉴스락",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBPMGlCTklBVXZlOXVhbks0V0xvSXlDdklCZ1d6MTJZTEQwOWxoUEhhMTd2aHpONEVRRTl6WXExcGdGVWZpbmdPU3JVWVMxOHJDdVdmVmlpbU9pN0FDZmRHMUdHQlZGZlI4SDByQg?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "두산 로보틱스 주가, 9월 7일 장중 70,600원 3.22% 상승",
+      "polishedBody": "두산은 퓨얼셀, 美 데이터센터 뚫었다 재료가 부각되며 단기 모멘텀을 형성했습니다. 퓨얼셀, 美 데이터센터 뚫었다 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 로보틱스 주가, 9월 7일 장중 70,600원 3.22% 상승 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
     {
       "stockName": "한화에어로스페이스",
       "stockCode": "012450",
@@ -393,6 +434,37 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Mon, 07 Sep 2026 01:29:12 GMT",
+      "symbol": "000150",
+      "name": "두산",
+      "changeRate": 3.22,
+      "price": null,
+      "summary": "[뉴스락 주식네비] 두산퓨얼셀, 美 데이터센터 뚫었다... PAFC 수주 본격화",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5PNWQ5RXVmVUFWOEJ6R2tCSWJjbnZZcTlHSXJ1aWV2RXJSZHc4OEdDTy1JSG53N1FXOFJnVEIxWFkzZ3phSnhTUWc4a3lTYlNuMmxJZkpwSTBkY2Etd3M3ajR5eWk0UFozYjVweEhMWjlTdw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 뉴스락 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산로보틱스 주가, 9월 7일 장중 70,600원 3.22% 상승",
+        "[뉴스락 주식네비] 두산퓨얼셀, 美 데이터센터 뚫었다... PAFC 수주 본격화"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산로보틱스 주가, 9월 7일 장중 70,600원 3.22% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5PNWQ5RXVmVUFWOEJ6R2tCSWJjbnZZcTlHSXJ1aWV2RXJSZHc4OEdDTy1JSG53N1FXOFJnVEIxWFkzZ3phSnhTUWc4a3lTYlNuMmxJZkpwSTBkY2Etd3M3ajR5eWk0UFozYjVweEhMWjlTdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[뉴스락 주식네비] 두산퓨얼셀, 美 데이터센터 뚫었다... PAFC 수주 본격화",
+          "source": "뉴스락",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBPMGlCTklBVXZlOXVhbks0V0xvSXlDdklCZ1d6MTJZTEQwOWxoUEhhMTd2aHpONEVRRTl6WXExcGdGVWZpbmdPU3JVWVMxOHJDdVdmVmlpbU9pN0FDZmRHMUdHQlZGZlI4SDByQg?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Mon, 07 Sep 2026 01:24:00 GMT",
       "symbol": "012450",
