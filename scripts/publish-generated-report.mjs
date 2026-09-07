@@ -3,6 +3,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
+import { resolveSlot } from './briefing-slot.mjs';
 
 const repoRoot = process.cwd();
 const MAX_ATTEMPTS = 3;
@@ -129,6 +130,9 @@ function publishAttempt(artifactDir, paths) {
     const publishedSha = runGitAt(worktreePath, ['rev-parse', 'HEAD']);
     const remoteShaBeforePush = remoteMainSha();
     if (publishedSha !== remoteShaBeforePush) {
+      if (process.env.BRIEFING_TRADING_DATE) {
+        resolveSlot({ tradingDate: process.env.BRIEFING_TRADING_DATE, phase: process.env.BRIEFING_PHASE, asOf: process.env.BRIEFING_AS_OF });
+      }
       runGitAt(worktreePath, ['push', 'origin', 'HEAD:main']);
     }
     runGit(['fetch', 'origin', 'main']);

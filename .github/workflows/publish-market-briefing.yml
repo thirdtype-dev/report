@@ -1,8 +1,13 @@
 name: Publish Market Briefing
+run-name: "briefing:${{ inputs.trading_date || 'auto' }}:${{ inputs.phase || 'pre_market' }}"
 
 on:
   workflow_dispatch:
     inputs:
+      trading_date:
+        description: 'Frozen target KST trading date (YYYY-MM-DD); omitted for same-day legacy callers'
+        required: false
+        type: string
       as_of:
         description: 'Optional post-market backfill cutoff within 48 hours (YYYY-MM-DDT16:00:00+09:00)'
         required: false
@@ -18,6 +23,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: report-publish
@@ -28,7 +34,7 @@ jobs:
     env:
       BRIEFING_AS_OF: ${{ inputs.as_of }}
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 18
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -39,6 +45,14 @@ jobs:
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
           node-version: '22'
+
+      - name: Freeze and validate requested slot
+        id: slot
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          INPUT_PHASE: ${{ inputs.phase || 'pre_market' }}
+          INPUT_TRADING_DATE: ${{ inputs.trading_date }}
+        run: node scripts/briefing-slot.mjs >> "$GITHUB_OUTPUT"
 
       - name: Setup Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
@@ -67,8 +81,27 @@ jobs:
           echo "KST date: ${{ steps.trading_day.outputs.trading_date }}"
           echo "Reason: ${{ steps.trading_day.outputs.skip_reason }}"
 
-      - name: Generate briefing
+      # The global report-publish lock is already held. Read current main,
+      # not the dispatch-time checkout, to suppress duplicate generation.
+      - name: Check committed slot inside publication lock
+        id: committed
         if: steps.trading_day.outputs.is_trading_day == 'true'
+        env:
+          REPORT_INDEX_PATH: /tmp/current-briefing.html
+        run: |
+          git fetch origin main
+          git show origin/main:report/index.html > "$REPORT_INDEX_PATH"
+          node scripts/check-briefing-recovery.mjs >> "$GITHUB_OUTPUT"
+
+      - name: Revalidate date immediately before generation
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
+        env:
+          INPUT_PHASE: ${{ steps.slot.outputs.phase }}
+          INPUT_TRADING_DATE: ${{ steps.slot.outputs.trading_date }}
+        run: node scripts/briefing-slot.mjs
+
+      - name: Generate briefing
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
         env:
           BRIEFING_PHASE: ${{ inputs.phase || 'pre_market' }}
           ANALYST_PROVIDER: openrouter
@@ -80,7 +113,7 @@ jobs:
         run: node scripts/generate-market-briefing.mjs
 
       - name: Publish generated HTML
-        if: steps.trading_day.outputs.is_trading_day == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
         run: |
           cp public/report/index.html index.html
           mkdir -p report
@@ -90,16 +123,27 @@ jobs:
           cp public/report/data/report.json report/data/report.json
 
       - name: Validate generated briefing
-        if: steps.trading_day.outputs.is_trading_day == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
         env:
           BRIEFING_PHASE: ${{ inputs.phase || 'pre_market' }}
         run: node scripts/check-briefing-recovery.mjs --require-valid
 
+      - name: Revalidate date before committing
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
+        env:
+          INPUT_PHASE: ${{ steps.slot.outputs.phase }}
+          INPUT_TRADING_DATE: ${{ steps.slot.outputs.trading_date }}
+        run: node scripts/briefing-slot.mjs
+
       - name: Commit and push
-        if: steps.trading_day.outputs.is_trading_day == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
         env:
           PUBLISH_COMMIT_MESSAGE: Publish market briefing
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           node scripts/publish-generated-report.mjs index.html report/index.html report/data/market-research.json report/data/report.json
+
+      - name: Verify actual public publication
+        if: steps.trading_day.outputs.is_trading_day == 'true'
+        run: node scripts/verify-public-briefing.mjs

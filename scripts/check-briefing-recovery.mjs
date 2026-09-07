@@ -40,6 +40,11 @@ function dateKey(value = new Date()) {
 
 function decodeHtml(value) {
   return String(value ?? '')
+    .replace(/&#(x[0-9a-f]+|[0-9]+);?/giu, (entity, number) => {
+      const value = number[0].toLowerCase() === 'x' ? Number.parseInt(number.slice(1), 16) : Number.parseInt(number, 10);
+      return value > 0 && value <= 0x10ffff && !(value >= 0xd800 && value <= 0xdfff) ? String.fromCodePoint(value) : '\uFFFD';
+    })
+    .replace(/&nbsp;/giu, ' ')
     .replace(/&amp;/giu, '&')
     .replace(/&lt;/giu, '<')
     .replace(/&gt;/giu, '>')
@@ -47,12 +52,16 @@ function decodeHtml(value) {
     .replace(/&#39;/gu, "'");
 }
 
+function removeNonVisibleHtml(value) {
+  return String(value ?? '').replace(/<!--[\s\S]*?-->/gu, '').replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>/giu, '');
+}
+
 function stripTags(value) {
-  return decodeHtml(String(value ?? '').replace(/<[^>]*>/gu, ' ')).replace(/\s+/gu, ' ').trim();
+  return decodeHtml(removeNonVisibleHtml(value).replace(/<[^>]*>/gu, ' ')).replace(/\s+/gu, ' ').trim();
 }
 
 function extractArticles(html) {
-  return [...String(html ?? '').matchAll(/<article\b([^>]*)>([\s\S]*?)<\/article>/giu)].map((match) => {
+  return [...removeNonVisibleHtml(html).matchAll(/<article\b([^>]*)>([\s\S]*?)<\/article>/giu)].map((match) => {
     const openingTag = match[1] ?? '';
     const className = openingTag.match(/\bclass\s*=\s*["']([^"']*)["']/iu)?.[1] ?? '';
     return {
@@ -99,8 +108,8 @@ function validateBriefingHtml(html, phase = normalizePhase(process.env.BRIEFING_
   const quality = inspectArticle(topArticle);
   const topArticleClass = topArticle?.className ?? '';
   const topArticleTitle = quality.topArticleTitle ?? '';
-  const isExpectedPhase = topArticleClass.includes(expected.articleClass);
-  const isExpectedTitle = topArticleTitle.includes(expectedTitle);
+  const isExpectedPhase = topArticleClass.split(/\s+/u).includes(expected.articleClass);
+  const isExpectedTitle = topArticleTitle === expectedTitle;
 
   let reason = quality.reason;
   if (reason === 'article_quality_ok') {
@@ -135,7 +144,7 @@ async function main(argv = process.argv.slice(2)) {
   let result;
   try {
     const html = await readFile(reportPath, 'utf-8');
-    result = validateBriefingHtml(html, phase, new Date(process.env.BRIEFING_AS_OF || Date.now()));
+    result = validateBriefingHtml(html, phase, new Date(process.env.BRIEFING_AS_OF || (process.env.BRIEFING_TRADING_DATE ? `${process.env.BRIEFING_TRADING_DATE}T00:00:00+09:00` : Date.now())));
   } catch (error) {
     result = {
       topArticleClass: '',

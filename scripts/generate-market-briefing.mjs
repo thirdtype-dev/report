@@ -11,6 +11,7 @@ const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash';
 const OPENCODE_ZEN_BASE_URL = process.env.OPENCODE_ZEN_BASE_URL ?? 'https://opencode.ai/zen/v1';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
 const BRIEFING_AS_OF = process.env.BRIEFING_AS_OF || null;
+const BRIEFING_TRADING_DATE = process.env.BRIEFING_TRADING_DATE || null;
 if (BRIEFING_AS_OF && (!/^\d{4}-\d{2}-\d{2}T16:00:00\+09:00$/.test(BRIEFING_AS_OF)
     || !Number.isFinite(Date.parse(BRIEFING_AS_OF)) || PHASE !== 'post_market'
     || Date.parse(BRIEFING_AS_OF) > Date.now()
@@ -2788,7 +2789,7 @@ function labeledList(entries) {
   return `<ul class="brief-list">${visibleEntries.map(([label, value]) => `<li><span class="item-label">${escapeHtml(label)}</span><span class="item-value">${escapeHtml(value)}</span></li>`).join('')}</ul>`;
 }
 
-function dateKey(value = new Date(BRIEFING_AS_OF || Date.now())) {
+function dateKey(value = new Date(BRIEFING_AS_OF || (BRIEFING_TRADING_DATE ? `${BRIEFING_TRADING_DATE}T00:00:00+09:00` : Date.now()))) {
   return new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Seoul',
     year: 'numeric',
@@ -3044,6 +3045,12 @@ ${articles}
 }
 
 async function main() {
+  if (BRIEFING_TRADING_DATE && (!/^\d{4}-\d{2}-\d{2}$/.test(BRIEFING_TRADING_DATE)
+      || !Number.isFinite(Date.parse(`${BRIEFING_TRADING_DATE}T00:00:00Z`))
+      || new Date(`${BRIEFING_TRADING_DATE}T00:00:00Z`).toISOString().slice(0, 10) !== BRIEFING_TRADING_DATE
+      || BRIEFING_TRADING_DATE !== dateKey(new Date(BRIEFING_AS_OF || Date.now())))) {
+    throw new Error('invalid_briefing_trading_date:execution_date_or_backfill_must_match');
+  }
   if (BRIEFING_AS_OF) {
     const existing = await readExistingCommittedReportHtml();
     const titles = [...existing.matchAll(/<h1>(\d{4}-\d{2}-\d{2} \d{2}:\d{2})<\/h1>/g)];

@@ -12,15 +12,18 @@ const HOLIDAYS_BY_YEAR = {
     '2026-02-17',
     '2026-02-18',
     '2026-03-01',
+    '2026-03-02',
     '2026-05-01',
     '2026-05-05',
     '2026-05-25',
     '2026-06-06',
     '2026-08-15',
+    '2026-08-17',
     '2026-09-24',
     '2026-09-25',
     '2026-09-26',
     '2026-10-03',
+    '2026-10-05',
     '2026-10-09',
     '2026-12-25',
     '2026-12-31'
@@ -51,7 +54,7 @@ function getTargetDate() {
 
   const normalized = override.replace(/\//g, '-');
   const match = normalized.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (!match) {
+  if (!match || new Date(`${normalized}T00:00:00Z`).toISOString().slice(0, 10) !== normalized) {
     throw new Error(`Invalid KRX_CHECK_DATE: ${override}`);
   }
 
@@ -113,7 +116,8 @@ function evaluateTradingDay(targetDate = getTargetDate()) {
   }
 
   const annualHolidays = HOLIDAYS_BY_YEAR[targetDate.year];
-  if (annualHolidays?.has(targetDate.ymd)) {
+  if (!annualHolidays) throw new Error(`unsupported_calendar_year:${targetDate.year}`);
+  if (annualHolidays.has(targetDate.ymd)) {
     return { ...targetDate, isTradingDay: false, reason: 'annual_holiday' };
   }
 

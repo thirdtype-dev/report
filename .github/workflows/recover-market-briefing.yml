@@ -6,6 +6,10 @@ on:
     - cron: '20 7 * * 1-5'
   workflow_dispatch:
     inputs:
+      trading_date:
+        description: 'Recovery target KST date (YYYY-MM-DD)'
+        required: false
+        type: string
       phase:
         description: Recovery target phase
         required: false
@@ -26,7 +30,7 @@ concurrency:
 jobs:
   recover:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -38,21 +42,14 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Determine recovery phase
-        id: phase
+      - name: Freeze and validate recovery slot
+        id: slot
         env:
+          GITHUB_TOKEN: ${{ github.token }}
           INPUT_PHASE: ${{ inputs.phase }}
+          INPUT_TRADING_DATE: ${{ inputs.trading_date }}
           SCHEDULE: ${{ github.event.schedule }}
-        run: |
-          phase="${INPUT_PHASE}"
-          if [ -z "$phase" ]; then
-            if [ "$SCHEDULE" = "20 7 * * 1-5" ]; then
-              phase="post_market"
-            else
-              phase="pre_market"
-            fi
-          fi
-          echo "phase=$phase" >> "$GITHUB_OUTPUT"
+        run: node scripts/briefing-slot.mjs >> "$GITHUB_OUTPUT"
 
       - name: Evaluate KRX trading day
         id: trading_day
@@ -65,31 +62,10 @@ jobs:
           echo "KST date: ${{ steps.trading_day.outputs.trading_date }}"
           echo "Reason: ${{ steps.trading_day.outputs.skip_reason }}"
 
-      - name: Check current publication
-        id: briefing_state
+      # GitHub cron is best effort. A successful run means public verification,
+      # never merely acceptance of a workflow dispatch request.
+      - name: Recover and observe public publication
         if: steps.trading_day.outputs.is_trading_day == 'true'
         env:
-          BRIEFING_PHASE: ${{ steps.phase.outputs.phase }}
-        run: node scripts/check-briefing-recovery.mjs >> "$GITHUB_OUTPUT"
-
-      - name: Skip when current briefing is already fresh
-        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.briefing_state.outputs.should_recover != 'true'
-        run: |
-          echo "Recovery not required."
-          echo "Phase: ${{ steps.phase.outputs.phase }}"
-          echo "Reason: ${{ steps.briefing_state.outputs.recovery_reason }}"
-          echo "Top article: ${{ steps.briefing_state.outputs.top_article_title }}"
-
-      - name: Dispatch publish workflow
-        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.briefing_state.outputs.should_recover == 'true'
-        env:
           GITHUB_TOKEN: ${{ github.token }}
-          RECOVERY_PHASE: ${{ steps.phase.outputs.phase }}
-        run: |
-          echo "Dispatching recovery publish for $RECOVERY_PHASE"
-          curl --fail --silent --show-error \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $GITHUB_TOKEN" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/publish-market-briefing.yml/dispatches" \
-            -d "{\"ref\":\"main\",\"inputs\":{\"phase\":\"$RECOVERY_PHASE\"}}"
+        run: node scripts/recover-market-briefing.mjs
