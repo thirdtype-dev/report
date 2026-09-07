@@ -3,6 +3,10 @@ name: Publish Market Briefing
 on:
   workflow_dispatch:
     inputs:
+      as_of:
+        description: 'Optional post-market backfill cutoff within 48 hours (YYYY-MM-DDT16:00:00+09:00)'
+        required: false
+        type: string
       phase:
         description: Briefing phase
         required: false
@@ -21,6 +25,8 @@ concurrency:
 
 jobs:
   publish:
+    env:
+      BRIEFING_AS_OF: ${{ inputs.as_of }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:

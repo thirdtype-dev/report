@@ -10,6 +10,13 @@ const ANALYST_PROVIDER = process.env.ANALYST_PROVIDER ?? 'openrouter';
 const ANALYST_MODEL = process.env.ANALYST_MODEL ?? 'deepseek/deepseek-v4-flash';
 const OPENCODE_ZEN_BASE_URL = process.env.OPENCODE_ZEN_BASE_URL ?? 'https://opencode.ai/zen/v1';
 const PHASE = normalizePhase(process.env.BRIEFING_PHASE);
+const BRIEFING_AS_OF = process.env.BRIEFING_AS_OF || null;
+if (BRIEFING_AS_OF && (!/^\d{4}-\d{2}-\d{2}T16:00:00\+09:00$/.test(BRIEFING_AS_OF)
+    || !Number.isFinite(Date.parse(BRIEFING_AS_OF)) || PHASE !== 'post_market'
+    || Date.parse(BRIEFING_AS_OF) > Date.now()
+    || Date.now() - Date.parse(BRIEFING_AS_OF) > 48 * 60 * 60 * 1000)) {
+  throw new Error('invalid_briefing_as_of:post_market_within_48_hours_required');
+}
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
 const ADSENSE_CLIENT = 'ca-pub-3518959293552717';
 const INVESTOR_FLOW_TIMEOUT_MS = Number.parseInt(process.env.INVESTOR_FLOW_TIMEOUT_MS ?? '45000', 10);
@@ -51,12 +58,12 @@ const MARKET_EVENT_NEWS_QUERIES = [
   '중국 메모리 공급과잉 삼성전자 SK하이닉스 수익성'
 ];
 const NOTABLE_STOCK_QUERIES = [
-  '오늘 특징주 급등 급락 코스피 코스닥',
-  '증시 마감 특징주 상한가 하한가',
+  '특징주 상승 when:1d',
+  '특징주 상한가 when:1d',
+  '코스피 특징주 상승 when:1d',
+  '코스닥 특징주 상승 when:1d',
   '코스피 특징주 급등 상승 이유',
-  '코스닥 특징주 급락 하락 이유',
-  '오늘의 특징주 종목 상승 하락',
-  '시간외 특징주 급등 급락'
+  '코스닥 특징주 급등 상승 이유'
 ];
 const INVESTOR_FLOW_NEWS_QUERIES = [
   '코스피 외국인 기관 순매수 순매도',
@@ -403,7 +410,7 @@ async function withLlmRetry(label, operation) {
   let lastError;
   for (let attempt = 1; attempt <= LLM_MAX_ATTEMPTS; attempt += 1) {
     try {
-      return await operation();
+      return await operation(lastError);
     } catch (error) {
       lastError = error;
       if (attempt >= LLM_MAX_ATTEMPTS || !isTransientLlmError(error)) {
@@ -657,7 +664,6 @@ function validateReportShape(report) {
 
   if (PHASE === 'post_market') {
     if (!isNonEmptyStringArray(report.notableStocks?.surging, 2)) missing.push('notableStocks.surging');
-    if (!isNonEmptyStringArray(report.notableStocks?.plunging, 2)) missing.push('notableStocks.plunging');
     if (!isNonEmptyStringArray(report.tomorrowStrategy?.checklist, 3)) missing.push('tomorrowStrategy.checklist');
   }
 
@@ -1606,6 +1612,10 @@ function repairPreMarketWriterReport(marketResearch, report) {
 }
 
 function prepareReportForPublish(marketResearch, report) {
+  if (PHASE === 'post_market' && report?.notableStocks) {
+    const { plunging, ...visibleStocks } = report.notableStocks;
+    report = { ...report, notableStocks: visibleStocks };
+  }
   const prepared = sanitizeBriefingCopy(report);
   const eventState = marketEventState(marketResearch);
   const riskGuarded = PHASE === 'pre_market'
@@ -1676,8 +1686,7 @@ function reportSchema() {
         weak: 'string'
       },
       notableStocks: {
-        surging: ['종목명, 등락률, 상승 사유 요약'],
-        plunging: ['종목명, 등락률, 하락 사유 요약']
+        surging: ['종목명, 등락률, 상승 사유 요약']
       },
       tomorrowStrategy: {
         outlook: 'string',
@@ -1722,7 +1731,7 @@ function buildPrompt(marketResearch) {
     `브리핑 단계는 ${config.sessionLabel}이다.`,
     '아래 JSON에 포함된 수치와 문장만 근거로 사용한다.',
     '입력 JSON은 공개 데이터 소스(Yahoo Finance chart, Google News RSS, pykrx/KRX 투자자별 거래대금)를 정규화한 것이다.',
-    'status가 unavailable인 항목은 확인 필요로 처리하고, 수치나 사실을 추정해 채우지 않는다.',
+    'status가 unavailable인 항목은 근거에서 제외한다. 수치나 사실을 추정해 채우지 말고, 해당 섹션의 다른 확인된 근거만 사용한다.',
     '각 문장의 근거는 sources, marketNews, marketEventNewsCandidates, marketEventSignals, marketEventConclusions, investorFlows, investorFlowNewsCandidates, disclosureNewsCandidates, scheduleNewsCandidates, sectorThemeNewsCandidates, stockNewsCandidates 범위 안에서만 사용한다.',
     'marketEventSignals는 모든 최신 뉴스에서 대상, 방향, 범위, 강도, 복수 출처 확인 수를 계산한 우선순위 사건 목록이다.',
     'marketEventConclusions는 같은 대상의 상충 신호를 직접 가격 움직임, 시의성, 복수 출처, 제목 신뢰도로 합산한 최종 방향이다. 브리핑 방향과 업종 날씨는 이 결론을 우선한다.',
@@ -1738,7 +1747,7 @@ function buildPrompt(marketResearch) {
     '장마감 업종별/테마별 흐름은 sectorThemeNewsCandidates와 marketNews에서 강세/약세 업종과 테마를 반드시 분리해 작성한다.',
     '장시작/장마감의 수급, 공시, 일정, 업종/테마 섹션에서 "확인 필요", "없음", "데이터 부족", "수집 실패" 같은 회피 문구는 금지한다.',
     '장마감 주요 특징주는 stockNewsCandidates에서 뉴스 제목/요약에 직접 언급된 종목만 사용한다.',
-    '장마감 notableStocks.surging과 notableStocks.plunging은 각각 최소 2개 이상 작성한다.',
+    '장마감 notableStocks.surging은 최소 2개 이상 작성한다. 주요 특징주에는 상승 종목만 포함하고 하락 종목 목록은 작성하지 않는다.',
     '등락률은 뉴스 제목/요약에 수치가 있을 때만 쓰고, 없으면 등락률 없이 상승/하락 사유만 쓴다.',
     '주요 특징주 섹션에서 "확인 필요", "없음", "데이터 부족" 같은 회피 문구는 금지한다.',
     '투자 권유, 매수/매도 지시, 확정적 수익 표현은 금지한다.',
@@ -1763,6 +1772,7 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
 
   const normalized = {
     generatedAt: raw.generatedAt ?? new Date().toISOString(),
+    ...(raw.collectedAt ? { collectedAt: raw.collectedAt } : {}),
     phase: raw.phase ?? PHASE,
     sessionLabel: raw.sessionLabel ?? PHASE_CONFIG[PHASE].sessionLabel,
     summary: raw.summary ?? { signal: 'yellow', totalScore: 0, delayed: true, guide: '공개 무키 데이터 소스 기준으로 시장 상황을 점검합니다.' },
@@ -2194,7 +2204,11 @@ function normalizeYahooIndex({ key, title, symbol }, json) {
 
 async function fetchYahooIndex({ key, title, symbol }) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=1d`;
-  return normalizeYahooIndex({ key, title, symbol }, await fetchJson(url));
+  const index = normalizeYahooIndex({ key, title, symbol }, await fetchJson(url));
+  if (BRIEFING_AS_OF && (!index.updatedAt || Date.parse(index.updatedAt) > Date.parse(BRIEFING_AS_OF))) {
+    throw new Error('index_after_briefing_cutoff');
+  }
+  return index;
 }
 
 function parseGoogleNewsRss(xml) {
@@ -2241,9 +2255,14 @@ function rankFreshNewsCandidates(items, limit = 10, referenceTimeMs = Date.now()
 async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10) {
   const collected = [];
   for (const query of queries) {
-    const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
+    const searchQuery = BRIEFING_AS_OF
+      ? `${query.replace(/when:\S+/g, '')} after:${dateKey(new Date(Date.parse(BRIEFING_AS_OF) - 86400000))} before:${dateKey(new Date(Date.parse(BRIEFING_AS_OF) + 86400000))}`
+      : query;
+    const url = `https://news.google.com/rss/search?q=${encodeURIComponent(searchQuery)}&hl=ko&gl=KR&ceid=KR:ko`;
     try {
-      const items = parseGoogleNewsRss(await fetchText(url)).map((item) => ({ ...item, query }));
+      const items = parseGoogleNewsRss(await withMarketSourceRetry(
+        'google-news', () => fetchText(url)
+      )).map((item) => ({ ...item, query }));
       collected.push(...items);
     } catch (error) {
       collected.push({
@@ -2264,7 +2283,10 @@ async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10) {
     seen.add(key);
     return true;
   });
-  return rankFreshNewsCandidates(deduplicated, limit);
+  const eligible = BRIEFING_AS_OF
+    ? deduplicated.filter((item) => newsPublishedAtMs(item) != null && newsPublishedAtMs(item) <= Date.parse(BRIEFING_AS_OF))
+    : deduplicated;
+  return rankFreshNewsCandidates(eligible, limit, BRIEFING_AS_OF ? Date.parse(BRIEFING_AS_OF) : Date.now());
 }
 
 async function fetchNewsCandidateGroup(queries, limit, statusKey, sourceStatus) {
@@ -2345,6 +2367,7 @@ async function collectPublicMarketResearch() {
   for (const item of YAHOO_SYMBOLS) {
     if (item.key === 'kospi') {
       const selected = await fetchKospiIndexWithFallback();
+      if (BRIEFING_AS_OF && selected.source !== 'yahoo') throw new Error('backfill_requires_timestamped_kospi');
       indices.push(selected.index);
       sourceStatus[`yahoo:${item.key}`] = selected.source === 'yahoo'
         ? 'ok'
@@ -2433,14 +2456,15 @@ async function collectPublicMarketResearch() {
   );
 
   return normalizeMarketResearch({
-    generatedAt: new Date().toISOString(),
+    generatedAt: BRIEFING_AS_OF ? new Date(BRIEFING_AS_OF).toISOString() : new Date().toISOString(),
+    collectedAt: new Date().toISOString(),
     phase: PHASE,
     sessionLabel: PHASE_CONFIG[PHASE].sessionLabel,
     summary: {
       signal: 'yellow',
       totalScore: 0,
       delayed: true,
-      guide: 'Yahoo Finance 공개 지연 시세와 Google News RSS를 기준으로 작성합니다. unavailable 항목은 확인 필요로 표기합니다.'
+      guide: 'Yahoo Finance 공개 지연 시세와 Google News RSS를 기준으로 작성합니다. unavailable 항목은 근거에서 제외하며 수치나 사실을 추정하지 않습니다.'
     },
     indicators,
     majorIndices: indices,
@@ -2647,10 +2671,6 @@ function mockReport(marketResearch) {
         surging: [
           '삼성전자, +1.8%, 외국인 순매수와 메모리 업황 개선 기대',
           '에코프로비엠, +3.2%, 2차전지 소재주 반등 흐름'
-        ],
-        plunging: [
-          'HDC현대산업개발, -2.4%, 부동산 PF 우려 재부각',
-          '한화시스템, -1.9%, 우주/방산 테마 차익 실현'
         ]
       },
       tomorrowStrategy: {
@@ -2699,13 +2719,21 @@ async function writeReport(marketResearch) {
   }
 
   const prompt = buildPrompt(marketResearch);
-  const report = await withLlmRetry(ANALYST_PROVIDER, async () => (
-    prepareAndValidateWriterReport(marketResearch, await callPrimaryWriter(prompt, { marketResearch }))
+  const report = await withLlmRetry(ANALYST_PROVIDER, async (lastError) => (
+    prepareAndValidateWriterReport(marketResearch, await callPrimaryWriter(
+      buildWriterRetryPrompt(prompt, lastError), { marketResearch }
+    ))
   ));
   return {
     report,
     writer: { provider: ANALYST_PROVIDER, model: ANALYST_MODEL, fallbackReason: null }
   };
+}
+
+function buildWriterRetryPrompt(prompt, error) {
+  if (!error?.qualityIssues?.length && !String(error?.message ?? '').startsWith('invalid_report_shape:')) return prompt;
+  const issues = error.qualityIssues?.join(',') ?? error.message;
+  return `${prompt}\n\n이전 응답 검증 결과: ${issues}\n출력 스키마의 필수 항목을 모두 채우고, "확인 필요", "확인 불가", "확인되지 않았습니다" 등 미완성 문구를 쓰지 않는다. 입력의 확인된 근거만 사용하여 전체 JSON을 다시 작성한다. 근거 없는 사실이나 수치는 만들지 않는다.`;
 }
 
 function escapeHtml(value) {
@@ -2722,7 +2750,7 @@ function labeledList(entries) {
   return `<ul class="brief-list">${visibleEntries.map(([label, value]) => `<li><span class="item-label">${escapeHtml(label)}</span><span class="item-value">${escapeHtml(value)}</span></li>`).join('')}</ul>`;
 }
 
-function dateKey(value = new Date()) {
+function dateKey(value = new Date(BRIEFING_AS_OF || Date.now())) {
   return new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Seoul',
     year: 'numeric',
@@ -2780,9 +2808,6 @@ function renderPostMarketReport(report) {
   const surging = Array.isArray(report.notableStocks?.surging) && report.notableStocks.surging.length > 0
     ? report.notableStocks.surging.join(' / ')
     : '특징주 뉴스 후보에서 상승 종목을 재분류해야 합니다.';
-  const plunging = Array.isArray(report.notableStocks?.plunging) && report.notableStocks.plunging.length > 0
-    ? report.notableStocks.plunging.join(' / ')
-    : '특징주 뉴스 후보에서 하락 종목을 재분류해야 합니다.';
 
   const hasInvestorFlows = report.investorFlows != null;
   const investorFlowSection = hasInvestorFlows
@@ -2811,8 +2836,7 @@ ${labeledList([
 ])}
 <h2>${stocksNumber} 주요 특징주</h2>
 ${labeledList([
-  ['급등 종목', surging],
-  ['급락 종목', plunging]
+  ['급등 종목', surging]
 ])}
 <h2>${strategyNumber} 내일의 투자 전략</h2>
 ${labeledList([
@@ -2978,6 +3002,11 @@ ${articles}
 }
 
 async function main() {
+  if (BRIEFING_AS_OF) {
+    const existing = await readExistingCommittedReportHtml();
+    const titles = [...existing.matchAll(/<h1>(\d{4}-\d{2}-\d{2} \d{2}:\d{2})<\/h1>/g)];
+    if (titles.some((match) => match[1] > `${dateKey()} 16:00`)) throw new Error('backfill_would_replace_newer_briefing');
+  }
   const marketResearch = process.env.REPORT_LLM_MOCK === '1' ? mockMarketResearch() : await collectPublicMarketResearch();
   const { report: generatedReport, writer } = await writeReport(marketResearch);
   const report = prepareReportForPublish(marketResearch, generatedReport);
@@ -3028,6 +3057,8 @@ export const __testBuildMarketEventSignals = buildMarketEventSignals;
 export const __testResolveMarketEventSignals = resolveMarketEventSignals;
 export const __testMarketEventState = marketEventState;
 export const __testBuildPrompt = buildPrompt;
+export const __testBuildWriterRetryPrompt = buildWriterRetryPrompt;
+export const __testNotableStockQueries = NOTABLE_STOCK_QUERIES;
 export const __testParseNpayKospiIndex = parseNpayKospiIndex;
 export const __testFetchKospiIndexWithFallback = fetchKospiIndexWithFallback;
 export const __testIsTransientMarketSourceError = isTransientMarketSourceError;

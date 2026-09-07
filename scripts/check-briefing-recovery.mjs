@@ -135,7 +135,7 @@ async function main(argv = process.argv.slice(2)) {
   let result;
   try {
     const html = await readFile(reportPath, 'utf-8');
-    result = validateBriefingHtml(html, phase);
+    result = validateBriefingHtml(html, phase, new Date(process.env.BRIEFING_AS_OF || Date.now()));
   } catch (error) {
     result = {
       topArticleClass: '',

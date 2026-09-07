@@ -6,6 +6,45 @@ const { pathToFileURL } = require('node:url');
 const repoRoot = path.resolve(__dirname, '..');
 const moduleCache = new Map();
 
+test('writer excludes unavailable evidence rather than requesting forbidden placeholder copy', async () => {
+  const module = await importBriefingModule();
+  const prompt = module.__testBuildPrompt({});
+  assert.doesNotMatch(prompt, /unavailable인 항목은 확인 필요로 처리/);
+  assert.match(prompt, /unavailable인 항목은 근거에서 제외/);
+  assert.match(prompt, /수치나 사실을 추정해 채우지 말고/);
+});
+
+test('writer retry includes validation feedback without changing evidence or disclosing provider errors', async () => {
+  const module = await importBriefingModule();
+  const prompt = 'original evidence';
+  assert.equal(module.__testBuildWriterRetryPrompt(prompt, new Error('HTTP error with private body')), prompt);
+  const retry = module.__testBuildWriterRetryPrompt(prompt, { qualityIssues: ['placeholder_copy'] });
+  assert.ok(retry.startsWith(prompt));
+  assert.match(retry, /placeholder_copy/);
+  assert.match(retry, /근거 없는 사실이나 수치는 만들지 않는다/);
+  assert.match(module.__testBuildWriterRetryPrompt(prompt, new Error('invalid_report_shape:notableStocks.surging')), /notableStocks.surging/);
+});
+
+test('notable-stock searches cover fresh rising articles only', async () => {
+  const module = await importBriefingModule();
+  assert.ok(module.__testNotableStockQueries.includes('특징주 상승 when:1d'));
+  assert.ok(module.__testNotableStockQueries.every((query) => !/하락|급락|하한가/.test(query)));
+});
+
+test('post-market shape accepts rising stocks without a falling-stock list', async () => {
+  const module = await importBriefingModule();
+  const report = {
+    marketSummary: { kospi: '2,700.00 (+1.00%)', kosdaq: '800.00 (+1.00%)', summary: '상승했습니다.' },
+    investorFlows: { foreign: '순매수', institution: '순매수', retail: '순매도' },
+    sectorThemes: { strong: '반도체', weak: '건설' },
+    notableStocks: { surging: ['A 상승', 'B 상승'] },
+    tomorrowStrategy: { outlook: '수급을 점검합니다.', checklist: ['환율', '금리', '거래량'] }
+  };
+  assert.deepEqual(module.__testValidateReportShape(report).notableStocks, report.notableStocks);
+  assert.doesNotMatch(module.__testRenderPostMarketReport(report), /급락 종목|재분류/);
+  assert.throws(() => module.__testValidateReportShape({ ...report, notableStocks: { surging: [] } }), /notableStocks.surging/);
+});
+
 async function importBriefingModule(phase = 'post_market') {
   if (moduleCache.has(phase)) {
     return moduleCache.get(phase);
@@ -1531,7 +1570,8 @@ test('post-market general event guard reflects semiconductor downside without st
   assert.match(prepared.marketSummary.summary, /반도체.*중국발 반도체 우려/);
   assert.match(prepared.sectorThemes.weak, /반도체.*중국발 반도체 우려/);
   assert.equal(prepared.sectorThemes.strong.includes('반도체'), false);
-  assert.deepEqual(prepared.notableStocks.plunging, ['대한전선 하락', '이수페타시스 하락']);
+  assert.equal(prepared.notableStocks.plunging, undefined);
+  assert.doesNotMatch(module.__testRenderPostMarketReport(prepared), /급락 종목|대한전선|이수페타시스/);
 });
 
 test('writer retries an incomplete report shape instead of failing the publish immediately', async () => {
