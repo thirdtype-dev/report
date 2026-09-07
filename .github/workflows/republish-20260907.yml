@@ -18,3 +18,5 @@ jobs:
           gh api --method POST repos/thirdtype-dev/report/actions/workflows/publish-market-briefing.yml/dispatches --input - <<'JSON'
           {"ref":"main","inputs":{"phase":"post_market","as_of":"2026-09-07T16:00:00+09:00"}}
           JSON
+
+# Retry after adding date-matched Korean daily closes.

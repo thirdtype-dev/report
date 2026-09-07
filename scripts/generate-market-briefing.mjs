@@ -2084,6 +2084,31 @@ async function fetchNpayKospiIndex({ fetcher = fetchText } = {}) {
   return parseNpayKospiIndex(await fetcher(NPAY_KOSPI_URL));
 }
 
+function parseNpayDailyIndex(html, key, targetDate) {
+  if (!['kospi', 'kosdaq'].includes(key)) throw new Error('unsupported_daily_index');
+  for (const match of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cells = [...match[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((cell) => cell[1]);
+    if (stripHtml(cells[0] ?? '').trim() !== targetDate.replaceAll('-', '.')) continue;
+    const current = numericTokens(stripHtml(cells[1] ?? ''))[0]?.value;
+    const changeToken = numericTokens(stripHtml(cells[2] ?? ''))[0];
+    const rate = numericTokens(stripHtml(cells[3] ?? ''))[0]?.value;
+    const arrow = cells[2]?.match(/ico_(up|down|same)\.gif/i)?.[1];
+    if (!changeToken || !Number.isFinite(rate) || !Number.isFinite(current)) throw new Error('invalid_daily_index_values');
+    const direction = arrow ?? (rate > 0 ? 'up' : rate < 0 ? 'down' : 'same');
+    const change = applyNpayDirection(changeToken.value, changeToken.raw, direction);
+    const index = {
+      key, title: key.toUpperCase(), currentPrice: formatNumber(current),
+      change: formatChange(change), changePercent: `${formatChange(rate)}%`,
+      trend: trendFromChange(change), status: 'delayed',
+      updatedAt: `${targetDate}T00:00:00+09:00`, sourceDate: targetDate,
+      sourceUrl: `https://finance.naver.com/sise/sise_index_day.naver?code=${key.toUpperCase()}&page=1`
+    };
+    if (!isCoherentIndex(index)) throw new Error('inconsistent_daily_index_values');
+    return index;
+  }
+  throw new Error(`daily_index_date_unavailable:${key}:${targetDate}`);
+}
+
 async function fetchKospiIndexWithFallback({
   primary = () => fetchYahooIndex(YAHOO_SYMBOLS.find((item) => item.key === 'kospi')),
   fallback = () => fetchNpayKospiIndex(),
@@ -2367,6 +2392,13 @@ async function collectPublicMarketResearch() {
   const sourceStatus = {};
 
   for (const item of YAHOO_SYMBOLS) {
+    if (BRIEFING_AS_OF && ['kospi', 'kosdaq'].includes(item.key)) {
+      const url = `https://finance.naver.com/sise/sise_index_day.naver?code=${item.key.toUpperCase()}&page=1`;
+      const html = await withMarketSourceRetry(`npay-daily:${item.key}`, () => fetchText(url));
+      indices.push(parseNpayDailyIndex(html, item.key, dateKey()));
+      sourceStatus[`npay-daily:${item.key}`] = 'ok';
+      continue;
+    }
     if (item.key === 'kospi') {
       const selected = await fetchKospiIndexWithFallback();
       if (BRIEFING_AS_OF && selected.source !== 'yahoo') throw new Error('backfill_requires_timestamped_kospi');
@@ -3078,6 +3110,7 @@ export const __testBuildPrompt = buildPrompt;
 export const __testBuildWriterRetryPrompt = buildWriterRetryPrompt;
 export const __testNotableStockQueries = NOTABLE_STOCK_QUERIES;
 export const __testParseNpayKospiIndex = parseNpayKospiIndex;
+export const __testParseNpayDailyIndex = parseNpayDailyIndex;
 export const __testFetchKospiIndexWithFallback = fetchKospiIndexWithFallback;
 export const __testIsTransientMarketSourceError = isTransientMarketSourceError;
 export const __testParseRetryAfterMs = parseRetryAfterMs;

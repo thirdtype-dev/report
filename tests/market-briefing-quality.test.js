@@ -6,6 +6,17 @@ const { pathToFileURL } = require('node:url');
 const repoRoot = path.resolve(__dirname, '..');
 const moduleCache = new Map();
 
+test('daily index backfill selects the exact date and rejects missing or incoherent values', async () => {
+  const module = await importBriefingModule();
+  const row = '<tr><td>2026.09.07</td><td>6,995.39</td><td><img src="ico_up.gif">308.18</td><td>+4.61%</td></tr>';
+  const parsed = module.__testParseNpayDailyIndex(row, 'kospi', '2026-09-07');
+  assert.equal(parsed.currentPrice, '6,995.39');
+  assert.equal(parsed.changePercent, '+4.61%');
+  assert.equal(parsed.sourceDate, '2026-09-07');
+  assert.throws(() => module.__testParseNpayDailyIndex(row, 'kospi', '2026-09-08'), /date_unavailable/);
+  assert.throws(() => module.__testParseNpayDailyIndex(row.replace('+4.61%', '-4.61%'), 'kospi', '2026-09-07'), /inconsistent/);
+});
+
 test('writer excludes unavailable evidence rather than requesting forbidden placeholder copy', async () => {
   const module = await importBriefingModule();
   const prompt = module.__testBuildPrompt({});
