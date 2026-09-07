@@ -25,23 +25,25 @@ test('writer retry includes validation feedback without changing evidence or dis
   assert.match(module.__testBuildWriterRetryPrompt(prompt, new Error('invalid_report_shape:notableStocks.surging')), /notableStocks.surging/);
 });
 
-test('notable-stock searches cover fresh rising articles only', async () => {
+test('notable-stock searches cover fresh rising and falling articles', async () => {
   const module = await importBriefingModule();
   assert.ok(module.__testNotableStockQueries.includes('특징주 상승 when:1d'));
-  assert.ok(module.__testNotableStockQueries.every((query) => !/하락|급락|하한가/.test(query)));
+  assert.ok(module.__testNotableStockQueries.includes('특징주 하락 when:1d'));
 });
 
-test('post-market shape accepts rising stocks without a falling-stock list', async () => {
+test('post-market shape requires and renders both rising and falling stocks', async () => {
   const module = await importBriefingModule();
   const report = {
     marketSummary: { kospi: '2,700.00 (+1.00%)', kosdaq: '800.00 (+1.00%)', summary: '상승했습니다.' },
     investorFlows: { foreign: '순매수', institution: '순매수', retail: '순매도' },
     sectorThemes: { strong: '반도체', weak: '건설' },
-    notableStocks: { surging: ['A 상승', 'B 상승'] },
+    notableStocks: { surging: ['A 상승', 'B 상승'], plunging: ['C 하락', 'D 하락'] },
     tomorrowStrategy: { outlook: '수급을 점검합니다.', checklist: ['환율', '금리', '거래량'] }
   };
   assert.deepEqual(module.__testValidateReportShape(report).notableStocks, report.notableStocks);
-  assert.doesNotMatch(module.__testRenderPostMarketReport(report), /급락 종목|재분류/);
+  assert.match(module.__testRenderPostMarketReport(report), /급락 종목/);
+  assert.match(module.__testRenderPostMarketReport(report), /C 하락/);
+  assert.throws(() => module.__testValidateReportShape({ ...report, notableStocks: { surging: ['A', 'B'] } }), /notableStocks.plunging/);
   assert.throws(() => module.__testValidateReportShape({ ...report, notableStocks: { surging: [] } }), /notableStocks.surging/);
 });
 
@@ -1570,8 +1572,8 @@ test('post-market general event guard reflects semiconductor downside without st
   assert.match(prepared.marketSummary.summary, /반도체.*중국발 반도체 우려/);
   assert.match(prepared.sectorThemes.weak, /반도체.*중국발 반도체 우려/);
   assert.equal(prepared.sectorThemes.strong.includes('반도체'), false);
-  assert.equal(prepared.notableStocks.plunging, undefined);
-  assert.doesNotMatch(module.__testRenderPostMarketReport(prepared), /급락 종목|대한전선|이수페타시스/);
+  assert.deepEqual(prepared.notableStocks.plunging, ['대한전선 하락', '이수페타시스 하락']);
+  assert.match(module.__testRenderPostMarketReport(prepared), /급락 종목/);
 });
 
 test('writer retries an incomplete report shape instead of failing the publish immediately', async () => {

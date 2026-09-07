@@ -117,6 +117,13 @@ function publishAttempt(artifactDir, paths) {
   const worktreePath = path.join(worktreeParent, 'checkout');
   try {
     runGit(['worktree', 'add', '--detach', worktreePath, 'origin/main']);
+    if (paths.includes('report/index.html')) {
+      const currentPath = path.join(worktreePath, 'report/index.html');
+      assertNotOlderBriefing(
+        fs.existsSync(currentPath) ? fs.readFileSync(currentPath, 'utf8') : '',
+        fs.readFileSync(path.join(artifactDir, 'report/index.html'), 'utf8')
+      );
+    }
     restoreGeneratedFiles(artifactDir, paths, worktreePath);
     stageAndCommit(worktreePath, paths);
     const publishedSha = runGitAt(worktreePath, ['rev-parse', 'HEAD']);
@@ -128,6 +135,16 @@ function publishAttempt(artifactDir, paths) {
     return verifyRemoteMain(publishedSha);
   } finally {
     removeTemporaryWorktree(worktreePath, worktreeParent);
+  }
+}
+
+function assertNotOlderBriefing(currentHtml, generatedHtml) {
+  const title = (html) => [...html.matchAll(/<h1\b[^>]*>(\d{4}-\d{2}-\d{2} \d{2}:\d{2})<\/h1>/g)]
+    .map((match) => match[1]).sort().at(-1);
+  const current = title(currentHtml);
+  const generated = title(generatedHtml);
+  if (current && (!generated || current > generated)) {
+    throw new Error('publish_would_replace_newer_briefing');
   }
 }
 
@@ -162,4 +179,4 @@ if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === imp
   }
 }
 
-export { MAX_ATTEMPTS, normalizePaths, preserveGeneratedFiles, publish, verifyRemoteMain };
+export { MAX_ATTEMPTS, normalizePaths, preserveGeneratedFiles, publish, verifyRemoteMain, assertNotOlderBriefing };

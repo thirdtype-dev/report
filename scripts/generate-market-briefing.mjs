@@ -59,9 +59,11 @@ const MARKET_EVENT_NEWS_QUERIES = [
 ];
 const NOTABLE_STOCK_QUERIES = [
   '특징주 상승 when:1d',
+  '특징주 하락 when:1d',
   '특징주 상한가 when:1d',
   '코스피 특징주 상승 when:1d',
   '코스닥 특징주 상승 when:1d',
+  '코스닥 특징주 하락 when:1d',
   '코스피 특징주 급등 상승 이유',
   '코스닥 특징주 급등 상승 이유'
 ];
@@ -664,6 +666,7 @@ function validateReportShape(report) {
 
   if (PHASE === 'post_market') {
     if (!isNonEmptyStringArray(report.notableStocks?.surging, 2)) missing.push('notableStocks.surging');
+    if (!isNonEmptyStringArray(report.notableStocks?.plunging, 2)) missing.push('notableStocks.plunging');
     if (!isNonEmptyStringArray(report.tomorrowStrategy?.checklist, 3)) missing.push('tomorrowStrategy.checklist');
   }
 
@@ -1612,10 +1615,6 @@ function repairPreMarketWriterReport(marketResearch, report) {
 }
 
 function prepareReportForPublish(marketResearch, report) {
-  if (PHASE === 'post_market' && report?.notableStocks) {
-    const { plunging, ...visibleStocks } = report.notableStocks;
-    report = { ...report, notableStocks: visibleStocks };
-  }
   const prepared = sanitizeBriefingCopy(report);
   const eventState = marketEventState(marketResearch);
   const riskGuarded = PHASE === 'pre_market'
@@ -1686,7 +1685,8 @@ function reportSchema() {
         weak: 'string'
       },
       notableStocks: {
-        surging: ['종목명, 등락률, 상승 사유 요약']
+        surging: ['종목명, 등락률, 상승 사유 요약'],
+        plunging: ['종목명, 등락률, 하락 사유 요약']
       },
       tomorrowStrategy: {
         outlook: 'string',
@@ -1747,7 +1747,7 @@ function buildPrompt(marketResearch) {
     '장마감 업종별/테마별 흐름은 sectorThemeNewsCandidates와 marketNews에서 강세/약세 업종과 테마를 반드시 분리해 작성한다.',
     '장시작/장마감의 수급, 공시, 일정, 업종/테마 섹션에서 "확인 필요", "없음", "데이터 부족", "수집 실패" 같은 회피 문구는 금지한다.',
     '장마감 주요 특징주는 stockNewsCandidates에서 뉴스 제목/요약에 직접 언급된 종목만 사용한다.',
-    '장마감 notableStocks.surging은 최소 2개 이상 작성한다. 주요 특징주에는 상승 종목만 포함하고 하락 종목 목록은 작성하지 않는다.',
+    '장마감 notableStocks.surging과 notableStocks.plunging은 각각 최소 2개 이상 작성한다. 상승과 하락의 방향을 확인된 기사 근거에 맞게 분리한다.',
     '등락률은 뉴스 제목/요약에 수치가 있을 때만 쓰고, 없으면 등락률 없이 상승/하락 사유만 쓴다.',
     '주요 특징주 섹션에서 "확인 필요", "없음", "데이터 부족" 같은 회피 문구는 금지한다.',
     '투자 권유, 매수/매도 지시, 확정적 수익 표현은 금지한다.',
@@ -1805,6 +1805,7 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
 
 async function fetchJson(url) {
   const res = await fetch(url, {
+    signal: AbortSignal.timeout(10000),
     headers: {
       accept: 'application/json,text/plain,*/*',
       'user-agent': 'market-briefing-report/1.0'
@@ -1823,6 +1824,7 @@ async function fetchJson(url) {
 
 async function fetchText(url) {
   const res = await fetch(url, {
+    signal: AbortSignal.timeout(10000),
     headers: {
       accept: 'application/rss+xml,text/xml,text/html,*/*',
       'user-agent': 'market-briefing-report/1.0'
@@ -2671,6 +2673,10 @@ function mockReport(marketResearch) {
         surging: [
           '삼성전자, +1.8%, 외국인 순매수와 메모리 업황 개선 기대',
           '에코프로비엠, +3.2%, 2차전지 소재주 반등 흐름'
+        ],
+        plunging: [
+          'HDC현대산업개발, -2.4%, 부동산 PF 우려 재부각',
+          '한화시스템, -1.9%, 우주/방산 테마 차익 실현'
         ]
       },
       tomorrowStrategy: {
@@ -2805,6 +2811,9 @@ ${labeledList([
 }
 
 function renderPostMarketReport(report) {
+  const plunging = Array.isArray(report.notableStocks?.plunging) && report.notableStocks.plunging.length > 0
+    ? report.notableStocks.plunging.join(' / ')
+    : '특징주 뉴스 후보에서 하락 종목을 재분류해야 합니다.';
   const surging = Array.isArray(report.notableStocks?.surging) && report.notableStocks.surging.length > 0
     ? report.notableStocks.surging.join(' / ')
     : '특징주 뉴스 후보에서 상승 종목을 재분류해야 합니다.';
@@ -2836,7 +2845,8 @@ ${labeledList([
 ])}
 <h2>${stocksNumber} 주요 특징주</h2>
 ${labeledList([
-  ['급등 종목', surging]
+  ['급등 종목', surging],
+  ['급락 종목', plunging]
 ])}
 <h2>${strategyNumber} 내일의 투자 전략</h2>
 ${labeledList([
@@ -3008,6 +3018,14 @@ async function main() {
     if (titles.some((match) => match[1] > `${dateKey()} 16:00`)) throw new Error('backfill_would_replace_newer_briefing');
   }
   const marketResearch = process.env.REPORT_LLM_MOCK === '1' ? mockMarketResearch() : await collectPublicMarketResearch();
+  console.info('[market-briefing] source coverage', {
+    phase: PHASE,
+    asOf: marketResearch.generatedAt,
+    marketNews: marketResearch.marketNews?.length ?? 0,
+    stockNewsCandidates: marketResearch.stockNewsCandidates?.length ?? 0,
+    sectorThemeNewsCandidates: marketResearch.sectorThemeNewsCandidates?.length ?? 0,
+    investorFlows: marketResearch.investorFlows?.status ?? 'unavailable'
+  });
   const { report: generatedReport, writer } = await writeReport(marketResearch);
   const report = prepareReportForPublish(marketResearch, generatedReport);
   const publishPlan = resolveBriefingPublishPlan({
