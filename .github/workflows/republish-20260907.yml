@@ -1,0 +1,20 @@
+name: Republish September 7 briefing
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/republish-20260907.yml']
+permissions:
+  contents: read
+  actions: write
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Dispatch requested September 7 post-market briefing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST repos/thirdtype-dev/report/actions/workflows/publish-market-briefing.yml/dispatches --input - <<'JSON'
+          {"ref":"main","inputs":{"phase":"post_market","as_of":"2026-09-07T16:00:00+09:00"}}
+          JSON
