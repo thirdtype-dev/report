@@ -53,7 +53,7 @@ jobs:
 
       - name: Evaluate KRX trading day
         id: trading_day
-        run: node scripts/krx-business-day.mjs >> "$GITHUB_OUTPUT"
+        run: node scripts/briefing-trading-day.mjs >> "$GITHUB_OUTPUT"
 
       - name: Skip on KRX holiday
         if: steps.trading_day.outputs.is_trading_day != 'true'
