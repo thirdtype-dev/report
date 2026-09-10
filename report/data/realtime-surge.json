@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-09-10T01:00:18.506Z",
+  "generated_at": "2026-09-10T02:00:19.004Z",
   "generated_date": "2026-09-10",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 9건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "가온전선",
+      "stockCode": "000500",
+      "summary": "가온전선 주가, 9월 10일 장중 242,000원 8.85% 하락 topstarnews.net",
+      "headline": "가온전선 주가, 9월 10일 장중 242,000원 8.85% 하락",
+      "evidencePoints": [
+        "출처 topstarnews.net 기반 기사 1건",
+        "제목 기준 변동률 단서 -8.8%",
+        "가온전선 주가, 9월 10일 장중 242,000원 8.85% 하락"
+      ],
+      "mentionScore": 71.7,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-09-10T02:00:19.004Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -8.85,
+      "latestHeadline": "가온전선 주가, 9월 10일 장중 242,000원 8.85% 하락",
+      "source": "topstarnews.net",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzZHBQa3JxR2pobzVHSzk4TjJKSzdvZnRvUE9XbVVacTZ6Wk1xYmhyWktLSnk0MlEyeUZsWHVXSWhfQVpWQVVsVWNwR2kzSldLNlJmMERudGpBQUJ4MHZxZXZCRm4zbEVzT0NfbGFFQ0N2Zw?oc=5",
+      "publishedAt": "Thu, 10 Sep 2026 01:07:28 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "가온전선 주가, 9월 10일 장중 242,000원 8.85% 하락",
+          "source": "topstarnews.net",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzZHBQa3JxR2pobzVHSzk4TjJKSzdvZnRvUE9XbVVacTZ6Wk1xYmhyWktLSnk0MlEyeUZsWHVXSWhfQVpWQVVsVWNwR2kzSldLNlJmMERudGpBQUJ4MHZxZXZCRm4zbEVzT0NfbGFFQ0N2Zw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "가온전선 주가 242,000원, 8.85% 급락",
+      "polishedBody": "가온전선 주가가 9월 10일 장중 242,000원으로 8.85% 하락했습니다. 이날 하락폭은 8.85%로 비교적 큰 폭의 변동입니다. 주가 하락으로 인해 부정적 흐름이 나타났습니다. 향후 추가 하락 여부와 반등 가능성이 주목됩니다."
+    },
     {
       "stockName": "로보티즈",
       "stockCode": "108490",
@@ -322,50 +356,33 @@
       "hasNews": true,
       "polishedHeadline": "HD현대 \"견조한 실적 모멘텀 유지\" HD현대",
       "polishedBody": "HD현대는 자회사의 양호한 실적과 지분가치 증가…목표가↑ 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 \"견조한 실적 모멘텀 유지\" 주가 2% 상승 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "가온전선",
-      "stockCode": "000500",
-      "summary": "가온전선 주가, 9월 9일 장중 272,000원 19.56% 상승",
-      "headline": "가온전선 주가, 급등세... 이유는?",
-      "evidencePoints": [
-        "출처 ggilbo.com, 톱스타뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "가온전선 주가, 급등세... 이유는?",
-        "가온전선 주가, 9월 9일 장중 272,000원 19.56% 상승"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-09-09T02:00:15.347Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "가온전선 주가, 급등세... 이유는?",
-      "source": "ggilbo.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA5RmRBNHJaN0wzS1VtWWJwMTJwLW1vOFhIM3RKRlJ5NmtPMFZYa2lUdW1rTzVCbG9rcUtZWFhTNmtBdGg1VWlfODU5TjVpM3FZSkxDUVhuUnJ2eGJLN2RNUkNTbkFBVTNOdmc?oc=5",
-      "publishedAt": "Wed, 09 Sep 2026 01:37:19 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "가온전선 주가, 급등세... 이유는?",
-          "source": "ggilbo.com",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA5RmRBNHJaN0wzS1VtWWJwMTJwLW1vOFhIM3RKRlJ5NmtPMFZYa2lUdW1rTzVCbG9rcUtZWFhTNmtBdGg1VWlfODU5TjVpM3FZSkxDUVhuUnJ2eGJLN2RNUkNTbkFBVTNOdmc?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "가온전선 주가, 9월 9일 장중 272,000원 19.56% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5kQUZVZksxR0szRTFXeFlUTTQ1N1FmME9NZ1BTWVA0V21DaC0yM19hWmQ4NGJWOEZwSnlPRTFpQ0daeVhWa3JoakdlRC1vV2xtVGgxS0hDcmUwelB1U1V6RTRqMTlQRmNmZ19PRXhPajBDUQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "가온전선 주가, 급등세..",
-      "polishedBody": "가온전선은 주가, 9월 9일 장중 272,000원 19.56% 상승 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가, 9월 9일 장중 272,000원 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     }
   ],
   "items": [
+    {
+      "timestamp": "Thu, 10 Sep 2026 01:07:28 GMT",
+      "symbol": "000500",
+      "name": "가온전선",
+      "changeRate": -8.85,
+      "price": null,
+      "summary": "가온전선 주가, 9월 10일 장중 242,000원 8.85% 하락 topstarnews.net",
+      "source": "topstarnews.net",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzZHBQa3JxR2pobzVHSzk4TjJKSzdvZnRvUE9XbVVacTZ6Wk1xYmhyWktLSnk0MlEyeUZsWHVXSWhfQVpWQVVsVWNwR2kzSldLNlJmMERudGpBQUJ4MHZxZXZCRm4zbEVzT0NfbGFFQ0N2Zw?oc=5",
+      "mentionScore": 71.7,
+      "evidencePoints": [
+        "출처 topstarnews.net 기반 기사 1건",
+        "제목 기준 변동률 단서 -8.8%",
+        "가온전선 주가, 9월 10일 장중 242,000원 8.85% 하락"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "가온전선 주가, 9월 10일 장중 242,000원 8.85% 하락",
+          "source": "topstarnews.net",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzZHBQa3JxR2pobzVHSzk4TjJKSzdvZnRvUE9XbVVacTZ6Wk1xYmhyWktLSnk0MlEyeUZsWHVXSWhfQVpWQVVsVWNwR2kzSldLNlJmMERudGpBQUJ4MHZxZXZCRm4zbEVzT0NfbGFFQ0N2Zw?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Thu, 10 Sep 2026 00:22:43 GMT",
       "symbol": "108490",
@@ -595,37 +612,6 @@
           "title": "HD현대, 자회사의 양호한 실적과 지분가치 증가…목표가↑-흥국",
           "source": "edaily.co.kr",
           "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPRXBIeWdpeGFRM3NZdWc3Vno1V0tqYXNmdEJ2S0pGZlU0S21SZmRwUklIR2RuUWNNZDFlUWRUdlZtX0t4TFphZUpiU1NnUDlvTk5HdGJ4QV92elI5WC1uOXNnSWxlRGdmcUJFZWNmNnJTT0xIYnRxWUs0R1NkLWV1RA?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Wed, 09 Sep 2026 01:37:19 GMT",
-      "symbol": "000500",
-      "name": "가온전선",
-      "changeRate": null,
-      "price": null,
-      "summary": "가온전선 주가, 9월 9일 장중 272,000원 19.56% 상승",
-      "source": "ggilbo.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA5RmRBNHJaN0wzS1VtWWJwMTJwLW1vOFhIM3RKRlJ5NmtPMFZYa2lUdW1rTzVCbG9rcUtZWFhTNmtBdGg1VWlfODU5TjVpM3FZSkxDUVhuUnJ2eGJLN2RNUkNTbkFBVTNOdmc?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 ggilbo.com, 톱스타뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "가온전선 주가, 급등세... 이유는?",
-        "가온전선 주가, 9월 9일 장중 272,000원 19.56% 상승"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "가온전선 주가, 급등세... 이유는?",
-          "source": "ggilbo.com",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA5RmRBNHJaN0wzS1VtWWJwMTJwLW1vOFhIM3RKRlJ5NmtPMFZYa2lUdW1rTzVCbG9rcUtZWFhTNmtBdGg1VWlfODU5TjVpM3FZSkxDUVhuUnJ2eGJLN2RNUkNTbkFBVTNOdmc?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "가온전선 주가, 9월 9일 장중 272,000원 19.56% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5kQUZVZksxR0szRTFXeFlUTTQ1N1FmME9NZ1BTWVA0V21DaC0yM19hWmQ4NGJWOEZwSnlPRTFpQ0daeVhWa3JoakdlRC1vV2xtVGgxS0hDcmUwelB1U1V6RTRqMTlQRmNmZ19PRXhPajBDUQ?oc=5"
         }
       ]
     }
