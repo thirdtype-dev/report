@@ -1,16 +1,98 @@
 {
-  "generated_at": "2026-09-11T05:00:18.653Z",
+  "generated_at": "2026-09-11T06:00:52.421Z",
   "generated_date": "2026-09-11",
-  "slot_hour": 14,
-  "cycle_label": "KST_1400",
-  "slot_label": "14:00",
+  "slot_hour": 15,
+  "cycle_label": "KST_1500",
+  "slot_label": "15:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 14:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 6건",
+    "title": "KST 15:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 7건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "한미반도체",
+      "stockCode": "042700",
+      "summary": "한미반도체 주가 하락 중",
+      "headline": "한미반도체 주가, 9월 11일 장중 233,250원 7.81% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -7.8%",
+        "한미반도체 주가, 9월 11일 장중 233,250원 7.81% 하락",
+        "한미반도체 주가 하락 중"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-09-11T06:00:52.421Z",
+      "cycleLabel": "KST_1500",
+      "direction": "down",
+      "changeRate": -7.81,
+      "latestHeadline": "한미반도체 주가, 9월 11일 장중 233,250원 7.81% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1rSldGcmw5c1UxVnktMkN1dEdrWWkzRHFXT2Q1Q2dHZ2gtQ1JoTFV1bVNsTUt6Z3c4Q2lTTlhud1M5N0o3ZWdsTDhGOHZLNHV3c3NYTlh4YTFkS3J1WGFuNzlLVlR2UE1oYWs3bDZ5WlVTQQ?oc=5",
+      "publishedAt": "Fri, 11 Sep 2026 04:45:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한미반도체 주가, 9월 11일 장중 233,250원 7.81% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1rSldGcmw5c1UxVnktMkN1dEdrWWkzRHFXT2Q1Q2dHZ2gtQ1JoTFV1bVNsTUt6Z3c4Q2lTTlhud1M5N0o3ZWdsTDhGOHZLNHV3c3NYTlh4YTFkS3J1WGFuNzlLVlR2UE1oYWs3bDZ5WlVTQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한미반도체 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtQTVPRzhQNkdGN2JuRkxhelp5RE5NaW1DSWFyNkhEc0Vsd0NCTTh3QTNPNXloYndBSWRZYWNqVXU5dF9BWExJQ0owaHJEbmU2aTllNFJjNkVybEVl?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "한미반도체 주가, 9월 11일 장중 233,250원 7.81% 하락",
+      "polishedBody": "한미반도체는 주가, 9월 11일 장중 233,250원 7.81% 하락 이슈로 단기 변동성이 확대됐습니다. 주가, 9월 11일 장중 233,250원 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "LG전자 주가, 9월 11일 장중 7,800원 하락 198,700원",
+      "headline": "LG전자 주가, 9월 11일 장중 199,000원 3.63% 하락",
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, 톱스타뉴스 기반 기사 2건",
+        "제목 기준 변동률 단서 -3.6%",
+        "LG전자 주가, 9월 11일 장중 199,000원 3.63% 하락",
+        "LG전자 주가, 9월 11일 장중 7,800원 하락 198,700원"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-09-11T06:00:52.421Z",
+      "cycleLabel": "KST_1500",
+      "direction": "down",
+      "changeRate": -3.63,
+      "latestHeadline": "LG전자 주가, 9월 11일 장중 199,000원 3.63% 하락",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5hOWpKVlpnZURHZU12XzY5eEFRZHBiMm03d2tJVlNSd2IxMDNKTlJTV1B3V0g0WHE3eGZobFpnZHBTallKQUxIcWkzWVV5YnlWb204LXNFcU9Lell6ODVVM3FxNS1QVlNPQ0UxWEhvMTNtUQ?oc=5",
+      "publishedAt": "Fri, 11 Sep 2026 05:15:19 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 9월 11일 장중 199,000원 3.63% 하락",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5hOWpKVlpnZURHZU12XzY5eEFRZHBiMm03d2tJVlNSd2IxMDNKTlJTV1B3V0g0WHE3eGZobFpnZHBTallKQUxIcWkzWVV5YnlWb204LXNFcU9Lell6ODVVM3FxNS1QVlNPQ0UxWEhvMTNtUQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "LG전자 주가, 9월 11일 장중 7,800원 하락 198,700원",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0wYU5hczVNb0c3N2VJZWh4c19fNzFFZ2tlXy02SGRtUHBZdXVhYnN0WkhfNF9ZYS1QMWwwckw3UFMwbHRTT3hGLW12X21PcmVPQmYtQ3V0dEZSd2hYQmNpRE1rcURqZ0I5c0YteXJXeXNudw?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "LG전자 주가, 9월 11일 장중 199,000원 3.63% 하락",
+      "polishedBody": "LG전자는 주가, 9월 11일 장중 7,800원 하락 198,700원 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 주가, 9월 11일 장중 199,000원 3.63% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "두산",
       "stockCode": "000150",
@@ -51,40 +133,6 @@
       "hasNews": true,
       "polishedHeadline": "두산 에너빌리티 주가, 9월 11일 장중 90,500원 0.67% 상승",
       "polishedBody": "두산은 기관 7일 연속 순매수행진 재료가 부각되며 단기 모멘텀을 형성했습니다. 기관 7일 연속 순매수행진 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 에너빌리티 주가 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "한미반도체",
-      "stockCode": "042700",
-      "summary": "한미반도체 주가 하락 중 아시아뉴스통신",
-      "headline": "한미반도체 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "한미반도체 주가 하락 중"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-09-11T01:00:16.106Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "한미반도체 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtQTVPRzhQNkdGN2JuRkxhelp5RE5NaW1DSWFyNkhEc0Vsd0NCTTh3QTNPNXloYndBSWRZYWNqVXU5dF9BWExJQ0owaHJEbmU2aTllNFJjNkVybEVl?oc=5",
-      "publishedAt": "Fri, 11 Sep 2026 00:31:39 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한미반도체 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtQTVPRzhQNkdGN2JuRkxhelp5RE5NaW1DSWFyNkhEc0Vsd0NCTTh3QTNPNXloYndBSWRZYWNqVXU5dF9BWExJQ0owaHJEbmU2aTllNFJjNkVybEVl?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "한미반도체 주가 하락 중",
-      "polishedBody": "한미반도체는 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
       "stockName": "HD현대중공업",
@@ -251,6 +299,68 @@
   ],
   "items": [
     {
+      "timestamp": "Fri, 11 Sep 2026 04:45:00 GMT",
+      "symbol": "042700",
+      "name": "한미반도체",
+      "changeRate": -7.81,
+      "price": null,
+      "summary": "한미반도체 주가 하락 중",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1rSldGcmw5c1UxVnktMkN1dEdrWWkzRHFXT2Q1Q2dHZ2gtQ1JoTFV1bVNsTUt6Z3c4Q2lTTlhud1M5N0o3ZWdsTDhGOHZLNHV3c3NYTlh4YTFkS3J1WGFuNzlLVlR2UE1oYWs3bDZ5WlVTQQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -7.8%",
+        "한미반도체 주가, 9월 11일 장중 233,250원 7.81% 하락",
+        "한미반도체 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한미반도체 주가, 9월 11일 장중 233,250원 7.81% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1rSldGcmw5c1UxVnktMkN1dEdrWWkzRHFXT2Q1Q2dHZ2gtQ1JoTFV1bVNsTUt6Z3c4Q2lTTlhud1M5N0o3ZWdsTDhGOHZLNHV3c3NYTlh4YTFkS3J1WGFuNzlLVlR2UE1oYWs3bDZ5WlVTQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한미반도체 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtQTVPRzhQNkdGN2JuRkxhelp5RE5NaW1DSWFyNkhEc0Vsd0NCTTh3QTNPNXloYndBSWRZYWNqVXU5dF9BWExJQ0owaHJEbmU2aTllNFJjNkVybEVl?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 11 Sep 2026 05:15:19 GMT",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": -3.63,
+      "price": null,
+      "summary": "LG전자 주가, 9월 11일 장중 7,800원 하락 198,700원",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5hOWpKVlpnZURHZU12XzY5eEFRZHBiMm03d2tJVlNSd2IxMDNKTlJTV1B3V0g0WHE3eGZobFpnZHBTallKQUxIcWkzWVV5YnlWb204LXNFcU9Lell6ODVVM3FxNS1QVlNPQ0UxWEhvMTNtUQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, 톱스타뉴스 기반 기사 2건",
+        "제목 기준 변동률 단서 -3.6%",
+        "LG전자 주가, 9월 11일 장중 199,000원 3.63% 하락",
+        "LG전자 주가, 9월 11일 장중 7,800원 하락 198,700원"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 9월 11일 장중 199,000원 3.63% 하락",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5hOWpKVlpnZURHZU12XzY5eEFRZHBiMm03d2tJVlNSd2IxMDNKTlJTV1B3V0g0WHE3eGZobFpnZHBTallKQUxIcWkzWVV5YnlWb204LXNFcU9Lell6ODVVM3FxNS1QVlNPQ0UxWEhvMTNtUQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "LG전자 주가, 9월 11일 장중 7,800원 하락 198,700원",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0wYU5hczVNb0c3N2VJZWh4c19fNzFFZ2tlXy02SGRtUHBZdXVhYnN0WkhfNF9ZYS1QMWwwckw3UFMwbHRTT3hGLW12X21PcmVPQmYtQ3V0dEZSd2hYQmNpRE1rcURqZ0I5c0YteXJXeXNudw?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Fri, 11 Sep 2026 04:48:09 GMT",
       "symbol": "000150",
       "name": "두산",
@@ -278,30 +388,6 @@
           "title": "[장중수급포착] 두산, 기관 7일 연속 순매수행진... 주가 +3.33%",
           "source": "뉴스핌",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5oTEJSdHFkMldoZzFZemdnTTRKc3YyOGQ2dTh2eFZEdXdaY2dsSGxqZ3R0WTlGc2lLZHYxSFFodEl6ejk3OVJTdEk4QWtUb3J4RGEzQkNuNXVZZ1g4?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Fri, 11 Sep 2026 00:31:39 GMT",
-      "symbol": "042700",
-      "name": "한미반도체",
-      "changeRate": null,
-      "price": null,
-      "summary": "한미반도체 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtQTVPRzhQNkdGN2JuRkxhelp5RE5NaW1DSWFyNkhEc0Vsd0NCTTh3QTNPNXloYndBSWRZYWNqVXU5dF9BWExJQ0owaHJEbmU2aTllNFJjNkVybEVl?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "한미반도체 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한미반도체 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtQTVPRzhQNkdGN2JuRkxhelp5RE5NaW1DSWFyNkhEc0Vsd0NCTTh3QTNPNXloYndBSWRZYWNqVXU5dF9BWExJQ0owaHJEbmU2aTllNFJjNkVybEVl?oc=5"
         }
       ]
     },
