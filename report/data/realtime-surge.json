@@ -1,16 +1,139 @@
 {
-  "generated_at": "2026-09-14T01:00:23.323Z",
+  "generated_at": "2026-09-14T02:00:18.187Z",
   "generated_date": "2026-09-14",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 13건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성전기",
+      "stockCode": "009150",
+      "summary": "삼성전기 주가 하락 중",
+      "headline": "삼성전기 주가, 9월 14일 장중 1,338,000원 4.43% 하락",
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -4.4%",
+        "삼성전기 주가, 9월 14일 장중 1,338,000원 4.43% 하락",
+        "삼성전기 주가 하락 중"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-09-14T02:00:18.187Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -4.43,
+      "latestHeadline": "삼성전기 주가, 9월 14일 장중 1,338,000원 4.43% 하락",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1MM0h1SXAtYTVzeEttWkgtYktCREFFV1FNMUpjYzhjeEJhc3g3eHRrZnJNQUd5dW1ScWdCc21XNlB1QWJGUGpTbDBjdmxhZnNtU0NmVW9kaEl0T1BoRzVMS2VVQzU1QnRad05fYkhicHJydw?oc=5",
+      "publishedAt": "Mon, 14 Sep 2026 01:06:31 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가, 9월 14일 장중 1,338,000원 4.43% 하락",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1MM0h1SXAtYTVzeEttWkgtYktCREFFV1FNMUpjYzhjeEJhc3g3eHRrZnJNQUd5dW1ScWdCc21XNlB1QWJGUGpTbDBjdmxhZnNtU0NmVW9kaEl0T1BoRzVMS2VVQzU1QnRad05fYkhicHJydw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9SeTktRHFld19BNUFTTDlfSkN2NDJwRXJNbGY0ZUFIRk9SdjdmYVIxdXo5SjZSTUI4Wi1uMFR2RUI0NEwtbjFEb3gzaTVDcXJwM1psMHNLeE9oZ3VrclpUd1hR?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "삼성전기 주가, 9월 14일 장중 1,338,000원 4.43% 하락",
+      "polishedBody": "삼성전기는 주가, 9월 14일 장중 1,338,000원 4.43% 하락 이슈로 단기 변동성이 확대됐습니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "LG전자 주가 하락 중",
+      "headline": "LG전자 주가, 9월 14일 장중 195,800원 1.85% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -1.9%",
+        "LG전자 주가, 9월 14일 장중 195,800원 1.85% 하락",
+        "LG전자 주가 하락 중"
+      ],
+      "mentionScore": 89.7,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-09-14T02:00:18.187Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -1.85,
+      "latestHeadline": "LG전자 주가, 9월 14일 장중 195,800원 1.85% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE50TGI1NGFnRHg0Rzk1NTFMVk9nZjlFTU9QbHZZcDhLWk9BbHVyQkRiemp1NFRmUzhwM1NOMi01VFNLZU5NSnc2SDJxeFRfV2pacU9UQ2dfc28wQVdYWUFvbkRoR01ORkkxNjdVSUIwUGJzdw?oc=5",
+      "publishedAt": "Mon, 14 Sep 2026 01:28:32 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 9월 14일 장중 195,800원 1.85% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE50TGI1NGFnRHg0Rzk1NTFMVk9nZjlFTU9QbHZZcDhLWk9BbHVyQkRiemp1NFRmUzhwM1NOMi01VFNLZU5NSnc2SDJxeFRfV2pacU9UQ2dfc28wQVdYWUFvbkRoR01ORkkxNjdVSUIwUGJzdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "LG전자 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1LZG1nNXY2RHpUMlU1eHVlcEt6ejJ2cGRMMTVqMnFDRDNBSzRWS2JXeV9OWlE3aE52VjZ1NURJQ0h5NkRod0VOQkJ0YmVMa05laXdLb21CVnRKbUdDYXcyTVVB?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "LG전자 주가, 9월 14일 장중 195,800원 1.85% 하락",
+      "polishedBody": "LG전자는 주가, 9월 14일 장중 195,800원 1.85% 하락 이슈로 단기 변동성이 확대됐습니다. 주가, 9월 14일 장중 195,800원 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "한미반도체",
+      "stockCode": "042700",
+      "summary": "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손",
+      "headline": "한미반도체, 주가 9월 14일 장중 227,000원 1.73% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스, KB Think 기반 기사 2건",
+        "제목 기준 변동률 단서 -1.7%",
+        "한미반도체, 주가 9월 14일 장중 227,000원 1.73% 하락",
+        "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손"
+      ],
+      "mentionScore": 89.2,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-09-14T02:00:18.187Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -1.73,
+      "latestHeadline": "한미반도체, 주가 9월 14일 장중 227,000원 1.73% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1xRlFYXzlReTAwTEpuSUdXSDBTYmRWOUo2VkIzZy1zYXc3d1l3aUV1NjNIMWUteGxieEtQb1R1bnF4cFYzWXg2YVUycjdzLTNSRHVOU2Jmb1o4M2t4V1lUaGd5X3NYZXQxbUtDLWNGQmFmZw?oc=5",
+      "publishedAt": "Mon, 14 Sep 2026 01:07:03 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한미반도체, 주가 9월 14일 장중 227,000원 1.73% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1xRlFYXzlReTAwTEpuSUdXSDBTYmRWOUo2VkIzZy1zYXc3d1l3aUV1NjNIMWUteGxieEtQb1R1bnF4cFYzWXg2YVUycjdzLTNSRHVOU2Jmb1o4M2t4V1lUaGd5X3NYZXQxbUtDLWNGQmFmZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손",
+          "source": "KB Think",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzbDdYSTAtMmVwejZNbmhlY0h2SEtiVl9ncnZXTjA1Wm1LbUZqUEpQWVJzQVE3amZxSk1waWRQcTRvbnJjZWxXbm9VX0hFMUh6R0h1VjljR3VyUS1FdGlIT3Y4ekNrd1lrTjk1bmdXY0dFUQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한미반도체 9월 14일 장중 227,000원 1.73% 하락",
+      "polishedBody": "한미반도체는 스페이스X 500억 투자 석 달 만에 평가손 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 9월 14일 장중 227,000원 1.73% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "티엘비",
       "stockCode": "356860",
@@ -134,40 +257,6 @@
       "polishedBody": "하나증권은 KB금융의 3분기 순이익이 사상 최대를 기록할 것이라며 목표주가를 상향 조정했습니다. 이는 금리 환경과 대출 성장 등이 실적 개선에 기여할 것이라는 전망에서 비롯됐습니다. 현재 방향성은 중립적이지만, 실적 기대감이 주가에 긍정적 요인으로 작용하고 있습니다. 향후 실제 실적 발표와 이재근 회장의 세대교체 관련 발언이 시장에 미칠 영향이 주목됩니다."
     },
     {
-      "stockName": "삼성전기",
-      "stockCode": "009150",
-      "summary": "삼성전기 주가 하락 중 아시아뉴스통신",
-      "headline": "삼성전기 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "삼성전기 주가 하락 중"
-      ],
-      "mentionScore": 87.7,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-09-14T01:00:23.323Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "삼성전기 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5pbF9zOE5nOHRMQVFOS0JTWkZQN3hJNUFIVjZxZlpfSDVQcU9ZQVNZcV8tQVA4VnVWUEdSdGNYWVo5U1JRTF90TTFXazY1V1ZpT2dWQU9qSEcwNy00?oc=5",
-      "publishedAt": "Mon, 14 Sep 2026 00:40:29 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전기 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5pbF9zOE5nOHRMQVFOS0JTWkZQN3hJNUFIVjZxZlpfSDVQcU9ZQVNZcV8tQVA4VnVWUEdSdGNYWVo5U1JRTF90TTFXazY1V1ZpT2dWQU9qSEcwNy00?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "삼성전기 주가 하락, 시장 약세 반영",
-      "polishedBody": "삼성전기 주가가 최근 하락세를 보이며 시장의 우려를 반영하고 있습니다. 이는 전방 산업인 전자제품 수요 둔화와 경쟁 심화가 원인으로 지목됩니다. 현재 하락 방향성은 투자자들의 신중한 접근을 유도하고 있습니다. 향후 실적 발표와 주요 고객사의 설비 투자 계획이 주가 반등의 실마리가 될 수 있습니다."
-    },
-    {
       "stockName": "삼성전자",
       "stockCode": "005930",
       "summary": "코스피 6700 아래 '털썩'⋯장 초반 삼성전자 3%·SK하이닉스5%↓",
@@ -262,47 +351,6 @@
       "polishedBody": "SK하이닉스 주가는 장 초반 5% 하락하며 약세를 보이고 있습니다. 코스피 지수가 6700선 아래로 내려앉은 점이 투자 심리를 위축시킨 것으로 보입니다. 이는 반도체 업황 둔화 우려와 맞물려 주가에 부정적 영향을 주고 있습니다. 향후 반도체 수출 지표와 주요 고객사의 실적 발표가 주가 방향을 결정할 변수입니다."
     },
     {
-      "stockName": "한미반도체",
-      "stockCode": "042700",
-      "summary": "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손",
-      "headline": "한미반도체 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, KB Think 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "한미반도체 주가 하락 중",
-        "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손"
-      ],
-      "mentionScore": 87.5,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-09-14T01:00:23.323Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "한미반도체 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZNWI2YVhZZ2RMSzJLd1RGSk5LdVNQT1RyWjFwTi0ycTlxUkNEOExLRDdQQ0twUUNyYjdWNE9TZ0ZZT2FfYm1jRzBreFFiMlB4QWNVMEVyeGxiSm4t?oc=5",
-      "publishedAt": "Mon, 14 Sep 2026 00:30:43 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한미반도체 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZNWI2YVhZZ2RMSzJLd1RGSk5LdVNQT1RyWjFwTi0ycTlxUkNEOExLRDdQQ0twUUNyYjdWNE9TZ0ZZT2FfYm1jRzBreFFiMlB4QWNVMEVyeGxiSm4t?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손",
-          "source": "KB Think",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzbDdYSTAtMmVwejZNbmhlY0h2SEtiVl9ncnZXTjA1Wm1LbUZqUEpQWVJzQVE3amZxSk1waWRQcTRvbnJjZWxXbm9VX0hFMUh6R0h1VjljR3VyUS1FdGlIT3Y4ekNrd1lrTjk1bmdXY0dFUQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한미반도체, 스페이스X 투자 석 달 만에 평가손",
-      "polishedBody": "한미반도체 주가는 하락세를 나타내며 투자자들의 우려를 키우고 있습니다. 회사가 스페이스X에 500억 원을 투자한 지 석 달 만에 평가손실이 발생한 것으로 전해졌습니다. 이는 우주항공 산업의 불확실성과 투자 수익성에 대한 의문을 제기하며 주가에 부정적 요인으로 작용하고 있습니다. 향후 스페이스X의 기업가치 변화와 추가 투자 성과가 주가에 영향을 줄 수 있습니다."
-    },
-    {
       "stockName": "두산",
       "stockCode": "000150",
       "summary": "두산테스나 주가 하락 중 아시아뉴스통신",
@@ -369,40 +417,6 @@
       "hasNews": true,
       "polishedHeadline": "알테오젠, 주가 하락 전환",
       "polishedBody": "알테오젠 주가는 하락세로 돌아서며 투자자들의 관심을 받고 있습니다. 바이오 업종의 전반적인 조정 분위기가 주가에 영향을 준 것으로 보입니다. 최근 신약 파이프라인에 대한 기대감이 있었지만, 시장의 위험 회피 성향이 강해지며 차익 실현 매물이 나오고 있습니다. 향후 임상 결과 발표와 기술 수출 계약 소식이 주가 방향을 가를 것으로 예상됩니다."
-    },
-    {
-      "stockName": "LG전자",
-      "stockCode": "066570",
-      "summary": "LG전자 주가 하락 중 아시아뉴스통신",
-      "headline": "LG전자 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "LG전자 주가 하락 중"
-      ],
-      "mentionScore": 61.2,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-09-14T01:00:23.323Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "LG전자 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1LZG1nNXY2RHpUMlU1eHVlcEt6ejJ2cGRMMTVqMnFDRDNBSzRWS2JXeV9OWlE3aE52VjZ1NURJQ0h5NkRod0VOQkJ0YmVMa05laXdLb21CVnRKbUdDYXcyTVVB?oc=5",
-      "publishedAt": "Mon, 14 Sep 2026 00:12:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "LG전자 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1LZG1nNXY2RHpUMlU1eHVlcEt6ejJ2cGRMMTVqMnFDRDNBSzRWS2JXeV9OWlE3aE52VjZ1NURJQ0h5NkRod0VOQkJ0YmVMa05laXdLb21CVnRKbUdDYXcyTVVB?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "LG전자, 주가 하락세",
-      "polishedBody": "LG전자 주가는 하락세를 보이며 약세를 면치 못하고 있습니다. 가전 수요 둔화와 경쟁 심화가 실적에 부정적 영향을 줄 것이라는 우려가 제기됩니다. 시장에서는 글로벌 경기 침체로 인한 소비 위축이 주요 원인으로 지목되고 있습니다. 향후 가전 판매 동향과 신사업 부문의 성과가 주가 회복에 중요한 역할을 할 것입니다."
     },
     {
       "stockName": "아모레퍼시픽",
@@ -506,6 +520,99 @@
   ],
   "items": [
     {
+      "timestamp": "Mon, 14 Sep 2026 01:06:31 GMT",
+      "symbol": "009150",
+      "name": "삼성전기",
+      "changeRate": -4.43,
+      "price": null,
+      "summary": "삼성전기 주가 하락 중",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1MM0h1SXAtYTVzeEttWkgtYktCREFFV1FNMUpjYzhjeEJhc3g3eHRrZnJNQUd5dW1ScWdCc21XNlB1QWJGUGpTbDBjdmxhZnNtU0NmVW9kaEl0T1BoRzVMS2VVQzU1QnRad05fYkhicHJydw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -4.4%",
+        "삼성전기 주가, 9월 14일 장중 1,338,000원 4.43% 하락",
+        "삼성전기 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가, 9월 14일 장중 1,338,000원 4.43% 하락",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1MM0h1SXAtYTVzeEttWkgtYktCREFFV1FNMUpjYzhjeEJhc3g3eHRrZnJNQUd5dW1ScWdCc21XNlB1QWJGUGpTbDBjdmxhZnNtU0NmVW9kaEl0T1BoRzVMS2VVQzU1QnRad05fYkhicHJydw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9SeTktRHFld19BNUFTTDlfSkN2NDJwRXJNbGY0ZUFIRk9SdjdmYVIxdXo5SjZSTUI4Wi1uMFR2RUI0NEwtbjFEb3gzaTVDcXJwM1psMHNLeE9oZ3VrclpUd1hR?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 14 Sep 2026 01:28:32 GMT",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": -1.85,
+      "price": null,
+      "summary": "LG전자 주가 하락 중",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE50TGI1NGFnRHg0Rzk1NTFMVk9nZjlFTU9QbHZZcDhLWk9BbHVyQkRiemp1NFRmUzhwM1NOMi01VFNLZU5NSnc2SDJxeFRfV2pacU9UQ2dfc28wQVdYWUFvbkRoR01ORkkxNjdVSUIwUGJzdw?oc=5",
+      "mentionScore": 89.7,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -1.9%",
+        "LG전자 주가, 9월 14일 장중 195,800원 1.85% 하락",
+        "LG전자 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 9월 14일 장중 195,800원 1.85% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE50TGI1NGFnRHg0Rzk1NTFMVk9nZjlFTU9QbHZZcDhLWk9BbHVyQkRiemp1NFRmUzhwM1NOMi01VFNLZU5NSnc2SDJxeFRfV2pacU9UQ2dfc28wQVdYWUFvbkRoR01ORkkxNjdVSUIwUGJzdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "LG전자 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1LZG1nNXY2RHpUMlU1eHVlcEt6ejJ2cGRMMTVqMnFDRDNBSzRWS2JXeV9OWlE3aE52VjZ1NURJQ0h5NkRod0VOQkJ0YmVMa05laXdLb21CVnRKbUdDYXcyTVVB?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 14 Sep 2026 01:07:03 GMT",
+      "symbol": "042700",
+      "name": "한미반도체",
+      "changeRate": -1.73,
+      "price": null,
+      "summary": "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1xRlFYXzlReTAwTEpuSUdXSDBTYmRWOUo2VkIzZy1zYXc3d1l3aUV1NjNIMWUteGxieEtQb1R1bnF4cFYzWXg2YVUycjdzLTNSRHVOU2Jmb1o4M2t4V1lUaGd5X3NYZXQxbUtDLWNGQmFmZw?oc=5",
+      "mentionScore": 89.2,
+      "evidencePoints": [
+        "출처 톱스타뉴스, KB Think 기반 기사 2건",
+        "제목 기준 변동률 단서 -1.7%",
+        "한미반도체, 주가 9월 14일 장중 227,000원 1.73% 하락",
+        "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한미반도체, 주가 9월 14일 장중 227,000원 1.73% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1xRlFYXzlReTAwTEpuSUdXSDBTYmRWOUo2VkIzZy1zYXc3d1l3aUV1NjNIMWUteGxieEtQb1R1bnF4cFYzWXg2YVUycjdzLTNSRHVOU2Jmb1o4M2t4V1lUaGd5X3NYZXQxbUtDLWNGQmFmZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손",
+          "source": "KB Think",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzbDdYSTAtMmVwejZNbmhlY0h2SEtiVl9ncnZXTjA1Wm1LbUZqUEpQWVJzQVE3amZxSk1waWRQcTRvbnJjZWxXbm9VX0hFMUh6R0h1VjljR3VyUS1FdGlIT3Y4ekNrd1lrTjk1bmdXY0dFUQ?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Mon, 14 Sep 2026 00:21:20 GMT",
       "symbol": "356860",
       "name": "티엘비",
@@ -598,30 +705,6 @@
       ]
     },
     {
-      "timestamp": "Mon, 14 Sep 2026 00:40:29 GMT",
-      "symbol": "009150",
-      "name": "삼성전기",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성전기 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5pbF9zOE5nOHRMQVFOS0JTWkZQN3hJNUFIVjZxZlpfSDVQcU9ZQVNZcV8tQVA4VnVWUEdSdGNYWVo5U1JRTF90TTFXazY1V1ZpT2dWQU9qSEcwNy00?oc=5",
-      "mentionScore": 87.7,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "삼성전기 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전기 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5pbF9zOE5nOHRMQVFOS0JTWkZQN3hJNUFIVjZxZlpfSDVQcU9ZQVNZcV8tQVA4VnVWUEdSdGNYWVo5U1JRTF90TTFXazY1V1ZpT2dWQU9qSEcwNy00?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Mon, 14 Sep 2026 00:46:03 GMT",
       "symbol": "005930",
       "name": "삼성전자",
@@ -696,37 +779,6 @@
       ]
     },
     {
-      "timestamp": "Mon, 14 Sep 2026 00:30:43 GMT",
-      "symbol": "042700",
-      "name": "한미반도체",
-      "changeRate": null,
-      "price": null,
-      "summary": "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZNWI2YVhZZ2RMSzJLd1RGSk5LdVNQT1RyWjFwTi0ycTlxUkNEOExLRDdQQ0twUUNyYjdWNE9TZ0ZZT2FfYm1jRzBreFFiMlB4QWNVMEVyeGxiSm4t?oc=5",
-      "mentionScore": 87.5,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, KB Think 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "한미반도체 주가 하락 중",
-        "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한미반도체 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZNWI2YVhZZ2RMSzJLd1RGSk5LdVNQT1RyWjFwTi0ycTlxUkNEOExLRDdQQ0twUUNyYjdWNE9TZ0ZZT2FfYm1jRzBreFFiMlB4QWNVMEVyeGxiSm4t?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한미반도체, 스페이스X 500억 투자 석 달 만에 평가손",
-          "source": "KB Think",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAzbDdYSTAtMmVwejZNbmhlY0h2SEtiVl9ncnZXTjA1Wm1LbUZqUEpQWVJzQVE3amZxSk1waWRQcTRvbnJjZWxXbm9VX0hFMUh6R0h1VjljR3VyUS1FdGlIT3Y4ekNrd1lrTjk1bmdXY0dFUQ?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Mon, 14 Sep 2026 00:25:46 GMT",
       "symbol": "000150",
       "name": "두산",
@@ -771,30 +823,6 @@
           "title": "알테오젠 주가 하락 중",
           "source": "아시아뉴스통신",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1vZjUxdGVpaWJZNHREUlJPM1YxU0hPZlhQay1yYV9OQnp3WDJ2bVFrN2lfbVZ4RXN5M2d1OW9XcGZnc1VNM0tTNUZ5ZEUxeEpVZDNPbW9JaGhRZXlD?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 14 Sep 2026 00:12:00 GMT",
-      "symbol": "066570",
-      "name": "LG전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "LG전자 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1LZG1nNXY2RHpUMlU1eHVlcEt6ejJ2cGRMMTVqMnFDRDNBSzRWS2JXeV9OWlE3aE52VjZ1NURJQ0h5NkRod0VOQkJ0YmVMa05laXdLb21CVnRKbUdDYXcyTVVB?oc=5",
-      "mentionScore": 61.2,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "LG전자 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "LG전자 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1LZG1nNXY2RHpUMlU1eHVlcEt6ejJ2cGRMMTVqMnFDRDNBSzRWS2JXeV9OWlE3aE52VjZ1NURJQ0h5NkRod0VOQkJ0YmVMa05laXdLb21CVnRKbUdDYXcyTVVB?oc=5"
         }
       ]
     },
@@ -873,8 +901,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "openrouter",
-    "model": "deepseek/deepseek-v4-flash",
-    "fallbackReason": null
+    "provider": "rule-based",
+    "model": "signal-polish-v1",
+    "fallbackReason": "primary_failed"
   }
 }
