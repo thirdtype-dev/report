@@ -1,40 +1,88 @@
 {
-  "generated_at": "2026-09-16T01:00:16.714Z",
+  "generated_at": "2026-09-16T02:00:14.690Z",
   "generated_date": "2026-09-16",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 13건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
-      "stockName": "한미반도체",
-      "stockCode": "042700",
-      "summary": "한미반도체 주가 하락 중 아시아뉴스통신",
-      "headline": "한미반도체 주가 하락 중",
+      "stockName": "한화에어로스페이스",
+      "stockCode": "012450",
+      "summary": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감",
+      "headline": "한화에어로스페이스 주가 하락 중",
       "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
+        "출처 아시아뉴스통신, businesspost.co.kr 기반 기사 2건",
         "하락/약세 키워드 우세",
-        "한미반도체 주가 하락 중"
+        "한화에어로스페이스 주가 하락 중",
+        "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감"
       ],
-      "mentionScore": 61.5,
+      "mentionScore": 93.9,
       "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-09-16T01:00:16.714Z",
-      "cycleLabel": "KST_1000",
+      "channelCount": 2,
+      "updatedAt": "2026-09-16T02:00:14.690Z",
+      "cycleLabel": "KST_1100",
       "direction": "down",
       "changeRate": null,
-      "latestHeadline": "한미반도체 주가 하락 중",
+      "latestHeadline": "한화에어로스페이스 주가 하락 중",
       "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBYWw3LUNpZGZqMm05SkZ1dC1KS0h6aU10RWtKdG1jMjNuMW9RQkFhOVlyS2pZdlFsT2hlTG1SNjI2YXhsNDZCX2VfcHNSMjBqOE04MEFwWmd4andV?oc=5",
-      "publishedAt": "Wed, 16 Sep 2026 00:30:05 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9jWEV6MXBoTlV0Y3dSY3c3dWxaZlhHLTh5LTRpdTlDNTJuSkVVbTVSWE5zN0JFZ3laV1BZUHlQWGFWOGlJaGx3aWFLdWFOMzlLNmR3T1RvOHdhV19feUhkU2x3?oc=5",
+      "publishedAt": "Wed, 16 Sep 2026 00:39:44 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
+          "title": "한화에어로스페이스 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9jWEV6MXBoTlV0Y3dSY3c3dWxaZlhHLTh5LTRpdTlDNTJuSkVVbTVSWE5zN0JFZ3laV1BZUHlQWGFWOGlJaGx3aWFLdWFOMzlLNmR3T1RvOHdhV19feUhkU2x3?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감",
+          "source": "businesspost.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBRcEtia1hvTTZuZUZGV1RTTVk0S2ZaeEY4VXltSVNWQzJVbWtBWUhNOGtxaEtaem5sZjV0ZVBtanhka1N3enRtOGpLeDhjRThGTEEyaktsTGVWSkQxLUlvdGVwb29WUEZlXzVRZTFyZVVGOUk?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한화에어로스페이스 주가 하락 중",
+      "polishedBody": "한화에어로스페이스는 주가 6%대 내려 이슈로 단기 변동성이 확대됐습니다. 주가 내려 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "한미반도체",
+      "stockCode": "042700",
+      "summary": "한미반도체 주가 하락 중",
+      "headline": "한미반도체 주가, 9월 16일 장중 218,750원 1.69% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -1.7%",
+        "한미반도체 주가, 9월 16일 장중 218,750원 1.69% 하락",
+        "한미반도체 주가 하락 중"
+      ],
+      "mentionScore": 89.5,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-09-16T02:00:14.690Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -1.69,
+      "latestHeadline": "한미반도체 주가, 9월 16일 장중 218,750원 1.69% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE0xeWEtZTJXczdpV0tDUzNHNzFnTEtVRUtZcWRJQk1rXzJKRkd6NEhCaVBzS2k4QkR3ZG9GSnJnWHB2MTZfTU1yVXhVOWRJOWJES0xsdEJZczZoN1JyLVI4bUxMQVFFalM0cGJlQjVUUDZCZw?oc=5",
+      "publishedAt": "Wed, 16 Sep 2026 01:30:09 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한미반도체 주가, 9월 16일 장중 218,750원 1.69% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0xeWEtZTJXczdpV0tDUzNHNzFnTEtVRUtZcWRJQk1rXzJKRkd6NEhCaVBzS2k4QkR3ZG9GSnJnWHB2MTZfTU1yVXhVOWRJOWJES0xsdEJZczZoN1JyLVI4bUxMQVFFalM0cGJlQjVUUDZCZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
           "title": "한미반도체 주가 하락 중",
           "source": "아시아뉴스통신",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBYWw3LUNpZGZqMm05SkZ1dC1KS0h6aU10RWtKdG1jMjNuMW9RQkFhOVlyS2pZdlFsT2hlTG1SNjI2YXhsNDZCX2VfcHNSMjBqOE04MEFwWmd4andV?oc=5"
@@ -42,8 +90,117 @@
       ],
       "hasTelegram": false,
       "hasNews": true,
-      "polishedHeadline": "한미반도체 주가 하락 중",
-      "polishedBody": "한미반도체는 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+      "polishedHeadline": "한미반도체 주가, 9월 16일 장중 218,750원 1.69% 하락",
+      "polishedBody": "한미반도체는 주가, 9월 16일 장중 218,750원 1.69% 하락 이슈로 단기 변동성이 확대됐습니다. 주가, 9월 16일 장중 218,750원 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "삼성전기",
+      "stockCode": "009150",
+      "summary": "삼성전기 주가 상승 중",
+      "headline": "삼성전기 주가, 9월 16일 장중 1,337,000원 1.52% 상승",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.5%",
+        "삼성전기 주가, 9월 16일 장중 1,337,000원 1.52% 상승",
+        "삼성전기 주가 상승 중"
+      ],
+      "mentionScore": 89,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-09-16T02:00:14.690Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 1.52,
+      "latestHeadline": "삼성전기 주가, 9월 16일 장중 1,337,000원 1.52% 상승",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBLNk9JbzY5OHd2a2tKTzVZSHo1ZXg2TERSMnE4NFVhdU5nV0J3MnItNEQ4N0g5RG1RakVzWmJVRnRaWEJSVld1bFZ2R0VtTDl5V0stRUg2SE81OUJUNGtIVDhQemVfZ283MXVhUUtSTHluUQ?oc=5",
+      "publishedAt": "Wed, 16 Sep 2026 01:10:19 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가, 9월 16일 장중 1,337,000원 1.52% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBLNk9JbzY5OHd2a2tKTzVZSHo1ZXg2TERSMnE4NFVhdU5nV0J3MnItNEQ4N0g5RG1RakVzWmJVRnRaWEJSVld1bFZ2R0VtTDl5V0stRUg2SE81OUJUNGtIVDhQemVfZ283MXVhUUtSTHluUQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ueVVLNnhFWjNvRUF6RGlseTFGbUtUamt0ZWIyNHNOelFTazFOOU9mbVRYX2JTNTVLc0EtSmtEVk5wZmpvNThfQURqRnBxd1N3WnYxVDk3c2RJdFZycFR2QThn?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전기 주가, 9월 16일 장중 1,337,000원 1.52% 상승",
+      "polishedBody": "삼성전기는 주가, 9월 16일 장중 1,337,000원 1.52% 상승 재료가 부각되며 단기 모멘텀을 형성했습니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "에이피알",
+      "stockCode": "278470",
+      "summary": "에이피알 주가 하락 중 아시아뉴스통신",
+      "headline": "에이피알 주가 하락 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "에이피알 주가 하락 중"
+      ],
+      "mentionScore": 87.3,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-09-16T02:00:14.690Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "에이피알 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IWnFVTk0zbm5QX1FCRzZvYXJMT2h2ZHF1OV9jWmVkMXpNZ0VoN2xWdFVHRGM3WGlsWmhWZDNNYi1QcjgtLXBHdHUwc0szUEt6LU52S1E1ODJsRjll?oc=5",
+      "publishedAt": "Wed, 16 Sep 2026 00:27:15 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "에이피알 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IWnFVTk0zbm5QX1FCRzZvYXJMT2h2ZHF1OV9jWmVkMXpNZ0VoN2xWdFVHRGM3WGlsWmhWZDNNYi1QcjgtLXBHdHUwc0szUEt6LU52S1E1ODJsRjll?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "에이피알 주가 하락 중",
+      "polishedBody": "에이피알은 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "LG전자 주가, 9월 16일 장중 198,000원 1.98% 하락 톱스타뉴스",
+      "headline": "LG전자 주가, 9월 16일 장중 198,000원 1.98% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -2.0%",
+        "LG전자 주가, 9월 16일 장중 198,000원 1.98% 하락"
+      ],
+      "mentionScore": 64.2,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-09-16T02:00:14.690Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -1.98,
+      "latestHeadline": "LG전자 주가, 9월 16일 장중 198,000원 1.98% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBObkdORnBycWVVQzN2NjlxaWlwbHNKVWxYVWJsTnlfMTlSNUNjYVNraUthWWZmSi1ReFRhdm1CNzhhWXFzV1haNjVpc3ducTBmTWZUSWdJM0Z1bVB1YlEwVlBlQ19NODNDU0hsSnBIZ1hsQQ?oc=5",
+      "publishedAt": "Wed, 16 Sep 2026 01:49:19 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 9월 16일 장중 198,000원 1.98% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBObkdORnBycWVVQzN2NjlxaWlwbHNKVWxYVWJsTnlfMTlSNUNjYVNraUthWWZmSi1ReFRhdm1CNzhhWXFzV1haNjVpc3ducTBmTWZUSWdJM0Z1bVB1YlEwVlBlQ19NODNDU0hsSnBIZ1hsQQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "LG전자 주가, 9월 16일 장중 198,000원 1.98% 하락",
+      "polishedBody": "LG전자는 주가, 9월 16일 장중 198,000원 1.98% 하락 톱스타뉴스 이슈로 단기 변동성이 확대됐습니다. 주가, 9월 16일 장중 198,000원 톱스타뉴스 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
       "stockName": "삼현",
@@ -209,40 +366,6 @@
       "polishedBody": "삼성전자는 SK하이닉스, 美 반도체주 강세 재료가 부각되며 단기 모멘텀을 형성했습니다. SK하이닉스, 美 반도체주 강세 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "삼성전기",
-      "stockCode": "009150",
-      "summary": "삼성전기 주가 상승 중 아시아뉴스통신",
-      "headline": "삼성전기 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "삼성전기 주가 상승 중"
-      ],
-      "mentionScore": 61.7,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-09-16T01:00:16.714Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "삼성전기 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBtV2ZPSGVFSXFNUk1sRFdiUGQ5cWZoLXJYTTZTbkRZeGdvZVVTc0FrdWdnRzdSM0xtOGpyd0FpOF9ocUloZ1JnYVNTcUpOWWcxaExsNmZHQWJlclJZ?oc=5",
-      "publishedAt": "Wed, 16 Sep 2026 00:39:52 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전기 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBtV2ZPSGVFSXFNUk1sRFdiUGQ5cWZoLXJYTTZTbkRZeGdvZVVTc0FrdWdnRzdSM0xtOGpyd0FpOF9ocUloZ1JnYVNTcUpOWWcxaExsNmZHQWJlclJZ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전기 주가 상승 중",
-      "polishedBody": "삼성전기는 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
       "stockName": "두산",
       "stockCode": "000150",
       "summary": "두산에너빌리티 주가 하락 중 아시아뉴스통신",
@@ -345,40 +468,6 @@
       "polishedBody": "알테오젠은 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
-      "stockName": "한화에어로스페이스",
-      "stockCode": "012450",
-      "summary": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감 businesspost.co.kr",
-      "headline": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감",
-      "evidencePoints": [
-        "출처 businesspost.co.kr 기반 기사 1건",
-        "제목 기준 변동률 단서 -6.0%",
-        "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감"
-      ],
-      "mentionScore": 52.9,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-09-16T01:00:16.714Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": -6,
-      "latestHeadline": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감",
-      "source": "businesspost.co.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBRcEtia1hvTTZuZUZGV1RTTVk0S2ZaeEY4VXltSVNWQzJVbWtBWUhNOGtxaEtaem5sZjV0ZVBtanhka1N3enRtOGpLeDhjRThGTEEyaktsTGVWSkQxLUlvdGVwb29WUEZlXzVRZTFyZVVGOUk?oc=5",
-      "publishedAt": "Tue, 15 Sep 2026 08:44:19 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감",
-          "source": "businesspost.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBRcEtia1hvTTZuZUZGV1RTTVk0S2ZaeEY4VXltSVNWQzJVbWtBWUhNOGtxaEtaem5sZjV0ZVBtanhka1N3enRtOGpLeDhjRThGTEEyaktsTGVWSkQxLUlvdGVwb29WUEZlXzVRZTFyZVVGOUk?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한화에어로스페이스 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감",
-      "polishedBody": "한화에어로스페이스는 주가 6%대 내려 이슈로 단기 변동성이 확대됐습니다. 주가 내려 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감 businesspost.co.kr 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
       "stockName": "KB금융",
       "stockCode": "105560",
       "summary": "KB증권, '2026 KB금융 코리아 컨퍼런스' 개최 뉴스핌",
@@ -410,112 +499,147 @@
       "hasNews": true,
       "polishedHeadline": "KB증권, 2026 코리아 컨퍼런스 개최",
       "polishedBody": "KB증권이 2026 KB금융 코리아 컨퍼런스를 개최한다고 밝혔습니다. 이번 행사는 투자자들에게 시장 전망을 공유하는 자리로 마련되었습니다. 컨퍼런스 개최 소식은 KB금융의 시장 영향력을 보여주는 중립적 이벤트로 평가됩니다. 향후 컨퍼런스에서 발표될 주요 내용이 주목됩니다."
-    },
-    {
-      "stockName": "파크시스템스",
-      "stockCode": "140860",
-      "summary": "파크시스템스, 수주잔고 가파른 증가…“중장기 성장 유효”-메리츠",
-      "headline": "[장중수급포착] 파크시스템스, 외국인 10일 연속 순매수행진... 주가 +2.00%",
-      "evidencePoints": [
-        "출처 뉴스핌, edaily.co.kr 기반 기사 2건",
-        "제목 기준 변동률 단서 -49.0%",
-        "[장중수급포착] 파크시스템스, 외국인 10일 연속 순매수행진... 주가 +2.00%",
-        "파크시스템스, 수주잔고 가파른 증가…“중장기 성장 유효”-메리츠"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-09-15T02:00:15.331Z",
-      "cycleLabel": "KST_1100",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[장중수급포착] 파크시스템스, 외국인 10일 연속 순매수행진... 주가 +2.00%",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16UTU4NjFLdFNCSHNVcXBrelV5QXF2OWpjQUdvOHhQb3lCSkMwdndlaEdLZ0RyaTNGU3E0N0pjcGE4RXBMQ2xfUDAyRU5pMGZIem0wVDh0ZjF5LWx2?oc=5",
-      "publishedAt": "Tue, 15 Sep 2026 01:17:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[장중수급포착] 파크시스템스, 외국인 10일 연속 순매수행진... 주가 +2.00%",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16UTU4NjFLdFNCSHNVcXBrelV5QXF2OWpjQUdvOHhQb3lCSkMwdndlaEdLZ0RyaTNGU3E0N0pjcGE4RXBMQ2xfUDAyRU5pMGZIem0wVDh0ZjF5LWx2?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "파크시스템스, 수주잔고 가파른 증가…“중장기 성장 유효”-메리츠",
-          "source": "edaily.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOaTZBODBHZHhWdWkzSnhjS0tiRlc4MXNndFQ4NVdKNDNEbUdIY1lBWHZGYmNaZkFFZTFPM0dPTjdBbWxlOWZpcnBWVS1XblZYS2pzNU5LVEpWaC00anVxdnV3S3hub3lrR0Y3NHdrYjQ4WDhoTE1QMGREWGowa3A4dg?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "파크시스템스 외국인 10일 연속 순매수행진..",
-      "polishedBody": "파크시스템스는 수주잔고 가파른 증가…“중장기 성장 유효” 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 수주잔고 가파른 증가…“중장기 성장 유효” 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 외국인 10일 연속 순매수행진 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "LG전자",
-      "stockCode": "066570",
-      "summary": "LG전자 주가 상승 중",
-      "headline": "LG전자 주가, 9월 15일 장중 201,500원 1.66% 상승",
-      "evidencePoints": [
-        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
-        "제목 기준 변동률 단서 +1.7%",
-        "LG전자 주가, 9월 15일 장중 201,500원 1.66% 상승",
-        "LG전자 주가 상승 중"
-      ],
-      "mentionScore": 89.2,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-09-15T02:00:15.331Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": 1.66,
-      "latestHeadline": "LG전자 주가, 9월 15일 장중 201,500원 1.66% 상승",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBYLXNxcDFNU0VtOHFQZG53T2pMbWgzV1BVVnhMWE15ZmU4Zi1UQkdxMTFtZEZFWWlCV2t5NzdnRkJQXzZncG9nemgzaWpYazlHOGJUREp6N1VKMVpIOTJnd2toX1dYMkxSeFlYMVhuajdOdw?oc=5",
-      "publishedAt": "Tue, 15 Sep 2026 01:15:09 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "LG전자 주가, 9월 15일 장중 201,500원 1.66% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBYLXNxcDFNU0VtOHFQZG53T2pMbWgzV1BVVnhMWE15ZmU4Zi1UQkdxMTFtZEZFWWlCV2t5NzdnRkJQXzZncG9nemgzaWpYazlHOGJUREp6N1VKMVpIOTJnd2toX1dYMkxSeFlYMVhuajdOdw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "LG전자 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9talhsdExxeTRBZjhGT3gya1REcXU0eVFuaDMzSWY0a1R3aGc4amZtSnltcmE1azl0UGtEYkFFT1cyUDdZdW91Ykw3NEZWSnBKUnlLLWlmVXBNWU9j?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "LG전자 주가, 9월 15일 장중 201,500원 1.66% 상승",
-      "polishedBody": "LG전자는 주가, 9월 15일 장중 201,500원 1.66% 상승 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가, 9월 15일 장중 201,500원 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "Wed, 16 Sep 2026 00:30:05 GMT",
-      "symbol": "042700",
-      "name": "한미반도체",
+      "timestamp": "Wed, 16 Sep 2026 00:39:44 GMT",
+      "symbol": "012450",
+      "name": "한화에어로스페이스",
       "changeRate": null,
       "price": null,
-      "summary": "한미반도체 주가 하락 중 아시아뉴스통신",
+      "summary": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감",
       "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBYWw3LUNpZGZqMm05SkZ1dC1KS0h6aU10RWtKdG1jMjNuMW9RQkFhOVlyS2pZdlFsT2hlTG1SNjI2YXhsNDZCX2VfcHNSMjBqOE04MEFwWmd4andV?oc=5",
-      "mentionScore": 61.5,
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9jWEV6MXBoTlV0Y3dSY3c3dWxaZlhHLTh5LTRpdTlDNTJuSkVVbTVSWE5zN0JFZ3laV1BZUHlQWGFWOGlJaGx3aWFLdWFOMzlLNmR3T1RvOHdhV19feUhkU2x3?oc=5",
+      "mentionScore": 93.9,
       "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
+        "출처 아시아뉴스통신, businesspost.co.kr 기반 기사 2건",
         "하락/약세 키워드 우세",
+        "한화에어로스페이스 주가 하락 중",
+        "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한화에어로스페이스 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9jWEV6MXBoTlV0Y3dSY3c3dWxaZlhHLTh5LTRpdTlDNTJuSkVVbTVSWE5zN0JFZ3laV1BZUHlQWGFWOGlJaGx3aWFLdWFOMzlLNmR3T1RvOHdhV19feUhkU2x3?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감",
+          "source": "businesspost.co.kr",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBRcEtia1hvTTZuZUZGV1RTTVk0S2ZaeEY4VXltSVNWQzJVbWtBWUhNOGtxaEtaem5sZjV0ZVBtanhka1N3enRtOGpLeDhjRThGTEEyaktsTGVWSkQxLUlvdGVwb29WUEZlXzVRZTFyZVVGOUk?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 16 Sep 2026 01:30:09 GMT",
+      "symbol": "042700",
+      "name": "한미반도체",
+      "changeRate": -1.69,
+      "price": null,
+      "summary": "한미반도체 주가 하락 중",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE0xeWEtZTJXczdpV0tDUzNHNzFnTEtVRUtZcWRJQk1rXzJKRkd6NEhCaVBzS2k4QkR3ZG9GSnJnWHB2MTZfTU1yVXhVOWRJOWJES0xsdEJZczZoN1JyLVI4bUxMQVFFalM0cGJlQjVUUDZCZw?oc=5",
+      "mentionScore": 89.5,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 -1.7%",
+        "한미반도체 주가, 9월 16일 장중 218,750원 1.69% 하락",
         "한미반도체 주가 하락 중"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
+          "title": "한미반도체 주가, 9월 16일 장중 218,750원 1.69% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0xeWEtZTJXczdpV0tDUzNHNzFnTEtVRUtZcWRJQk1rXzJKRkd6NEhCaVBzS2k4QkR3ZG9GSnJnWHB2MTZfTU1yVXhVOWRJOWJES0xsdEJZczZoN1JyLVI4bUxMQVFFalM0cGJlQjVUUDZCZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
           "title": "한미반도체 주가 하락 중",
           "source": "아시아뉴스통신",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBYWw3LUNpZGZqMm05SkZ1dC1KS0h6aU10RWtKdG1jMjNuMW9RQkFhOVlyS2pZdlFsT2hlTG1SNjI2YXhsNDZCX2VfcHNSMjBqOE04MEFwWmd4andV?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 16 Sep 2026 01:10:19 GMT",
+      "symbol": "009150",
+      "name": "삼성전기",
+      "changeRate": 1.52,
+      "price": null,
+      "summary": "삼성전기 주가 상승 중",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBLNk9JbzY5OHd2a2tKTzVZSHo1ZXg2TERSMnE4NFVhdU5nV0J3MnItNEQ4N0g5RG1RakVzWmJVRnRaWEJSVld1bFZ2R0VtTDl5V0stRUg2SE81OUJUNGtIVDhQemVfZ283MXVhUUtSTHluUQ?oc=5",
+      "mentionScore": 89,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.5%",
+        "삼성전기 주가, 9월 16일 장중 1,337,000원 1.52% 상승",
+        "삼성전기 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가, 9월 16일 장중 1,337,000원 1.52% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBLNk9JbzY5OHd2a2tKTzVZSHo1ZXg2TERSMnE4NFVhdU5nV0J3MnItNEQ4N0g5RG1RakVzWmJVRnRaWEJSVld1bFZ2R0VtTDl5V0stRUg2SE81OUJUNGtIVDhQemVfZ283MXVhUUtSTHluUQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ueVVLNnhFWjNvRUF6RGlseTFGbUtUamt0ZWIyNHNOelFTazFOOU9mbVRYX2JTNTVLc0EtSmtEVk5wZmpvNThfQURqRnBxd1N3WnYxVDk3c2RJdFZycFR2QThn?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 16 Sep 2026 00:27:15 GMT",
+      "symbol": "278470",
+      "name": "에이피알",
+      "changeRate": null,
+      "price": null,
+      "summary": "에이피알 주가 하락 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IWnFVTk0zbm5QX1FCRzZvYXJMT2h2ZHF1OV9jWmVkMXpNZ0VoN2xWdFVHRGM3WGlsWmhWZDNNYi1QcjgtLXBHdHUwc0szUEt6LU52S1E1ODJsRjll?oc=5",
+      "mentionScore": 87.3,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "에이피알 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "에이피알 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IWnFVTk0zbm5QX1FCRzZvYXJMT2h2ZHF1OV9jWmVkMXpNZ0VoN2xWdFVHRGM3WGlsWmhWZDNNYi1QcjgtLXBHdHUwc0szUEt6LU52S1E1ODJsRjll?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 16 Sep 2026 01:49:19 GMT",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": -1.98,
+      "price": null,
+      "summary": "LG전자 주가, 9월 16일 장중 198,000원 1.98% 하락 톱스타뉴스",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBObkdORnBycWVVQzN2NjlxaWlwbHNKVWxYVWJsTnlfMTlSNUNjYVNraUthWWZmSi1ReFRhdm1CNzhhWXFzV1haNjVpc3ducTBmTWZUSWdJM0Z1bVB1YlEwVlBlQ19NODNDU0hsSnBIZ1hsQQ?oc=5",
+      "mentionScore": 64.2,
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -2.0%",
+        "LG전자 주가, 9월 16일 장중 198,000원 1.98% 하락"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 9월 16일 장중 198,000원 1.98% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBObkdORnBycWVVQzN2NjlxaWlwbHNKVWxYVWJsTnlfMTlSNUNjYVNraUthWWZmSi1ReFRhdm1CNzhhWXFzV1haNjVpc3ducTBmTWZUSWdJM0Z1bVB1YlEwVlBlQ19NODNDU0hsSnBIZ1hsQQ?oc=5"
         }
       ]
     },
@@ -643,30 +767,6 @@
       ]
     },
     {
-      "timestamp": "Wed, 16 Sep 2026 00:39:52 GMT",
-      "symbol": "009150",
-      "name": "삼성전기",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성전기 주가 상승 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBtV2ZPSGVFSXFNUk1sRFdiUGQ5cWZoLXJYTTZTbkRZeGdvZVVTc0FrdWdnRzdSM0xtOGpyd0FpOF9ocUloZ1JnYVNTcUpOWWcxaExsNmZHQWJlclJZ?oc=5",
-      "mentionScore": 61.7,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "삼성전기 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전기 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBtV2ZPSGVFSXFNUk1sRFdiUGQ5cWZoLXJYTTZTbkRZeGdvZVVTc0FrdWdnRzdSM0xtOGpyd0FpOF9ocUloZ1JnYVNTcUpOWWcxaExsNmZHQWJlclJZ?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Wed, 16 Sep 2026 00:31:44 GMT",
       "symbol": "000150",
       "name": "두산",
@@ -739,30 +839,6 @@
       ]
     },
     {
-      "timestamp": "Tue, 15 Sep 2026 08:44:19 GMT",
-      "symbol": "012450",
-      "name": "한화에어로스페이스",
-      "changeRate": -6,
-      "price": null,
-      "summary": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감 businesspost.co.kr",
-      "source": "businesspost.co.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBRcEtia1hvTTZuZUZGV1RTTVk0S2ZaeEY4VXltSVNWQzJVbWtBWUhNOGtxaEtaem5sZjV0ZVBtanhka1N3enRtOGpLeDhjRThGTEEyaktsTGVWSkQxLUlvdGVwb29WUEZlXzVRZTFyZVVGOUk?oc=5",
-      "mentionScore": 52.9,
-      "evidencePoints": [
-        "출처 businesspost.co.kr 기반 기사 1건",
-        "제목 기준 변동률 단서 -6.0%",
-        "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] 한화에어로스페이스 주가 6%대 내려, 코스피 외국인·기관 매도에 6620선 하락 마감",
-          "source": "businesspost.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBRcEtia1hvTTZuZUZGV1RTTVk0S2ZaeEY4VXltSVNWQzJVbWtBWUhNOGtxaEtaem5sZjV0ZVBtanhka1N3enRtOGpLeDhjRThGTEEyaktsTGVWSkQxLUlvdGVwb29WUEZlXzVRZTFyZVVGOUk?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Tue, 15 Sep 2026 05:34:00 GMT",
       "symbol": "105560",
       "name": "KB금융",
@@ -784,68 +860,6 @@
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wVS05UlU1Q2lGXzYzTU5iMGNTaXdaTlYtSEhWcE9DWkhFb0pud2lpbmZNUWJqUFRGRjRKQ0xsOEszTUExTVVhejAxOG96cUJPSG1naFEyUnJHR09z?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "Tue, 15 Sep 2026 01:17:00 GMT",
-      "symbol": "140860",
-      "name": "파크시스템스",
-      "changeRate": null,
-      "price": null,
-      "summary": "파크시스템스, 수주잔고 가파른 증가…“중장기 성장 유효”-메리츠",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16UTU4NjFLdFNCSHNVcXBrelV5QXF2OWpjQUdvOHhQb3lCSkMwdndlaEdLZ0RyaTNGU3E0N0pjcGE4RXBMQ2xfUDAyRU5pMGZIem0wVDh0ZjF5LWx2?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 뉴스핌, edaily.co.kr 기반 기사 2건",
-        "제목 기준 변동률 단서 -49.0%",
-        "[장중수급포착] 파크시스템스, 외국인 10일 연속 순매수행진... 주가 +2.00%",
-        "파크시스템스, 수주잔고 가파른 증가…“중장기 성장 유효”-메리츠"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[장중수급포착] 파크시스템스, 외국인 10일 연속 순매수행진... 주가 +2.00%",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16UTU4NjFLdFNCSHNVcXBrelV5QXF2OWpjQUdvOHhQb3lCSkMwdndlaEdLZ0RyaTNGU3E0N0pjcGE4RXBMQ2xfUDAyRU5pMGZIem0wVDh0ZjF5LWx2?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "파크시스템스, 수주잔고 가파른 증가…“중장기 성장 유효”-메리츠",
-          "source": "edaily.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOaTZBODBHZHhWdWkzSnhjS0tiRlc4MXNndFQ4NVdKNDNEbUdIY1lBWHZGYmNaZkFFZTFPM0dPTjdBbWxlOWZpcnBWVS1XblZYS2pzNU5LVEpWaC00anVxdnV3S3hub3lrR0Y3NHdrYjQ4WDhoTE1QMGREWGowa3A4dg?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 15 Sep 2026 01:15:09 GMT",
-      "symbol": "066570",
-      "name": "LG전자",
-      "changeRate": 1.66,
-      "price": null,
-      "summary": "LG전자 주가 상승 중",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBYLXNxcDFNU0VtOHFQZG53T2pMbWgzV1BVVnhMWE15ZmU4Zi1UQkdxMTFtZEZFWWlCV2t5NzdnRkJQXzZncG9nemgzaWpYazlHOGJUREp6N1VKMVpIOTJnd2toX1dYMkxSeFlYMVhuajdOdw?oc=5",
-      "mentionScore": 89.2,
-      "evidencePoints": [
-        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
-        "제목 기준 변동률 단서 +1.7%",
-        "LG전자 주가, 9월 15일 장중 201,500원 1.66% 상승",
-        "LG전자 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "LG전자 주가, 9월 15일 장중 201,500원 1.66% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBYLXNxcDFNU0VtOHFQZG53T2pMbWgzV1BVVnhMWE15ZmU4Zi1UQkdxMTFtZEZFWWlCV2t5NzdnRkJQXzZncG9nemgzaWpYazlHOGJUREp6N1VKMVpIOTJnd2toX1dYMkxSeFlYMVhuajdOdw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "LG전자 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9talhsdExxeTRBZjhGT3gya1REcXU0eVFuaDMzSWY0a1R3aGc4amZtSnltcmE1azl0UGtEYkFFT1cyUDdZdW91Ykw3NEZWSnBKUnlLLWlmVXBNWU9j?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -853,8 +867,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "mixed",
-    "model": "signal-polish-v1, deepseek/deepseek-v4-flash",
-    "fallbackReason": "partial_primary_failed"
+    "provider": "rule-based",
+    "model": "signal-polish-v1",
+    "fallbackReason": "primary_failed"
   }
 }
