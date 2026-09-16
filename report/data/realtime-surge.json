@@ -1,16 +1,90 @@
 {
-  "generated_at": "2026-09-16T03:00:21.264Z",
+  "generated_at": "2026-09-16T04:00:27.730Z",
   "generated_date": "2026-09-16",
-  "slot_hour": 12,
-  "cycle_label": "KST_1200",
-  "slot_label": "12:00",
+  "slot_hour": 13,
+  "cycle_label": "KST_1300",
+  "slot_label": "13:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 12:00 실시간 급등",
+    "title": "KST 13:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 14건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "두산",
+      "stockCode": "000150",
+      "summary": "두산에너빌리티 주가 하락 중",
+      "headline": "두산퓨얼셀 주가, 9월 16일 장중 50,100원 2.91% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산퓨얼셀 주가, 9월 16일 장중 50,100원 2.91% 하락",
+        "두산에너빌리티 주가 하락 중"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-09-16T04:00:27.730Z",
+      "cycleLabel": "KST_1300",
+      "direction": "down",
+      "changeRate": -2.91,
+      "latestHeadline": "두산퓨얼셀 주가, 9월 16일 장중 50,100원 2.91% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE12eHpFWnBjdGl6SzBPZERhTWVMTGFrSlZrOUJwcDJ5aWRjeXFzM1ppRjQxQW9DZTRsTzkyRF9mMDZjQXRaRUp5dnV3UWxSU2Q1dXBIdkEyOXQ5WDU3dGpPSy1BRzdlUktBVzlWOHpUUjcyZw?oc=5",
+      "publishedAt": "Wed, 16 Sep 2026 01:53:08 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산퓨얼셀 주가, 9월 16일 장중 50,100원 2.91% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE12eHpFWnBjdGl6SzBPZERhTWVMTGFrSlZrOUJwcDJ5aWRjeXFzM1ppRjQxQW9DZTRsTzkyRF9mMDZjQXRaRUp5dnV3UWxSU2Q1dXBIdkEyOXQ5WDU3dGpPSy1BRzdlUktBVzlWOHpUUjcyZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산에너빌리티 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wYnhDQm1KcU1jRmNVdGQyOU9Razg0OUUyZEp5aVBFWkRxbTFvXzRzVU95cktWaG5LZ0huR3JDMWNKSjJTeGYzQ2FHd1RQNkJsZmszeFM1aldZeDJT?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "두산 퓨얼셀 주가, 9월 16일 장중 50,100원 2.91% 하락",
+      "polishedBody": "두산은 에너빌리티 주가 하락 중 이슈로 단기 변동성이 확대됐습니다. 에너빌리티 주가 하락 중 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 퓨얼셀 주가, 9월 16일 장중 50,100원 2.91% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "KB금융",
+      "stockCode": "105560",
+      "summary": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평 econovill.com",
+      "headline": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평",
+      "evidencePoints": [
+        "출처 econovill.com 기반 기사 1건",
+        "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평"
+      ],
+      "mentionScore": 61.6,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-09-16T04:00:27.730Z",
+      "cycleLabel": "KST_1300",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평",
+      "source": "econovill.com",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12dEswTGh0aGdLV0VINGZnVHZwd1g2WmFKb2xfeTBhbDZtNU9MX0hFeld3bHVDVG9nTUJIdE4zbUM0Mm9GbnI3ZHVMUkw2LXhFT2F4ZlZ2ck1oWXQwSGQ5YWlGSkptM1htcE1RbA?oc=5",
+      "publishedAt": "Wed, 16 Sep 2026 03:34:27 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평",
+          "source": "econovill.com",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12dEswTGh0aGdLV0VINGZnVHZwd1g2WmFKb2xfeTBhbDZtNU9MX0hFeld3bHVDVG9nTUJIdE4zbUM0Mm9GbnI3ZHVMUkw2LXhFT2F4ZlZ2ck1oWXQwSGQ5YWlGSkptM1htcE1RbA?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "KB금융 증권가, 실적·밸류업 호평",
+      "polishedBody": "KB금융은 ‘이재근 체제’ 출범 힘받는 …증권가 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 ‘이재근 체제’ 출범 힘받는 …증권가 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 증권가, 실적·밸류업 호평 econovill.com 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
     {
       "stockName": "에이피알",
       "stockCode": "278470",
@@ -407,40 +481,6 @@
       "polishedBody": "삼성전자는 SK하이닉스, 美 반도체주 강세 재료가 부각되며 단기 모멘텀을 형성했습니다. SK하이닉스, 美 반도체주 강세 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "두산",
-      "stockCode": "000150",
-      "summary": "두산에너빌리티 주가 하락 중 아시아뉴스통신",
-      "headline": "두산에너빌리티 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "두산에너빌리티 주가 하락 중"
-      ],
-      "mentionScore": 61.5,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-09-16T01:00:16.714Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "두산에너빌리티 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wYnhDQm1KcU1jRmNVdGQyOU9Razg0OUUyZEp5aVBFWkRxbTFvXzRzVU95cktWaG5LZ0huR3JDMWNKSjJTeGYzQ2FHd1RQNkJsZmszeFM1aldZeDJT?oc=5",
-      "publishedAt": "Wed, 16 Sep 2026 00:31:44 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산에너빌리티 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wYnhDQm1KcU1jRmNVdGQyOU9Razg0OUUyZEp5aVBFWkRxbTFvXzRzVU95cktWaG5LZ0huR3JDMWNKSjJTeGYzQ2FHd1RQNkJsZmszeFM1aldZeDJT?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "두산 에너빌리티 주가 하락 중",
-      "polishedBody": "두산은 에너빌리티 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 에너빌리티 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
       "stockName": "한국항공우주",
       "stockCode": "047810",
       "summary": "한국항공우주 주가 하락 중 아시아뉴스통신",
@@ -507,42 +547,63 @@
       "hasNews": true,
       "polishedHeadline": "알테오젠 주가 하락 중",
       "polishedBody": "알테오젠은 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "KB금융",
-      "stockCode": "105560",
-      "summary": "KB증권, '2026 KB금융 코리아 컨퍼런스' 개최 뉴스핌",
-      "headline": "KB증권, '2026 KB금융 코리아 컨퍼런스' 개최",
-      "evidencePoints": [
-        "출처 뉴스핌 기반 기사 1건",
-        "KB증권, '2026 KB금융 코리아 컨퍼런스' 개최"
-      ],
-      "mentionScore": 61.6,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-09-15T06:00:35.398Z",
-      "cycleLabel": "KST_1500",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "KB증권, '2026 KB금융 코리아 컨퍼런스' 개최",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wVS05UlU1Q2lGXzYzTU5iMGNTaXdaTlYtSEhWcE9DWkhFb0pud2lpbmZNUWJqUFRGRjRKQ0xsOEszTUExTVVhejAxOG96cUJPSG1naFEyUnJHR09z?oc=5",
-      "publishedAt": "Tue, 15 Sep 2026 05:34:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "KB증권, '2026 KB금융 코리아 컨퍼런스' 개최",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wVS05UlU1Q2lGXzYzTU5iMGNTaXdaTlYtSEhWcE9DWkhFb0pud2lpbmZNUWJqUFRGRjRKQ0xsOEszTUExTVVhejAxOG96cUJPSG1naFEyUnJHR09z?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "KB증권, 2026 코리아 컨퍼런스 개최",
-      "polishedBody": "KB증권이 2026 KB금융 코리아 컨퍼런스를 개최한다고 밝혔습니다. 이번 행사는 투자자들에게 시장 전망을 공유하는 자리로 마련되었습니다. 컨퍼런스 개최 소식은 KB금융의 시장 영향력을 보여주는 중립적 이벤트로 평가됩니다. 향후 컨퍼런스에서 발표될 주요 내용이 주목됩니다."
     }
   ],
   "items": [
+    {
+      "timestamp": "Wed, 16 Sep 2026 01:53:08 GMT",
+      "symbol": "000150",
+      "name": "두산",
+      "changeRate": -2.91,
+      "price": null,
+      "summary": "두산에너빌리티 주가 하락 중",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE12eHpFWnBjdGl6SzBPZERhTWVMTGFrSlZrOUJwcDJ5aWRjeXFzM1ppRjQxQW9DZTRsTzkyRF9mMDZjQXRaRUp5dnV3UWxSU2Q1dXBIdkEyOXQ5WDU3dGpPSy1BRzdlUktBVzlWOHpUUjcyZw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 아시아뉴스통신 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산퓨얼셀 주가, 9월 16일 장중 50,100원 2.91% 하락",
+        "두산에너빌리티 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산퓨얼셀 주가, 9월 16일 장중 50,100원 2.91% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE12eHpFWnBjdGl6SzBPZERhTWVMTGFrSlZrOUJwcDJ5aWRjeXFzM1ppRjQxQW9DZTRsTzkyRF9mMDZjQXRaRUp5dnV3UWxSU2Q1dXBIdkEyOXQ5WDU3dGpPSy1BRzdlUktBVzlWOHpUUjcyZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산에너빌리티 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wYnhDQm1KcU1jRmNVdGQyOU9Razg0OUUyZEp5aVBFWkRxbTFvXzRzVU95cktWaG5LZ0huR3JDMWNKSjJTeGYzQ2FHd1RQNkJsZmszeFM1aldZeDJT?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 16 Sep 2026 03:34:27 GMT",
+      "symbol": "105560",
+      "name": "KB금융",
+      "changeRate": null,
+      "price": null,
+      "summary": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평 econovill.com",
+      "source": "econovill.com",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12dEswTGh0aGdLV0VINGZnVHZwd1g2WmFKb2xfeTBhbDZtNU9MX0hFeld3bHVDVG9nTUJIdE4zbUM0Mm9GbnI3ZHVMUkw2LXhFT2F4ZlZ2ck1oWXQwSGQ5YWlGSkptM1htcE1RbA?oc=5",
+      "mentionScore": 61.6,
+      "evidencePoints": [
+        "출처 econovill.com 기반 기사 1건",
+        "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평",
+          "source": "econovill.com",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12dEswTGh0aGdLV0VINGZnVHZwd1g2WmFKb2xfeTBhbDZtNU9MX0hFeld3bHVDVG9nTUJIdE4zbUM0Mm9GbnI3ZHVMUkw2LXhFT2F4ZlZ2ck1oWXQwSGQ5YWlGSkptM1htcE1RbA?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Wed, 16 Sep 2026 02:04:00 GMT",
       "symbol": "278470",
@@ -839,30 +900,6 @@
       ]
     },
     {
-      "timestamp": "Wed, 16 Sep 2026 00:31:44 GMT",
-      "symbol": "000150",
-      "name": "두산",
-      "changeRate": null,
-      "price": null,
-      "summary": "두산에너빌리티 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wYnhDQm1KcU1jRmNVdGQyOU9Razg0OUUyZEp5aVBFWkRxbTFvXzRzVU95cktWaG5LZ0huR3JDMWNKSjJTeGYzQ2FHd1RQNkJsZmszeFM1aldZeDJT?oc=5",
-      "mentionScore": 61.5,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "두산에너빌리티 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산에너빌리티 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wYnhDQm1KcU1jRmNVdGQyOU9Razg0OUUyZEp5aVBFWkRxbTFvXzRzVU95cktWaG5LZ0huR3JDMWNKSjJTeGYzQ2FHd1RQNkJsZmszeFM1aldZeDJT?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Wed, 16 Sep 2026 00:29:58 GMT",
       "symbol": "047810",
       "name": "한국항공우주",
@@ -909,29 +946,6 @@
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5mVkZfTHRpdGRONmlsRlBrci1raTVmVExnQUtZdFVmdG5qcFJzOFF6WmptNDFRcy1Sd1VXVTBtSnlyODk4dzlVbUNYRTRmcGpGVm9NTEpFUTNmdC1j?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "Tue, 15 Sep 2026 05:34:00 GMT",
-      "symbol": "105560",
-      "name": "KB금융",
-      "changeRate": null,
-      "price": null,
-      "summary": "KB증권, '2026 KB금융 코리아 컨퍼런스' 개최 뉴스핌",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wVS05UlU1Q2lGXzYzTU5iMGNTaXdaTlYtSEhWcE9DWkhFb0pud2lpbmZNUWJqUFRGRjRKQ0xsOEszTUExTVVhejAxOG96cUJPSG1naFEyUnJHR09z?oc=5",
-      "mentionScore": 61.6,
-      "evidencePoints": [
-        "출처 뉴스핌 기반 기사 1건",
-        "KB증권, '2026 KB금융 코리아 컨퍼런스' 개최"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "KB증권, '2026 KB금융 코리아 컨퍼런스' 개최",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wVS05UlU1Q2lGXzYzTU5iMGNTaXdaTlYtSEhWcE9DWkhFb0pud2lpbmZNUWJqUFRGRjRKQ0xsOEszTUExTVVhejAxOG96cUJPSG1naFEyUnJHR09z?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -939,8 +953,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "openrouter",
-    "model": "deepseek/deepseek-v4-flash",
-    "fallbackReason": null
+    "provider": "rule-based",
+    "model": "signal-polish-v1",
+    "fallbackReason": "primary_failed"
   }
 }
