@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-09-17T04:00:15.515Z",
+  "generated_at": "2026-09-17T05:00:32.385Z",
   "generated_date": "2026-09-17",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 13건",
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 14건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "올릭스",
+      "stockCode": "226950",
+      "summary": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\" 한국경제",
+      "headline": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\"",
+      "evidencePoints": [
+        "출처 한국경제 기반 기사 1건",
+        "제목 기준 변동률 단서 +29.2%",
+        "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\""
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-09-17T05:00:32.385Z",
+      "cycleLabel": "KST_1400",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\"",
+      "source": "한국경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nd2dMR2xLTlZxMmw0OVE2ZWx1blZISkhqUkpTQnltVVNuWXdsNE8weDlkcUJLY01kWUp0bUMyUXVaRFc2QWliU2txRXBrRjlvSGRlLTRVT05pUQ?oc=5",
+      "publishedAt": "Thu, 17 Sep 2026 04:53:05 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\"",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nd2dMR2xLTlZxMmw0OVE2ZWx1blZISkhqUkpTQnltVVNuWXdsNE8weDlkcUJLY01kWUp0bUMyUXVaRFc2QWliU2txRXBrRjlvSGRlLTRVT05pUQ?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "올릭스, 1150억 오버행 해소…9000억 기술이전 기대",
+      "polishedBody": "올릭스의 1150억 원 규모 오버행 물량이 해소되어 주식 공급 부담이 완화되었습니다. 추가 자금 확보가 가능해지면서 기술이전 계약 체결 가능성이 높아지고 있습니다. 이는 '중립' 신호로 평가되며 시장의 기대감이 반영된 상황입니다. 향후 9000억 대 기술이전 성사 여부가 주가에 중요한 변수가 될 것입니다."
+    },
     {
       "stockName": "두산",
       "stockCode": "000150",
@@ -492,6 +526,30 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Thu, 17 Sep 2026 04:53:05 GMT",
+      "symbol": "226950",
+      "name": "올릭스",
+      "changeRate": null,
+      "price": null,
+      "summary": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\" 한국경제",
+      "source": "한국경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nd2dMR2xLTlZxMmw0OVE2ZWx1blZISkhqUkpTQnltVVNuWXdsNE8weDlkcUJLY01kWUp0bUMyUXVaRFc2QWliU2txRXBrRjlvSGRlLTRVT05pUQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 한국경제 기반 기사 1건",
+        "제목 기준 변동률 단서 +29.2%",
+        "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\"",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nd2dMR2xLTlZxMmw0OVE2ZWx1blZISkhqUkpTQnltVVNuWXdsNE8weDlkcUJLY01kWUp0bUMyUXVaRFc2QWliU2txRXBrRjlvSGRlLTRVT05pUQ?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Thu, 17 Sep 2026 03:01:00 GMT",
       "symbol": "000150",
