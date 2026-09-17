@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-09-17T03:00:27.285Z",
+  "generated_at": "2026-09-17T04:00:15.515Z",
   "generated_date": "2026-09-17",
-  "slot_hour": 12,
-  "cycle_label": "KST_1200",
-  "slot_label": "12:00",
+  "slot_hour": 13,
+  "cycle_label": "KST_1300",
+  "slot_label": "13:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 12:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 14건",
+    "title": "KST 13:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 13건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "두산",
+      "stockCode": "000150",
+      "summary": "美 원전 수주 기대감에 두산그룹주 매수 [주식 초고수는 지금]",
+      "headline": "[공시 Pick] 두산, 잔여 자사주 전량 소각…6%대 강세",
+      "evidencePoints": [
+        "출처 뉴스투데이, 매일경제 기반 기사 2건",
+        "제목 기준 변동률 단서 +6.0%",
+        "[공시 Pick] 두산, 잔여 자사주 전량 소각…6%대 강세",
+        "美 원전 수주 기대감에 두산그룹주 매수 [주식 초고수는 지금]"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-09-17T04:00:15.515Z",
+      "cycleLabel": "KST_1300",
+      "direction": "up",
+      "changeRate": 6,
+      "latestHeadline": "[공시 Pick] 두산, 잔여 자사주 전량 소각…6%대 강세",
+      "source": "뉴스투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9oVWxqVmNwSDE0OXB2YnhsVDMzRGNRSXNpUkk5WWFKZVBNVDZaVXNHMkU5dkZHWkFnX3ZJQllPYVhJbGVUdnZIaDZ4c0VfLW5jNEF6MUZwRjFUM19QZGc?oc=5",
+      "publishedAt": "Thu, 17 Sep 2026 03:01:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[공시 Pick] 두산, 잔여 자사주 전량 소각…6%대 강세",
+          "source": "뉴스투데이",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9oVWxqVmNwSDE0OXB2YnhsVDMzRGNRSXNpUkk5WWFKZVBNVDZaVXNHMkU5dkZHWkFnX3ZJQllPYVhJbGVUdnZIaDZ4c0VfLW5jNEF6MUZwRjFUM19QZGc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "美 원전 수주 기대감에 두산그룹주 매수 [주식 초고수는 지금]",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBwSV9IR1BNNHZMQ1VtRTM1TC1NMlQ2SWFSeXlCblVCSGwxbGdneW4zRWIxaTZURVo1OGVGNG5KdG4ya2o0YXpBTHl6V0VTM21UYXc?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "두산, 잔여 자사주 전량 소각…주가 6%대 강세",
+      "polishedBody": "두산이 보유한 잔여 자사주를 전량 소각하기로 결정했습니다. 이 소식에 주가는 6% 이상 오르며 강한 상승 흐름을 보였습니다. 미국 원전 수주 기대감이 더해지며 긍정적인 매수세가 유입되고 있습니다. 향후 미국 원전 수주 관련 추가 소식이 주가에 영향을 줄 수 있어 주목됩니다."
+    },
     {
       "stockName": "삼성전기",
       "stockCode": "009150",
@@ -84,40 +125,6 @@
       "hasNews": true,
       "polishedHeadline": "비나텍 블룸에너지 내 독점 지위 '확고'",
       "polishedBody": "비나텍은 블룸에너지 내 독점 지위 '확고' supple.kr 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 블룸에너지 내 독점 지위 '확고' supple.kr 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "두산",
-      "stockCode": "000150",
-      "summary": "두산에너빌리티 주가 상승 중 아시아뉴스통신",
-      "headline": "두산에너빌리티 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "두산에너빌리티 주가 상승 중"
-      ],
-      "mentionScore": 87.7,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-09-17T01:00:17.273Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "두산에너빌리티 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE84azJnTUtNTFV4elR4S0tiNHpfSUZCMTFhN0g2WkloQ1J0cUZleTdHSnJYUkt5THRpanpMNGJveHpzcEdPLUxLaFcyR09KWGg5NGhsMDdkRVdoQkJY?oc=5",
-      "publishedAt": "Thu, 17 Sep 2026 00:32:04 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산에너빌리티 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE84azJnTUtNTFV4elR4S0tiNHpfSUZCMTFhN0g2WkloQ1J0cUZleTdHSnJYUkt5THRpanpMNGJveHpzcEdPLUxLaFcyR09KWGg5NGhsMDdkRVdoQkJY?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "두산 에너빌리티 주가 상승 중",
-      "polishedBody": "두산은 에너빌리티 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 에너빌리티 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "한미반도체",
@@ -482,42 +489,40 @@
       "hasNews": true,
       "polishedHeadline": "한국항공우주 주가 상승 중",
       "polishedBody": "한국항공우주는 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "KB금융",
-      "stockCode": "105560",
-      "summary": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평 econovill.com",
-      "headline": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평",
-      "evidencePoints": [
-        "출처 econovill.com 기반 기사 1건",
-        "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평"
-      ],
-      "mentionScore": 61.6,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-09-16T04:00:27.730Z",
-      "cycleLabel": "KST_1300",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평",
-      "source": "econovill.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12dEswTGh0aGdLV0VINGZnVHZwd1g2WmFKb2xfeTBhbDZtNU9MX0hFeld3bHVDVG9nTUJIdE4zbUM0Mm9GbnI3ZHVMUkw2LXhFT2F4ZlZ2ck1oWXQwSGQ5YWlGSkptM1htcE1RbA?oc=5",
-      "publishedAt": "Wed, 16 Sep 2026 03:34:27 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평",
-          "source": "econovill.com",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12dEswTGh0aGdLV0VINGZnVHZwd1g2WmFKb2xfeTBhbDZtNU9MX0hFeld3bHVDVG9nTUJIdE4zbUM0Mm9GbnI3ZHVMUkw2LXhFT2F4ZlZ2ck1oWXQwSGQ5YWlGSkptM1htcE1RbA?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "KB금융 증권가, 실적·밸류업 호평",
-      "polishedBody": "KB금융은 ‘이재근 체제’ 출범 힘받는 …증권가 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 ‘이재근 체제’ 출범 힘받는 …증권가 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 증권가, 실적·밸류업 호평 econovill.com 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     }
   ],
   "items": [
+    {
+      "timestamp": "Thu, 17 Sep 2026 03:01:00 GMT",
+      "symbol": "000150",
+      "name": "두산",
+      "changeRate": 6,
+      "price": null,
+      "summary": "美 원전 수주 기대감에 두산그룹주 매수 [주식 초고수는 지금]",
+      "source": "뉴스투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9oVWxqVmNwSDE0OXB2YnhsVDMzRGNRSXNpUkk5WWFKZVBNVDZaVXNHMkU5dkZHWkFnX3ZJQllPYVhJbGVUdnZIaDZ4c0VfLW5jNEF6MUZwRjFUM19QZGc?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스투데이, 매일경제 기반 기사 2건",
+        "제목 기준 변동률 단서 +6.0%",
+        "[공시 Pick] 두산, 잔여 자사주 전량 소각…6%대 강세",
+        "美 원전 수주 기대감에 두산그룹주 매수 [주식 초고수는 지금]"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[공시 Pick] 두산, 잔여 자사주 전량 소각…6%대 강세",
+          "source": "뉴스투데이",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9oVWxqVmNwSDE0OXB2YnhsVDMzRGNRSXNpUkk5WWFKZVBNVDZaVXNHMkU5dkZHWkFnX3ZJQllPYVhJbGVUdnZIaDZ4c0VfLW5jNEF6MUZwRjFUM19QZGc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "美 원전 수주 기대감에 두산그룹주 매수 [주식 초고수는 지금]",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBwSV9IR1BNNHZMQ1VtRTM1TC1NMlQ2SWFSeXlCblVCSGwxbGdneW4zRWIxaTZURVo1OGVGNG5KdG4ya2o0YXpBTHl6V0VTM21UYXc?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Thu, 17 Sep 2026 01:46:24 GMT",
       "symbol": "009150",
@@ -569,30 +574,6 @@
           "title": "[애프터마켓 리뷰] 비나텍, 블룸에너지 내 독점 지위 '확고'",
           "source": "supple.kr",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE52VTByNHRsT0pUWVFTV0RBSU1idnZ5VDBVNFllX3VxN0U1R2huZENLZlM2NUMzTmhfMkh5VTA5OHdIWWZ6cFgyN0QtSk9TeHRLOXBNTkpxMG4xbVBk?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Thu, 17 Sep 2026 00:32:04 GMT",
-      "symbol": "000150",
-      "name": "두산",
-      "changeRate": null,
-      "price": null,
-      "summary": "두산에너빌리티 주가 상승 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE84azJnTUtNTFV4elR4S0tiNHpfSUZCMTFhN0g2WkloQ1J0cUZleTdHSnJYUkt5THRpanpMNGJveHpzcEdPLUxLaFcyR09KWGg5NGhsMDdkRVdoQkJY?oc=5",
-      "mentionScore": 87.7,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "두산에너빌리티 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산에너빌리티 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE84azJnTUtNTFV4elR4S0tiNHpfSUZCMTFhN0g2WkloQ1J0cUZleTdHSnJYUkt5THRpanpMNGJveHpzcEdPLUxLaFcyR09KWGg5NGhsMDdkRVdoQkJY?oc=5"
         }
       ]
     },
@@ -859,29 +840,6 @@
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5BR2lURGtnY3VZR1VpTzB5RkI2dkFjWjJTRUlyNDcwV3hsZ2Fueklnb0k1eUpCc0dvOW9Fdy1fclYwNlhaX1FPMmFsYWdJM05TRFJ3RDA0Zk45UlFC?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "Wed, 16 Sep 2026 03:34:27 GMT",
-      "symbol": "105560",
-      "name": "KB금융",
-      "changeRate": null,
-      "price": null,
-      "summary": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평 econovill.com",
-      "source": "econovill.com",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12dEswTGh0aGdLV0VINGZnVHZwd1g2WmFKb2xfeTBhbDZtNU9MX0hFeld3bHVDVG9nTUJIdE4zbUM0Mm9GbnI3ZHVMUkw2LXhFT2F4ZlZ2ck1oWXQwSGQ5YWlGSkptM1htcE1RbA?oc=5",
-      "mentionScore": 61.6,
-      "evidencePoints": [
-        "출처 econovill.com 기반 기사 1건",
-        "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "‘이재근 체제’ 출범 힘받는 KB금융…증권가, 실적·밸류업 호평",
-          "source": "econovill.com",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12dEswTGh0aGdLV0VINGZnVHZwd1g2WmFKb2xfeTBhbDZtNU9MX0hFeld3bHVDVG9nTUJIdE4zbUM0Mm9GbnI3ZHVMUkw2LXhFT2F4ZlZ2ck1oWXQwSGQ5YWlGSkptM1htcE1RbA?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -889,8 +847,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "rule-based",
-    "model": "signal-polish-v1",
-    "fallbackReason": "primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
