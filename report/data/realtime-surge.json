@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-09-18T04:00:15.909Z",
+  "generated_at": "2026-09-18T05:00:25.007Z",
   "generated_date": "2026-09-18",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 12건",
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 11건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "두산",
+      "stockCode": "000150",
+      "summary": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
+      "headline": "[쇼츠] 두산 주가 80% 올랐는데…경쟁사와 256%p 벌어진 이유",
+      "evidencePoints": [
+        "출처 콕스뉴스, 연합뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "[쇼츠] 두산 주가 80% 올랐는데…경쟁사와 256%p 벌어진 이유",
+        "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\""
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 4,
+      "updatedAt": "2026-09-18T05:00:25.007Z",
+      "cycleLabel": "KST_1400",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[쇼츠] 두산 주가 80% 올랐는데…경쟁사와 256%p 벌어진 이유",
+      "source": "콕스뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfT2doVkEzdnhyUmJzTk1ndTRFVlVhMFVPYk4ycGxBOHdQd3QzTWEzUmRDcmZlSllyMXFVOF9SQjFKN2p2ZTZWcVVvNVhpcm94X3JHWElJWXFKSzZveXp0SkUtX3hpUDh5b2c?oc=5",
+      "publishedAt": "Fri, 18 Sep 2026 03:42:17 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[쇼츠] 두산 주가 80% 올랐는데…경쟁사와 256%p 벌어진 이유",
+          "source": "콕스뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfT2doVkEzdnhyUmJzTk1ndTRFVlVhMFVPYk4ycGxBOHdQd3QzTWEzUmRDcmZlSllyMXFVOF9SQjFKN2p2ZTZWcVVvNVhpcm94X3JHWElJWXFKSzZveXp0SkUtX3hpUDh5b2c?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA1bWE5UjNhUTAyV05NX185YXBvLVo3S191LXBtRy1YVUk2bUFOZDNNb1h5VDVSNk92SmpBMl9ReTVjT0g3aFRMRUhleHJTZkp4Yk1sM3pDWnNkajDSAWBBVV95cUxNR0tlaHhhTFl1MnVpM21Zekx0M3B6UkFsSldOc0llUXpseWVPYl82OTZISUZQSjZ4b1JrUF8tSHZJU051V0tNcG9MSVdZYnVBUm1pRzFsQWZVb0pLazN1Nko?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "두산 주가 80% 상승, 경쟁사와 256%p 벌어진 이유",
+      "polishedBody": "주가가 80% 상승했지만 경쟁사와의 수익률 격차가 256%p 벌어졌습니다. DS증권은 두산의 목표주가를 상향 조정하며 하반기 광모듈 매출이 3배 증가할 것으로 예상했습니다. 이러한 긍정적 전망에도 불구하고 주가 상승폭이 경쟁사에 비해 크지 않아 중립적인 평가를 받고 있습니다. 향후 광모듈 매출 실적과 경쟁사 주가 흐름을 주목할 필요가 있습니다."
+    },
     {
       "stockName": "파미셀",
       "stockCode": "005690",
@@ -173,47 +214,6 @@
       "hasNews": true,
       "polishedHeadline": "이수페타시스 주가 100,500원 5.19% 하락",
       "polishedBody": "이수페타시스 주가가 장중 100,500원으로 5.19% 하락했습니다. 최근 거래에서 약세 흐름이 이어지고 있습니다. 하락세는 위험 신호로 주의가 필요합니다. 추가 하락 가능성과 바닥 확인 여부를 계속 관찰해야 합니다."
-    },
-    {
-      "stockName": "두산",
-      "stockCode": "000150",
-      "summary": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
-      "headline": "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
-      "evidencePoints": [
-        "출처 매일경제 마켓, 연합뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
-        "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\""
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 5,
-      "updatedAt": "2026-09-18T02:00:15.050Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
-      "source": "매일경제 마켓",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA4V1dsS0Z3OUtjS0x0Yl80YkdjMW5wN0J5SnNIRXVjYk16TmE5UmxjWlBuSXRIekZZUklQZ3BhdUxWcXRjUmRQN2EtaU92NTg1ZEE?oc=5",
-      "publishedAt": "Fri, 18 Sep 2026 00:33:13 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA4V1dsS0Z3OUtjS0x0Yl80YkdjMW5wN0J5SnNIRXVjYk16TmE5UmxjWlBuSXRIekZZUklQZ3BhdUxWcXRjUmRQN2EtaU92NTg1ZEE?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
-          "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA1bWE5UjNhUTAyV05NX185YXBvLVo3S191LXBtRy1YVUk2bUFOZDNNb1h5VDVSNk92SmpBMl9ReTVjT0g3aFRMRUhleHJTZkp4Yk1sM3pDWnNkajDSAWBBVV95cUxNR0tlaHhhTFl1MnVpM21Zekx0M3B6UkFsSldOc0llUXpseWVPYl82OTZISUZQSjZ4b1JrUF8tSHZJU051V0tNcG9MSVdZYnVBUm1pRzFsQWZVb0pLazN1Nko?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "두산 '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
-      "polishedBody": "두산은 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "한화에어로스페이스",
@@ -444,43 +444,40 @@
       "hasNews": true,
       "polishedHeadline": "한국항공우주 주가 상승 중",
       "polishedBody": "한국항공우주는 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "올릭스",
-      "stockCode": "226950",
-      "summary": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\" 한국경제",
-      "headline": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\"",
-      "evidencePoints": [
-        "출처 한국경제 기반 기사 1건",
-        "제목 기준 변동률 단서 +29.2%",
-        "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\""
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-09-17T05:00:32.385Z",
-      "cycleLabel": "KST_1400",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\"",
-      "source": "한국경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nd2dMR2xLTlZxMmw0OVE2ZWx1blZISkhqUkpTQnltVVNuWXdsNE8weDlkcUJLY01kWUp0bUMyUXVaRFc2QWliU2txRXBrRjlvSGRlLTRVT05pUQ?oc=5",
-      "publishedAt": "Thu, 17 Sep 2026 04:53:05 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\"",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nd2dMR2xLTlZxMmw0OVE2ZWx1blZISkhqUkpTQnltVVNuWXdsNE8weDlkcUJLY01kWUp0bUMyUXVaRFc2QWliU2txRXBrRjlvSGRlLTRVT05pUQ?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "올릭스, 1150억 오버행 해소…9000억 기술이전 기대",
-      "polishedBody": "올릭스의 1150억 원 규모 오버행 물량이 해소되어 주식 공급 부담이 완화되었습니다. 추가 자금 확보가 가능해지면서 기술이전 계약 체결 가능성이 높아지고 있습니다. 이는 '중립' 신호로 평가되며 시장의 기대감이 반영된 상황입니다. 향후 9000억 대 기술이전 성사 여부가 주가에 중요한 변수가 될 것입니다."
     }
   ],
   "items": [
+    {
+      "timestamp": "Fri, 18 Sep 2026 03:42:17 GMT",
+      "symbol": "000150",
+      "name": "두산",
+      "changeRate": null,
+      "price": null,
+      "summary": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
+      "source": "콕스뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfT2doVkEzdnhyUmJzTk1ndTRFVlVhMFVPYk4ycGxBOHdQd3QzTWEzUmRDcmZlSllyMXFVOF9SQjFKN2p2ZTZWcVVvNVhpcm94X3JHWElJWXFKSzZveXp0SkUtX3hpUDh5b2c?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 콕스뉴스, 연합뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "[쇼츠] 두산 주가 80% 올랐는데…경쟁사와 256%p 벌어진 이유",
+        "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[쇼츠] 두산 주가 80% 올랐는데…경쟁사와 256%p 벌어진 이유",
+          "source": "콕스뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfT2doVkEzdnhyUmJzTk1ndTRFVlVhMFVPYk4ycGxBOHdQd3QzTWEzUmRDcmZlSllyMXFVOF9SQjFKN2p2ZTZWcVVvNVhpcm94X3JHWElJWXFKSzZveXp0SkUtX3hpUDh5b2c?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA1bWE5UjNhUTAyV05NX185YXBvLVo3S191LXBtRy1YVUk2bUFOZDNNb1h5VDVSNk92SmpBMl9ReTVjT0g3aFRMRUhleHJTZkp4Yk1sM3pDWnNkajDSAWBBVV95cUxNR0tlaHhhTFl1MnVpM21Zekx0M3B6UkFsSldOc0llUXpseWVPYl82OTZISUZQSjZ4b1JrUF8tSHZJU051V0tNcG9MSVdZYnVBUm1pRzFsQWZVb0pLazN1Nko?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Fri, 18 Sep 2026 02:29:51 GMT",
       "symbol": "005690",
@@ -601,37 +598,6 @@
           "title": "이수페타시스 주가 하락 중",
           "source": "아시아뉴스통신",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5rMnlGaV9ZTE83STVrRXRCTTdXOWl5NndiR3NqdFFNNlkxMk40d3lMQ3hkQUl5OEk5N2VlMGtYdF9zbFpRa3U2cGlieFVsSnlnRmFSRy1pcE00N2hN?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Fri, 18 Sep 2026 00:33:13 GMT",
-      "symbol": "000150",
-      "name": "두산",
-      "changeRate": null,
-      "price": null,
-      "summary": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
-      "source": "매일경제 마켓",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA4V1dsS0Z3OUtjS0x0Yl80YkdjMW5wN0J5SnNIRXVjYk16TmE5UmxjWlBuSXRIekZZUklQZ3BhdUxWcXRjUmRQN2EtaU92NTg1ZEE?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 매일경제 마켓, 연합뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
-        "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA4V1dsS0Z3OUtjS0x0Yl80YkdjMW5wN0J5SnNIRXVjYk16TmE5UmxjWlBuSXRIekZZUklQZ3BhdUxWcXRjUmRQN2EtaU92NTg1ZEE?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
-          "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA1bWE5UjNhUTAyV05NX185YXBvLVo3S191LXBtRy1YVUk2bUFOZDNNb1h5VDVSNk92SmpBMl9ReTVjT0g3aFRMRUhleHJTZkp4Yk1sM3pDWnNkajDSAWBBVV95cUxNR0tlaHhhTFl1MnVpM21Zekx0M3B6UkFsSldOc0llUXpseWVPYl82OTZISUZQSjZ4b1JrUF8tSHZJU051V0tNcG9MSVdZYnVBUm1pRzFsQWZVb0pLazN1Nko?oc=5"
         }
       ]
     },
@@ -802,30 +768,6 @@
           "title": "한국항공우주 주가 상승 중",
           "source": "아시아뉴스통신",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA2ajBfVlBPMzkxUHRCa0FxaGE3aDJuSW5uQVh1Q1g5ZmZ3dWppWEVISENHbE82dmtiR2txc3RkWGh0OTk5NHN3bmVQZEVERlNveFdjS2ZqVUtkNHdR?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Thu, 17 Sep 2026 04:53:05 GMT",
-      "symbol": "226950",
-      "name": "올릭스",
-      "changeRate": null,
-      "price": null,
-      "summary": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\" 한국경제",
-      "source": "한국경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nd2dMR2xLTlZxMmw0OVE2ZWx1blZISkhqUkpTQnltVVNuWXdsNE8weDlkcUJLY01kWUp0bUMyUXVaRFc2QWliU2txRXBrRjlvSGRlLTRVT05pUQ?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 한국경제 기반 기사 1건",
-        "제목 기준 변동률 단서 +29.2%",
-        "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "\"올릭스, 1150억 규모 오버행 해소 ... 9000억대 기술이전 기대감도\"",
-          "source": "한국경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nd2dMR2xLTlZxMmw0OVE2ZWx1blZISkhqUkpTQnltVVNuWXdsNE8weDlkcUJLY01kWUp0bUMyUXVaRFc2QWliU2txRXBrRjlvSGRlLTRVT05pUQ?oc=5"
         }
       ]
     }
