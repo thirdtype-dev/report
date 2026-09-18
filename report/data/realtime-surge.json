@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-09-18T01:00:21.716Z",
+  "generated_at": "2026-09-18T02:00:15.050Z",
   "generated_date": "2026-09-18",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 12건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "두산",
+      "stockCode": "000150",
+      "summary": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
+      "headline": "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
+      "evidencePoints": [
+        "출처 매일경제 마켓, 연합뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
+        "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\""
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 5,
+      "updatedAt": "2026-09-18T02:00:15.050Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
+      "source": "매일경제 마켓",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA4V1dsS0Z3OUtjS0x0Yl80YkdjMW5wN0J5SnNIRXVjYk16TmE5UmxjWlBuSXRIekZZUklQZ3BhdUxWcXRjUmRQN2EtaU92NTg1ZEE?oc=5",
+      "publishedAt": "Fri, 18 Sep 2026 00:33:13 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA4V1dsS0Z3OUtjS0x0Yl80YkdjMW5wN0J5SnNIRXVjYk16TmE5UmxjWlBuSXRIekZZUklQZ3BhdUxWcXRjUmRQN2EtaU92NTg1ZEE?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA1bWE5UjNhUTAyV05NX185YXBvLVo3S191LXBtRy1YVUk2bUFOZDNNb1h5VDVSNk92SmpBMl9ReTVjT0g3aFRMRUhleHJTZkp4Yk1sM3pDWnNkajDSAWBBVV95cUxNR0tlaHhhTFl1MnVpM21Zekx0M3B6UkFsSldOc0llUXpseWVPYl82OTZISUZQSjZ4b1JrUF8tSHZJU051V0tNcG9MSVdZYnVBUm1pRzFsQWZVb0pLazN1Nko?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "두산 '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
+      "polishedBody": "두산은 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
     {
       "stockName": "삼성전기",
       "stockCode": "009150",
@@ -50,47 +91,6 @@
       "hasNews": true,
       "polishedHeadline": "삼성전기 KB증권 \"삼성전기, 3분기 역대 최대 실적.",
       "polishedBody": "삼성전기는 “주가 41% 빠졌지만 실적은 역대 최대” 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 “주가 빠졌지만 실적은 역대 최대” 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 역대 최대”…, 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "두산",
-      "stockCode": "000150",
-      "summary": "[버핏 리포트] 두산, 9684억 증설과 3조 자사주 소각…사실상 전자BG 2배 확장 - DS",
-      "headline": "[리포트 브리핑]두산, '전자BG 9,684억원 증설 코멘트' 목표가 1,800,000원 - DB증권",
-      "evidencePoints": [
-        "출처 뉴스핌, 버핏연구소 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "[리포트 브리핑]두산, '전자BG 9,684억원 증설 코멘트' 목표가 1,800,000원 - DB증권",
-        "[버핏 리포트] 두산, 9684억 증설과 3조 자사주 소각…사실상 전자BG 2배 확장 - DS"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 5,
-      "updatedAt": "2026-09-18T01:00:21.716Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[리포트 브리핑]두산, '전자BG 9,684억원 증설 코멘트' 목표가 1,800,000원 - DB증권",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAyN1IxT21ET0xkWlFSS0lwZ1JkVkp2VHcxckVMOUtYb09ZcFNkQ1k2TkZqcmFRZ1Y1ZUhVejR5UmlOZUJjMHRwNk1JYXBweXNqaFB2S3lKdF8tYlBw?oc=5",
-      "publishedAt": "Fri, 18 Sep 2026 00:15:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[리포트 브리핑]두산, '전자BG 9,684억원 증설 코멘트' 목표가 1,800,000원 - DB증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAyN1IxT21ET0xkWlFSS0lwZ1JkVkp2VHcxckVMOUtYb09ZcFNkQ1k2TkZqcmFRZ1Y1ZUhVejR5UmlOZUJjMHRwNk1JYXBweXNqaFB2S3lKdF8tYlBw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[버핏 리포트] 두산, 9684억 증설과 3조 자사주 소각…사실상 전자BG 2배 확장 - DS",
-          "source": "버핏연구소",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5MT1lZRzd0WGdibnpiUlA2NjQzNlFTcXlqcld0NnJEaU40Rk12VFNOYjRUTFpMVEdTNndXM0tkQThZNFUyUjdFZEtDWVFDQ3BuMENtNUhBLVEzcXNtVXlNbW9R?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "두산 '전자BG 9,684억원 증설 코멘트'",
-      "polishedBody": "두산은 9684억 증설과 3조 자사주 소각…사실상 전자BG 2배 확장 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 9684억 증설과 3조 자사주 소각…사실상 전자BG 2배 확장 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 '전자BG 9,684억원 증설 코멘트' 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
       "stockName": "한화에어로스페이스",
@@ -461,6 +461,37 @@
   ],
   "items": [
     {
+      "timestamp": "Fri, 18 Sep 2026 00:33:13 GMT",
+      "symbol": "000150",
+      "name": "두산",
+      "changeRate": null,
+      "price": null,
+      "summary": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
+      "source": "매일경제 마켓",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA4V1dsS0Z3OUtjS0x0Yl80YkdjMW5wN0J5SnNIRXVjYk16TmE5UmxjWlBuSXRIekZZUklQZ3BhdUxWcXRjUmRQN2EtaU92NTg1ZEE?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 매일경제 마켓, 연합뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
+        "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산, '전자BG 9,684억원 증설 코멘트' 증권사 발표에 강세",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA4V1dsS0Z3OUtjS0x0Yl80YkdjMW5wN0J5SnNIRXVjYk16TmE5UmxjWlBuSXRIekZZUklQZ3BhdUxWcXRjUmRQN2EtaU92NTg1ZEE?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "DS증권, 두산 목표가↑…\"하반기 광모듈 매출 3배 증가 예상\"",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA1bWE5UjNhUTAyV05NX185YXBvLVo3S191LXBtRy1YVUk2bUFOZDNNb1h5VDVSNk92SmpBMl9ReTVjT0g3aFRMRUhleHJTZkp4Yk1sM3pDWnNkajDSAWBBVV95cUxNR0tlaHhhTFl1MnVpM21Zekx0M3B6UkFsSldOc0llUXpseWVPYl82OTZISUZQSjZ4b1JrUF8tSHZJU051V0tNcG9MSVdZYnVBUm1pRzFsQWZVb0pLazN1Nko?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Fri, 18 Sep 2026 00:30:56 GMT",
       "symbol": "009150",
       "name": "삼성전기",
@@ -487,37 +518,6 @@
           "title": "“주가 41% 빠졌지만 실적은 역대 최대”…삼성전기, 저가 매수 기회라는데",
           "source": "매일경제",
           "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1oTi1TdUlsMDBrYlR3S0hhTnJhbExRZkhhZDNPSXgyY09ad0hzUXdrZE03UVEzY3FCaG9CUEo1cGlaNGN2WVlxOTJROWNLODVHV1E?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Fri, 18 Sep 2026 00:15:00 GMT",
-      "symbol": "000150",
-      "name": "두산",
-      "changeRate": null,
-      "price": null,
-      "summary": "[버핏 리포트] 두산, 9684억 증설과 3조 자사주 소각…사실상 전자BG 2배 확장 - DS",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAyN1IxT21ET0xkWlFSS0lwZ1JkVkp2VHcxckVMOUtYb09ZcFNkQ1k2TkZqcmFRZ1Y1ZUhVejR5UmlOZUJjMHRwNk1JYXBweXNqaFB2S3lKdF8tYlBw?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 뉴스핌, 버핏연구소 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "[리포트 브리핑]두산, '전자BG 9,684억원 증설 코멘트' 목표가 1,800,000원 - DB증권",
-        "[버핏 리포트] 두산, 9684억 증설과 3조 자사주 소각…사실상 전자BG 2배 확장 - DS"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[리포트 브리핑]두산, '전자BG 9,684억원 증설 코멘트' 목표가 1,800,000원 - DB증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAyN1IxT21ET0xkWlFSS0lwZ1JkVkp2VHcxckVMOUtYb09ZcFNkQ1k2TkZqcmFRZ1Y1ZUhVejR5UmlOZUJjMHRwNk1JYXBweXNqaFB2S3lKdF8tYlBw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[버핏 리포트] 두산, 9684억 증설과 3조 자사주 소각…사실상 전자BG 2배 확장 - DS",
-          "source": "버핏연구소",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5MT1lZRzd0WGdibnpiUlA2NjQzNlFTcXlqcld0NnJEaU40Rk12VFNOYjRUTFpMVEdTNndXM0tkQThZNFUyUjdFZEtDWVFDQ3BuMENtNUhBLVEzcXNtVXlNbW9R?oc=5"
         }
       ]
     },
