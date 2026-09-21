@@ -1,0 +1,43 @@
+name: Writer acceptance 20260921
+on:
+  push:
+    branches: [codex/briefing-writer-fix-20260921]
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 40
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+      - name: Serial regression tests
+        run: node --test --test-concurrency=1 tests/*.test.js
+      - name: Read-only live pre-market writer validation
+        env:
+          ANALYST_PROVIDER: openrouter
+          ANALYST_MODEL: deepseek/deepseek-v4-flash
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          BRIEFING_PHASE: pre_market
+          BRIEFING_TRADING_DATE: '2026-09-21'
+          LLM_TIMEOUT_MS: '90000'
+          SMOKE_RESEARCH_PATH: report/data/market-research.json
+        run: node scripts/writer-acceptance-20260921.mjs
+      - name: Read-only live post-market writer validation
+        env:
+          ANALYST_PROVIDER: openrouter
+          ANALYST_MODEL: deepseek/deepseek-v4-flash
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          BRIEFING_PHASE: post_market
+          BRIEFING_TRADING_DATE: '2026-09-18'
+          LLM_TIMEOUT_MS: '90000'
+        run: |
+          git show d453b2248f:report/data/market-research.json > "$RUNNER_TEMP/post-market-research.json"
+          SMOKE_RESEARCH_PATH="$RUNNER_TEMP/post-market-research.json" node scripts/writer-acceptance-20260921.mjs
+      - name: Verify no published output changed
+        run: git diff --exit-code -- index.html report/index.html report/data

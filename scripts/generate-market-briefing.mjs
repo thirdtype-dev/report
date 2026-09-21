@@ -2,6 +2,7 @@ import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
 import { resolve } from 'node:path';
 import { promisify } from 'node:util';
+import { withDeadline } from './briefing-deadline.mjs';
 
 const OUTPUT_DIR = resolve(process.cwd(), 'public/report');
 const DATA_DIR = resolve(OUTPUT_DIR, 'data');
@@ -383,6 +384,8 @@ function normalizePhase(value) {
 }
 
 function isTransientLlmError(error) {
+  if (error?.retryable === false) return false;
+  if (error?.retryable === true) return true;
   const text = `${error?.message ?? ''} ${error?.body ?? ''}`.toLowerCase();
   return [
     text.startsWith('invalid_report_shape:'),
@@ -401,7 +404,8 @@ function isTransientLlmError(error) {
     text.includes('please try again later'),
     text.includes('invalid_json_response'),
     text.includes('empty_llm_response'),
-    text.includes('overloaded')
+    text.includes('overloaded'),
+    text.includes('request_deadline_exceeded')
   ].some(Boolean);
 }
 
@@ -409,14 +413,19 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function withLlmRetry(label, operation) {
+async function withLlmRetry(label, operation, options = {}) {
+  const requestedAttempts = Number.isFinite(options.maxAttempts)
+    ? Math.trunc(options.maxAttempts)
+    : LLM_MAX_ATTEMPTS;
+  const maxAttempts = Math.max(1, Math.min(LLM_MAX_ATTEMPTS, requestedAttempts));
+  const sleepFn = options.sleepFn ?? sleep;
   let lastError;
-  for (let attempt = 1; attempt <= LLM_MAX_ATTEMPTS; attempt += 1) {
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
       return await operation(lastError);
     } catch (error) {
       lastError = error;
-      if (attempt >= LLM_MAX_ATTEMPTS || !isTransientLlmError(error)) {
+      if (attempt >= maxAttempts || !isTransientLlmError(error)) {
         throw error;
       }
 
@@ -424,11 +433,11 @@ async function withLlmRetry(label, operation) {
       console.warn(`[market-briefing] ${label} transient failure; retrying`, {
         attempt,
         nextAttempt: attempt + 1,
-        maxAttempts: LLM_MAX_ATTEMPTS,
+        maxAttempts,
         delayMs,
         error: error.message
       });
-      await sleep(delayMs);
+      await sleepFn(delayMs);
     }
   }
 
@@ -554,6 +563,7 @@ async function withMarketSourceRetry(label, operation, options = {}) {
 }
 
 function extractJson(text) {
+  if (typeof text !== 'string') throw new Error('invalid_json_response');
   const trimmed = text.trim();
   if (!trimmed) throw new Error('empty_llm_response');
 
@@ -608,7 +618,14 @@ function extractJson(text) {
     }
   }
 
-  return JSON.parse(trimmed);
+  try {
+    return JSON.parse(trimmed);
+  } catch (cause) {
+    const error = new Error('invalid_json_response');
+    error.bodyLength = text.length;
+    error.causeName = cause?.name ?? 'SyntaxError';
+    throw error;
+  }
 }
 
 function parseWriterResponse(body, provider) {
@@ -617,9 +634,84 @@ function parseWriterResponse(body, provider) {
   } catch (cause) {
     const error = new Error(`${provider}_invalid_json_response`);
     error.bodyLength = String(body ?? '').length;
-    error.cause = cause;
+    error.causeName = cause?.name ?? 'SyntaxError';
     throw error;
   }
+}
+
+function parseStrictJsonContent(text, provider) {
+  if (typeof text !== 'string' || !text.trim()) {
+    throw new Error('empty_llm_response');
+  }
+  try {
+    return JSON.parse(text);
+  } catch (cause) {
+    const error = new Error(`${provider}_invalid_json_response`);
+    error.bodyLength = text.length;
+    error.causeName = cause?.name ?? 'SyntaxError';
+    error.retryable = true;
+    throw error;
+  }
+}
+
+function safeProviderErrorCode(value) {
+  if (typeof value === 'number' && Number.isFinite(value)) return String(Math.trunc(value));
+  const text = String(value ?? '').trim().toLowerCase();
+  if (!text) return null;
+  return text.replace(/[^a-z0-9._-]/gu, '_').slice(0, 80) || null;
+}
+
+function isTransientProviderFailure(code, message, status) {
+  if (status !== null && status !== undefined) {
+    const numericStatus = Number(status);
+    return [408, 409, 425, 429].includes(numericStatus) || (numericStatus >= 500 && numericStatus <= 599);
+  }
+
+  const numericCode = Number(code);
+  if (code !== null && code !== undefined && Number.isFinite(numericCode)) {
+    return [408, 409, 425, 429].includes(numericCode) || (numericCode >= 500 && numericCode <= 599);
+  }
+
+  const text = `${code ?? ''} ${message ?? ''}`.toLowerCase();
+  return /(rate.?limit|temporar|unavailable|overload|try again|timed? ?out|timeout|gateway|internal|network|connect|provider[_ -]?error)/u.test(text);
+}
+
+function makeProviderError(provider, status, payload = null) {
+  const details = isRecord(payload?.error) ? payload.error : {};
+  const code = safeProviderErrorCode(details.code ?? details.type ?? details.status ?? status);
+  const statusValue = status ?? details.code;
+  const numericStatus = statusValue === null || statusValue === undefined || statusValue === ''
+    ? NaN
+    : Number(statusValue);
+  const effectiveStatus = Number.isFinite(numericStatus) ? numericStatus : null;
+  const retryable = isTransientProviderFailure(code, details.message, status);
+  const suffix = code ?? (effectiveStatus ?? 'response');
+  const error = new Error(`${provider}_failed_${suffix}`);
+  if (effectiveStatus !== null) error.status = effectiveStatus;
+  if (code) error.providerErrorCode = code;
+  error.retryable = retryable;
+  return error;
+}
+
+function responseMetadata(json, model, elapsedMs) {
+  const choice = Array.isArray(json?.choices) ? json.choices[0] : null;
+  const usage = isRecord(json?.usage) ? json.usage : {};
+  const safeIdentifier = (value, fallback = null) => {
+    if (!isNonEmptyString(value)) return fallback;
+    return String(value).trim().replace(/[^a-z0-9._:/-]/giu, '_').slice(0, 120) || fallback;
+  };
+  const provider = safeIdentifier(json?.provider, 'openrouter');
+  const responseModel = safeIdentifier(json?.model, safeIdentifier(model, 'unknown'));
+  const numberOrNull = (value) => Number.isFinite(value) ? value : null;
+  return {
+    provider,
+    model: responseModel,
+    finishReason: safeIdentifier(choice?.finish_reason),
+    promptTokens: numberOrNull(usage.prompt_tokens),
+    completionTokens: numberOrNull(usage.completion_tokens),
+    totalTokens: numberOrNull(usage.total_tokens),
+    elapsedMs: Math.max(0, Math.round(elapsedMs))
+  };
 }
 
 function isNonEmptyString(value) {
@@ -630,7 +722,18 @@ function isNonEmptyStringArray(value, minimum = 1) {
   return Array.isArray(value) && value.length >= minimum && value.every((entry) => isNonEmptyString(entry));
 }
 
+function invalidReportShapeError(missing) {
+  const fields = missing.slice(0, 8);
+  const error = new Error(`invalid_report_shape:${fields.join(',')}`);
+  error.missingFields = fields;
+  return error;
+}
+
 function validateReportShape(report) {
+  if (!isRecord(report)) {
+    throw invalidReportShapeError(['root']);
+  }
+
   const requiredFields = PHASE === 'post_market'
     ? [
         ['marketSummary.kospi', report.marketSummary?.kospi],
@@ -672,9 +775,7 @@ function validateReportShape(report) {
   }
 
   if (missing.length > 0) {
-    const error = new Error(`invalid_report_shape:${missing.slice(0, 8).join(',')}`);
-    error.report = report;
-    throw error;
+    throw invalidReportShapeError(missing);
   }
 
   return sanitizeBriefingCopy(report);
@@ -1725,6 +1826,31 @@ function reportSchema() {
   };
 }
 
+function jsonSchemaFromPromptShape(value) {
+  if (Array.isArray(value)) {
+    return {
+      type: 'array',
+      items: jsonSchemaFromPromptShape(value[0] ?? 'string')
+    };
+  }
+  if (value && typeof value === 'object') {
+    const properties = Object.fromEntries(
+      Object.entries(value).map(([key, entry]) => [key, jsonSchemaFromPromptShape(entry)])
+    );
+    return {
+      type: 'object',
+      properties,
+      required: Object.keys(properties),
+      additionalProperties: false
+    };
+  }
+  return { type: 'string' };
+}
+
+function reportJsonSchema() {
+  return jsonSchemaFromPromptShape(reportSchema());
+}
+
 function buildPrompt(marketResearch) {
   const config = PHASE_CONFIG[PHASE];
   return [
@@ -1754,6 +1880,7 @@ function buildPrompt(marketResearch) {
     '투자 권유, 매수/매도 지시, 확정적 수익 표현은 금지한다.',
     '사용자에게 노출되는 문장은 한국어 존댓말로 작성한다.',
     `아래 ${config.sessionLabel} 전용 섹션 구조와 라벨을 유지한다.`,
+    '출력 JSON은 지정된 모든 키를 반드시 포함하고, 섹션의 중첩 객체·배열 구조를 유지하며 문자열 항목과 배열 원소는 문자열로 작성한다.',
     '반드시 JSON만 출력한다. 마크다운, 코드펜스, 설명 문장을 붙이지 않는다.',
     '',
     '출력 스키마:',
@@ -2619,6 +2746,26 @@ function buildBriefingChatRequest(prompt, model = ANALYST_MODEL, options = {}) {
   return request;
 }
 
+function buildOpenRouterBriefingRequest(prompt, model = ANALYST_MODEL) {
+  return {
+    ...buildBriefingChatRequest(prompt, model),
+    max_tokens: 8192,
+    response_format: {
+      type: 'json_schema',
+      json_schema: {
+        name: 'market_briefing',
+        strict: true,
+        schema: reportJsonSchema()
+      }
+    },
+    provider: {
+      require_parameters: true,
+      sort: 'latency'
+    },
+    reasoning: { enabled: false }
+  };
+}
+
 function buildOpenCodeZenBriefingRequest(prompt, model = ANALYST_MODEL) {
   return buildBriefingChatRequest(prompt, model, { disableThinking: true });
 }
@@ -2627,22 +2774,29 @@ async function callOpenCodeZen(prompt, options = {}) {
   const apiKey = options.apiKey ?? process.env.OPENCODE_ZEN_API_KEY;
   if (!apiKey) throw new Error('missing_opencode_zen_api_key');
 
-  const res = await fetch(`${OPENCODE_ZEN_BASE_URL}/chat/completions`, {
-    method: 'POST',
-    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
-    headers: {
-      authorization: `Bearer ${apiKey}`,
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify(buildOpenCodeZenBriefingRequest(prompt, options.model ?? ANALYST_MODEL))
-  });
+  const fetchImpl = options.fetchImpl ?? fetch;
+  const timeoutMs = options.timeoutMs ?? LLM_TIMEOUT_MS;
+  const { res, body } = await withDeadline(async (signal) => {
+    const res = await fetchImpl(`${OPENCODE_ZEN_BASE_URL}/chat/completions`, {
+      method: 'POST',
+      signal,
+      headers: {
+        authorization: `Bearer ${apiKey}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(buildOpenCodeZenBriefingRequest(prompt, options.model ?? ANALYST_MODEL))
+    });
+    return { res, body: await res.text() };
+  }, timeoutMs);
 
-  const body = await res.text();
   if (!res.ok) {
-    const error = new Error(`opencode_zen_failed_${res.status}`);
-    error.status = res.status;
-    error.body = body;
-    throw error;
+    let payload = null;
+    try {
+      payload = JSON.parse(body);
+    } catch {
+      // Keep provider response bodies out of errors and logs.
+    }
+    throw makeProviderError('opencode_zen', res.status, payload);
   }
 
   const json = parseWriterResponse(body, 'opencode_zen');
@@ -2654,29 +2808,70 @@ async function callOpenRouter(prompt, options = {}) {
   const apiKey = options.apiKey ?? process.env.OPENROUTER_API_KEY;
   if (!apiKey) throw new Error('missing_openrouter_api_key');
 
-  const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-    method: 'POST',
-    signal: AbortSignal.timeout(LLM_TIMEOUT_MS),
-    headers: {
-      authorization: `Bearer ${apiKey}`,
-      'content-type': 'application/json',
-      'http-referer': process.env.OPENROUTER_SITE_URL ?? 'https://thirdtype-dev.github.io',
-      'x-title': process.env.OPENROUTER_APP_TITLE ?? 'Maedo Signal Market Briefing'
-    },
-    body: JSON.stringify(buildBriefingChatRequest(prompt, options.model ?? ANALYST_MODEL))
-  });
-
-  const body = await res.text();
+  const fetchImpl = options.fetchImpl ?? fetch;
+  const now = options.now ?? Date.now;
+  const startedAt = now();
+  const model = options.model ?? ANALYST_MODEL;
+  const timeoutMs = options.timeoutMs ?? LLM_TIMEOUT_MS;
+  const { res, body } = await withDeadline(async (signal) => {
+    const res = await fetchImpl('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      signal,
+      headers: {
+        authorization: `Bearer ${apiKey}`,
+        'content-type': 'application/json',
+        'http-referer': process.env.OPENROUTER_SITE_URL ?? 'https://thirdtype-dev.github.io',
+        'x-title': process.env.OPENROUTER_APP_TITLE ?? 'Maedo Signal Market Briefing'
+      },
+      body: JSON.stringify(buildOpenRouterBriefingRequest(prompt, model))
+    });
+    return { res, body: await res.text() };
+  }, timeoutMs);
   if (!res.ok) {
-    const error = new Error(`openrouter_failed_${res.status}`);
-    error.status = res.status;
-    error.body = body;
-    throw error;
+    let payload = null;
+    try {
+      payload = JSON.parse(body);
+    } catch {
+      // Keep provider response bodies out of errors and logs.
+    }
+    throw makeProviderError('openrouter', res.status, payload);
   }
 
   const json = parseWriterResponse(body, 'openrouter');
-  const rawReport = extractJson(json?.choices?.[0]?.message?.content ?? '');
-  return validateReportShape(repairPreMarketWriterReport(options.marketResearch, rawReport));
+  if (isRecord(json?.error)) {
+    throw makeProviderError('openrouter', null, json);
+  }
+  if (!isRecord(json) || !Array.isArray(json.choices) || json.choices.length === 0) {
+    const error = new Error('openrouter_invalid_response_envelope');
+    error.retryable = true;
+    throw error;
+  }
+
+  const choice = json.choices[0];
+  if (choice?.finish_reason === 'length') {
+    const error = new Error('openrouter_truncated_response');
+    error.finishReason = 'length';
+    error.retryable = true;
+    throw error;
+  }
+
+  const content = choice?.message?.content;
+  if (typeof content !== 'string') {
+    const error = new Error(content == null ? 'empty_llm_response' : 'openrouter_invalid_json_response');
+    error.retryable = true;
+    throw error;
+  }
+
+  let rawReport;
+  rawReport = parseStrictJsonContent(content, 'openrouter');
+
+  if (!isRecord(rawReport)) {
+    throw invalidReportShapeError(['root']);
+  }
+
+  const report = validateReportShape(repairPreMarketWriterReport(options.marketResearch, rawReport));
+  console.info('[market-briefing] writer response', responseMetadata(json, model, now() - startedAt));
+  return report;
 }
 
 async function callPrimaryWriter(prompt, options = {}) {
@@ -3109,12 +3304,19 @@ export const __testRenderPostMarketReport = renderPostMarketReport;
 export const __testRenderPreMarketReport = renderPreMarketReport;
 export const __testHasCurrentPostMarketInvestorFlows = hasCurrentPostMarketInvestorFlows;
 export const __testIsTransientLlmError = isTransientLlmError;
+export const __testWithLlmRetry = withLlmRetry;
 export const __testRankFreshNewsCandidates = rankFreshNewsCandidates;
 export const __testBuildMarketEventSignals = buildMarketEventSignals;
 export const __testResolveMarketEventSignals = resolveMarketEventSignals;
 export const __testMarketEventState = marketEventState;
 export const __testBuildPrompt = buildPrompt;
 export const __testBuildWriterRetryPrompt = buildWriterRetryPrompt;
+export const __testReportSchema = reportSchema;
+export const __testReportJsonSchema = reportJsonSchema;
+export const __testBuildBriefingChatRequest = buildBriefingChatRequest;
+export const __testBuildOpenRouterBriefingRequest = buildOpenRouterBriefingRequest;
+export const __testCallOpenRouter = callOpenRouter;
+export const __testWriteReport = writeReport;
 export const __testNotableStockQueries = NOTABLE_STOCK_QUERIES;
 export const __testParseNpayKospiIndex = parseNpayKospiIndex;
 export const __testParseNpayDailyIndex = parseNpayDailyIndex;
