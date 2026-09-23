@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-09-23T02:00:15.478Z",
+  "generated_at": "2026-09-23T03:00:20.906Z",
   "generated_date": "2026-09-23",
-  "slot_hour": 11,
-  "cycle_label": "KST_1100",
-  "slot_label": "11:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 11:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 10건",
+    "title": "KST 12:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 8건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "한전기술",
+      "stockCode": "052690",
+      "summary": "한전기술 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락 톱스타뉴스",
+      "headline": "한전기술 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -5.1%",
+        "한전기술 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락"
+      ],
+      "mentionScore": 67.1,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-09-23T03:00:20.906Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": -5.07,
+      "latestHeadline": "한전기술 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFAwTUlkM2VzSXN3TV9DbksxWmtDTmJiU2NWUjEwU2t4dWNKbXJZRldmMHZSRXkwSU90Y0dkVnpxWElSZVFNN19lRHEtS0FIc245VWVMa1pvcW9KTDZrams0V3g1ZmJxWUx6VzNpcmhOSFFTUQ?oc=5",
+      "publishedAt": "Wed, 23 Sep 2026 02:02:59 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한전기술 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAwTUlkM2VzSXN3TV9DbksxWmtDTmJiU2NWUjEwU2t4dWNKbXJZRldmMHZSRXkwSU90Y0dkVnpxWElSZVFNN19lRHEtS0FIc245VWVMa1pvcW9KTDZrams0V3g1ZmJxWUx6VzNpcmhOSFFTUQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한전기술 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락",
+      "polishedBody": "한전기술은 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락 톱스타뉴스 이슈로 단기 변동성이 확대됐습니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "KSS해운",
       "stockCode": "044450",
@@ -289,109 +323,33 @@
       "hasNews": true,
       "polishedHeadline": "한화에어로스페이스 주가 하락 중",
       "polishedBody": "한화에어로스페이스는 주가 하락 중 anewsa 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 anewsa 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 중 anewsa.com 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "티엘비",
-      "stockCode": "356860",
-      "summary": "티엘비 주가, 9월 22일 장중 45,900원 20.47% 상승 톱스타뉴스",
-      "headline": "티엘비 주가, 9월 22일 장중 45,900원 20.47% 상승",
-      "evidencePoints": [
-        "출처 톱스타뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 +20.5%",
-        "티엘비 주가, 9월 22일 장중 45,900원 20.47% 상승"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-09-22T03:00:23.529Z",
-      "cycleLabel": "KST_1200",
-      "direction": "up",
-      "changeRate": 20.47,
-      "latestHeadline": "티엘비 주가, 9월 22일 장중 45,900원 20.47% 상승",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBCeEdONmNzSGpQd0l2OE9CUEhRNjlVcU9FcTdfeHhkc0hkcEROd2MxbEMzQzJqYjR5bGN5RFpFak1fSzluZ3FESjFmTUJTTFdPNkc1NHJVeUpyakh2UDgweTVhZ0dYbXM1SHpEZ1ZzVVpiQQ?oc=5",
-      "publishedAt": "Tue, 22 Sep 2026 02:04:37 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "티엘비 주가, 9월 22일 장중 45,900원 20.47% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBCeEdONmNzSGpQd0l2OE9CUEhRNjlVcU9FcTdfeHhkc0hkcEROd2MxbEMzQzJqYjR5bGN5RFpFak1fSzluZ3FESjFmTUJTTFdPNkc1NHJVeUpyakh2UDgweTVhZ0dYbXM1SHpEZ1ZzVVpiQQ?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "티엘비, 장중 20% 급등…45,900원에 거래",
-      "polishedBody": "티엘비 주가는 9월 22일 장중 45,900원까지 오르며 20.47%의 급등세를 기록했습니다. 이 같은 급등은 특별한 호재성 뉴스 없이도 단기 과열 양상을 보인 것으로 평가됩니다. 거래량이 급증하며 투자자들의 관심이 집중됐지만, 실적 대비 주가 부담이 커질 수 있다는 지적도 나옵니다. 향후 추가 상승 여부보다는 차익 실현 매물 출회 가능성에 주목할 필요가 있습니다."
-    },
-    {
-      "stockName": "저스템",
-      "stockCode": "417840",
-      "summary": "[장중수급포착] 저스템, 외국인/기관 동시 순매수… 주가 +7.42% 뉴스핌",
-      "headline": "[장중수급포착] 저스템, 외국인/기관 동시 순매수… 주가 +7.42%",
-      "evidencePoints": [
-        "출처 뉴스핌 기반 기사 1건",
-        "[장중수급포착] 저스템, 외국인/기관 동시 순매수… 주가 +7.42%"
-      ],
-      "mentionScore": 87.5,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-09-22T03:00:23.529Z",
-      "cycleLabel": "KST_1200",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[장중수급포착] 저스템, 외국인/기관 동시 순매수… 주가 +7.42%",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE85LVVFMG5ZclRRNWV0ckhWQmhIVzd6TjZ5Zk05YXF1d2I0NV9CN1NnS05LYkt6TGo0bDZYZGdQdW5hcmxzbU0ySHFrMmhmNWRHbmkxSmhMVXJSd2hC?oc=5",
-      "publishedAt": "Tue, 22 Sep 2026 02:31:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[장중수급포착] 저스템, 외국인/기관 동시 순매수… 주가 +7.42%",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE85LVVFMG5ZclRRNWV0ckhWQmhIVzd6TjZ5Zk05YXF1d2I0NV9CN1NnS05LYkt6TGo0bDZYZGdQdW5hcmxzbU0ySHFrMmhmNWRHbmkxSmhMVXJSd2hC?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "저스템, 외국인·기관 동시 순매수에 7%대 상승",
-      "polishedBody": "저스템 주가는 외국인과 기관이 동시에 순매수에 나서면서 장중 7% 이상 오르는 강세를 보였습니다. 이 같은 수급적 요인은 주가 상승의 주요 동력으로 작용하고 있습니다. 다만, 개인 투자자들의 차익 실현 매물이 나올 경우 상승 폭이 제한될 수 있습니다. 향후 외국인과 기관의 매수세가 지속되는지가 주가 흐름의 관건이 될 것입니다."
-    },
-    {
-      "stockName": "한전기술",
-      "stockCode": "052690",
-      "summary": "원전 설계 갇히지 않는다…한전기술, 'AI·친환경 EPC' 쌍끌이 체질 개선 leadeconomy.co.kr",
-      "headline": "원전 설계 갇히지 않는다…한전기술, 'AI·친환경 EPC' 쌍끌이 체질 개선",
-      "evidencePoints": [
-        "출처 leadeconomy.co.kr 기반 기사 1건",
-        "원전 설계 갇히지 않는다…한전기술, 'AI·친환경 EPC' 쌍끌이 체질 개선"
-      ],
-      "mentionScore": 87.4,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-09-22T03:00:23.529Z",
-      "cycleLabel": "KST_1200",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "원전 설계 갇히지 않는다…한전기술, 'AI·친환경 EPC' 쌍끌이 체질 개선",
-      "source": "leadeconomy.co.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5BRVM0WFh3dWQ1QVVHNDVKdFAyaGx1N1NIMVA5RlhHRWhNUUVTM2c5ZTluSmh5c1AtTk14NmtWSnVZWGR5Sk9jM2tjZC0tWVA5WVp0T1JXTVZxOTdSZ3pIcDJhN2NTSjZjNmlrNjRwYw?oc=5",
-      "publishedAt": "Tue, 22 Sep 2026 02:12:36 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "원전 설계 갇히지 않는다…한전기술, 'AI·친환경 EPC' 쌍끌이 체질 개선",
-          "source": "leadeconomy.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5BRVM0WFh3dWQ1QVVHNDVKdFAyaGx1N1NIMVA5RlhHRWhNUUVTM2c5ZTluSmh5c1AtTk14NmtWSnVZWGR5Sk9jM2tjZC0tWVA5WVp0T1JXTVZxOTdSZ3pIcDJhN2NTSjZjNmlrNjRwYw?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "한전기술, AI·친환경 EPC 사업으로 체질 개선 나서",
-      "polishedBody": "한전기술은 원전 설계에만 머물지 않고 AI와 친환경 EPC 사업을 확장하며 체질 개선을 추진하고 있습니다. 이는 회사의 미래 성장 동력을 확보하기 위한 전략으로 해석됩니다. 시장에서는 이러한 사업 다각화가 중장기적인 수익성 개선으로 이어질지 주목하고 있습니다. 향후 신사업 부문의 구체적인 성과와 수주 소식이 주가에 영향을 미칠 전망입니다."
     }
   ],
   "items": [
+    {
+      "timestamp": "Wed, 23 Sep 2026 02:02:59 GMT",
+      "symbol": "052690",
+      "name": "한전기술",
+      "changeRate": -5.07,
+      "price": null,
+      "summary": "한전기술 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락 톱스타뉴스",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFAwTUlkM2VzSXN3TV9DbksxWmtDTmJiU2NWUjEwU2t4dWNKbXJZRldmMHZSRXkwSU90Y0dkVnpxWElSZVFNN19lRHEtS0FIc245VWVMa1pvcW9KTDZrams0V3g1ZmJxWUx6VzNpcmhOSFFTUQ?oc=5",
+      "mentionScore": 67.1,
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -5.1%",
+        "한전기술 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한전기술 주가, 9월 23일 장중 131,100원 7,000원 5.07% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAwTUlkM2VzSXN3TV9DbksxWmtDTmJiU2NWUjEwU2t4dWNKbXJZRldmMHZSRXkwSU90Y0dkVnpxWElSZVFNN19lRHEtS0FIc245VWVMa1pvcW9KTDZrams0V3g1ZmJxWUx6VzNpcmhOSFFTUQ?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Wed, 23 Sep 2026 01:24:36 GMT",
       "symbol": "044450",
@@ -598,76 +556,6 @@
           "title": "한화에어로스페이스 주가 하락 중",
           "source": "anewsa.com",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFB6bzEyd3VBaVJXUjJZN0JsOXdyQnMwQWlwYW9xTkpJck9CSmxMdjdJcEtjRDlwMVZKaWNLNnEyQ2tadkVoTXlPeWQ1UHc5N1lJN1FCcVlEXzRwM21m?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 22 Sep 2026 02:04:37 GMT",
-      "symbol": "356860",
-      "name": "티엘비",
-      "changeRate": 20.47,
-      "price": null,
-      "summary": "티엘비 주가, 9월 22일 장중 45,900원 20.47% 상승 톱스타뉴스",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBCeEdONmNzSGpQd0l2OE9CUEhRNjlVcU9FcTdfeHhkc0hkcEROd2MxbEMzQzJqYjR5bGN5RFpFak1fSzluZ3FESjFmTUJTTFdPNkc1NHJVeUpyakh2UDgweTVhZ0dYbXM1SHpEZ1ZzVVpiQQ?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 톱스타뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 +20.5%",
-        "티엘비 주가, 9월 22일 장중 45,900원 20.47% 상승"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "티엘비 주가, 9월 22일 장중 45,900원 20.47% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBCeEdONmNzSGpQd0l2OE9CUEhRNjlVcU9FcTdfeHhkc0hkcEROd2MxbEMzQzJqYjR5bGN5RFpFak1fSzluZ3FESjFmTUJTTFdPNkc1NHJVeUpyakh2UDgweTVhZ0dYbXM1SHpEZ1ZzVVpiQQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 22 Sep 2026 02:31:00 GMT",
-      "symbol": "417840",
-      "name": "저스템",
-      "changeRate": null,
-      "price": null,
-      "summary": "[장중수급포착] 저스템, 외국인/기관 동시 순매수… 주가 +7.42% 뉴스핌",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE85LVVFMG5ZclRRNWV0ckhWQmhIVzd6TjZ5Zk05YXF1d2I0NV9CN1NnS05LYkt6TGo0bDZYZGdQdW5hcmxzbU0ySHFrMmhmNWRHbmkxSmhMVXJSd2hC?oc=5",
-      "mentionScore": 87.5,
-      "evidencePoints": [
-        "출처 뉴스핌 기반 기사 1건",
-        "[장중수급포착] 저스템, 외국인/기관 동시 순매수… 주가 +7.42%"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[장중수급포착] 저스템, 외국인/기관 동시 순매수… 주가 +7.42%",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE85LVVFMG5ZclRRNWV0ckhWQmhIVzd6TjZ5Zk05YXF1d2I0NV9CN1NnS05LYkt6TGo0bDZYZGdQdW5hcmxzbU0ySHFrMmhmNWRHbmkxSmhMVXJSd2hC?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 22 Sep 2026 02:12:36 GMT",
-      "symbol": "052690",
-      "name": "한전기술",
-      "changeRate": null,
-      "price": null,
-      "summary": "원전 설계 갇히지 않는다…한전기술, 'AI·친환경 EPC' 쌍끌이 체질 개선 leadeconomy.co.kr",
-      "source": "leadeconomy.co.kr",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5BRVM0WFh3dWQ1QVVHNDVKdFAyaGx1N1NIMVA5RlhHRWhNUUVTM2c5ZTluSmh5c1AtTk14NmtWSnVZWGR5Sk9jM2tjZC0tWVA5WVp0T1JXTVZxOTdSZ3pIcDJhN2NTSjZjNmlrNjRwYw?oc=5",
-      "mentionScore": 87.4,
-      "evidencePoints": [
-        "출처 leadeconomy.co.kr 기반 기사 1건",
-        "원전 설계 갇히지 않는다…한전기술, 'AI·친환경 EPC' 쌍끌이 체질 개선"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "원전 설계 갇히지 않는다…한전기술, 'AI·친환경 EPC' 쌍끌이 체질 개선",
-          "source": "leadeconomy.co.kr",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5BRVM0WFh3dWQ1QVVHNDVKdFAyaGx1N1NIMVA5RlhHRWhNUUVTM2c5ZTluSmh5c1AtTk14NmtWSnVZWGR5Sk9jM2tjZC0tWVA5WVp0T1JXTVZxOTdSZ3pIcDJhN2NTSjZjNmlrNjRwYw?oc=5"
         }
       ]
     }
