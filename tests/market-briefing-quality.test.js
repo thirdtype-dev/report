@@ -1514,6 +1514,29 @@ test('fallback rejects unrelated gambling headlines and fails closed when no rel
   }), /briefing_quality_gate_failed:.*sector_theme_source_unavailable/);
 });
 
+test('sector theme quality incident is terminal while HTTP 429 and 503 writer failures remain bounded', async () => {
+  const module = await importBriefingModule();
+  const incident = new Error('briefing_quality_gate_failed:sector_theme_source_unavailable');
+  assert.equal(module.__testIsTransientLlmError(incident), false);
+  let qualityAttempts = 0;
+  await assert.rejects(module.__testWithLlmRetry('quality-gate', async () => {
+    qualityAttempts += 1;
+    throw incident;
+  }, { sleepFn: async () => {} }), /briefing_quality_gate_failed:sector_theme_source_unavailable/u);
+  assert.equal(qualityAttempts, 1);
+
+  for (const status of [429, 503]) {
+    let providerAttempts = 0;
+    await assert.rejects(module.__testWithLlmRetry(`provider-${status}`, async () => {
+      providerAttempts += 1;
+      const error = new Error(`openrouter_failed_${status}`);
+      error.status = status;
+      throw error;
+    }, { maxAttempts: 3, sleepFn: async () => {} }), new RegExp(`openrouter_failed_${status}`, 'u'));
+    assert.equal(providerAttempts, 3, `HTTP ${status} should exhaust the bounded in-run retry count`);
+  }
+});
+
 test('fallback relevance filtering happens before the candidate limit', async () => {
   const module = await importBriefingModule('post_market', null);
   const referenceTime = Date.now();
