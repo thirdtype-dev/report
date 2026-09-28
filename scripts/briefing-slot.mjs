@@ -22,20 +22,35 @@ export function resolveSlot({ phase = 'pre_market', tradingDate = '', asOf = '',
   }
   return { phase, date, key: `briefing:${date}:${phase}` };
 }
-async function main() {
+
+const scheduledRecoveryCrons = new Set(['50 23 * * 0-4', '20 7 * * 1-5']);
+const skippableScheduleErrors = new Set(['outside_phase_publication_window', 'delayed_slot_date_mismatch']);
+
+export async function runBriefingSlotCli({ env = process.env, now, stdout = process.stdout, stderr = process.stderr, fetchImpl = fetch } = {}) {
   let createdAt;
-  if (process.env.GITHUB_TOKEN && process.env.GITHUB_RUN_ID) {
+  if (env.GITHUB_TOKEN && env.GITHUB_RUN_ID) {
     createdAt = await withDeadline(async (signal) => {
-      const response = await fetch(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`, { headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, Accept: 'application/vnd.github+json' }, signal });
+      const response = await fetchImpl(`https://api.github.com/repos/${env.GITHUB_REPOSITORY}/actions/runs/${env.GITHUB_RUN_ID}`, { headers: { Authorization: `Bearer ${env.GITHUB_TOKEN}`, Accept: 'application/vnd.github+json' }, signal });
       if (!response.ok) throw new Error(`run_metadata_http_${response.status}`);
       return (await response.json()).created_at;
     }, 10000);
     if (!createdAt) throw new Error('run_metadata_missing_created_at');
   }
-  const phase = process.env.INPUT_PHASE || (process.env.SCHEDULE === '20 7 * * 1-5' ? 'post_market' : 'pre_market');
-  const slot = resolveSlot({ phase, tradingDate: process.env.INPUT_TRADING_DATE, asOf: process.env.BRIEFING_AS_OF, createdAt });
+  const phase = env.INPUT_PHASE || (env.SCHEDULE === '20 7 * * 1-5' ? 'post_market' : 'pre_market');
+  let slot;
+  try {
+    slot = resolveSlot({ phase, tradingDate: env.INPUT_TRADING_DATE, asOf: env.BRIEFING_AS_OF, createdAt, now });
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : '';
+    if (env.GITHUB_EVENT_NAME === 'schedule' && scheduledRecoveryCrons.has(env.SCHEDULE) && skippableScheduleErrors.has(reason)) {
+      stderr.write(`Skipping expired scheduled recovery before publication: ${reason}\n`);
+      stdout.write(`should_run=false\nskip_reason=${reason}\n`);
+      return;
+    }
+    throw error;
+  }
   const lines = `BRIEFING_PHASE=${slot.phase}\nBRIEFING_TRADING_DATE=${slot.date}\nKRX_CHECK_DATE=${slot.date}\n`;
-  if (process.env.GITHUB_ENV) await appendFile(process.env.GITHUB_ENV, lines);
-  process.stdout.write(`phase=${slot.phase}\ntrading_date=${slot.date}\nslot_key=${slot.key}\n`);
+  if (env.GITHUB_ENV) await appendFile(env.GITHUB_ENV, lines);
+  stdout.write(`should_run=true\nphase=${slot.phase}\ntrading_date=${slot.date}\nslot_key=${slot.key}\n`);
 }
-if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) await main();
+if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) await runBriefingSlotCli();

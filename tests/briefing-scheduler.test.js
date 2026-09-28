@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { resolveSlot } from '../scripts/briefing-slot.mjs';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { runBriefingSlotCli, resolveSlot } from '../scripts/briefing-slot.mjs';
 import { validateBriefingHtml } from '../scripts/check-briefing-recovery.mjs';
 import { waitForPublicBriefing } from '../scripts/verify-public-briefing.mjs';
 import { recoverBriefing, matchingRun } from '../scripts/recover-market-briefing.mjs';
@@ -11,12 +14,142 @@ const now = new Date('2026-09-08T16:20:00+09:00');
 const slot = { date, phase, key: `briefing:${date}:${phase}` };
 const run = { id: 42, display_title: slot.key, head_branch: 'main', status: 'in_progress' };
 const response = (value, status = 200) => ({ ok: status < 400, status, json: async () => value });
+const capture = () => {
+  let value = '';
+  return { write: (chunk) => { value += chunk; }, get value() { return value; } };
+};
 test('slot rejects delayed days, pre-market afternoon and post-market midnight', () => {
   assert.throws(() => resolveSlot({ phase, tradingDate: '2026-09-07', now }), /date_mismatch/);
   assert.throws(() => resolveSlot({ phase: 'pre_market', now }), /outside_phase/);
   assert.throws(() => resolveSlot({ phase, now: new Date('2026-09-09T00:05:00+09:00') }), /outside_phase/);
   assert.throws(() => resolveSlot({ phase, now, createdAt: '2026-09-07T22:00:00+09:00' }), /date_mismatch/);
   assert.deepEqual(resolveSlot({ phase, now }), slot);
+});
+test('expired scheduled recoveries skip at the CLI boundary without publication outputs or environment writes', async (t) => {
+  const directory = await mkdtemp(join(tmpdir(), 'briefing-slot-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const envFile = join(directory, 'github-env');
+  await writeFile(envFile, 'KEEP=1\n');
+  const scenarios = [
+    {
+      name: 'reported post-market recovery after midnight',
+      env: { GITHUB_EVENT_NAME: 'schedule', SCHEDULE: '20 7 * * 1-5' },
+      now: new Date('2026-09-29T00:35:03+09:00'),
+      reason: 'outside_phase_publication_window'
+    },
+    {
+      name: 'pre-market recovery at noon',
+      env: { GITHUB_EVENT_NAME: 'schedule', SCHEDULE: '50 23 * * 0-4' },
+      now: new Date('2026-09-29T12:00:00+09:00'),
+      reason: 'outside_phase_publication_window'
+    },
+    {
+      name: 'queued run whose creation date is previous KST day',
+      env: { GITHUB_EVENT_NAME: 'schedule', SCHEDULE: '20 7 * * 1-5', GITHUB_TOKEN: 'test', GITHUB_RUN_ID: '42', GITHUB_REPOSITORY: 'owner/report' },
+      now: new Date('2026-09-29T00:35:03+09:00'),
+      fetchImpl: async () => response({ created_at: '2026-09-28T07:20:00Z' }),
+      reason: 'delayed_slot_date_mismatch'
+    }
+  ];
+  for (const scenario of scenarios) {
+    const stdout = capture();
+    const stderr = capture();
+    await runBriefingSlotCli({ ...scenario, env: { ...scenario.env, GITHUB_ENV: envFile }, stdout, stderr });
+    assert.equal(stdout.value, `should_run=false\nskip_reason=${scenario.reason}\n`, scenario.name);
+    assert.equal(stderr.value, `Skipping expired scheduled recovery before publication: ${scenario.reason}\n`, scenario.name);
+    assert.equal(await readFile(envFile, 'utf8'), 'KEEP=1\n', scenario.name);
+  }
+});
+test('scheduled guard reads wall time after metadata crosses noon or midnight', async (t) => {
+  const directory = await mkdtemp(join(tmpdir(), 'briefing-slot-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const envFile = join(directory, 'github-env');
+  await writeFile(envFile, 'KEEP=1\n');
+  const NativeDate = globalThis.Date;
+  const scenarios = [
+    {
+      cron: '50 23 * * 0-4',
+      starts: '2026-09-29T11:59:59+09:00',
+      afterMetadata: '2026-09-29T12:00:00+09:00',
+      createdAt: '2026-09-29T02:59:59Z',
+      reason: 'outside_phase_publication_window'
+    },
+    {
+      cron: '20 7 * * 1-5',
+      starts: '2026-09-29T23:59:59+09:00',
+      afterMetadata: '2026-09-30T00:00:00+09:00',
+      createdAt: '2026-09-29T14:59:59Z',
+      reason: 'delayed_slot_date_mismatch'
+    }
+  ];
+  for (const scenario of scenarios) {
+    let clock = new NativeDate(scenario.starts);
+    class ControlledDate extends NativeDate {
+      constructor(...args) { super(...(args.length ? args : [clock])); }
+    }
+    const stdout = capture();
+    const stderr = capture();
+    try {
+      globalThis.Date = ControlledDate;
+      await runBriefingSlotCli({
+        env: { GITHUB_EVENT_NAME: 'schedule', SCHEDULE: scenario.cron, GITHUB_TOKEN: 'test', GITHUB_RUN_ID: '42', GITHUB_REPOSITORY: 'owner/report', GITHUB_ENV: envFile },
+        stdout,
+        stderr,
+        fetchImpl: async () => {
+          clock = new NativeDate(scenario.afterMetadata);
+          return response({ created_at: scenario.createdAt });
+        }
+      });
+    } finally {
+      globalThis.Date = NativeDate;
+    }
+    assert.equal(stdout.value, `should_run=false\nskip_reason=${scenario.reason}\n`);
+    assert.equal(stderr.value, `Skipping expired scheduled recovery before publication: ${scenario.reason}\n`);
+    assert.equal(await readFile(envFile, 'utf8'), 'KEEP=1\n');
+  }
+});
+test('valid scheduled recovery slots keep phase, date, key and publication environment values', async (t) => {
+  const directory = await mkdtemp(join(tmpdir(), 'briefing-slot-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const envFile = join(directory, 'github-env');
+  const scenarios = [
+    { cron: '50 23 * * 0-4', phase: 'pre_market', now: new Date('2026-09-29T08:50:00+09:00') },
+    { cron: '20 7 * * 1-5', phase: 'post_market', now: new Date('2026-09-29T16:20:00+09:00') }
+  ];
+  for (const scenario of scenarios) {
+    const stdout = capture();
+    await runBriefingSlotCli({
+      env: { GITHUB_EVENT_NAME: 'schedule', SCHEDULE: scenario.cron, GITHUB_ENV: envFile },
+      now: scenario.now,
+      stdout,
+      stderr: capture()
+    });
+    const expected = `should_run=true\nphase=${scenario.phase}\ntrading_date=2026-09-29\nslot_key=briefing:2026-09-29:${scenario.phase}\n`;
+    assert.equal(stdout.value, expected);
+    const publicationEnv = await readFile(envFile, 'utf8');
+    assert.equal(publicationEnv, `BRIEFING_PHASE=${scenario.phase}\nBRIEFING_TRADING_DATE=2026-09-29\nKRX_CHECK_DATE=2026-09-29\n`);
+    await writeFile(envFile, '');
+  }
+});
+test('manual, unknown schedule, invalid input and metadata failures remain strict', async () => {
+  const early = new Date('2026-09-29T00:35:03+09:00');
+  const runCli = (env, options = {}) => runBriefingSlotCli({ env, now: early, stdout: capture(), stderr: capture(), ...options });
+  await assert.rejects(runCli({ GITHUB_EVENT_NAME: 'workflow_dispatch', INPUT_PHASE: 'post_market' }), /outside_phase_publication_window/u);
+  await assert.rejects(runCli({ GITHUB_EVENT_NAME: 'workflow_dispatch', INPUT_PHASE: 'after_market' }), /invalid_phase/u);
+  await assert.rejects(runCli({ GITHUB_EVENT_NAME: 'workflow_dispatch', INPUT_PHASE: 'pre_market', INPUT_TRADING_DATE: '2026-02-30' }), /invalid_trading_date/u);
+  await assert.rejects(runCli({ GITHUB_EVENT_NAME: 'workflow_dispatch', INPUT_PHASE: 'post_market', BRIEFING_AS_OF: '2026-09-28T16:01:00+09:00' }), /invalid_backfill_cutoff/u);
+  await assert.rejects(runCli({ GITHUB_EVENT_NAME: 'schedule', SCHEDULE: '0 0 * * *', INPUT_PHASE: 'post_market' }), /outside_phase_publication_window/u);
+
+  const metadataEnv = { GITHUB_EVENT_NAME: 'schedule', SCHEDULE: '20 7 * * 1-5', GITHUB_TOKEN: 'test', GITHUB_RUN_ID: '42', GITHUB_REPOSITORY: 'owner/report' };
+  await assert.rejects(runCli(metadataEnv, { fetchImpl: async () => ({ ok: false, status: 503 }) }), /run_metadata_http_503/u);
+  await assert.rejects(runCli(metadataEnv, { fetchImpl: async () => response({}) }), /run_metadata_missing_created_at/u);
+});
+test('recovery workflow gates calendar, holiday and publication work on should_run', async () => {
+  const workflow = await readFile(new URL('../.github/workflows/recover-market-briefing.yml', import.meta.url), 'utf8');
+  assert.match(workflow, /- name: Skip expired scheduled recovery\n        if: steps\.slot\.outputs\.should_run == 'false'\n/u);
+  assert.match(workflow, /- name: Evaluate KRX trading day\n        id: trading_day\n        if: steps\.slot\.outputs\.should_run == 'true'\n/u);
+  assert.match(workflow, /- name: Skip on KRX holiday\n        if: steps\.slot\.outputs\.should_run == 'true' && steps\.trading_day\.outputs\.is_trading_day != 'true'\n/u);
+  assert.match(workflow, /- name: Recover and observe public publication\n        if: steps\.slot\.outputs\.should_run == 'true' && steps\.trading_day\.outputs\.is_trading_day == 'true'\n/u);
 });
 test('backfill requires valid exact cutoff and matching date', () => {
   assert.equal(resolveSlot({ phase, asOf: '2026-09-07T16:00:00+09:00', now }).date, '2026-09-07');

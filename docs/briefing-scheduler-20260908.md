@@ -11,6 +11,12 @@
 - Add missing 2026 substitute holidays and reject invalid dates/unknown calendar years for publication.
 - Serial regression tests now run in CI on briefing source/workflow changes.
 
+## Late scheduled recovery — 2026-09-29
+
+The recovery workflow can start after its scheduled publication window or after KST midnight when GitHub delays a scheduled run. For the two configured GitHub `schedule` events only, the slot CLI now converts `outside_phase_publication_window` and `delayed_slot_date_mismatch` into a successful `should_run=false` skip. It does not emit a publication phase/date/key or write the publication environment for that run. The workflow gates calendar evaluation, holiday handling and recovery on `should_run`, and logs the skip reason without presenting it as a holiday or verified publication.
+
+Manual recovery, publishing, unknown schedule strings and metadata, validation or publication failures retain strict failure behavior. A late skip records that this recovery attempt did not run; it does not verify whether the public page was published by another attempt.
+
 ## Remaining operational work (not represented as fixed)
 
 GitHub scheduled events remain best effort: delayed/dropped event creation cannot be repaired by a workflow date guard. Existing Cloud Scheduler jobs are the primary trigger, but current retryConfig, attemptDeadline and exact job schedules require authenticated GCP readback. Reconcile recovery deadlines with those jobs before claiming timely recovery.

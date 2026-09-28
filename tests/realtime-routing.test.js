@@ -49,10 +49,25 @@ test('briefing entry pages route realtime button to a separate page', () => {
     includes(html, "sessionStorage.getItem(READING_ROOM_AUTH_KEY)");
     includes(html, "params.get('source') === 'maedo-signal'");
     includes(html, "/\\bwv\\b|MaedoSignal|maedo-signal|com\\.maedo\\.signal/iu");
-    assert.match(html, /<div class="eyebrow published">장시작 브리핑<\/div>/);
-    assert.match(html, /<div class="eyebrow published">장마감 브리핑<\/div>/);
-    assert.match(html, /<h1>\d{4}-\d{2}-\d{2} 08:30<\/h1>/);
-    assert.match(html, /<h1>\d{4}-\d{2}-\d{2} 16:00<\/h1>/);
+    const paneStart = html.indexOf('<section id="briefing-pane">');
+    const paneEnd = html.indexOf('</section>', paneStart);
+    assert.ok(paneStart >= 0 && paneEnd > paneStart, 'briefing pane must exist');
+    const pane = html.slice(paneStart, paneEnd);
+    const articles = [...pane.matchAll(/<article\b([^>]*)>([\s\S]*?)<\/article>/gu)];
+    assert.ok(articles.length >= 1, 'at least one briefing article must be present');
+    for (const [, attributes, article] of articles) {
+      const classes = attributes.match(/\bclass="([^"]+)"/u)?.[1].split(/\s+/u) ?? [];
+      assert.ok(classes.includes('report'), 'briefing article must have the report class');
+      const phases = classes.filter((name) => ['report-pre-market', 'report-post-market'].includes(name));
+      assert.equal(phases.length, 1, 'each briefing article must have one recognized phase class');
+      if (phases[0] === 'report-pre-market') {
+        assert.match(article, /<div class="eyebrow published">장시작 브리핑<\/div>/u);
+        assert.match(article, /<h1>\d{4}-\d{2}-\d{2} 08:30<\/h1>/u);
+      } else {
+        assert.match(article, /<div class="eyebrow published">장마감 브리핑<\/div>/u);
+        assert.match(article, /<h1>\d{4}-\d{2}-\d{2} 16:00<\/h1>/u);
+      }
+    }
     excludes(html, 'SPONSORED BANNER');
     excludes(html, '광고 배너 1');
     excludes(html, '광고 배너 2');
