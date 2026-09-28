@@ -58,17 +58,85 @@ test('post-market shape requires and renders both rising and falling stocks', as
   assert.throws(() => module.__testValidateReportShape({ ...report, notableStocks: { surging: [] } }), /notableStocks.surging/);
 });
 
-async function importBriefingModule(phase = 'post_market') {
-  if (moduleCache.has(phase)) {
-    return moduleCache.get(phase);
+async function importBriefingModule(phase = 'post_market', asOf = undefined) {
+  const previousAsOf = process.env.BRIEFING_AS_OF;
+  if (asOf !== undefined) {
+    if (asOf == null) delete process.env.BRIEFING_AS_OF;
+    else process.env.BRIEFING_AS_OF = asOf;
   }
   process.env.REPORT_LLM_MOCK = '1';
   process.env.PRESERVE_EXISTING_REPORTS = '0';
   process.env.BRIEFING_PHASE = phase;
-  const moduleUrl = `${pathToFileURL(path.join(repoRoot, 'scripts/generate-market-briefing.mjs')).href}?phase=${phase}`;
-  const module = await import(moduleUrl);
-  moduleCache.set(phase, module);
-  return module;
+  const resolvedAsOf = process.env.BRIEFING_AS_OF ?? null;
+  const cacheKey = `${phase}:${resolvedAsOf ?? ''}`;
+  try {
+    if (moduleCache.has(cacheKey)) {
+      return moduleCache.get(cacheKey);
+    }
+    const moduleUrl = `${pathToFileURL(path.join(repoRoot, 'scripts/generate-market-briefing.mjs')).href}?phase=${phase}&asOf=${encodeURIComponent(resolvedAsOf ?? '')}`;
+    const module = await import(moduleUrl);
+    moduleCache.set(cacheKey, module);
+    return module;
+  } finally {
+    if (previousAsOf == null) delete process.env.BRIEFING_AS_OF;
+    else process.env.BRIEFING_AS_OF = previousAsOf;
+  }
+}
+
+function escapeXml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;');
+}
+
+function newsRss(items) {
+  const entries = items.map((item) => `<item><title>${escapeXml(item.title)}</title><link>${escapeXml(item.sourceUrl)}</link><source>${escapeXml(item.source ?? 'Test News')}</source><pubDate>${escapeXml(item.publishedAt)}</pubDate><description>${escapeXml(item.summary ?? '테스트 기사 요약')}</description></item>`).join('');
+  return `<rss><channel>${entries}</channel></rss>`;
+}
+
+async function withGoogleNewsStub(handler, action) {
+  const originalFetch = global.fetch;
+  const calls = [];
+  global.fetch = async (input) => {
+    const url = new URL(typeof input === 'string' ? input : input.url);
+    calls.push(url.searchParams.get('q'));
+    return handler(url.searchParams.get('q'), url);
+  };
+  try {
+    return { result: await action(), calls };
+  } finally {
+    global.fetch = originalFetch;
+  }
+}
+
+function rssResponse(items) {
+  return {
+    ok: true,
+    status: 200,
+    headers: { get: () => null },
+    text: async () => newsRss(items)
+  };
+}
+
+function errorResponse(status = 403) {
+  return {
+    ok: false,
+    status,
+    headers: { get: () => null },
+    text: async () => 'blocked'
+  };
+}
+
+function recentBackfillAsOf() {
+  const referenceDate = new Date(Date.now() - 36 * 60 * 60 * 1000);
+  const date = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Seoul',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(referenceDate);
+  return `${date}T16:00:00+09:00`;
 }
 
 test('Npay KOSPI fallback parser normalizes grounded current, change, and rate values', async () => {
@@ -1141,6 +1209,256 @@ test('pre-market writer leaves an ungrounded required field for strict validatio
     () => module.__testValidateReportShape(repaired),
     /invalid_report_shape:sectorWeather\.rainy/
   );
+});
+
+test('market and sector fallback runs after empty or stale primary results and preserves query provenance', async () => {
+  const module = await importBriefingModule('pre_market', null);
+  assert.deepEqual(module.__testMarketNewsFallbackQueries, ['코스피 when:4d', '코스닥 when:4d']);
+  assert.deepEqual(module.__testSectorThemeFallbackQueries, ['증시 업종 when:4d', '증시 테마 when:4d']);
+
+  const referenceTime = Date.now();
+  const staleArticle = {
+    title: 'stale primary article',
+    sourceUrl: 'https://example.com/stale-primary',
+    publishedAt: new Date(referenceTime - 97 * 60 * 60 * 1000).toUTCString()
+  };
+  const marketShared = {
+    title: '코스피 fresh market fallback article',
+    sourceUrl: 'https://example.com/market-shared',
+    publishedAt: new Date(referenceTime - 60 * 60 * 1000).toUTCString()
+  };
+  const marketSecond = {
+    title: '코스닥 second market fallback article',
+    sourceUrl: 'https://example.com/market-second',
+    publishedAt: new Date(referenceTime - 2 * 60 * 60 * 1000).toUTCString()
+  };
+  const sectorArticle = {
+    title: '증시 업종 fresh sector fallback article',
+    sourceUrl: 'https://example.com/sector-fallback',
+    publishedAt: new Date(referenceTime - 30 * 60 * 1000).toUTCString()
+  };
+  const sourceStatus = {};
+
+  const { result, calls } = await withGoogleNewsStub(async (query) => {
+    if (module.__testNewsQueries.includes(query) || module.__testSectorThemeQueries.includes(query)) {
+      return rssResponse(query === module.__testNewsQueries[0] || query === module.__testSectorThemeQueries[0]
+        ? [staleArticle]
+        : []);
+    }
+    if (query === module.__testMarketNewsFallbackQueries[0]) return rssResponse([marketShared]);
+    if (query === module.__testMarketNewsFallbackQueries[1]) return rssResponse([marketShared, marketSecond]);
+    if (query === module.__testSectorThemeFallbackQueries[0]) return rssResponse([sectorArticle]);
+    return rssResponse([]);
+  }, async () => ({
+    marketNews: await module.__testFetchNewsCandidateGroupWithFallback(
+      module.__testNewsQueries,
+      module.__testMarketNewsFallbackQueries,
+      10,
+      'googleNews',
+      sourceStatus
+    ),
+    sectorThemeNewsCandidates: await module.__testFetchNewsCandidateGroupWithFallback(
+      module.__testSectorThemeQueries,
+      module.__testSectorThemeFallbackQueries,
+      14,
+      'sectorThemeNewsCandidates',
+      sourceStatus
+    )
+  }));
+
+  assert.deepEqual(result.marketNews.map((item) => item.sourceUrl), [marketShared.sourceUrl, marketSecond.sourceUrl]);
+  assert.deepEqual(result.marketNews.map((item) => item.query), [
+    module.__testMarketNewsFallbackQueries[0],
+    module.__testMarketNewsFallbackQueries[1]
+  ]);
+  assert.equal(result.sectorThemeNewsCandidates[0].query, module.__testSectorThemeFallbackQueries[0]);
+  assert.equal(result.marketNews.some((item) => item.sourceUrl === staleArticle.sourceUrl), false);
+  assert.equal(result.sectorThemeNewsCandidates.some((item) => item.sourceUrl === staleArticle.sourceUrl), false);
+  assert.equal(sourceStatus.googleNews, 'ok');
+  assert.equal(sourceStatus.sectorThemeNewsCandidates, 'ok');
+  assert.deepEqual(calls.filter((query) => module.__testMarketNewsFallbackQueries.includes(query)), module.__testMarketNewsFallbackQueries);
+  assert.deepEqual(calls.filter((query) => module.__testSectorThemeFallbackQueries.includes(query)), module.__testSectorThemeFallbackQueries);
+});
+
+test('usable primary news prevents fallback requests', async () => {
+  const module = await importBriefingModule('pre_market', null);
+  const primaryArticle = {
+    title: 'fresh primary article',
+    sourceUrl: 'https://example.com/primary',
+    publishedAt: new Date(Date.now() - 60 * 60 * 1000).toUTCString()
+  };
+  const sourceStatus = {};
+  const { result, calls } = await withGoogleNewsStub(async (query) => {
+    if (query === module.__testNewsQueries[0]) return rssResponse([primaryArticle]);
+    return rssResponse([]);
+  }, async () => module.__testFetchNewsCandidateGroupWithFallback(
+    module.__testNewsQueries,
+    module.__testMarketNewsFallbackQueries,
+    10,
+    'googleNews',
+    sourceStatus
+  ));
+
+  assert.equal(result.length, 1);
+  assert.equal(result[0].sourceUrl, primaryArticle.sourceUrl);
+  assert.equal(result[0].query, module.__testNewsQueries[0]);
+  assert.equal(calls.some((query) => module.__testMarketNewsFallbackQueries.includes(query)), false);
+  assert.equal(sourceStatus.googleNews, 'ok');
+});
+
+test('stale fallback evidence stays empty and fallback errors remain unavailable to the quality gate', async () => {
+  const module = await importBriefingModule('pre_market', null);
+  const staleArticle = {
+    title: '코스피 stale fallback article',
+    sourceUrl: 'https://example.com/stale-fallback',
+    publishedAt: new Date(Date.now() - 97 * 60 * 60 * 1000).toUTCString()
+  };
+  const staleStatus = {};
+  const staleRun = await withGoogleNewsStub(async (query) => (
+    query === 'stale-fallback' ? rssResponse([staleArticle]) : rssResponse([])
+  ), async () => module.__testFetchNewsCandidateGroupWithFallback(
+    ['empty-primary'], ['stale-fallback'], 10, 'sectorThemeNewsCandidates', staleStatus
+  ));
+  assert.deepEqual(staleRun.result, []);
+  assert.equal(staleStatus.sectorThemeNewsCandidates, 'empty');
+
+  const failedStatus = {};
+  const failedRun = await withGoogleNewsStub(async (query) => (
+    query === 'error-fallback' ? errorResponse(403) : rssResponse([])
+  ), async () => module.__testFetchNewsCandidateGroupWithFallback(
+    ['empty-primary'], ['error-fallback'], 10, 'sectorThemeNewsCandidates', failedStatus
+  ));
+  assert.equal(failedRun.result.length, 1);
+  assert.equal(failedRun.result[0].status, 'unavailable');
+  assert.equal(failedStatus.sectorThemeNewsCandidates, 'partial');
+  assert.throws(() => module.__testResolveBriefingPublishPlan({
+    marketResearch: {
+      investorFlows: { status: 'unavailable' },
+      investorFlowNewsCandidates: [],
+      marketNews: [],
+      sectorThemeNewsCandidates: failedRun.result
+    },
+    report: {},
+    existingHtml: ''
+  }), /briefing_quality_gate_failed:.*sector_theme_source_unavailable/);
+});
+
+test('fallback rejects unrelated gambling headlines and fails closed when no relevant title remains', async () => {
+  const module = await importBriefingModule('pre_market', null);
+  const unrelated = [
+    {
+      title: '게임 테마의 공통 요소를 모아보는 앙상블 토토',
+      sourceUrl: 'https://example.com/gambling-theme',
+      publishedAt: new Date(Date.now() - 30 * 60 * 1000).toUTCString()
+    },
+    {
+      title: '진짜 돈을 룰렛하다 게임 종료와 창 닫기 구분',
+      sourceUrl: 'https://example.com/roulette-game',
+      publishedAt: new Date(Date.now() - 20 * 60 * 1000).toUTCString()
+    }
+  ];
+  const sourceStatus = {};
+  const { result } = await withGoogleNewsStub(async (query) => (
+    query === 'irrelevant-fallback' ? rssResponse(unrelated) : rssResponse([])
+  ), async () => module.__testFetchNewsCandidateGroupWithFallback(
+    ['empty-primary'], ['irrelevant-fallback'], 14, 'sectorThemeNewsCandidates', sourceStatus
+  ));
+
+  assert.deepEqual(result, []);
+  assert.equal(sourceStatus.sectorThemeNewsCandidates, 'empty');
+  assert.throws(() => module.__testResolveBriefingPublishPlan({
+    marketResearch: {
+      investorFlows: { status: 'unavailable' },
+      investorFlowNewsCandidates: [],
+      marketNews: [],
+      sectorThemeNewsCandidates: result
+    },
+    report: {},
+    existingHtml: ''
+  }), /briefing_quality_gate_failed:.*sector_theme_source_unavailable/);
+});
+
+test('fallback relevance filtering happens before the candidate limit', async () => {
+  const module = await importBriefingModule('pre_market', null);
+  const referenceTime = Date.now();
+  const irrelevant = Array.from({ length: 15 }, (_, index) => ({
+    title: `토토 게임 안내 ${index}`,
+    sourceUrl: `https://example.com/irrelevant-${index}`,
+    publishedAt: new Date(referenceTime - index * 60 * 1000).toUTCString()
+  }));
+  const relevant = {
+    title: '코스피 상장 반도체 주가 동향',
+    sourceUrl: 'https://example.com/relevant-fallback',
+    publishedAt: new Date(referenceTime - 2 * 60 * 60 * 1000).toUTCString()
+  };
+  const sourceStatus = {};
+  const { result } = await withGoogleNewsStub(async (query) => (
+    query === 'limited-fallback' ? rssResponse([...irrelevant, relevant]) : rssResponse([])
+  ), async () => module.__testFetchNewsCandidateGroupWithFallback(
+    ['empty-primary'], ['limited-fallback'], 3, 'googleNews', sourceStatus
+  ));
+
+  assert.deepEqual(result.map((item) => item.sourceUrl), [relevant.sourceUrl]);
+  assert.equal(sourceStatus.googleNews, 'ok');
+});
+
+test('fallback freshness retains the ten-minute future tolerance', async () => {
+  const module = await importBriefingModule('pre_market', null);
+  const referenceTime = Date.now();
+  const withinTolerance = {
+    title: '코스닥 article within future tolerance',
+    sourceUrl: 'https://example.com/future-within-tolerance',
+    publishedAt: new Date(referenceTime + 9 * 60 * 1000).toUTCString()
+  };
+  const outsideTolerance = {
+    title: '코스피 article outside future tolerance',
+    sourceUrl: 'https://example.com/future-outside-tolerance',
+    publishedAt: new Date(referenceTime + 11 * 60 * 1000).toUTCString()
+  };
+  const sourceStatus = {};
+  const { result } = await withGoogleNewsStub(async (query) => (
+    query === 'future-fallback' ? rssResponse([withinTolerance, outsideTolerance]) : rssResponse([])
+  ), async () => module.__testFetchNewsCandidateGroupWithFallback(
+    ['empty-primary'], ['future-fallback'], 10, 'googleNews', sourceStatus
+  ));
+
+  assert.deepEqual(result.map((item) => item.sourceUrl), [withinTolerance.sourceUrl]);
+  assert.equal(sourceStatus.googleNews, 'ok');
+});
+
+test('backfill fallback retains the as-of cutoff and existing 96-hour freshness limit', async () => {
+  const asOf = recentBackfillAsOf();
+  const module = await importBriefingModule('post_market', asOf);
+  const asOfMs = Date.parse(asOf);
+  const beforeCutoff = {
+    title: '코스피 before cutoff fresh article',
+    sourceUrl: 'https://example.com/before-cutoff',
+    publishedAt: new Date(asOfMs - 60 * 60 * 1000).toUTCString()
+  };
+  const afterCutoff = {
+    title: '코스피 after cutoff article',
+    sourceUrl: 'https://example.com/after-cutoff',
+    publishedAt: new Date(asOfMs + 60 * 1000).toUTCString()
+  };
+  const stale = {
+    title: '코스피 outside freshness window',
+    sourceUrl: 'https://example.com/outside-freshness',
+    publishedAt: new Date(asOfMs - 97 * 60 * 60 * 1000).toUTCString()
+  };
+  const sourceStatus = {};
+  const { result, calls } = await withGoogleNewsStub(async (query) => (
+    query.startsWith('코스피') ? rssResponse([beforeCutoff, afterCutoff, stale]) : rssResponse([])
+  ), async () => module.__testFetchNewsCandidateGroupWithFallback(
+    ['primary'], ['코스피 when:4d'], 10, 'googleNews', sourceStatus
+  ));
+
+  assert.deepEqual(result.map((item) => item.sourceUrl), [beforeCutoff.sourceUrl]);
+  assert.equal(result[0].query, '코스피 when:4d');
+  assert.equal(sourceStatus.googleNews, 'ok');
+  const fallbackSearch = calls.find((query) => query.startsWith('코스피'));
+  assert.ok(fallbackSearch);
+  assert.doesNotMatch(fallbackSearch, /when:4d/);
+  assert.match(fallbackSearch, /after:\d{4}-\d{2}-\d{2} before:\d{4}-\d{2}-\d{2}/);
 });
 
 test('news ranking removes stale candidates and orders the remaining articles by publication time', async () => {

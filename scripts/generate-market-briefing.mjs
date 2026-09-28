@@ -97,6 +97,15 @@ const SECTOR_THEME_QUERIES = [
   '오늘 테마주 강세 약세 시장 마감',
   '코스피 코스닥 업종별 흐름 마감'
 ];
+const MARKET_NEWS_FALLBACK_QUERIES = [
+  '코스피 when:4d',
+  '코스닥 when:4d'
+];
+const SECTOR_THEME_FALLBACK_QUERIES = [
+  '증시 업종 when:4d',
+  '증시 테마 when:4d'
+];
+const FALLBACK_NEWS_TITLE_ANCHOR_RE = /(증시|코스피|코스닥|주가|주식|업종|상장|株|ETF)/iu;
 const REPORT_STYLE = String.raw`
     :root {
       color-scheme: dark;
@@ -2407,7 +2416,7 @@ function rankFreshNewsCandidates(items, limit = 10, referenceTimeMs = Date.now()
   ].slice(0, limit);
 }
 
-async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10) {
+async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10, { candidateFilter } = {}) {
   const collected = [];
   for (const query of queries) {
     const searchQuery = BRIEFING_AS_OF
@@ -2438,15 +2447,18 @@ async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10) {
     seen.add(key);
     return true;
   });
-  const eligible = BRIEFING_AS_OF
-    ? deduplicated.filter((item) => newsPublishedAtMs(item) != null && newsPublishedAtMs(item) <= Date.parse(BRIEFING_AS_OF))
+  const filtered = candidateFilter
+    ? deduplicated.filter((item) => item?.status === 'unavailable' || candidateFilter(item))
     : deduplicated;
+  const eligible = BRIEFING_AS_OF
+    ? filtered.filter((item) => newsPublishedAtMs(item) != null && newsPublishedAtMs(item) <= Date.parse(BRIEFING_AS_OF))
+    : filtered;
   return rankFreshNewsCandidates(eligible, limit, BRIEFING_AS_OF ? Date.parse(BRIEFING_AS_OF) : Date.now());
 }
 
-async function fetchNewsCandidateGroup(queries, limit, statusKey, sourceStatus) {
+async function fetchNewsCandidateGroup(queries, limit, statusKey, sourceStatus, options = {}) {
   try {
-    const items = await fetchGoogleNews(queries, limit);
+    const items = await fetchGoogleNews(queries, limit, options);
     sourceStatus[statusKey] = items.length === 0
       ? 'empty'
       : items.some((item) => item.status === 'unavailable') ? 'partial' : 'ok';
@@ -2455,6 +2467,37 @@ async function fetchNewsCandidateGroup(queries, limit, statusKey, sourceStatus) 
     sourceStatus[statusKey] = `unavailable:${error.message}`;
     return [];
   }
+}
+
+async function fetchNewsCandidateGroupWithFallback(primaryQueries, fallbackQueries, limit, statusKey, sourceStatus) {
+  const primarySourceStatus = {};
+  const primary = await fetchNewsCandidateGroup(primaryQueries, limit, statusKey, primarySourceStatus);
+  if (hasUsableCandidates(primary)) {
+    sourceStatus[statusKey] = primarySourceStatus[statusKey];
+    return primary;
+  }
+
+  const fallbackSourceStatus = {};
+  const fallback = await fetchNewsCandidateGroup(
+    fallbackQueries,
+    limit,
+    statusKey,
+    fallbackSourceStatus,
+    { candidateFilter: (item) => FALLBACK_NEWS_TITLE_ANCHOR_RE.test(item?.title ?? '') }
+  );
+  const items = [
+    ...fallback,
+    ...primary.filter((item) => item?.status === 'unavailable')
+  ].slice(0, limit);
+  const sourceStatuses = [primarySourceStatus[statusKey], fallbackSourceStatus[statusKey]];
+  const hadUnavailableQueries = sourceStatuses.some((status) => (
+    status === 'partial' || status?.startsWith('unavailable:')
+  ));
+  const hasUnavailableItems = items.some((item) => item?.status === 'unavailable');
+  sourceStatus[statusKey] = items.length === 0
+    ? 'empty'
+    : hadUnavailableQueries || hasUnavailableItems ? 'partial' : 'ok';
+  return items;
 }
 
 function unavailableInvestorFlows(reason) {
@@ -2557,7 +2600,13 @@ async function collectPublicMarketResearch() {
     }
   }
 
-  const marketNews = await fetchNewsCandidateGroup(NEWS_QUERIES, 10, 'googleNews', sourceStatus);
+  const marketNews = await fetchNewsCandidateGroupWithFallback(
+    NEWS_QUERIES,
+    MARKET_NEWS_FALLBACK_QUERIES,
+    10,
+    'googleNews',
+    sourceStatus
+  );
   const marketEventNewsCandidates = await fetchNewsCandidateGroup(
     MARKET_EVENT_NEWS_QUERIES,
     20,
@@ -2568,7 +2617,13 @@ async function collectPublicMarketResearch() {
   const investorFlowNewsCandidates = await fetchNewsCandidateGroup(INVESTOR_FLOW_NEWS_QUERIES, 12, 'investorFlowNewsCandidates', sourceStatus);
   const disclosureNewsCandidates = await fetchNewsCandidateGroup(DISCLOSURE_NEWS_QUERIES, 12, 'disclosureNewsCandidates', sourceStatus);
   const scheduleNewsCandidates = await fetchNewsCandidateGroup(MARKET_SCHEDULE_QUERIES, 12, 'scheduleNewsCandidates', sourceStatus);
-  const sectorThemeNewsCandidates = await fetchNewsCandidateGroup(SECTOR_THEME_QUERIES, 14, 'sectorThemeNewsCandidates', sourceStatus);
+  const sectorThemeNewsCandidates = await fetchNewsCandidateGroupWithFallback(
+    SECTOR_THEME_QUERIES,
+    SECTOR_THEME_FALLBACK_QUERIES,
+    14,
+    'sectorThemeNewsCandidates',
+    sourceStatus
+  );
 
   const investorFlows = await fetchInvestorFlows();
   sourceStatus.investorFlows = isInvestorFlowsAvailable(investorFlows)
@@ -3329,3 +3384,9 @@ export const __testNormalizeYahooIndex = normalizeYahooIndex;
 export const __testFetchYahooIndex = fetchYahooIndex;
 export const __testIsCoherentIndex = isCoherentIndex;
 export const __testIsGroundedMajorIndex = isGroundedMajorIndex;
+export const __testFetchNewsCandidateGroupWithFallback = fetchNewsCandidateGroupWithFallback;
+export const __testCollectPublicMarketResearch = collectPublicMarketResearch;
+export const __testNewsQueries = NEWS_QUERIES;
+export const __testSectorThemeQueries = SECTOR_THEME_QUERIES;
+export const __testMarketNewsFallbackQueries = MARKET_NEWS_FALLBACK_QUERIES;
+export const __testSectorThemeFallbackQueries = SECTOR_THEME_FALLBACK_QUERIES;
