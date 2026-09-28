@@ -51,21 +51,27 @@ jobs:
           SCHEDULE: ${{ github.event.schedule }}
         run: node scripts/briefing-slot.mjs >> "$GITHUB_OUTPUT"
 
+      - name: Skip expired scheduled recovery
+        if: steps.slot.outputs.should_run == 'false'
+        run: |
+          echo "Skipping expired scheduled recovery before publication: ${{ steps.slot.outputs.skip_reason }}"
+
       - name: Evaluate KRX trading day
         id: trading_day
+        if: steps.slot.outputs.should_run == 'true'
         run: node scripts/briefing-trading-day.mjs >> "$GITHUB_OUTPUT"
 
       - name: Skip on KRX holiday
-        if: steps.trading_day.outputs.is_trading_day != 'true'
+        if: steps.slot.outputs.should_run == 'true' && steps.trading_day.outputs.is_trading_day != 'true'
         run: |
           echo "Skipping recovery check."
           echo "KST date: ${{ steps.trading_day.outputs.trading_date }}"
           echo "Reason: ${{ steps.trading_day.outputs.skip_reason }}"
 
-      # GitHub cron is best effort. A successful run means public verification,
-      # never merely acceptance of a workflow dispatch request.
+      # A recovery that runs must observe public publication; a late schedule
+      # skip makes no publication claim, and dispatch acceptance alone is never success.
       - name: Recover and observe public publication
-        if: steps.trading_day.outputs.is_trading_day == 'true'
+        if: steps.slot.outputs.should_run == 'true' && steps.trading_day.outputs.is_trading_day == 'true'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/recover-market-briefing.mjs
