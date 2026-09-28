@@ -30,6 +30,28 @@ test('public validator rejects placeholder and title suffix impersonation', () =
   assert.equal(validateBriefingHtml(html(`${date} 16:00`, '시장 데이터 확인 필요 상태이므로 발행 완료라고 볼 수 없습니다.'), phase, now).shouldRecover, true);
   assert.equal(validateBriefingHtml(html(`${date} 16:00 stale`, '시장 데이터와 주요 종목 분석을 반영한 완성된 장마감 브리핑입니다.'), phase, now).shouldRecover, true);
 });
+test('pre-market recovery requires the exact information cutoff while post-market remains unchanged', () => {
+  const preNow = new Date('2026-09-08T08:35:00+09:00');
+  const cutoff = '2026-09-08T08:30:00+09:00';
+  const body = '<h1>2026-09-08 08:30</h1><h2>시장 전략</h2><p>현재 시장의 주요 변수와 대응 전략을 충분한 근거로 정리했습니다.</p>';
+  const article = (metadata = '') => `<article class="report report-pre-market"${metadata}>${body}</article>`;
+
+  const oldSameDay = validateBriefingHtml(article(), 'pre_market', preNow);
+  const corrected = validateBriefingHtml(article(` data-information-as-of="${cutoff}"`), 'pre_market', preNow);
+  const wrongCutoff = validateBriefingHtml(article(' data-information-as-of="2026-09-08T08:31:00+09:00"'), 'pre_market', preNow);
+
+  assert.equal(oldSameDay.shouldRecover, true);
+  assert.equal(oldSameDay.reason, 'information_as_of_mismatch');
+  assert.equal(corrected.shouldRecover, false);
+  assert.equal(corrected.isInformationAsOf, true);
+  assert.equal(wrongCutoff.shouldRecover, true);
+  assert.equal(wrongCutoff.reason, 'information_as_of_mismatch');
+  assert.equal(validateBriefingHtml(
+    '<article class="report report-post-market"><h1>2026-09-08 16:00</h1><p>시장 데이터와 주요 종목 분석을 충분한 근거로 정리했습니다.</p></article>',
+    'post_market',
+    preNow
+  ).shouldRecover, false);
+});
 test('public polling does not accept success delivered after overall deadline', async () => {
   let clock = 0;
   await assert.rejects(waitForPublicBriefing({ date, phase, timeoutMs: 10, now: () => clock, check: async () => { clock = 11; return true; } }), /timeout/);
