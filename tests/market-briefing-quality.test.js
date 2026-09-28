@@ -1,5 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const os = require('node:os');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 
@@ -15,6 +17,40 @@ test('daily index backfill selects the exact date and rejects missing or incoher
   assert.equal(parsed.sourceDate, '2026-09-07');
   assert.throws(() => module.__testParseNpayDailyIndex(row, 'kospi', '2026-09-08'), /date_unavailable/);
   assert.throws(() => module.__testParseNpayDailyIndex(row.replace('+4.61%', '-4.61%'), 'kospi', '2026-09-07'), /inconsistent/);
+});
+
+test('daily index prior-session fallback selects the latest completed date across holidays', async () => {
+  const tradingDate = currentTradingDate();
+  const module = await importBriefingModule('pre_market', null, tradingDate);
+  const rows = [
+    `<tr><td>${shiftTradingDate(tradingDate, -5).replaceAll('-', '.')}</td><td>100.00</td><td><img src="ico_up.gif">1.00</td><td>+1.01%</td></tr>`,
+    `<tr><td>${shiftTradingDate(tradingDate, -3).replaceAll('-', '.')}</td><td>102.00</td><td><img src="ico_up.gif">2.00</td><td>+2.00%</td></tr>`,
+    `<tr><td>${tradingDate.replaceAll('-', '.')}</td><td>152.00</td><td><img src="ico_up.gif">50.00</td><td>+49.02%</td></tr>`
+  ].join('');
+  const parsed = module.__testParseNpayDailyIndex(rows, 'kospi', tradingDate, { beforeTarget: true });
+  assert.equal(parsed.sourceDate, shiftTradingDate(tradingDate, -3));
+  assert.equal(parsed.currentPrice, '102.00');
+  assert.equal(parsed.changePercent, '+2.00%');
+});
+
+test('Yahoo prior-session history ignores the after-cutoff bar and fails closed without two dates', async () => {
+  const tradingDate = currentTradingDate();
+  const module = await importBriefingModule('pre_market', null, tradingDate);
+  const response = yahooDailyFixture('^KS11', 7019.73, [6894.22998046875, 7007.72021484375, 7017.91015625, 7080.919921875, 7019.72998046875], tradingDate);
+  const parsed = module.__testNormalizeYahooPriorSessionIndex(
+    { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
+    response,
+    tradingDate
+  );
+  assert.equal(parsed.sourceDate, shiftTradingDate(tradingDate, -5));
+  assert.equal(parsed.currentPrice, '7,080.92');
+  assert.equal(parsed.change, '+63.01');
+  assert.equal(Date.parse(parsed.updatedAt) <= Date.parse(`${tradingDate}T08:30:00+09:00`), true);
+  assert.equal(module.__testNormalizeYahooPriorSessionIndex(
+    { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
+    { chart: { result: [{ timestamp: [1790553600], indicators: { quote: [{ close: [7019.73] }] } }] } },
+    tradingDate
+  ), null);
 });
 
 test('writer excludes unavailable evidence rather than requesting forbidden placeholder copy', async () => {
@@ -58,28 +94,44 @@ test('post-market shape requires and renders both rising and falling stocks', as
   assert.throws(() => module.__testValidateReportShape({ ...report, notableStocks: { surging: [] } }), /notableStocks.surging/);
 });
 
-async function importBriefingModule(phase = 'post_market', asOf = undefined) {
+async function importBriefingModule(phase = 'post_market', asOf = undefined, tradingDate = undefined) {
   const previousAsOf = process.env.BRIEFING_AS_OF;
-  if (asOf !== undefined) {
-    if (asOf == null) delete process.env.BRIEFING_AS_OF;
-    else process.env.BRIEFING_AS_OF = asOf;
+  const previousTradingDate = process.env.BRIEFING_TRADING_DATE;
+  const previousCwd = process.cwd();
+  const isolatedCwd = phase === 'post_market' && asOf
+    ? fs.mkdtempSync(path.join(os.tmpdir(), 'briefing-backfill-import-'))
+    : null;
+  if (isolatedCwd) process.chdir(isolatedCwd);
+  if (asOf === undefined || asOf === null) delete process.env.BRIEFING_AS_OF;
+  else process.env.BRIEFING_AS_OF = asOf;
+  if (tradingDate !== undefined) {
+    if (tradingDate == null) delete process.env.BRIEFING_TRADING_DATE;
+    else process.env.BRIEFING_TRADING_DATE = tradingDate;
+  } else if (phase === 'pre_market') {
+    process.env.BRIEFING_TRADING_DATE = currentTradingDate();
+  } else {
+    delete process.env.BRIEFING_TRADING_DATE;
   }
   process.env.REPORT_LLM_MOCK = '1';
   process.env.PRESERVE_EXISTING_REPORTS = '0';
   process.env.BRIEFING_PHASE = phase;
   const resolvedAsOf = process.env.BRIEFING_AS_OF ?? null;
-  const cacheKey = `${phase}:${resolvedAsOf ?? ''}`;
+  const resolvedTradingDate = process.env.BRIEFING_TRADING_DATE ?? null;
+  const cacheKey = `${phase}:${resolvedAsOf ?? ''}:${resolvedTradingDate ?? ''}`;
   try {
     if (moduleCache.has(cacheKey)) {
       return moduleCache.get(cacheKey);
     }
-    const moduleUrl = `${pathToFileURL(path.join(repoRoot, 'scripts/generate-market-briefing.mjs')).href}?phase=${phase}&asOf=${encodeURIComponent(resolvedAsOf ?? '')}`;
+    const moduleUrl = `${pathToFileURL(path.join(repoRoot, 'scripts/generate-market-briefing.mjs')).href}?phase=${phase}&asOf=${encodeURIComponent(resolvedAsOf ?? '')}&tradingDate=${encodeURIComponent(resolvedTradingDate ?? '')}`;
     const module = await import(moduleUrl);
     moduleCache.set(cacheKey, module);
     return module;
   } finally {
+    if (isolatedCwd) process.chdir(previousCwd);
     if (previousAsOf == null) delete process.env.BRIEFING_AS_OF;
     else process.env.BRIEFING_AS_OF = previousAsOf;
+    if (previousTradingDate == null) delete process.env.BRIEFING_TRADING_DATE;
+    else process.env.BRIEFING_TRADING_DATE = previousTradingDate;
   }
 }
 
@@ -88,6 +140,21 @@ function escapeXml(value) {
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;');
+}
+
+function currentTradingDate() {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Seoul',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(new Date());
+}
+
+function shiftTradingDate(date, offsetDays) {
+  return new Date(Date.parse(`${date}T00:00:00Z`) + offsetDays * 24 * 60 * 60 * 1000)
+    .toISOString()
+    .slice(0, 10);
 }
 
 function newsRss(items) {
@@ -110,6 +177,21 @@ async function withGoogleNewsStub(handler, action) {
   }
 }
 
+async function withFetchStub(handler, action) {
+  const originalFetch = global.fetch;
+  const calls = [];
+  global.fetch = async (input) => {
+    const url = new URL(typeof input === 'string' ? input : input.url);
+    calls.push(url);
+    return handler(url);
+  };
+  try {
+    return { result: await action(), calls };
+  } finally {
+    global.fetch = originalFetch;
+  }
+}
+
 function rssResponse(items) {
   return {
     ok: true,
@@ -119,12 +201,64 @@ function rssResponse(items) {
   };
 }
 
+function jsonResponse(value) {
+  return {
+    ok: true,
+    status: 200,
+    headers: { get: () => null },
+    text: async () => JSON.stringify(value)
+  };
+}
+
 function errorResponse(status = 403) {
   return {
     ok: false,
     status,
     headers: { get: () => null },
     text: async () => 'blocked'
+  };
+}
+
+function yahooDailyFixture(symbol, current, closes, targetDate = currentTradingDate()) {
+  const timestampForOffset = (offset) => Math.floor(
+    (Date.parse(`${targetDate}T00:00:00Z`) + offset * 24 * 60 * 60 * 1000) / 1000
+  );
+  return {
+    chart: {
+      result: [{
+        meta: {
+          symbol,
+          regularMarketTime: Math.floor(Date.parse(`${targetDate}T09:38:00+09:00`) / 1000),
+          regularMarketPrice: current,
+          regularMarketChange: 1,
+          regularMarketChangePercent: 1.0101010101,
+          previousClose: current - 1
+        },
+        timestamp: [-10, -7, -6, -5, 0].map(timestampForOffset),
+        indicators: { quote: [{ close: closes }] }
+      }],
+      error: null
+    }
+  };
+}
+
+function indexQuoteFixture(symbol, regularMarketTime) {
+  return {
+    chart: {
+      result: [{
+        meta: {
+          symbol,
+          regularMarketTime,
+          regularMarketPrice: 100,
+          regularMarketChange: 1,
+          regularMarketChangePercent: 1.0101010101,
+          previousClose: 99
+        },
+        timestamp: [1789948800, regularMarketTime],
+        indicators: { quote: [{ close: [99, 100] }] }
+      }],
+      error: null
+    }
   };
 }
 
@@ -1138,8 +1272,10 @@ test('pre-market weather repair trusts resolved direction and strips candidate m
       {
         direction: 'positive',
         primaryTarget: { key: 'domestic_market', label: '국내 증시', scope: 'market' },
-        headline: '국내 증시 상승 전망&nbsp;',
-        score: 12
+        headline: '국내 증시 1.2% 상승&nbsp;',
+        score: 12,
+        severity: 'high',
+        confidence: 'high'
       }
     ],
     marketEventSignals: [
@@ -1152,7 +1288,7 @@ test('pre-market weather repair trusts resolved direction and strips candidate m
     ],
     marketEventNewsCandidates: [
       {
-        title: '[오늘의 투자전략] 美 증시 신고가·유가 급락…국내 증시 상승 전망',
+        title: '[오늘의 투자전략] 美 증시 신고가·유가 급락…국내 증시 1.2% 상승',
         summary: '<b>국내 증시</b>&nbsp;상승 재료가 이어집니다.'
       }
     ],
@@ -1183,7 +1319,7 @@ test('pre-market weather repair trusts resolved direction and strips candidate m
   const repaired = module.__testRepairPreMarketWriterReport(marketResearch, report);
   const serialized = JSON.stringify(repaired);
 
-  assert.match(repaired.sectorWeather.sunny, /국내 증시 상승 전망/);
+  assert.match(repaired.sectorWeather.sunny, /국내 증시 1\.2% 상승/);
   assert.match(repaired.sectorWeather.rainy, /상대 약세는 제한적/);
   assert.doesNotMatch(repaired.sectorWeather.rainy, /유가 급락/);
   assert.equal(serialized.includes('&nbsp;'), false);
@@ -1212,7 +1348,7 @@ test('pre-market writer leaves an ungrounded required field for strict validatio
 });
 
 test('market and sector fallback runs after empty or stale primary results and preserves query provenance', async () => {
-  const module = await importBriefingModule('pre_market', null);
+  const module = await importBriefingModule('post_market', null);
   assert.deepEqual(module.__testMarketNewsFallbackQueries, ['코스피 when:4d', '코스닥 when:4d']);
   assert.deepEqual(module.__testSectorThemeFallbackQueries, ['증시 업종 when:4d', '증시 테마 when:4d']);
 
@@ -1281,7 +1417,7 @@ test('market and sector fallback runs after empty or stale primary results and p
 });
 
 test('usable primary news prevents fallback requests', async () => {
-  const module = await importBriefingModule('pre_market', null);
+  const module = await importBriefingModule('post_market', null);
   const primaryArticle = {
     title: 'fresh primary article',
     sourceUrl: 'https://example.com/primary',
@@ -1307,7 +1443,7 @@ test('usable primary news prevents fallback requests', async () => {
 });
 
 test('stale fallback evidence stays empty and fallback errors remain unavailable to the quality gate', async () => {
-  const module = await importBriefingModule('pre_market', null);
+  const module = await importBriefingModule('post_market', null);
   const staleArticle = {
     title: '코스피 stale fallback article',
     sourceUrl: 'https://example.com/stale-fallback',
@@ -1344,7 +1480,7 @@ test('stale fallback evidence stays empty and fallback errors remain unavailable
 });
 
 test('fallback rejects unrelated gambling headlines and fails closed when no relevant title remains', async () => {
-  const module = await importBriefingModule('pre_market', null);
+  const module = await importBriefingModule('post_market', null);
   const unrelated = [
     {
       title: '게임 테마의 공통 요소를 모아보는 앙상블 토토',
@@ -1379,7 +1515,7 @@ test('fallback rejects unrelated gambling headlines and fails closed when no rel
 });
 
 test('fallback relevance filtering happens before the candidate limit', async () => {
-  const module = await importBriefingModule('pre_market', null);
+  const module = await importBriefingModule('post_market', null);
   const referenceTime = Date.now();
   const irrelevant = Array.from({ length: 15 }, (_, index) => ({
     title: `토토 게임 안내 ${index}`,
@@ -1403,7 +1539,7 @@ test('fallback relevance filtering happens before the candidate limit', async ()
 });
 
 test('fallback freshness retains the ten-minute future tolerance', async () => {
-  const module = await importBriefingModule('pre_market', null);
+  const module = await importBriefingModule('post_market', null);
   const referenceTime = Date.now();
   const withinTolerance = {
     title: '코스닥 article within future tolerance',
@@ -1459,6 +1595,155 @@ test('backfill fallback retains the as-of cutoff and existing 96-hour freshness 
   assert.ok(fallbackSearch);
   assert.doesNotMatch(fallbackSearch, /when:4d/);
   assert.match(fallbackSearch, /after:\d{4}-\d{2}-\d{2} before:\d{4}-\d{2}-\d{2}/);
+});
+
+test('pre-market news accepts the exact cutoff and filters later or unknown dates before ranking', async () => {
+  const tradingDate = currentTradingDate();
+  const module = await importBriefingModule('pre_market', null, tradingDate);
+  const cutoff = Date.parse(`${tradingDate}T08:30:00+09:00`);
+  const items = [
+    { title: 'after cutoff', sourceUrl: 'https://example.com/after', publishedAt: new Date(cutoff + 1000).toUTCString() },
+    { title: 'exact cutoff', sourceUrl: 'https://example.com/exact', publishedAt: new Date(cutoff).toUTCString() },
+    { title: 'before cutoff', sourceUrl: 'https://example.com/before', publishedAt: new Date(cutoff - 1000).toUTCString() },
+    { title: 'unknown date', sourceUrl: 'https://example.com/unknown', publishedAt: null }
+  ];
+
+  const { result } = await withGoogleNewsStub(async () => rssResponse(items), async () => (
+    module.__testFetchGoogleNews(['cutoff regression'], 2)
+  ));
+
+  assert.deepEqual(result.map((item) => item.sourceUrl), ['https://example.com/exact', 'https://example.com/before']);
+});
+
+test('pre-market cutoff filtering runs inside primary and fallback news searches', async () => {
+  const tradingDate = currentTradingDate();
+  const module = await importBriefingModule('pre_market', null, tradingDate);
+  const cutoff = Date.parse(`${tradingDate}T08:30:00+09:00`);
+  const sourceStatus = {};
+  const fallback = {
+    title: '코스피 cutoff fallback eligible',
+    sourceUrl: 'https://example.com/cutoff-fallback',
+    publishedAt: new Date(cutoff).toUTCString()
+  };
+  const afterFallback = {
+    title: '코스피 cutoff fallback late',
+    sourceUrl: 'https://example.com/cutoff-fallback-late',
+    publishedAt: new Date(cutoff + 1000).toUTCString()
+  };
+  const primaryLate = {
+    title: '코스피 cutoff primary late',
+    sourceUrl: 'https://example.com/cutoff-primary-late',
+    publishedAt: new Date(cutoff + 2000).toUTCString()
+  };
+
+  const { result } = await withGoogleNewsStub(async (query) => {
+    const baseQuery = query.replace(/\s+after:\S+\s+before:\S+$/u, '');
+    if (baseQuery === 'primary-only-late') return rssResponse([primaryLate]);
+    if (baseQuery === '코스피 when:4d') return rssResponse([afterFallback, fallback]);
+    return rssResponse([]);
+  }, async () => module.__testFetchNewsCandidateGroupWithFallback(
+    ['primary-only-late'],
+    ['코스피 when:4d'],
+    2,
+    'googleNews',
+    sourceStatus
+  ));
+
+  assert.deepEqual(result.map((item) => item.sourceUrl), [fallback.sourceUrl]);
+  assert.equal(sourceStatus.googleNews, 'ok');
+});
+
+test('complete pre-market collection applies cutoff to all news groups and prior-session inputs', async () => {
+  const tradingDate = currentTradingDate();
+  const previousFlowDate = shiftTradingDate(tradingDate, -3);
+  const module = await importBriefingModule('pre_market', null, tradingDate);
+  const cutoff = Date.parse(`${tradingDate}T08:30:00+09:00`);
+  const kstAt = (hour, minute, second = 0) => new Date(Date.parse(`${tradingDate}T00:00:00Z`) + ((hour - 9) * 60 + minute) * 60_000 + second * 1000).toUTCString();
+  const newsItems = (query) => {
+    const safeQuery = encodeURIComponent(query.replace(/\s+after:\S+\s+before:\S+$/u, ''));
+    return [
+      { title: `증시 cutoff-exact ${query}`, source: 'Test News', sourceUrl: `https://example.com/${safeQuery}/exact`, publishedAt: kstAt(8, 30) },
+      { title: `증시 cutoff-before ${query}`, source: 'Test News', sourceUrl: `https://example.com/${safeQuery}/before`, publishedAt: kstAt(8, 29, 59) },
+      { title: `증시 cutoff-after ${query}`, source: 'Test News', sourceUrl: `https://example.com/${safeQuery}/after`, publishedAt: kstAt(8, 30, 1) },
+      { title: `증시 cutoff-unknown ${query}`, source: 'Test News', sourceUrl: `https://example.com/${safeQuery}/unknown`, publishedAt: null }
+    ];
+  };
+  const flows = {
+    status: 'ok',
+    generatedAt: new Date().toISOString(),
+    source: 'test KRX',
+    markets: ['KOSPI', 'KOSDAQ'].map((market) => ({
+      market,
+      latestDate: tradingDate,
+      netBuy: { foreign: 999999, institution: 999998, retail: 999997 },
+      recent: [
+        { date: tradingDate, netBuy: { foreign: 999999, institution: 999998, retail: 999997 } },
+        { date: previousFlowDate, netBuy: { foreign: -5000000000, institution: 2000000000, retail: 3000000000 } }
+      ],
+      streaks: { foreign: { direction: 'buy', days: 99 } },
+      collectionWindow: { from: tradingDate, to: tradingDate },
+      unit: 'KRW',
+      source: 'test KRX',
+      sourceUrl: 'https://example.com/flows'
+    }))
+  };
+  const groups = [
+    'marketNews',
+    'marketEventNewsCandidates',
+    'stockNewsCandidates',
+    'investorFlowNewsCandidates',
+    'disclosureNewsCandidates',
+    'scheduleNewsCandidates',
+    'sectorThemeNewsCandidates'
+  ];
+
+  const { result: research, calls } = await withFetchStub(async (url) => {
+    if (url.hostname === 'news.google.com') return rssResponse(newsItems(url.searchParams.get('q') ?? ''));
+    if (url.hostname === 'query1.finance.yahoo.com') {
+      const symbol = decodeURIComponent(url.pathname.split('/').at(-1));
+      if (symbol === '^KS11') return jsonResponse(yahooDailyFixture(symbol, 7019.73, [6894.22998046875, 7007.72021484375, 7017.91015625, 7080.919921875, 7019.72998046875], tradingDate));
+      if (symbol === '^KQ11') return jsonResponse(yahooDailyFixture(symbol, 856.48, [827.1199951171875, 836.27001953125, 834.3800048828125, 844.47998046875, 856.47998046875], tradingDate));
+      if (symbol === 'KRW=X') return jsonResponse(indexQuoteFixture(symbol, Math.floor(Date.parse(`${tradingDate}T09:16:00+09:00`) / 1000)));
+      if (symbol === 'NQ=F') return jsonResponse(indexQuoteFixture(symbol, Math.floor(Date.parse(`${tradingDate}T09:06:00+09:00`) / 1000)));
+      return jsonResponse(indexQuoteFixture(symbol, 1789948800));
+    }
+    if (url.hostname === 'finance.naver.com') return errorResponse(410);
+    throw new Error(`unexpected_test_fetch:${url.hostname}`);
+  }, async () => module.__testCollectPublicMarketResearch({ fetchInvestorFlowsImpl: async () => flows }));
+
+  assert.equal(research.informationAsOf, `${tradingDate}T08:30:00+09:00`);
+  assert.equal(research.generatedAt, research.collectedAt);
+  assert.ok(Math.abs(Date.parse(research.collectedAt) - Date.now()) < 10_000);
+  assert.equal(research.majorIndices.find((index) => index.key === 'kospi').sourceDate, shiftTradingDate(tradingDate, -5));
+  assert.equal(research.majorIndices.find((index) => index.key === 'kospi').currentPrice, '7,080.92');
+  assert.equal(research.majorIndices.find((index) => index.key === 'kosdaq').sourceDate, shiftTradingDate(tradingDate, -5));
+  assert.equal(research.majorIndices.find((index) => index.key === 'kosdaq').currentPrice, '844.48');
+  for (const key of ['usdkrw', 'nasdaq_futures']) {
+    const index = research.majorIndices.find((entry) => entry.key === key);
+    assert.equal(index.status, 'unavailable');
+    assert.equal(index.currentPrice, null);
+  }
+  assert.equal(calls.some((url) => url.hostname === 'finance.naver.com'), false);
+
+  for (const key of groups) {
+    const items = research[key];
+    assert.ok(items.length > 0, `${key} should retain eligible evidence`);
+    assert.ok(items.some((item) => item.title.includes('cutoff-exact')), `${key} should include the exact cutoff`);
+    assert.ok(items.every((item) => Number.isFinite(Date.parse(item.publishedAt)) && Date.parse(item.publishedAt) <= cutoff), `${key} must exclude later and unknown dates`);
+    assert.equal(items.some((item) => /cutoff-(?:after|unknown)/u.test(item.title)), false);
+  }
+
+  assert.equal(research.investorFlows.markets.length, 2);
+  for (const market of research.investorFlows.markets) {
+    assert.equal(market.latestDate, previousFlowDate);
+    assert.equal(market.netBuy.foreign, -5000000000);
+    assert.equal(Object.hasOwn(market, 'recent'), false);
+    assert.equal(Object.hasOwn(market, 'streaks'), false);
+    assert.equal(Object.hasOwn(market, 'collectionWindow'), false);
+  }
+  const flowIndicator = research.indicators.find((item) => item.key === 'investor_flow');
+  assert.match(flowIndicator.value, new RegExp(previousFlowDate, 'u'));
+  assert.doesNotMatch(flowIndicator.value, /999999/u);
 });
 
 test('news ranking removes stale candidates and orders the remaining articles by publication time', async () => {
@@ -1528,7 +1813,8 @@ test('general market-event engine separates FX downside, bio upside, and oil mix
   const signals = module.__testBuildMarketEventSignals(marketResearch);
   const fxSignal = signals.find((signal) => signal.primaryTarget.key === 'fx');
   const bioSignal = signals.find((signal) => signal.primaryTarget.key === 'bio');
-  const oilSignal = signals.find((signal) => signal.primaryTarget.key === 'energy');
+  const oilFactorSignal = signals.find((signal) => signal.primaryTarget.key === 'oil');
+  const energySignal = signals.find((signal) => signal.primaryTarget.key === 'energy');
   const report = {
     openingStrategy: {
       keywords: '업종별 차별화',
@@ -1564,13 +1850,13 @@ test('general market-event engine separates FX downside, bio upside, and oil mix
   assert.ok(fxSignal.corroboration >= 2);
   assert.equal(bioSignal.direction, 'positive');
   assert.equal(bioSignal.severity, 'high');
-  assert.equal(oilSignal.direction, 'mixed');
-  assert.equal(oilSignal.severity, 'high');
+  assert.equal(oilFactorSignal.direction, 'negative');
+  assert.equal(energySignal.direction, 'positive');
   assert.match(prepared.openingStrategy.expectedOpen, /하락 출발 가능성.*높은 변동성/);
   assert.match(prepared.sectorWeather.rainy, /원\/달러 환율/);
   assert.match(prepared.sectorWeather.sunny, /바이오·제약/);
-  assert.match(prepared.sectorWeather.cloudy, /에너지/);
-  assert.match(prepared.disclosuresAndNews.majorNews, /하방:.*상방:.*혼조:/);
+  assert.match(prepared.sectorWeather.sunny, /에너지/);
+  assert.match(prepared.disclosuresAndNews.majorNews, /하방:.*상방:/);
 });
 
 test('general market-event engine treats tariff shock as a broad factor without losing the automobile target', async () => {
@@ -1758,6 +2044,190 @@ test('market-event conclusions keep evenly matched direct opposition in one mixe
   assert.deepEqual(state.negative, []);
   assert.deepEqual(state.positive, []);
   assert.equal(state.mixed.length, 1);
+});
+
+test('pre-market event directions stay attached to each mentioned sector', async () => {
+  const module = await importBriefingModule('pre_market');
+  const marketResearch = {
+    generatedAt: '2026-09-28T00:00:00.000Z',
+    informationAsOf: '2026-09-28T08:30:00+09:00',
+    marketEventNewsCandidates: [{
+      title: '원화 강세에 해운주 ‘울상’…식음료주는 딜레마',
+      summary: '원화 강세에 해운주 ‘울상’…식음료주는 딜레마',
+      publishedAt: 'Sun, 27 Sep 2026 22:00:00 GMT',
+      source: '서울경제',
+      sourceUrl: 'https://example.com/shipping-fx'
+    }]
+  };
+  const signals = module.__testBuildMarketEventSignals(marketResearch);
+  const conclusions = module.__testResolveMarketEventSignals(signals);
+  const shipping = conclusions.find((signal) => signal.primaryTarget.key === 'shipping');
+  const consumer = conclusions.find((signal) => signal.primaryTarget.key === 'consumer');
+  const fx = conclusions.find((signal) => signal.primaryTarget.key === 'fx');
+  const report = {
+    openingStrategy: {},
+    sectorWeather: { sunny: '해운주 강세', cloudy: '업종 혼조', rainy: '식음료 약세' },
+    disclosuresAndNews: {},
+    watchlist: {}
+  };
+  const prepared = module.__testPrepareReportForPublish(marketResearch, report);
+
+  assert.equal(shipping.direction, 'negative');
+  assert.equal(shipping.confidence, 'high');
+  assert.match(shipping.directionEvidence, /해운주.*울상/);
+  assert.equal(consumer.direction, 'mixed');
+  assert.notEqual(consumer.confidence, 'high');
+  assert.equal(fx.direction, 'positive');
+  assert.doesNotMatch(prepared.sectorWeather.sunny, /해운/);
+  assert.match(prepared.sectorWeather.rainy, /해운.*울상/);
+  assert.equal(module.__testHasContradictoryPreMarketWeather(marketResearch, report), true);
+  assert.throws(() => module.__testResolveBriefingPublishPlan({
+    marketResearch: {
+      ...marketResearch,
+      investorFlows: { status: 'unavailable', markets: [] },
+      investorFlowNewsCandidates: [{ title: '외국인 수급', summary: '외국인 매매 흐름' }],
+      sectorThemeNewsCandidates: [{ title: '증시 업종 기사', summary: '업종 흐름을 전했습니다.' }]
+    },
+    report,
+    existingHtml: ''
+  }), /directional_weather_contradiction/);
+
+  const quotedFactorReport = {
+    ...report,
+    sectorWeather: {
+      sunny: '반도체 강세를 점검합니다.',
+      cloudy: '업종별 흐름을 구분합니다.',
+      rainy: '원화 강세에 해운주 울상으로 수출 부담이 커졌습니다.'
+    }
+  };
+  assert.equal(module.__testHasContradictoryPreMarketWeather(marketResearch, quotedFactorReport), false);
+  assert.match(module.__testPrepareReportForPublish(marketResearch, quotedFactorReport).sectorWeather.rainy, /해운.*울상/);
+});
+
+test('pre-market factor-only risk and contrasting sector clauses keep separate directions', async () => {
+  const module = await importBriefingModule('pre_market');
+  const factorOnly = module.__testResolveMarketEventSignals(module.__testBuildMarketEventSignals({
+    generatedAt: '2026-09-28T00:00:00.000Z',
+    informationAsOf: '2026-09-28T08:30:00+09:00',
+    marketEventNewsCandidates: [{
+      title: '원/달러 환율 급등',
+      publishedAt: 'Sun, 27 Sep 2026 22:00:00 GMT',
+      sourceUrl: 'https://example.com/fx-only'
+    }]
+  }));
+  const contrasted = module.__testResolveMarketEventSignals(module.__testBuildMarketEventSignals({
+    generatedAt: '2026-09-28T00:00:00.000Z',
+    informationAsOf: '2026-09-28T08:30:00+09:00',
+    marketEventNewsCandidates: [{
+      title: '환율 급등에도 조선주 강세…식품주는 약세',
+      publishedAt: 'Sun, 27 Sep 2026 22:00:00 GMT',
+      sourceUrl: 'https://example.com/contrasting-sectors'
+    }]
+  }));
+
+  assert.equal(factorOnly.find((signal) => signal.primaryTarget.key === 'fx').direction, 'negative');
+  assert.equal(contrasted.find((signal) => signal.primaryTarget.key === 'shipbuilding').direction, 'positive');
+  assert.equal(contrasted.find((signal) => signal.primaryTarget.key === 'consumer').direction, 'negative');
+});
+
+test('pre-market decimal and thousands-separated index moves retain complete target evidence', async () => {
+  const module = await importBriefingModule('pre_market');
+  const makeSignals = (title) => module.__testBuildMarketEventSignals({
+    generatedAt: '2026-09-28T00:00:00.000Z',
+    informationAsOf: '2026-09-28T08:30:00+09:00',
+    marketEventNewsCandidates: [{
+      title,
+      publishedAt: '2026-09-28T07:00:00+09:00',
+      sourceUrl: `https://example.com/${encodeURIComponent(title)}`
+    }]
+  });
+  const kospiDecimal = module.__testResolveMarketEventSignals(makeSignals('코스피 2.7% 상승'))
+    .find((signal) => signal.primaryTarget.key === 'domestic_market');
+  const semiconductorDecimal = module.__testResolveMarketEventSignals(makeSignals('반도체 3.2% 하락'))
+    .find((signal) => signal.primaryTarget.key === 'semiconductor');
+  const kospiThousands = module.__testResolveMarketEventSignals(makeSignals('코스피 7,100선 회복'))
+    .find((signal) => signal.primaryTarget.key === 'domestic_market');
+
+  assert.equal(kospiDecimal.direction, 'positive');
+  assert.match(kospiDecimal.directionEvidence, /2\.7% 상승/u);
+  assert.equal(semiconductorDecimal.direction, 'negative');
+  assert.match(semiconductorDecimal.directionEvidence, /3\.2% 하락/u);
+  assert.equal(kospiThousands.direction, 'positive');
+  assert.match(kospiThousands.directionEvidence, /7,100선 회복/u);
+});
+
+test('pre-market speculative and context-only headlines do not create confident directional weather', async () => {
+  const module = await importBriefingModule('pre_market');
+  for (const title of [
+    '반도체 급등할까?',
+    '반도체 10% 급등할까?',
+    '반도체 3.2% 하락 가능성',
+    '반도체 실적 둔화 우려'
+  ]) {
+    const marketResearch = {
+      generatedAt: '2026-09-28T00:00:00.000Z',
+      informationAsOf: '2026-09-28T08:30:00+09:00',
+      marketEventNewsCandidates: [{
+        title,
+        publishedAt: '2026-09-28T07:00:00+09:00',
+        sourceUrl: `https://example.com/${encodeURIComponent(title)}`
+      }]
+    };
+    const signals = module.__testBuildMarketEventSignals(marketResearch);
+    const state = module.__testMarketEventState({ ...marketResearch, marketEventSignals: signals });
+    const report = {
+      openingStrategy: {},
+      investorFlowWatch: {},
+      sectorWeather: { sunny: '', cloudy: '', rainy: '' },
+      disclosuresAndNews: {},
+      watchlist: {}
+    };
+    const repaired = module.__testRepairPreMarketWriterReport(marketResearch, report);
+
+    assert.equal(state.positive.some((signal) => signal.primaryTarget.key === 'semiconductor'), false);
+    assert.equal(state.negative.some((signal) => signal.primaryTarget.key === 'semiconductor'), false);
+    assert.equal(repaired.sectorWeather.sunny, '');
+    assert.equal(repaired.sectorWeather.rainy, '');
+    assert.doesNotMatch(repaired.openingStrategy.expectedOpen ?? '', /강세|약세|하방|상방/u);
+  }
+});
+
+test('post-market event classification keeps the existing direction and context rules', async () => {
+  const module = await importBriefingModule('post_market');
+  const signalFor = (title) => module.__testBuildMarketEventSignals({
+    generatedAt: '2026-09-28T16:00:00+09:00',
+    marketEventNewsCandidates: [{
+      title,
+      summary: title,
+      publishedAt: '2026-09-28T15:00:00+09:00',
+      source: 'Test',
+      sourceUrl: `https://example.com/${encodeURIComponent(title)}`
+    }]
+  });
+
+  const shipping = signalFor('원화 강세에 해운주 울상…식음료주는 딜레마');
+  assert.equal(shipping.length, 1);
+  assert.equal(shipping[0].primaryTarget.key, 'shipping');
+  assert.equal(shipping[0].direction, 'positive');
+  assert.equal(shipping[0].score, 11);
+  assert.deepEqual(signalFor('반도체 혼조'), []);
+  assert.deepEqual(signalFor('반도체 악재'), []);
+});
+
+test('pre-market article exposes the frozen information basis in visible and machine-readable form', async () => {
+  const tradingDate = currentTradingDate();
+  const module = await importBriefingModule('pre_market', null, tradingDate);
+  const article = module.__testRenderArticle({
+    openingStrategy: { keywords: '시장 변수', oneLineStrategy: '변동성을 확인합니다.', expectedOpen: '중립 출발' },
+    investorFlowWatch: { continuity: '수급 연속성을 확인합니다.', keyInvestor: '외국인', checkPoint: '매매 방향을 확인합니다.' },
+    sectorWeather: { sunny: '상대 강세를 확인합니다.', cloudy: '업종별 흐름을 봅니다.', rainy: '하방 위험을 점검합니다.' },
+    disclosuresAndNews: { corporateDisclosure: '주요 공시를 확인합니다.', majorNews: '시장 뉴스를 점검합니다.', schedule: '일정을 확인합니다.' },
+    watchlist: { leaders: '주도주를 확인합니다.', technicals: '지수 흐름을 봅니다.', eventDriven: '이벤트를 점검합니다.' },
+    tomorrowStrategy: { outlook: '변수를 점검합니다.', checklist: ['환율', '수급', '지수'] }
+  });
+
+  assert.ok(article.includes(`data-information-as-of="${tradingDate}T08:30:00+09:00"`));
+  assert.ok(article.includes(`정보 기준: ${tradingDate} 08:30 KST`));
 });
 
 test('writer prompt uses the general market-event model without semiconductor-only instructions', async () => {

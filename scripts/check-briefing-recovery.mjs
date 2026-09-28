@@ -64,9 +64,11 @@ function extractArticles(html) {
   return [...removeNonVisibleHtml(html).matchAll(/<article\b([^>]*)>([\s\S]*?)<\/article>/giu)].map((match) => {
     const openingTag = match[1] ?? '';
     const className = openingTag.match(/\bclass\s*=\s*["']([^"']*)["']/iu)?.[1] ?? '';
+    const informationAsOf = openingTag.match(/\bdata-information-as-of\s*=\s*["']([^"']*)["']/iu)?.[1] ?? null;
     return {
       html: match[0],
       className,
+      informationAsOf,
       body: match[2] ?? ''
     };
   }).filter((article) => /\breport-(?:pre|post)-market\b/iu.test(article.className));
@@ -104,26 +106,36 @@ function validateBriefingHtml(html, phase = normalizePhase(process.env.BRIEFING_
   const normalizedPhase = normalizePhase(phase);
   const expected = PHASE_CONFIG[normalizedPhase];
   const expectedTitle = `${dateKey(now)} ${expected.sessionLabel}`;
+  const expectedInformationAsOf = normalizedPhase === 'pre_market'
+    ? `${dateKey(now)}T08:30:00+09:00`
+    : null;
   const topArticle = extractArticles(html)[0] ?? null;
   const quality = inspectArticle(topArticle);
   const topArticleClass = topArticle?.className ?? '';
   const topArticleTitle = quality.topArticleTitle ?? '';
   const isExpectedPhase = topArticleClass.split(/\s+/u).includes(expected.articleClass);
   const isExpectedTitle = topArticleTitle === expectedTitle;
+  const isInformationAsOf = normalizedPhase !== 'pre_market'
+    || topArticle?.informationAsOf === expectedInformationAsOf;
 
   let reason = quality.reason;
   if (reason === 'article_quality_ok') {
-    reason = isExpectedPhase && isExpectedTitle ? 'current_briefing_present' : 'top_briefing_stale';
+    reason = !isInformationAsOf
+      ? 'information_as_of_mismatch'
+      : isExpectedPhase && isExpectedTitle ? 'current_briefing_present' : 'top_briefing_stale';
   }
   return {
     topArticleClass,
     topArticleTitle,
     expectedTitle,
+    expectedInformationAsOf,
+    informationAsOf: topArticle?.informationAsOf ?? null,
     shouldRecover: reason !== 'current_briefing_present',
     reason,
     articleQuality: quality.reason,
     isExpectedPhase,
-    isExpectedTitle
+    isExpectedTitle,
+    isInformationAsOf
   };
 }
 

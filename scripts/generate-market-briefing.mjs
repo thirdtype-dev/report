@@ -19,6 +19,12 @@ if (BRIEFING_AS_OF && (!/^\d{4}-\d{2}-\d{2}T16:00:00\+09:00$/.test(BRIEFING_AS_O
     || Date.now() - Date.parse(BRIEFING_AS_OF) > 48 * 60 * 60 * 1000)) {
   throw new Error('invalid_briefing_as_of:post_market_within_48_hours_required');
 }
+const PRE_MARKET_TRADING_DATE = BRIEFING_TRADING_DATE || dateKey(new Date());
+const PRE_MARKET_INFORMATION_AS_OF = `${PRE_MARKET_TRADING_DATE}T08:30:00+09:00`;
+const INFORMATION_CUTOFF = PHASE === 'pre_market'
+  ? PRE_MARKET_INFORMATION_AS_OF
+  : BRIEFING_AS_OF;
+const INFORMATION_CUTOFF_MS = INFORMATION_CUTOFF ? Date.parse(INFORMATION_CUTOFF) : null;
 const PUBLIC_REPORT_URL = process.env.PUBLIC_REPORT_URL ?? 'https://thirdtype-dev.github.io/report/';
 const ADSENSE_CLIENT = 'ca-pub-3518959293552717';
 const INVESTOR_FLOW_TIMEOUT_MS = Number.parseInt(process.env.INVESTOR_FLOW_TIMEOUT_MS ?? '45000', 10);
@@ -885,6 +891,10 @@ function briefingQualityIssues(marketResearch, report) {
     issues.push('unavailable_investor_flow_copy');
   }
 
+  if (PHASE === 'pre_market' && hasContradictoryPreMarketWeather(marketResearch, report)) {
+    issues.push('directional_weather_contradiction');
+  }
+
   if (PHASE === 'post_market') {
     const currentStructuredFlows = hasCurrentPostMarketInvestorFlows(marketResearch?.investorFlows);
     if (!currentStructuredFlows && report?.investorFlows != null) {
@@ -916,10 +926,12 @@ function briefingQualityIssues(marketResearch, report) {
 
 function currentReportMarkers() {
   const config = PHASE_CONFIG[PHASE];
-  return [
+  const markers = [
     `<div class="eyebrow published">${escapeHtml(config.eyebrow)}</div>`,
     `<h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>`
   ];
+  if (PHASE === 'pre_market') markers.push(`data-information-as-of="${escapeHtml(PRE_MARKET_INFORMATION_AS_OF)}"`);
+  return markers;
 }
 
 function hasCurrentCompleteReport(existingHtml) {
@@ -970,7 +982,13 @@ const MARKET_EVENT_TOPICS = [
 const MARKET_NEGATIVE_DIRECT_RE = /(급락|폭락|하락|약세|하한가|투매|붕괴|쇼크|내려|떨어|↓)/iu;
 const MARKET_POSITIVE_DIRECT_RE = /(급등|폭등|상승|강세|상한가|반등|랠리|뛰어|올라|↑)/iu;
 const MARKET_NEGATIVE_CONTEXT_RE = /(우려|부담|둔화|악화|위축|실패|적자|하향|(?:수요|매출|이익|실적)\s*감소|공급\s*(?:증가|확대|과잉)|경쟁\s*(?:심화|확대)|추격|수익성[^.!?。]{0,20}하방)/iu;
+const MARKET_PRE_MARKET_NEGATIVE_CONTEXT_RE = /(울상|피해|악재|우려|부담|둔화|악화|위축|실패|적자|하향|(?:수요|매출|이익|실적)\s*감소|공급\s*(?:증가|확대|과잉)|경쟁\s*(?:심화|확대)|추격|수익성[^.!?。]{0,20}하방)/iu;
 const MARKET_POSITIVE_CONTEXT_RE = /(호조|개선|회복|성공|흑자|상향|(?:수요|매출|이익|실적|수주)\s*증가|완화|해소|수주|최대\s*실적)/iu;
+const MARKET_CONTEXT_ONLY_RISK_RE = /(악재|우려|부담|둔화|악화|위축|실패|적자|하향|수익성[^.!?。]{0,20}하방)/iu;
+const MARKET_SPECULATIVE_HEADLINE_RE = /(할까|될까|가능할까|전망|가능성|예상|관측|분석|진단|탓일까)/iu;
+const MARKET_MIXED_CONTEXT_RE = /(딜레마|엇갈|희비|양면성|혼조|갈림)/iu;
+const MARKET_PRE_MARKET_CONSUMER_RE = /(소비|유통|식음료|음식료|식품|음료|면세|화장품|의류|백화점)/iu;
+const MARKET_PRE_MARKET_SHIPBUILDING_RE = /(조선|선박|LNG선)/iu;
 const MARKET_STRONG_MOVE_RE = /(급락|폭락|하한가|투매|붕괴|쇼크|급등|폭등|상한가)/iu;
 const MARKET_FACTOR_NEGATIVE_RE = /(?:(?:원\/달러|원달러|환율|유가|원유|금리|국채금리)[^.!?。]{0,24}(?:급등|상승|고공행진|불안)|(?:관세|수출규제|수입규제)[^.!?。]{0,24}(?:부과|인상|확대|강화)|(?:전쟁|공습|분쟁|충돌|제재)[^.!?。]{0,24}(?:확대|격화|강화|발발))/iu;
 const MARKET_FACTOR_POSITIVE_RE = /(?:(?:원\/달러|원달러|환율|유가|원유|금리|국채금리)[^.!?。]{0,24}(?:하락|안정|진정)|(?:관세|수출규제|수입규제)[^.!?。]{0,24}(?:철회|인하|완화)|(?:전쟁|공습|분쟁|충돌|제재)[^.!?。]{0,24}(?:휴전|완화|종료|해제))/iu;
@@ -1005,7 +1023,10 @@ function marketEventDirection(text, title = text) {
     return factorNegative ? 'negative' : 'positive';
   }
 
-  const negative = MARKET_NEGATIVE_DIRECT_RE.test(normalized) || MARKET_NEGATIVE_CONTEXT_RE.test(normalized);
+  if (PHASE === 'pre_market' && MARKET_MIXED_CONTEXT_RE.test(normalized)) return 'mixed';
+
+  const negative = MARKET_NEGATIVE_DIRECT_RE.test(normalized)
+    || (PHASE === 'pre_market' ? MARKET_PRE_MARKET_NEGATIVE_CONTEXT_RE : MARKET_NEGATIVE_CONTEXT_RE).test(normalized);
   const positive = MARKET_POSITIVE_DIRECT_RE.test(normalized) || MARKET_POSITIVE_CONTEXT_RE.test(normalized);
   if (negative && positive) return 'mixed';
   if (negative) return 'negative';
@@ -1013,9 +1034,96 @@ function marketEventDirection(text, title = text) {
   return 'neutral';
 }
 
+function marketTargetLocalEvidence(title, target, targets, { cleanHeadline = true } = {}) {
+  const topic = MARKET_EVENT_TOPICS.find((entry) => entry.key === target?.key);
+  if (!topic || !['sector', 'market', 'factor'].includes(target.scope)) return null;
+  const topicPattern = PHASE === 'pre_market' && topic.key === 'consumer'
+    ? MARKET_PRE_MARKET_CONSUMER_RE
+    : PHASE === 'pre_market' && topic.key === 'shipbuilding'
+      ? MARKET_PRE_MARKET_SHIPBUILDING_RE
+      : topic.pattern;
+  const normalizedTitle = cleanHeadline
+    ? cleanMarketEventHeadline(title)
+    : normalizeRepairEvidence(title).replace(/^\[[^\]]+\]\s*/u, '').trim();
+  const targetPattern = new RegExp(topicPattern.source, `${topicPattern.flags}g`);
+  const targetMatches = [...normalizedTitle.matchAll(targetPattern)];
+  if (targetMatches.length === 0) return null;
+
+  const otherTargetStarts = targets.flatMap((candidate) => {
+    const candidateTopic = MARKET_EVENT_TOPICS.find((entry) => entry.key === candidate.key);
+    if (!candidateTopic) return [];
+    const candidatePattern = PHASE === 'pre_market' && candidateTopic.key === 'consumer'
+      ? MARKET_PRE_MARKET_CONSUMER_RE
+      : PHASE === 'pre_market' && candidateTopic.key === 'shipbuilding'
+        ? MARKET_PRE_MARKET_SHIPBUILDING_RE
+        : candidateTopic.pattern;
+    const pattern = new RegExp(candidatePattern.source, `${candidatePattern.flags}g`);
+    return [...normalizedTitle.matchAll(pattern)].map((match) => match.index);
+  });
+  const boundaryPattern = /(?<!\d)[,，](?!\d)|[、…;；!?。]|(?<!\d)\.(?!\d)|\s+[–—-]\s+|(?:반면|그러나|하지만|한편|반대로)/gu;
+  const evidenceCandidates = [];
+
+  for (const targetMatch of targetMatches) {
+    const start = targetMatch.index;
+    const end = start + targetMatch[0].length;
+    const nextTargetStart = otherTargetStarts
+      .filter((index) => Number.isInteger(index) && index >= end)
+      .reduce((nearest, index) => Math.min(nearest, index), normalizedTitle.length);
+    const nextBoundary = boundaryPattern.exec(normalizedTitle.slice(end, nextTargetStart));
+    const trailingEnd = nextBoundary ? end + nextBoundary.index : nextTargetStart;
+    boundaryPattern.lastIndex = 0;
+    const trailing = normalizedTitle.slice(end, trailingEnd);
+    const clauseStart = Math.max(
+      ...[...normalizedTitle.slice(0, start).matchAll(/(?<!\d)[,，](?!\d)|[、…;；!?。]|(?<!\d)\.(?!\d)|\s+[–—-]\s+|(?:반면|그러나|하지만|한편|반대로)/gu)]
+        .map((match) => match.index + match[0].length),
+      0
+    );
+    const precedingClause = normalizedTitle.slice(clauseStart, start);
+    const targetAdjacentPrior = precedingClause.match(/(?:급락|폭락|하락|약세|급등|폭등|상승|강세|울상|딜레마|수혜|피해|악재|호조|개선|둔화|악화|우려|부담|위축|회복)(?:\s*(?:보인|보이는|겪은|겪는|기록한|이어진|한))?\s*$/u)?.[0] ?? '';
+    const factorEvidence = `${targetMatch[0]}${trailing}`.trim();
+    const localText = trailing.trim() && marketEventDirection(trailing, trailing) !== 'neutral'
+      ? `${targetMatch[0]}${trailing}`.trim()
+      : targetAdjacentPrior
+        ? `${targetAdjacentPrior}${targetMatch[0]}`.trim()
+        : target.scope === 'factor' && marketEventDirection(factorEvidence, factorEvidence) !== 'neutral'
+          ? factorEvidence
+          : '';
+    if (!localText) continue;
+
+    const direction = marketEventDirection(localText, localText);
+    if (direction === 'neutral') continue;
+    const explicitMove = MARKET_NEGATIVE_DIRECT_RE.test(localText)
+      || MARKET_POSITIVE_DIRECT_RE.test(localText);
+    const observedImpact = /울상|피해/u.test(localText);
+    const measuredMove = /\d+(?:\.\d+)?\s*%/u.test(localText);
+    evidenceCandidates.push({
+      direction,
+      text: localText,
+      direct: explicitMove || observedImpact,
+      strength: (explicitMove || observedImpact ? 4 : 0) + (measuredMove ? 2 : 0)
+    });
+  }
+  if (evidenceCandidates.length === 0) return null;
+  const strongest = Math.max(...evidenceCandidates.map((candidate) => candidate.strength));
+  const selected = evidenceCandidates.filter((candidate) => candidate.strength === strongest);
+  const directions = new Set(selected.map((candidate) => candidate.direction));
+  if (directions.size > 1) {
+    return {
+      direction: 'mixed',
+      text: [...new Set(selected.map((candidate) => candidate.text))].join(' / '),
+      direct: selected.some((candidate) => candidate.direct)
+    };
+  }
+  return selected[0];
+}
+
 function marketEventTargets(text) {
   const targets = MARKET_EVENT_TOPICS
-    .filter((topic) => topic.pattern.test(text))
+    .filter((topic) => (PHASE === 'pre_market' && topic.key === 'consumer'
+      ? MARKET_PRE_MARKET_CONSUMER_RE
+      : PHASE === 'pre_market' && topic.key === 'shipbuilding'
+        ? MARKET_PRE_MARKET_SHIPBUILDING_RE
+        : topic.pattern).test(text))
     .map(({ key, label, scope }) => ({ key, label, scope }));
   if (targets.length > 0) return targets;
   return [{ key: 'individual_stock', label: '개별 종목', scope: 'stock' }];
@@ -1042,7 +1150,7 @@ function marketEventClusterKey(signal) {
 }
 
 function buildMarketEventSignals(marketResearch) {
-  const referenceTimeMs = Date.parse(marketResearch?.generatedAt ?? '') || Date.now();
+  const referenceTimeMs = Date.parse(marketResearch?.informationAsOf ?? marketResearch?.generatedAt ?? '') || Date.now();
   const candidates = [
     ...(marketResearch?.marketEventNewsCandidates ?? []),
     ...(marketResearch?.marketNews ?? []),
@@ -1053,63 +1161,103 @@ function buildMarketEventSignals(marketResearch) {
     ...(marketResearch?.scheduleNewsCandidates ?? [])
   ];
   const seen = new Set();
-  const provisional = freshNewsCandidates(candidates, referenceTimeMs)
+  const informationAsOfMs = Date.parse(marketResearch?.informationAsOf ?? '');
+  const eligibleCandidates = Number.isFinite(informationAsOfMs)
+    ? candidates.filter((item) => newsPublishedAtMs(item) != null && newsPublishedAtMs(item) <= informationAsOfMs)
+    : candidates;
+  const provisional = freshNewsCandidates(eligibleCandidates, referenceTimeMs)
     .filter((item) => {
       const key = item?.sourceUrl || item?.title;
       if (!key || seen.has(key)) return false;
       seen.add(key);
       return true;
     })
-    .map((item) => {
+    .flatMap((item) => {
       const publishedAtMs = newsPublishedAtMs(item);
       const ageMs = publishedAtMs == null ? Number.POSITIVE_INFINITY : referenceTimeMs - publishedAtMs;
       const text = candidateText(item);
       const title = String(item?.title ?? '');
-      const direction = marketEventDirection(text, title);
+      const baseDirection = marketEventDirection(text, title);
       const targets = marketEventTargets(text);
-      const primaryTarget = primaryMarketEventTarget(targets);
-      const hasDirectionalMove = MARKET_NEGATIVE_DIRECT_RE.test(title)
-        || MARKET_POSITIVE_DIRECT_RE.test(title);
-      const hasMeasuredMove = /\d+(?:\.\d+)?\s*%/u.test(title);
-      const direct = MARKET_FACTOR_NEGATIVE_RE.test(title)
-        || MARKET_FACTOR_POSITIVE_RE.test(title)
-        || (hasDirectionalMove && (
-          MARKET_SECURITY_MOVE_CONTEXT_RE.test(title)
-          || hasMeasuredMove
-          || primaryTarget.scope === 'stock'
-        ));
-      if (direction === 'neutral' || ageMs < -NEWS_FUTURE_TOLERANCE_MS) return null;
-      if (direct && ageMs > MARKET_DIRECT_EVENT_MAX_AGE_MS) return null;
-      if (!direct && ageMs > MARKET_STRUCTURAL_EVENT_MAX_AGE_MS) return null;
+      if (ageMs < -NEWS_FUTURE_TOLERANCE_MS) return [];
 
-      const ageHours = ageMs / (60 * 60 * 1000);
-      let score = direct ? 5 : 2;
-      if (MARKET_STRONG_MOVE_RE.test(title)) score += 4;
-      if (ageHours <= 6) score += 4;
-      else if (ageHours <= 18) score += 3;
-      else score += 1;
-      if (primaryTarget.scope === 'market') score += 4;
-      else if (primaryTarget.scope === 'factor') score += 3;
-      else if (primaryTarget.scope === 'sector') score += 2;
-      else score += 1;
-      if (hasMeasuredMove) score += 2;
-      if (MARKET_LOW_CONFIDENCE_HEADLINE_RE.test(title)) {
-        score -= direct ? 1 : 3;
-      }
+      const targetSignals = PHASE === 'pre_market'
+        ? targets.map((target) => {
+            const localEvidence = marketTargetLocalEvidence(title, target, targets);
+            const direction = localEvidence?.direction ?? (target.scope === 'stock'
+              ? baseDirection
+              : 'neutral');
+            return { target, direction, localEvidence };
+          })
+        : [{ target: primaryMarketEventTarget(targets), direction: baseDirection, localEvidence: null }];
 
-      return {
-        direction,
-        direct,
-        targets,
-        primaryTarget,
-        headline: title,
-        summary: String(item?.summary ?? ''),
-        source: item?.source ?? null,
-        publishedAt: item?.publishedAt ?? null,
-        sourceUrl: item?.sourceUrl ?? null,
-        score,
-        corroboration: 1
-      };
+      return targetSignals.flatMap(({ target, direction, localEvidence }) => {
+        if (direction === 'neutral') return [];
+        const primaryTarget = target;
+        const signalTargets = PHASE === 'pre_market' ? [target] : targets;
+        const evidenceText = localEvidence?.text ?? title;
+        const hasDirectionalMove = MARKET_NEGATIVE_DIRECT_RE.test(evidenceText)
+          || MARKET_POSITIVE_DIRECT_RE.test(evidenceText);
+        const hasMeasuredMove = /\d+(?:\.\d+)?\s*%/u.test(evidenceText);
+        const observedImpact = /울상|피해/u.test(evidenceText);
+        const contextOnlyRisk = MARKET_CONTEXT_ONLY_RISK_RE.test(evidenceText)
+          && !hasDirectionalMove
+          && !hasMeasuredMove
+          && !observedImpact;
+        const speculativeOnly = MARKET_SPECULATIVE_HEADLINE_RE.test(title)
+          && !observedImpact;
+        const directionallyAmbiguous = PHASE === 'pre_market' && (contextOnlyRisk || speculativeOnly);
+        const factorMove = target.scope === 'factor'
+          && (MARKET_FACTOR_NEGATIVE_RE.test(evidenceText) || MARKET_FACTOR_POSITIVE_RE.test(evidenceText));
+        const direct = PHASE === 'pre_market'
+          ? (localEvidence?.direct ?? (factorMove || hasDirectionalMove && (
+              MARKET_SECURITY_MOVE_CONTEXT_RE.test(evidenceText)
+              || hasMeasuredMove
+              || primaryTarget.scope === 'stock'
+            ))) || factorMove
+          : MARKET_FACTOR_NEGATIVE_RE.test(title)
+            || MARKET_FACTOR_POSITIVE_RE.test(title)
+            || hasDirectionalMove && (
+                MARKET_SECURITY_MOVE_CONTEXT_RE.test(title)
+                || hasMeasuredMove
+                || primaryTarget.scope === 'stock'
+              );
+        const resolvedDirect = direct && !directionallyAmbiguous;
+        if (resolvedDirect && ageMs > MARKET_DIRECT_EVENT_MAX_AGE_MS) return [];
+        if (!resolvedDirect && ageMs > MARKET_STRUCTURAL_EVENT_MAX_AGE_MS) return [];
+
+        const ageHours = ageMs / (60 * 60 * 1000);
+        let score = resolvedDirect ? 5 : 2;
+        if (MARKET_STRONG_MOVE_RE.test(evidenceText)) score += 4;
+        else if (PHASE === 'pre_market' && /울상|피해|악재/u.test(evidenceText)) score += 3;
+        if (ageHours <= 6) score += 4;
+        else if (ageHours <= 18) score += 3;
+        else score += 1;
+        if (primaryTarget.scope === 'market') score += 4;
+        else if (primaryTarget.scope === 'factor') score += 3;
+        else if (primaryTarget.scope === 'sector') score += 2;
+        else score += 1;
+        if (hasMeasuredMove) score += 2;
+        if (MARKET_LOW_CONFIDENCE_HEADLINE_RE.test(title)) {
+          score -= resolvedDirect ? 1 : 3;
+        }
+
+        return [{
+          direction,
+          direct: resolvedDirect,
+          targets: signalTargets,
+          primaryTarget,
+          headline: title,
+          directionEvidence: localEvidence?.text ?? null,
+          summary: String(item?.summary ?? ''),
+          source: item?.source ?? null,
+          publishedAt: item?.publishedAt ?? null,
+          sourceUrl: item?.sourceUrl ?? null,
+          score,
+          corroboration: 1,
+          directionallyAmbiguous
+        }];
+      });
     })
     .filter(Boolean);
 
@@ -1130,12 +1278,14 @@ function buildMarketEventSignals(marketResearch) {
         ...signal,
         score,
         corroboration,
-        severity: score >= 11 ? 'high' : score >= 7 ? 'medium' : 'low',
-        evidenceConfidence: score >= 11 && (signal.direct || corroboration > 1)
-          ? 'high'
-          : score >= 7
-            ? 'medium'
-            : 'low'
+        severity: (PHASE !== 'pre_market' || !signal.directionallyAmbiguous) && score >= 11 ? 'high' : score >= 7 ? 'medium' : 'low',
+        evidenceConfidence: signal.directionallyAmbiguous
+          ? score >= 7 ? 'medium' : 'low'
+          : score >= 11 && (signal.direct || corroboration > 1)
+            ? 'high'
+            : score >= 7
+              ? 'medium'
+              : 'low'
       };
     })
     .sort((left, right) => {
@@ -1259,7 +1409,9 @@ function marketEventState(marketResearch) {
     ? marketResearch.marketEventConclusions
     : resolveMarketEventSignals(signals);
   const highSignals = conclusions.filter((signal) => (
-    signal.severity === 'high' && signal.primaryTarget?.scope !== 'stock'
+    signal.severity === 'high'
+    && (PHASE !== 'pre_market' || signal.confidence === 'high' || signal.direction === 'mixed')
+    && signal.primaryTarget?.scope !== 'stock'
   ));
   return {
     signals,
@@ -1268,6 +1420,28 @@ function marketEventState(marketResearch) {
     positive: highSignals.filter((signal) => signal.direction === 'positive'),
     mixed: highSignals.filter((signal) => signal.direction === 'mixed')
   };
+}
+
+function hasContradictoryPreMarketWeather(marketResearch, report) {
+  if (PHASE !== 'pre_market') return false;
+  const conclusions = marketEventState(marketResearch).conclusions;
+  const negative = conclusions.filter((signal) => (
+    signal.direction === 'negative'
+    && signal.confidence === 'high'
+    && signal.primaryTarget?.scope === 'sector'
+  ));
+  const positive = conclusions.filter((signal) => (
+    signal.direction === 'positive'
+    && signal.confidence === 'high'
+    && signal.primaryTarget?.scope === 'sector'
+  ));
+  return negative.some((signal) => {
+    const topic = MARKET_EVENT_TOPICS.find((entry) => entry.key === signal.primaryTarget.key);
+    return topic?.pattern.test(String(report?.sectorWeather?.sunny ?? '')) ?? false;
+  }) || positive.some((signal) => {
+    const topic = MARKET_EVENT_TOPICS.find((entry) => entry.key === signal.primaryTarget.key);
+    return topic?.pattern.test(String(report?.sectorWeather?.rainy ?? '')) ?? false;
+  });
 }
 
 function uniqueTopMarketSignals(signals, limit = 3) {
@@ -1299,7 +1473,7 @@ function cleanMarketEventHeadline(value) {
 
 function marketEventSummary(signals) {
   return signals.map((signal) => (
-    `${signal.primaryTarget?.label ?? '시장'}: ${cleanMarketEventHeadline(signal.headline)}`
+    `${signal.primaryTarget?.label ?? '시장'}: ${cleanMarketEventHeadline(signal.directionEvidence ?? signal.headline)}`
   )).join(' / ');
 }
 
@@ -1313,6 +1487,12 @@ function signalTargetsText(signal, text) {
 function signalPrimaryTargetText(signal, text) {
   const topic = MARKET_EVENT_TOPICS.find((entry) => entry.key === signal.primaryTarget?.key);
   return topic?.pattern.test(String(text ?? '')) ?? false;
+}
+
+function signalTargetHasDirectionalEvidence(signal, text) {
+  if (signal.primaryTarget?.scope === 'factor') return false;
+  const targets = marketEventTargets(String(text ?? ''));
+  return marketTargetLocalEvidence(text, signal.primaryTarget, targets, { cleanHeadline: false }) !== null;
 }
 
 function applyPreMarketEventGuard(report, state) {
@@ -1366,13 +1546,13 @@ function applyPreMarketEventGuard(report, state) {
       };
     }
   }
-  if ([...negative, ...mixed].some((signal) => signalPrimaryTargetText(signal, next.sectorWeather.sunny))) {
+  if ([...negative, ...mixed].some((signal) => signalTargetHasDirectionalEvidence(signal, next.sectorWeather.sunny))) {
     next.sectorWeather.sunny = '상대강도 확인 - 상위 하방·혼조 사건과 분리되는 업종 흐름만 확인해야 합니다.';
   }
-  if ([...negative, ...positive].some((signal) => signalPrimaryTargetText(signal, next.sectorWeather.cloudy))) {
+  if ([...negative, ...positive].some((signal) => signalTargetHasDirectionalEvidence(signal, next.sectorWeather.cloudy))) {
     next.sectorWeather.cloudy = '방향성 혼조 - 지배 방향이 확정되지 않은 업종만 확인해야 합니다.';
   }
-  if ([...positive, ...mixed].some((signal) => signalPrimaryTargetText(signal, next.sectorWeather.rainy))) {
+  if ([...positive, ...mixed].some((signal) => signalTargetHasDirectionalEvidence(signal, next.sectorWeather.rainy))) {
     next.sectorWeather.rainy = '하방 위험 확인 - 상방·혼조 결론과 분리되는 업종만 확인해야 합니다.';
   }
 
@@ -1485,9 +1665,12 @@ function eventEvidenceEntries(marketResearch) {
     .filter((signal) => (
       ['positive', 'negative', 'mixed'].includes(signal?.direction)
       && signal?.primaryTarget?.scope !== 'stock'
+      && (PHASE !== 'pre_market'
+        || ((signal?.severity == null || signal.severity === 'high')
+          && (signal?.confidence == null || signal.confidence === 'high' || signal.direction === 'mixed')))
     ))
     .map((signal) => {
-      const text = cleanMarketEventHeadline(signal.headline ?? signal.summary ?? '');
+      const text = cleanMarketEventHeadline(signal.directionEvidence ?? signal.headline ?? signal.summary ?? '');
       if (!isNonEmptyString(text) || PLACEHOLDER_COPY_RE.test(text)) return null;
       return {
         direction: signal.direction,
@@ -1521,7 +1704,7 @@ function candidateEvidenceEntries(marketResearch) {
       const targets = marketEventTargets(candidateText(item));
       if (!text || targets.every((target) => target.scope === 'stock')) return null;
       return {
-        direction: marketEventDirection(candidateText(item), item.title),
+        direction: PHASE === 'pre_market' ? 'neutral' : marketEventDirection(candidateText(item), item.title),
         label: null,
         text,
         score: 0
@@ -1759,7 +1942,8 @@ const WRITER_REJECTED_QUALITY_ISSUES = new Set([
   'stale_investor_flow_copy',
   'unavailable_investor_flow_copy',
   'unverified_investor_flow_copy',
-  'investor_flow_copy_missing'
+  'investor_flow_copy_missing',
+  'directional_weather_contradiction'
 ]);
 
 function prepareAndValidateWriterReport(marketResearch, report) {
@@ -1910,6 +2094,9 @@ function normalizeMarketResearch(raw, apiPayload = {}) {
   const normalized = {
     generatedAt: raw.generatedAt ?? new Date().toISOString(),
     ...(raw.collectedAt ? { collectedAt: raw.collectedAt } : {}),
+    ...(raw.informationAsOf || PHASE === 'pre_market'
+      ? { informationAsOf: raw.informationAsOf ?? PRE_MARKET_INFORMATION_AS_OF }
+      : {}),
     phase: raw.phase ?? PHASE,
     sessionLabel: raw.sessionLabel ?? PHASE_CONFIG[PHASE].sessionLabel,
     summary: raw.summary ?? { signal: 'yellow', totalScore: 0, delayed: true, guide: '공개 무키 데이터 소스 기준으로 시장 상황을 점검합니다.' },
@@ -2221,11 +2408,15 @@ async function fetchNpayKospiIndex({ fetcher = fetchText } = {}) {
   return parseNpayKospiIndex(await fetcher(NPAY_KOSPI_URL));
 }
 
-function parseNpayDailyIndex(html, key, targetDate) {
+function parseNpayDailyIndex(html, key, targetDate, { beforeTarget = false } = {}) {
   if (!['kospi', 'kosdaq'].includes(key)) throw new Error('unsupported_daily_index');
+  let selected = null;
   for (const match of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
     const cells = [...match[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((cell) => cell[1]);
-    if (stripHtml(cells[0] ?? '').trim() !== targetDate.replaceAll('-', '.')) continue;
+    const sourceDate = stripHtml(cells[0] ?? '').trim().replaceAll('.', '-');
+    if (!/^\d{4}-\d{2}-\d{2}$/u.test(sourceDate)) continue;
+    if (beforeTarget ? sourceDate >= targetDate : sourceDate !== targetDate) continue;
+    if (selected && sourceDate <= selected.sourceDate) continue;
     const current = numericTokens(stripHtml(cells[1] ?? ''))[0]?.value;
     const changeToken = numericTokens(stripHtml(cells[2] ?? ''))[0];
     const rate = numericTokens(stripHtml(cells[3] ?? ''))[0]?.value;
@@ -2237,12 +2428,13 @@ function parseNpayDailyIndex(html, key, targetDate) {
       key, title: key.toUpperCase(), currentPrice: formatNumber(current),
       change: formatChange(change), changePercent: `${formatChange(rate)}%`,
       trend: trendFromChange(change), status: 'delayed',
-      updatedAt: `${targetDate}T00:00:00+09:00`, sourceDate: targetDate,
+      updatedAt: `${sourceDate}T00:00:00+09:00`, sourceDate,
       sourceUrl: `https://finance.naver.com/sise/sise_index_day.naver?code=${key.toUpperCase()}&page=1`
     };
     if (!isCoherentIndex(index)) throw new Error('inconsistent_daily_index_values');
-    return index;
+    selected = index;
   }
+  if (selected) return selected;
   throw new Error(`daily_index_date_unavailable:${key}:${targetDate}`);
 }
 
@@ -2357,6 +2549,9 @@ function normalizeYahooIndex({ key, title, symbol }, json) {
     trend: Number.isFinite(change) ? trendFromChange(change) : 'unknown',
     status: Number.isFinite(current) ? 'delayed' : 'unavailable',
     updatedAt: meta.regularMarketTime ? new Date(meta.regularMarketTime * 1000).toISOString() : null,
+    sourceDate: meta.regularMarketTime
+      ? dateKey(new Date(meta.regularMarketTime * 1000))
+      : null,
     sourceUrl: `https://finance.yahoo.com/quote/${encodeURIComponent(symbol)}`
   };
 
@@ -2366,11 +2561,66 @@ function normalizeYahooIndex({ key, title, symbol }, json) {
   return normalized;
 }
 
+function normalizeYahooPriorSessionIndex({ key, title, symbol }, json, targetDate) {
+  const result = json?.chart?.result?.[0];
+  const timestamps = Array.isArray(result?.timestamp) ? result.timestamp : [];
+  const closes = result?.indicators?.quote?.[0]?.close;
+  if (!Array.isArray(closes)) return null;
+
+  const byDate = new Map();
+  timestamps.forEach((timestamp, index) => {
+    const close = closes[index];
+    if (!Number.isFinite(timestamp) || !Number.isFinite(close) || close <= 0) return;
+    const sourceDate = dateKey(new Date(timestamp * 1000));
+    if (sourceDate >= targetDate) return;
+    const current = byDate.get(sourceDate);
+    if (!current || timestamp > current.timestamp) byDate.set(sourceDate, { timestamp, close, sourceDate });
+  });
+
+  const sessions = [...byDate.values()].sort((left, right) => left.sourceDate.localeCompare(right.sourceDate));
+  if (sessions.length < 2) return null;
+  const latest = sessions.at(-1);
+  const previous = sessions.at(-2);
+  if (latest.sourceDate === previous.sourceDate) return null;
+  const change = latest.close - previous.close;
+  const changePercent = (change / previous.close) * 100;
+  const index = {
+    key,
+    title,
+    currentPrice: formatNumber(latest.close, 2),
+    change: formatChange(change),
+    changePercent: `${formatChange(changePercent)}%`,
+    trend: trendFromChange(change),
+    status: 'delayed',
+    updatedAt: new Date(latest.timestamp * 1000).toISOString(),
+    sourceDate: latest.sourceDate,
+    sourceUrl: `https://finance.yahoo.com/quote/${encodeURIComponent(symbol)}`
+  };
+  if (!isCoherentIndex(index)) return null;
+  return index;
+}
+
 async function fetchYahooIndex({ key, title, symbol }) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=1d`;
-  const index = normalizeYahooIndex({ key, title, symbol }, await fetchJson(url));
-  if (BRIEFING_AS_OF && (!index.updatedAt || Date.parse(index.updatedAt) > Date.parse(BRIEFING_AS_OF))) {
-    throw new Error('index_after_briefing_cutoff');
+  const json = await fetchJson(url);
+  if (PHASE === 'pre_market' && ['kospi', 'kosdaq'].includes(key)) {
+    const result = json?.chart?.result?.[0];
+    const latestTimestamp = result?.meta?.regularMarketTime
+      ?? (Array.isArray(result?.timestamp) ? result.timestamp.at(-1) : null);
+    const latestUpdatedAt = Number.isFinite(latestTimestamp) ? new Date(latestTimestamp * 1000) : null;
+    const latestSourceDate = latestUpdatedAt ? dateKey(latestUpdatedAt) : null;
+    if (latestUpdatedAt && Date.parse(latestUpdatedAt) <= INFORMATION_CUTOFF_MS
+      && latestSourceDate && latestSourceDate < PRE_MARKET_TRADING_DATE) {
+      return normalizeYahooIndex({ key, title, symbol }, json);
+    }
+    const historical = normalizeYahooPriorSessionIndex({ key, title, symbol }, json, PRE_MARKET_TRADING_DATE);
+    if (historical) return historical;
+    throw new Error('index_prior_session_unavailable');
+  }
+
+  const index = normalizeYahooIndex({ key, title, symbol }, json);
+  if (INFORMATION_CUTOFF_MS !== null && (!index.updatedAt || Date.parse(index.updatedAt) > INFORMATION_CUTOFF_MS)) {
+    throw new Error('index_after_information_cutoff');
   }
   return index;
 }
@@ -2450,10 +2700,10 @@ async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10, { candidateFi
   const filtered = candidateFilter
     ? deduplicated.filter((item) => item?.status === 'unavailable' || candidateFilter(item))
     : deduplicated;
-  const eligible = BRIEFING_AS_OF
-    ? filtered.filter((item) => newsPublishedAtMs(item) != null && newsPublishedAtMs(item) <= Date.parse(BRIEFING_AS_OF))
+  const eligible = INFORMATION_CUTOFF_MS !== null
+    ? filtered.filter((item) => newsPublishedAtMs(item) != null && newsPublishedAtMs(item) <= INFORMATION_CUTOFF_MS)
     : filtered;
-  return rankFreshNewsCandidates(eligible, limit, BRIEFING_AS_OF ? Date.parse(BRIEFING_AS_OF) : Date.now());
+  return rankFreshNewsCandidates(eligible, limit, INFORMATION_CUTOFF_MS ?? Date.now());
 }
 
 async function fetchNewsCandidateGroup(queries, limit, statusKey, sourceStatus, options = {}) {
@@ -2558,7 +2808,66 @@ function summarizeInvestorFlows(investorFlows) {
   return summaries.join(' / ');
 }
 
-async function collectPublicMarketResearch() {
+function normalizedFlowDate(value) {
+  const text = String(value ?? '');
+  if (/^\d{8}$/u.test(text)) return `${text.slice(0, 4)}-${text.slice(4, 6)}-${text.slice(6, 8)}`;
+  return /^\d{4}-\d{2}-\d{2}$/u.test(text) ? text : null;
+}
+
+function filterPreMarketInvestorFlows(investorFlows, targetDate = PRE_MARKET_TRADING_DATE) {
+  if (PHASE !== 'pre_market') return investorFlows;
+  const markets = (Array.isArray(investorFlows?.markets) ? investorFlows.markets : [])
+    .map((market) => {
+      const rows = Array.isArray(market?.recent)
+        ? market.recent.map((row) => ({ date: normalizedFlowDate(row?.date), netBuy: row?.netBuy }))
+        : [];
+      const latestDate = normalizedFlowDate(market?.latestDate);
+      if (latestDate && latestDate < targetDate && !rows.some((row) => row.date === latestDate)) {
+        rows.push({ date: latestDate, netBuy: market?.netBuy });
+      }
+      const selected = rows
+        .filter((row) => row.date && row.date < targetDate && row.netBuy && Object.values(row.netBuy).some(Number.isFinite))
+        .sort((left, right) => left.date.localeCompare(right.date))
+        .at(-1);
+      if (!selected) return null;
+      const netBuy = Object.fromEntries(['foreign', 'institution', 'retail']
+        .filter((key) => Number.isFinite(selected.netBuy[key]))
+        .map((key) => [key, selected.netBuy[key]]));
+      if (Object.keys(netBuy).length === 0) return null;
+      return {
+        market: market.market,
+        latestDate: selected.date,
+        unit: market.unit,
+        netBuy,
+        source: market.source,
+        sourceUrl: market.sourceUrl
+      };
+    })
+    .filter(Boolean);
+
+  if (markets.length === 0) {
+    return {
+      status: 'unavailable',
+      generatedAt: investorFlows?.generatedAt ?? new Date().toISOString(),
+      source: investorFlows?.source ?? 'NAVER Finance/KRX + pykrx/KRX',
+      sourceUrls: investorFlows?.sourceUrls ?? [],
+      reason: investorFlows?.status === 'unavailable'
+        ? investorFlows.reason ?? 'investor_flow_data_unavailable'
+        : 'no_prior_session_flow_data',
+      markets: []
+    };
+  }
+
+  return {
+    status: markets.length === 2 && investorFlows?.status === 'ok' ? 'ok' : 'partial',
+    generatedAt: investorFlows?.generatedAt ?? new Date().toISOString(),
+    source: investorFlows?.source,
+    sourceUrls: investorFlows?.sourceUrls ?? [],
+    markets
+  };
+}
+
+async function collectPublicMarketResearch({ fetchInvestorFlowsImpl = fetchInvestorFlows } = {}) {
   const indices = [];
   const sourceStatus = {};
 
@@ -2568,6 +2877,44 @@ async function collectPublicMarketResearch() {
       const html = await withMarketSourceRetry(`npay-daily:${item.key}`, () => fetchText(url));
       indices.push(parseNpayDailyIndex(html, item.key, dateKey()));
       sourceStatus[`npay-daily:${item.key}`] = 'ok';
+      continue;
+    }
+    if (PHASE === 'pre_market' && ['kospi', 'kosdaq'].includes(item.key)) {
+      let yahooError;
+      try {
+        const index = await withMarketSourceRetry(`yahoo:${item.key}`, () => fetchYahooIndex(item));
+        if (index.sourceDate && index.sourceDate < PRE_MARKET_TRADING_DATE) {
+          indices.push(index);
+          sourceStatus[`yahoo:${item.key}`] = 'ok';
+          continue;
+        }
+        yahooError = new Error('index_not_from_completed_prior_session');
+      } catch (error) {
+        yahooError = error;
+      }
+
+      try {
+        const url = `https://finance.naver.com/sise/sise_index_day.naver?code=${item.key.toUpperCase()}&page=1`;
+        const html = await withMarketSourceRetry(`npay-daily:${item.key}`, () => fetchText(url));
+        indices.push(parseNpayDailyIndex(html, item.key, PRE_MARKET_TRADING_DATE, { beforeTarget: true }));
+        sourceStatus[`yahoo:${item.key}`] = `rejected:${errorReason(yahooError)}`;
+        sourceStatus[`npay-daily:${item.key}`] = 'ok';
+      } catch (dailyError) {
+        indices.push({
+          key: item.key,
+          title: item.title,
+          currentPrice: null,
+          change: null,
+          changePercent: null,
+          trend: 'unknown',
+          status: 'unavailable',
+          updatedAt: null,
+          sourceDate: null,
+          sourceUrl: `https://finance.naver.com/sise/sise_index_day.naver?code=${item.key.toUpperCase()}&page=1`
+        });
+        sourceStatus[`yahoo:${item.key}`] = `unavailable:${errorReason(yahooError)}`;
+        sourceStatus[`npay-daily:${item.key}`] = `unavailable:${errorReason(dailyError)}`;
+      }
       continue;
     }
     if (item.key === 'kospi') {
@@ -2625,7 +2972,7 @@ async function collectPublicMarketResearch() {
     sourceStatus
   );
 
-  const investorFlows = await fetchInvestorFlows();
+  const investorFlows = filterPreMarketInvestorFlows(await fetchInvestorFlowsImpl());
   sourceStatus.investorFlows = isInvestorFlowsAvailable(investorFlows)
     ? investorFlows.status
     : `unavailable:${investorFlows.reason ?? 'unknown'}`;
@@ -2651,7 +2998,9 @@ async function collectPublicMarketResearch() {
       change: null,
       signal: 'yellow',
       status: isInvestorFlowsAvailable(investorFlows) ? 'delayed' : 'unavailable',
-      updatedAt: investorFlows.generatedAt ?? null,
+      updatedAt: PHASE === 'pre_market'
+        ? investorFlows.markets?.map((market) => market.latestDate).filter(Boolean).sort().at(-1) ?? null
+        : investorFlows.generatedAt ?? null,
       reason: isInvestorFlowsAvailable(investorFlows)
         ? `${investorFlows.source ?? 'KRX'} 투자자별 순매수 거래대금을 수집했습니다. 장시작 브리핑에서는 최신 완료 거래일 기준으로 해석합니다.`
         : `KRX 기반 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: ${summarizeNewsCandidates(investorFlowNewsCandidates, 3) ?? investorFlows.reason ?? 'unknown'}`,
@@ -2672,9 +3021,13 @@ async function collectPublicMarketResearch() {
     }
   );
 
+  const collectedAt = new Date().toISOString();
   return normalizeMarketResearch({
-    generatedAt: BRIEFING_AS_OF ? new Date(BRIEFING_AS_OF).toISOString() : new Date().toISOString(),
-    collectedAt: new Date().toISOString(),
+    generatedAt: PHASE === 'post_market' && BRIEFING_AS_OF
+      ? new Date(BRIEFING_AS_OF).toISOString()
+      : collectedAt,
+    collectedAt,
+    ...(PHASE === 'pre_market' ? { informationAsOf: PRE_MARKET_INFORMATION_AS_OF } : {}),
     phase: PHASE,
     sessionLabel: PHASE_CONFIG[PHASE].sessionLabel,
     summary: {
@@ -3052,10 +3405,17 @@ function renderArticle(report) {
   const config = PHASE_CONFIG[PHASE];
   const body = PHASE === 'post_market' ? renderPostMarketReport(report) : renderPreMarketReport(report);
   const articleClass = PHASE === 'post_market' ? 'report-post-market' : 'report-pre-market';
+  const informationAsOfAttribute = PHASE === 'pre_market'
+    ? ` data-information-as-of="${escapeHtml(PRE_MARKET_INFORMATION_AS_OF)}"`
+    : '';
+  const informationBasis = PHASE === 'pre_market'
+    ? `<p class="information-basis">정보 기준: ${escapeHtml(PRE_MARKET_TRADING_DATE)} 08:30 KST</p>`
+    : '';
 
-  return `<article class="report ${articleClass}">
+  return `<article class="report ${articleClass}"${informationAsOfAttribute}>
       <div class="eyebrow published">${escapeHtml(config.eyebrow)}</div>
       <h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>
+${informationBasis}
 ${body}
     </article>`;
 }
@@ -3275,7 +3635,7 @@ ${REPORT_STYLE}
     </style>
   </head>
   <body>
-    <main class="page" data-published-at="${escapeHtml(publishedAt)}" data-writer-provider="${escapeHtml(writer.provider)}" data-writer-model="${escapeHtml(writer.model)}" data-fallback-reason="${escapeHtml(writer.fallbackReason ?? '')}">
+    <main class="page" data-published-at="${escapeHtml(publishedAt)}"${PHASE === 'pre_market' ? ` data-information-as-of="${escapeHtml(PRE_MARKET_INFORMATION_AS_OF)}"` : ''} data-writer-provider="${escapeHtml(writer.provider)}" data-writer-model="${escapeHtml(writer.model)}" data-fallback-reason="${escapeHtml(writer.fallbackReason ?? '')}">
       <section class="room-header">
         <h1 class="room-title">리딩방</h1>
         <div class="room-tabs" role="tablist" aria-label="리딩방 상단 탭">
@@ -3309,7 +3669,9 @@ async function main() {
   const marketResearch = process.env.REPORT_LLM_MOCK === '1' ? mockMarketResearch() : await collectPublicMarketResearch();
   console.info('[market-briefing] source coverage', {
     phase: PHASE,
-    asOf: marketResearch.generatedAt,
+    informationAsOf: marketResearch.informationAsOf ?? BRIEFING_AS_OF ?? marketResearch.generatedAt,
+    generatedAt: marketResearch.generatedAt,
+    collectedAt: marketResearch.collectedAt ?? null,
     marketNews: marketResearch.marketNews?.length ?? 0,
     stockNewsCandidates: marketResearch.stockNewsCandidates?.length ?? 0,
     sectorThemeNewsCandidates: marketResearch.sectorThemeNewsCandidates?.length ?? 0,
@@ -3350,6 +3712,7 @@ main().catch((error) => {
 });
 
 export const __testResolveBriefingPublishPlan = resolveBriefingPublishPlan;
+export const __testHasContradictoryPreMarketWeather = hasContradictoryPreMarketWeather;
 export const __testSanitizeBriefingCopy = sanitizeBriefingCopy;
 export const __testValidateReportShape = validateReportShape;
 export const __testRepairPreMarketWriterReport = repairPreMarketWriterReport;
@@ -3375,17 +3738,21 @@ export const __testWriteReport = writeReport;
 export const __testNotableStockQueries = NOTABLE_STOCK_QUERIES;
 export const __testParseNpayKospiIndex = parseNpayKospiIndex;
 export const __testParseNpayDailyIndex = parseNpayDailyIndex;
+export const __testFilterPreMarketInvestorFlows = filterPreMarketInvestorFlows;
 export const __testFetchKospiIndexWithFallback = fetchKospiIndexWithFallback;
 export const __testIsTransientMarketSourceError = isTransientMarketSourceError;
 export const __testParseRetryAfterMs = parseRetryAfterMs;
 export const __testMarketSourceRetryDelayMs = marketSourceRetryDelayMs;
 export const __testWithMarketSourceRetry = withMarketSourceRetry;
 export const __testNormalizeYahooIndex = normalizeYahooIndex;
+export const __testNormalizeYahooPriorSessionIndex = normalizeYahooPriorSessionIndex;
 export const __testFetchYahooIndex = fetchYahooIndex;
+export const __testFetchGoogleNews = fetchGoogleNews;
 export const __testIsCoherentIndex = isCoherentIndex;
 export const __testIsGroundedMajorIndex = isGroundedMajorIndex;
 export const __testFetchNewsCandidateGroupWithFallback = fetchNewsCandidateGroupWithFallback;
 export const __testCollectPublicMarketResearch = collectPublicMarketResearch;
+export const __testRenderArticle = renderArticle;
 export const __testNewsQueries = NEWS_QUERIES;
 export const __testSectorThemeQueries = SECTOR_THEME_QUERIES;
 export const __testMarketNewsFallbackQueries = MARKET_NEWS_FALLBACK_QUERIES;

@@ -102,7 +102,7 @@ test('realtime generator drops stale/unknown carry-over and timestamps visible i
 
 test('briefing recovery validator requires current phase/date and substantive non-placeholder content', async () => {
   const { validateBriefingHtml } = await import('../scripts/check-briefing-recovery.mjs');
-  const current = '<article class="report report-pre-market"><h1>2026-08-26 08:30</h1><h2>시장 전략</h2><p>현재 시장의 주요 변수와 대응 전략을 충분한 근거로 정리했습니다.</p></article>';
+  const current = '<article class="report report-pre-market" data-information-as-of="2026-08-26T08:30:00+09:00"><h1>2026-08-26 08:30</h1><h2>시장 전략</h2><p>현재 시장의 주요 변수와 대응 전략을 충분한 근거로 정리했습니다.</p></article>';
   const valid = validateBriefingHtml(current, 'pre_market', new Date('2026-08-26T00:00:00.000Z'));
   assert.equal(valid.shouldRecover, false);
 
