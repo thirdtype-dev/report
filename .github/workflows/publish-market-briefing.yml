@@ -20,6 +20,11 @@ on:
         options:
           - pre_market
           - post_market
+      automatic:
+        description: Skip an automatic duplicate after a terminal run exists for this slot
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -93,15 +98,40 @@ jobs:
           git show origin/main:report/index.html > "$REPORT_INDEX_PATH"
           node scripts/check-briefing-recovery.mjs >> "$GITHUB_OUTPUT"
 
+      # The global report-publish lock is held. Automatic dispatches may not
+      # regenerate after any earlier terminal run for this exact slot.
+      - name: Check prior automatic attempt inside publication lock
+        id: attempt
+        if: steps.trading_day.outputs.is_trading_day == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          INPUT_AUTOMATIC: ${{ inputs.automatic }}
+          INPUT_PHASE: ${{ steps.slot.outputs.phase }}
+          INPUT_TRADING_DATE: ${{ steps.slot.outputs.trading_date }}
+          INPUT_SHOULD_RECOVER: ${{ steps.committed.outputs.should_recover }}
+        run: node scripts/briefing-attempt-policy.mjs >> "$GITHUB_OUTPUT"
+
+      - name: Suppress duplicate automatic attempt
+        if: steps.attempt.outputs.should_publish == 'false'
+        env:
+          ATTEMPT_REASON: ${{ steps.attempt.outputs.attempt_reason }}
+          PRIOR_RUN_URL: ${{ steps.attempt.outputs.attempt_run_url }}
+        run: |
+          echo "Automatic briefing generation skipped: $ATTEMPT_REASON"
+          echo "Previous workflow run: $PRIOR_RUN_URL"
+          printf 'Automatic generation was skipped for this slot (%s). The previous run is recorded at %s. No publication success is claimed.\n' "$ATTEMPT_REASON" "$PRIOR_RUN_URL" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Revalidate date immediately before generation
-        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true' && steps.attempt.outputs.should_publish == 'true'
         env:
           INPUT_PHASE: ${{ steps.slot.outputs.phase }}
           INPUT_TRADING_DATE: ${{ steps.slot.outputs.trading_date }}
         run: node scripts/briefing-slot.mjs
 
       - name: Generate briefing
-        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true' && steps.attempt.outputs.should_publish == 'true'
         env:
           BRIEFING_PHASE: ${{ inputs.phase || 'pre_market' }}
           ANALYST_PROVIDER: openrouter
@@ -113,7 +143,7 @@ jobs:
         run: node scripts/generate-market-briefing.mjs
 
       - name: Publish generated HTML
-        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true' && steps.attempt.outputs.should_publish == 'true'
         run: |
           cp public/report/index.html index.html
           mkdir -p report
@@ -123,20 +153,20 @@ jobs:
           cp public/report/data/report.json report/data/report.json
 
       - name: Validate generated briefing
-        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true' && steps.attempt.outputs.should_publish == 'true'
         env:
           BRIEFING_PHASE: ${{ inputs.phase || 'pre_market' }}
         run: node scripts/check-briefing-recovery.mjs --require-valid
 
       - name: Revalidate date before committing
-        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true' && steps.attempt.outputs.should_publish == 'true'
         env:
           INPUT_PHASE: ${{ steps.slot.outputs.phase }}
           INPUT_TRADING_DATE: ${{ steps.slot.outputs.trading_date }}
         run: node scripts/briefing-slot.mjs
 
       - name: Commit and push
-        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.committed.outputs.should_recover == 'true' && steps.attempt.outputs.should_publish == 'true'
         env:
           PUBLISH_COMMIT_MESSAGE: Publish market briefing
         run: |
@@ -145,5 +175,5 @@ jobs:
           node scripts/publish-generated-report.mjs index.html report/index.html report/data/market-research.json report/data/report.json
 
       - name: Verify actual public publication
-        if: steps.trading_day.outputs.is_trading_day == 'true'
+        if: steps.trading_day.outputs.is_trading_day == 'true' && steps.attempt.outputs.should_publish != 'false'
         run: node scripts/verify-public-briefing.mjs

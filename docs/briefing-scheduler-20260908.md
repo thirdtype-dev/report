@@ -17,6 +17,12 @@ The recovery workflow can start after its scheduled publication window or after 
 
 Manual recovery, publishing, unknown schedule strings and metadata, validation or publication failures retain strict failure behavior. A late skip records that this recovery attempt did not run; it does not verify whether the public page was published by another attempt.
 
+## Duplicate failure attempts — 2026-09-29
+
+Signal automatic dispatches and scheduled recovery use the exact `briefing:YYYY-MM-DD:phase` run title on `main` as durable slot state. They attach to an active run, report an existing terminal run, and do not dispatch again because public HTML is absent. The publisher repeats the terminal-run check inside the shared `report-publish` lock before generation. It records the prior run URL and skip reason; a skipped attempt makes no publication claim. Manual recovery explicitly sends `automatic=false`, so an operator can retry a failed slot after correcting its cause.
+
+Scheduled recovery treats a publisher conclusion of `failure` as already reported by GitHub and exits with `verified-publication=false` plus the original failure run URL. If an automatic duplicate later completes successfully only because the publisher guard skipped it, recovery identifies the suppression step and still reports the original failure. Real successful runs are verified against public HTML. Authentication, malformed run-history, calendar and non-transient network errors remain failures; transient provider retries stay bounded inside one publisher run.
+
 ## Remaining operational work (not represented as fixed)
 
 GitHub scheduled events remain best effort: delayed/dropped event creation cannot be repaired by a workflow date guard. Existing Cloud Scheduler jobs are the primary trigger, but current retryConfig, attemptDeadline and exact job schedules require authenticated GCP readback. Reconcile recovery deadlines with those jobs before claiming timely recovery.

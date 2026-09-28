@@ -6,7 +6,7 @@ import { join } from 'node:path';
 import { runBriefingSlotCli, resolveSlot } from '../scripts/briefing-slot.mjs';
 import { validateBriefingHtml } from '../scripts/check-briefing-recovery.mjs';
 import { waitForPublicBriefing } from '../scripts/verify-public-briefing.mjs';
-import { recoverBriefing, matchingRun } from '../scripts/recover-market-briefing.mjs';
+import { recoverBriefing, matchingRun, logRecoveryResult } from '../scripts/recover-market-briefing.mjs';
 
 const date = '2026-09-08';
 const phase = 'post_market';
@@ -200,17 +200,104 @@ test('recovery attaches existing active slot and propagates publication failure'
   }), /publish_workflow_failure:42/);
   assert.deepEqual(calls, ['GET', 'GET']);
 });
-test('dispatch accepted is not recovery success; observes explicit run and public page', async () => {
+test('scheduled recovery records an already reported terminal publisher failure without dispatching', async () => {
+  const failedRun = { ...run, status: 'completed', conclusion: 'failure', html_url: 'https://github.com/owner/report/actions/runs/42' };
+  const calls = [];
+  const result = await recoverBriefing({ date, phase, now: () => +now, repository: 'owner/report', token: 'fake', scheduled: true, checkPublic: async () => false,
+    fetchImpl: async (url, options) => { calls.push(options.method); return response(url.includes('?per_page') ? { workflow_runs: [failedRun] } : null); }
+  });
+  assert.deepEqual(result, {
+    reason: 'publication_failed_already_reported',
+    dispatched: false,
+    verifiedPublication: false,
+    runId: 42,
+    runUrl: failedRun.html_url
+  });
+  assert.deepEqual(calls, ['GET']);
+  let log = '';
+  logRecoveryResult(result, (message) => { log = message; });
+  assert.equal(log, `publication_failed_already_reported verified-publication=false run_url=${failedRun.html_url}`);
+});
+test('scheduled observer reports a publisher failure reached after attach or dispatch', async () => {
+  for (const scenario of [
+    { name: 'attached active run', initialRuns: [run], expectedDispatched: false },
+    { name: 'new scheduled dispatch', initialRuns: [], expectedDispatched: true }
+  ]) {
+    const failedRun = { ...run, status: 'completed', conclusion: 'failure', html_url: 'https://github.com/owner/report/actions/runs/42' };
+    let listCalls = 0;
+    const result = await recoverBriefing({ date, phase, now: () => +now, sleep: async () => {}, repository: 'owner/report', token: 'fake', scheduled: true,
+      checkPublic: async () => false,
+      fetchImpl: async (url, options) => {
+        if (options.method === 'POST') return response(null, 204);
+        if (url.includes('?per_page')) return response({ workflow_runs: ++listCalls === 1 ? scenario.initialRuns : [failedRun] });
+        return response(failedRun);
+      }
+    });
+    assert.equal(result.reason, 'publication_failed_already_reported', scenario.name);
+    assert.equal(result.dispatched, scenario.expectedDispatched, scenario.name);
+    assert.equal(result.verifiedPublication, false, scenario.name);
+    assert.equal(result.runUrl, failedRun.html_url, scenario.name);
+  }
+});
+test('scheduled recovery maps a suppressed success back to the original failed run', async () => {
+  const failedRun = { ...run, id: 42, status: 'completed', conclusion: 'failure', html_url: 'https://github.com/owner/report/actions/runs/42' };
+  const suppressedRun = { ...run, id: 43, status: 'completed', conclusion: 'success', html_url: 'https://github.com/owner/report/actions/runs/43' };
+  const calls = [];
+  const result = await recoverBriefing({ date, phase, now: () => +now, repository: 'owner/report', token: 'fake', scheduled: true, checkPublic: async () => false,
+    fetchImpl: async (url, options) => {
+      calls.push(`${options.method} ${url}`);
+      if (url.includes('/jobs?')) return response({ jobs: [{ steps: [{ name: 'Suppress duplicate automatic attempt', conclusion: 'success' }] }] });
+      return response({ workflow_runs: [suppressedRun, failedRun] });
+    }
+  });
+  assert.equal(result.reason, 'publication_failed_already_reported');
+  assert.equal(result.verifiedPublication, false);
+  assert.equal(result.runUrl, failedRun.html_url);
+  assert.equal(calls.filter((call) => call.startsWith('POST ')).length, 0);
+  assert.equal(calls.some((call) => call.includes('/runs/43/jobs?')), true);
+});
+test('manual recovery explicitly retries a suppressed duplicate with automatic false', async () => {
+  const failedRun = { ...run, id: 42, status: 'completed', conclusion: 'failure' };
+  const suppressedRun = { ...run, id: 43, status: 'completed', conclusion: 'success' };
+  const manualRun = { ...run, id: 44, status: 'queued' };
+  let listCount = 0;
+  let dispatchInputs;
+  const result = await recoverBriefing({ date, phase, now: () => +now, sleep: async () => {}, repository: 'owner/report', token: 'fake', checkPublic: async () => false,
+    verifyPublic: async () => true,
+    fetchImpl: async (url, options) => {
+      if (options.method === 'POST') { dispatchInputs = JSON.parse(options.body).inputs; return response(null, 204); }
+      if (url.includes('/jobs?')) return response({ jobs: [{ steps: [{ name: 'Suppress duplicate automatic attempt', conclusion: url.includes('/runs/43/') ? 'success' : 'skipped' }] }] });
+      if (url.includes('?per_page')) return response({ workflow_runs: ++listCount === 1 ? [suppressedRun, failedRun] : [manualRun, suppressedRun, failedRun] });
+      if (url.endsWith('/44')) return response({ ...manualRun, status: 'completed', conclusion: 'success' });
+      throw new Error(`unexpected_request:${url}`);
+    }
+  });
+  assert.deepEqual(dispatchInputs, { phase, trading_date: date, automatic: 'false' });
+  assert.equal(result.reason, 'public_publication_verified');
+  assert.equal(result.verifiedPublication, true);
+});
+test('scheduled terminal success without publication never dispatches and keeps the failure strict', async () => {
+  const successRun = { ...run, status: 'completed', conclusion: 'success' };
+  let dispatches = 0;
+  await assert.rejects(recoverBriefing({ date, phase, now: () => +now, repository: 'owner/report', token: 'fake', scheduled: true, checkPublic: async () => false,
+    verifyPublic: async () => { throw new Error('public_publication_timeout'); },
+    fetchImpl: async (url, options) => { if (options.method === 'POST') dispatches += 1; return response(url.includes('/jobs?') ? { jobs: [] } : { workflow_runs: [successRun] }); }
+  }), /public_publication_timeout/u);
+  assert.equal(dispatches, 0);
+});
+test('dispatch accepted is not recovery success; scheduled dispatch passes automatic true and observes publication', async () => {
   let listCount = 0; let publicChecks = 0; let dispatchedBody;
   const result = await recoverBriefing({ date, phase, now: () => +now, sleep: async () => {}, repository: 'owner/report', token: 'fake',
+    scheduled: true,
     checkPublic: async () => ++publicChecks > 1,
     fetchImpl: async (url, options) => {
       if (options.method === 'POST') { dispatchedBody = JSON.parse(options.body); return response(null, 204); }
+      if (url.includes('/jobs?')) return response({ jobs: [] });
       if (url.includes('?per_page')) return response({ workflow_runs: ++listCount === 1 ? [] : [{ ...run, status: 'completed', conclusion: 'success' }] });
       throw new Error('unexpected_request');
     }
   });
-  assert.deepEqual(dispatchedBody.inputs, { phase, trading_date: date });
+  assert.deepEqual(dispatchedBody.inputs, { phase, trading_date: date, automatic: 'true' });
   assert.equal(result.reason, 'public_publication_verified');
   assert.equal(publicChecks, 2);
 });
@@ -249,4 +336,27 @@ test('hung workflow metadata body cannot exceed recovery budget', async () => {
   await assert.rejects(recoverBriefing({ date, phase, now: () => +now, timeoutMs: 15, repository: 'owner/report', token: 'fake', checkPublic: async () => false,
     fetchImpl: async () => ({ ok: true, status: 200, json: () => new Promise(() => {}) })
   }), /request_deadline_exceeded/);
+});
+test('failed or malformed run-history lookup never authorizes another dispatch', async () => {
+  for (const lookupResult of [
+    response(null, 503),
+    response({ not_workflow_runs: [] })
+  ]) {
+    let dispatches = 0;
+    await assert.rejects(recoverBriefing({ date, phase, now: () => +now, repository: 'owner/report', token: 'fake', checkPublic: async () => false,
+      fetchImpl: async (url, options) => {
+        if (options.method === 'POST') dispatches += 1;
+        return lookupResult;
+      }
+    }));
+    assert.equal(dispatches, 0);
+  }
+});
+test('unknown public-check errors remain strict', async () => {
+  let requests = 0;
+  await assert.rejects(recoverBriefing({ date, phase, now: () => +now, repository: 'owner/report', token: 'fake',
+    checkPublic: async () => { throw new Error('public_authentication_rejected'); },
+    fetchImpl: async () => { requests += 1; return response({ workflow_runs: [] }); }
+  }), /public_authentication_rejected/u);
+  assert.equal(requests, 0);
 });
