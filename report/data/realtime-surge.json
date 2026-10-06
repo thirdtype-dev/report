@@ -1,55 +1,171 @@
 {
-  "generated_at": "2026-10-06T02:00:18.313Z",
+  "generated_at": "2026-10-06T03:00:23.660Z",
   "generated_date": "2026-10-06",
-  "slot_hour": 11,
-  "cycle_label": "KST_1100",
-  "slot_label": "11:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 11:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 9건",
+    "title": "KST 12:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 10건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
-      "stockName": "LG전자",
-      "stockCode": "066570",
-      "summary": "메리츠증권 \"LG전자, AI 등 밸류에이션 재평가.. 목표가 상향\"",
-      "headline": "LG전자 주가, 웃음꽃... 증권가 전망은?",
+      "stockName": "두산테스나",
+      "stockCode": "131970",
+      "summary": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽",
+      "headline": "반도체주 장중 혼조…두산테스나·SFA반도체 5%대 상승",
       "evidencePoints": [
-        "출처 금강일보, 글로벌이코노믹 기반 기사 2건",
-        "LG전자 주가, 웃음꽃... 증권가 전망은?",
-        "메리츠증권 \"LG전자, AI 등 밸류에이션 재평가.. 목표가 상향\""
+        "출처 CBC뉴스, 아주경제 기반 기사 2건",
+        "제목 기준 변동률 단서 +5.0%",
+        "반도체주 장중 혼조…두산테스나·SFA반도체 5%대 상승",
+        "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽"
       ],
       "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
+      "sentimentLabel": "positive",
       "channelCount": 3,
-      "updatedAt": "2026-10-06T02:00:18.313Z",
-      "cycleLabel": "KST_1100",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "LG전자 주가, 웃음꽃... 증권가 전망은?",
-      "source": "금강일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBSbEFHNHo1a2pqLUoxZUhGSjZ6b1JmLTJYVThnSWU3X1hlOGQ0cF81aXpnYXo2S19OUkRQclNjZlJUeEFRYjhQNnRmYy1DVkh3THFvXzdaQ0IxNnVZTlQyTEt5Zkdsd1Ju?oc=5",
-      "publishedAt": "Tue, 06 Oct 2026 00:44:31 GMT",
+      "updatedAt": "2026-10-06T03:00:23.660Z",
+      "cycleLabel": "KST_1200",
+      "direction": "up",
+      "changeRate": 5,
+      "latestHeadline": "반도체주 장중 혼조…두산테스나·SFA반도체 5%대 상승",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5uRjlvWFN4OWwtaGhOS1dFNXRzQ2xjcHhxTnp3Smp2ZExkckNJb3YtSEtlcW1Xb3NhaHVLTGRVbjJOQWJSd2RuV2x4V3ZYX0Q3UkszNWl1Xy02WWNVRjFVdWRFQ1FNNWM0?oc=5",
+      "publishedAt": "Tue, 06 Oct 2026 00:43:02 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "LG전자 주가, 웃음꽃... 증권가 전망은?",
-          "source": "금강일보",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBSbEFHNHo1a2pqLUoxZUhGSjZ6b1JmLTJYVThnSWU3X1hlOGQ0cF81aXpnYXo2S19OUkRQclNjZlJUeEFRYjhQNnRmYy1DVkh3THFvXzdaQ0IxNnVZTlQyTEt5Zkdsd1Ju?oc=5"
+          "title": "반도체주 장중 혼조…두산테스나·SFA반도체 5%대 상승",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5uRjlvWFN4OWwtaGhOS1dFNXRzQ2xjcHhxTnp3Smp2ZExkckNJb3YtSEtlcW1Xb3NhaHVLTGRVbjJOQWJSd2RuV2x4V3ZYX0Q3UkszNWl1Xy02WWNVRjFVdWRFQ1FNNWM0?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "메리츠증권 \"LG전자, AI 등 밸류에이션 재평가.. 목표가 상향\"",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMUUxMkt5ZVg4UXJsbFg5U29SZDZOLTY4bkVIOUlvalVMekZrSGxrRjhZNk1YVjZRSU8zbWhDZlkySmdGTVhzRnR1S3JMQ0ltTVhYSkQ0WlduaFY5RU11MjV4Y29HMUxuR1JtN0thQmxvc2I2ZmFLbjBnZVYyWDVLaXlIbW16aDlY?oc=5"
+          "title": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽",
+          "source": "아주경제",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9FS1dYQzc3VHFKRGZZdlpzSEVnVXdBNy10OTRKSVdpMGJtTzFoQi02V1VpX0VIdEtfUDRQb0NwRllmaC1VRF9id3hjNDJCYVZjeW9BV2ZBNnnSAVhBVV95cUxPRUtXWEM3N1RxSkRmWXZac0hFZ1V3QTctdDk0SklXaTBibU8xaEItNldVaV9FSHRLX1A0UG9DcEZZZmgtVURfYnd4YzQyQmFWY3lvQVdmQTZ5?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "LG전자 주가, 웃음꽃..",
-      "polishedBody": "LG전자는 메리츠증권 \", AI 등 밸류에이션 재평가 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 메리츠증권 \", AI 등 밸류에이션 재평가 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+      "polishedHeadline": "두산테스나 반도체주 장중 혼조…두산테스나·SFA반도체 5%대 상승",
+      "polishedBody": "두산테스나는 한국투자證, 3분기 저점…비메모리 후공정 톱픽 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 반도체주 장중 혼조 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "LG전자 주가 장중 5%대 강세, 대규모 AI데이터센터 냉각설루션 공급계약 따내",
+      "headline": "AI 데이터센터 계약에 LG전자 주가 상승",
+      "evidencePoints": [
+        "출처 제주교통복지신문, 비즈니스포스트 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "AI 데이터센터 계약에 LG전자 주가 상승",
+        "LG전자 주가 장중 5%대 강세, 대규모 AI데이터센터 냉각설루션 공급계약 따내"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-10-06T03:00:23.660Z",
+      "cycleLabel": "KST_1200",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "AI 데이터센터 계약에 LG전자 주가 상승",
+      "source": "제주교통복지신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mOUZTeVZTdGNjck1ZOTI5TWhWeGlWamhMMlZZclJBNzJGVnZFTGF4cGRLcjV0LUhqNHk4a0Z3cUdBUU1SbzRxa285SUNSaEpWMWNyQzYzTy1FdWVmcnhLYw?oc=5",
+      "publishedAt": "Tue, 06 Oct 2026 01:14:47 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "AI 데이터센터 계약에 LG전자 주가 상승",
+          "source": "제주교통복지신문",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mOUZTeVZTdGNjck1ZOTI5TWhWeGlWamhMMlZZclJBNzJGVnZFTGF4cGRLcjV0LUhqNHk4a0Z3cUdBUU1SbzRxa285SUNSaEpWMWNyQzYzTy1FdWVmcnhLYw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "LG전자 주가 장중 5%대 강세, 대규모 AI데이터센터 냉각설루션 공급계약 따내",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01dHpyY2FUX3lBSlNkbkl4emJHVVYyZng5ZVdkanMyZUxPSXpkX09LVUVWdmtGcFoyZlpXYjBxRV9IT19UN3N1b2M1WEMxcjFxM09YLUhEdXl0Wlo5U1VXRHVhUlF2MThTSHFVZ0d5TmNGM3c?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "LG전자 AI 데이터센터 계약에 LG전자",
+      "polishedBody": "LG전자는 주가 장중 5%대 강세 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 장중 강세 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 장중 5%대 강세, 대규모 AI데이터센터 냉각설루션 공급계약 따내 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "\"삼성전자·SK하이닉스 다음은?\"…테마주가 아닌 진짜 차기 주도주를 잡아라",
+      "headline": "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
+      "evidencePoints": [
+        "출처 조선일보, 뉴시스 기반 기사 2건",
+        "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
+        "\"삼성전자·SK하이닉스 다음은?\"…테마주가 아닌 진짜 차기 주도주를 잡아라"
+      ],
+      "mentionScore": 84.5,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-10-06T03:00:23.660Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
+      "source": "조선일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMFFEcEhHamk1TzA2eHpOalVJdWtydW8zNUlQU0owLWQ0aVM0QmZXblJhOXQxUDBpam5xS0xCVGZiWnFCLXAxcTNib0dRVmNGRGtuSUwtTksxWGtKZk10cmUtLXc3RGZVMDZ2U3kyTjJwVHQzVGtIREg0ekluMDB0ag?oc=5",
+      "publishedAt": "Mon, 05 Oct 2026 23:28:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMFFEcEhHamk1TzA2eHpOalVJdWtydW8zNUlQU0owLWQ0aVM0QmZXblJhOXQxUDBpam5xS0xCVGZiWnFCLXAxcTNib0dRVmNGRGtuSUwtTksxWGtKZk10cmUtLXc3RGZVMDZ2U3kyTjJwVHQzVGtIREg0ekluMDB0ag?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "\"삼성전자·SK하이닉스 다음은?\"…테마주가 아닌 진짜 차기 주도주를 잡아라",
+          "source": "뉴시스",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5TQlFHYUN5ZDFNZXdPRUN6aHNwbWg0TEV2aE5pdmZZVWI2VHQtM0VoV0lCR0ZFRVNjRzZ5QkdKOTNKeUZyaS1nYXBYRmpaOUtoNzV3UXdkNXBoblBqNkpya9IBeEFVX3lxTFBGNGlreUpWNW5mTXlrbmdjamdtSGJXbE4xS21qR0dKd0VaRFpjYkozSXVPU0NJZWJocXJvR1FHNFlnZ0tjU3ZoLXZjNlZZM1Nhc0dfc05DTzVyRG9DUS1LdjlvWXNRLVNSZVF1Z1djOHE2MXl6VEJqTQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자 내년 50만원 갈 수 있다\"",
+      "polishedBody": "삼성전자는 \"·SK하이닉스 다음은?\"…테마주가 아닌 진짜 차기 주도주를 잡아라 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 \"·SK하이닉스 다음은?\"…테마주가 아닌 진짜 차기 주도주를 잡아라 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 \"주가 내년 50만원 갈 수 있다\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "미코",
+      "stockCode": "059090",
+      "summary": "미코 주가 하락 중 anewsa.com",
+      "headline": "미코 주가 하락 중",
+      "evidencePoints": [
+        "출처 anewsa.com 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "미코 주가 하락 중"
+      ],
+      "mentionScore": 85.2,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-10-06T03:00:23.660Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "미코 주가 하락 중",
+      "source": "anewsa.com",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBGZ0RKcDhvRERJQ3MwN013eG53dDB5c1dUd3VVU0JvY0tXSzBhRWZpNHFlVkhlTWFRYkpoU0FWTGlqSDVvc0lvUlB3dVhhNTM2ZmtpeTFQTTFaUUhI?oc=5",
+      "publishedAt": "Tue, 06 Oct 2026 00:14:55 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "미코 주가 하락 중",
+          "source": "anewsa.com",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBGZ0RKcDhvRERJQ3MwN013eG53dDB5c1dUd3VVU0JvY0tXSzBhRWZpNHFlVkhlTWFRYkpoU0FWTGlqSDVvc0lvUlB3dVhhNTM2ZmtpeTFQTTFaUUhI?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "미코 주가 하락 중",
+      "polishedBody": "미코는 주가 하락 중 anewsa 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 anewsa 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 중 anewsa.com 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
       "stockName": "리노공업",
@@ -93,39 +209,6 @@
       "polishedBody": "리노공업은 \", CPO 수혜주…목표가 10만원으로 상향\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 \", 실적 우려 반영…목표가 10만원 상향\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "두산테스나",
-      "stockCode": "131970",
-      "summary": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽 아주경제",
-      "headline": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽",
-      "evidencePoints": [
-        "출처 아주경제 기반 기사 1건",
-        "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽"
-      ],
-      "mentionScore": 87.5,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-10-06T02:00:18.313Z",
-      "cycleLabel": "KST_1100",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽",
-      "source": "아주경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9FS1dYQzc3VHFKRGZZdlpzSEVnVXdBNy10OTRKSVdpMGJtTzFoQi02V1VpX0VIdEtfUDRQb0NwRllmaC1VRF9id3hjNDJCYVZjeW9BV2ZBNnnSAVhBVV95cUxPRUtXWEM3N1RxSkRmWXZac0hFZ1V3QTctdDk0SklXaTBibU8xaEItNldVaV9FSHRLX1A0UG9DcEZZZmgtVURfYnd4YzQyQmFWY3lvQVdmQTZ5?oc=5",
-      "publishedAt": "Mon, 05 Oct 2026 23:03:06 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽",
-          "source": "아주경제",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9FS1dYQzc3VHFKRGZZdlpzSEVnVXdBNy10OTRKSVdpMGJtTzFoQi02V1VpX0VIdEtfUDRQb0NwRllmaC1VRF9id3hjNDJCYVZjeW9BV2ZBNnnSAVhBVV95cUxPRUtXWEM3N1RxSkRmWXZac0hFZ1V3QTctdDk0SklXaTBibU8xaEItNldVaV9FSHRLX1A0UG9DcEZZZmgtVURfYnd4YzQyQmFWY3lvQVdmQTZ5?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "두산테스나 한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽",
-      "polishedBody": "두산테스나는 한국투자證, 3분기 저점…비메모리 후공정 톱픽 아주경제 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 한국투자證, 3분기 저점…비메모리 후공정 톱픽 아주경제 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
       "stockName": "HD현대일렉트릭",
       "stockCode": "267260",
       "summary": "NH證 “HD현대일렉트릭, 북미 초고압 변압기 시장 견조…밸류에이션 매력 높아” - 조선비즈 Chosunbiz",
@@ -157,46 +240,6 @@
       "hasNews": true,
       "polishedHeadline": "HD현대일렉트릭 NH證 “HD현대일렉트릭, 북미 초고압 변압기 시장 견조…밸류에이션 매력 높아”.",
       "polishedBody": "HD현대일렉트릭은 NH證 “, 북미 초고압 변압기 시장 견조…밸류에이션 매력 높아” 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 NH證 “, 북미 초고압 변압기 시장 견조…밸류에이션 매력 높아” 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
-      "headline": "삼성전자·SK하이닉스 주가 오늘 폭등하나, 아니면...",
-      "evidencePoints": [
-        "출처 위키트리, 조선일보 기반 기사 2건",
-        "삼성전자·SK하이닉스 주가 오늘 폭등하나, 아니면...",
-        "\"삼성전자 주가 내년 50만원 갈 수 있다\""
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 3,
-      "updatedAt": "2026-10-06T01:00:19.734Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "삼성전자·SK하이닉스 주가 오늘 폭등하나, 아니면...",
-      "source": "위키트리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9fbEhkRGhPa3lrMEFsTXFmaVJkNkJsMk1nWU5mMWlwWEJXREdJUENqdEVGSjllUm9FcUpGcjJySGVSVDY4Q1lMSkdVSnowSW1HaVFRSVNB?oc=5",
-      "publishedAt": "Mon, 05 Oct 2026 22:01:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자·SK하이닉스 주가 오늘 폭등하나, 아니면...",
-          "source": "위키트리",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9fbEhkRGhPa3lrMEFsTXFmaVJkNkJsMk1nWU5mMWlwWEJXREdJUENqdEVGSjllUm9FcUpGcjJySGVSVDY4Q1lMSkdVSnowSW1HaVFRSVNB?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
-          "source": "조선일보",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMFFEcEhHamk1TzA2eHpOalVJdWtydW8zNUlQU0owLWQ0aVM0QmZXblJhOXQxUDBpam5xS0xCVGZiWnFCLXAxcTNib0dRVmNGRGtuSUwtTksxWGtKZk10cmUtLXc3RGZVMDZ2U3kyTjJwVHQzVGtIREg0ekluMDB0ag?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "삼성전자 오늘 폭등하나, 아니면...",
-      "polishedBody": "삼성전자는 \"주가 내년 50만원 갈 수 있다\" 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 \"주가 내년 50만원 갈 수 있다\" 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 오늘 폭등하나, 아니면 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
       "stockName": "코스메카코리아",
@@ -349,32 +392,118 @@
   ],
   "items": [
     {
-      "timestamp": "Tue, 06 Oct 2026 00:44:31 GMT",
-      "symbol": "066570",
-      "name": "LG전자",
-      "changeRate": null,
+      "timestamp": "Tue, 06 Oct 2026 00:43:02 GMT",
+      "symbol": "131970",
+      "name": "두산테스나",
+      "changeRate": 5,
       "price": null,
-      "summary": "메리츠증권 \"LG전자, AI 등 밸류에이션 재평가.. 목표가 상향\"",
-      "source": "금강일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBSbEFHNHo1a2pqLUoxZUhGSjZ6b1JmLTJYVThnSWU3X1hlOGQ0cF81aXpnYXo2S19OUkRQclNjZlJUeEFRYjhQNnRmYy1DVkh3THFvXzdaQ0IxNnVZTlQyTEt5Zkdsd1Ju?oc=5",
+      "summary": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5uRjlvWFN4OWwtaGhOS1dFNXRzQ2xjcHhxTnp3Smp2ZExkckNJb3YtSEtlcW1Xb3NhaHVLTGRVbjJOQWJSd2RuV2x4V3ZYX0Q3UkszNWl1Xy02WWNVRjFVdWRFQ1FNNWM0?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 금강일보, 글로벌이코노믹 기반 기사 2건",
-        "LG전자 주가, 웃음꽃... 증권가 전망은?",
-        "메리츠증권 \"LG전자, AI 등 밸류에이션 재평가.. 목표가 상향\""
+        "출처 CBC뉴스, 아주경제 기반 기사 2건",
+        "제목 기준 변동률 단서 +5.0%",
+        "반도체주 장중 혼조…두산테스나·SFA반도체 5%대 상승",
+        "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "LG전자 주가, 웃음꽃... 증권가 전망은?",
-          "source": "금강일보",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBSbEFHNHo1a2pqLUoxZUhGSjZ6b1JmLTJYVThnSWU3X1hlOGQ0cF81aXpnYXo2S19OUkRQclNjZlJUeEFRYjhQNnRmYy1DVkh3THFvXzdaQ0IxNnVZTlQyTEt5Zkdsd1Ju?oc=5"
+          "title": "반도체주 장중 혼조…두산테스나·SFA반도체 5%대 상승",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5uRjlvWFN4OWwtaGhOS1dFNXRzQ2xjcHhxTnp3Smp2ZExkckNJb3YtSEtlcW1Xb3NhaHVLTGRVbjJOQWJSd2RuV2x4V3ZYX0Q3UkszNWl1Xy02WWNVRjFVdWRFQ1FNNWM0?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "메리츠증권 \"LG전자, AI 등 밸류에이션 재평가.. 목표가 상향\"",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMUUxMkt5ZVg4UXJsbFg5U29SZDZOLTY4bkVIOUlvalVMekZrSGxrRjhZNk1YVjZRSU8zbWhDZlkySmdGTVhzRnR1S3JMQ0ltTVhYSkQ0WlduaFY5RU11MjV4Y29HMUxuR1JtN0thQmxvc2I2ZmFLbjBnZVYyWDVLaXlIbW16aDlY?oc=5"
+          "title": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽",
+          "source": "아주경제",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9FS1dYQzc3VHFKRGZZdlpzSEVnVXdBNy10OTRKSVdpMGJtTzFoQi02V1VpX0VIdEtfUDRQb0NwRllmaC1VRF9id3hjNDJCYVZjeW9BV2ZBNnnSAVhBVV95cUxPRUtXWEM3N1RxSkRmWXZac0hFZ1V3QTctdDk0SklXaTBibU8xaEItNldVaV9FSHRLX1A0UG9DcEZZZmgtVURfYnd4YzQyQmFWY3lvQVdmQTZ5?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 06 Oct 2026 01:14:47 GMT",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "LG전자 주가 장중 5%대 강세, 대규모 AI데이터센터 냉각설루션 공급계약 따내",
+      "source": "제주교통복지신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mOUZTeVZTdGNjck1ZOTI5TWhWeGlWamhMMlZZclJBNzJGVnZFTGF4cGRLcjV0LUhqNHk4a0Z3cUdBUU1SbzRxa285SUNSaEpWMWNyQzYzTy1FdWVmcnhLYw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 제주교통복지신문, 비즈니스포스트 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "AI 데이터센터 계약에 LG전자 주가 상승",
+        "LG전자 주가 장중 5%대 강세, 대규모 AI데이터센터 냉각설루션 공급계약 따내"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "AI 데이터센터 계약에 LG전자 주가 상승",
+          "source": "제주교통복지신문",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mOUZTeVZTdGNjck1ZOTI5TWhWeGlWamhMMlZZclJBNzJGVnZFTGF4cGRLcjV0LUhqNHk4a0Z3cUdBUU1SbzRxa285SUNSaEpWMWNyQzYzTy1FdWVmcnhLYw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "LG전자 주가 장중 5%대 강세, 대규모 AI데이터센터 냉각설루션 공급계약 따내",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01dHpyY2FUX3lBSlNkbkl4emJHVVYyZng5ZVdkanMyZUxPSXpkX09LVUVWdmtGcFoyZlpXYjBxRV9IT19UN3N1b2M1WEMxcjFxM09YLUhEdXl0Wlo5U1VXRHVhUlF2MThTSHFVZ0d5TmNGM3c?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 05 Oct 2026 23:28:00 GMT",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "\"삼성전자·SK하이닉스 다음은?\"…테마주가 아닌 진짜 차기 주도주를 잡아라",
+      "source": "조선일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMFFEcEhHamk1TzA2eHpOalVJdWtydW8zNUlQU0owLWQ0aVM0QmZXblJhOXQxUDBpam5xS0xCVGZiWnFCLXAxcTNib0dRVmNGRGtuSUwtTksxWGtKZk10cmUtLXc3RGZVMDZ2U3kyTjJwVHQzVGtIREg0ekluMDB0ag?oc=5",
+      "mentionScore": 84.5,
+      "evidencePoints": [
+        "출처 조선일보, 뉴시스 기반 기사 2건",
+        "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
+        "\"삼성전자·SK하이닉스 다음은?\"…테마주가 아닌 진짜 차기 주도주를 잡아라"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
+          "source": "조선일보",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMFFEcEhHamk1TzA2eHpOalVJdWtydW8zNUlQU0owLWQ0aVM0QmZXblJhOXQxUDBpam5xS0xCVGZiWnFCLXAxcTNib0dRVmNGRGtuSUwtTksxWGtKZk10cmUtLXc3RGZVMDZ2U3kyTjJwVHQzVGtIREg0ekluMDB0ag?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "\"삼성전자·SK하이닉스 다음은?\"…테마주가 아닌 진짜 차기 주도주를 잡아라",
+          "source": "뉴시스",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5TQlFHYUN5ZDFNZXdPRUN6aHNwbWg0TEV2aE5pdmZZVWI2VHQtM0VoV0lCR0ZFRVNjRzZ5QkdKOTNKeUZyaS1nYXBYRmpaOUtoNzV3UXdkNXBoblBqNkpya9IBeEFVX3lxTFBGNGlreUpWNW5mTXlrbmdjamdtSGJXbE4xS21qR0dKd0VaRFpjYkozSXVPU0NJZWJocXJvR1FHNFlnZ0tjU3ZoLXZjNlZZM1Nhc0dfc05DTzVyRG9DUS1LdjlvWXNRLVNSZVF1Z1djOHE2MXl6VEJqTQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 06 Oct 2026 00:14:55 GMT",
+      "symbol": "059090",
+      "name": "미코",
+      "changeRate": null,
+      "price": null,
+      "summary": "미코 주가 하락 중 anewsa.com",
+      "source": "anewsa.com",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBGZ0RKcDhvRERJQ3MwN013eG53dDB5c1dUd3VVU0JvY0tXSzBhRWZpNHFlVkhlTWFRYkpoU0FWTGlqSDVvc0lvUlB3dVhhNTM2ZmtpeTFQTTFaUUhI?oc=5",
+      "mentionScore": 85.2,
+      "evidencePoints": [
+        "출처 anewsa.com 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "미코 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "미코 주가 하락 중",
+          "source": "anewsa.com",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBGZ0RKcDhvRERJQ3MwN013eG53dDB5c1dUd3VVU0JvY0tXSzBhRWZpNHFlVkhlTWFRYkpoU0FWTGlqSDVvc0lvUlB3dVhhNTM2ZmtpeTFQTTFaUUhI?oc=5"
         }
       ]
     },
@@ -410,29 +539,6 @@
       ]
     },
     {
-      "timestamp": "Mon, 05 Oct 2026 23:03:06 GMT",
-      "symbol": "131970",
-      "name": "두산테스나",
-      "changeRate": null,
-      "price": null,
-      "summary": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽 아주경제",
-      "source": "아주경제",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9FS1dYQzc3VHFKRGZZdlpzSEVnVXdBNy10OTRKSVdpMGJtTzFoQi02V1VpX0VIdEtfUDRQb0NwRllmaC1VRF9id3hjNDJCYVZjeW9BV2ZBNnnSAVhBVV95cUxPRUtXWEM3N1RxSkRmWXZac0hFZ1V3QTctdDk0SklXaTBibU8xaEItNldVaV9FSHRLX1A0UG9DcEZZZmgtVURfYnd4YzQyQmFWY3lvQVdmQTZ5?oc=5",
-      "mentionScore": 87.5,
-      "evidencePoints": [
-        "출처 아주경제 기반 기사 1건",
-        "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국투자證 두산테스나, 3분기 저점…비메모리 후공정 톱픽",
-          "source": "아주경제",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9FS1dYQzc3VHFKRGZZdlpzSEVnVXdBNy10OTRKSVdpMGJtTzFoQi02V1VpX0VIdEtfUDRQb0NwRllmaC1VRF9id3hjNDJCYVZjeW9BV2ZBNnnSAVhBVV95cUxPRUtXWEM3N1RxSkRmWXZac0hFZ1V3QTctdDk0SklXaTBibU8xaEItNldVaV9FSHRLX1A0UG9DcEZZZmgtVURfYnd4YzQyQmFWY3lvQVdmQTZ5?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Tue, 06 Oct 2026 00:04:01 GMT",
       "symbol": "267260",
       "name": "HD현대일렉트릭",
@@ -452,36 +558,6 @@
           "title": "NH證 “HD현대일렉트릭, 북미 초고압 변압기 시장 견조…밸류에이션 매력 높아” - 조선비즈",
           "source": "Chosunbiz",
           "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQUzhNM0JCMEhWSXpsVm01TngyNlZPTjd2V1JHVjRRbXNzdmRraFowWnNoaGN2bVdFUFMtTGs0cjVNWENFY3NBazg1TGprdGotM2JDRVZHWGgxUjdMUDduS1U0aS1pb2VPaVJMaXhzYkszaVNOajJLbHljLTlMQVhDTldCTk8tLWxw0gGcAUFVX3lxTE44aGw2MUx4UllxQkRmSWtURDNzYW5ydEQ1ZlNrRWc2QWlDc2M0TDJ5TXVuSFVZQ1FXc1UyeFQxc3p0ajJTVmtCOGZLMXFpZGpyMGlUYXNFdGMzdTAxdHBfV2p1RDdKZXhTR1lGcy10eW9JQTVMUGR4TEZ2c241MUdBVzlTc1hIRWVwTFlzbXVMTVZTMFZaejJzbjNNdg?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 05 Oct 2026 22:01:00 GMT",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
-      "source": "위키트리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9fbEhkRGhPa3lrMEFsTXFmaVJkNkJsMk1nWU5mMWlwWEJXREdJUENqdEVGSjllUm9FcUpGcjJySGVSVDY4Q1lMSkdVSnowSW1HaVFRSVNB?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 위키트리, 조선일보 기반 기사 2건",
-        "삼성전자·SK하이닉스 주가 오늘 폭등하나, 아니면...",
-        "\"삼성전자 주가 내년 50만원 갈 수 있다\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자·SK하이닉스 주가 오늘 폭등하나, 아니면...",
-          "source": "위키트리",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9fbEhkRGhPa3lrMEFsTXFmaVJkNkJsMk1nWU5mMWlwWEJXREdJUENqdEVGSjllUm9FcUpGcjJySGVSVDY4Q1lMSkdVSnowSW1HaVFRSVNB?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
-          "source": "조선일보",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMFFEcEhHamk1TzA2eHpOalVJdWtydW8zNUlQU0owLWQ0aVM0QmZXblJhOXQxUDBpam5xS0xCVGZiWnFCLXAxcTNib0dRVmNGRGtuSUwtTksxWGtKZk10cmUtLXc3RGZVMDZ2U3kyTjJwVHQzVGtIREg0ekluMDB0ag?oc=5"
         }
       ]
     },
