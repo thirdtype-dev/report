@@ -1,16 +1,90 @@
 {
-  "generated_at": "2026-10-06T04:00:18.496Z",
+  "generated_at": "2026-10-06T05:00:22.358Z",
   "generated_date": "2026-10-06",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 11건",
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 12건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "한화",
+      "stockCode": "000880",
+      "summary": "한화, 연결 자회사 성장 지속...목표가 '상향'",
+      "headline": "[리포트 브리핑]한화, '가벼워진 몸으로 새출발' 목표가 180,000원 - DB증권",
+      "evidencePoints": [
+        "출처 뉴스핌, 메디컬투데이 기반 기사 2건",
+        "[리포트 브리핑]한화, '가벼워진 몸으로 새출발' 목표가 180,000원 - DB증권",
+        "한화, 연결 자회사 성장 지속...목표가 '상향'"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 3,
+      "updatedAt": "2026-10-06T05:00:22.358Z",
+      "cycleLabel": "KST_1400",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[리포트 브리핑]한화, '가벼워진 몸으로 새출발' 목표가 180,000원 - DB증권",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBDVnVOWms4YWcxTndvb3NnMS1fYXc3UE1Yb181Y3hkNFVyMUg5UEpkTUpoNTNDaVpqQk5Dc2VsMmtEQTFOdDY3SGRONFllQllrcm1EUWpsN0hSc2c4?oc=5",
+      "publishedAt": "Tue, 06 Oct 2026 02:42:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]한화, '가벼워진 몸으로 새출발' 목표가 180,000원 - DB증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBDVnVOWms4YWcxTndvb3NnMS1fYXc3UE1Yb181Y3hkNFVyMUg5UEpkTUpoNTNDaVpqQk5Dc2VsMmtEQTFOdDY3SGRONFllQllrcm1EUWpsN0hSc2c4?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한화, 연결 자회사 성장 지속...목표가 '상향'",
+          "source": "메디컬투데이",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9mMm5fMTkweC1ldUJLOHI2Nk9Hb3VxYW9MYmdzV1UwNUNWaTRqaldvSVFxTFVuVlc3MUhEcXJXYmRHTlFTbUxKVDBtVU9vRVUxLWVHaVlLWjQ1d3g4NDhCV1AySUZsWjNVY29nXw?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "한화 '가벼워진 몸으로 새출발'",
+      "polishedBody": "한화는 연결 자회사 성장 지속...목표가 '상향' 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 연결 자회사 성장 지속...목표가 '상향' 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 '가벼워진 몸으로 새출발' 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "현대모비스",
+      "stockCode": "012330",
+      "summary": "현대모비스 주가 하락 중 아시아뉴스통신",
+      "headline": "현대모비스 주가 하락 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "현대모비스 주가 하락 중"
+      ],
+      "mentionScore": 57.9,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-10-06T05:00:22.358Z",
+      "cycleLabel": "KST_1400",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "현대모비스 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1kaHBaQlFkT05OQVlKT0tQWnhRSDJ1YmxnRVo3NFg3MVNnUTV2RnROaFZXMVB2NFdmYm03bmVyZFZWbE5JZ3IxTmdTeDVtOTdsem9JUGNJekpuZkJu?oc=5",
+      "publishedAt": "Tue, 06 Oct 2026 00:54:35 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "현대모비스 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1kaHBaQlFkT05OQVlKT0tQWnhRSDJ1YmxnRVo3NFg3MVNnUTV2RnROaFZXMVB2NFdmYm03bmVyZFZWbE5JZ3IxTmdTeDVtOTdsem9JUGNJekpuZkJu?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "현대모비스 주가 하락 중",
+      "polishedBody": "현대모비스는 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "LG전자",
       "stockCode": "066570",
@@ -173,39 +247,6 @@
       "hasNews": true,
       "polishedHeadline": "삼성전자 주가, 10월 6일 장중 276,500원 0.18% 상승",
       "polishedBody": "삼성전자는 \"주가 내년 50만원 갈 수 있다\" 재료가 부각되며 단기 모멘텀을 형성했습니다. \"주가 내년 50만원 갈 수 있다\" 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 주가, 10월 6일 장중 276,500원 0.18% 상승 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "한화",
-      "stockCode": "000880",
-      "summary": "한화, 연결 자회사 성장 지속...목표가 '상향' 메디컬투데이",
-      "headline": "한화, 연결 자회사 성장 지속...목표가 '상향'",
-      "evidencePoints": [
-        "출처 메디컬투데이 기반 기사 1건",
-        "한화, 연결 자회사 성장 지속...목표가 '상향'"
-      ],
-      "mentionScore": 86.2,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-10-06T04:00:18.496Z",
-      "cycleLabel": "KST_1300",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "한화, 연결 자회사 성장 지속...목표가 '상향'",
-      "source": "메디컬투데이",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9mMm5fMTkweC1ldUJLOHI2Nk9Hb3VxYW9MYmdzV1UwNUNWaTRqaldvSVFxTFVuVlc3MUhEcXJXYmRHTlFTbUxKVDBtVU9vRVUxLWVHaVlLWjQ1d3g4NDhCV1AySUZsWjNVY29nXw?oc=5",
-      "publishedAt": "Tue, 06 Oct 2026 02:13:31 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화, 연결 자회사 성장 지속...목표가 '상향'",
-          "source": "메디컬투데이",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9mMm5fMTkweC1ldUJLOHI2Nk9Hb3VxYW9MYmdzV1UwNUNWaTRqaldvSVFxTFVuVlc3MUhEcXJXYmRHTlFTbUxKVDBtVU9vRVUxLWVHaVlLWjQ1d3g4NDhCV1AySUZsWjNVY29nXw?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "한화 연결 자회사 성장 지속...목표가 '상향'",
-      "polishedBody": "한화는 연결 자회사 성장 지속...목표가 '상향' 메디컬투데이 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 연결 자회사 성장 지속...목표가 '상향' 메디컬투데이 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
       "stockName": "리노공업",
@@ -432,6 +473,60 @@
   ],
   "items": [
     {
+      "timestamp": "Tue, 06 Oct 2026 02:42:00 GMT",
+      "symbol": "000880",
+      "name": "한화",
+      "changeRate": null,
+      "price": null,
+      "summary": "한화, 연결 자회사 성장 지속...목표가 '상향'",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBDVnVOWms4YWcxTndvb3NnMS1fYXc3UE1Yb181Y3hkNFVyMUg5UEpkTUpoNTNDaVpqQk5Dc2VsMmtEQTFOdDY3SGRONFllQllrcm1EUWpsN0hSc2c4?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌, 메디컬투데이 기반 기사 2건",
+        "[리포트 브리핑]한화, '가벼워진 몸으로 새출발' 목표가 180,000원 - DB증권",
+        "한화, 연결 자회사 성장 지속...목표가 '상향'"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]한화, '가벼워진 몸으로 새출발' 목표가 180,000원 - DB증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBDVnVOWms4YWcxTndvb3NnMS1fYXc3UE1Yb181Y3hkNFVyMUg5UEpkTUpoNTNDaVpqQk5Dc2VsMmtEQTFOdDY3SGRONFllQllrcm1EUWpsN0hSc2c4?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한화, 연결 자회사 성장 지속...목표가 '상향'",
+          "source": "메디컬투데이",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9mMm5fMTkweC1ldUJLOHI2Nk9Hb3VxYW9MYmdzV1UwNUNWaTRqaldvSVFxTFVuVlc3MUhEcXJXYmRHTlFTbUxKVDBtVU9vRVUxLWVHaVlLWjQ1d3g4NDhCV1AySUZsWjNVY29nXw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 06 Oct 2026 00:54:35 GMT",
+      "symbol": "012330",
+      "name": "현대모비스",
+      "changeRate": null,
+      "price": null,
+      "summary": "현대모비스 주가 하락 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1kaHBaQlFkT05OQVlKT0tQWnhRSDJ1YmxnRVo3NFg3MVNnUTV2RnROaFZXMVB2NFdmYm03bmVyZFZWbE5JZ3IxTmdTeDVtOTdsem9JUGNJekpuZkJu?oc=5",
+      "mentionScore": 57.9,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "현대모비스 주가 하락 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "현대모비스 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1kaHBaQlFkT05OQVlKT0tQWnhRSDJ1YmxnRVo3NFg3MVNnUTV2RnROaFZXMVB2NFdmYm03bmVyZFZWbE5JZ3IxTmdTeDVtOTdsem9JUGNJekpuZkJu?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Tue, 06 Oct 2026 02:33:13 GMT",
       "symbol": "066570",
       "name": "LG전자",
@@ -551,29 +646,6 @@
           "title": "\"삼성전자 주가 내년 50만원 갈 수 있다\"",
           "source": "조선일보",
           "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMFFEcEhHamk1TzA2eHpOalVJdWtydW8zNUlQU0owLWQ0aVM0QmZXblJhOXQxUDBpam5xS0xCVGZiWnFCLXAxcTNib0dRVmNGRGtuSUwtTksxWGtKZk10cmUtLXc3RGZVMDZ2U3kyTjJwVHQzVGtIREg0ekluMDB0ag?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 06 Oct 2026 02:13:31 GMT",
-      "symbol": "000880",
-      "name": "한화",
-      "changeRate": null,
-      "price": null,
-      "summary": "한화, 연결 자회사 성장 지속...목표가 '상향' 메디컬투데이",
-      "source": "메디컬투데이",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9mMm5fMTkweC1ldUJLOHI2Nk9Hb3VxYW9MYmdzV1UwNUNWaTRqaldvSVFxTFVuVlc3MUhEcXJXYmRHTlFTbUxKVDBtVU9vRVUxLWVHaVlLWjQ1d3g4NDhCV1AySUZsWjNVY29nXw?oc=5",
-      "mentionScore": 86.2,
-      "evidencePoints": [
-        "출처 메디컬투데이 기반 기사 1건",
-        "한화, 연결 자회사 성장 지속...목표가 '상향'"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한화, 연결 자회사 성장 지속...목표가 '상향'",
-          "source": "메디컬투데이",
-          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9mMm5fMTkweC1ldUJLOHI2Nk9Hb3VxYW9MYmdzV1UwNUNWaTRqaldvSVFxTFVuVlc3MUhEcXJXYmRHTlFTbUxKVDBtVU9vRVUxLWVHaVlLWjQ1d3g4NDhCV1AySUZsWjNVY29nXw?oc=5"
         }
       ]
     },
