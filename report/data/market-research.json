@@ -1,9 +1,8 @@
 {
-  "generatedAt": "2026-10-06T23:30:43.348Z",
-  "collectedAt": "2026-10-06T23:30:43.348Z",
-  "informationAsOf": "2026-10-07T08:30:00+09:00",
-  "phase": "pre_market",
-  "sessionLabel": "08:30",
+  "generatedAt": "2026-10-07T07:00:42.504Z",
+  "collectedAt": "2026-10-07T07:00:42.504Z",
+  "phase": "post_market",
+  "sessionLabel": "16:00",
   "summary": {
     "signal": "yellow",
     "totalScore": 0,
@@ -14,34 +13,34 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "value": "6,941.39",
-      "change": "-0.89%",
+      "value": "6,803.90",
+      "change": "-1.98%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-10-06T11:05:40.000Z",
+      "updatedAt": "2026-10-07T06:30:40.000Z",
       "reason": "KOSPI 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "value": "919.92",
-      "change": "+2.98%",
-      "signal": "blue",
+      "value": "898.43",
+      "change": "-2.34%",
+      "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-10-06T11:05:40.000Z",
+      "updatedAt": "2026-10-07T06:32:50.000Z",
       "reason": "KOSDAQ 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": null,
-      "change": null,
+      "value": "1,338.88",
+      "change": "+0.15%",
       "signal": "yellow",
-      "status": "unavailable",
-      "updatedAt": null,
-      "reason": "공개 무키 소스에서 확인하지 못했습니다.",
+      "status": "delayed",
+      "updatedAt": "2026-10-07T07:00:27.000Z",
+      "reason": "USD/KRW 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -69,11 +68,11 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "31,505.00",
-      "change": "+0.07%",
+      "value": "31,454.50",
+      "change": "-0.09%",
       "signal": "yellow",
       "status": "delayed",
-      "updatedAt": "2026-10-06T23:20:27.000Z",
+      "updatedAt": "2026-10-07T06:50:24.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -84,8 +83,8 @@
       "change": null,
       "signal": "yellow",
       "status": "unavailable",
-      "updatedAt": null,
-      "reason": "KRX 기반 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: [표] 10월 6일 매매동향...외국인·기관 주성엔지니어링 순매수에 주가도 '껑충' - 핀포인트뉴스 (핀포인트뉴스) / [마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감 - 브릿지경제 (브릿지경제) / [마감시황] 코스피, 외국인 1.7조 매도에 ‘7천피’ 반납…코스닥은 3% 급등 - 블록미디어 (블록미디어)",
+      "updatedAt": "2026-10-07T16:00:42.492750+09:00",
+      "reason": "KRX 기반 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: [특징주] 외국인 '퀀텀레일·국제약품', 기관 '솔루엠·케이씨텍' 러브콜 - 뉴스티앤티 (뉴스티앤티) / [표] 10월 6일 매매동향...외국인·기관 주성엔지니어링 순매수에 주가도 '껑충' - 핀포인트뉴스 (핀포인트뉴스) / [마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감 - 브릿지경제 (브릿지경제)",
       "sourceUrl": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
     },
     {
@@ -95,7 +94,7 @@
       "change": null,
       "signal": "yellow",
       "status": "unavailable",
-      "updatedAt": "2026-10-06T23:30:43.348Z",
+      "updatedAt": "2026-10-07T07:00:42.504Z",
       "reason": "공시 전용 뉴스 후보를 수집하지 못했습니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -104,36 +103,37 @@
     {
       "key": "kospi",
       "title": "KOSPI",
-      "currentPrice": "6,941.39",
-      "change": "-62.33",
-      "changePercent": "-0.89%",
+      "currentPrice": "6,803.90",
+      "change": "-137.51",
+      "changePercent": "-1.98%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-10-06T11:05:40.000Z",
-      "sourceDate": "2026-10-06",
+      "updatedAt": "2026-10-07T06:30:40.000Z",
+      "sourceDate": "2026-10-07",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
     {
       "key": "kosdaq",
       "title": "KOSDAQ",
-      "currentPrice": "919.92",
-      "change": "+26.63",
-      "changePercent": "+2.98%",
-      "trend": "up",
+      "currentPrice": "898.43",
+      "change": "-21.49",
+      "changePercent": "-2.34%",
+      "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-10-06T11:05:40.000Z",
-      "sourceDate": "2026-10-06",
+      "updatedAt": "2026-10-07T06:32:50.000Z",
+      "sourceDate": "2026-10-07",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": null,
-      "change": null,
-      "changePercent": null,
-      "trend": "unknown",
-      "status": "unavailable",
-      "updatedAt": null,
+      "currentPrice": "1,338.88",
+      "change": "+1.99",
+      "changePercent": "+0.15%",
+      "trend": "up",
+      "status": "delayed",
+      "updatedAt": "2026-10-07T07:00:27.000Z",
+      "sourceDate": "2026-10-07",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
@@ -163,31 +163,31 @@
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "31,505.00",
-      "change": "+21.72",
-      "changePercent": "+0.07%",
-      "trend": "up",
+      "currentPrice": "31,454.50",
+      "change": "-28.65",
+      "changePercent": "-0.09%",
+      "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-10-06T23:20:27.000Z",
+      "updatedAt": "2026-10-07T06:50:24.000Z",
       "sourceDate": "2026-10-07",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
   "marketNews": [
     {
-      "title": "[박정식의 국내 주식시황] 코스닥 박스 권역 탈출로 반도체 소부장, 2차전지, 제약바이오 시세 긍정적 - 뉴스퀘스트",
-      "summary": "[박정식의 국내 주식시황] 코스닥 박스 권역 탈출로 반도체 소부장, 2차전지, 제약바이오 시세 긍정적&nbsp;&nbsp;뉴스퀘스트",
-      "source": "뉴스퀘스트",
-      "publishedAt": "Tue, 06 Oct 2026 23:19:09 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5yeDRTMExRLVR1ZkplSmlpSmhxdl9WSFN1M0stSU14LWM0UlRQMVFxeTZiOXZwLXMwSVhOS0M5TFV5M2VRNEF4MUNpQ1NlX192SFF5dHJmU2ZEaHBKTkFpLVJFLXBabDdNd01CZ0c5dw?oc=5",
+      "title": "[증시 오늘(7일) 주요 특징주] \"반도체·2차전지 동반 약세\"…주요 대형주 매물 출회에 지수 하방 압력 - www.thefairnews.co.kr",
+      "summary": "[증시 오늘(7일) 주요 특징주] \"반도체·2차전지 동반 약세\"…주요 대형주 매물 출회에 지수 하방 압력&nbsp;&nbsp;www.thefairnews.co.kr",
+      "source": "www.thefairnews.co.kr",
+      "publishedAt": "Wed, 07 Oct 2026 01:55:21 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9Fd2FYNDRaSDhHLVVGU1NvWnU5MVFTLXp4aHNybDlacHJwU3FBNVVkck5sVDR3dU1BaGZpOF9tYXlfd3VXc2hxaXBIMkNQMEhqQWdvTEUteHBRWU1OSnVKMWR4TmxaNi1ON05BY3owc0g?oc=5",
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     },
     {
-      "title": "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등 - 미디어워치",
-      "summary": "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등&nbsp;&nbsp;미디어워치",
-      "source": "미디어워치",
-      "publishedAt": "Tue, 06 Oct 2026 12:02:16 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5IeE9QMU1zSGdYRzlQc0QyaXRUYS14TjRVMEdGVzdNNG8yQXBxNFM0V1B1eW04OG5iNFNFUGRlT2pyb1VpNEpJclg5UlByU05jbVpKRkEtRG1YaTdMUlE?oc=5",
+      "title": "[박정식의 국내 주식시황] 코스닥 박스권 뚫고 920선…반도체 소부장 앞세워 930선 도전 - 뉴스퀘스트",
+      "summary": "[박정식의 국내 주식시황] 코스닥 박스권 뚫고 920선…반도체 소부장 앞세워 930선 도전&nbsp;&nbsp;뉴스퀘스트",
+      "source": "뉴스퀘스트",
+      "publishedAt": "Tue, 06 Oct 2026 23:19:09 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5yeDRTMExRLVR1ZkplSmlpSmhxdl9WSFN1M0stSU14LWM0UlRQMVFxeTZiOXZwLXMwSVhOS0M5TFV5M2VRNEF4MUNpQ1NlX192SFF5dHJmU2ZEaHBKTkFpLVJFLXBabDdNd01CZ0c5dw?oc=5",
       "query": "한국 증시 코스피 코스닥 반도체 2차전지"
     },
     {
@@ -209,6 +209,22 @@
   ],
   "marketEventNewsCandidates": [
     {
+      "title": "중국의 물량 공세에도 '메모리반도체 호황' 지속 전망, \"AI 데이터센터 시장 진출에 한계\" - 비즈니스포스트",
+      "summary": "중국의 물량 공세에도 '메모리반도체 호황' 지속 전망, \"AI 데이터센터 시장 진출에 한계\"&nbsp;&nbsp;비즈니스포스트",
+      "source": "비즈니스포스트",
+      "publishedAt": "Wed, 07 Oct 2026 06:30:27 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5McUpjNG9MUUhHaXZaZmo4N1ExZHZKS1ZpNmtKSG13c3diMExsU21USWtZX2NUQmt0dTV2REJxdG9fck1CNjk4dnFRRFdDY2VCN1VyZjQ5WWtiNU1wRVRDRXU4QnB0cmU1WGl1YmsxRzRpekU?oc=5",
+      "query": "중국 메모리 공급과잉 삼성전자 SK하이닉스 수익성"
+    },
+    {
+      "title": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓ - 뉴스핌",
+      "summary": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓&nbsp;&nbsp;뉴스핌",
+      "source": "뉴스핌",
+      "publishedAt": "Tue, 06 Oct 2026 23:18:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5QV25rQVhLRmVlWnlnTWdLdi1tdlAxQWRTX2xqZzNrc3l3YWFkTkJlV0NuTGYtZXdvZjk5X0RidC1jTGRUb3pLai02bW8tcmc5MElTV040OUJzNXUx?oc=5",
+      "query": "삼성전자 SK하이닉스 프리마켓 하락 급락 약세"
+    },
+    {
       "title": "AI 반도체 랠리 계속…AMD·브로드컴 급등, 메모리는 약세 - 뉴스1",
       "summary": "AI 반도체 랠리 계속…AMD·브로드컴 급등, 메모리는 약세&nbsp;&nbsp;뉴스1",
       "source": "뉴스1",
@@ -227,69 +243,6 @@
   ],
   "marketEventSignals": [
     {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "domestic_market",
-          "label": "국내 증시",
-          "scope": "market"
-        }
-      ],
-      "primaryTarget": {
-        "key": "domestic_market",
-        "label": "국내 증시",
-        "scope": "market"
-      },
-      "headline": "[마감시황] 코스피, 외국인 1.7조 매도에 ‘7천피’ 반납…코스닥은 3% 급등 - 블록미디어",
-      "directionEvidence": "코스닥은 3% 급등",
-      "summary": "[마감시황] 코스피, 외국인 1.7조 매도에 ‘7천피’ 반납…코스닥은 3% 급등&nbsp;&nbsp;블록미디어",
-      "source": "블록미디어",
-      "publishedAt": "Tue, 06 Oct 2026 06:43:48 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9rSFYzVVBKbnBYYWF1YjFzUWtpX0dYaGRWNzJfYWlVcXphQXREWmUtalFjRlRXMmpucW9lT3hTTXE2T0J0cXg2MDNkcGk2dTFRTGQtLWxSU3Q?oc=5",
-      "score": 22,
-      "corroboration": 3,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[마감시황] 코스피, 외국인 1.7조 매도에 ‘7천피’ 반납…코스닥은 3% 급등 - 블록미디어",
-        "[마감시황] 코스피 7000선 내줘…코스닥은 2.98% 올라 - 자본시장뉴스",
-        "[마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감 - 브릿지경제"
-      ]
-    },
-    {
-      "direction": "negative",
-      "direct": true,
-      "targets": [
-        {
-          "key": "domestic_market",
-          "label": "국내 증시",
-          "scope": "market"
-        }
-      ],
-      "primaryTarget": {
-        "key": "domestic_market",
-        "label": "국내 증시",
-        "scope": "market"
-      },
-      "headline": "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등 - 미디어워치",
-      "directionEvidence": "코스피 0.89%↓",
-      "summary": "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등&nbsp;&nbsp;미디어워치",
-      "source": "미디어워치",
-      "publishedAt": "Tue, 06 Oct 2026 12:02:16 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5IeE9QMU1zSGdYRzlQc0QyaXRUYS14TjRVMEdGVzdNNG8yQXBxNFM0V1B1eW04OG5iNFNFUGRlT2pyb1VpNEpJclg5UlByU05jbVpKRkEtRG1YaTdMUlE?oc=5",
-      "score": 16,
-      "corroboration": 2,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등 - 미디어워치",
-        "[오늘증시] 삼전닉스 약세에 코스피 6940선 하락…코스닥은 900선 회복 - Queen 이코노미퀸"
-      ]
-    },
-    {
       "direction": "negative",
       "direct": true,
       "targets": [
@@ -304,25 +257,35 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "[美특징주]네오제노믹스, 승계 계획 발표에 11%대 급락 - www.edaily.co.kr",
+      "headline": "[ET특징주] 더코디, 330억 규모 CB 발행 철회… 주가 12% 급락 - 전자신문",
       "directionEvidence": null,
-      "summary": "[美특징주]네오제노믹스, 승계 계획 발표에 11%대 급락&nbsp;&nbsp;www.edaily.co.kr",
-      "source": "www.edaily.co.kr",
-      "publishedAt": "Tue, 06 Oct 2026 16:22:53 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE02ZmdncXNBcE40YnJUbndHX1p2WjNKUmRXbG9Xd1FBTFdkWUo4XzdFZ0pnS2UyOGVRZGFPc1lNa2JQZHNmdWtiOG1IdlJIT0pXQl9YZldpbE9FTHk4UXdKYllZaHZ1OEdTT0tJ?oc=5",
-      "score": 15,
+      "summary": "[ET특징주] 더코디, 330억 규모 CB 발행 철회… 주가 12% 급락&nbsp;&nbsp;전자신문",
+      "source": "전자신문",
+      "publishedAt": "Wed, 07 Oct 2026 02:03:36 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE0xVHlKdHBNa0VlWFUxbzgwOThyU29BSjVnZnVhTW11cEo0ZHRQVGxia2N5RFhSZ0F3MzlpRGVKZjBNMFE1OHJiQ0JzZExtZw?oc=5",
+      "score": 16,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[美특징주]네오제노믹스, 승계 계획 발표에 11%대 급락 - www.edaily.co.kr"
+        "[ET특징주] 더코디, 330억 규모 CB 발행 철회… 주가 12% 급락 - 전자신문"
       ]
     },
     {
-      "direction": "positive",
+      "direction": "negative",
       "direct": true,
       "targets": [
+        {
+          "key": "semiconductor",
+          "label": "반도체",
+          "scope": "sector"
+        },
+        {
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
+        },
         {
           "key": "secondary_battery",
           "label": "2차전지",
@@ -330,27 +293,29 @@
         }
       ],
       "primaryTarget": {
-        "key": "secondary_battery",
-        "label": "2차전지",
+        "key": "semiconductor",
+        "label": "반도체",
         "scope": "sector"
       },
-      "headline": "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등 - 미디어워치",
-      "directionEvidence": "2차전지 타고 급등",
-      "summary": "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등&nbsp;&nbsp;미디어워치",
-      "source": "미디어워치",
-      "publishedAt": "Tue, 06 Oct 2026 12:02:16 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5IeE9QMU1zSGdYRzlQc0QyaXRUYS14TjRVMEdGVzdNNG8yQXBxNFM0V1B1eW04OG5iNFNFUGRlT2pyb1VpNEpJclg5UlByU05jbVpKRkEtRG1YaTdMUlE?oc=5",
+      "headline": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓ - 뉴스핌",
+      "directionEvidence": null,
+      "summary": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓&nbsp;&nbsp;뉴스핌",
+      "source": "뉴스핌",
+      "publishedAt": "Tue, 06 Oct 2026 23:18:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5QV25rQVhLRmVlWnlnTWdLdi1tdlAxQWRTX2xqZzNrc3l3YWFkTkJlV0NuTGYtZXdvZjk5X0RidC1jTGRUb3pLai02bW8tcmc5MElTV040OUJzNXUx?oc=5",
       "score": 14,
-      "corroboration": 1,
+      "corroboration": 2,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등 - 미디어워치"
+        "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓ - 뉴스핌",
+        "[마감시황] 삼성전자 실적 앞둔 관망심리…코스피 6803선 하락 마감 - 뉴스핌",
+        "[증시 오늘(7일) 주요 특징주] \"반도체·2차전지 동반 약세\"…주요 대형주 매물 출회에 지수 하방 압력 - www.thefairnews.co.kr"
       ]
     },
     {
-      "direction": "negative",
+      "direction": "positive",
       "direct": true,
       "targets": [
         {
@@ -364,19 +329,109 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "도시바의 ＇600억 엔 투자·TDK 헤드 인수전＇ 파장에 씨게이트·WDC 급락-[美증시 특징주] - 한국경제TV",
+      "headline": "[특징주] 러 페스트 유출 의심에 美도 주시…관련주 급등 마감(종합) - 연합뉴스",
       "directionEvidence": null,
-      "summary": "도시바의 ＇600억 엔 투자·TDK 헤드 인수전＇ 파장에 씨게이트·WDC 급락-[美증시 특징주]&nbsp;&nbsp;한국경제TV",
-      "source": "한국경제TV",
-      "publishedAt": "Tue, 06 Oct 2026 21:59:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1Mc3RaQXhhMzlTeU5LWEdYbEwwN0xYUHdIcEJnZFhFbzQ0TkloRWxWYV9UaDdUOTBDLUdWcGFrTExralBBRTRGY3lIX3ZMNWJRS3daZ2RuRjYtakt0dEhEY29HNU5jeVp1ZW1oZWhLakZ1bjQ?oc=5",
+      "summary": "[특징주] 러 페스트 유출 의심에 美도 주시…관련주 급등 마감(종합)&nbsp;&nbsp;연합뉴스",
+      "source": "연합뉴스",
+      "publishedAt": "Wed, 07 Oct 2026 06:40:05 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE96LVplZUkzRWR0VVEtbXRVSFJ6QlFLTW5HUk5DVXIwcHY0MXJycm1tVkczQVMxZ3ZyRWpVWXFRVHJOTWZsZUE0RU9pWGJwRTFiOVUtLThGVnNHMW_SAWBBVV95cUxQOWpXazBma0tnNm9nYXBxdGNqZ08tay1ZNnVLZXhOUDhVQTdXd3VBaWQteTlLcjhXTHdCNFNGeXdGeFNpWGZaN3Fhdkk5cmN0QXlfb19qak9neHdxa0ZrQVY?oc=5",
       "score": 14,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "도시바의 ＇600억 엔 투자·TDK 헤드 인수전＇ 파장에 씨게이트·WDC 급락-[美증시 특징주] - 한국경제TV"
+        "[특징주] 러 페스트 유출 의심에 美도 주시…관련주 급등 마감(종합) - 연합뉴스"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] 천일고속·동양고속, 서울고속버스터미널 재개발 기대감에 나란히 '상한가' - 와이드경제",
+      "directionEvidence": null,
+      "summary": "[특징주] 천일고속·동양고속, 서울고속버스터미널 재개발 기대감에 나란히 '상한가'&nbsp;&nbsp;와이드경제",
+      "source": "와이드경제",
+      "publishedAt": "Wed, 07 Oct 2026 05:06:29 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9tZUphVlVKMkJVT2piSGx0NFduR0xZZzUtLW9PeEdKUGJCZ3BsdmJjX3Bad1JaMVdZNnFYUEFvbTdEczBteTV4eVA5YUVRckNnOXVraUMtUDFGaEQ1LUU0MDhUcG9vbjRScGVQYw?oc=5",
+      "score": 14,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] 천일고속·동양고속, 서울고속버스터미널 재개발 기대감에 나란히 '상한가' - 와이드경제"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "construction",
+          "label": "건설·부동산",
+          "scope": "sector"
+        }
+      ],
+      "primaryTarget": {
+        "key": "construction",
+        "label": "건설·부동산",
+        "scope": "sector"
+      },
+      "headline": "특징주, 서부T&D-부동산 보유 자산주 테마 상승세에 5.07% ↑ - 매일경제 마켓",
+      "directionEvidence": null,
+      "summary": "특징주, 서부T&D-부동산 보유 자산주 테마 상승세에 5.07% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 02:43:16 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE15UDF5b1AyOTZ0ZVpxcWtyZGlwemVUTmp1R2w5MHdZbEZTNUtEM2JCOWRRZG1ZVThFRTJBal8wa3dqaWM5NTl0ZjQteEk2RnhTd3c?oc=5",
+      "score": 13,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "특징주, 서부T&D-부동산 보유 자산주 테마 상승세에 5.07% ↑ - 매일경제 마켓"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "energy",
+          "label": "에너지",
+          "scope": "sector"
+        }
+      ],
+      "primaryTarget": {
+        "key": "energy",
+        "label": "에너지",
+        "scope": "sector"
+      },
+      "headline": "특징주, SK가스-LPG 테마 상승세에 5.04% ↑ - 매일경제 마켓",
+      "directionEvidence": null,
+      "summary": "특징주, SK가스-LPG 테마 상승세에 5.04% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 02:13:12 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBwVnMzWUlOM0RVRnNLbVZNY3g0MUVGNEgwT1d6d0FhNWxnTWpmbkZGT2R5ZERmRmg4amY2aURmeU5tSklxNVkzU1AwWGNOLWdZd3c?oc=5",
+      "score": 13,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "특징주, SK가스-LPG 테마 상승세에 5.04% ↑ - 매일경제 마켓"
       ]
     },
     {
@@ -394,53 +449,83 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "[美특징주]모더나·노바백스, 최근 급등 후 차익실현에 동반 급락 - 이데일리",
+      "headline": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - Daum",
       "directionEvidence": null,
-      "summary": "[美특징주]모더나·노바백스, 최근 급등 후 차익실현에 동반 급락&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 19:52:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxObzRZY21mcG5GVVVmVUE4R1MzSHh2SVMtVWhXZTVoZUppR29GMHRMaEY2MnFYVl9paGc0V2lrS0ZkMUMwWXA4WFZ4aG9LVEJ3V3gtamhLX2daNVotcXBoU2VHNnV1OXQ4VVpwalA5SnoyRURxby1DLTQyclp5VWtlSg?oc=5",
-      "score": 14,
+      "summary": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까&nbsp;&nbsp;Daum",
+      "source": "Daum",
+      "publishedAt": "Wed, 07 Oct 2026 04:43:25 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE83SlB2QmlvWDhUMFJydUdsODl3TDJHQzVfWFQyejlmWFRIc2c2SXFhS3FfTEFxSllXeTVOY3VzZDF1SVp6WVhkOHdlMktzSzg?oc=5",
+      "score": 12,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[美특징주]모더나·노바백스, 최근 급등 후 차익실현에 동반 급락 - 이데일리"
+        "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - Daum"
       ]
     },
     {
-      "direction": "negative",
+      "direction": "mixed",
       "direct": true,
       "targets": [
         {
-          "key": "semiconductor",
-          "label": "반도체",
-          "scope": "sector"
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
         }
       ],
       "primaryTarget": {
-        "key": "semiconductor",
-        "label": "반도체",
-        "scope": "sector"
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
       },
-      "headline": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓ - 뉴스핌",
-      "directionEvidence": "SK하이닉스 2%↓",
-      "summary": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓&nbsp;&nbsp;뉴스핌",
-      "source": "뉴스핌",
-      "publishedAt": "Tue, 06 Oct 2026 23:18:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5QV25rQVhLRmVlWnlnTWdLdi1tdlAxQWRTX2xqZzNrc3l3YWFkTkJlV0NuTGYtZXdvZjk5X0RidC1jTGRUb3pLai02bW8tcmc5MElTV040OUJzNXUx?oc=5",
-      "score": 13,
+      "headline": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - 아주경제",
+      "directionEvidence": null,
+      "summary": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까&nbsp;&nbsp;아주경제",
+      "source": "아주경제",
+      "publishedAt": "Wed, 07 Oct 2026 04:43:20 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBGdzNrS2hNX2JmdmkzZ0dRZVVmZXlYelQ2b1AwUC1kYzJ1VUZXMnlaRmxmWjRYbWtFOG51dmM4aEdBeHoyeXdmcmZhejF0YVpMOFRYMGJEN3F4Z9IBWEFVX3lxTE81SkVPRHQxYjRCTkYtR3B4cWlqM3BOTjJ0QUtHNFFIXzZzemM3RTZfUTRSTVprWE9ZTUx5aE5XdW9PNHc0T0lBamtyMko3dldwNUFpR2dRZVk?oc=5",
+      "score": 12,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓ - 뉴스핌"
+        "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - 아주경제"
       ]
     },
     {
-      "direction": "negative",
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "특징주, GS-LPG 테마 상승세에 5.01% ↑ - 매일경제 마켓",
+      "directionEvidence": null,
+      "summary": "특징주, GS-LPG 테마 상승세에 5.01% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 03:43:16 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8zaEwzUjRMWE1yV1NYSTdGV2thUVdoSEMtLVRlUmN6RGRvelV6T2taTmFKVjgzemFPLU5pb3ItUGVpQ0phbDRCMkRnQzBEUjV5a3c?oc=5",
+      "score": 12,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "특징주, GS-LPG 테마 상승세에 5.01% ↑ - 매일경제 마켓"
+      ]
+    },
+    {
+      "direction": "positive",
       "direct": true,
       "targets": [
         {
@@ -454,54 +539,24 @@
         "label": "바이오·제약",
         "scope": "sector"
       },
-      "headline": "[미국 특징주] 트위스트 바이오사이언스 18.55% 하락…ARK, 전날 1800만달러 매도 - 토큰포스트",
-      "directionEvidence": "바이오사이언스 18.55% 하락",
-      "summary": "[미국 특징주] 트위스트 바이오사이언스 18.55% 하락…ARK, 전날 1800만달러 매도&nbsp;&nbsp;토큰포스트",
-      "source": "토큰포스트",
-      "publishedAt": "Tue, 06 Oct 2026 21:15:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9iWE92WFg4VU0zdFIzVEtadGI3WGZlSUpBQ3hMLUZrMkhTM2pRYXdzN1U4OW9jYzdiZ2lUclFpY0stSXdHS0lfYmJXMUFmVDVKdV91aDBB?oc=5",
-      "score": 13,
+      "headline": "[특징주] 종근당바이오, 러 페스트 유출 의심에 美 예의주시 '상승' - 전국매일신문",
+      "directionEvidence": null,
+      "summary": "[특징주] 종근당바이오, 러 페스트 유출 의심에 美 예의주시 '상승'&nbsp;&nbsp;전국매일신문",
+      "source": "전국매일신문",
+      "publishedAt": "Wed, 07 Oct 2026 02:12:42 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8xRUlyYmpXZWxCQkR6SldVNEJoUDNYN3I4WkxXR0pZUUIzbzhWek1xLW5CWWhyQWk4RERKMVFwcTN2NmVxSG04T1VfRU5HM2lxQ1RtM2pUbWtJeGRLZF9palFUdk5ZMDhYS3lTdlF3?oc=5",
+      "score": 11,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[미국 특징주] 트위스트 바이오사이언스 18.55% 하락…ARK, 전날 1800만달러 매도 - 토큰포스트"
+        "[특징주] 종근당바이오, 러 페스트 유출 의심에 美 예의주시 '상승' - 전국매일신문"
       ]
     },
     {
-      "direction": "negative",
-      "direct": true,
-      "targets": [
-        {
-          "key": "foreign_flow",
-          "label": "외국인 수급",
-          "scope": "factor"
-        }
-      ],
-      "primaryTarget": {
-        "key": "foreign_flow",
-        "label": "외국인 수급",
-        "scope": "factor"
-      },
-      "headline": "[마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감 - 브릿지경제",
-      "directionEvidence": "외국인 1.7조 순매도에 0.89%↓⋯",
-      "summary": "[마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감&nbsp;&nbsp;브릿지경제",
-      "source": "브릿지경제",
-      "publishedAt": "Tue, 06 Oct 2026 06:50:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBVQ3lncW1XdGJXaVNqQ1dfUHhKcjMwQ0NlanlqVzZFY0pmaHJaNmNwdkdrSGl2Y2lvZ0IxS3psTDNNdWdPSUVhSVVWMl9BdFlBVVJKNXNuM2dSUQ?oc=5",
-      "score": 13,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감 - 브릿지경제"
-      ]
-    },
-    {
-      "direction": "positive",
-      "direct": true,
+      "direction": "mixed",
+      "direct": false,
       "targets": [
         {
           "key": "semiconductor",
@@ -515,7 +570,7 @@
         "scope": "sector"
       },
       "headline": "AI 반도체 랠리 계속…AMD·브로드컴 급등, 메모리는 약세 - 뉴스1",
-      "directionEvidence": "반도체 랠리 계속",
+      "directionEvidence": null,
       "summary": "AI 반도체 랠리 계속…AMD·브로드컴 급등, 메모리는 약세&nbsp;&nbsp;뉴스1",
       "source": "뉴스1",
       "publishedAt": "Tue, 06 Oct 2026 21:25:10 GMT",
@@ -524,112 +579,49 @@
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
-      "evidenceConfidence": "high",
+      "evidenceConfidence": "medium",
       "evidenceHeadlines": [
         "AI 반도체 랠리 계속…AMD·브로드컴 급등, 메모리는 약세 - 뉴스1"
       ]
     },
     {
-      "direction": "mixed",
-      "direct": true,
+      "direction": "negative",
+      "direct": false,
       "targets": [
         {
-          "key": "energy",
-          "label": "에너지",
+          "key": "bio",
+          "label": "바이오·제약",
+          "scope": "sector"
+        },
+        {
+          "key": "finance",
+          "label": "금융",
           "scope": "sector"
         }
       ],
       "primaryTarget": {
-        "key": "energy",
-        "label": "에너지",
+        "key": "bio",
+        "label": "바이오·제약",
         "scope": "sector"
       },
-      "headline": "뉴욕증시 개장 전 특징주...콘스텔레이션에너지·옵션케어헬스·AMD↑ VS 애플·에너지주↓ - 뉴스핌",
-      "directionEvidence": "에너지·옵션케어헬스·AMD↑ VS 애플· / 에너지주↓",
-      "summary": "뉴욕증시 개장 전 특징주...콘스텔레이션에너지·옵션케어헬스·AMD↑ VS 애플·에너지주↓&nbsp;&nbsp;뉴스핌",
-      "source": "뉴스핌",
-      "publishedAt": "Tue, 06 Oct 2026 13:25:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBGNlh4ckxlT0gxdzlGakxmUWZfOE92NXFYQk9LUVhzamZWaGgwdnlOMXhWZnRmYzZ6cEFxSW80TzhsbU9Md0tkNVg4LXRhTmgzT09fbFlCZU1HQkxt?oc=5",
-      "score": 10,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "medium",
-      "evidenceConfidence": "medium",
-      "evidenceHeadlines": [
-        "뉴욕증시 개장 전 특징주...콘스텔레이션에너지·옵션케어헬스·AMD↑ VS 애플·에너지주↓ - 뉴스핌"
-      ]
-    },
-    {
-      "direction": "mixed",
-      "direct": false,
-      "targets": [
-        {
-          "key": "rates",
-          "label": "금리·채권",
-          "scope": "factor"
-        }
-      ],
-      "primaryTarget": {
-        "key": "rates",
-        "label": "금리·채권",
-        "scope": "factor"
-      },
-      "headline": "오늘 밤 미국 PCE 발표｜10년물 5.2%·연준 추가 인상 갈림길, 이번에는 왜 더 중요할까 - 네이버 프리미엄콘텐츠",
-      "directionEvidence": "연준 추가 인상 갈림길",
-      "summary": "오늘 밤 미국 PCE 발표｜10년물 5.2%·연준 추가 인상 갈림길, 이번에는 왜 더 중요할까&nbsp;&nbsp;네이버 프리미엄콘텐츠",
-      "source": "네이버 프리미엄콘텐츠",
-      "publishedAt": "Tue, 06 Oct 2026 16:34:51 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5oM3Y5QW1iSFY3VDd3RHUzU1BCLTNNRTg1NnlyX19fQlRjd245NGJGLU1qYlZ4OHJSeU95cWtqT0NKSGxUN1RvNk1ySWFKcWt3QUhZOW5OekZYLWxfQy1MUzZsSHRjTkRTTDk0R1JtYjU5MW1FYkRyUFBnakh2UQ?oc=5",
+      "headline": "삼성바이오로직스, 3분기 단기 부담에도 컨센서스 부합 전망...목표주가 200만원 유지 - 한국증권신문",
+      "directionEvidence": null,
+      "summary": "삼성바이오로직스, 3분기 단기 부담에도 컨센서스 부합 전망...목표주가 200만원 유지&nbsp;&nbsp;한국증권신문",
+      "source": "한국증권신문",
+      "publishedAt": "Wed, 07 Oct 2026 05:18:17 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE10R3J6R3BmUzlqdzVvZ2VnWmZlTi1OeTJkU3EyVDEyREdTYVBUWk9yZnNRaUcta19kLVZHS29VWWU4OGlrOFpiRzd0cUNLM1JTT0cwWVI1WHdoSEZpNVZWOENSZ2RFSE0wdWhJ?oc=5",
       "score": 5,
       "corroboration": 1,
-      "directionallyAmbiguous": true,
+      "directionallyAmbiguous": false,
       "severity": "low",
       "evidenceConfidence": "low",
       "evidenceHeadlines": [
-        "오늘 밤 미국 PCE 발표｜10년물 5.2%·연준 추가 인상 갈림길, 이번에는 왜 더 중요할까 - 네이버 프리미엄콘텐츠"
+        "삼성바이오로직스, 3분기 단기 부담에도 컨센서스 부합 전망...목표주가 200만원 유지 - 한국증권신문"
       ]
     }
   ],
   "marketEventConclusions": [
     {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "domestic_market",
-          "label": "국내 증시",
-          "scope": "market"
-        }
-      ],
-      "primaryTarget": {
-        "key": "domestic_market",
-        "label": "국내 증시",
-        "scope": "market"
-      },
-      "headline": "[마감시황] 코스피, 외국인 1.7조 매도에 ‘7천피’ 반납…코스닥은 3% 급등 - 블록미디어",
-      "directionEvidence": "코스닥은 3% 급등",
-      "summary": "[마감시황] 코스피, 외국인 1.7조 매도에 ‘7천피’ 반납…코스닥은 3% 급등&nbsp;&nbsp;블록미디어",
-      "source": "블록미디어",
-      "publishedAt": "Tue, 06 Oct 2026 06:43:48 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9rSFYzVVBKbnBYYWF1YjFzUWtpX0dYaGRWNzJfYWlVcXphQXREWmUtalFjRlRXMmpucW9lT3hTTXE2T0J0cXg2MDNkcGk2dTFRTGQtLWxSU3Q?oc=5",
-      "score": 22,
-      "corroboration": 3,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[마감시황] 코스피, 외국인 1.7조 매도에 ‘7천피’ 반납…코스닥은 3% 급등 - 블록미디어",
-        "[마감시황] 코스피 7000선 내줘…코스닥은 2.98% 올라 - 자본시장뉴스",
-        "[마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감 - 브릿지경제"
-      ],
-      "confidence": "high",
-      "dominanceMargin": 6,
-      "resolutionReason": "dominant_direct_price",
-      "counterEvidence": [
-        "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등 - 미디어워치"
-      ]
-    },
-    {
       "direction": "negative",
       "direct": true,
       "targets": [
@@ -644,131 +636,41 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "[美특징주]네오제노믹스, 승계 계획 발표에 11%대 급락 - www.edaily.co.kr",
+      "headline": "[ET특징주] 더코디, 330억 규모 CB 발행 철회… 주가 12% 급락 - 전자신문",
       "directionEvidence": null,
-      "summary": "[美특징주]네오제노믹스, 승계 계획 발표에 11%대 급락&nbsp;&nbsp;www.edaily.co.kr",
-      "source": "www.edaily.co.kr",
-      "publishedAt": "Tue, 06 Oct 2026 16:22:53 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE02ZmdncXNBcE40YnJUbndHX1p2WjNKUmRXbG9Xd1FBTFdkWUo4XzdFZ0pnS2UyOGVRZGFPc1lNa2JQZHNmdWtiOG1IdlJIT0pXQl9YZldpbE9FTHk4UXdKYllZaHZ1OEdTT0tJ?oc=5",
-      "score": 15,
+      "summary": "[ET특징주] 더코디, 330억 규모 CB 발행 철회… 주가 12% 급락&nbsp;&nbsp;전자신문",
+      "source": "전자신문",
+      "publishedAt": "Wed, 07 Oct 2026 02:03:36 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE0xVHlKdHBNa0VlWFUxbzgwOThyU29BSjVnZnVhTW11cEo0ZHRQVGxia2N5RFhSZ0F3MzlpRGVKZjBNMFE1OHJiQ0JzZExtZw?oc=5",
+      "score": 16,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[美특징주]네오제노믹스, 승계 계획 발표에 11%대 급락 - www.edaily.co.kr"
+        "[ET특징주] 더코디, 330억 규모 CB 발행 철회… 주가 12% 급락 - 전자신문"
       ],
       "confidence": "high",
       "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
-    },
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "secondary_battery",
-          "label": "2차전지",
-          "scope": "sector"
-        }
-      ],
-      "primaryTarget": {
-        "key": "secondary_battery",
-        "label": "2차전지",
-        "scope": "sector"
-      },
-      "headline": "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등 - 미디어워치",
-      "directionEvidence": "2차전지 타고 급등",
-      "summary": "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등&nbsp;&nbsp;미디어워치",
-      "source": "미디어워치",
-      "publishedAt": "Tue, 06 Oct 2026 12:02:16 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5IeE9QMU1zSGdYRzlQc0QyaXRUYS14TjRVMEdGVzdNNG8yQXBxNFM0V1B1eW04OG5iNFNFUGRlT2pyb1VpNEpJclg5UlByU05jbVpKRkEtRG1YaTdMUlE?oc=5",
-      "score": 14,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[26.10.6 증시 인싸잇] 外人 매도에 코스피 0.89%↓… 코스닥은 소부장·2차전지 타고 급등 - 미디어워치"
-      ],
-      "confidence": "high",
-      "dominanceMargin": null,
-      "resolutionReason": "single_direction",
       "counterEvidence": []
     },
     {
       "direction": "negative",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "도시바의 ＇600억 엔 투자·TDK 헤드 인수전＇ 파장에 씨게이트·WDC 급락-[美증시 특징주] - 한국경제TV",
-      "directionEvidence": null,
-      "summary": "도시바의 ＇600억 엔 투자·TDK 헤드 인수전＇ 파장에 씨게이트·WDC 급락-[美증시 특징주]&nbsp;&nbsp;한국경제TV",
-      "source": "한국경제TV",
-      "publishedAt": "Tue, 06 Oct 2026 21:59:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1Mc3RaQXhhMzlTeU5LWEdYbEwwN0xYUHdIcEJnZFhFbzQ0TkloRWxWYV9UaDdUOTBDLUdWcGFrTExralBBRTRGY3lIX3ZMNWJRS3daZ2RuRjYtakt0dEhEY29HNU5jeVp1ZW1oZWhLakZ1bjQ?oc=5",
-      "score": 14,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "도시바의 ＇600억 엔 투자·TDK 헤드 인수전＇ 파장에 씨게이트·WDC 급락-[美증시 특징주] - 한국경제TV"
-      ],
-      "confidence": "high",
-      "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
-    },
-    {
-      "direction": "mixed",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "[美특징주]모더나·노바백스, 최근 급등 후 차익실현에 동반 급락 - 이데일리",
-      "directionEvidence": null,
-      "summary": "[美특징주]모더나·노바백스, 최근 급등 후 차익실현에 동반 급락&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 19:52:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxObzRZY21mcG5GVVVmVUE4R1MzSHh2SVMtVWhXZTVoZUppR29GMHRMaEY2MnFYVl9paGc0V2lrS0ZkMUMwWXA4WFZ4aG9LVEJ3V3gtamhLX2daNVotcXBoU2VHNnV1OXQ4VVpwalA5SnoyRURxby1DLTQyclp5VWtlSg?oc=5",
-      "score": 14,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[美특징주]모더나·노바백스, 최근 급등 후 차익실현에 동반 급락 - 이데일리"
-      ],
-      "confidence": "high",
-      "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
-    },
-    {
-      "direction": "mixed",
       "direct": true,
       "targets": [
         {
           "key": "semiconductor",
           "label": "반도체",
+          "scope": "sector"
+        },
+        {
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
+        },
+        {
+          "key": "secondary_battery",
+          "label": "2차전지",
           "scope": "sector"
         }
       ],
@@ -778,55 +680,122 @@
         "scope": "sector"
       },
       "headline": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓ - 뉴스핌",
-      "directionEvidence": "SK하이닉스 2%↓",
+      "directionEvidence": null,
       "summary": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓&nbsp;&nbsp;뉴스핌",
       "source": "뉴스핌",
       "publishedAt": "Tue, 06 Oct 2026 23:18:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5QV25rQVhLRmVlWnlnTWdLdi1tdlAxQWRTX2xqZzNrc3l3YWFkTkJlV0NuTGYtZXdvZjk5X0RidC1jTGRUb3pLai02bW8tcmc5MElTV040OUJzNXUx?oc=5",
-      "score": 13,
-      "corroboration": 1,
+      "score": 14,
+      "corroboration": 2,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓ - 뉴스핌"
-      ],
-      "confidence": "medium",
-      "dominanceMargin": 2,
-      "resolutionReason": "conflicting_evidence",
-      "counterEvidence": [
         "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓ - 뉴스핌",
+        "[마감시황] 삼성전자 실적 앞둔 관망심리…코스피 6803선 하락 마감 - 뉴스핌",
+        "[증시 오늘(7일) 주요 특징주] \"반도체·2차전지 동반 약세\"…주요 대형주 매물 출회에 지수 하방 압력 - www.thefairnews.co.kr"
+      ],
+      "confidence": "high",
+      "dominanceMargin": 6,
+      "resolutionReason": "dominant_direct_price",
+      "counterEvidence": [
         "AI 반도체 랠리 계속…AMD·브로드컴 급등, 메모리는 약세 - 뉴스1"
       ]
     },
     {
-      "direction": "negative",
+      "direction": "positive",
       "direct": true,
       "targets": [
         {
-          "key": "bio",
-          "label": "바이오·제약",
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] 러 페스트 유출 의심에 美도 주시…관련주 급등 마감(종합) - 연합뉴스",
+      "directionEvidence": null,
+      "summary": "[특징주] 러 페스트 유출 의심에 美도 주시…관련주 급등 마감(종합)&nbsp;&nbsp;연합뉴스",
+      "source": "연합뉴스",
+      "publishedAt": "Wed, 07 Oct 2026 06:40:05 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE96LVplZUkzRWR0VVEtbXRVSFJ6QlFLTW5HUk5DVXIwcHY0MXJycm1tVkczQVMxZ3ZyRWpVWXFRVHJOTWZsZUE0RU9pWGJwRTFiOVUtLThGVnNHMW_SAWBBVV95cUxQOWpXazBma0tnNm9nYXBxdGNqZ08tay1ZNnVLZXhOUDhVQTdXd3VBaWQteTlLcjhXTHdCNFNGeXdGeFNpWGZaN3Fhdkk5cmN0QXlfb19qak9neHdxa0ZrQVY?oc=5",
+      "score": 14,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] 러 페스트 유출 의심에 美도 주시…관련주 급등 마감(종합) - 연합뉴스"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] 천일고속·동양고속, 서울고속버스터미널 재개발 기대감에 나란히 '상한가' - 와이드경제",
+      "directionEvidence": null,
+      "summary": "[특징주] 천일고속·동양고속, 서울고속버스터미널 재개발 기대감에 나란히 '상한가'&nbsp;&nbsp;와이드경제",
+      "source": "와이드경제",
+      "publishedAt": "Wed, 07 Oct 2026 05:06:29 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9tZUphVlVKMkJVT2piSGx0NFduR0xZZzUtLW9PeEdKUGJCZ3BsdmJjX3Bad1JaMVdZNnFYUEFvbTdEczBteTV4eVA5YUVRckNnOXVraUMtUDFGaEQ1LUU0MDhUcG9vbjRScGVQYw?oc=5",
+      "score": 14,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] 천일고속·동양고속, 서울고속버스터미널 재개발 기대감에 나란히 '상한가' - 와이드경제"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "construction",
+          "label": "건설·부동산",
           "scope": "sector"
         }
       ],
       "primaryTarget": {
-        "key": "bio",
-        "label": "바이오·제약",
+        "key": "construction",
+        "label": "건설·부동산",
         "scope": "sector"
       },
-      "headline": "[미국 특징주] 트위스트 바이오사이언스 18.55% 하락…ARK, 전날 1800만달러 매도 - 토큰포스트",
-      "directionEvidence": "바이오사이언스 18.55% 하락",
-      "summary": "[미국 특징주] 트위스트 바이오사이언스 18.55% 하락…ARK, 전날 1800만달러 매도&nbsp;&nbsp;토큰포스트",
-      "source": "토큰포스트",
-      "publishedAt": "Tue, 06 Oct 2026 21:15:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9iWE92WFg4VU0zdFIzVEtadGI3WGZlSUpBQ3hMLUZrMkhTM2pRYXdzN1U4OW9jYzdiZ2lUclFpY0stSXdHS0lfYmJXMUFmVDVKdV91aDBB?oc=5",
+      "headline": "특징주, 서부T&D-부동산 보유 자산주 테마 상승세에 5.07% ↑ - 매일경제 마켓",
+      "directionEvidence": null,
+      "summary": "특징주, 서부T&D-부동산 보유 자산주 테마 상승세에 5.07% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 02:43:16 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE15UDF5b1AyOTZ0ZVpxcWtyZGlwemVUTmp1R2w5MHdZbEZTNUtEM2JCOWRRZG1ZVThFRTJBal8wa3dqaWM5NTl0ZjQteEk2RnhTd3c?oc=5",
       "score": 13,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[미국 특징주] 트위스트 바이오사이언스 18.55% 하락…ARK, 전날 1800만달러 매도 - 토큰포스트"
+        "특징주, 서부T&D-부동산 보유 자산주 테마 상승세에 5.07% ↑ - 매일경제 마켓"
       ],
       "confidence": "high",
       "dominanceMargin": null,
@@ -834,41 +803,7 @@
       "counterEvidence": []
     },
     {
-      "direction": "negative",
-      "direct": true,
-      "targets": [
-        {
-          "key": "foreign_flow",
-          "label": "외국인 수급",
-          "scope": "factor"
-        }
-      ],
-      "primaryTarget": {
-        "key": "foreign_flow",
-        "label": "외국인 수급",
-        "scope": "factor"
-      },
-      "headline": "[마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감 - 브릿지경제",
-      "directionEvidence": "외국인 1.7조 순매도에 0.89%↓⋯",
-      "summary": "[마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감&nbsp;&nbsp;브릿지경제",
-      "source": "브릿지경제",
-      "publishedAt": "Tue, 06 Oct 2026 06:50:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBVQ3lncW1XdGJXaVNqQ1dfUHhKcjMwQ0NlanlqVzZFY0pmaHJaNmNwdkdrSGl2Y2lvZ0IxS3psTDNNdWdPSUVhSVVWMl9BdFlBVVJKNXNuM2dSUQ?oc=5",
-      "score": 13,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[마감시황] 코스피, 외국인 1.7조 순매도에 0.89%↓⋯코스닥 3% 상승 마감 - 브릿지경제"
-      ],
-      "confidence": "high",
-      "dominanceMargin": null,
-      "resolutionReason": "single_direction",
-      "counterEvidence": []
-    },
-    {
-      "direction": "mixed",
+      "direction": "positive",
       "direct": true,
       "targets": [
         {
@@ -882,207 +817,321 @@
         "label": "에너지",
         "scope": "sector"
       },
-      "headline": "뉴욕증시 개장 전 특징주...콘스텔레이션에너지·옵션케어헬스·AMD↑ VS 애플·에너지주↓ - 뉴스핌",
-      "directionEvidence": "에너지·옵션케어헬스·AMD↑ VS 애플· / 에너지주↓",
-      "summary": "뉴욕증시 개장 전 특징주...콘스텔레이션에너지·옵션케어헬스·AMD↑ VS 애플·에너지주↓&nbsp;&nbsp;뉴스핌",
-      "source": "뉴스핌",
-      "publishedAt": "Tue, 06 Oct 2026 13:25:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBGNlh4ckxlT0gxdzlGakxmUWZfOE92NXFYQk9LUVhzamZWaGgwdnlOMXhWZnRmYzZ6cEFxSW80TzhsbU9Md0tkNVg4LXRhTmgzT09fbFlCZU1HQkxt?oc=5",
-      "score": 10,
+      "headline": "특징주, SK가스-LPG 테마 상승세에 5.04% ↑ - 매일경제 마켓",
+      "directionEvidence": null,
+      "summary": "특징주, SK가스-LPG 테마 상승세에 5.04% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 02:13:12 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBwVnMzWUlOM0RVRnNLbVZNY3g0MUVGNEgwT1d6d0FhNWxnTWpmbkZGT2R5ZERmRmg4amY2aURmeU5tSklxNVkzU1AwWGNOLWdZd3c?oc=5",
+      "score": 13,
       "corroboration": 1,
       "directionallyAmbiguous": false,
-      "severity": "medium",
-      "evidenceConfidence": "medium",
+      "severity": "high",
+      "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "뉴욕증시 개장 전 특징주...콘스텔레이션에너지·옵션케어헬스·AMD↑ VS 애플·에너지주↓ - 뉴스핌"
+        "특징주, SK가스-LPG 테마 상승세에 5.04% ↑ - 매일경제 마켓"
       ],
-      "confidence": "medium",
+      "confidence": "high",
       "dominanceMargin": null,
       "resolutionReason": "single_direction",
       "counterEvidence": []
     },
     {
       "direction": "mixed",
-      "direct": false,
+      "direct": true,
       "targets": [
         {
-          "key": "rates",
-          "label": "금리·채권",
-          "scope": "factor"
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
         }
       ],
       "primaryTarget": {
-        "key": "rates",
-        "label": "금리·채권",
-        "scope": "factor"
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
       },
-      "headline": "오늘 밤 미국 PCE 발표｜10년물 5.2%·연준 추가 인상 갈림길, 이번에는 왜 더 중요할까 - 네이버 프리미엄콘텐츠",
-      "directionEvidence": "연준 추가 인상 갈림길",
-      "summary": "오늘 밤 미국 PCE 발표｜10년물 5.2%·연준 추가 인상 갈림길, 이번에는 왜 더 중요할까&nbsp;&nbsp;네이버 프리미엄콘텐츠",
-      "source": "네이버 프리미엄콘텐츠",
-      "publishedAt": "Tue, 06 Oct 2026 16:34:51 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5oM3Y5QW1iSFY3VDd3RHUzU1BCLTNNRTg1NnlyX19fQlRjd245NGJGLU1qYlZ4OHJSeU95cWtqT0NKSGxUN1RvNk1ySWFKcWt3QUhZOW5OekZYLWxfQy1MUzZsSHRjTkRTTDk0R1JtYjU5MW1FYkRyUFBnakh2UQ?oc=5",
-      "score": 5,
+      "headline": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - Daum",
+      "directionEvidence": null,
+      "summary": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까&nbsp;&nbsp;Daum",
+      "source": "Daum",
+      "publishedAt": "Wed, 07 Oct 2026 04:43:25 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE83SlB2QmlvWDhUMFJydUdsODl3TDJHQzVfWFQyejlmWFRIc2c2SXFhS3FfTEFxSllXeTVOY3VzZDF1SVp6WVhkOHdlMktzSzg?oc=5",
+      "score": 12,
       "corroboration": 1,
-      "directionallyAmbiguous": true,
-      "severity": "low",
-      "evidenceConfidence": "low",
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "오늘 밤 미국 PCE 발표｜10년물 5.2%·연준 추가 인상 갈림길, 이번에는 왜 더 중요할까 - 네이버 프리미엄콘텐츠"
+        "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - Daum"
       ],
-      "confidence": "low",
-      "dominanceMargin": null,
-      "resolutionReason": "single_direction",
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
       "counterEvidence": []
+    },
+    {
+      "direction": "mixed",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - 아주경제",
+      "directionEvidence": null,
+      "summary": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까&nbsp;&nbsp;아주경제",
+      "source": "아주경제",
+      "publishedAt": "Wed, 07 Oct 2026 04:43:20 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBGdzNrS2hNX2JmdmkzZ0dRZVVmZXlYelQ2b1AwUC1kYzJ1VUZXMnlaRmxmWjRYbWtFOG51dmM4aEdBeHoyeXdmcmZhejF0YVpMOFRYMGJEN3F4Z9IBWEFVX3lxTE81SkVPRHQxYjRCTkYtR3B4cWlqM3BOTjJ0QUtHNFFIXzZzemM3RTZfUTRSTVprWE9ZTUx5aE5XdW9PNHc0T0lBamtyMko3dldwNUFpR2dRZVk?oc=5",
+      "score": 12,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - 아주경제"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "특징주, GS-LPG 테마 상승세에 5.01% ↑ - 매일경제 마켓",
+      "directionEvidence": null,
+      "summary": "특징주, GS-LPG 테마 상승세에 5.01% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 03:43:16 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8zaEwzUjRMWE1yV1NYSTdGV2thUVdoSEMtLVRlUmN6RGRvelV6T2taTmFKVjgzemFPLU5pb3ItUGVpQ0phbDRCMkRnQzBEUjV5a3c?oc=5",
+      "score": 12,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "특징주, GS-LPG 테마 상승세에 5.01% ↑ - 매일경제 마켓"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "bio",
+          "label": "바이오·제약",
+          "scope": "sector"
+        },
+        {
+          "key": "finance",
+          "label": "금융",
+          "scope": "sector"
+        }
+      ],
+      "primaryTarget": {
+        "key": "bio",
+        "label": "바이오·제약",
+        "scope": "sector"
+      },
+      "headline": "[특징주] 종근당바이오, 러 페스트 유출 의심에 美 예의주시 '상승' - 전국매일신문",
+      "directionEvidence": null,
+      "summary": "[특징주] 종근당바이오, 러 페스트 유출 의심에 美 예의주시 '상승'&nbsp;&nbsp;전국매일신문",
+      "source": "전국매일신문",
+      "publishedAt": "Wed, 07 Oct 2026 02:12:42 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8xRUlyYmpXZWxCQkR6SldVNEJoUDNYN3I4WkxXR0pZUUIzbzhWek1xLW5CWWhyQWk4RERKMVFwcTN2NmVxSG04T1VfRU5HM2lxQ1RtM2pUbWtJeGRLZF9palFUdk5ZMDhYS3lTdlF3?oc=5",
+      "score": 11,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] 종근당바이오, 러 페스트 유출 의심에 美 예의주시 '상승' - 전국매일신문"
+      ],
+      "confidence": "high",
+      "dominanceMargin": 11,
+      "resolutionReason": "dominant_direct_price",
+      "counterEvidence": [
+        "삼성바이오로직스, 3분기 단기 부담에도 컨센서스 부합 전망...목표주가 200만원 유지 - 한국증권신문"
+      ]
     }
   ],
   "stockNewsCandidates": [
     {
-      "title": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓ - 뉴스핌",
-      "summary": "[특징주] 삼전닉스 프리마켓 동반 약세…SK하이닉스 2%↓&nbsp;&nbsp;뉴스핌",
+      "title": "[특징주] 러 페스트 유출 의심에 美도 주시…관련주 급등 마감(종합) - 연합뉴스",
+      "summary": "[특징주] 러 페스트 유출 의심에 美도 주시…관련주 급등 마감(종합)&nbsp;&nbsp;연합뉴스",
+      "source": "연합뉴스",
+      "publishedAt": "Wed, 07 Oct 2026 06:40:05 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE96LVplZUkzRWR0VVEtbXRVSFJ6QlFLTW5HUk5DVXIwcHY0MXJycm1tVkczQVMxZ3ZyRWpVWXFRVHJOTWZsZUE0RU9pWGJwRTFiOVUtLThGVnNHMW_SAWBBVV95cUxQOWpXazBma0tnNm9nYXBxdGNqZ08tay1ZNnVLZXhOUDhVQTdXd3VBaWQteTlLcjhXTHdCNFNGeXdGeFNpWGZaN3Fhdkk5cmN0QXlfb19qak9neHdxa0ZrQVY?oc=5",
+      "query": "특징주 상한가 when:1d"
+    },
+    {
+      "title": "[마감시황] 삼성전자 실적 앞둔 관망심리…코스피 6803선 하락 마감 - 뉴스핌",
+      "summary": "[마감시황] 삼성전자 실적 앞둔 관망심리…코스피 6803선 하락 마감&nbsp;&nbsp;뉴스핌",
       "source": "뉴스핌",
-      "publishedAt": "Tue, 06 Oct 2026 23:18:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5QV25rQVhLRmVlWnlnTWdLdi1tdlAxQWRTX2xqZzNrc3l3YWFkTkJlV0NuTGYtZXdvZjk5X0RidC1jTGRUb3pLai02bW8tcmc5MElTV040OUJzNXUx?oc=5",
+      "publishedAt": "Wed, 07 Oct 2026 06:40:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBRc3lXMzVMT1hFT0hCSDRJU2hzU2EybFdSd0k2ak1TNGJVV3NmX3djUFNkRkEyeGlfRm00SU54VXFTaTgzQVhIUk1iYmc5dTdaX3pGcDc0TXhweXNi?oc=5",
       "query": "특징주 하락 when:1d"
     },
     {
-      "title": "도시바의 ＇600억 엔 투자·TDK 헤드 인수전＇ 파장에 씨게이트·WDC 급락-[美증시 특징주] - 한국경제TV",
-      "summary": "도시바의 ＇600억 엔 투자·TDK 헤드 인수전＇ 파장에 씨게이트·WDC 급락-[美증시 특징주]&nbsp;&nbsp;한국경제TV",
-      "source": "한국경제TV",
-      "publishedAt": "Tue, 06 Oct 2026 21:59:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1Mc3RaQXhhMzlTeU5LWEdYbEwwN0xYUHdIcEJnZFhFbzQ0TkloRWxWYV9UaDdUOTBDLUdWcGFrTExralBBRTRGY3lIX3ZMNWJRS3daZ2RuRjYtakt0dEhEY29HNU5jeVp1ZW1oZWhLakZ1bjQ?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[미국 특징주] 트위스트 바이오사이언스 18.55% 하락…ARK, 전날 1800만달러 매도 - 토큰포스트",
-      "summary": "[미국 특징주] 트위스트 바이오사이언스 18.55% 하락…ARK, 전날 1800만달러 매도&nbsp;&nbsp;토큰포스트",
-      "source": "토큰포스트",
-      "publishedAt": "Tue, 06 Oct 2026 21:15:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9iWE92WFg4VU0zdFIzVEtadGI3WGZlSUpBQ3hMLUZrMkhTM2pRYXdzN1U4OW9jYzdiZ2lUclFpY0stSXdHS0lfYmJXMUFmVDVKdV91aDBB?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[美특징주]세일즈포스, 호실적에도 AI 시대 성장성 ‘물음표’…올해 10%↓ - 이데일리",
-      "summary": "[美특징주]세일즈포스, 호실적에도 AI 시대 성장성 ‘물음표’…올해 10%↓&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 20:43:26 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNN2NfZk1FR2hTRzFSS2RsRXptUi1Xa1dWYS0zRV93Uld3NGNkSjB2djU1TEhyeTFOa0lhUFhudG9KcWFLaVRHRE40NXlfaXBEd3ZhX0tiZWRidnQ4QXVHVHRRTHpHSkVOYUIzTUdqXzRkTkVFQWJRZEZGbWdFYTBScQ?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[美특징주]옵션케어헬스, 50억달러 규모 인수 협상…주가 33%↑ - 이데일리",
-      "summary": "[美특징주]옵션케어헬스, 50억달러 규모 인수 협상…주가 33%↑&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 20:37:34 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNV0p6Wmo2QTh3V1NCbVp3RVNvOC1Jdklfd1pyZU9NaHlTZ0s3ZHc4VmFQN2Z3S3JTWmpnNkprckN6UDcyaEQ4am9qM2VaaEhwVkNFd3BSbXJaTXd1YldVTnVlUFNzaTROWU95QXZJb0pwLXJETzhiTTVLanZhb24zQQ?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[美특징주]AMD, “CPU 르네상스 최대 수혜”에 월가 목표가 상향…주가 3%↑ - 이데일리",
-      "summary": "[美특징주]AMD, “CPU 르네상스 최대 수혜”에 월가 목표가 상향…주가 3%↑&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 19:57:02 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSVV5U19GOS1rbnRIQXVKakRfd2N2X2xwam04UVpMT1VMZGN0aXMzM2RwWU1UVWtGeGtFenpCWUxnaU81VGZ5QXVZZHEzdGNobkk2UHV1eWtmYVdPZXJkVkVqV0JpR3RvZTVvVV9xSFdNUzh1U0JacVRPZkVJTVVRZw?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[美특징주]모더나·노바백스, 최근 급등 후 차익실현에 동반 급락 - 이데일리",
-      "summary": "[美특징주]모더나·노바백스, 최근 급등 후 차익실현에 동반 급락&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 19:52:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxObzRZY21mcG5GVVVmVUE4R1MzSHh2SVMtVWhXZTVoZUppR29GMHRMaEY2MnFYVl9paGc0V2lrS0ZkMUMwWXA4WFZ4aG9LVEJ3V3gtamhLX2daNVotcXBoU2VHNnV1OXQ4VVpwalA5SnoyRURxby1DLTQyclp5VWtlSg?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[美특징주]코르테바, JP모간 '53% 상승여력' 평가에 '매수' 상향…주가12%↑ - 이데일리",
-      "summary": "[美특징주]코르테바, JP모간 '53% 상승여력' 평가에 '매수' 상향…주가12%↑&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 19:48:08 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVldIeEdXUmtXQ3ZtNVk1SWVNN28zV1otRG9pTzAtaHN5YWl1QlcxOUU4NUhydGNqZXVLb01QbXJtN1JCdjh1c0pvUG9zLVZRSHhiNzd6dlpZMHNYLUZTLWFvbS1mckp0NjBPYThmVGhoNjNTQUFOWnQ5b0ZVeTBpMQ?oc=5",
+      "title": "[중국 특징주] 국경절 연휴 후 A주 반등 기대…상승확률 높은 '이 섹터' - 뉴스핌",
+      "summary": "[중국 특징주] 국경절 연휴 후 A주 반등 기대…상승확률 높은 '이 섹터'&nbsp;&nbsp;뉴스핌",
+      "source": "뉴스핌",
+      "publishedAt": "Wed, 07 Oct 2026 05:28:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1qYldMZkpobnJlVXNKeG1ySjRWRTBFajhvZlUzYm9JWGRGMERMY09yOXhMNXk5Zk1fdjhsZ05pSDNLQlpXUFozZXM4NjMwRlJQRGVBZFB0aTVNZ3VB?oc=5",
       "query": "특징주 상승 when:1d"
     },
     {
-      "title": "[美특징주]마벨테크놀로지, 예상 뛰어넘는 장기 매출 전망 제시에 급등 - 이데일리",
-      "summary": "[美특징주]마벨테크놀로지, 예상 뛰어넘는 장기 매출 전망 제시에 급등&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 16:38:30 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPc2Vma19QdEZEcWdrMWEtOGw2ZWxBa3JKUGprMVpFdUNlTEdSR1BvUG9hLTRaMC12VDk0ZU1aTm91NnFGT01hbTdEbjU2NGNFdGhDUjZsaHdTdnZHUUNQV1Q1RHdvb3ZpWGFXeGtLM21GSkVJOS0yOE9IeG9jLUlNWg?oc=5",
+      "title": "삼성바이오로직스, 3분기 단기 부담에도 컨센서스 부합 전망...목표주가 200만원 유지 - 한국증권신문",
+      "summary": "삼성바이오로직스, 3분기 단기 부담에도 컨센서스 부합 전망...목표주가 200만원 유지&nbsp;&nbsp;한국증권신문",
+      "source": "한국증권신문",
+      "publishedAt": "Wed, 07 Oct 2026 05:18:17 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE10R3J6R3BmUzlqdzVvZ2VnWmZlTi1OeTJkU3EyVDEyREdTYVBUWk9yZnNRaUcta19kLVZHS29VWWU4OGlrOFpiRzd0cUNLM1JTT0cwWVI1WHdoSEZpNVZWOENSZ2RFSE0wdWhJ?oc=5",
       "query": "특징주 하락 when:1d"
     },
     {
-      "title": "[美특징주]파라마운트스카이댄스, 워너브라더스 인수 마무리…주가는 하락 - 이데일리",
-      "summary": "[美특징주]파라마운트스카이댄스, 워너브라더스 인수 마무리…주가는 하락&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 16:30:49 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdjdjb0xEY3lPbW1hejVORFZDNmlwXzUwWVdpSWhXREVBSXVsYXE1UllyaXAzcDNiWEZSNk80ejhGcWZXeUFKQUtOSEVpTGVpR0tOVWlaZnRPX2xUUWVaRDdQUEg0ay15Y09MQVN4QXdNSTVkY3VUT0ZVZFRLY3owWA?oc=5",
+      "title": "[특징주] 천일고속·동양고속, 서울고속버스터미널 재개발 기대감에 나란히 '상한가' - 와이드경제",
+      "summary": "[특징주] 천일고속·동양고속, 서울고속버스터미널 재개발 기대감에 나란히 '상한가'&nbsp;&nbsp;와이드경제",
+      "source": "와이드경제",
+      "publishedAt": "Wed, 07 Oct 2026 05:06:29 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9tZUphVlVKMkJVT2piSGx0NFduR0xZZzUtLW9PeEdKUGJCZ3BsdmJjX3Bad1JaMVdZNnFYUEFvbTdEczBteTV4eVA5YUVRckNnOXVraUMtUDFGaEQ1LUU0MDhUcG9vbjRScGVQYw?oc=5",
+      "query": "특징주 상한가 when:1d"
+    },
+    {
+      "title": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - Daum",
+      "summary": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까&nbsp;&nbsp;Daum",
+      "source": "Daum",
+      "publishedAt": "Wed, 07 Oct 2026 04:43:25 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE83SlB2QmlvWDhUMFJydUdsODl3TDJHQzVfWFQyejlmWFRIc2c2SXFhS3FfTEFxSllXeTVOY3VzZDF1SVp6WVhkOHdlMktzSzg?oc=5",
       "query": "특징주 하락 when:1d"
     },
     {
-      "title": "[美특징주]네오제노믹스, 승계 계획 발표에 11%대 급락 - www.edaily.co.kr",
-      "summary": "[美특징주]네오제노믹스, 승계 계획 발표에 11%대 급락&nbsp;&nbsp;www.edaily.co.kr",
-      "source": "www.edaily.co.kr",
-      "publishedAt": "Tue, 06 Oct 2026 16:22:53 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE02ZmdncXNBcE40YnJUbndHX1p2WjNKUmRXbG9Xd1FBTFdkWUo4XzdFZ0pnS2UyOGVRZGFPc1lNa2JQZHNmdWtiOG1IdlJIT0pXQl9YZldpbE9FTHk4UXdKYllZaHZ1OEdTT0tJ?oc=5",
-      "query": "특징주 하락 when:1d"
+      "title": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까 - 아주경제",
+      "summary": "[특징주] 상장 첫날 280%↑ 와이즈플래닛, 7거래일째 하락…공모가로 원복할까&nbsp;&nbsp;아주경제",
+      "source": "아주경제",
+      "publishedAt": "Wed, 07 Oct 2026 04:43:20 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBGdzNrS2hNX2JmdmkzZ0dRZVVmZXlYelQ2b1AwUC1kYzJ1VUZXMnlaRmxmWjRYbWtFOG51dmM4aEdBeHoyeXdmcmZhejF0YVpMOFRYMGJEN3F4Z9IBWEFVX3lxTE81SkVPRHQxYjRCTkYtR3B4cWlqM3BOTjJ0QUtHNFFIXzZzemM3RTZfUTRSTVprWE9ZTUx5aE5XdW9PNHc0T0lBamtyMko3dldwNUFpR2dRZVk?oc=5",
+      "query": "코스닥 특징주 하락 when:1d"
     },
     {
-      "title": "[美특징주]코르테바, JP모간 \"바이러 분사 이후 저평가\" 의견에 급등 - 이데일리",
-      "summary": "[美특징주]코르테바, JP모간 \"바이러 분사 이후 저평가\" 의견에 급등&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 16:16:43 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQT3pZb2NnSHY5MHQwQ3RuRkh6bDRGQ0lQY29hZXFhbmk5b1o3aW1zeXdPTXAtS1lrVUJZUXlsSzdrMEdEYVcweHcydTZLeUdYZm1Bdmw3cEFIb1hrdW45RTJFV0VUdzhjNXVKZkhad1VpU1FSYVhEMExsUnFOWERxSQ?oc=5",
+      "title": "특징주, GS-LPG 테마 상승세에 5.01% ↑ - 매일경제 마켓",
+      "summary": "특징주, GS-LPG 테마 상승세에 5.01% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 03:43:16 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8zaEwzUjRMWE1yV1NYSTdGV2thUVdoSEMtLVRlUmN6RGRvelV6T2taTmFKVjgzemFPLU5pb3ItUGVpQ0phbDRCMkRnQzBEUjV5a3c?oc=5",
       "query": "특징주 상승 when:1d"
     },
     {
-      "title": "[美특징주]레나, 버크셔해서웨이가 지분 매입 소식에 상승 - 이데일리",
-      "summary": "[美특징주]레나, 버크셔해서웨이가 지분 매입 소식에 상승&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 16:04:36 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOaXJhU2I5Sl9FbUJFUlRzcVNBUXpGbTFJVUNUY0I3NDJDOUZZNzNKWnVVRFk0cFp3QUpFaFljbmlHbzgwSTZZSDA2ai1WSVd3LW1GcFVSVVZQcUxqNTd5NnU0a1hMVlBnc2ZaVldpX1dYQUdJQUsxR1F1Ykd6ZnpqNg?oc=5",
+      "title": "[특징주] 외국인 '퀀텀레일·국제약품', 기관 '솔루엠·케이씨텍' 러브콜 - 뉴스티앤티",
+      "summary": "[특징주] 외국인 '퀀텀레일·국제약품', 기관 '솔루엠·케이씨텍' 러브콜&nbsp;&nbsp;뉴스티앤티",
+      "source": "뉴스티앤티",
+      "publishedAt": "Wed, 07 Oct 2026 02:51:21 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5DeXI1clBMcXI2b1FDZHlPWXAxNFJKZnlNMWlhOFg2TnEzSGM2bnlyRW95NjdsQjFQejRGWHQ4OFpwNklZa21uVFNDOVhGWXUxSlBtOEF2VFFwdmQzRWNlRG5BMWlqZjhWSnc?oc=5",
+      "query": "특징주 하락 when:1d"
+    },
+    {
+      "title": "특징주, 서부T&D-부동산 보유 자산주 테마 상승세에 5.07% ↑ - 매일경제 마켓",
+      "summary": "특징주, 서부T&D-부동산 보유 자산주 테마 상승세에 5.07% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 02:43:16 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE15UDF5b1AyOTZ0ZVpxcWtyZGlwemVUTmp1R2w5MHdZbEZTNUtEM2JCOWRRZG1ZVThFRTJBal8wa3dqaWM5NTl0ZjQteEk2RnhTd3c?oc=5",
       "query": "특징주 상승 when:1d"
     },
     {
-      "title": "[美특징주]펜엔터테인먼트, 도이체방크 투자의견·목표가 상향에 강세 - m.edaily.co.kr",
-      "summary": "[美특징주]펜엔터테인먼트, 도이체방크 투자의견·목표가 상향에 강세&nbsp;&nbsp;m.edaily.co.kr",
-      "source": "m.edaily.co.kr",
-      "publishedAt": "Tue, 06 Oct 2026 15:44:37 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQbm5ZQnE0Ny03clFaQlk3NVlNNWpEM1ZReEY0OVd2dG01YXdyNEYwdjZpUTluTVRjeGxQYjMyeXNrVlBBQ2VOSy1xczFhSnphbkNVbkZkQ0JyRXRxa3Z5R2xobFozcXRIVTA5Njk1a2VXMG9iV0NNV3NmcElEQkdHTw?oc=5",
+      "title": "[특징주] 풍산, 3분기 영업이익 컨센서스 하회 우려…주가 11%대 하락 - Daum",
+      "summary": "[특징주] 풍산, 3분기 영업이익 컨센서스 하회 우려…주가 11%대 하락&nbsp;&nbsp;Daum",
+      "source": "Daum",
+      "publishedAt": "Wed, 07 Oct 2026 02:21:29 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5tSUZIZVB4d0ZzM1czZkx3NDhiMUxwdXhmcVpIVjREOWRyc0syNVM4eXVZS1ZfempQMUc5Vjh2U3pZOTRlN2ZsSENLMzRMSnRYNEdsaXN6SDR3YlVZ?oc=5",
       "query": "특징주 하락 when:1d"
     },
     {
-      "title": "[미국 특징주] 셰브론 CEO \"경유 수출 막으면 美 기름값 오른다\" - 뉴스핌",
-      "summary": "[미국 특징주] 셰브론 CEO \"경유 수출 막으면 美 기름값 오른다\"&nbsp;&nbsp;뉴스핌",
-      "source": "뉴스핌",
-      "publishedAt": "Tue, 06 Oct 2026 14:19:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLRDQ1WS1UcDFoaEl0ODBpVVM2MHVCcFdFSnFjUmZRMHJEdjRoZzNhTnMxaTFvbkJpNjR6VHpZajlZcGJycl9sYTJwcEVKNEdPQ2JLcXBrUDYtR3VD?oc=5",
+      "title": "LG전자 3Q 어닝미스…주가 5%대 하락 - 머니투데이 - 머니투데이",
+      "summary": "LG전자 3Q 어닝미스…주가 5%대 하락 - 머니투데이&nbsp;&nbsp;머니투데이",
+      "source": "머니투데이",
+      "publishedAt": "Wed, 07 Oct 2026 02:17:01 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBDdWxGdFdobDdqTDdWRGFUaW5kXzVLQ1hwd1NkWjZ1X2haSlphQ1U1T3puMVJjYURXaU9lR3NBMGxyVWotUmt3U1kwb2NrVnl1MXNoaEx1MEpvYmZDcG5qamYxeVdhbWxGVWlXMzln0gFuQVVfeXFMUEN1bEZ0V2hsN2pMN1ZEYVRpbmRfNUtDWHB3U2RaNnVfaFpKWmFDVTVPem4xUmNhRFdpT2VHc0EwbHJVai1Sa3dTWTBvY2tWeXUxc2hoTHUwSm9iZkNwbmpqZjF5V2FtbEZVaVczOWc?oc=5",
       "query": "특징주 하락 when:1d"
     },
     {
-      "title": "뉴욕증시 개장 전 특징주...콘스텔레이션에너지·옵션케어헬스·AMD↑ VS 애플·에너지주↓ - 뉴스핌",
-      "summary": "뉴욕증시 개장 전 특징주...콘스텔레이션에너지·옵션케어헬스·AMD↑ VS 애플·에너지주↓&nbsp;&nbsp;뉴스핌",
-      "source": "뉴스핌",
-      "publishedAt": "Tue, 06 Oct 2026 13:25:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBGNlh4ckxlT0gxdzlGakxmUWZfOE92NXFYQk9LUVhzamZWaGgwdnlOMXhWZnRmYzZ6cEFxSW80TzhsbU9Md0tkNVg4LXRhTmgzT09fbFlCZU1HQkxt?oc=5",
+      "title": "특징주, SK가스-LPG 테마 상승세에 5.04% ↑ - 매일경제 마켓",
+      "summary": "특징주, SK가스-LPG 테마 상승세에 5.04% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 02:13:12 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBwVnMzWUlOM0RVRnNLbVZNY3g0MUVGNEgwT1d6d0FhNWxnTWpmbkZGT2R5ZERmRmg4amY2aURmeU5tSklxNVkzU1AwWGNOLWdZd3c?oc=5",
+      "query": "특징주 상승 when:1d"
+    },
+    {
+      "title": "[특징주] 종근당바이오, 러 페스트 유출 의심에 美 예의주시 '상승' - 전국매일신문",
+      "summary": "[특징주] 종근당바이오, 러 페스트 유출 의심에 美 예의주시 '상승'&nbsp;&nbsp;전국매일신문",
+      "source": "전국매일신문",
+      "publishedAt": "Wed, 07 Oct 2026 02:12:42 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8xRUlyYmpXZWxCQkR6SldVNEJoUDNYN3I4WkxXR0pZUUIzbzhWek1xLW5CWWhyQWk4RERKMVFwcTN2NmVxSG04T1VfRU5HM2lxQ1RtM2pUbWtJeGRLZF9palFUdk5ZMDhYS3lTdlF3?oc=5",
+      "query": "특징주 상승 when:1d"
+    },
+    {
+      "title": "[특징주] 국제약품, 러시아 페스트 유출 의심에 미국도 상황 주시 '上' 기록 - 전국매일신문",
+      "summary": "[특징주] 국제약품, 러시아 페스트 유출 의심에 미국도 상황 주시 '上' 기록&nbsp;&nbsp;전국매일신문",
+      "source": "전국매일신문",
+      "publishedAt": "Wed, 07 Oct 2026 02:06:42 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VSzB4Snoxb1V3VzNOWk9RRGxrTldRWHByNE9sRklWVWZUdzFBd2RWazMzZWd3cWZjcGVkMWx1MkxYUVZ1M2UzakVYdGRvblNMbkt3T2Uta2VTWDVkNk5oYmE0ZFBaRnJESkJCLVh3?oc=5",
+      "query": "특징주 상한가 when:1d"
+    },
+    {
+      "title": "특징주, 한국파마-코로나19(치료제/백신 개발 등) 테마 상승세에 10.93% ↑ - 매일경제",
+      "summary": "특징주, 한국파마-코로나19(치료제/백신 개발 등) 테마 상승세에 10.93% ↑&nbsp;&nbsp;매일경제",
+      "source": "매일경제",
+      "publishedAt": "Wed, 07 Oct 2026 02:03:48 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9QVXJKc2NPNVN3WThwMmpMcFRSZzNGQnljN2J1V003SXV1cXpyNmN2MDFZRm9CeXFLZUY1MHhmZVVONFRfdVE?oc=5",
+      "query": "특징주 상승 when:1d"
+    },
+    {
+      "title": "[ET특징주] 더코디, 330억 규모 CB 발행 철회… 주가 12% 급락 - 전자신문",
+      "summary": "[ET특징주] 더코디, 330억 규모 CB 발행 철회… 주가 12% 급락&nbsp;&nbsp;전자신문",
+      "source": "전자신문",
+      "publishedAt": "Wed, 07 Oct 2026 02:03:36 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE0xVHlKdHBNa0VlWFUxbzgwOThyU29BSjVnZnVhTW11cEo0ZHRQVGxia2N5RFhSZ0F3MzlpRGVKZjBNMFE1OHJiQ0JzZExtZw?oc=5",
       "query": "특징주 하락 when:1d"
     },
     {
-      "title": "[美특징주]웨스턴디지털, 개장전 3% 하락…도시바의 HDD 생산 확대에 엇갈리는 월가 - 이데일리",
-      "summary": "[美특징주]웨스턴디지털, 개장전 3% 하락…도시바의 HDD 생산 확대에 엇갈리는 월가&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 11:54:34 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQ19rR0pSRm56Z2E0bThsN2IxUXRrWDFtc1c2WEU0LWVGZ0FNTWVmQlg4N1ZDNWRZTHM4akE5N1h2NjlHSU92bE1xZnFuMXNKb2dNdEx6eHRhY1ZiVnQwZmxsUnRfUE9sUEQzbW5YSkNwSlY0aG1lRGUwcGRNQ0lxSw?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[美특징주]씨게이트, 도시바와 TDK HDD용 자기헤드 사업부 인수 경쟁…개장전↓ - 이데일리",
-      "summary": "[美특징주]씨게이트, 도시바와 TDK HDD용 자기헤드 사업부 인수 경쟁…개장전↓&nbsp;&nbsp;이데일리",
-      "source": "이데일리",
-      "publishedAt": "Tue, 06 Oct 2026 11:26:47 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbVppRUZrZy01TzFQbkxWcXFrOTBuaVlSRV9nQnBtYnk3RmtvbGNWYWFpZFR5OHFNUEhNZTdwOGlhRy11SE0tN2YtYnVyUWx1LUpVYTljUnhfcnczQzVkMENfcENJZ2t6cU1pN19iSWpNT3NFOFpuSUM1RElMUXoxUg?oc=5",
-      "query": "특징주 하락 when:1d"
+      "title": "특징주, 한국파마-코로나19(치료제/백신 개발 등) 테마 상승세에 10.93% ↑ - 매일경제 마켓",
+      "summary": "특징주, 한국파마-코로나19(치료제/백신 개발 등) 테마 상승세에 10.93% ↑&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 07 Oct 2026 02:03:27 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ORV9FTDhrbnhkQ0ZrZ0NBckdkMnJOSV9lTEQxMjRUMVUtR21vZUZYQzk3MFRtbExzeHJ4UGNGTnVIejFiMl9sSzdBMWpnYmYzZlE?oc=5",
+      "query": "코스피 특징주 상승 when:1d"
     }
   ],
   "investorFlowNewsCandidates": [
+    {
+      "title": "[특징주] 외국인 '퀀텀레일·국제약품', 기관 '솔루엠·케이씨텍' 러브콜 - 뉴스티앤티",
+      "summary": "[특징주] 외국인 '퀀텀레일·국제약품', 기관 '솔루엠·케이씨텍' 러브콜&nbsp;&nbsp;뉴스티앤티",
+      "source": "뉴스티앤티",
+      "publishedAt": "Wed, 07 Oct 2026 02:51:21 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5DeXI1clBMcXI2b1FDZHlPWXAxNFJKZnlNMWlhOFg2TnEzSGM2bnlyRW95NjdsQjFQejRGWHQ4OFpwNklZa21uVFNDOVhGWXUxSlBtOEF2VFFwdmQzRWNlRG5BMWlqZjhWSnc?oc=5",
+      "query": "코스닥 외국인 기관 순매수 순매도"
+    },
     {
       "title": "[표] 10월 6일 매매동향...외국인·기관 주성엔지니어링 순매수에 주가도 '껑충' - 핀포인트뉴스",
       "summary": "[표] 10월 6일 매매동향...외국인·기관 주성엔지니어링 순매수에 주가도 '껑충'&nbsp;&nbsp;핀포인트뉴스",
@@ -1156,6 +1205,14 @@
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
+      "title": "한 손 조작이 편한지 살펴보는 토토 꽁머니 디시 제로 모바일 화면 - Calgary Roughnecks",
+      "summary": "한 손 조작이 편한지 살펴보는 토토 꽁머니 디시 제로 모바일 화면&nbsp;&nbsp;Calgary Roughnecks",
+      "source": "Calgary Roughnecks",
+      "publishedAt": "Mon, 05 Oct 2026 06:28:32 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPR1pRY3B6NjVwTWd3ODI4TlA1enNqZlQ0OVdtTkV3eFR4QWdwTGN6TDhfQ3FrSFVfODRlVU9RS3N4Y2RUZlE4WEdFRUZoZ3JuTU1HWVc3a0pfd3A4a1ZsbzNwRDI3cU5ENHdhZnZxSnZEZlhVdjZiano5ZTBIbk9PMXl4cXp3eWFxTm05UmZHRGI5MTVLUDh1SmlSMFhmSEYtRHMta3FpUUtOWjQ3T21fSkVfamNXMk5Kay1xZw?oc=5",
+      "query": "연기금 투신 금융투자 순매수 증시"
+    },
+    {
       "title": "외국인 8.3조 순매도, 추석 뒤 ‘선별매수’…LG전자·한미반도체는 샀다 - 뉴스투데이",
       "summary": "외국인 8.3조 순매도, 추석 뒤 ‘선별매수’…LG전자·한미반도체는 샀다&nbsp;&nbsp;뉴스투데이",
       "source": "뉴스투데이",
@@ -1189,17 +1246,17 @@
       "publishedAt": "Mon, 05 Oct 2026 00:01:56 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9qekZxSjlfMTR5QUdiQVNCaEdPZW1EZkVXUDJNMkZtWHhtUFNzblZjMDBxTTJaTV9GM0hRaERxb19WRC1hTzZoN3BjUWIxU0py?oc=5",
       "query": "오늘 경제지표 발표 증시 일정 한국 미국"
-    },
-    {
-      "title": "다음주 한국·미국 주요 일정｜서비스업 PMI·FOMC 의사록, 국내 증시는 단 3거래일 - 네이버 프리미엄콘텐츠",
-      "summary": "다음주 한국·미국 주요 일정｜서비스업 PMI·FOMC 의사록, 국내 증시는 단 3거래일&nbsp;&nbsp;네이버 프리미엄콘텐츠",
-      "source": "네이버 프리미엄콘텐츠",
-      "publishedAt": "Fri, 02 Oct 2026 23:50:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1lTDlEc3NxZ29lazFZbHFuQjEwclFXU01RRXZfbnVOcnZ2emxBZ2RITTVLMjJtcFhBV3MyanJiOXQxMlVoRjZWamFkbEh0QUpvSGFHT2ZiTV9wR2JzMXE0WGxreDNiTlZpLXRkYlV1SGhqQ3FpN01jNnVSSTFDUQ?oc=5",
-      "query": "오늘 경제지표 발표 증시 일정 한국 미국"
     }
   ],
   "sectorThemeNewsCandidates": [
+    {
+      "title": "10/7(수), 장마감 브리핑 - 프리미엄콘텐츠",
+      "summary": "10/7(수), 장마감 브리핑&nbsp;&nbsp;프리미엄콘텐츠",
+      "source": "프리미엄콘텐츠",
+      "publishedAt": "Wed, 07 Oct 2026 06:48:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE94WnZYMHdFRzBZNW9KdFlkSzhfaTY3Z2xvLWNaT0dhMmRvSlBLY1NMRUN5YUZZQjRRSXZnM0hfY0g5R2hEQUcxSE56UUtTZkJlVVk3eE9jc1dJSVgtM01sdXlpRnlTZlprak4yUnZQcHNmbmVkV25mUW5zVGRNdw?oc=5",
+      "query": "오늘 강세 업종 약세 업종 코스피 코스닥"
+    },
     {
       "title": "[마감시황] 코스피 7000선 내줘…코스닥은 2.98% 올라 - 자본시장뉴스",
       "summary": "[마감시황] 코스피 7000선 내줘…코스닥은 2.98% 올라&nbsp;&nbsp;자본시장뉴스",
@@ -1235,16 +1292,25 @@
   ],
   "investorFlows": {
     "status": "unavailable",
-    "generatedAt": "2026-10-07T08:30:43.337028+09:00",
+    "generatedAt": "2026-10-07T16:00:42.492750+09:00",
     "source": "pykrx/KRX + NAVER Finance/KRX",
     "sourceUrls": [],
-    "reason": "KOSPI:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410; KOSDAQ:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410",
-    "markets": []
+    "collectionWindow": {
+      "lookbackDays": 14,
+      "end": "2026-10-07"
+    },
+    "markets": [],
+    "errors": {
+      "KOSPI": "pykrx:missing_krx_credentials; naver:HTTP Error 410: 410",
+      "KOSDAQ": "pykrx:missing_krx_credentials; naver:HTTP Error 410: 410"
+    },
+    "reason": "KOSPI:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410; KOSDAQ:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410"
   },
   "sourceStatus": {
     "yahoo:kospi": "ok",
+    "npay:kospi": "not_needed",
     "yahoo:kosdaq": "ok",
-    "yahoo:usdkrw": "unavailable:index_after_information_cutoff",
+    "yahoo:usdkrw": "ok",
     "yahoo:nasdaq": "ok",
     "yahoo:sp500": "ok",
     "yahoo:nasdaq_futures": "ok",
