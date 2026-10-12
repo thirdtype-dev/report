@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-10-12T05:00:27.434Z",
+  "generated_at": "2026-10-12T06:00:27.704Z",
   "generated_date": "2026-10-12",
-  "slot_hour": 14,
-  "cycle_label": "KST_1400",
-  "slot_label": "14:00",
+  "slot_hour": 15,
+  "cycle_label": "KST_1500",
+  "slot_label": "15:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 14:00 실시간 급등",
+    "title": "KST 15:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 11건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "두산테스나",
+      "stockCode": "131970",
+      "summary": "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠",
+      "headline": "두산테스나 주가, 10월 12일 장중 129,500원 3.35% 상승",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 이데일리 기반 기사 2건",
+        "제목 기준 변동률 단서 +3.4%",
+        "두산테스나 주가, 10월 12일 장중 129,500원 3.35% 상승",
+        "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-10-12T06:00:27.704Z",
+      "cycleLabel": "KST_1500",
+      "direction": "up",
+      "changeRate": 3.35,
+      "latestHeadline": "두산테스나 주가, 10월 12일 장중 129,500원 3.35% 상승",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9JMngwaW44ME1xREZXVTR1TWtXU2ttallMdk9PRHhodWlwbWpGeHNYSWdoZG9BdlZNSzh4cGo4UDJWWjVSRVFwM044ZWlUYjl6NG95dkdlTWNmYy1BYXI2cDFWR0NvVWl6SjI4T2QzazRtQQ?oc=5",
+      "publishedAt": "Mon, 12 Oct 2026 01:19:32 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산테스나 주가, 10월 12일 장중 129,500원 3.35% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9JMngwaW44ME1xREZXVTR1TWtXU2ttallMdk9PRHhodWlwbWpGeHNYSWdoZG9BdlZNSzh4cGo4UDJWWjVSRVFwM044ZWlUYjl6NG95dkdlTWNmYy1BYXI2cDFWR0NvVWl6SjI4T2QzazRtQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠",
+          "source": "이데일리",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbk1UaDVkUjV0aVlfNEt1ckNEcTFxRWQ5bWY0a25UYlo4cENYVlIzRUZfTDV3Y205aHdKQjhWSEE0ZHlIc29kd2lFcjh4NExlT2dpejlwMXdOYURCR2x6dXVtUk1YXzhWRXBBa3M0YlQ2UC15UmxDQ0V6TDVHQ3lOQg?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "두산테스나 주가, 10월 12일 장중 129,500원 3.35% 상승",
+      "polishedBody": "두산테스나는 4분기부터 실적 개선 전망…적정주가 16만9000원 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 주가, 10월 12일 장중 129,500원 3.35% 상승 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
     {
       "stockName": "셀트리온",
       "stockCode": "068270",
@@ -174,47 +215,6 @@
       "hasNews": true,
       "polishedHeadline": "리노공업 주가, 10월 12일 장중 79,700원 9.33% 하락",
       "polishedBody": "리노공업은 반도체 테스트 소켓 수요 확대에 주목...주가는 양호한 흐름 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 주가, 10월 12일 장중 79,700원 9.33% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "두산테스나",
-      "stockCode": "131970",
-      "summary": "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠",
-      "headline": "두산테스나 주가 3.35% 상승 12만9500원…한일 반도체 협력 확대 속 관심",
-      "evidencePoints": [
-        "출처 CBC뉴스, 이데일리 기반 기사 2건",
-        "제목 기준 변동률 단서 +3.4%",
-        "두산테스나 주가 3.35% 상승 12만9500원…한일 반도체 협력 확대 속 관심",
-        "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 4,
-      "updatedAt": "2026-10-12T02:00:24.419Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": 3.35,
-      "latestHeadline": "두산테스나 주가 3.35% 상승 12만9500원…한일 반도체 협력 확대 속 관심",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5TblUyM1pSY3BwODRlLWE0VW91bHJ4aWNXUXEzMkZwaUpENFFqLXdydmFHbF9WQUtuekZQZ2F1WndZaHBzeXhva3dfTjVjU1ZyOTZIWnNiMXZfel9qaUw2ejhIVjAtQ3Br?oc=5",
-      "publishedAt": "Mon, 12 Oct 2026 00:59:24 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산테스나 주가 3.35% 상승 12만9500원…한일 반도체 협력 확대 속 관심",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5TblUyM1pSY3BwODRlLWE0VW91bHJ4aWNXUXEzMkZwaUpENFFqLXdydmFHbF9WQUtuekZQZ2F1WndZaHBzeXhva3dfTjVjU1ZyOTZIWnNiMXZfel9qaUw2ejhIVjAtQ3Br?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbk1UaDVkUjV0aVlfNEt1ckNEcTFxRWQ5bWY0a25UYlo4cENYVlIzRUZfTDV3Y205aHdKQjhWSEE0ZHlIc29kd2lFcjh4NExlT2dpejlwMXdOYURCR2x6dXVtUk1YXzhWRXBBa3M0YlQ2UC15UmxDQ0V6TDVHQ3lOQg?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "두산테스나 3.35% 상승 12만9500원…한일 반도체 협력 확대 속 관심",
-      "polishedBody": "두산테스나는 4분기부터 실적 개선 전망…적정주가 16만9000원 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 3.35% 상승 12만9500원…한일 반도체 협력 확대 속 관심 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "솔브레인",
@@ -450,6 +450,37 @@
   ],
   "items": [
     {
+      "timestamp": "Mon, 12 Oct 2026 01:19:32 GMT",
+      "symbol": "131970",
+      "name": "두산테스나",
+      "changeRate": 3.35,
+      "price": null,
+      "summary": "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9JMngwaW44ME1xREZXVTR1TWtXU2ttallMdk9PRHhodWlwbWpGeHNYSWdoZG9BdlZNSzh4cGo4UDJWWjVSRVFwM044ZWlUYjl6NG95dkdlTWNmYy1BYXI2cDFWR0NvVWl6SjI4T2QzazRtQQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 이데일리 기반 기사 2건",
+        "제목 기준 변동률 단서 +3.4%",
+        "두산테스나 주가, 10월 12일 장중 129,500원 3.35% 상승",
+        "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산테스나 주가, 10월 12일 장중 129,500원 3.35% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9JMngwaW44ME1xREZXVTR1TWtXU2ttallMdk9PRHhodWlwbWpGeHNYSWdoZG9BdlZNSzh4cGo4UDJWWjVSRVFwM044ZWlUYjl6NG95dkdlTWNmYy1BYXI2cDFWR0NvVWl6SjI4T2QzazRtQQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠",
+          "source": "이데일리",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbk1UaDVkUjV0aVlfNEt1ckNEcTFxRWQ5bWY0a25UYlo4cENYVlIzRUZfTDV3Y205aHdKQjhWSEE0ZHlIc29kd2lFcjh4NExlT2dpejlwMXdOYURCR2x6dXVtUk1YXzhWRXBBa3M0YlQ2UC15UmxDQ0V6TDVHQ3lOQg?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Mon, 12 Oct 2026 02:06:46 GMT",
       "symbol": "068270",
       "name": "셀트리온",
@@ -570,37 +601,6 @@
           "title": "리노공업, 반도체 테스트 소켓 수요 확대에 주목...주가는 양호한 흐름",
           "source": "증권일보",
           "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95TjZ0VUlSYjlBVnN2ajNVSF9Rd0lpdENCbXBibWw1dTgyLTJvZ052U0tCWHd5dFFHajR1M21KN25vUjF5WmRrSGY5N1RsRFllRVRTNTlBNDFXNUlKby1NUg?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 12 Oct 2026 00:59:24 GMT",
-      "symbol": "131970",
-      "name": "두산테스나",
-      "changeRate": 3.35,
-      "price": null,
-      "summary": "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5TblUyM1pSY3BwODRlLWE0VW91bHJ4aWNXUXEzMkZwaUpENFFqLXdydmFHbF9WQUtuekZQZ2F1WndZaHBzeXhva3dfTjVjU1ZyOTZIWnNiMXZfel9qaUw2ejhIVjAtQ3Br?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 CBC뉴스, 이데일리 기반 기사 2건",
-        "제목 기준 변동률 단서 +3.4%",
-        "두산테스나 주가 3.35% 상승 12만9500원…한일 반도체 협력 확대 속 관심",
-        "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산테스나 주가 3.35% 상승 12만9500원…한일 반도체 협력 확대 속 관심",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5TblUyM1pSY3BwODRlLWE0VW91bHJ4aWNXUXEzMkZwaUpENFFqLXdydmFHbF9WQUtuekZQZ2F1WndZaHBzeXhva3dfTjVjU1ZyOTZIWnNiMXZfel9qaUw2ejhIVjAtQ3Br?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산테스나, 4분기부터 실적 개선 전망…적정주가 16만9000원-메리츠",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbk1UaDVkUjV0aVlfNEt1ckNEcTFxRWQ5bWY0a25UYlo4cENYVlIzRUZfTDV3Y205aHdKQjhWSEE0ZHlIc29kd2lFcjh4NExlT2dpejlwMXdOYURCR2x6dXVtUk1YXzhWRXBBa3M0YlQ2UC15UmxDQ0V6TDVHQ3lOQg?oc=5"
         }
       ]
     },
