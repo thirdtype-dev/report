@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-10-12T03:00:23.004Z",
+  "generated_at": "2026-10-12T04:00:20.395Z",
   "generated_date": "2026-10-12",
-  "slot_hour": 12,
-  "cycle_label": "KST_1200",
-  "slot_label": "12:00",
+  "slot_hour": 13,
+  "cycle_label": "KST_1300",
+  "slot_label": "13:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 12:00 실시간 급등",
+    "title": "KST 13:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 11건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
+      "headline": "삼성전자 목표가 63만원…주가는 3거래일 4.71% 하락",
+      "evidencePoints": [
+        "출처 자본시장뉴스, 조세일보 기반 기사 2건",
+        "제목 기준 변동률 단서 -4.7%",
+        "삼성전자 목표가 63만원…주가는 3거래일 4.71% 하락",
+        "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]"
+      ],
+      "mentionScore": 93.4,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-10-12T04:00:20.395Z",
+      "cycleLabel": "KST_1300",
+      "direction": "down",
+      "changeRate": -4.71,
+      "latestHeadline": "삼성전자 목표가 63만원…주가는 3거래일 4.71% 하락",
+      "source": "자본시장뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBGY0stZUc5aWdrSFlXSDYtSDNQTmpYYjUwZ3o1cjdraVp6QlZjbWx0THBKQUhwUUt4dFRicWhwcUxORXk5R01oQlo3b19OdGdsSzF3cnNQWEMtRGZYc29xU1FXUGV5bDA?oc=5",
+      "publishedAt": "Mon, 12 Oct 2026 03:45:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자 목표가 63만원…주가는 3거래일 4.71% 하락",
+          "source": "자본시장뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBGY0stZUc5aWdrSFlXSDYtSDNQTmpYYjUwZ3o1cjdraVp6QlZjbWx0THBKQUhwUUt4dFRicWhwcUxORXk5R01oQlo3b19OdGdsSzF3cnNQWEMtRGZYc29xU1FXUGV5bDA?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
+          "source": "조세일보",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tM3FZZER1Ti12Ri05dmVpU3NQanJ0UzUwREl4NTRKS3BJRDZLWTJyWG1HUnpENTltWFVzRWJoREdKWGtaT2pwcVAwMWlRY19QZURMRmhnajUxaVhaOUlj?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자 63만원…주가는 3거래일 4.71% 하락",
+      "polishedBody": "삼성전자는 역대급 실적에도 주가 '주춤' 이슈로 단기 변동성이 확대됐습니다. 역대급 실적에도 주가 '주춤' 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 목표가 63만원…주가는 3거래일 4 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "원익IPS",
       "stockCode": "240810",
@@ -291,46 +332,6 @@
       "polishedBody": "SK하이닉스는 메리츠증권 \"목표주가 상향 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 메리츠증권 \"목표주가 상향 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 상향, 3분기 영업이익 80.1조 추정\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "\"삼성전자, 글로벌 영업이익 1위...60만원 간다\"",
-      "headline": "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
-      "evidencePoints": [
-        "출처 조세일보, 부산파이낸셜뉴스 기반 기사 2건",
-        "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
-        "\"삼성전자, 글로벌 영업이익 1위...60만원 간다\""
-      ],
-      "mentionScore": 87.9,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-10-12T01:00:20.109Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
-      "source": "조세일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5CU1NQRWZOdWVOQTBUQUpMUVVuRGZHMEIyNFVwWlQtZXJwSEF5ajJZZ1NLSkdSemtxQlBESFhoMlBhNl96Vzdub05aSVpWR3hMa3dZWmpOajdjQ1ZsWGdOYUd1SGFmZmFCNlFYTWdsTzhwZ1hv?oc=5",
-      "publishedAt": "Mon, 12 Oct 2026 00:53:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
-          "source": "조세일보",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5CU1NQRWZOdWVOQTBUQUpMUVVuRGZHMEIyNFVwWlQtZXJwSEF5ajJZZ1NLSkdSemtxQlBESFhoMlBhNl96Vzdub05aSVpWR3hMa3dZWmpOajdjQ1ZsWGdOYUd1SGFmZmFCNlFYTWdsTzhwZ1hv?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"삼성전자, 글로벌 영업이익 1위...60만원 간다\"",
-          "source": "부산파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95ZGtQbGZiVkpJM0lURjlZYkNJWkFWUXhSVi1JMGNWbkU1MVpIb3VOTC1jM1pYTHp1NVlNcWlIaEFTRmNablI2M1RVMHlkSW5fZ2lBUEJBd0stRDRw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전자 역대급 실적에도",
-      "polishedBody": "삼성전자는 \", 글로벌 영업이익 1위...60만원 간다\" 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 \", 글로벌 영업이익 1위...60만원 간다\" 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 역대급 실적에도 주가 '주춤' 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
       "stockName": "삼성전기",
       "stockCode": "009150",
       "summary": "삼성전기 주가 상승 중",
@@ -448,6 +449,37 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Mon, 12 Oct 2026 03:45:00 GMT",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": -4.71,
+      "price": null,
+      "summary": "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
+      "source": "자본시장뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBGY0stZUc5aWdrSFlXSDYtSDNQTmpYYjUwZ3o1cjdraVp6QlZjbWx0THBKQUhwUUt4dFRicWhwcUxORXk5R01oQlo3b19OdGdsSzF3cnNQWEMtRGZYc29xU1FXUGV5bDA?oc=5",
+      "mentionScore": 93.4,
+      "evidencePoints": [
+        "출처 자본시장뉴스, 조세일보 기반 기사 2건",
+        "제목 기준 변동률 단서 -4.7%",
+        "삼성전자 목표가 63만원…주가는 3거래일 4.71% 하락",
+        "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자 목표가 63만원…주가는 3거래일 4.71% 하락",
+          "source": "자본시장뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBGY0stZUc5aWdrSFlXSDYtSDNQTmpYYjUwZ3o1cjdraVp6QlZjbWx0THBKQUhwUUt4dFRicWhwcUxORXk5R01oQlo3b19OdGdsSzF3cnNQWEMtRGZYc29xU1FXUGV5bDA?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
+          "source": "조세일보",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tM3FZZER1Ti12Ri05dmVpU3NQanJ0UzUwREl4NTRKS3BJRDZLWTJyWG1HUnpENTltWFVzRWJoREdKWGtaT2pwcVAwMWlRY19QZURMRmhnajUxaVhaOUlj?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Mon, 12 Oct 2026 01:26:45 GMT",
       "symbol": "240810",
@@ -654,36 +686,6 @@
           "title": "메리츠증권 \"SK하이닉스 목표주가 상향, 3분기 영업이익 80.1조 추정\"",
           "source": "비즈니스포스트",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBCcmZQYnd1Q0Q4QjQwdl9TZkNrbnRfbklrcUZGeEhHV2w5MjRIT0Zrdks0M3pnUmt3WDliYkxCaTRyXzBUYVotNjVUSUhoOVpwN24tMlg2UnVjVHFnN3puX2tfaWIzOVR6eVRSVlB4QjNMWE0?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 12 Oct 2026 00:53:00 GMT",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "\"삼성전자, 글로벌 영업이익 1위...60만원 간다\"",
-      "source": "조세일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5CU1NQRWZOdWVOQTBUQUpMUVVuRGZHMEIyNFVwWlQtZXJwSEF5ajJZZ1NLSkdSemtxQlBESFhoMlBhNl96Vzdub05aSVpWR3hMa3dZWmpOajdjQ1ZsWGdOYUd1SGFmZmFCNlFYTWdsTzhwZ1hv?oc=5",
-      "mentionScore": 87.9,
-      "evidencePoints": [
-        "출처 조세일보, 부산파이낸셜뉴스 기반 기사 2건",
-        "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
-        "\"삼성전자, 글로벌 영업이익 1위...60만원 간다\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자 역대급 실적에도 주가 '주춤'...증권가 시선은 주주환원으로 [주가동향]",
-          "source": "조세일보",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5CU1NQRWZOdWVOQTBUQUpMUVVuRGZHMEIyNFVwWlQtZXJwSEF5ajJZZ1NLSkdSemtxQlBESFhoMlBhNl96Vzdub05aSVpWR3hMa3dZWmpOajdjQ1ZsWGdOYUd1SGFmZmFCNlFYTWdsTzhwZ1hv?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "\"삼성전자, 글로벌 영업이익 1위...60만원 간다\"",
-          "source": "부산파이낸셜뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95ZGtQbGZiVkpJM0lURjlZYkNJWkFWUXhSVi1JMGNWbkU1MVpIb3VOTC1jM1pYTHp1NVlNcWlIaEFTRmNablI2M1RVMHlkSW5fZ2lBUEJBd0stRDRw?oc=5"
         }
       ]
     },
