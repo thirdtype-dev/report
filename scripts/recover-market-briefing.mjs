@@ -12,9 +12,9 @@ export function matchingRun(runs, slot, knownIds = null) {
     .sort((a, b) => b.id - a.id)[0] ?? null;
 }
 
-function matchingFailure(runs, slot, excludedId) {
+function matchingUnsuccessfulRun(runs, slot, excludedId) {
   return matchingRun(runs.filter((run) => run.id !== excludedId
-    && (run.conclusion === 'failure' || run.status === 'failure')), slot);
+    && isTerminal(run) && !isSuccess(run)), slot);
 }
 
 function isTerminal(run) {
@@ -33,9 +33,10 @@ function isTransientPublicCheckError(error) {
     || (error instanceof TypeError && /fetch failed|network|socket|timed out|timeout/iu.test(message));
 }
 
-function alreadyReportedResult(run, dispatched) {
+function unsuccessfulResult(run, dispatched) {
   return {
-    reason: 'publication_failed_already_reported',
+    reason: 'publication_not_verified',
+    conclusion: run.conclusion ?? run.status ?? 'unknown',
     dispatched,
     verifiedPublication: false,
     runId: run.id,
@@ -44,10 +45,6 @@ function alreadyReportedResult(run, dispatched) {
 }
 
 function logRecoveryResult(result, stdout = console.log) {
-  if (result.reason === 'publication_failed_already_reported') {
-    stdout(`publication_failed_already_reported verified-publication=false run_url=${result.runUrl ?? ''}`);
-    return;
-  }
   stdout(JSON.stringify(result));
 }
 
@@ -100,14 +97,14 @@ export async function recoverBriefing({ date, phase, repository, token, fetchImp
   let dispatched = false;
 
   if (!run && existingRun && isTerminal(existingRun)) {
-    if (scheduled && (existingRun.conclusion === 'failure' || existingRun.status === 'failure')) {
-      return alreadyReportedResult(existingRun, false);
+    if (scheduled && !isSuccess(existingRun)) {
+      return unsuccessfulResult(existingRun, false);
     }
     if (isSuccess(existingRun)) {
       if (await duplicateSuppressed(existingRun)) {
         if (scheduled) {
-          const failedRun = matchingFailure(await listRuns(), slot, existingRun.id);
-          if (failedRun) return alreadyReportedResult(failedRun, false);
+          const failedRun = matchingUnsuccessfulRun(await listRuns(), slot, existingRun.id);
+          if (failedRun) return unsuccessfulResult(failedRun, false);
           throw new Error(`publisher_suppressed_without_prior_failure:${existingRun.id}`);
         }
       } else {
@@ -133,13 +130,13 @@ export async function recoverBriefing({ date, phase, repository, token, fetchImp
     if (now() >= deadline) break;
     if (run?.status === 'completed') {
       if (run.conclusion !== 'success') {
-        if (scheduled && run.conclusion === 'failure') return alreadyReportedResult(run, dispatched);
+        if (scheduled) return unsuccessfulResult(run, dispatched);
         throw new Error(`publish_workflow_${run.conclusion || 'unknown'}:${run.id}`);
       }
       if (await duplicateSuppressed(run)) {
         if (scheduled) {
-          const failedRun = matchingFailure(await listRuns(), slot, run.id);
-          if (failedRun) return alreadyReportedResult(failedRun, dispatched);
+          const failedRun = matchingUnsuccessfulRun(await listRuns(), slot, run.id);
+          if (failedRun) return unsuccessfulResult(failedRun, dispatched);
           throw new Error(`publisher_suppressed_without_prior_failure:${run.id}`);
         }
         if (dispatched) throw new Error(`manual_publisher_suppressed:${run.id}`);

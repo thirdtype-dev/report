@@ -903,7 +903,14 @@ function briefingQualityIssues(marketResearch, report) {
     if (currentStructuredFlows && report?.investorFlows == null) {
       issues.push('investor_flow_copy_missing');
     }
-  } else {
+  }
+
+  return [...issues, ...briefingSourceIssues(marketResearch)];
+}
+
+function briefingSourceIssues(marketResearch) {
+  const issues = [];
+  if (PHASE === 'pre_market') {
     const investorFlowUsable = isInvestorFlowsAvailable(marketResearch?.investorFlows)
       || hasUsableCandidates(marketResearch?.investorFlowNewsCandidates);
     if (!investorFlowUsable) {
@@ -945,7 +952,7 @@ function hasCurrentCompleteReport(existingHtml) {
 }
 
 function resolveBriefingPublishPlan({ marketResearch, report, existingHtml }) {
-  const issues = briefingQualityIssues(marketResearch, report);
+  const issues = report == null ? briefingSourceIssues(marketResearch) : briefingQualityIssues(marketResearch, report);
   if (issues.length === 0) {
     return { action: 'publish_new', issues };
   }
@@ -2666,9 +2673,10 @@ function rankFreshNewsCandidates(items, limit = 10, referenceTimeMs = Date.now()
   ].slice(0, limit);
 }
 
-async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10, { candidateFilter } = {}) {
+async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10, { candidateFilter, circuit = { failures: 0 } } = {}) {
   const collected = [];
   for (const query of queries) {
+    if (circuit.failures >= 2) break;
     const searchQuery = BRIEFING_AS_OF
       ? `${query.replace(/when:\S+/g, '')} after:${dateKey(new Date(Date.parse(BRIEFING_AS_OF) - 86400000))} before:${dateKey(new Date(Date.parse(BRIEFING_AS_OF) + 86400000))}`
       : query;
@@ -2677,8 +2685,10 @@ async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10, { candidateFi
       const items = parseGoogleNewsRss(await withMarketSourceRetry(
         'google-news', () => fetchText(url)
       )).map((item) => ({ ...item, query }));
+      circuit.failures = 0;
       collected.push(...items);
     } catch (error) {
+      circuit.failures = isTransientMarketSourceError(error) ? circuit.failures + 1 : 0;
       collected.push({
         title: `${query} 뉴스 수집 실패`,
         summary: error.message,
@@ -2709,7 +2719,9 @@ async function fetchGoogleNews(queries = NEWS_QUERIES, limit = 10, { candidateFi
 async function fetchNewsCandidateGroup(queries, limit, statusKey, sourceStatus, options = {}) {
   try {
     const items = await fetchGoogleNews(queries, limit, options);
-    sourceStatus[statusKey] = items.length === 0
+    sourceStatus[statusKey] = options.circuit?.failures >= 2
+      ? (hasUsableCandidates(items) ? 'partial' : 'unavailable:google_news_circuit_open')
+      : items.length === 0
       ? 'empty'
       : items.some((item) => item.status === 'unavailable') ? 'partial' : 'ok';
     return items;
@@ -2719,9 +2731,9 @@ async function fetchNewsCandidateGroup(queries, limit, statusKey, sourceStatus, 
   }
 }
 
-async function fetchNewsCandidateGroupWithFallback(primaryQueries, fallbackQueries, limit, statusKey, sourceStatus) {
+async function fetchNewsCandidateGroupWithFallback(primaryQueries, fallbackQueries, limit, statusKey, sourceStatus, options = {}) {
   const primarySourceStatus = {};
-  const primary = await fetchNewsCandidateGroup(primaryQueries, limit, statusKey, primarySourceStatus);
+  const primary = await fetchNewsCandidateGroup(primaryQueries, limit, statusKey, primarySourceStatus, options);
   if (hasUsableCandidates(primary)) {
     sourceStatus[statusKey] = primarySourceStatus[statusKey];
     return primary;
@@ -2733,7 +2745,7 @@ async function fetchNewsCandidateGroupWithFallback(primaryQueries, fallbackQueri
     limit,
     statusKey,
     fallbackSourceStatus,
-    { candidateFilter: (item) => FALLBACK_NEWS_TITLE_ANCHOR_RE.test(item?.title ?? '') }
+    { ...options, candidateFilter: (item) => FALLBACK_NEWS_TITLE_ANCHOR_RE.test(item?.title ?? '') }
   );
   const items = [
     ...fallback,
@@ -2744,10 +2756,28 @@ async function fetchNewsCandidateGroupWithFallback(primaryQueries, fallbackQueri
     status === 'partial' || status?.startsWith('unavailable:')
   ));
   const hasUnavailableItems = items.some((item) => item?.status === 'unavailable');
-  sourceStatus[statusKey] = items.length === 0
+  sourceStatus[statusKey] = options.circuit?.failures >= 2
+    ? (hasUsableCandidates(items) ? 'partial' : 'unavailable:google_news_circuit_open')
+    : items.length === 0
     ? 'empty'
     : hadUnavailableQueries || hasUnavailableItems ? 'partial' : 'ok';
   return items;
+}
+
+function investorFlowFailureKinds(investorFlows) {
+  if (isInvestorFlowsAvailable(investorFlows)) return [];
+  // Never log the raw collector error: it may contain subprocess arguments or credentials.
+  const reason = String(investorFlows?.reason ?? '');
+  const kinds = [
+    ['collector_timeout', /timeout|timed out|ETIMEDOUT/iu],
+    ['pykrx_unavailable', /No module named ['"]pykrx|pykrx_unavailable/iu],
+    ['http_error', /HTTP Error|fetch_failed_\d{3}/iu],
+    ['no_prior_session_data', /no_prior_session_flow_data/u],
+    ['no_data_in_lookback', /no_investor_flow_data_within_/u],
+    ['invalid_payload', /invalid_pykrx_payload/u],
+    ['disabled', /disabled_by_env/u]
+  ].filter(([, pattern]) => pattern.test(reason)).map(([kind]) => kind);
+  return kinds.length ? kinds : ['source_unavailable'];
 }
 
 function unavailableInvestorFlows(reason) {
@@ -2870,6 +2900,8 @@ function filterPreMarketInvestorFlows(investorFlows, targetDate = PRE_MARKET_TRA
 async function collectPublicMarketResearch({ fetchInvestorFlowsImpl = fetchInvestorFlows } = {}) {
   const indices = [];
   const sourceStatus = {};
+  // Shared only within this collection; two exhausted transient queries stop the provider.
+  const newsOptions = { circuit: { failures: 0 } };
 
   for (const item of YAHOO_SYMBOLS) {
     if (BRIEFING_AS_OF && ['kospi', 'kosdaq'].includes(item.key)) {
@@ -2952,24 +2984,27 @@ async function collectPublicMarketResearch({ fetchInvestorFlowsImpl = fetchInves
     MARKET_NEWS_FALLBACK_QUERIES,
     10,
     'googleNews',
-    sourceStatus
+    sourceStatus,
+    newsOptions
   );
   const marketEventNewsCandidates = await fetchNewsCandidateGroup(
     MARKET_EVENT_NEWS_QUERIES,
     20,
     'marketEventNewsCandidates',
-    sourceStatus
+    sourceStatus,
+    newsOptions
   );
-  const stockNewsCandidates = await fetchNewsCandidateGroup(NOTABLE_STOCK_QUERIES, 18, 'stockNewsCandidates', sourceStatus);
-  const investorFlowNewsCandidates = await fetchNewsCandidateGroup(INVESTOR_FLOW_NEWS_QUERIES, 12, 'investorFlowNewsCandidates', sourceStatus);
-  const disclosureNewsCandidates = await fetchNewsCandidateGroup(DISCLOSURE_NEWS_QUERIES, 12, 'disclosureNewsCandidates', sourceStatus);
-  const scheduleNewsCandidates = await fetchNewsCandidateGroup(MARKET_SCHEDULE_QUERIES, 12, 'scheduleNewsCandidates', sourceStatus);
+  const stockNewsCandidates = await fetchNewsCandidateGroup(NOTABLE_STOCK_QUERIES, 18, 'stockNewsCandidates', sourceStatus, newsOptions);
+  const investorFlowNewsCandidates = await fetchNewsCandidateGroup(INVESTOR_FLOW_NEWS_QUERIES, 12, 'investorFlowNewsCandidates', sourceStatus, newsOptions);
+  const disclosureNewsCandidates = await fetchNewsCandidateGroup(DISCLOSURE_NEWS_QUERIES, 12, 'disclosureNewsCandidates', sourceStatus, newsOptions);
+  const scheduleNewsCandidates = await fetchNewsCandidateGroup(MARKET_SCHEDULE_QUERIES, 12, 'scheduleNewsCandidates', sourceStatus, newsOptions);
   const sectorThemeNewsCandidates = await fetchNewsCandidateGroupWithFallback(
     SECTOR_THEME_QUERIES,
     SECTOR_THEME_FALLBACK_QUERIES,
     14,
     'sectorThemeNewsCandidates',
-    sourceStatus
+    sourceStatus,
+    newsOptions
   );
 
   const investorFlows = filterPreMarketInvestorFlows(await fetchInvestorFlowsImpl());
@@ -3675,8 +3710,20 @@ async function main() {
     marketNews: marketResearch.marketNews?.length ?? 0,
     stockNewsCandidates: marketResearch.stockNewsCandidates?.length ?? 0,
     sectorThemeNewsCandidates: marketResearch.sectorThemeNewsCandidates?.length ?? 0,
-    investorFlows: marketResearch.investorFlows?.status ?? 'unavailable'
+    investorFlows: marketResearch.investorFlows?.status ?? 'unavailable',
+    investorFlowFailureKinds: investorFlowFailureKinds(marketResearch.investorFlows),
+    newsCircuitOpen: Object.values(marketResearch.sourceStatus ?? {}).some((status) => status === 'unavailable:google_news_circuit_open')
   });
+  // Reject missing evidence before spending time on the writer. Preserve a complete
+  // report for this exact slot using the same policy as the final quality gate.
+  const sourcePlan = resolveBriefingPublishPlan({
+    marketResearch, existingHtml: await readExistingCommittedReportHtml()
+  });
+  if (sourcePlan.action === 'preserve_existing') {
+    await preserveExistingCommittedReportOutputs();
+    console.warn('[market-briefing] preserved existing complete report after source failure', { issues: sourcePlan.issues });
+    return;
+  }
   const { report: generatedReport, writer } = await writeReport(marketResearch);
   const report = prepareReportForPublish(marketResearch, generatedReport);
   const publishPlan = resolveBriefingPublishPlan({
@@ -3757,3 +3804,5 @@ export const __testNewsQueries = NEWS_QUERIES;
 export const __testSectorThemeQueries = SECTOR_THEME_QUERIES;
 export const __testMarketNewsFallbackQueries = MARKET_NEWS_FALLBACK_QUERIES;
 export const __testSectorThemeFallbackQueries = SECTOR_THEME_FALLBACK_QUERIES;
+
+export const __testInvestorFlowFailureKinds = investorFlowFailureKinds;

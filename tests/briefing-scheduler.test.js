@@ -40,7 +40,7 @@ test('expired scheduled recoveries skip at the CLI boundary without publication 
     {
       name: 'pre-market recovery at noon',
       env: { GITHUB_EVENT_NAME: 'schedule', SCHEDULE: '50 23 * * 0-4' },
-      now: new Date('2026-09-29T12:00:00+09:00'),
+      now: new Date('2026-09-29T09:00:00+09:00'),
       reason: 'outside_phase_publication_window'
     },
     {
@@ -69,8 +69,8 @@ test('scheduled guard reads wall time after metadata crosses noon or midnight', 
   const scenarios = [
     {
       cron: '50 23 * * 0-4',
-      starts: '2026-09-29T11:59:59+09:00',
-      afterMetadata: '2026-09-29T12:00:00+09:00',
+      starts: '2026-09-29T08:59:59+09:00',
+      afterMetadata: '2026-09-29T09:00:00+09:00',
       createdAt: '2026-09-29T02:59:59Z',
       reason: 'outside_phase_publication_window'
     },
@@ -200,14 +200,15 @@ test('recovery attaches existing active slot and propagates publication failure'
   }), /publish_workflow_failure:42/);
   assert.deepEqual(calls, ['GET', 'GET']);
 });
-test('scheduled recovery records an already reported terminal publisher failure without dispatching', async () => {
+test('scheduled recovery records an unverified terminal publisher failure without dispatching', async () => {
   const failedRun = { ...run, status: 'completed', conclusion: 'failure', html_url: 'https://github.com/owner/report/actions/runs/42' };
   const calls = [];
   const result = await recoverBriefing({ date, phase, now: () => +now, repository: 'owner/report', token: 'fake', scheduled: true, checkPublic: async () => false,
     fetchImpl: async (url, options) => { calls.push(options.method); return response(url.includes('?per_page') ? { workflow_runs: [failedRun] } : null); }
   });
   assert.deepEqual(result, {
-    reason: 'publication_failed_already_reported',
+    reason: 'publication_not_verified',
+    conclusion: 'failure',
     dispatched: false,
     verifiedPublication: false,
     runId: 42,
@@ -216,7 +217,7 @@ test('scheduled recovery records an already reported terminal publisher failure 
   assert.deepEqual(calls, ['GET']);
   let log = '';
   logRecoveryResult(result, (message) => { log = message; });
-  assert.equal(log, `publication_failed_already_reported verified-publication=false run_url=${failedRun.html_url}`);
+  assert.deepEqual(JSON.parse(log), result);
 });
 test('scheduled observer reports a publisher failure reached after attach or dispatch', async () => {
   for (const scenario of [
@@ -233,7 +234,7 @@ test('scheduled observer reports a publisher failure reached after attach or dis
         return response(failedRun);
       }
     });
-    assert.equal(result.reason, 'publication_failed_already_reported', scenario.name);
+    assert.equal(result.reason, 'publication_not_verified', scenario.name);
     assert.equal(result.dispatched, scenario.expectedDispatched, scenario.name);
     assert.equal(result.verifiedPublication, false, scenario.name);
     assert.equal(result.runUrl, failedRun.html_url, scenario.name);
@@ -250,7 +251,7 @@ test('scheduled recovery maps a suppressed success back to the original failed r
       return response({ workflow_runs: [suppressedRun, failedRun] });
     }
   });
-  assert.equal(result.reason, 'publication_failed_already_reported');
+  assert.equal(result.reason, 'publication_not_verified');
   assert.equal(result.verifiedPublication, false);
   assert.equal(result.runUrl, failedRun.html_url);
   assert.equal(calls.filter((call) => call.startsWith('POST ')).length, 0);
@@ -359,4 +360,48 @@ test('unknown public-check errors remain strict', async () => {
     fetchImpl: async () => { requests += 1; return response({ workflow_runs: [] }); }
   }), /public_authentication_rejected/u);
   assert.equal(requests, 0);
+});
+
+test('scheduled recovery records cancelled and timed-out publishers in every observation path', async () => {
+  for (const conclusion of ['cancelled', 'timed_out', 'skipped']) {
+    for (const path of ['existing', 'attached', 'dispatched', 'suppressed']) {
+      const terminal = { ...run, status: 'completed', conclusion, html_url: 'https://github.com/owner/report/actions/runs/42' };
+      const suppressed = { ...run, id: 43, status: 'completed', conclusion: 'success' };
+      let posts = 0;
+      let lists = 0;
+      const result = await recoverBriefing({ date, phase, now: () => +now, sleep: async () => {}, repository: 'owner/report', token: 'fake', scheduled: true,
+        checkPublic: async () => false,
+        verifyPublic: async () => { throw new Error('must not claim publication'); },
+        fetchImpl: async (url, options) => {
+          if (options.method === 'POST') { posts++; return response(null, 204); }
+          if (url.includes('/jobs?')) return response({ jobs: [{ steps: [{ name: 'Suppress duplicate automatic attempt', conclusion: 'success' }] }] });
+          if (url.includes('?per_page')) {
+            lists++;
+            return response({ workflow_runs: path === 'suppressed' ? [suppressed, terminal]
+              : lists === 1 && path === 'attached' ? [run]
+              : lists === 1 && path === 'dispatched' ? [] : [terminal] });
+          }
+          return response(terminal);
+        }
+      });
+      assert.equal(result.reason, 'publication_not_verified', `${path}:${conclusion}`);
+      assert.equal(result.conclusion, conclusion);
+      assert.equal(result.verifiedPublication, false);
+      assert.equal(result.runUrl, terminal.html_url);
+      assert.equal(posts, path === 'dispatched' ? 1 : 0);
+    }
+  }
+});
+
+test('pre-market window ends at 09:00 KST for manual and scheduled recovery before any network call', async () => {
+  assert.equal(resolveSlot({ phase: 'pre_market', now: new Date('2026-10-20T08:59:59+09:00') }).date, '2026-10-20');
+  for (const time of ['09:00:00', '11:10:00']) {
+    for (const scheduled of [false, true]) {
+      await assert.rejects(recoverBriefing({ date: '2026-10-20', phase: 'pre_market', scheduled,
+        now: () => +new Date(`2026-10-20T${time}+09:00`),
+        checkPublic: async () => { assert.fail('expired recovery must not make requests'); },
+        fetchImpl: async () => { assert.fail('expired recovery must not dispatch'); }
+      }), /outside_phase_publication_window/);
+    }
+  }
 });
