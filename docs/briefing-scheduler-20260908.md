@@ -3,7 +3,7 @@
 ## Implemented
 
 - Workflow requests freeze a KST trading date and phase; explicit requests use run name `briefing:YYYY-MM-DD:phase`. Phase-only legacy callers remain accepted for the same-day publication window.
-- Regular pre-market runs must remain between 08:00 and noon KST; post-market runs between 16:00 and midnight. Revalidate before generation, commit and each actual push. Historical post-market backfill still requires an exact 16:00 KST cutoff within 48 hours.
+- Regular pre-market runs must remain from 08:00 up to (excluding) 09:00 KST; post-market runs between 16:00 and midnight. Revalidate before generation, commit and each actual push. Historical post-market backfill still requires an exact 16:00 KST cutoff within 48 hours.
 - Under the shared publication concurrency lock, fetch current main and skip generation when a complete matching slot exists. Duplicate requests may still be accepted/queued, but they do not regenerate an already committed slot.
 - Both publish and recovery require actual public HTML with exact date, phase, time, structured body and no placeholders. Script/style/comment templates and numeric-encoded placeholders cannot satisfy publication checks.
 - Recovery follows the matching workflow through terminal state, propagates failures, and verifies Pages. Dispatch HTTP 204 alone is never completion.
@@ -21,7 +21,7 @@ Manual recovery, publishing, unknown schedule strings and metadata, validation o
 
 Signal automatic dispatches and scheduled recovery use the exact `briefing:YYYY-MM-DD:phase` run title on `main` as durable slot state. They attach to an active run, report an existing terminal run, and do not dispatch again because public HTML is absent. The publisher repeats the terminal-run check inside the shared `report-publish` lock before generation. It records the prior run URL and skip reason; a skipped attempt makes no publication claim. Manual recovery explicitly sends `automatic=false`, so an operator can retry a failed slot after correcting its cause.
 
-Scheduled recovery treats a publisher conclusion of `failure` as already reported by GitHub and exits with `verified-publication=false` plus the original failure run URL. If an automatic duplicate later completes successfully only because the publisher guard skipped it, recovery identifies the suppression step and still reports the original failure. Real successful runs are verified against public HTML. Authentication, malformed run-history, calendar and non-transient network errors remain failures; transient provider retries stay bounded inside one publisher run.
+Scheduled recovery records terminal unsuccessful publishers (including `failure`, `cancelled`, and `timed_out`) as `publication_not_verified`, with the original conclusion, run URL, and `verifiedPublication: false`. This is a completed observation, not publication success or proof that a notification was delivered. If an automatic duplicate later completes successfully only because the publisher guard skipped it, recovery identifies the suppression step and still reports the original failure. Real successful runs are verified against public HTML. Authentication, malformed run-history, calendar and non-transient network errors remain failures; transient provider retries stay bounded inside one publisher run.
 
 ## Remaining operational work (not represented as fixed)
 
@@ -40,3 +40,11 @@ Cloud runtime rollback anchors and IAM/secret boundaries are recorded in Signal 
 - Actual duplicate-slot publish run34167247031, job101880615518:success. Frozen target2026-09-07 post_market; generation and commit steps skipped because committed slot was complete; actual public publication check succeeded.
 - Source implementation6e39092c17a1f40e06176ba2e2ed7e5cd3169dca. The one-off smoke dispatcher is removed after verification.
 - Signal server source60d445413241654a2421d722e40c5af45561304e:21 observer tests plus25 related calendar/scheduler/security/history cases passed, typecheck passed; Cloud Run deployment still pending authentication.
+
+## Source outages and stale morning recovery — 2026-10-20
+
+Pre-market publication closes at 09:00 KST for automatic and manual requests, including the existing checks immediately before generation, commit, and each push. Delayed scheduled recovery skips after this cutoff. A morning report is never automatically converted into an intraday report.
+
+Two consecutive Google News queries that exhaust transient retries stop further Google News requests in that collection, including alternate-query fallbacks. Successful requests reset the counter; each new collection starts fresh. Already collected usable evidence is retained. This bounds provider-wide outages without weakening the source quality gate or adding an unverified alternative provider.
+
+Required source evidence is checked before calling the writer. A complete existing report for the exact slot is preserved; otherwise missing evidence fails generation without publishing. Coverage logs include provider circuit status and allowlisted investor-flow failure categories, never raw collector error text.

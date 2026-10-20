@@ -2424,3 +2424,39 @@ test('writer retries an incomplete report shape instead of failing the publish i
     false
   );
 });
+
+test('source preflight rejects missing pre-market evidence before a report exists', async () => {
+  const module = await importBriefingModule('pre_market');
+  assert.throws(() => module.__testResolveBriefingPublishPlan({ marketResearch: {}, existingHtml: '' }),
+    /briefing_quality_gate_failed:investor_flow_source_unavailable,sector_theme_source_unavailable/);
+  const candidate = { title: '증시 수급', summary: '기관 순매수', sourceUrl: 'https://example.com/evidence' };
+  assert.equal(module.__testResolveBriefingPublishPlan({
+    marketResearch: { investorFlowNewsCandidates: [candidate], marketNews: [candidate] }, existingHtml: ''
+  }).action, 'publish_new');
+});
+
+test('news provider circuit limits exhausted 503 queries across groups and resets for a new collection', async () => {
+  const module = await importBriefingModule('pre_market');
+  const circuit = { failures: 0 };
+  const sourceStatus = {};
+  let requests = 0;
+  await withGoogleNewsStub(async () => {
+    requests++;
+    return { ok: false, status: 503, headers: { get: () => '0' }, text: async () => '' };
+  }, async () => {
+    await module.__testFetchNewsCandidateGroupWithFallback(['one', 'two', 'three'], ['fallback'], 10, 'first', sourceStatus, { circuit });
+    await module.__testFetchNewsCandidateGroupWithFallback(['another'], ['fallback'], 10, 'second', sourceStatus, { circuit });
+    assert.equal(requests, 6);
+    assert.equal(sourceStatus.first, 'unavailable:google_news_circuit_open');
+    assert.equal(sourceStatus.second, 'unavailable:google_news_circuit_open');
+    await module.__testFetchNewsCandidateGroupWithFallback(['new'], [], 10, 'new', {}, { circuit: { failures: 0 } });
+    assert.equal(requests, 9);
+  });
+});
+
+test('investor flow diagnostics emit categories without raw collector details', async () => {
+  const module = await importBriefingModule();
+  assert.deepEqual(module.__testInvestorFlowFailureKinds({ status: 'unavailable', reason: "No module named 'pykrx'; HTTP Error 503; secret-example-value" }), ['pykrx_unavailable', 'http_error']);
+  assert.deepEqual(module.__testInvestorFlowFailureKinds({ status: 'unavailable', reason: 'secret-example-value' }), ['source_unavailable']);
+  assert.deepEqual(module.__testInvestorFlowFailureKinds({ status: 'ok', markets: [{}] }), []);
+});

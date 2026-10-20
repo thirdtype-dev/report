@@ -18,7 +18,7 @@ export function resolveSlot({ phase = 'pre_market', tradingDate = '', asOf = '',
     if (phase !== 'post_market' || asOf !== `${date}T16:00:00+09:00` || !Number.isFinite(ms) || ms > +now || +now - ms > 48 * 3600000) throw new Error('invalid_backfill_cutoff');
   } else {
     if (date !== current.date || originalDate !== current.date) throw new Error('delayed_slot_date_mismatch');
-    if (phase === 'pre_market' ? current.hour < 8 || current.hour >= 12 : current.hour < 16) throw new Error('outside_phase_publication_window');
+    if (phase === 'pre_market' ? current.hour < 8 || current.hour >= 9 : current.hour < 16) throw new Error('outside_phase_publication_window');
   }
   return { phase, date, key: `briefing:${date}:${phase}` };
 }
