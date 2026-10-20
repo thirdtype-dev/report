@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-10-20T04:00:17.859Z",
+  "generated_at": "2026-10-20T05:00:15.244Z",
   "generated_date": "2026-10-20",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 8건",
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 9건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성바이오로직스",
+      "stockCode": "207940",
+      "summary": "[특징주] 삼성바이오로직스, 장중 1%대 약세 흐름 : 기업주식정보 재경일보",
+      "headline": "[특징주] 삼성바이오로직스, 장중 1%대 약세 흐름 : 기업주식정보",
+      "evidencePoints": [
+        "출처 재경일보 기반 기사 1건",
+        "제목 기준 변동률 단서 -1.0%",
+        "[특징주] 삼성바이오로직스, 장중 1%대 약세 흐름 : 기업주식정보"
+      ],
+      "mentionScore": 59.6,
+      "sentimentLabel": "negative",
+      "channelCount": 1,
+      "updatedAt": "2026-10-20T05:00:15.244Z",
+      "cycleLabel": "KST_1400",
+      "direction": "down",
+      "changeRate": -1,
+      "latestHeadline": "[특징주] 삼성바이오로직스, 장중 1%대 약세 흐름 : 기업주식정보",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1BSGxDTG5rR0VzNU5XeGNKTjFKZ3A1V3dRTGRkMlN1U090b250SmphQnppcHh4b01vLTEzOXRkSXFadmpvemZrdHlwUQ?oc=5",
+      "publishedAt": "Tue, 20 Oct 2026 01:21:16 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성바이오로직스, 장중 1%대 약세 흐름 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1BSGxDTG5rR0VzNU5XeGNKTjFKZ3A1V3dRTGRkMlN1U090b250SmphQnppcHh4b01vLTEzOXRkSXFadmpvemZrdHlwUQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성바이오로직스 장중 1%대 약세 흐름 기업주식정보",
+      "polishedBody": "삼성바이오로직스는 장중 1%대 약세 흐름 기업주식정보 재경일보 이슈로 단기 변동성이 확대됐습니다. 장중 약세 흐름 기업주식정보 재경일보 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
     {
       "stockName": "삼양식품",
       "stockCode": "003230",
@@ -339,6 +373,30 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Tue, 20 Oct 2026 01:21:16 GMT",
+      "symbol": "207940",
+      "name": "삼성바이오로직스",
+      "changeRate": -1,
+      "price": null,
+      "summary": "[특징주] 삼성바이오로직스, 장중 1%대 약세 흐름 : 기업주식정보 재경일보",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1BSGxDTG5rR0VzNU5XeGNKTjFKZ3A1V3dRTGRkMlN1U090b250SmphQnppcHh4b01vLTEzOXRkSXFadmpvemZrdHlwUQ?oc=5",
+      "mentionScore": 59.6,
+      "evidencePoints": [
+        "출처 재경일보 기반 기사 1건",
+        "제목 기준 변동률 단서 -1.0%",
+        "[특징주] 삼성바이오로직스, 장중 1%대 약세 흐름 : 기업주식정보"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성바이오로직스, 장중 1%대 약세 흐름 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1BSGxDTG5rR0VzNU5XeGNKTjFKZ3A1V3dRTGRkMlN1U090b250SmphQnppcHh4b01vLTEzOXRkSXFadmpvemZrdHlwUQ?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Tue, 20 Oct 2026 01:54:50 GMT",
       "symbol": "003230",
