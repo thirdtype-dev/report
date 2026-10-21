@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-10-21T04:00:16.284Z",
+  "generated_at": "2026-10-21T05:00:17.550Z",
   "generated_date": "2026-10-21",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 7건",
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 8건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성바이오로직스",
+      "stockCode": "207940",
+      "summary": "[특징주] 삼성바이오로직스 1%대 상승… 140만원선 유지 : 기업주식정보 재경일보",
+      "headline": "[특징주] 삼성바이오로직스 1%대 상승… 140만원선 유지 : 기업주식정보",
+      "evidencePoints": [
+        "출처 재경일보 기반 기사 1건",
+        "제목 기준 변동률 단서 +1.0%",
+        "[특징주] 삼성바이오로직스 1%대 상승… 140만원선 유지 : 기업주식정보"
+      ],
+      "mentionScore": 59.6,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-10-21T05:00:17.550Z",
+      "cycleLabel": "KST_1400",
+      "direction": "up",
+      "changeRate": 1,
+      "latestHeadline": "[특징주] 삼성바이오로직스 1%대 상승… 140만원선 유지 : 기업주식정보",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9HQll5Y3h5Slc3S2ZlNXdFMFA3RlN0UmdXVzQtSE8xQ2dHcnRVeVNsbkpxWDRXdXFNVWZabnJ1aEo2N05falYyZ2VyNA?oc=5",
+      "publishedAt": "Wed, 21 Oct 2026 01:21:28 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성바이오로직스 1%대 상승… 140만원선 유지 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9HQll5Y3h5Slc3S2ZlNXdFMFA3RlN0UmdXVzQtSE8xQ2dHcnRVeVNsbkpxWDRXdXFNVWZabnJ1aEo2N05falYyZ2VyNA?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성바이오로직스 1%대 상승… 140만원선 유지 기업주식정보",
+      "polishedBody": "삼성바이오로직스는 1%대 상승… 140만원선 유지 기업주식정보 재경일보 재료가 부각되며 단기 모멘텀을 형성했습니다. 140만원선 유지 기업주식정보 재경일보 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
     {
       "stockName": "플리토",
       "stockCode": "300080",
@@ -284,6 +318,30 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Wed, 21 Oct 2026 01:21:28 GMT",
+      "symbol": "207940",
+      "name": "삼성바이오로직스",
+      "changeRate": 1,
+      "price": null,
+      "summary": "[특징주] 삼성바이오로직스 1%대 상승… 140만원선 유지 : 기업주식정보 재경일보",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9HQll5Y3h5Slc3S2ZlNXdFMFA3RlN0UmdXVzQtSE8xQ2dHcnRVeVNsbkpxWDRXdXFNVWZabnJ1aEo2N05falYyZ2VyNA?oc=5",
+      "mentionScore": 59.6,
+      "evidencePoints": [
+        "출처 재경일보 기반 기사 1건",
+        "제목 기준 변동률 단서 +1.0%",
+        "[특징주] 삼성바이오로직스 1%대 상승… 140만원선 유지 : 기업주식정보"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼성바이오로직스 1%대 상승… 140만원선 유지 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9HQll5Y3h5Slc3S2ZlNXdFMFA3RlN0UmdXVzQtSE8xQ2dHcnRVeVNsbkpxWDRXdXFNVWZabnJ1aEo2N05falYyZ2VyNA?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Wed, 21 Oct 2026 01:17:00 GMT",
       "symbol": "300080",
