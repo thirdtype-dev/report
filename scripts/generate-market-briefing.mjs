@@ -828,6 +828,12 @@ function hasUsableCandidates(items, minimum = 1) {
   return items.filter((item) => !candidateLooksUnavailable(item)).length >= minimum;
 }
 
+function placeholderFieldPaths(value, path = '') {
+  if (typeof value === 'string') return PLACEHOLDER_COPY_RE.test(value) ? [path] : [];
+  if (!value || typeof value !== 'object') return [];
+  return Object.entries(value).flatMap(([key, entry]) => placeholderFieldPaths(entry, path ? `${path}.${key}` : key));
+}
+
 function reportContainsPlaceholderCopy(report) {
   return PLACEHOLDER_COPY_RE.test(JSON.stringify(report ?? {}));
 }
@@ -1964,6 +1970,7 @@ function prepareAndValidateWriterReport(marketResearch, report) {
     const error = new Error(`briefing_writer_quality_failed:${issues.join(',')}`);
     error.code = 'briefing_writer_quality_failed';
     error.qualityIssues = issues;
+    error.invalidFields = placeholderFieldPaths(prepared).slice(0, 12);
     throw error;
   }
   return prepared;
@@ -2082,6 +2089,7 @@ function buildPrompt(marketResearch) {
     '사용자에게 노출되는 문장은 한국어 존댓말로 작성한다.',
     `아래 ${config.sessionLabel} 전용 섹션 구조와 라벨을 유지한다.`,
     '출력 JSON은 지정된 모든 키를 반드시 포함하고, 섹션의 중첩 객체·배열 구조를 유지하며 문자열 항목과 배열 원소는 문자열로 작성한다.',
+    '모든 출력 필드(특히 tomorrowStrategy.outlook과 checklist 포함)에서 확인 필요, 확인 불가, 확인되지 않았습니다 같은 미완성 표현을 쓰지 않는다. 전략과 체크리스트는 구체적으로 관찰할 변수와 조건을 완결된 문장으로 쓴다. 근거 없는 종목이나 수치를 만들어 항목 수를 채우지 않는다.',
     '반드시 JSON만 출력한다. 마크다운, 코드펜스, 설명 문장을 붙이지 않는다.',
     '',
     '출력 스키마:',
@@ -3411,7 +3419,8 @@ async function writeReport(marketResearch) {
 function buildWriterRetryPrompt(prompt, error) {
   if (!error?.qualityIssues?.length && !String(error?.message ?? '').startsWith('invalid_report_shape:')) return prompt;
   const issues = error.qualityIssues?.join(',') ?? error.message;
-  return `${prompt}\n\n이전 응답 검증 결과: ${issues}\n출력 스키마의 필수 항목을 모두 채우고, "확인 필요", "확인 불가", "확인되지 않았습니다" 등 미완성 문구를 쓰지 않는다. 입력의 확인된 근거만 사용하여 전체 JSON을 다시 작성한다. 근거 없는 사실이나 수치는 만들지 않는다.`;
+  const fields = error.invalidFields?.length ? `\n수정이 필요한 필드: ${error.invalidFields.join(',')}` : '';
+  return `${prompt}\n\n이전 응답 검증 결과: ${issues}${fields}\n출력 스키마의 필수 항목을 모두 채우고, "확인 필요", "확인 불가", "확인되지 않았습니다" 등 미완성 문구를 쓰지 않는다. 입력의 확인된 근거만 사용하여 전체 JSON을 다시 작성한다. 근거 없는 사실이나 수치는 만들지 않는다.`;
 }
 
 function escapeHtml(value) {
