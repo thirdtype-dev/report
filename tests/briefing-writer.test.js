@@ -107,6 +107,7 @@ function walkSchema(schema, example) {
     const child = schema.properties[key];
     if (Array.isArray(value)) {
       assert.equal(child.type, 'array');
+      assert.equal(child.minItems, value.length);
       assert.deepEqual(child.items, { type: 'string' });
     } else if (value && typeof value === 'object') {
       walkSchema(child, value);
@@ -357,4 +358,25 @@ test('writer quality rejection remains fail-closed for placeholder copy', async 
     }),
     /briefing_writer_quality_failed:placeholder_copy/
   );
+});
+
+
+test('post-market schema minimums match local validation without weakening evidence checks', async () => {
+  const module = await importWriterModule('post_market');
+  const schema = module.__testReportJsonSchema();
+  const example = module.__testReportSchema();
+  for (const key of ['surging', 'plunging']) {
+    assert.equal(schema.properties.notableStocks.properties[key].minItems, 2);
+    assert.equal(example.notableStocks[key].length, 2);
+    for (const invalid of [undefined, null, 'single stock', [], ['one'], ['one', ''], ['one', 2]]) {
+      const report = structuredClone(reports.post_market);
+      report.notableStocks[key] = invalid;
+      assert.throws(() => module.__testValidateReportShape(report), new RegExp(`notableStocks\\.${key}`));
+    }
+  }
+  assert.equal(schema.properties.tomorrowStrategy.properties.checklist.minItems, 3);
+  const shortChecklist = structuredClone(reports.post_market);
+  shortChecklist.tomorrowStrategy.checklist = ['one', 'two'];
+  assert.throws(() => module.__testValidateReportShape(shortChecklist), /tomorrowStrategy.checklist/);
+  assert.doesNotThrow(() => module.__testValidateReportShape(structuredClone(reports.post_market)));
 });
