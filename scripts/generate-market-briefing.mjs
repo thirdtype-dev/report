@@ -1987,8 +1987,8 @@ function reportSchema() {
         weak: 'string'
       },
       notableStocks: {
-        surging: ['종목명, 등락률, 상승 사유 요약'],
-        plunging: ['종목명, 등락률, 하락 사유 요약']
+        surging: ['첫 번째 종목명, 근거에 있는 등락률과 상승 사유', '두 번째 종목명, 근거에 있는 등락률과 상승 사유'],
+        plunging: ['첫 번째 종목명, 근거에 있는 등락률과 하락 사유', '두 번째 종목명, 근거에 있는 등락률과 하락 사유']
       },
       tomorrowStrategy: {
         outlook: 'string',
@@ -2030,6 +2030,7 @@ function jsonSchemaFromPromptShape(value) {
   if (Array.isArray(value)) {
     return {
       type: 'array',
+      minItems: value.length,
       items: jsonSchemaFromPromptShape(value[0] ?? 'string')
     };
   }
