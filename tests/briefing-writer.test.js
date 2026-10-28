@@ -380,3 +380,22 @@ test('post-market schema minimums match local validation without weakening evide
   assert.throws(() => module.__testValidateReportShape(shortChecklist), /tomorrowStrategy.checklist/);
   assert.doesNotThrow(() => module.__testValidateReportShape(structuredClone(reports.post_market)));
 });
+
+test('quality feedback identifies placeholder fields without echoing rejected content', async () => {
+  const module = await importWriterModule('post_market');
+  const report = structuredClone(reports.post_market);
+  report.tomorrowStrategy.checklist[1] = 'PRIVATE_CONTENT 확인 필요';
+  report.notableStocks.plunging[0] = 'PRIVATE_CONTENT 확인 불가';
+  let failure;
+  try {
+    module.__testPrepareAndValidateWriterReport({ investorFlows: { status: 'unavailable' } }, report);
+  } catch (error) { failure = error; }
+  assert.ok(failure);
+  assert.equal(failure.code, 'briefing_writer_quality_failed');
+  assert.deepEqual(failure.invalidFields, ['notableStocks.plunging.0', 'tomorrowStrategy.checklist.1']);
+  const retry = module.__testBuildWriterRetryPrompt('evidence', failure);
+  assert.match(retry, /notableStocks.plunging.0/);
+  assert.match(retry, /tomorrowStrategy.checklist.1/);
+  assert.doesNotMatch(retry, /PRIVATE_CONTENT/);
+  assert.match(module.__testBuildPrompt({}), /모든 출력 필드/);
+});
