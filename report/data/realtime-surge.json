@@ -1,16 +1,137 @@
 {
-  "generated_at": "2026-10-29T04:00:24.339Z",
+  "generated_at": "2026-10-29T05:00:15.325Z",
   "generated_date": "2026-10-29",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 14건",
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 15건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "SK하이닉스",
+      "stockCode": "000660",
+      "summary": "노무라, SK하이닉스 목표가 470만원…자사주 소각 효과 주목",
+      "headline": "107조원 벌고도 주가는 하락…삼성전자 \"4분기도 실적 성장\"",
+      "evidencePoints": [
+        "출처 글로벌이코노믹, JTBC, 자본시장뉴스 기반 기사 3건",
+        "하락/약세 키워드 우세",
+        "노무라, SK하이닉스 목표가 470만원…자사주 소각 효과 주목",
+        "107조원 벌고도 주가는 하락…삼성전자 \"4분기도 실적 성장\""
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-10-29T05:00:15.325Z",
+      "cycleLabel": "KST_1400",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "107조원 벌고도 주가는 하락…삼성전자 \"4분기도 실적 성장\"",
+      "source": "JTBC",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5GaXk2U3kyRjg0cUhCX2FxMGZkSlJkVVJJcXFBUURtbjY5X0FCZm82YW0wdVEtOVpURTdLS1c4SnBUVmlkWG9CTjllOXhqZWVVUUstNQ?oc=5",
+      "publishedAt": "Thu, 29 Oct 2026 01:03:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "노무라, SK하이닉스 목표가 470만원…자사주 소각 효과 주목",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQlZYS3JUWi1BNHoxQTh3VEp5R2c3cDBodXVVcWZxeVBqZGdVMzdOTFl5M2E5V3JRemxHWERRWGQ3MXpQMzhaRHI2M3FjcUtRTHpYajBSd3ZGUnFoQjZ5cmFjZkRnZ2RpSkVvaVBEZ3NaRTNZckRpb2d6cXd2VEJFYnNMSm5FT3Y4?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "107조원 벌고도 주가는 하락…삼성전자 \"4분기도 실적 성장\"",
+          "source": "JTBC",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5GaXk2U3kyRjg0cUhCX2FxMGZkSlJkVVJJcXFBUURtbjY5X0FCZm82YW0wdVEtOVpURTdLS1c4SnBUVmlkWG9CTjllOXhqZWVVUUstNQ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "SK하이닉스 '주가 저평가'…100조 환원 속 보상분",
+          "source": "자본시장뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtV1FfNllTVGwtdWtVWUgyUzRrRDItUURldEoycFI4SG1mdFlNbWtzSUFlUGZuTnJwRHQyLW8yMGh4bkNtREVoSXpUUi04eVRSUXhzekM1MTFtZ0xKcWRvMl82NU1jMDg?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "SK하이닉스 하락…삼성전자 \"4분기도 실적 성장\"",
+      "polishedBody": "SK하이닉스는 목표가 470만원…자사주 소각 효과 주목 이슈로 단기 변동성이 확대됐습니다. 목표가 470만원…자사주 소각 효과 주목 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락…삼성전자 \"4분기도 실적 성장\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "지니언스",
+      "stockCode": "263860",
+      "summary": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
+      "headline": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, https://www.ppss.kr/ 기반 기사 2건",
+        "제목 기준 변동률 단서 -6.2%",
+        "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
+        "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-10-29T05:00:15.325Z",
+      "cycleLabel": "KST_1400",
+      "direction": "down",
+      "changeRate": -6.23,
+      "latestHeadline": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1OMm84djljNEZ0bmtPdE5PU09CcG1VTDFyRmxOb1ZMYVRleHNlMUdmbFZWNWJyLUpLRnpzV3dkNVNHU0tSZVZUclFfSVpTaUxld0dEUjlwcnl0RzJoazdiR1QtNC1KTHhISEI0V3lUd3B1dw?oc=5",
+      "publishedAt": "Thu, 29 Oct 2026 03:10:10 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1OMm84djljNEZ0bmtPdE5PU09CcG1VTDFyRmxOb1ZMYVRleHNlMUdmbFZWNWJyLUpLRnpzV3dkNVNHU0tSZVZUclFfSVpTaUxld0dEUjlwcnl0RzJoazdiR1QtNC1KTHhISEI0V3lUd3B1dw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
+          "source": "https://www.ppss.kr/",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00RTJlOTB1T1lScWhHTTNyMWhwTmh5TkhIU09iNUticmRlazVMUVY5SW1HeGw1YUJRcnJIRXNiUnROQzJwNTJMZTdWWWtxSnBpM3JUamNLa1IxOUpScFB2TTZGUHQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
+      "polishedBody": "지니언스는 상한가…공개매수 가격 인상에 보안 투자 확대 기대 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 주가, 10월 29일 장중 25,600원 6.23% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "한화비전",
+      "stockCode": "489790",
+      "summary": "[특징주] 한화비전, 3분기 영업이익 1026억…전년比 3배 가까이 증가 뉴스티앤티",
+      "headline": "[특징주] 한화비전, 3분기 영업이익 1026억…전년比 3배 가까이 증가",
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] 한화비전, 3분기 영업이익 1026억…전년比 3배 가까이 증가"
+      ],
+      "mentionScore": 86.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-10-29T05:00:15.325Z",
+      "cycleLabel": "KST_1400",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 한화비전, 3분기 영업이익 1026억…전년比 3배 가까이 증가",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE81dWFhMDlqU1piSllienowcmh0YkZyM2ROd1RzdlFBUVdWM0RNQU5hYnNhdm5ZVm9YTUtickdyUTAzelU3RzMzQ3R6Y2tjTWt1UTVkcHk5NjB0YlA5TEFlX3FlTk5qelFfeFE?oc=5",
+      "publishedAt": "Thu, 29 Oct 2026 03:56:46 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 한화비전, 3분기 영업이익 1026억…전년比 3배 가까이 증가",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE81dWFhMDlqU1piSllienowcmh0YkZyM2ROd1RzdlFBUVdWM0RNQU5hYnNhdm5ZVm9YTUtickdyUTAzelU3RzMzQ3R6Y2tjTWt1UTVkcHk5NjB0YlA5TEFlX3FlTk5qelFfeFE?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "한화비전 3분기 영업이익 1026억…전년比 3배",
+      "polishedBody": "한화비전은 3분기 영업이익 1026억…전년比 3배 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 3분기 영업이익 1026억…전년比 3배 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 3분기 영업이익 1026억…전년比 3배 가까이 증가 뉴스티앤티 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
     {
       "stockName": "삼성전기",
       "stockCode": "009150",
@@ -263,53 +384,6 @@
       "polishedBody": "유한양행은 키움증권 \"실적 기대치 부합…목표주가는 하향\" 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
-      "stockName": "SK하이닉스",
-      "stockCode": "000660",
-      "summary": "SK하이닉스 '주가 저평가'…100조 환원 속 보상분",
-      "headline": "[특징주] SK하이닉스·SK스퀘어, 호실적에 주주환원 확대.. 동반 '강세'",
-      "evidencePoints": [
-        "출처 글로벌이코노믹, 자본시장뉴스, 네이버페이 머니스토리 기반 기사 3건",
-        "상승/강세 키워드 우세",
-        "[특징주] SK하이닉스·SK스퀘어, 호실적에 주주환원 확대.. 동반 '강세'",
-        "SK하이닉스 '주가 저평가'…100조 환원 속 보상분"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 4,
-      "updatedAt": "2026-10-29T01:00:18.009Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "[특징주] SK하이닉스·SK스퀘어, 호실적에 주주환원 확대.. 동반 '강세'",
-      "source": "글로벌이코노믹",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVHpQbEZrMjJZaDJEYjY4T2ROR0hhZy1XTVQ1NDYzMnk2QUtJaHhpNVItc1RyaGNLNTV3Uk1sZVV5RE1wYmctOC10cEdscm9lQm9QcDNhQzZxTTd4S0JCVGExcW5lTmxoTkpCR0dFVkpsWkdwemtKNGkxOTJTcV9VSlVzVVU0X2c?oc=5",
-      "publishedAt": "Thu, 29 Oct 2026 00:37:10 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] SK하이닉스·SK스퀘어, 호실적에 주주환원 확대.. 동반 '강세'",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVHpQbEZrMjJZaDJEYjY4T2ROR0hhZy1XTVQ1NDYzMnk2QUtJaHhpNVItc1RyaGNLNTV3Uk1sZVV5RE1wYmctOC10cEdscm9lQm9QcDNhQzZxTTd4S0JCVGExcW5lTmxoTkpCR0dFVkpsWkdwemtKNGkxOTJTcV9VSlVzVVU0X2c?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "SK하이닉스 '주가 저평가'…100조 환원 속 보상분",
-          "source": "자본시장뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtV1FfNllTVGwtdWtVWUgyUzRrRDItUURldEoycFI4SG1mdFlNbWtzSUFlUGZuTnJwRHQyLW8yMGh4bkNtREVoSXpUUi04eVRSUXhzekM1MTFtZ0xKcWRvMl82NU1jMDg?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "주가 11% 급등한 SK하이닉스, ‘주당 2만원’ 배당받으려면?",
-          "source": "네이버페이 머니스토리",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE83UkFaVE9ZTmdNZXdCMVJpbE83b0hkYS1PTDRPVFdfMDM3d0UwWjU3QmtCLWJMOXFPRll1WXdwb2F4YU9EYzJFalowWlZvTXc1LVE?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "SK하이닉스 SK스퀘어, 호실적에 주주환원 확대.",
-      "polishedBody": "SK하이닉스는 '주가 저평가'…100조 환원 속 보상분 재료가 부각되며 단기 모멘텀을 형성했습니다. '주가 저평가'…100조 환원 속 보상분 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 SK스퀘어, 호실적에 주주환원 확대 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
       "stockName": "HD한국조선해양",
       "stockCode": "009540",
       "summary": "[버핏 리포트] HD한국조선해양, 브리지 건너 미국에서 짓는 배...배당수익률 10%대 매력 - 다올",
@@ -390,40 +464,6 @@
       "hasNews": true,
       "polishedHeadline": "SK스퀘어 SK하이닉스·SK스퀘어, 호실적에 주주환원 확대.",
       "polishedBody": "SK스퀘어는 \", 하이닉스 배당·자사주 소각 수혜\"…목표가 185만원 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 SK하이닉스·, 호실적에 주주환원 확대 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "지니언스",
-      "stockCode": "263860",
-      "summary": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대 https://www.ppss.kr/",
-      "headline": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
-      "evidencePoints": [
-        "출처 https://www.ppss.kr/ 기반 기사 1건",
-        "제목 기준 변동률 단서 +30.0%",
-        "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대"
-      ],
-      "mentionScore": 99.6,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-10-29T01:00:18.009Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": 30,
-      "latestHeadline": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
-      "source": "https://www.ppss.kr/",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00RTJlOTB1T1lScWhHTTNyMWhwTmh5TkhIU09iNUticmRlazVMUVY5SW1HeGw1YUJRcnJIRXNiUnROQzJwNTJMZTdWWWtxSnBpM3JUamNLa1IxOUpScFB2TTZGUHQ?oc=5",
-      "publishedAt": "Wed, 28 Oct 2026 08:37:41 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
-          "source": "https://www.ppss.kr/",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00RTJlOTB1T1lScWhHTTNyMWhwTmh5TkhIU09iNUticmRlazVMUVY5SW1HeGw1YUJRcnJIRXNiUnROQzJwNTJMZTdWWWtxSnBpM3JUamNLa1IxOUpScFB2TTZGUHQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "지니언스 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
-      "polishedBody": "지니언스는 상한가…공개매수 가격 인상에 보안 투자 확대 기대 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 케이아이엔엑스·상한가…공개매수 가격 인상에 보안 투자 확대 기대 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "셀트리온",
@@ -575,6 +615,97 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Thu, 29 Oct 2026 01:03:00 GMT",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "changeRate": null,
+      "price": null,
+      "summary": "노무라, SK하이닉스 목표가 470만원…자사주 소각 효과 주목",
+      "source": "JTBC",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5GaXk2U3kyRjg0cUhCX2FxMGZkSlJkVVJJcXFBUURtbjY5X0FCZm82YW0wdVEtOVpURTdLS1c4SnBUVmlkWG9CTjllOXhqZWVVUUstNQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 글로벌이코노믹, JTBC, 자본시장뉴스 기반 기사 3건",
+        "하락/약세 키워드 우세",
+        "노무라, SK하이닉스 목표가 470만원…자사주 소각 효과 주목",
+        "107조원 벌고도 주가는 하락…삼성전자 \"4분기도 실적 성장\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "노무라, SK하이닉스 목표가 470만원…자사주 소각 효과 주목",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQlZYS3JUWi1BNHoxQTh3VEp5R2c3cDBodXVVcWZxeVBqZGdVMzdOTFl5M2E5V3JRemxHWERRWGQ3MXpQMzhaRHI2M3FjcUtRTHpYajBSd3ZGUnFoQjZ5cmFjZkRnZ2RpSkVvaVBEZ3NaRTNZckRpb2d6cXd2VEJFYnNMSm5FT3Y4?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "107조원 벌고도 주가는 하락…삼성전자 \"4분기도 실적 성장\"",
+          "source": "JTBC",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5GaXk2U3kyRjg0cUhCX2FxMGZkSlJkVVJJcXFBUURtbjY5X0FCZm82YW0wdVEtOVpURTdLS1c4SnBUVmlkWG9CTjllOXhqZWVVUUstNQ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "SK하이닉스 '주가 저평가'…100조 환원 속 보상분",
+          "source": "자본시장뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtV1FfNllTVGwtdWtVWUgyUzRrRDItUURldEoycFI4SG1mdFlNbWtzSUFlUGZuTnJwRHQyLW8yMGh4bkNtREVoSXpUUi04eVRSUXhzekM1MTFtZ0xKcWRvMl82NU1jMDg?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Thu, 29 Oct 2026 03:10:10 GMT",
+      "symbol": "263860",
+      "name": "지니언스",
+      "changeRate": -6.23,
+      "price": null,
+      "summary": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1OMm84djljNEZ0bmtPdE5PU09CcG1VTDFyRmxOb1ZMYVRleHNlMUdmbFZWNWJyLUpLRnpzV3dkNVNHU0tSZVZUclFfSVpTaUxld0dEUjlwcnl0RzJoazdiR1QtNC1KTHhISEI0V3lUd3B1dw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, https://www.ppss.kr/ 기반 기사 2건",
+        "제목 기준 변동률 단서 -6.2%",
+        "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
+        "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1OMm84djljNEZ0bmtPdE5PU09CcG1VTDFyRmxOb1ZMYVRleHNlMUdmbFZWNWJyLUpLRnpzV3dkNVNHU0tSZVZUclFfSVpTaUxld0dEUjlwcnl0RzJoazdiR1QtNC1KTHhISEI0V3lUd3B1dw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
+          "source": "https://www.ppss.kr/",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00RTJlOTB1T1lScWhHTTNyMWhwTmh5TkhIU09iNUticmRlazVMUVY5SW1HeGw1YUJRcnJIRXNiUnROQzJwNTJMZTdWWWtxSnBpM3JUamNLa1IxOUpScFB2TTZGUHQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Thu, 29 Oct 2026 03:56:46 GMT",
+      "symbol": "489790",
+      "name": "한화비전",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주] 한화비전, 3분기 영업이익 1026억…전년比 3배 가까이 증가 뉴스티앤티",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE81dWFhMDlqU1piSllienowcmh0YkZyM2ROd1RzdlFBUVdWM0RNQU5hYnNhdm5ZVm9YTUtickdyUTAzelU3RzMzQ3R6Y2tjTWt1UTVkcHk5NjB0YlA5TEFlX3FlTk5qelFfeFE?oc=5",
+      "mentionScore": 86.9,
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] 한화비전, 3분기 영업이익 1026억…전년比 3배 가까이 증가"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 한화비전, 3분기 영업이익 1026억…전년比 3배 가까이 증가",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE81dWFhMDlqU1piSllienowcmh0YkZyM2ROd1RzdlFBUVdWM0RNQU5hYnNhdm5ZVm9YTUtickdyUTAzelU3RzMzQ3R6Y2tjTWt1UTVkcHk5NjB0YlA5TEFlX3FlTk5qelFfeFE?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Thu, 29 Oct 2026 01:01:53 GMT",
       "symbol": "009150",
@@ -767,43 +898,6 @@
       ]
     },
     {
-      "timestamp": "Thu, 29 Oct 2026 00:37:10 GMT",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": null,
-      "price": null,
-      "summary": "SK하이닉스 '주가 저평가'…100조 환원 속 보상분",
-      "source": "글로벌이코노믹",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVHpQbEZrMjJZaDJEYjY4T2ROR0hhZy1XTVQ1NDYzMnk2QUtJaHhpNVItc1RyaGNLNTV3Uk1sZVV5RE1wYmctOC10cEdscm9lQm9QcDNhQzZxTTd4S0JCVGExcW5lTmxoTkpCR0dFVkpsWkdwemtKNGkxOTJTcV9VSlVzVVU0X2c?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 글로벌이코노믹, 자본시장뉴스, 네이버페이 머니스토리 기반 기사 3건",
-        "상승/강세 키워드 우세",
-        "[특징주] SK하이닉스·SK스퀘어, 호실적에 주주환원 확대.. 동반 '강세'",
-        "SK하이닉스 '주가 저평가'…100조 환원 속 보상분"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] SK하이닉스·SK스퀘어, 호실적에 주주환원 확대.. 동반 '강세'",
-          "source": "글로벌이코노믹",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVHpQbEZrMjJZaDJEYjY4T2ROR0hhZy1XTVQ1NDYzMnk2QUtJaHhpNVItc1RyaGNLNTV3Uk1sZVV5RE1wYmctOC10cEdscm9lQm9QcDNhQzZxTTd4S0JCVGExcW5lTmxoTkpCR0dFVkpsWkdwemtKNGkxOTJTcV9VSlVzVVU0X2c?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "SK하이닉스 '주가 저평가'…100조 환원 속 보상분",
-          "source": "자본시장뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAtV1FfNllTVGwtdWtVWUgyUzRrRDItUURldEoycFI4SG1mdFlNbWtzSUFlUGZuTnJwRHQyLW8yMGh4bkNtREVoSXpUUi04eVRSUXhzekM1MTFtZ0xKcWRvMl82NU1jMDg?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "주가 11% 급등한 SK하이닉스, ‘주당 2만원’ 배당받으려면?",
-          "source": "네이버페이 머니스토리",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE83UkFaVE9ZTmdNZXdCMVJpbE83b0hkYS1PTDRPVFdfMDM3d0UwWjU3QmtCLWJMOXFPRll1WXdwb2F4YU9EYzJFalowWlZvTXc1LVE?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Wed, 28 Oct 2026 23:26:00 GMT",
       "symbol": "009540",
       "name": "HD한국조선해양",
@@ -862,30 +956,6 @@
           "title": "[모닝 리포트] \"SK스퀘어, 하이닉스 배당·자사주 소각 수혜\"…목표가 185만원",
           "source": "뉴스핌",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5UaTNsd0JmZWUtbHMzUU81aEpKenpvYUdhRTc0RmJvQmhaSEszSXpkRER2WXNDT2RJTnp5Z0h6VEQ2R01MNW5nMmo4ajloaFhDT25oQ2JaTUE1ZWtT?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Wed, 28 Oct 2026 08:37:41 GMT",
-      "symbol": "263860",
-      "name": "지니언스",
-      "changeRate": 30,
-      "price": null,
-      "summary": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대 https://www.ppss.kr/",
-      "source": "https://www.ppss.kr/",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00RTJlOTB1T1lScWhHTTNyMWhwTmh5TkhIU09iNUticmRlazVMUVY5SW1HeGw1YUJRcnJIRXNiUnROQzJwNTJMZTdWWWtxSnBpM3JUamNLa1IxOUpScFB2TTZGUHQ?oc=5",
-      "mentionScore": 99.6,
-      "evidencePoints": [
-        "출처 https://www.ppss.kr/ 기반 기사 1건",
-        "제목 기준 변동률 단서 +30.0%",
-        "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
-          "source": "https://www.ppss.kr/",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00RTJlOTB1T1lScWhHTTNyMWhwTmh5TkhIU09iNUticmRlazVMUVY5SW1HeGw1YUJRcnJIRXNiUnROQzJwNTJMZTdWWWtxSnBpM3JUamNLa1IxOUpScFB2TTZGUHQ?oc=5"
         }
       ]
     },
