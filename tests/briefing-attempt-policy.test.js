@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { decideBriefingAttempt, runBriefingAttemptPolicy } from '../scripts/briefing-attempt-policy.mjs';
+import { decideBriefingAttempt, runBriefingAttemptPolicy, fetchAttemptHistory } from '../scripts/briefing-attempt-policy.mjs';
 
 const slotKey = 'briefing:2026-09-29:pre_market';
 const priorFailure = {
@@ -66,4 +66,51 @@ test('publish workflow performs the attempt guard under the lock and gates gener
   assert.ok(workflow.indexOf('Check prior automatic attempt inside publication lock') < workflow.indexOf('Generate briefing'));
   assert.match(workflow, /Generate briefing\n        if: .*steps\.attempt\.outputs\.should_publish == 'true'/u);
   assert.match(workflow, /Verify actual public publication\n        if: .*steps\.attempt\.outputs\.should_publish != 'false'/u);
+});
+
+
+test('history timeout retries and preserves prior terminal-run suppression', async () => {
+  let calls = 0;
+  const signals = [];
+  const waits = [];
+  const runs = await fetchAttemptHistory('https://example.test/runs', 'test', {
+    timeoutMs: 5,
+    sleep: async (ms) => waits.push(ms),
+    fetchImpl: async (_url, { signal }) => {
+      signals.push(signal);
+      calls += 1;
+      if (calls === 1) return new Promise(() => {});
+      return { ok: true, json: async () => ({ workflow_runs: [priorFailure] }) };
+    }
+  });
+  assert.equal(calls, 2);
+  assert.equal(signals[0].aborted, true);
+  assert.deepEqual(waits, [1000]);
+  assert.equal(decideBriefingAttempt({ automatic: true, runs, slotKey }).shouldPublish, false);
+});
+
+test('history body deadline exhausts three attempts without an empty-history fallback', async () => {
+  let calls = 0;
+  const waits = [];
+  await assert.rejects(fetchAttemptHistory('https://example.test/runs', 'test', {
+    timeoutMs: 5,
+    sleep: async (ms) => waits.push(ms),
+    fetchImpl: async () => {
+      calls += 1;
+      return { ok: true, json: () => new Promise(() => {}) };
+    }
+  }), /briefing_attempt_runs_timeout:3_attempts/);
+  assert.equal(calls, 3);
+  assert.deepEqual(waits, [1000, 2000]);
+});
+
+test('history permission and invalid-payload errors are not retried', async () => {
+  for (const response of [{ ok: false, status: 403 }, { ok: true, json: async () => ({}) }]) {
+    let calls = 0;
+    await assert.rejects(fetchAttemptHistory('https://example.test/runs', 'test', {
+      fetchImpl: async () => { calls += 1; return response; },
+      sleep: async () => assert.fail('must not retry')
+    }), /briefing_attempt_runs_(http_403|invalid_payload)/);
+    assert.equal(calls, 1);
+  }
 });
