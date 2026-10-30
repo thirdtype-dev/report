@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-10-30T04:00:17.402Z",
+  "generated_at": "2026-10-30T05:00:17.329Z",
   "generated_date": "2026-10-30",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
+    "title": "KST 14:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 16건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "한미약품",
+      "stockCode": "128940",
+      "summary": "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다",
+      "headline": "[공시 Pick] 한미약품, 3000억대 美 기술수출에 4%대 주가 강세",
+      "evidencePoints": [
+        "출처 뉴스투데이, 증권일보 기반 기사 2건",
+        "제목 기준 변동률 단서 +4.0%",
+        "[공시 Pick] 한미약품, 3000억대 美 기술수출에 4%대 주가 강세",
+        "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다"
+      ],
+      "mentionScore": 92,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-10-30T05:00:17.329Z",
+      "cycleLabel": "KST_1400",
+      "direction": "up",
+      "changeRate": 4,
+      "latestHeadline": "[공시 Pick] 한미약품, 3000억대 美 기술수출에 4%대 주가 강세",
+      "source": "뉴스투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE52eXhNTGxMWmVPQnQtQ0pwTW1uMGZSczN0by05UW1RSDIwUkxwZGFhNjgzVmVWRDhNUjJ2RlFrWC0xeURNV3owalE1UjA2MUlUWnFZWHVnUUxWYjY0Q1E?oc=5",
+      "publishedAt": "Fri, 30 Oct 2026 04:14:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[공시 Pick] 한미약품, 3000억대 美 기술수출에 4%대 주가 강세",
+          "source": "뉴스투데이",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE52eXhNTGxMWmVPQnQtQ0pwTW1uMGZSczN0by05UW1RSDIwUkxwZGFhNjgzVmVWRDhNUjJ2RlFrWC0xeURNV3owalE1UjA2MUlUWnFZWHVnUUxWYjY0Q1E?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다",
+          "source": "증권일보",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBhNHluSHgtcElESzE2TVF3Rk03R2k4VUdFTlhGaUsyZS0wTkZTNTJtRTI0MUlWb25JN3UwSXJpWEk3dGE2djMzUURXY21VTFQ2NjU0cTJkWjNXaGdFQUg2NQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한미약품 3000억대 美 기술수출에 4%대",
+      "polishedBody": "한미약품은 3개일 연속 상승...비만 신약 앞세워 재도약 노린다 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 3000억대 美 기술수출에 4%대 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
     {
       "stockName": "한미반도체",
       "stockCode": "042700",
@@ -432,47 +473,6 @@
       "polishedBody": "한화비전은 어닝 서프라이즈 달성에 재료가 부각되며 단기 모멘텀을 형성했습니다. 어닝 서프라이즈 달성 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 MK시그널 추천 후 상승률 30.99% 기록 마켓 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "한미약품",
-      "stockCode": "128940",
-      "summary": "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다",
-      "headline": "한미약품 주가, 10월 30일 장중 419,000원 7.85% 상승",
-      "evidencePoints": [
-        "출처 톱스타뉴스, 증권일보 기반 기사 2건",
-        "제목 기준 변동률 단서 +7.8%",
-        "한미약품 주가, 10월 30일 장중 419,000원 7.85% 상승",
-        "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다"
-      ],
-      "mentionScore": 97.2,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-10-30T01:00:22.027Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": 7.85,
-      "latestHeadline": "한미약품 주가, 10월 30일 장중 419,000원 7.85% 상승",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5nMFB4elVKbEEzdVpGNVNRZ3BldC1MQ1M3dm9kb0lZX2JMdTRXaG5vXzVBa2NwMlhEU2R6dUhYa0hCZmNPWElnQ0VSU3FWZFBuTVJYY1c3VXFfZTUxemlleXNOSVNYRlJUa2FJR0NTU0NBQQ?oc=5",
-      "publishedAt": "Fri, 30 Oct 2026 00:50:08 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한미약품 주가, 10월 30일 장중 419,000원 7.85% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5nMFB4elVKbEEzdVpGNVNRZ3BldC1MQ1M3dm9kb0lZX2JMdTRXaG5vXzVBa2NwMlhEU2R6dUhYa0hCZmNPWElnQ0VSU3FWZFBuTVJYY1c3VXFfZTUxemlleXNOSVNYRlJUa2FJR0NTU0NBQQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다",
-          "source": "증권일보",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBhNHluSHgtcElESzE2TVF3Rk03R2k4VUdFTlhGaUsyZS0wTkZTNTJtRTI0MUlWb25JN3UwSXJpWEk3dGE2djMzUURXY21VTFQ2NjU0cTJkWjNXaGdFQUg2NQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한미약품 주가, 10월 30일 장중 419,000원 7.85% 상승",
-      "polishedBody": "한미약품은 3개일 연속 상승...비만 신약 앞세워 재도약 노린다 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 주가, 10월 30일 장중 419,000원 7.85% 상승 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
       "stockName": "삼성전기",
       "stockCode": "009150",
       "summary": "“주가는 반토막인데 실적은 역대급”…지금 사도 될까[종목e슈]",
@@ -624,6 +624,37 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Fri, 30 Oct 2026 04:14:00 GMT",
+      "symbol": "128940",
+      "name": "한미약품",
+      "changeRate": 4,
+      "price": null,
+      "summary": "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다",
+      "source": "뉴스투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE52eXhNTGxMWmVPQnQtQ0pwTW1uMGZSczN0by05UW1RSDIwUkxwZGFhNjgzVmVWRDhNUjJ2RlFrWC0xeURNV3owalE1UjA2MUlUWnFZWHVnUUxWYjY0Q1E?oc=5",
+      "mentionScore": 92,
+      "evidencePoints": [
+        "출처 뉴스투데이, 증권일보 기반 기사 2건",
+        "제목 기준 변동률 단서 +4.0%",
+        "[공시 Pick] 한미약품, 3000억대 美 기술수출에 4%대 주가 강세",
+        "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[공시 Pick] 한미약품, 3000억대 美 기술수출에 4%대 주가 강세",
+          "source": "뉴스투데이",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE52eXhNTGxMWmVPQnQtQ0pwTW1uMGZSczN0by05UW1RSDIwUkxwZGFhNjgzVmVWRDhNUjJ2RlFrWC0xeURNV3owalE1UjA2MUlUWnFZWHVnUUxWYjY0Q1E?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다",
+          "source": "증권일보",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBhNHluSHgtcElESzE2TVF3Rk03R2k4VUdFTlhGaUsyZS0wTkZTNTJtRTI0MUlWb25JN3UwSXJpWEk3dGE2djMzUURXY21VTFQ2NjU0cTJkWjNXaGdFQUg2NQ?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Fri, 30 Oct 2026 03:43:57 GMT",
       "symbol": "042700",
@@ -931,37 +962,6 @@
           "title": "[MK시그널] 한화비전, 어닝 서프라이즈 달성에 주가 상승세... MK시그널 추천 후 상승률 30.99% 기록",
           "source": "매일경제 마켓",
           "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB4UDVCX3NQS3pYTzhua1JJWkM3MXRlWFNPWUltcmxsY2hFZnVDQzQ5VHM3RTVaZnhpYWgyMko0RTQ0elFoSUt4UHk2OXVRVDIwcXc?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Fri, 30 Oct 2026 00:50:08 GMT",
-      "symbol": "128940",
-      "name": "한미약품",
-      "changeRate": 7.85,
-      "price": null,
-      "summary": "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5nMFB4elVKbEEzdVpGNVNRZ3BldC1MQ1M3dm9kb0lZX2JMdTRXaG5vXzVBa2NwMlhEU2R6dUhYa0hCZmNPWElnQ0VSU3FWZFBuTVJYY1c3VXFfZTUxemlleXNOSVNYRlJUa2FJR0NTU0NBQQ?oc=5",
-      "mentionScore": 97.2,
-      "evidencePoints": [
-        "출처 톱스타뉴스, 증권일보 기반 기사 2건",
-        "제목 기준 변동률 단서 +7.8%",
-        "한미약품 주가, 10월 30일 장중 419,000원 7.85% 상승",
-        "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한미약품 주가, 10월 30일 장중 419,000원 7.85% 상승",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5nMFB4elVKbEEzdVpGNVNRZ3BldC1MQ1M3dm9kb0lZX2JMdTRXaG5vXzVBa2NwMlhEU2R6dUhYa0hCZmNPWElnQ0VSU3FWZFBuTVJYY1c3VXFfZTUxemlleXNOSVNYRlJUa2FJR0NTU0NBQQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한미약품, 주가 3개일 연속 상승...비만 신약 앞세워 재도약 노린다",
-          "source": "증권일보",
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBhNHluSHgtcElESzE2TVF3Rk03R2k4VUdFTlhGaUsyZS0wTkZTNTJtRTI0MUlWb25JN3UwSXJpWEk3dGE2djMzUURXY21VTFQ2NjU0cTJkWjNXaGdFQUg2NQ?oc=5"
         }
       ]
     },
