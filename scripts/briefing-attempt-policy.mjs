@@ -48,6 +48,33 @@ function safeRunUrl(value) {
   }
 }
 
+// Three bounded attempts plus 1s/2s backoff: at most 33 seconds in production.
+// Retry only a deadline failure; permission and payload errors remain terminal.
+export async function fetchAttemptHistory(url, token, {
+  fetchImpl = fetch,
+  timeoutMs = 10000,
+  sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+} = {}) {
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      return await withDeadline(async (signal) => {
+        const response = await fetchImpl(url, {
+          headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
+          signal
+        });
+        if (!response.ok) throw new Error(`briefing_attempt_runs_http_${response.status}`);
+        const payload = await response.json();
+        if (!Array.isArray(payload.workflow_runs)) throw new Error('briefing_attempt_runs_invalid_payload');
+        return payload.workflow_runs;
+      }, timeoutMs);
+    } catch (error) {
+      if (error.message !== 'request_deadline_exceeded') throw error;
+      if (attempt === 3) throw new Error('briefing_attempt_runs_timeout:3_attempts', { cause: error });
+      await sleep(attempt * 1000);
+    }
+  }
+}
+
 export async function runBriefingAttemptPolicy({
   env = process.env,
   fetchImpl = fetch,
@@ -63,16 +90,7 @@ export async function runBriefingAttemptPolicy({
     const repository = env.GITHUB_REPOSITORY?.trim();
     if (!token || !repository || !env.GITHUB_RUN_ID) throw new Error('briefing_attempt_policy_missing_github_context');
     const url = `https://api.github.com/repos/${repository}/actions/workflows/publish-market-briefing.yml/runs?per_page=100`;
-    runs = await withDeadline(async (signal) => {
-      const response = await fetchImpl(url, {
-        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
-        signal
-      });
-      if (!response.ok) throw new Error(`briefing_attempt_runs_http_${response.status}`);
-      const payload = await response.json();
-      if (!Array.isArray(payload.workflow_runs)) throw new Error('briefing_attempt_runs_invalid_payload');
-      return payload.workflow_runs;
-    }, 10000);
+    runs = await fetchAttemptHistory(url, token, { fetchImpl });
   }
 
   const decision = decideBriefingAttempt({
