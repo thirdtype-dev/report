@@ -1,38 +1,79 @@
 {
-  "generated_at": "2026-10-30T01:00:22.027Z",
+  "generated_at": "2026-10-30T02:00:16.848Z",
   "generated_date": "2026-10-30",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 15건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "삼성전자, 역대급 실적에도 주주환원 발목…목표가 35만원으로 낮춘 IBK",
-      "headline": "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
+      "stockName": "삼성중공업",
+      "stockCode": "010140",
+      "summary": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\"",
+      "headline": "삼성중공업 주가, 10월 30일 장중 15,930원 1.34% 상승",
       "evidencePoints": [
-        "출처 비즈워치, 조선일보, 뉴스핌, 글로벌이코노믹 기반 기사 4건",
-        "상승/강세 키워드 우세",
-        "삼성전자, 역대급 실적에도 주주환원 발목…목표가 35만원으로 낮춘 IBK",
-        "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌"
+        "출처 톱스타뉴스, 이투데이 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.3%",
+        "삼성중공업 주가, 10월 30일 장중 15,930원 1.34% 상승",
+        "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\""
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
-      "channelCount": 6,
-      "updatedAt": "2026-10-30T01:00:22.027Z",
-      "cycleLabel": "KST_1000",
+      "channelCount": 3,
+      "updatedAt": "2026-10-30T02:00:16.848Z",
+      "cycleLabel": "KST_1100",
       "direction": "up",
+      "changeRate": 1.34,
+      "latestHeadline": "삼성중공업 주가, 10월 30일 장중 15,930원 1.34% 상승",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9sNHFOVWo4R3ZBZmNXNUFyMl9URnh6ZXpiSTZrQm52ekg4ZDJzYk9ReXk3NTBVX2lpS0VOWjJia0czcHBITWs2c3BnMzRxSkttdC1YUVhLb29jYlZXdnBKQ3FwSE40VEFlVDdydUt3Y2NZdw?oc=5",
+      "publishedAt": "Fri, 30 Oct 2026 01:04:40 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성중공업 주가, 10월 30일 장중 15,930원 1.34% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9sNHFOVWo4R3ZBZmNXNUFyMl9URnh6ZXpiSTZrQm52ekg4ZDJzYk9ReXk3NTBVX2lpS0VOWjJia0czcHBITWs2c3BnMzRxSkttdC1YUVhLb29jYlZXdnBKQ3FwSE40VEFlVDdydUt3Y2NZdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\"",
+          "source": "이투데이",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PUzRqNG5LTWJvUEc0RW5HaC1KeGNFM1hrbkkxVlg1UTNOLS1PbVd4UkpiUWRSOWpUbkVsUUZfVTR5NXhvMXVEMFBhZG9XRXZ4bUFaag?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "삼성중공업 주가, 10월 30일 장중 15,930원 1.34% 상승",
+      "polishedBody": "삼성중공업은 iM \", 환율 하락에도 3분기 실적 방어⋯환헤지 효과\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 주가, 10월 30일 장중 15,930원 1.34% 상승 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "삼성전자, 역대급 실적에도 주주환원 발목…목표가 35만원으로 낮춘 IBK",
+      "headline": "\"코스피, 美 빅테크 실적 부담에 하락 출발 전망…삼성전자·외국인 수급 주목\"",
+      "evidencePoints": [
+        "출처 비즈워치, 뉴스투데이, 뉴스핌 기반 기사 3건",
+        "하락/약세 키워드 우세",
+        "삼성전자, 역대급 실적에도 주주환원 발목…목표가 35만원으로 낮춘 IBK",
+        "\"코스피, 美 빅테크 실적 부담에 하락 출발 전망…삼성전자·외국인 수급 주목\""
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 5,
+      "updatedAt": "2026-10-30T02:00:16.848Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
       "changeRate": null,
-      "latestHeadline": "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
-      "source": "조선일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSS1MemdtTkx4eDkyR2NNMW9qTHFJQzhMVVg2YUNNQmNoQ0Z1LWZxYkQxM3JYV3BpaHU2ZHFnVmF1ZHgyV1dSc2xrV0pwNHhkYzJmNWs2YXczdk9COG5aVkgzMWhuRWlDc3FCSWlnczg2ZmE1QzlHdHFRMDFhSThWSGFMdnJ5MGxqVzBF?oc=5",
-      "publishedAt": "Thu, 29 Oct 2026 23:39:00 GMT",
+      "latestHeadline": "\"코스피, 美 빅테크 실적 부담에 하락 출발 전망…삼성전자·외국인 수급 주목\"",
+      "source": "뉴스투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5mUzJCYTdQaVhpX2RMSmlUS29nOEdia2VKS09iaE0tTnVEaTdXbEszeGsyX0pXZUs5SzR2bjlxc3Jwb196Zl9FeXhPTC04MUNIdzFNTWtad3dUdWtpVGc?oc=5",
+      "publishedAt": "Fri, 30 Oct 2026 00:28:00 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
@@ -42,9 +83,9 @@
         },
         {
           "label": "관련기사2",
-          "title": "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
-          "source": "조선일보",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSS1MemdtTkx4eDkyR2NNMW9qTHFJQzhMVVg2YUNNQmNoQ0Z1LWZxYkQxM3JYV3BpaHU2ZHFnVmF1ZHgyV1dSc2xrV0pwNHhkYzJmNWs2YXczdk9COG5aVkgzMWhuRWlDc3FCSWlnczg2ZmE1QzlHdHFRMDFhSThWSGFMdnJ5MGxqVzBF?oc=5"
+          "title": "\"코스피, 美 빅테크 실적 부담에 하락 출발 전망…삼성전자·외국인 수급 주목\"",
+          "source": "뉴스투데이",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5mUzJCYTdQaVhpX2RMSmlUS29nOEdia2VKS09iaE0tTnVEaTdXbEszeGsyX0pXZUs5SzR2bjlxc3Jwb196Zl9FeXhPTC04MUNIdzFNTWtad3dUdWtpVGc?oc=5"
         },
         {
           "label": "관련기사3",
@@ -55,8 +96,232 @@
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "삼성전자 미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
-      "polishedBody": "삼성전자는 역대급 실적에도 주주환원 발목…목표가 35만원으로 낮춘 IBK 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 미국 기술주 덮친 AI 투자 우려 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+      "polishedHeadline": "삼성전자 \"코스피, 美 빅테크 실적 부담에 하락 출발 전망…삼성전자·외국인 수급 주목\"",
+      "polishedBody": "삼성전자는 역대급 실적에도 주주환원 발목…목표가 35만원으로 낮춘 IBK 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 美 빅테크 실적 부담에 하락 출발 전망 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "대우건설",
+      "stockCode": "047040",
+      "summary": "대우건설, 호실적 속 마주한 '원전 변수'",
+      "headline": "대우건설 주가, 10월 30일 장중 11,140원 4.13% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 신아일보, 뉴스티앤티 기반 기사 3건",
+        "제목 기준 변동률 단서 -4.1%",
+        "대우건설 주가, 10월 30일 장중 11,140원 4.13% 하락",
+        "대우건설, 호실적 속 마주한 '원전 변수'"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-10-30T02:00:16.848Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -4.13,
+      "latestHeadline": "대우건설 주가, 10월 30일 장중 11,140원 4.13% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aa0lnTl9QaUNEOWRxVU9QMTVfYy1lXzU2V1pOR3p6d29iMXAzVVhsNXlGMXVqYWV4VTBEQVRBcFJUUlM0THRwcmNIQzJUSW5weGFDS04xQXdzODBoVUlyWFAtbm9MM2RuNHBaMFhyLWI5Zw?oc=5",
+      "publishedAt": "Fri, 30 Oct 2026 01:01:29 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "대우건설 주가, 10월 30일 장중 11,140원 4.13% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aa0lnTl9QaUNEOWRxVU9QMTVfYy1lXzU2V1pOR3p6d29iMXAzVVhsNXlGMXVqYWV4VTBEQVRBcFJUUlM0THRwcmNIQzJUSW5weGFDS04xQXdzODBoVUlyWFAtbm9MM2RuNHBaMFhyLWI5Zw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "대우건설, 호실적 속 마주한 '원전 변수'",
+          "source": "신아일보",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9tc1VpbWM3WUgyNmd4Ql96M2tMeVdyS2dHOWlpVmVvaGRYR2pNcEJDMmtUUDAzVzg1VHJfeWNJdy1VN2Z2V2NsQmhYeDMwY1BJYldvY1pWV3JuQWhGY0sxSU9Dd25udGM4WnNaUGJ1SVk?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1MQmd5aDEzeHRubnY1SmZRQXlBd0tQN2MzLTFGajVSMlhIWlNRNWh3Y190Sl9HZWdSaDdDUXJDZzNzeFQ4UndmVG9TaDJfTi1YS1Znd2pBejJPek5DRkVjTWNMaXg3UlVKZFE?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "대우건설 주가, 10월 30일 장중 11,140원 4.13% 하락",
+      "polishedBody": "대우건설은 호실적 속 마주한 '원전 변수' 이슈로 단기 변동성이 확대됐습니다. 호실적 속 마주한 '원전 변수' 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 주가, 10월 30일 장중 11,140원 4.13% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "SK하이닉스",
+      "stockCode": "000660",
+      "summary": "SK하이닉스, 목표 주가가 370만 원? 내년 영익 600조라구요?",
+      "headline": "'알파벳 쇼크'에 털썩…삼전 2%·SK하이닉스 5% 급락[핫스탁]",
+      "evidencePoints": [
+        "출처 뉴시스, 문화일보 기반 기사 2건",
+        "제목 기준 변동률 단서 -5.0%",
+        "'알파벳 쇼크'에 털썩…삼전 2%·SK하이닉스 5% 급락[핫스탁]",
+        "SK하이닉스, 목표 주가가 370만 원? 내년 영익 600조라구요?"
+      ],
+      "mentionScore": 92.1,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-10-30T02:00:16.848Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -5,
+      "latestHeadline": "'알파벳 쇼크'에 털썩…삼전 2%·SK하이닉스 5% 급락[핫스탁]",
+      "source": "뉴시스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9vcVpiNXpSOHlESW0zamxMRTN2ZjdPSG1EdHk4Y2RPaFlTRVA4Wnl1QlpQQ0U3OWdzMm9aVTRPNFc3eFZ1aHpkNVRCbUF0aV8wS0ZUcjBqemNMOXpIYm1qaNIBeEFVX3lxTE5MM2RnVHRwR0k1VGpjRVR0YmdsSi0tTVp5NC02cS1MLVdheVpWVkhYTWEwelNwSUJEbGZMbi10X2FFS0s4XzVFaTQxc0FBWmVYM0F6TlYwVUdsY2JKVThWbk9fR21NOG5lQWwxZElDMnAwQ1AwczcwRg?oc=5",
+      "publishedAt": "Fri, 30 Oct 2026 00:07:44 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "'알파벳 쇼크'에 털썩…삼전 2%·SK하이닉스 5% 급락[핫스탁]",
+          "source": "뉴시스",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9vcVpiNXpSOHlESW0zamxMRTN2ZjdPSG1EdHk4Y2RPaFlTRVA4Wnl1QlpQQ0U3OWdzMm9aVTRPNFc3eFZ1aHpkNVRCbUF0aV8wS0ZUcjBqemNMOXpIYm1qaNIBeEFVX3lxTE5MM2RnVHRwR0k1VGpjRVR0YmdsSi0tTVp5NC02cS1MLVdheVpWVkhYTWEwelNwSUJEbGZMbi10X2FFS0s4XzVFaTQxc0FBWmVYM0F6TlYwVUdsY2JKVThWbk9fR21NOG5lQWwxZElDMnAwQ1AwczcwRg?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "SK하이닉스, 목표 주가가 370만 원? 내년 영익 600조라구요?",
+          "source": "문화일보",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE81VE9VQXpyLUUwbXNpUENFamU4MThrUkQtYWsxVy04Z3dxa3ZkbU80OVVBUmFaa2steV9YR3RINkhEbG05T0hTbHNLLWo2OHBO?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "SK하이닉스 '알파벳 쇼크'에 털썩…삼전 2%·SK하이닉스 5% 급락",
+      "polishedBody": "SK하이닉스는 내년 영익 600조라구요 이슈로 단기 변동성이 확대됐습니다. 내년 영익 600조라구요 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 '알파벳 쇼크'에 털썩…삼전 2%·5% 급락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "지니언스",
+      "stockCode": "263860",
+      "summary": "[특징주] 지니언스, 뚜렷한 공시 없이 장중 12% 급등세 : 기업주식정보 재경일보",
+      "headline": "[특징주] 지니언스, 뚜렷한 공시 없이 장중 12% 급등세 : 기업주식정보",
+      "evidencePoints": [
+        "출처 재경일보 기반 기사 1건",
+        "제목 기준 변동률 단서 +12.0%",
+        "[특징주] 지니언스, 뚜렷한 공시 없이 장중 12% 급등세 : 기업주식정보"
+      ],
+      "mentionScore": 75.8,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-10-30T02:00:16.848Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 12,
+      "latestHeadline": "[특징주] 지니언스, 뚜렷한 공시 없이 장중 12% 급등세 : 기업주식정보",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBCREhWclU5SGJ4ZURwdUhra3R4ZENxNDBWbW5oOUhkYVRRXzRSM0huUi1DdmNmUkJ5V2pDWDZrMnpMOUJiVmVfakFJWQ?oc=5",
+      "publishedAt": "Fri, 30 Oct 2026 01:24:55 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 지니언스, 뚜렷한 공시 없이 장중 12% 급등세 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBCREhWclU5SGJ4ZURwdUhra3R4ZENxNDBWbW5oOUhkYVRRXzRSM0huUi1DdmNmUkJ5V2pDWDZrMnpMOUJiVmVfakFJWQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "지니언스 뚜렷한 공시",
+      "polishedBody": "지니언스는 장중 12% 급등세 기업주식정보 재경일보 재료가 부각되며 단기 모멘텀을 형성했습니다. 장중 세 기업주식정보 재경일보 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 뚜렷한 공시 없이 장중 12% 급등세 기업주식정보 재경일보 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "LG전자",
+      "stockCode": "066570",
+      "summary": "LG전자 주가, 10월 30일 장중 150,100원 3.29% 하락 톱스타뉴스",
+      "headline": "LG전자 주가, 10월 30일 장중 150,100원 3.29% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -3.3%",
+        "LG전자 주가, 10월 30일 장중 150,100원 3.29% 하락"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-10-30T02:00:16.848Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -3.29,
+      "latestHeadline": "LG전자 주가, 10월 30일 장중 150,100원 3.29% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5xMG50d0lEMmlXQ3FCS0FOWlBFMEJaOXR4RVA1NDBoX2J4aVc4dV9IUEI3ZDYyR25xUWZMc2JRY0NDOFFrV0l5MnluX0kzdFNRQ3FlcmowQ2MwTE9obGN5UHhIZ2R2cm5IQTNmdjE5N1NuZw?oc=5",
+      "publishedAt": "Fri, 30 Oct 2026 01:00:10 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 10월 30일 장중 150,100원 3.29% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5xMG50d0lEMmlXQ3FCS0FOWlBFMEJaOXR4RVA1NDBoX2J4aVc4dV9IUEI3ZDYyR25xUWZMc2JRY0NDOFFrV0l5MnluX0kzdFNRQ3FlcmowQ2MwTE9obGN5UHhIZ2R2cm5IQTNmdjE5N1NuZw?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "LG전자 주가, 10월 30일 장중 150,100원 3.29% 하락",
+      "polishedBody": "LG전자는 주가, 10월 30일 장중 150,100원 3.29% 하락 톱스타뉴스 이슈로 단기 변동성이 확대됐습니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "루닛",
+      "stockCode": "328130",
+      "summary": "루닛 주가, 10월 30일 장중 15,410원 2.87% 상승 중앙이코노미뉴스",
+      "headline": "루닛 주가, 10월 30일 장중 15,410원 2.87% 상승",
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +2.9%",
+        "루닛 주가, 10월 30일 장중 15,410원 2.87% 상승"
+      ],
+      "mentionScore": 65.1,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-10-30T02:00:16.848Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 2.87,
+      "latestHeadline": "루닛 주가, 10월 30일 장중 15,410원 2.87% 상승",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBSZjROU3JrcFFSRVIxT1Y5U2VmbEZiV2FBVGdaRFVoWENrcGZsWVliQmJRXzkxZWZuZ0JiWThsU0hfNUEtcUg4YkhrTW9XdXMyZHFZYmJyTTRaM19VRFFQMWdUZU54azRiMDhiZUVER3UwZw?oc=5",
+      "publishedAt": "Fri, 30 Oct 2026 01:38:02 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "루닛 주가, 10월 30일 장중 15,410원 2.87% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBSZjROU3JrcFFSRVIxT1Y5U2VmbEZiV2FBVGdaRFVoWENrcGZsWVliQmJRXzkxZWZuZ0JiWThsU0hfNUEtcUg4YkhrTW9XdXMyZHFZYmJyTTRaM19VRFFQMWdUZU54azRiMDhiZUVER3UwZw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "루닛 주가, 10월 30일 장중 15,410원 2.87% 상승",
+      "polishedBody": "루닛은 주가, 10월 30일 장중 15,410원 2.87% 상승 중앙이코노미뉴스 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가, 10월 30일 장중 15,410원 중앙이코노미뉴스 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "빛과전자",
+      "stockCode": "069540",
+      "summary": "빛과전자 주가, 10월 30일 장중 4,160원 2.97% 상승 중앙이코노미뉴스",
+      "headline": "빛과전자 주가, 10월 30일 장중 4,160원 2.97% 상승",
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +3.0%",
+        "빛과전자 주가, 10월 30일 장중 4,160원 2.97% 상승"
+      ],
+      "mentionScore": 65.1,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-10-30T02:00:16.848Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 2.97,
+      "latestHeadline": "빛과전자 주가, 10월 30일 장중 4,160원 2.97% 상승",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE4zNXBSSDk1emdrNWFBS25FRHRTMkpHblcyWGRlVU5Dek5hVTNheUZYQlZ6OU9scmFEVVVfb0VKb3d6bzNJYnFXb0h3eUY2YVhCUGtnMGNYdjBTOE1pOFI5ZGM5bVQ0TmJWZ1JtSUNPOGpPUQ?oc=5",
+      "publishedAt": "Fri, 30 Oct 2026 01:35:01 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "빛과전자 주가, 10월 30일 장중 4,160원 2.97% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4zNXBSSDk1emdrNWFBS25FRHRTMkpHblcyWGRlVU5Dek5hVTNheUZYQlZ6OU9scmFEVVVfb0VKb3d6bzNJYnFXb0h3eUY2YVhCUGtnMGNYdjBTOE1pOFI5ZGM5bVQ0TmJWZ1JtSUNPOGpPUQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "빛과전자 주가, 10월 30일 장중 4,160원 2.97% 상승",
+      "polishedBody": "빛과전자는 주가, 10월 30일 장중 4,160원 2.97% 상승 중앙이코노미뉴스 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가, 10월 30일 장중 4,160원 중앙이코노미뉴스 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "한화비전",
@@ -175,47 +440,6 @@
       "polishedBody": "삼성전기는 역대급”…지금 사도 될까 이슈로 단기 변동성이 확대됐습니다. 역대급”…지금 사도 될까 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 주가, 10월 30일 장중 1,196,000원 7.50% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
-      "stockName": "SK하이닉스",
-      "stockCode": "000660",
-      "summary": "SK하이닉스 목표주가 370만원… 내년 영업이익 594조원 추정 - 와우넷 오늘장전략",
-      "headline": "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
-      "evidencePoints": [
-        "출처 한국경제TV, 조선일보 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "SK하이닉스 목표주가 370만원… 내년 영업이익 594조원 추정 - 와우넷 오늘장전략",
-        "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌"
-      ],
-      "mentionScore": 86.9,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-10-30T01:00:22.027Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
-      "source": "조선일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSS1MemdtTkx4eDkyR2NNMW9qTHFJQzhMVVg2YUNNQmNoQ0Z1LWZxYkQxM3JYV3BpaHU2ZHFnVmF1ZHgyV1dSc2xrV0pwNHhkYzJmNWs2YXczdk9COG5aVkgzMWhuRWlDc3FCSWlnczg2ZmE1QzlHdHFRMDFhSThWSGFMdnJ5MGxqVzBF?oc=5",
-      "publishedAt": "Thu, 29 Oct 2026 23:39:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "SK하이닉스 목표주가 370만원… 내년 영업이익 594조원 추정 - 와우넷 오늘장전략",
-          "source": "한국경제TV",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5SdHprb3dDcEh0c1FlY0VXNXZPVnJFTGVLd1hwRUU4RElpTjE4ZEpZVjNHQVMzM29DSUhhR3U5SEJsNldSSVcyd1M4emhKa2ZGaF8zWGcyY3VIRmRQQTVVYzZVZVhyMTVCNE1nZjlfWHB4WUY4MjFB?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
-          "source": "조선일보",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSS1MemdtTkx4eDkyR2NNMW9qTHFJQzhMVVg2YUNNQmNoQ0Z1LWZxYkQxM3JYV3BpaHU2ZHFnVmF1ZHgyV1dSc2xrV0pwNHhkYzJmNWs2YXczdk9COG5aVkgzMWhuRWlDc3FCSWlnczg2ZmE1QzlHdHFRMDFhSThWSGFMdnJ5MGxqVzBF?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "SK하이닉스 미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
-      "polishedBody": "SK하이닉스는 목표주가 370만원… 내년 영업이익 594조원 추정 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 반등에도 걸림돌 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
       "stockName": "삼성SDI",
       "stockCode": "006400",
       "summary": "유진證, 삼성SDI 목표주가 50만→70만",
@@ -291,40 +515,6 @@
       "polishedBody": "해성디에스는 실적 '고공행진'에도 재료가 부각되며 단기 모멘텀을 형성했습니다. 실적 '고공행진'에도 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 '저평가'…반등 기대감↑ 프라임경제 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "삼성중공업",
-      "stockCode": "010140",
-      "summary": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\" 이투데이",
-      "headline": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\"",
-      "evidencePoints": [
-        "출처 이투데이 기반 기사 1건",
-        "제목 기준 변동률 단서 +19.6%",
-        "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\""
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-10-30T01:00:22.027Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": 19.6,
-      "latestHeadline": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\"",
-      "source": "이투데이",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PUzRqNG5LTWJvUEc0RW5HaC1KeGNFM1hrbkkxVlg1UTNOLS1PbVd4UkpiUWRSOWpUbkVsUUZfVTR5NXhvMXVEMFBhZG9XRXZ4bUFaag?oc=5",
-      "publishedAt": "Thu, 29 Oct 2026 23:15:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\"",
-          "source": "이투데이",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PUzRqNG5LTWJvUEc0RW5HaC1KeGNFM1hrbkkxVlg1UTNOLS1PbVd4UkpiUWRSOWpUbkVsUUZfVTR5NXhvMXVEMFBhZG9XRXZ4bUFaag?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "삼성중공업 iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\"",
-      "polishedBody": "삼성중공업은 iM \", 환율 하락에도 3분기 실적 방어⋯환헤지 효과\" 이투데이 이슈로 단기 변동성이 확대됐습니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
       "stockName": "OCI홀딩스",
       "stockCode": "010060",
       "summary": "[엄브렐라] 4개 분기 연속 영업흑자에도 순손실 낸 OCI홀딩스…태양광 아닌 화학이 살렸다 알파경제",
@@ -398,212 +588,55 @@
       "hasNews": true,
       "polishedHeadline": "티앤이코리아 거래 첫날 40% 상승…장중 '따블'(종합)",
       "polishedBody": "티앤이코리아는 코스닥 거래 첫날 +68%대 급등 재료가 부각되며 단기 모멘텀을 형성했습니다. 코스닥 거래 첫날 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 거래 첫날 40% 상승…장중 '따블'(종합) 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "대우건설",
-      "stockCode": "047040",
-      "summary": "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속 뉴스티앤티",
-      "headline": "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속",
-      "evidencePoints": [
-        "출처 뉴스티앤티 기반 기사 1건",
-        "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속"
-      ],
-      "mentionScore": 39.6,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-10-30T01:00:22.027Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속",
-      "source": "뉴스티앤티",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1MQmd5aDEzeHRubnY1SmZRQXlBd0tQN2MzLTFGajVSMlhIWlNRNWh3Y190Sl9HZWdSaDdDUXJDZzNzeFQ4UndmVG9TaDJfTi1YS1Znd2pBejJPek5DRkVjTWNMaXg3UlVKZFE?oc=5",
-      "publishedAt": "Thu, 29 Oct 2026 02:33:49 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속",
-          "source": "뉴스티앤티",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1MQmd5aDEzeHRubnY1SmZRQXlBd0tQN2MzLTFGajVSMlhIWlNRNWh3Y190Sl9HZWdSaDdDUXJDZzNzeFQ4UndmVG9TaDJfTi1YS1Znd2pBejJPek5DRkVjTWNMaXg3UlVKZFE?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "대우건설 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속",
-      "polishedBody": "대우건설은 외국인, ·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속 뉴스티앤티 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 외국인, ·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속 뉴스티앤티 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "루닛",
-      "stockCode": "328130",
-      "summary": "[특징주] 루닛 장중 1%대 오름세… 1만4500원선 공방 : 기업주식정보 재경일보",
-      "headline": "[특징주] 루닛 장중 1%대 오름세… 1만4500원선 공방 : 기업주식정보",
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "[특징주] 루닛 장중 1%대 오름세… 1만4500원선 공방 : 기업주식정보"
-      ],
-      "mentionScore": 38.5,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-10-30T01:00:22.027Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[특징주] 루닛 장중 1%대 오름세… 1만4500원선 공방 : 기업주식정보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1UOG9pSnlrbTZJRDdxYzVEUzhnTE5fVWVBN3ptM0R6bncyT051dkJBdmhLZVdkU05vRnRjZVFBYnltNy03YjlGZDd1Yw?oc=5",
-      "publishedAt": "Thu, 29 Oct 2026 01:28:03 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 루닛 장중 1%대 오름세… 1만4500원선 공방 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1UOG9pSnlrbTZJRDdxYzVEUzhnTE5fVWVBN3ptM0R6bncyT051dkJBdmhLZVdkU05vRnRjZVFBYnltNy03YjlGZDd1Yw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "루닛 장중 1%대 오름세… 1만4500원선 공방 기업주식정보",
-      "polishedBody": "루닛은 장중 1%대 오름세… 1만4500원선 공방 기업주식정보 재경일보 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 장중 오름세… 1만4500원선 공방 기업주식정보 재경일보 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "지니언스",
-      "stockCode": "263860",
-      "summary": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
-      "headline": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
-      "evidencePoints": [
-        "출처 중앙이코노미뉴스, https://www.ppss.kr/ 기반 기사 2건",
-        "제목 기준 변동률 단서 -6.2%",
-        "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
-        "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-10-29T05:00:15.325Z",
-      "cycleLabel": "KST_1400",
-      "direction": "down",
-      "changeRate": -6.23,
-      "latestHeadline": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
-      "source": "중앙이코노미뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1OMm84djljNEZ0bmtPdE5PU09CcG1VTDFyRmxOb1ZMYVRleHNlMUdmbFZWNWJyLUpLRnpzV3dkNVNHU0tSZVZUclFfSVpTaUxld0dEUjlwcnl0RzJoazdiR1QtNC1KTHhISEI0V3lUd3B1dw?oc=5",
-      "publishedAt": "Thu, 29 Oct 2026 03:10:10 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
-          "source": "중앙이코노미뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1OMm84djljNEZ0bmtPdE5PU09CcG1VTDFyRmxOb1ZMYVRleHNlMUdmbFZWNWJyLUpLRnpzV3dkNVNHU0tSZVZUclFfSVpTaUxld0dEUjlwcnl0RzJoazdiR1QtNC1KTHhISEI0V3lUd3B1dw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
-          "source": "https://www.ppss.kr/",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00RTJlOTB1T1lScWhHTTNyMWhwTmh5TkhIU09iNUticmRlazVMUVY5SW1HeGw1YUJRcnJIRXNiUnROQzJwNTJMZTdWWWtxSnBpM3JUamNLa1IxOUpScFB2TTZGUHQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
-      "polishedBody": "지니언스는 상한가…공개매수 가격 인상에 보안 투자 확대 기대 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 주가, 10월 29일 장중 25,600원 6.23% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "빛과전자",
-      "stockCode": "069540",
-      "summary": "빛과전자, 이틀 연속 뜨거운 주가…상한가 직행",
-      "headline": "빛과전자 주가, 10월 29일 장중 3,945원 5.96% 하락",
-      "evidencePoints": [
-        "출처 톱스타뉴스, CBC뉴스, 프라임경제 기반 기사 3건",
-        "제목 기준 변동률 단서 -6.0%",
-        "빛과전자 주가, 10월 29일 장중 3,945원 5.96% 하락",
-        "빛과전자, 이틀 연속 뜨거운 주가…상한가 직행"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 3,
-      "updatedAt": "2026-10-29T02:00:17.007Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": -5.96,
-      "latestHeadline": "빛과전자 주가, 10월 29일 장중 3,945원 5.96% 하락",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE52bmY1eGM3RmIweVNNRG81X2RtZlFsaXBBUk94RG56QWVHWjJVcU1GS1N5UTRTQzAyQVFZOXlyRHZVdUlkdGZ5bDljbGZKRlNjVm92eXY1cHV6aEVxRDRGQUlnTHJ5V3NQajMtQWtjU0xhQQ?oc=5",
-      "publishedAt": "Thu, 29 Oct 2026 01:48:37 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "빛과전자 주가, 10월 29일 장중 3,945원 5.96% 하락",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE52bmY1eGM3RmIweVNNRG81X2RtZlFsaXBBUk94RG56QWVHWjJVcU1GS1N5UTRTQzAyQVFZOXlyRHZVdUlkdGZ5bDljbGZKRlNjVm92eXY1cHV6aEVxRDRGQUlnTHJ5V3NQajMtQWtjU0xhQQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "빛과전자, 이틀 연속 뜨거운 주가…상한가 직행",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBqZ2oyV3RyOGhfYXBUeUdNb0hqV1JYX3I3WWpPRlI0RHpPbVhiRWE1dnpYWkcySzhYaGZhYlYtclBYcXhSWXB5WUpmOHNpTGlxYllRYW5hZkJuUWpXUXl0Ml93RmxjSjND?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "[특징주] 빛과전자, 美 글로벌 기업향 '광통신 핵심' 양산 본격화에 上…차세대 기술력 '부각'",
-          "source": "프라임경제",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9YV09JcDdiNzRZN2hGWk5odjFPM05GMHFTdjNNeWNCWVpkWWUxQXBxdFItV3ZwOVVrRXhNZFN1Yzd5VzhMUm5ZWmRNZjJyaXp0cFZQZXVfVFlUQlJ6NEtQazNqVzBEbWcyaGxvOUMycXRvZw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "빛과전자 주가, 10월 29일 장중 3,945원 5.96% 하락",
-      "polishedBody": "빛과전자는 이틀 연속 뜨거운 주가…상한가 직행 이슈로 단기 변동성이 확대됐습니다. 이틀 연속 뜨거운 주가…상한가 직행 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 주가, 10월 29일 장중 3,945원 5.96% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "로보티즈",
-      "stockCode": "108490",
-      "summary": "로보티즈 주가, 10월 29일 장중 257,500원 6.53% 하락 톱스타뉴스",
-      "headline": "로보티즈 주가, 10월 29일 장중 257,500원 6.53% 하락",
-      "evidencePoints": [
-        "출처 톱스타뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 -6.5%",
-        "로보티즈 주가, 10월 29일 장중 257,500원 6.53% 하락"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-10-29T02:00:17.007Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": -6.53,
-      "latestHeadline": "로보티즈 주가, 10월 29일 장중 257,500원 6.53% 하락",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFA5dk9neEpfNjhXMGdLdVdoN3p6RkJyV0NWY1RLalpYWTNPcWJZSk5KQ01UZHNmSVc1VG14V1pSc0h1RW96ekFOX0xFVDR2N1Rwcm9aNTRqWmVRcTBUV0xXSEVZZ1N2VHVqNG9fVjJvZjd2Zw?oc=5",
-      "publishedAt": "Thu, 29 Oct 2026 01:32:06 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "로보티즈 주가, 10월 29일 장중 257,500원 6.53% 하락",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA5dk9neEpfNjhXMGdLdVdoN3p6RkJyV0NWY1RLalpYWTNPcWJZSk5KQ01UZHNmSVc1VG14V1pSc0h1RW96ekFOX0xFVDR2N1Rwcm9aNTRqWmVRcTBUV0xXSEVZZ1N2VHVqNG9fVjJvZjd2Zw?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "로보티즈 주가, 10월 29일 장중 257,500원 6.53% 하락",
-      "polishedBody": "로보티즈는 주가, 10월 29일 장중 257,500원 6.53% 하락 톱스타뉴스 이슈로 단기 변동성이 확대됐습니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "Thu, 29 Oct 2026 23:39:00 GMT",
+      "timestamp": "Fri, 30 Oct 2026 01:04:40 GMT",
+      "symbol": "010140",
+      "name": "삼성중공업",
+      "changeRate": 1.34,
+      "price": null,
+      "summary": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\"",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9sNHFOVWo4R3ZBZmNXNUFyMl9URnh6ZXpiSTZrQm52ekg4ZDJzYk9ReXk3NTBVX2lpS0VOWjJia0czcHBITWs2c3BnMzRxSkttdC1YUVhLb29jYlZXdnBKQ3FwSE40VEFlVDdydUt3Y2NZdw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 이투데이 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.3%",
+        "삼성중공업 주가, 10월 30일 장중 15,930원 1.34% 상승",
+        "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성중공업 주가, 10월 30일 장중 15,930원 1.34% 상승",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9sNHFOVWo4R3ZBZmNXNUFyMl9URnh6ZXpiSTZrQm52ekg4ZDJzYk9ReXk3NTBVX2lpS0VOWjJia0czcHBITWs2c3BnMzRxSkttdC1YUVhLb29jYlZXdnBKQ3FwSE40VEFlVDdydUt3Y2NZdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\"",
+          "source": "이투데이",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PUzRqNG5LTWJvUEc0RW5HaC1KeGNFM1hrbkkxVlg1UTNOLS1PbVd4UkpiUWRSOWpUbkVsUUZfVTR5NXhvMXVEMFBhZG9XRXZ4bUFaag?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 30 Oct 2026 00:28:00 GMT",
       "symbol": "005930",
       "name": "삼성전자",
       "changeRate": null,
       "price": null,
       "summary": "삼성전자, 역대급 실적에도 주주환원 발목…목표가 35만원으로 낮춘 IBK",
-      "source": "조선일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSS1MemdtTkx4eDkyR2NNMW9qTHFJQzhMVVg2YUNNQmNoQ0Z1LWZxYkQxM3JYV3BpaHU2ZHFnVmF1ZHgyV1dSc2xrV0pwNHhkYzJmNWs2YXczdk9COG5aVkgzMWhuRWlDc3FCSWlnczg2ZmE1QzlHdHFRMDFhSThWSGFMdnJ5MGxqVzBF?oc=5",
+      "source": "뉴스투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5mUzJCYTdQaVhpX2RMSmlUS29nOEdia2VKS09iaE0tTnVEaTdXbEszeGsyX0pXZUs5SzR2bjlxc3Jwb196Zl9FeXhPTC04MUNIdzFNTWtad3dUdWtpVGc?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 비즈워치, 조선일보, 뉴스핌, 글로벌이코노믹 기반 기사 4건",
-        "상승/강세 키워드 우세",
+        "출처 비즈워치, 뉴스투데이, 뉴스핌 기반 기사 3건",
+        "하락/약세 키워드 우세",
         "삼성전자, 역대급 실적에도 주주환원 발목…목표가 35만원으로 낮춘 IBK",
-        "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌"
+        "\"코스피, 美 빅테크 실적 부담에 하락 출발 전망…삼성전자·외국인 수급 주목\""
       ],
       "relatedPosts": [
         {
@@ -614,15 +647,179 @@
         },
         {
           "label": "관련기사2",
-          "title": "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
-          "source": "조선일보",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSS1MemdtTkx4eDkyR2NNMW9qTHFJQzhMVVg2YUNNQmNoQ0Z1LWZxYkQxM3JYV3BpaHU2ZHFnVmF1ZHgyV1dSc2xrV0pwNHhkYzJmNWs2YXczdk9COG5aVkgzMWhuRWlDc3FCSWlnczg2ZmE1QzlHdHFRMDFhSThWSGFMdnJ5MGxqVzBF?oc=5"
+          "title": "\"코스피, 美 빅테크 실적 부담에 하락 출발 전망…삼성전자·외국인 수급 주목\"",
+          "source": "뉴스투데이",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5mUzJCYTdQaVhpX2RMSmlUS29nOEdia2VKS09iaE0tTnVEaTdXbEszeGsyX0pXZUs5SzR2bjlxc3Jwb196Zl9FeXhPTC04MUNIdzFNTWtad3dUdWtpVGc?oc=5"
         },
         {
           "label": "관련기사3",
           "title": "[마감시황] 삼성전자 하락에 코스피 '6000선' 반납…외국인·기관 매도 행렬",
           "source": "뉴스핌",
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1jRDd1SVZnNlZ2aFF5NFNuWDBkakZOTXFjbjZoMHp4WFItV180M3FHTjZOWDFRNTJfeXQtR3phRXN4UGdCeW9heVhjM29wMkZuVzJjaGJsUURUNUVB?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 30 Oct 2026 01:01:29 GMT",
+      "symbol": "047040",
+      "name": "대우건설",
+      "changeRate": -4.13,
+      "price": null,
+      "summary": "대우건설, 호실적 속 마주한 '원전 변수'",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aa0lnTl9QaUNEOWRxVU9QMTVfYy1lXzU2V1pOR3p6d29iMXAzVVhsNXlGMXVqYWV4VTBEQVRBcFJUUlM0THRwcmNIQzJUSW5weGFDS04xQXdzODBoVUlyWFAtbm9MM2RuNHBaMFhyLWI5Zw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 신아일보, 뉴스티앤티 기반 기사 3건",
+        "제목 기준 변동률 단서 -4.1%",
+        "대우건설 주가, 10월 30일 장중 11,140원 4.13% 하락",
+        "대우건설, 호실적 속 마주한 '원전 변수'"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "대우건설 주가, 10월 30일 장중 11,140원 4.13% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aa0lnTl9QaUNEOWRxVU9QMTVfYy1lXzU2V1pOR3p6d29iMXAzVVhsNXlGMXVqYWV4VTBEQVRBcFJUUlM0THRwcmNIQzJUSW5weGFDS04xQXdzODBoVUlyWFAtbm9MM2RuNHBaMFhyLWI5Zw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "대우건설, 호실적 속 마주한 '원전 변수'",
+          "source": "신아일보",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9tc1VpbWM3WUgyNmd4Ql96M2tMeVdyS2dHOWlpVmVvaGRYR2pNcEJDMmtUUDAzVzg1VHJfeWNJdy1VN2Z2V2NsQmhYeDMwY1BJYldvY1pWV3JuQWhGY0sxSU9Dd25udGM4WnNaUGJ1SVk?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1MQmd5aDEzeHRubnY1SmZRQXlBd0tQN2MzLTFGajVSMlhIWlNRNWh3Y190Sl9HZWdSaDdDUXJDZzNzeFQ4UndmVG9TaDJfTi1YS1Znd2pBejJPek5DRkVjTWNMaXg3UlVKZFE?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 30 Oct 2026 00:07:44 GMT",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "changeRate": -5,
+      "price": null,
+      "summary": "SK하이닉스, 목표 주가가 370만 원? 내년 영익 600조라구요?",
+      "source": "뉴시스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9vcVpiNXpSOHlESW0zamxMRTN2ZjdPSG1EdHk4Y2RPaFlTRVA4Wnl1QlpQQ0U3OWdzMm9aVTRPNFc3eFZ1aHpkNVRCbUF0aV8wS0ZUcjBqemNMOXpIYm1qaNIBeEFVX3lxTE5MM2RnVHRwR0k1VGpjRVR0YmdsSi0tTVp5NC02cS1MLVdheVpWVkhYTWEwelNwSUJEbGZMbi10X2FFS0s4XzVFaTQxc0FBWmVYM0F6TlYwVUdsY2JKVThWbk9fR21NOG5lQWwxZElDMnAwQ1AwczcwRg?oc=5",
+      "mentionScore": 92.1,
+      "evidencePoints": [
+        "출처 뉴시스, 문화일보 기반 기사 2건",
+        "제목 기준 변동률 단서 -5.0%",
+        "'알파벳 쇼크'에 털썩…삼전 2%·SK하이닉스 5% 급락[핫스탁]",
+        "SK하이닉스, 목표 주가가 370만 원? 내년 영익 600조라구요?"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "'알파벳 쇼크'에 털썩…삼전 2%·SK하이닉스 5% 급락[핫스탁]",
+          "source": "뉴시스",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9vcVpiNXpSOHlESW0zamxMRTN2ZjdPSG1EdHk4Y2RPaFlTRVA4Wnl1QlpQQ0U3OWdzMm9aVTRPNFc3eFZ1aHpkNVRCbUF0aV8wS0ZUcjBqemNMOXpIYm1qaNIBeEFVX3lxTE5MM2RnVHRwR0k1VGpjRVR0YmdsSi0tTVp5NC02cS1MLVdheVpWVkhYTWEwelNwSUJEbGZMbi10X2FFS0s4XzVFaTQxc0FBWmVYM0F6TlYwVUdsY2JKVThWbk9fR21NOG5lQWwxZElDMnAwQ1AwczcwRg?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "SK하이닉스, 목표 주가가 370만 원? 내년 영익 600조라구요?",
+          "source": "문화일보",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE81VE9VQXpyLUUwbXNpUENFamU4MThrUkQtYWsxVy04Z3dxa3ZkbU80OVVBUmFaa2steV9YR3RINkhEbG05T0hTbHNLLWo2OHBO?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 30 Oct 2026 01:24:55 GMT",
+      "symbol": "263860",
+      "name": "지니언스",
+      "changeRate": 12,
+      "price": null,
+      "summary": "[특징주] 지니언스, 뚜렷한 공시 없이 장중 12% 급등세 : 기업주식정보 재경일보",
+      "source": "재경일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBCREhWclU5SGJ4ZURwdUhra3R4ZENxNDBWbW5oOUhkYVRRXzRSM0huUi1DdmNmUkJ5V2pDWDZrMnpMOUJiVmVfakFJWQ?oc=5",
+      "mentionScore": 75.8,
+      "evidencePoints": [
+        "출처 재경일보 기반 기사 1건",
+        "제목 기준 변동률 단서 +12.0%",
+        "[특징주] 지니언스, 뚜렷한 공시 없이 장중 12% 급등세 : 기업주식정보"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 지니언스, 뚜렷한 공시 없이 장중 12% 급등세 : 기업주식정보",
+          "source": "재경일보",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBCREhWclU5SGJ4ZURwdUhra3R4ZENxNDBWbW5oOUhkYVRRXzRSM0huUi1DdmNmUkJ5V2pDWDZrMnpMOUJiVmVfakFJWQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 30 Oct 2026 01:00:10 GMT",
+      "symbol": "066570",
+      "name": "LG전자",
+      "changeRate": -3.29,
+      "price": null,
+      "summary": "LG전자 주가, 10월 30일 장중 150,100원 3.29% 하락 톱스타뉴스",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5xMG50d0lEMmlXQ3FCS0FOWlBFMEJaOXR4RVA1NDBoX2J4aVc4dV9IUEI3ZDYyR25xUWZMc2JRY0NDOFFrV0l5MnluX0kzdFNRQ3FlcmowQ2MwTE9obGN5UHhIZ2R2cm5IQTNmdjE5N1NuZw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 -3.3%",
+        "LG전자 주가, 10월 30일 장중 150,100원 3.29% 하락"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "LG전자 주가, 10월 30일 장중 150,100원 3.29% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5xMG50d0lEMmlXQ3FCS0FOWlBFMEJaOXR4RVA1NDBoX2J4aVc4dV9IUEI3ZDYyR25xUWZMc2JRY0NDOFFrV0l5MnluX0kzdFNRQ3FlcmowQ2MwTE9obGN5UHhIZ2R2cm5IQTNmdjE5N1NuZw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 30 Oct 2026 01:38:02 GMT",
+      "symbol": "328130",
+      "name": "루닛",
+      "changeRate": 2.87,
+      "price": null,
+      "summary": "루닛 주가, 10월 30일 장중 15,410원 2.87% 상승 중앙이코노미뉴스",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBSZjROU3JrcFFSRVIxT1Y5U2VmbEZiV2FBVGdaRFVoWENrcGZsWVliQmJRXzkxZWZuZ0JiWThsU0hfNUEtcUg4YkhrTW9XdXMyZHFZYmJyTTRaM19VRFFQMWdUZU54azRiMDhiZUVER3UwZw?oc=5",
+      "mentionScore": 65.1,
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +2.9%",
+        "루닛 주가, 10월 30일 장중 15,410원 2.87% 상승"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "루닛 주가, 10월 30일 장중 15,410원 2.87% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBSZjROU3JrcFFSRVIxT1Y5U2VmbEZiV2FBVGdaRFVoWENrcGZsWVliQmJRXzkxZWZuZ0JiWThsU0hfNUEtcUg4YkhrTW9XdXMyZHFZYmJyTTRaM19VRFFQMWdUZU54azRiMDhiZUVER3UwZw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 30 Oct 2026 01:35:01 GMT",
+      "symbol": "069540",
+      "name": "빛과전자",
+      "changeRate": 2.97,
+      "price": null,
+      "summary": "빛과전자 주가, 10월 30일 장중 4,160원 2.97% 상승 중앙이코노미뉴스",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE4zNXBSSDk1emdrNWFBS25FRHRTMkpHblcyWGRlVU5Dek5hVTNheUZYQlZ6OU9scmFEVVVfb0VKb3d6bzNJYnFXb0h3eUY2YVhCUGtnMGNYdjBTOE1pOFI5ZGM5bVQ0TmJWZ1JtSUNPOGpPUQ?oc=5",
+      "mentionScore": 65.1,
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +3.0%",
+        "빛과전자 주가, 10월 30일 장중 4,160원 2.97% 상승"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "빛과전자 주가, 10월 30일 장중 4,160원 2.97% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4zNXBSSDk1emdrNWFBS25FRHRTMkpHblcyWGRlVU5Dek5hVTNheUZYQlZ6OU9scmFEVVVfb0VKb3d6bzNJYnFXb0h3eUY2YVhCUGtnMGNYdjBTOE1pOFI5ZGM5bVQ0TmJWZ1JtSUNPOGpPUQ?oc=5"
         }
       ]
     },
@@ -713,37 +910,6 @@
       ]
     },
     {
-      "timestamp": "Thu, 29 Oct 2026 23:39:00 GMT",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": null,
-      "price": null,
-      "summary": "SK하이닉스 목표주가 370만원… 내년 영업이익 594조원 추정 - 와우넷 오늘장전략",
-      "source": "조선일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSS1MemdtTkx4eDkyR2NNMW9qTHFJQzhMVVg2YUNNQmNoQ0Z1LWZxYkQxM3JYV3BpaHU2ZHFnVmF1ZHgyV1dSc2xrV0pwNHhkYzJmNWs2YXczdk9COG5aVkgzMWhuRWlDc3FCSWlnczg2ZmE1QzlHdHFRMDFhSThWSGFMdnJ5MGxqVzBF?oc=5",
-      "mentionScore": 86.9,
-      "evidencePoints": [
-        "출처 한국경제TV, 조선일보 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "SK하이닉스 목표주가 370만원… 내년 영업이익 594조원 추정 - 와우넷 오늘장전략",
-        "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "SK하이닉스 목표주가 370만원… 내년 영업이익 594조원 추정 - 와우넷 오늘장전략",
-          "source": "한국경제TV",
-          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5SdHprb3dDcEh0c1FlY0VXNXZPVnJFTGVLd1hwRUU4RElpTjE4ZEpZVjNHQVMzM29DSUhhR3U5SEJsNldSSVcyd1M4emhKa2ZGaF8zWGcyY3VIRmRQQTVVYzZVZVhyMTVCNE1nZjlfWHB4WUY4MjFB?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "미국 기술주 덮친 AI 투자 우려… 삼성전자·SK하이닉스 반등에도 걸림돌",
-          "source": "조선일보",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSS1MemdtTkx4eDkyR2NNMW9qTHFJQzhMVVg2YUNNQmNoQ0Z1LWZxYkQxM3JYV3BpaHU2ZHFnVmF1ZHgyV1dSc2xrV0pwNHhkYzJmNWs2YXczdk9COG5aVkgzMWhuRWlDc3FCSWlnczg2ZmE1QzlHdHFRMDFhSThWSGFMdnJ5MGxqVzBF?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Fri, 30 Oct 2026 00:48:05 GMT",
       "symbol": "006400",
       "name": "삼성SDI",
@@ -795,30 +961,6 @@
           "title": "해성디에스, 실적 '고공행진'에도 주가는 '저평가'…반등 기대감↑",
           "source": "프라임경제",
           "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5EMlg5dk1sd2c1NjFvZllrTXk5emVKOHphemM2MWk3N29RcXF3cUR1dFViQXlyWm95ZUtWZTgzQkpFeVJKcVdIaTJnT1Z5ZE9VNmliZDkzdEJ2Wkw0MTc5MTlqOHVHTUpqc0hqQkduZU94Zw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Thu, 29 Oct 2026 23:15:00 GMT",
-      "symbol": "010140",
-      "name": "삼성중공업",
-      "changeRate": 19.6,
-      "price": null,
-      "summary": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\" 이투데이",
-      "source": "이투데이",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PUzRqNG5LTWJvUEc0RW5HaC1KeGNFM1hrbkkxVlg1UTNOLS1PbVd4UkpiUWRSOWpUbkVsUUZfVTR5NXhvMXVEMFBhZG9XRXZ4bUFaag?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 이투데이 기반 기사 1건",
-        "제목 기준 변동률 단서 +19.6%",
-        "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "iM \"삼성중공업, 환율 하락에도 3분기 실적 방어⋯환헤지 효과\"",
-          "source": "이투데이",
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5PUzRqNG5LTWJvUEc0RW5HaC1KeGNFM1hrbkkxVlg1UTNOLS1PbVd4UkpiUWRSOWpUbkVsUUZfVTR5NXhvMXVEMFBhZG9XRXZ4bUFaag?oc=5"
         }
       ]
     },
@@ -876,144 +1018,6 @@
           "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE51Ri1yaVI5QUJxZWlmYnlnY3E0cjZGb3ZkNU96djdvUUdpZWlvODU4VmxMVGxTQkszXzdqTUZvNmZCVko2alAxMnVtd0ltc09URXFycWhpRG9SOUMyZ2VVNDRnWUEweW9qSkMtcXVn?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "Thu, 29 Oct 2026 02:33:49 GMT",
-      "symbol": "047040",
-      "name": "대우건설",
-      "changeRate": null,
-      "price": null,
-      "summary": "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속 뉴스티앤티",
-      "source": "뉴스티앤티",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1MQmd5aDEzeHRubnY1SmZRQXlBd0tQN2MzLTFGajVSMlhIWlNRNWh3Y190Sl9HZWdSaDdDUXJDZzNzeFQ4UndmVG9TaDJfTi1YS1Znd2pBejJPek5DRkVjTWNMaXg3UlVKZFE?oc=5",
-      "mentionScore": 39.6,
-      "evidencePoints": [
-        "출처 뉴스티앤티 기반 기사 1건",
-        "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 외국인, 대우건설·서산 매수 상위…기관은 지씨지놈 집중, 삼성전자 매도 지속",
-          "source": "뉴스티앤티",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1MQmd5aDEzeHRubnY1SmZRQXlBd0tQN2MzLTFGajVSMlhIWlNRNWh3Y190Sl9HZWdSaDdDUXJDZzNzeFQ4UndmVG9TaDJfTi1YS1Znd2pBejJPek5DRkVjTWNMaXg3UlVKZFE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Thu, 29 Oct 2026 01:28:03 GMT",
-      "symbol": "328130",
-      "name": "루닛",
-      "changeRate": null,
-      "price": null,
-      "summary": "[특징주] 루닛 장중 1%대 오름세… 1만4500원선 공방 : 기업주식정보 재경일보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1UOG9pSnlrbTZJRDdxYzVEUzhnTE5fVWVBN3ptM0R6bncyT051dkJBdmhLZVdkU05vRnRjZVFBYnltNy03YjlGZDd1Yw?oc=5",
-      "mentionScore": 38.5,
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "[특징주] 루닛 장중 1%대 오름세… 1만4500원선 공방 : 기업주식정보"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 루닛 장중 1%대 오름세… 1만4500원선 공방 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1UOG9pSnlrbTZJRDdxYzVEUzhnTE5fVWVBN3ptM0R6bncyT051dkJBdmhLZVdkU05vRnRjZVFBYnltNy03YjlGZDd1Yw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Thu, 29 Oct 2026 03:10:10 GMT",
-      "symbol": "263860",
-      "name": "지니언스",
-      "changeRate": -6.23,
-      "price": null,
-      "summary": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
-      "source": "중앙이코노미뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1OMm84djljNEZ0bmtPdE5PU09CcG1VTDFyRmxOb1ZMYVRleHNlMUdmbFZWNWJyLUpLRnpzV3dkNVNHU0tSZVZUclFfSVpTaUxld0dEUjlwcnl0RzJoazdiR1QtNC1KTHhISEI0V3lUd3B1dw?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 중앙이코노미뉴스, https://www.ppss.kr/ 기반 기사 2건",
-        "제목 기준 변동률 단서 -6.2%",
-        "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
-        "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "지니언스 주가, 10월 29일 장중 25,600원 6.23% 하락",
-          "source": "중앙이코노미뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1OMm84djljNEZ0bmtPdE5PU09CcG1VTDFyRmxOb1ZMYVRleHNlMUdmbFZWNWJyLUpLRnpzV3dkNVNHU0tSZVZUclFfSVpTaUxld0dEUjlwcnl0RzJoazdiR1QtNC1KTHhISEI0V3lUd3B1dw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[오늘의 특징주] 케이아이엔엑스·지니언스 상한가…공개매수 가격 인상에 보안 투자 확대 기대",
-          "source": "https://www.ppss.kr/",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00RTJlOTB1T1lScWhHTTNyMWhwTmh5TkhIU09iNUticmRlazVMUVY5SW1HeGw1YUJRcnJIRXNiUnROQzJwNTJMZTdWWWtxSnBpM3JUamNLa1IxOUpScFB2TTZGUHQ?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Thu, 29 Oct 2026 01:48:37 GMT",
-      "symbol": "069540",
-      "name": "빛과전자",
-      "changeRate": -5.96,
-      "price": null,
-      "summary": "빛과전자, 이틀 연속 뜨거운 주가…상한가 직행",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE52bmY1eGM3RmIweVNNRG81X2RtZlFsaXBBUk94RG56QWVHWjJVcU1GS1N5UTRTQzAyQVFZOXlyRHZVdUlkdGZ5bDljbGZKRlNjVm92eXY1cHV6aEVxRDRGQUlnTHJ5V3NQajMtQWtjU0xhQQ?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 톱스타뉴스, CBC뉴스, 프라임경제 기반 기사 3건",
-        "제목 기준 변동률 단서 -6.0%",
-        "빛과전자 주가, 10월 29일 장중 3,945원 5.96% 하락",
-        "빛과전자, 이틀 연속 뜨거운 주가…상한가 직행"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "빛과전자 주가, 10월 29일 장중 3,945원 5.96% 하락",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE52bmY1eGM3RmIweVNNRG81X2RtZlFsaXBBUk94RG56QWVHWjJVcU1GS1N5UTRTQzAyQVFZOXlyRHZVdUlkdGZ5bDljbGZKRlNjVm92eXY1cHV6aEVxRDRGQUlnTHJ5V3NQajMtQWtjU0xhQQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "빛과전자, 이틀 연속 뜨거운 주가…상한가 직행",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBqZ2oyV3RyOGhfYXBUeUdNb0hqV1JYX3I3WWpPRlI0RHpPbVhiRWE1dnpYWkcySzhYaGZhYlYtclBYcXhSWXB5WUpmOHNpTGlxYllRYW5hZkJuUWpXUXl0Ml93RmxjSjND?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "[특징주] 빛과전자, 美 글로벌 기업향 '광통신 핵심' 양산 본격화에 上…차세대 기술력 '부각'",
-          "source": "프라임경제",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9YV09JcDdiNzRZN2hGWk5odjFPM05GMHFTdjNNeWNCWVpkWWUxQXBxdFItV3ZwOVVrRXhNZFN1Yzd5VzhMUm5ZWmRNZjJyaXp0cFZQZXVfVFlUQlJ6NEtQazNqVzBEbWcyaGxvOUMycXRvZw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Thu, 29 Oct 2026 01:32:06 GMT",
-      "symbol": "108490",
-      "name": "로보티즈",
-      "changeRate": -6.53,
-      "price": null,
-      "summary": "로보티즈 주가, 10월 29일 장중 257,500원 6.53% 하락 톱스타뉴스",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFA5dk9neEpfNjhXMGdLdVdoN3p6RkJyV0NWY1RLalpYWTNPcWJZSk5KQ01UZHNmSVc1VG14V1pSc0h1RW96ekFOX0xFVDR2N1Rwcm9aNTRqWmVRcTBUV0xXSEVZZ1N2VHVqNG9fVjJvZjd2Zw?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 톱스타뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 -6.5%",
-        "로보티즈 주가, 10월 29일 장중 257,500원 6.53% 하락"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "로보티즈 주가, 10월 29일 장중 257,500원 6.53% 하락",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA5dk9neEpfNjhXMGdLdVdoN3p6RkJyV0NWY1RLalpYWTNPcWJZSk5KQ01UZHNmSVc1VG14V1pSc0h1RW96ekFOX0xFVDR2N1Rwcm9aNTRqWmVRcTBUV0xXSEVZZ1N2VHVqNG9fVjJvZjd2Zw?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -1021,8 +1025,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "rule-based",
-    "model": "signal-polish-v1",
-    "fallbackReason": "primary_failed"
+    "provider": "mixed",
+    "model": "signal-polish-v1, deepseek/deepseek-v4-flash",
+    "fallbackReason": "partial_primary_failed"
   }
 }
