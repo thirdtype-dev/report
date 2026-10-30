@@ -7,7 +7,7 @@ export function seoulParts(now = new Date()) {
   const iso = new Date(+now + 9 * 3600000).toISOString();
   return { date: iso.slice(0, 10), hour: Number(iso.slice(11, 13)) };
 }
-export function resolveSlot({ phase = 'pre_market', tradingDate = '', asOf = '', now = new Date(), createdAt } = {}) {
+export function resolveSlot({ phase = 'pre_market', tradingDate = '', asOf = '', delayedDate = '', now = new Date(), createdAt } = {}) {
   if (!['pre_market', 'post_market'].includes(phase)) throw new Error('invalid_phase');
   const current = seoulParts(now);
   const originalDate = createdAt ? seoulParts(new Date(createdAt)).date : current.date;
@@ -18,7 +18,8 @@ export function resolveSlot({ phase = 'pre_market', tradingDate = '', asOf = '',
     if (phase !== 'post_market' || asOf !== `${date}T16:00:00+09:00` || !Number.isFinite(ms) || ms > +now || +now - ms > 48 * 3600000) throw new Error('invalid_backfill_cutoff');
   } else {
     if (date !== current.date || originalDate !== current.date) throw new Error('delayed_slot_date_mismatch');
-    if (phase === 'pre_market' ? current.hour < 8 || current.hour >= 9 : current.hour < 16) throw new Error('outside_phase_publication_window');
+    const approvedDelay = delayedDate === '2026-10-30' && date === delayedDate && phase === 'pre_market' && current.hour >= 9 && current.hour < 16;
+    if (!approvedDelay && (phase === 'pre_market' ? current.hour < 8 || current.hour >= 9 : current.hour < 16)) throw new Error('outside_phase_publication_window');
   }
   return { phase, date, key: `briefing:${date}:${phase}` };
 }
@@ -39,7 +40,7 @@ export async function runBriefingSlotCli({ env = process.env, now, stdout = proc
   const phase = env.INPUT_PHASE || (env.SCHEDULE === '20 7 * * 1-5' ? 'post_market' : 'pre_market');
   let slot;
   try {
-    slot = resolveSlot({ phase, tradingDate: env.INPUT_TRADING_DATE, asOf: env.BRIEFING_AS_OF, createdAt, now });
+    slot = resolveSlot({ phase, tradingDate: env.INPUT_TRADING_DATE, asOf: env.BRIEFING_AS_OF, delayedDate: env.BRIEFING_DELAYED_PRE_MARKET_DATE, createdAt, now });
   } catch (error) {
     const reason = error instanceof Error ? error.message : '';
     if (env.GITHUB_EVENT_NAME === 'schedule' && scheduledRecoveryCrons.has(env.SCHEDULE) && skippableScheduleErrors.has(reason)) {
@@ -54,3 +55,9 @@ export async function runBriefingSlotCli({ env = process.env, now, stdout = proc
   stdout.write(`should_run=true\nphase=${slot.phase}\ntrading_date=${slot.date}\nslot_key=${slot.key}\n`);
 }
 if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) await runBriefingSlotCli();
+
+export function delayedPublicationNotice({ phase, date, approvedDate, publishedAt }) {
+  if (phase !== 'pre_market' || date !== '2026-10-30' || approvedDate !== date) return '';
+  const local = new Date(Date.parse(publishedAt) + 9 * 3600000).toISOString().slice(0, 19).replace('T', ' ');
+  return `<p class="delayed-publication">지연 발행 · 정보 기준: ${date} 08:30 KST · 실제 발행 시각: ${local} KST. 장 시작 전 자료를 복구한 리포트이며 현재 장중 상황을 반영하지 않습니다.</p>`;
+}
