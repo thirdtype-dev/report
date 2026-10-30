@@ -3,6 +3,7 @@ import { execFile } from 'node:child_process';
 import { resolve } from 'node:path';
 import { promisify } from 'node:util';
 import { withDeadline } from './briefing-deadline.mjs';
+import { delayedPublicationNotice } from './briefing-slot.mjs';
 
 const OUTPUT_DIR = resolve(process.cwd(), 'public/report');
 const DATA_DIR = resolve(OUTPUT_DIR, 'data');
@@ -3446,7 +3447,7 @@ function dateKey(value = new Date(BRIEFING_AS_OF || (BRIEFING_TRADING_DATE ? `${
   }).format(value);
 }
 
-function renderArticle(report) {
+function renderArticle(report, publishedAt = new Date().toISOString()) {
   const config = PHASE_CONFIG[PHASE];
   const body = PHASE === 'post_market' ? renderPostMarketReport(report) : renderPreMarketReport(report);
   const articleClass = PHASE === 'post_market' ? 'report-post-market' : 'report-pre-market';
@@ -3461,6 +3462,7 @@ function renderArticle(report) {
       <div class="eyebrow published">${escapeHtml(config.eyebrow)}</div>
       <h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>
 ${informationBasis}
+${delayedPublicationNotice({ phase: PHASE, date: PRE_MARKET_TRADING_DATE, approvedDate: process.env.BRIEFING_DELAYED_PRE_MARKET_DATE, publishedAt })}
 ${body}
     </article>`;
 }
@@ -3661,7 +3663,7 @@ async function preserveExistingCommittedReportOutputs() {
 
 async function renderHtml(_marketResearch, report, writer) {
   const publishedAt = new Date().toISOString();
-  const currentArticle = renderArticle(report);
+  const currentArticle = renderArticle(report, publishedAt);
   const articles = [currentArticle, ...(await legacyArticles(currentArticle))]
     .slice(0, 2)
     .map(decorateArticlePhase)
