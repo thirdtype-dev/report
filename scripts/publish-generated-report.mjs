@@ -113,6 +113,10 @@ function removeTemporaryWorktree(worktreePath, parentDir) {
   }
 }
 
+export function validatePublicationSlot(env = process.env, now = new Date()) {
+  return resolveSlot({ tradingDate: env.BRIEFING_TRADING_DATE, phase: env.BRIEFING_PHASE, asOf: env.BRIEFING_AS_OF, delayedDate: env.BRIEFING_DELAYED_PRE_MARKET_DATE, now });
+}
+
 function publishAttempt(artifactDir, paths) {
   const worktreeParent = fs.mkdtempSync(path.join(os.tmpdir(), 'report-publish-worktree-'));
   const worktreePath = path.join(worktreeParent, 'checkout');
@@ -131,7 +135,7 @@ function publishAttempt(artifactDir, paths) {
     const remoteShaBeforePush = remoteMainSha();
     if (publishedSha !== remoteShaBeforePush) {
       if (process.env.BRIEFING_TRADING_DATE) {
-        resolveSlot({ tradingDate: process.env.BRIEFING_TRADING_DATE, phase: process.env.BRIEFING_PHASE, asOf: process.env.BRIEFING_AS_OF });
+        validatePublicationSlot();
       }
       runGitAt(worktreePath, ['push', 'origin', 'HEAD:main']);
     }
