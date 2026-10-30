@@ -21,3 +21,12 @@ test('delayed report distinguishes frozen information from actual publication', 
   assert.equal(delayedPublicationNotice({ ...args, approvedDate: '' }), '');
   assert.equal(delayedPublicationNotice({ ...args, date: '2026-11-02' }), '');
 });
+
+
+test('final publisher check forwards only the approved dated exception', async () => {
+  const { validatePublicationSlot } = await import('../scripts/publish-generated-report.mjs');
+  const env = { BRIEFING_TRADING_DATE: '2026-10-30', BRIEFING_PHASE: 'pre_market', BRIEFING_DELAYED_PRE_MARKET_DATE: '2026-10-30' };
+  assert.equal(validatePublicationSlot(env, new Date('2026-10-30T11:00:00+09:00')).date, '2026-10-30');
+  assert.throws(() => validatePublicationSlot({ ...env, BRIEFING_DELAYED_PRE_MARKET_DATE: '' }, new Date('2026-10-30T11:00:00+09:00')), /outside_phase/);
+  assert.throws(() => validatePublicationSlot(env, new Date('2026-10-30T16:00:00+09:00')), /outside_phase/);
+});
