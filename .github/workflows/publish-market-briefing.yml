@@ -20,6 +20,11 @@ on:
         options:
           - pre_market
           - post_market
+      delayed_pre_market_20261030:
+        description: 'One-time approved delayed pre-market publication on 2026-10-30 before 16:00 KST'
+        required: false
+        default: false
+        type: boolean
       automatic:
         description: Skip an automatic duplicate after a terminal run exists for this slot
         required: false
@@ -38,6 +43,7 @@ jobs:
   publish:
     env:
       BRIEFING_AS_OF: ${{ inputs.as_of }}
+      BRIEFING_DELAYED_PRE_MARKET_DATE: ${{ inputs.delayed_pre_market_20261030 && '2026-10-30' || '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 18
     steps:
