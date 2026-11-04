@@ -1,90 +1,529 @@
 {
-  "generated_at": "2026-11-03T06:00:29.400Z",
-  "generated_date": "2026-11-03",
-  "slot_hour": 15,
-  "cycle_label": "KST_1500",
-  "slot_label": "15:00",
+  "generated_at": "2026-11-04T01:00:27.536Z",
+  "generated_date": "2026-11-04",
+  "slot_hour": 10,
+  "cycle_label": "KST_1000",
+  "slot_label": "10:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 15:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 13건",
+    "title": "KST 10:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 16건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
-      "stockName": "대덕전자",
-      "stockCode": "353200",
-      "summary": "대덕전자 주가 13%대 급락…영업이익 급증에도 10만원선 위협 CBC뉴스",
-      "headline": "대덕전자 주가 13%대 급락…영업이익 급증에도 10만원선 위협",
-      "evidencePoints": [
-        "출처 CBC뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 -13.0%",
-        "대덕전자 주가 13%대 급락…영업이익 급증에도 10만원선 위협"
-      ],
-      "mentionScore": 77.4,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-11-03T06:00:29.400Z",
-      "cycleLabel": "KST_1500",
-      "direction": "down",
-      "changeRate": -13,
-      "latestHeadline": "대덕전자 주가 13%대 급락…영업이익 급증에도 10만원선 위협",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9EdDJ6NmJsSlMxZzJMMFFvMnJUNjM4M2hraXZLMG9manVYNG1neE0xblJwdmEyUnVIVkVMVGNpWWhxLVNNbGVaTzNMTEVCaV9TQUgybDU3SkpCYlhqSHo5c25UUVV5UFVa?oc=5",
-      "publishedAt": "Tue, 03 Nov 2026 05:50:04 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "대덕전자 주가 13%대 급락…영업이익 급증에도 10만원선 위협",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9EdDJ6NmJsSlMxZzJMMFFvMnJUNjM4M2hraXZLMG9manVYNG1neE0xblJwdmEyUnVIVkVMVGNpWWhxLVNNbGVaTzNMTEVCaV9TQUgybDU3SkpCYlhqSHo5c25UUVV5UFVa?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "대덕전자 13%대 급락…영업이익 급증에도 10만원선 위협",
-      "polishedBody": "대덕전자는 주가 13%대 급락…영업이익 급증에도 10만원선 위협 CBC뉴스 이슈로 단기 변동성이 확대됐습니다. 주가 …영업이익 급증에도 10만원선 위협 CBC뉴스 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 낙폭이 진정되려면 저가 매수 유입보다 매도 압력 둔화가 먼저 확인돼야 합니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
       "stockName": "SK하이닉스",
       "stockCode": "000660",
-      "summary": "[핫타임] 삼성전자·SK하이닉스, 장 초반 5%대 급락…실적 낙관론에도 찬바람",
-      "headline": "SK하이닉스 주가 장중 4%대 내려, 'AI 수익성 우려'에 삼성전자도 3%대 하락",
+      "summary": "iM證 “SK하이닉스, HBM 하나로 시가총액 설명 가능…과도한 저평가\"",
+      "headline": "고점 대비 57% 뚝…SK하이닉스 2028년 이후 기대되는 이유-iM - 머니투데이",
       "evidencePoints": [
-        "출처 비즈니스포스트, 아주경제 기반 기사 2건",
-        "제목 기준 변동률 단서 -4.0%",
-        "SK하이닉스 주가 장중 4%대 내려, 'AI 수익성 우려'에 삼성전자도 3%대 하락",
-        "[핫타임] 삼성전자·SK하이닉스, 장 초반 5%대 급락…실적 낙관론에도 찬바람"
+        "출처 머니투데이, Chosunbiz 기반 기사 2건",
+        "제목 기준 변동률 단서 -8.7%",
+        "고점 대비 57% 뚝…SK하이닉스 2028년 이후 기대되는 이유-iM - 머니투데이",
+        "iM證 “SK하이닉스, HBM 하나로 시가총액 설명 가능…과도한 저평가\""
       ],
       "mentionScore": 99.9,
-      "sentimentLabel": "negative",
+      "sentimentLabel": "neutral",
       "channelCount": 3,
-      "updatedAt": "2026-11-03T03:00:27.033Z",
-      "cycleLabel": "KST_1200",
-      "direction": "down",
-      "changeRate": -4,
-      "latestHeadline": "SK하이닉스 주가 장중 4%대 내려, 'AI 수익성 우려'에 삼성전자도 3%대 하락",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5acldkb0NfQmJlc0lLYkc1VDhtT0l4bWZEMG5kcEJRei13T1B2RkxqNGhIMm8xV0E2TlgzOGJNTmpSQm9pZHExenBfeHQ5Q2tlQlFGRnVTZXJiS1NYQzZqbTJWM24zNkZiUVF4V3lPX0NPRUE?oc=5",
-      "publishedAt": "Tue, 03 Nov 2026 01:40:52 GMT",
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "고점 대비 57% 뚝…SK하이닉스 2028년 이후 기대되는 이유-iM - 머니투데이",
+      "source": "머니투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KWnZzakJFdnNGaWl5MTViY25Gb0pVSUlpY0R6UXZmeDl1XzFEOUhfRmhhZGtmcmpaWm9hbmJ0NjNvRjBxXzRPdmNsdlVPNWtrQzd1VURBVmd1NE13RmhPLVVJdWlOV2VN0gFuQVVfeXFMTkhfOEkyVGtBWnlXd3RIcm9DUFBKYXdJck5RZ3RldV9wNFdEOE9lOXE2cUJWdklHejJneVl1SWx6XzdaWDZ4NUx6ZmMtZWIybVBtWGk2ZFhtNzhTUVJvQzFRQUFfYjU0ZmpDaGtnOEE?oc=5",
+      "publishedAt": "Wed, 04 Nov 2026 00:07:57 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "SK하이닉스 주가 장중 4%대 내려, 'AI 수익성 우려'에 삼성전자도 3%대 하락",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5acldkb0NfQmJlc0lLYkc1VDhtT0l4bWZEMG5kcEJRei13T1B2RkxqNGhIMm8xV0E2TlgzOGJNTmpSQm9pZHExenBfeHQ5Q2tlQlFGRnVTZXJiS1NYQzZqbTJWM24zNkZiUVF4V3lPX0NPRUE?oc=5"
+          "title": "고점 대비 57% 뚝…SK하이닉스 2028년 이후 기대되는 이유-iM - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KWnZzakJFdnNGaWl5MTViY25Gb0pVSUlpY0R6UXZmeDl1XzFEOUhfRmhhZGtmcmpaWm9hbmJ0NjNvRjBxXzRPdmNsdlVPNWtrQzd1VURBVmd1NE13RmhPLVVJdWlOV2VN0gFuQVVfeXFMTkhfOEkyVGtBWnlXd3RIcm9DUFBKYXdJck5RZ3RldV9wNFdEOE9lOXE2cUJWdklHejJneVl1SWx6XzdaWDZ4NUx6ZmMtZWIybVBtWGk2ZFhtNzhTUVJvQzFRQUFfYjU0ZmpDaGtnOEE?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "[핫타임] 삼성전자·SK하이닉스, 장 초반 5%대 급락…실적 낙관론에도 찬바람",
-          "source": "아주경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB4ZC1UNWRvWjdrLTlHLWZSSjdlelBXYnpHc1dNbEItWnRlN1lFeDNyeDJ1VlZaeVUzdkVHX3ctZ2paMlVvMTdPa083SmduLXF1cnN4aE9HNXFTUdIBWEFVX3lxTE5aNGxyR213a3RzXy1iQkZtUXM2c1d4cENEMlR2cTlTTVVXRkphbUlLRENfWHNDLVh3c1MwS2hUZXpHX2dvUTV3bDl2VERFUDFFZWZuanhzWDE?oc=5"
+          "title": "iM證 “SK하이닉스, HBM 하나로 시가총액 설명 가능…과도한 저평가\"",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdTNKZHVNc3otNENJc21oRU5pY0lrRGtnZVotSXozZHZMdzlvNzd3b2lpOUZzM0RreGphZWJxY2VwNW1Rc0VBd3k4WHFSVUtxWVJkbUJmYjRzSHNfVDNTVFFpVEs4di00RkJhTHFSdkx3cFo1cWlqdmlGbnpKLVNZYXFmdHFyWVFa0gGcAUFVX3lxTE1TM0M5NkY4eVJMR3lYN20zaHB6NTMwd0pnblFqWVpFdFJpQTZSSm1fdkQ1OTd6NnU5YzdKSEJxNUVVR1JXa2JKVHBUclJWcXdUWkVGNGdHaTJ5UkpBaWk4UWd2VnlSYlQ0eGhyRTE2S2pMeXR4Z1FEZk1tZkFvWUI5RXp4YjJYN3RSMmZuc2g5WjhEM1BkTGY0VUZUcw?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "SK하이닉스 장중 4%대 내려, 'AI 수익성 우려'에 삼성전자도 3%대 하락",
-      "polishedBody": "SK하이닉스는 삼성전자·, 장 초반 5%대 급락…실적 낙관론에도 찬바람 이슈로 단기 변동성이 확대됐습니다. 삼성전자·, 장 초반 …실적 낙관론에도 찬바람 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 주가 장중 4%대 내려 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+      "polishedHeadline": "SK하이닉스 고점 대비 57% 뚝…SK하이닉스 2028년 이후",
+      "polishedBody": "SK하이닉스는 iM證 “, HBM 하나로 시가총액 설명 가능…과도한 저평가\" 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 iM證 “, HBM 하나로 시가총액 설명 가능…과도한 저평가\" 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 고점 대비 57% 뚝…2028년 이후 기대되는 이유 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "대덕전자",
+      "stockCode": "353200",
+      "summary": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT 빅터뉴스",
+      "headline": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+      "evidencePoints": [
+        "출처 빅터뉴스 기반 기사 1건",
+        "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT"
+      ],
+      "mentionScore": 46.7,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+      "source": "빅터뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9zWGYzb0NwWGU4a01rNk1oSTBHRnBHQnFRT0p1M25YenBqN2RocXg5QjRCWmtzX2lTVnI5U1VKMElKcWNMT3NGdEdYd0p2Zzk0RXFUMVhvSDMzVjhzLV9fbklJdTJFNTQ?oc=5",
+      "publishedAt": "Tue, 03 Nov 2026 09:41:43 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+          "source": "빅터뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9zWGYzb0NwWGU4a01rNk1oSTBHRnBHQnFRT0p1M25YenBqN2RocXg5QjRCWmtzX2lTVnI5U1VKMElKcWNMT3NGdEdYd0p2Zzk0RXFUMVhvSDMzVjhzLV9fbklJdTJFNTQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "대덕전자 한진칼·아시아나IDT",
+      "polishedBody": "대덕전자는 한진칼·아시아나IDT 빅터뉴스 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 한진칼·아시아나IDT 빅터뉴스 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "심텍",
+      "stockCode": "222800",
+      "summary": "[리포트 브리핑]심텍, '업황을 입증하는 서프라이즈' 목표가 210,000원 - 하나증권",
+      "headline": "[특징주] '반도체 장비' 심텍, 3분기 호실적에 10% 급등",
+      "evidencePoints": [
+        "출처 뉴스핌, 연합뉴스 기반 기사 2건",
+        "제목 기준 변동률 단서 +10.0%",
+        "[리포트 브리핑]심텍, '업황을 입증하는 서프라이즈' 목표가 210,000원 - 하나증권",
+        "[특징주] '반도체 장비' 심텍, 3분기 호실적에 10% 급등"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 4,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": 10,
+      "latestHeadline": "[특징주] '반도체 장비' 심텍, 3분기 호실적에 10% 급등",
+      "source": "연합뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcUpKdHd4Z1FGTEllTUlIbnI3SlJPMEN4eVVjQnVDc2lPQTFFMXZQWnpBdjMzeVM0cjMxVlhqUXhpYjRLVG4yRnFheGtSNS1vVkZSSE55dlNELTJXVGJuallQRDRfQUhsTDhxaGZ2OG5lRkdnazNfWEIzTlZzYmNhM0VneEJjMENfTGc?oc=5",
+      "publishedAt": "Wed, 04 Nov 2026 00:18:40 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]심텍, '업황을 입증하는 서프라이즈' 목표가 210,000원 - 하나증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16VWdYS1c0SkQtYkVFZWVBUHhKN0NidHgyNExNWkFVbUc0bk1vWTFsTWx3b1dfM3RoU1VVWEZ1eXRjUkhOeFdac1VMWVJDZUVyZE1fY2dUcDhSbFhT?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] '반도체 장비' 심텍, 3분기 호실적에 10% 급등",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcUpKdHd4Z1FGTEllTUlIbnI3SlJPMEN4eVVjQnVDc2lPQTFFMXZQWnpBdjMzeVM0cjMxVlhqUXhpYjRLVG4yRnFheGtSNS1vVkZSSE55dlNELTJXVGJuallQRDRfQUhsTDhxaGZ2OG5lRkdnazNfWEIzTlZzYmNhM0VneEJjMENfTGc?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "심텍 '반도체 장비' 심텍, 3분기 호실적에 10% 급등",
+      "polishedBody": "심텍은 '반도체 장비' 재료가 부각되며 단기 모멘텀을 형성했습니다. '반도체 장비' 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 '업황을 입증하는 서프라이즈' 목표가 210,000원. 하나증권 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "고영",
+      "stockCode": "098460",
+      "summary": "고영, 반도체 검사장비 사이클 초입…내년 영업익 63% 상승 전망-한투 - 머니투데이",
+      "headline": "고영, 글로벌 전 지역 성장에 '분기 최초' 매출 1000억 달성…\"주가 하락은 매수 기회\"",
+      "evidencePoints": [
+        "출처 프라임경제, 머니투데이 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "고영, 글로벌 전 지역 성장에 '분기 최초' 매출 1000억 달성…\"주가 하락은 매수 기회\"",
+        "고영, 반도체 검사장비 사이클 초입…내년 영업익 63% 상승 전망-한투 - 머니투데이"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "고영, 글로벌 전 지역 성장에 '분기 최초' 매출 1000억 달성…\"주가 하락은 매수 기회\"",
+      "source": "프라임경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9aLWVWeGt1cEItVXpLUVN2cDdfZ01rb0JrTm5zTWRLRW00V1pCYW0xclFQeEE4N1lqWkRSS2daYmREbDdOeWZoYnh4alV2WF8xLUI5dEUzZGp5WGMwcjZhMnlxY3gzcnAwNm50eA?oc=5",
+      "publishedAt": "Tue, 03 Nov 2026 23:58:36 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "고영, 글로벌 전 지역 성장에 '분기 최초' 매출 1000억 달성…\"주가 하락은 매수 기회\"",
+          "source": "프라임경제",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9aLWVWeGt1cEItVXpLUVN2cDdfZ01rb0JrTm5zTWRLRW00V1pCYW0xclFQeEE4N1lqWkRSS2daYmREbDdOeWZoYnh4alV2WF8xLUI5dEUzZGp5WGMwcjZhMnlxY3gzcnAwNm50eA?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "고영, 반도체 검사장비 사이클 초입…내년 영업익 63% 상승 전망-한투 - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1JaUZHR2Z5a0Vjc3d0NlJPNXhydnFYR3FDc1NGazNCTUUxVW9uSGhWcHcyNk5kb0tTbENDY3g3V1pMOERYNEZxZkJKNzFVNzc3QW9LWDhwdTBKU3djMDNjdDlDZEttdmd2Sm5LdDB2a2dzRlZSSXBGV0dBMNIBe0FVX3lxTE1JaUZHR2Z5a0Vjc3d0NlJPNXhydnFYR3FDc1NGazNCTUUxVW9uSGhWcHcyNk5kb0tTbENDY3g3V1pMOERYNEZxZkJKNzFVNzc3QW9LWDhwdTBKU3djMDNjdDlDZEttdmd2Sm5LdDB2a2dzRlZSSXBGV0dBMA?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "고영 글로벌 전 지역 성장에 '분기 최초' 매출 1000억 달성…\"주가",
+      "polishedBody": "고영은 반도체 검사장비 사이클 초입…내년 영업익 63% 상승 전망 이슈로 단기 변동성이 확대됐습니다. 반도체 검사장비 사이클 초입…내년 영업익 전망 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 글로벌 전 지역 성장에 '분기 최초' 매출 1000억 달성…\"주가 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "삼성SDI",
+      "stockCode": "006400",
+      "summary": "[오늘의 주목주] 삼성SDI 주가 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감 비즈니스포스트",
+      "headline": "[오늘의 주목주] 삼성SDI 주가 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감",
+      "evidencePoints": [
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -9.0%",
+        "[오늘의 주목주] 삼성SDI 주가 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감"
+      ],
+      "mentionScore": 96.5,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
+      "changeRate": -9,
+      "latestHeadline": "[오늘의 주목주] 삼성SDI 주가 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBrczNYSEN2d0h1VEF4c29WcDkycnpwMlNlQzJwNGhsdVFQeFpranpicDdSOG5kV0dmWEk2M2laVThmNGc1RllvbVkzTXVoMVF0aXJvOWl5SkpZM196MFl2dzhFN0dhaXNUcndDVFhhcjNBS00?oc=5",
+      "publishedAt": "Tue, 03 Nov 2026 08:21:26 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 주목주] 삼성SDI 주가 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBrczNYSEN2d0h1VEF4c29WcDkycnpwMlNlQzJwNGhsdVFQeFpranpicDdSOG5kV0dmWEk2M2laVThmNGc1RllvbVkzTXVoMVF0aXJvOWl5SkpZM196MFl2dzhFN0dhaXNUcndDVFhhcjNBS00?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "삼성SDI 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감",
+      "polishedBody": "삼성SDI는 주가 9%대 내려 이슈로 단기 변동성이 확대됐습니다. 주가 내려 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "한화비전",
+      "stockCode": "489790",
+      "summary": "[모닝 리포트] \"한화비전, 성장 기대에도 목표가 6.5% 하향\" 뉴스핌",
+      "headline": "[모닝 리포트] \"한화비전, 성장 기대에도 목표가 6.5% 하향\"",
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[모닝 리포트] \"한화비전, 성장 기대에도 목표가 6.5% 하향\""
+      ],
+      "mentionScore": 86.8,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[모닝 리포트] \"한화비전, 성장 기대에도 목표가 6.5% 하향\"",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE96aFRfWEFLb1ZoZ0RjZHltOThqOVNVd045dGk0NXZzZl9nSHdseDAtWUEwNmtJZzJXMXpmRElHaVF3UDVzT29zd0JWNEFOY2VXY3hFYXBJcmgxdjVo?oc=5",
+      "publishedAt": "Tue, 03 Nov 2026 23:15:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[모닝 리포트] \"한화비전, 성장 기대에도 목표가 6.5% 하향\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE96aFRfWEFLb1ZoZ0RjZHltOThqOVNVd045dGk0NXZzZl9nSHdseDAtWUEwNmtJZzJXMXpmRElHaVF3UDVzT29zd0JWNEFOY2VXY3hFYXBJcmgxdjVo?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "한화비전 \"한화비전, 성장 기대에도",
+      "polishedBody": "한화비전은 \", 성장 기대에도 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 \", 성장 기대에도 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 \", 성장 기대에도 목표가 6.5% 하향\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "포스코퓨처엠",
+      "stockCode": "003670",
+      "summary": "\"20만원 돌파 기대\"…포스코퓨처엠, 증권가 목표가 줄상향 한국경제",
+      "headline": "\"20만원 돌파 기대\"…포스코퓨처엠, 증권가 목표가 줄상향",
+      "evidencePoints": [
+        "출처 한국경제 기반 기사 1건",
+        "\"20만원 돌파 기대\"…포스코퓨처엠, 증권가 목표가 줄상향"
+      ],
+      "mentionScore": 85.8,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "\"20만원 돌파 기대\"…포스코퓨처엠, 증권가 목표가 줄상향",
+      "source": "한국경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBuWUpxWndqTUYyNTVaWURSVmxXYUFMLTVVdjlva0xUTkFra1Z4c1ZjdnRFUHVDM3NBV1UwcG1lT0JwX2h2aWRpUXV6Q2NsNEJWc3hHVVcxU1lZZw?oc=5",
+      "publishedAt": "Tue, 03 Nov 2026 22:00:14 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "\"20만원 돌파 기대\"…포스코퓨처엠, 증권가 목표가 줄상향",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBuWUpxWndqTUYyNTVaWURSVmxXYUFMLTVVdjlva0xUTkFra1Z4c1ZjdnRFUHVDM3NBV1UwcG1lT0JwX2h2aWRpUXV6Q2NsNEJWc3hHVVcxU1lZZw?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "포스코퓨처엠 \"20만원 돌파 기대\"…포스코퓨처엠,",
+      "polishedBody": "포스코퓨처엠은 \"20만원 돌파 기대\" 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 \"20만원 돌파 기대\" 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 \"20만원 돌파 기대\"…, 증권가 목표가 줄상향 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "삼성전기",
+      "stockCode": "009150",
+      "summary": "삼성전기 주가 상승 중",
+      "headline": "삼성전기 주가, 11월 4일 장중 1,124,000원 1.72% 상승",
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.7%",
+        "삼성전기 주가, 11월 4일 장중 1,124,000원 1.72% 상승",
+        "삼성전기 주가 상승 중"
+      ],
+      "mentionScore": 89.7,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": 1.72,
+      "latestHeadline": "삼성전기 주가, 11월 4일 장중 1,124,000원 1.72% 상승",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5obEZHSDZFajdjWFFPNkhVZV84SXpPTnBoTEdRcmpFMWZCSndtX05aLVhLcXl1OWxPMkVCdE8wUlh2QmdRLWtKSlhCZElkQXpGZlBzUXU4U0RyZi03WmFKY2dXVXYwMzlQZGF0Ukw0NGQtZw?oc=5",
+      "publishedAt": "Wed, 04 Nov 2026 00:40:47 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가, 11월 4일 장중 1,124,000원 1.72% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5obEZHSDZFajdjWFFPNkhVZV84SXpPTnBoTEdRcmpFMWZCSndtX05aLVhLcXl1OWxPMkVCdE8wUlh2QmdRLWtKSlhCZElkQXpGZlBzUXU4U0RyZi03WmFKY2dXVXYwMzlQZGF0Ukw0NGQtZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uRmZIUklFQUVyOWhRZ295Qmp1R1QwSENRQlNBNnYzV0hVUWYyWklfY0lGQ1drSEp2RnBaRUZYTXdNTnpxSV9McUN0RnY0SnJ0OVV3MVVuLXp1aWRm?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전기 주가, 11월 4일 장중 1,124,000원 1.72% 상승",
+      "polishedBody": "삼성전기는 주가, 11월 4일 장중 1,124,000원 1.72% 상승 재료가 부각되며 단기 모멘텀을 형성했습니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "한미반도체",
+      "stockCode": "042700",
+      "summary": "곽동신 한미반도체 회장, 사재로 주식 100억원 추가 매수…올해 다섯 번째",
+      "headline": "한미반도체 주가 상승 중",
+      "evidencePoints": [
+        "출처 Chosunbiz, 아시아뉴스통신 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "곽동신 한미반도체 회장, 사재로 주식 100억원 추가 매수…올해 다섯 번째",
+        "한미반도체 주가 상승 중"
+      ],
+      "mentionScore": 87.7,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "한미반도체 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8yZ0N0N1d0anpzdnF6U3RtVUVLUlphNWpKRFpfU19OZjlTNlQ4SW9DUlhxcU1UbFpNOVFBYUZoWnRyWk8tMVd5RmJwVm1vSm5GZjYwa0lwY3ZsNXJC?oc=5",
+      "publishedAt": "Wed, 04 Nov 2026 00:31:13 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "곽동신 한미반도체 회장, 사재로 주식 100억원 추가 매수…올해 다섯 번째",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNTFBkdEZObEJRVjl4QXVQMzNpdm0ySXVneEQwd2h4QUFuMEs4VVVOSXVORHk1a3FrR2hqOUVhclh3WV9YYjFFSE5FSkxRQktUZFRsY1luQmptWGpZbzNJdWExcDdZVzZpQWNicWZ1dUp5czRleE1pcWNpaE9HLUsyWXlB0gGWAUFVX3lxTFBYTFVTZ0Z0SGdVenV0MVVBOWVtMGNJNUpHOGUxdmo1OHBrZ05Da0x2YkxHTUZRUVVOM0RCTUFiSTNmR0g1bVpoRHpqNHdDaHBqV1MtMm1rYVJ3NXRUMDBLbmV0R1BfZUo5dUJYaEtMSXM2RGhHcjJBRWw4UURhQ3g3Q2lhcktSSUtud1NWaWJ6VjI0OTQyZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한미반도체 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8yZ0N0N1d0anpzdnF6U3RtVUVLUlphNWpKRFpfU19OZjlTNlQ4SW9DUlhxcU1UbFpNOVFBYUZoWnRyWk8tMVd5RmJwVm1vSm5GZjYwa0lwY3ZsNXJC?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한미반도체 주가 상승 중",
+      "polishedBody": "한미반도체는 곽동신 회장, 사재로 주식 100억원 재료가 부각되며 단기 모멘텀을 형성했습니다. 곽동신 회장, 사재로 주식 100억원 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "iM證 “삼성전자, HBM이 바꾼 이익 구조⋯2028년 기준 56만원 가능”",
+      "headline": "삼성전자 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신, 이투데이 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "삼성전자 주가 상승 중",
+        "iM證 “삼성전자, HBM이 바꾼 이익 구조⋯2028년 기준 56만원 가능”"
+      ],
+      "mentionScore": 87.6,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "삼성전자 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9Xb0ZZOVR5UEdRSk9NTklrRk9Ga01WQ2gtaDJYTk9rS2hOZnB1TDNzX2N4anl0TUxRQXFGWmJzLXZXdmR3ODJXa2NyR3MzaGc3SmpmVGQ3SDlTcjEyLTBYLXRidVdPbWgweUZxTE5sQ2cyOUFs?oc=5",
+      "publishedAt": "Wed, 04 Nov 2026 00:35:21 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9Xb0ZZOVR5UEdRSk9NTklrRk9Ga01WQ2gtaDJYTk9rS2hOZnB1TDNzX2N4anl0TUxRQXFGWmJzLXZXdmR3ODJXa2NyR3MzaGc3SmpmVGQ3SDlTcjEyLTBYLXRidVdPbWgweUZxTE5sQ2cyOUFs?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "iM證 “삼성전자, HBM이 바꾼 이익 구조⋯2028년 기준 56만원 가능”",
+          "source": "이투데이",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBENXJyVW5heWR4TnRva2gzUHQ2VmdjUXpTS3pETGRhdVNPQ0tqUjhHMXhLYXpPRFFwbjgzWWdHdnp3dlNCLU13UGs3dmZSU2ZLZlp0Nw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자 주가 상승 중",
+      "polishedBody": "삼성전자는 바꾼 이익 구조⋯2028년 기준 56만원 가능” 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "현대모비스",
+      "stockCode": "012330",
+      "summary": "현대모비스 주가 상승 중 아시아뉴스통신",
+      "headline": "현대모비스 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "현대모비스 주가 상승 중"
+      ],
+      "mentionScore": 61.6,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "현대모비스 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9HZUhSLXp1bk1MNEY2XzVNS1JfU00tLV8wSnlBYWpKVkJqRG5CNm0zM3ZtOFY1cUo5bHNMZWtQMHBjeXF0VVVnTktiV1ZkZEZJSVh5MlYzS1daUEZ0?oc=5",
+      "publishedAt": "Wed, 04 Nov 2026 00:34:29 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "현대모비스 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9HZUhSLXp1bk1MNEY2XzVNS1JfU00tLV8wSnlBYWpKVkJqRG5CNm0zM3ZtOFY1cUo5bHNMZWtQMHBjeXF0VVVnTktiV1ZkZEZJSVh5MlYzS1daUEZ0?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "현대모비스 주가 상승 중",
+      "polishedBody": "현대모비스는 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "유한양행",
+      "stockCode": "000100",
+      "summary": "유한양행 주가 상승 중 아시아뉴스통신",
+      "headline": "유한양행 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "유한양행 주가 상승 중"
+      ],
+      "mentionScore": 61.5,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "유한양행 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE03czd2ZjFjQUdFd1pVN2tGUGRlTFlLb3VJaGJ2eTQ2eUowaHZUQWRtM1JfUTVWamY4R0pqeDZzeTJRVmZReThabnFtU2NETDV2Q0ZPamo3MV9Dakht?oc=5",
+      "publishedAt": "Wed, 04 Nov 2026 00:32:11 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "유한양행 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE03czd2ZjFjQUdFd1pVN2tGUGRlTFlLb3VJaGJ2eTQ2eUowaHZUQWRtM1JfUTVWamY4R0pqeDZzeTJRVmZReThabnFtU2NETDV2Q0ZPamo3MV9Dakht?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "유한양행 주가 상승 중",
+      "polishedBody": "유한양행은 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "대우건설",
+      "stockCode": "047040",
+      "summary": "대우건설 주가 상승 중 아시아뉴스통신",
+      "headline": "대우건설 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "대우건설 주가 상승 중"
+      ],
+      "mentionScore": 61.4,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "대우건설 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1NNWVUOHdfQ3lSZnRCOHYyQzFUc05sVUZJcDlyMFRTMHUxUlFVaXFwcTl1NnZQa0FaNU4xaUsyZ2MwYjlVckpSc3QxaFc0ZjVmNUdNVTF3dGR1dnk4?oc=5",
+      "publishedAt": "Wed, 04 Nov 2026 00:24:49 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "대우건설 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1NNWVUOHdfQ3lSZnRCOHYyQzFUc05sVUZJcDlyMFRTMHUxUlFVaXFwcTl1NnZQa0FaNU4xaUsyZ2MwYjlVckpSc3QxaFc0ZjVmNUdNVTF3dGR1dnk4?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "대우건설 주가 상승 중",
+      "polishedBody": "대우건설은 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "DB하이텍",
+      "stockCode": "000990",
+      "summary": "[종목상담 주식민원처리반] 삼성 8인치 파운드리 철수 따른 반사이익 기대 'DB하이텍' - 머니투데이 머니투데이",
+      "headline": "[종목상담 주식민원처리반] 삼성 8인치 파운드리 철수 따른 반사이익 기대 'DB하이텍' - 머니투데이",
+      "evidencePoints": [
+        "출처 머니투데이 기반 기사 1건",
+        "[종목상담 주식민원처리반] 삼성 8인치 파운드리 철수 따른 반사이익 기대 'DB하이텍' - 머니투데이"
+      ],
+      "mentionScore": 46.8,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-11-04T01:00:27.536Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[종목상담 주식민원처리반] 삼성 8인치 파운드리 철수 따른 반사이익 기대 'DB하이텍' - 머니투데이",
+      "source": "머니투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBfdE9lTGN5aW45OU5BNE1NZHo2MlFqVWZnVGstR2xkclgyNVpZZ1liYXBKcVdCOElwWEYtV3g3S2NnNEoyTHBoNDJ5ZzBQa2l3VXBIWGx2SmhIQjJlc1JpbUtSTnpjSk9rODFTOXVB0gFuQVVfeXFMUF90T2VMY3lpbjk5TkE0TU1kejYyUWpVZmdUay1HbGRyWDI1WllnWWJhcEpxV0I4SXBYRi1XeDdLY2c0SjJMcGg0MnlnMFBraXdVcEhYbHZKaEhCMmVzUmltS1JOemNKT2s4MVM5dUE?oc=5",
+      "publishedAt": "Tue, 03 Nov 2026 09:47:55 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[종목상담 주식민원처리반] 삼성 8인치 파운드리 철수 따른 반사이익 기대 'DB하이텍' - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBfdE9lTGN5aW45OU5BNE1NZHo2MlFqVWZnVGstR2xkclgyNVpZZ1liYXBKcVdCOElwWEYtV3g3S2NnNEoyTHBoNDJ5ZzBQa2l3VXBIWGx2SmhIQjJlc1JpbUtSTnpjSk9rODFTOXVB0gFuQVVfeXFMUF90T2VMY3lpbjk5TkE0TU1kejYyUWpVZmdUay1HbGRyWDI1WllnWWJhcEpxV0I4SXBYRi1XeDdLY2c0SjJMcGg0MnlnMFBraXdVcEhYbHZKaEhCMmVzUmltS1JOemNKT2s4MVM5dUE?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "DB하이텍 삼성 8인치 파운드리 철수 따른 반사이익 기대 'DB하이텍'.",
+      "polishedBody": "DB하이텍은 삼성 8인치 파운드리 철수 따른 반사이익 기대 '' 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 삼성 8인치 파운드리 철수 따른 반사이익 기대 '' 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 삼성 8인치 파운드리 철수 따른 반사이익 기대 '' 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
     },
     {
       "stockName": "엘앤에프",
@@ -158,388 +597,380 @@
       "hasNews": true,
       "polishedHeadline": "한미약품 '이제 기대감은 에피노페그듀타이드로' 목표가 670,000원. DB증권",
       "polishedBody": "한미약품은 다올투자증권 “ 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 다올투자증권 “ 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 다올투자증권 “, 파브리병 신약가치 반영”…목표가 71만원으로 상향 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
+    }
+  ],
+  "items": [
     {
-      "stockName": "포스코퓨처엠",
-      "stockCode": "003670",
-      "summary": "NH證 “포스코퓨처엠, LFP 전환 예상보다 빨라…높은 주가는 부담”",
-      "headline": "IBK증권, 포스코퓨처엠 목표가↑…\"4분기 LFP 출하 시작\"",
-      "evidencePoints": [
-        "출처 연합뉴스, 팝콘뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 -4.6%",
-        "IBK증권, 포스코퓨처엠 목표가↑…\"4분기 LFP 출하 시작\"",
-        "NH證 “포스코퓨처엠, LFP 전환 예상보다 빨라…높은 주가는 부담”"
-      ],
+      "timestamp": "Wed, 04 Nov 2026 00:07:57 GMT",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "changeRate": null,
+      "price": null,
+      "summary": "iM證 “SK하이닉스, HBM 하나로 시가총액 설명 가능…과도한 저평가\"",
+      "source": "머니투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KWnZzakJFdnNGaWl5MTViY25Gb0pVSUlpY0R6UXZmeDl1XzFEOUhfRmhhZGtmcmpaWm9hbmJ0NjNvRjBxXzRPdmNsdlVPNWtrQzd1VURBVmd1NE13RmhPLVVJdWlOV2VN0gFuQVVfeXFMTkhfOEkyVGtBWnlXd3RIcm9DUFBKYXdJck5RZ3RldV9wNFdEOE9lOXE2cUJWdklHejJneVl1SWx6XzdaWDZ4NUx6ZmMtZWIybVBtWGk2ZFhtNzhTUVJvQzFRQUFfYjU0ZmpDaGtnOEE?oc=5",
       "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 3,
-      "updatedAt": "2026-11-03T01:00:23.646Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": -4.6,
-      "latestHeadline": "IBK증권, 포스코퓨처엠 목표가↑…\"4분기 LFP 출하 시작\"",
+      "evidencePoints": [
+        "출처 머니투데이, Chosunbiz 기반 기사 2건",
+        "제목 기준 변동률 단서 -8.7%",
+        "고점 대비 57% 뚝…SK하이닉스 2028년 이후 기대되는 이유-iM - 머니투데이",
+        "iM證 “SK하이닉스, HBM 하나로 시가총액 설명 가능…과도한 저평가\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "고점 대비 57% 뚝…SK하이닉스 2028년 이후 기대되는 이유-iM - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KWnZzakJFdnNGaWl5MTViY25Gb0pVSUlpY0R6UXZmeDl1XzFEOUhfRmhhZGtmcmpaWm9hbmJ0NjNvRjBxXzRPdmNsdlVPNWtrQzd1VURBVmd1NE13RmhPLVVJdWlOV2VN0gFuQVVfeXFMTkhfOEkyVGtBWnlXd3RIcm9DUFBKYXdJck5RZ3RldV9wNFdEOE9lOXE2cUJWdklHejJneVl1SWx6XzdaWDZ4NUx6ZmMtZWIybVBtWGk2ZFhtNzhTUVJvQzFRQUFfYjU0ZmpDaGtnOEE?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "iM證 “SK하이닉스, HBM 하나로 시가총액 설명 가능…과도한 저평가\"",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdTNKZHVNc3otNENJc21oRU5pY0lrRGtnZVotSXozZHZMdzlvNzd3b2lpOUZzM0RreGphZWJxY2VwNW1Rc0VBd3k4WHFSVUtxWVJkbUJmYjRzSHNfVDNTVFFpVEs4di00RkJhTHFSdkx3cFo1cWlqdmlGbnpKLVNZYXFmdHFyWVFa0gGcAUFVX3lxTE1TM0M5NkY4eVJMR3lYN20zaHB6NTMwd0pnblFqWVpFdFJpQTZSSm1fdkQ1OTd6NnU5YzdKSEJxNUVVR1JXa2JKVHBUclJWcXdUWkVGNGdHaTJ5UkpBaWk4UWd2VnlSYlQ0eGhyRTE2S2pMeXR4Z1FEZk1tZkFvWUI5RXp4YjJYN3RSMmZuc2g5WjhEM1BkTGY0VUZUcw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 03 Nov 2026 09:41:43 GMT",
+      "symbol": "353200",
+      "name": "대덕전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT 빅터뉴스",
+      "source": "빅터뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9zWGYzb0NwWGU4a01rNk1oSTBHRnBHQnFRT0p1M25YenBqN2RocXg5QjRCWmtzX2lTVnI5U1VKMElKcWNMT3NGdEdYd0p2Zzk0RXFUMVhvSDMzVjhzLV9fbklJdTJFNTQ?oc=5",
+      "mentionScore": 46.7,
+      "evidencePoints": [
+        "출처 빅터뉴스 기반 기사 1건",
+        "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 특징주] 대덕전자·한진칼·아시아나IDT",
+          "source": "빅터뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9zWGYzb0NwWGU4a01rNk1oSTBHRnBHQnFRT0p1M25YenBqN2RocXg5QjRCWmtzX2lTVnI5U1VKMElKcWNMT3NGdEdYd0p2Zzk0RXFUMVhvSDMzVjhzLV9fbklJdTJFNTQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 04 Nov 2026 00:18:40 GMT",
+      "symbol": "222800",
+      "name": "심텍",
+      "changeRate": 10,
+      "price": null,
+      "summary": "[리포트 브리핑]심텍, '업황을 입증하는 서프라이즈' 목표가 210,000원 - 하나증권",
       "source": "연합뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1UWkxJS2RoaUhxRi1ZUkJtdDU2RkY3OGZsQTF5U3FnQ2I4b0xTemNxcFdKZWF1ZThna0hKbklweU9zS2daV0dYU1lKZjZwN1ljV000OGwyY3BtZDDSAWBBVV95cUxOZ1FHUWt2VVRTa3FSMzUtLThDZzBfWHVRNy1zVzdLblBNcjBFb01yc0JVNTZqaXZQR2w1bXFxTUtwWVBXb09pNnpFOUdDWmluV0dmSHVuZ0xhRkhwMnlGQ2M?oc=5",
-      "publishedAt": "Mon, 02 Nov 2026 23:17:57 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcUpKdHd4Z1FGTEllTUlIbnI3SlJPMEN4eVVjQnVDc2lPQTFFMXZQWnpBdjMzeVM0cjMxVlhqUXhpYjRLVG4yRnFheGtSNS1vVkZSSE55dlNELTJXVGJuallQRDRfQUhsTDhxaGZ2OG5lRkdnazNfWEIzTlZzYmNhM0VneEJjMENfTGc?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌, 연합뉴스 기반 기사 2건",
+        "제목 기준 변동률 단서 +10.0%",
+        "[리포트 브리핑]심텍, '업황을 입증하는 서프라이즈' 목표가 210,000원 - 하나증권",
+        "[특징주] '반도체 장비' 심텍, 3분기 호실적에 10% 급등"
+      ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "IBK증권, 포스코퓨처엠 목표가↑…\"4분기 LFP 출하 시작\"",
+          "title": "[리포트 브리핑]심텍, '업황을 입증하는 서프라이즈' 목표가 210,000원 - 하나증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE16VWdYS1c0SkQtYkVFZWVBUHhKN0NidHgyNExNWkFVbUc0bk1vWTFsTWx3b1dfM3RoU1VVWEZ1eXRjUkhOeFdac1VMWVJDZUVyZE1fY2dUcDhSbFhT?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] '반도체 장비' 심텍, 3분기 호실적에 10% 급등",
           "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1UWkxJS2RoaUhxRi1ZUkJtdDU2RkY3OGZsQTF5U3FnQ2I4b0xTemNxcFdKZWF1ZThna0hKbklweU9zS2daV0dYU1lKZjZwN1ljV000OGwyY3BtZDDSAWBBVV95cUxOZ1FHUWt2VVRTa3FSMzUtLThDZzBfWHVRNy1zVzdLblBNcjBFb01yc0JVNTZqaXZQR2w1bXFxTUtwWVBXb09pNnpFOUdDWmluV0dmSHVuZ0xhRkhwMnlGQ2M?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcUpKdHd4Z1FGTEllTUlIbnI3SlJPMEN4eVVjQnVDc2lPQTFFMXZQWnpBdjMzeVM0cjMxVlhqUXhpYjRLVG4yRnFheGtSNS1vVkZSSE55dlNELTJXVGJuallQRDRfQUhsTDhxaGZ2OG5lRkdnazNfWEIzTlZzYmNhM0VneEJjMENfTGc?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 03 Nov 2026 23:58:36 GMT",
+      "symbol": "098460",
+      "name": "고영",
+      "changeRate": null,
+      "price": null,
+      "summary": "고영, 반도체 검사장비 사이클 초입…내년 영업익 63% 상승 전망-한투 - 머니투데이",
+      "source": "프라임경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9aLWVWeGt1cEItVXpLUVN2cDdfZ01rb0JrTm5zTWRLRW00V1pCYW0xclFQeEE4N1lqWkRSS2daYmREbDdOeWZoYnh4alV2WF8xLUI5dEUzZGp5WGMwcjZhMnlxY3gzcnAwNm50eA?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 프라임경제, 머니투데이 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "고영, 글로벌 전 지역 성장에 '분기 최초' 매출 1000억 달성…\"주가 하락은 매수 기회\"",
+        "고영, 반도체 검사장비 사이클 초입…내년 영업익 63% 상승 전망-한투 - 머니투데이"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "고영, 글로벌 전 지역 성장에 '분기 최초' 매출 1000억 달성…\"주가 하락은 매수 기회\"",
+          "source": "프라임경제",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9aLWVWeGt1cEItVXpLUVN2cDdfZ01rb0JrTm5zTWRLRW00V1pCYW0xclFQeEE4N1lqWkRSS2daYmREbDdOeWZoYnh4alV2WF8xLUI5dEUzZGp5WGMwcjZhMnlxY3gzcnAwNm50eA?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "NH證 “포스코퓨처엠, LFP 전환 예상보다 빨라…높은 주가는 부담”",
-          "source": "팝콘뉴스",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBpSDRTNk8zNDZWeWRxb2NURUtFczdBQ2ZQQkpwa0Y4Uk5QZlpHWjZXVV81OFdzdWs4SnlNNEVZTTQ3d1dOSnl1MlZsTGJpeDlNNGY3Q3d5MWhNSGpvc3hiMFhieUpSbDR3ckZwWXRB0gFyQVVfeXFMTlFGdW9SVExXYUJuT2tIc0F4SUVnN2xaMGtjZnliMHVmX1k2U2padWdIcHZuZFRMRzI3b2JHbTdUTTdCQVd5ZWZsRVlsN0xqd2FBNXZhNmpnM3lJMGJUUVk5MUNtbVQycWdZdExLNnNGcWpB?oc=5"
+          "title": "고영, 반도체 검사장비 사이클 초입…내년 영업익 63% 상승 전망-한투 - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1JaUZHR2Z5a0Vjc3d0NlJPNXhydnFYR3FDc1NGazNCTUUxVW9uSGhWcHcyNk5kb0tTbENDY3g3V1pMOERYNEZxZkJKNzFVNzc3QW9LWDhwdTBKU3djMDNjdDlDZEttdmd2Sm5LdDB2a2dzRlZSSXBGV0dBMNIBe0FVX3lxTE1JaUZHR2Z5a0Vjc3d0NlJPNXhydnFYR3FDc1NGazNCTUUxVW9uSGhWcHcyNk5kb0tTbENDY3g3V1pMOERYNEZxZkJKNzFVNzc3QW9LWDhwdTBKU3djMDNjdDlDZEttdmd2Sm5LdDB2a2dzRlZSSXBGV0dBMA?oc=5"
         }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "포스코퓨처엠 IBK증권, 포스코퓨처엠 목표가↑…\"4분기 LFP 출하 시작\"",
-      "polishedBody": "포스코퓨처엠은 NH證 “, LFP 전환 예상보다 빨라…높은 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 목표가↑…\"4분기 LFP 출하 시작\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+      ]
     },
     {
-      "stockName": "현대모비스",
-      "stockCode": "012330",
-      "summary": "현대모비스 주가 하락 중 아시아뉴스통신",
-      "headline": "현대모비스 주가 하락 중",
+      "timestamp": "Tue, 03 Nov 2026 08:21:26 GMT",
+      "symbol": "006400",
+      "name": "삼성SDI",
+      "changeRate": -9,
+      "price": null,
+      "summary": "[오늘의 주목주] 삼성SDI 주가 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감 비즈니스포스트",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBrczNYSEN2d0h1VEF4c29WcDkycnpwMlNlQzJwNGhsdVFQeFpranpicDdSOG5kV0dmWEk2M2laVThmNGc1RllvbVkzTXVoMVF0aXJvOWl5SkpZM196MFl2dzhFN0dhaXNUcndDVFhhcjNBS00?oc=5",
+      "mentionScore": 96.5,
       "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "현대모비스 주가 하락 중"
+        "출처 비즈니스포스트 기반 기사 1건",
+        "제목 기준 변동률 단서 -9.0%",
+        "[오늘의 주목주] 삼성SDI 주가 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감"
       ],
-      "mentionScore": 92.1,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-11-03T01:00:23.646Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "현대모비스 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFByM1BSUjQxOEpVTm83Z3dmandFQkRzaGVxSUs3V3FXOGE1c2RtcTd6R2M4cTIzVlRMM25QWWk1bVNYeWswX200dFpZcVpkbWdGV0pxcm1LYndnRzRO?oc=5",
-      "publishedAt": "Tue, 03 Nov 2026 00:40:05 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "현대모비스 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFByM1BSUjQxOEpVTm83Z3dmandFQkRzaGVxSUs3V3FXOGE1c2RtcTd6R2M4cTIzVlRMM25QWWk1bVNYeWswX200dFpZcVpkbWdGV0pxcm1LYndnRzRO?oc=5"
+          "title": "[오늘의 주목주] 삼성SDI 주가 9%대 내려, 코스피 'AI 수익성 우려'에 5640선 하락 마감",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBrczNYSEN2d0h1VEF4c29WcDkycnpwMlNlQzJwNGhsdVFQeFpranpicDdSOG5kV0dmWEk2M2laVThmNGc1RllvbVkzTXVoMVF0aXJvOWl5SkpZM196MFl2dzhFN0dhaXNUcndDVFhhcjNBS00?oc=5"
         }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "현대모비스 주가 하락 중",
-      "polishedBody": "현대모비스는 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+      ]
     },
     {
-      "stockName": "한미반도체",
-      "stockCode": "042700",
-      "summary": "한미반도체 주가 하락 중 아시아뉴스통신",
-      "headline": "한미반도체 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "한미반도체 주가 하락 중"
-      ],
-      "mentionScore": 87.5,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-11-03T01:00:23.646Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
+      "timestamp": "Tue, 03 Nov 2026 23:15:00 GMT",
+      "symbol": "489790",
+      "name": "한화비전",
       "changeRate": null,
-      "latestHeadline": "한미반도체 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5qOVhxWTJQS25zR2dJSXE4S0pCSkJxSk9fSG43V0VaVTc1LVVDVlJkbkdCRVdidnNtUkJqMTdQNmh0aFlJYUh2Rmx3SUF4WVdHdC1mLWMxUDJKS1Ax?oc=5",
-      "publishedAt": "Tue, 03 Nov 2026 00:32:02 GMT",
+      "price": null,
+      "summary": "[모닝 리포트] \"한화비전, 성장 기대에도 목표가 6.5% 하향\" 뉴스핌",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE96aFRfWEFLb1ZoZ0RjZHltOThqOVNVd045dGk0NXZzZl9nSHdseDAtWUEwNmtJZzJXMXpmRElHaVF3UDVzT29zd0JWNEFOY2VXY3hFYXBJcmgxdjVo?oc=5",
+      "mentionScore": 86.8,
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[모닝 리포트] \"한화비전, 성장 기대에도 목표가 6.5% 하향\""
+      ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "한미반도체 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5qOVhxWTJQS25zR2dJSXE4S0pCSkJxSk9fSG43V0VaVTc1LVVDVlJkbkdCRVdidnNtUkJqMTdQNmh0aFlJYUh2Rmx3SUF4WVdHdC1mLWMxUDJKS1Ax?oc=5"
+          "title": "[모닝 리포트] \"한화비전, 성장 기대에도 목표가 6.5% 하향\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE96aFRfWEFLb1ZoZ0RjZHltOThqOVNVd045dGk0NXZzZl9nSHdseDAtWUEwNmtJZzJXMXpmRElHaVF3UDVzT29zd0JWNEFOY2VXY3hFYXBJcmgxdjVo?oc=5"
         }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "한미반도체 주가 하락 중",
-      "polishedBody": "한미반도체는 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+      ]
     },
     {
-      "stockName": "삼성전기",
-      "stockCode": "009150",
-      "summary": "삼성전기, 114만2000원까지 밀려 4.27% 하락…AI 관련주 조정 속 주가 향방은",
-      "headline": "삼성전기 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, CBC뉴스 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "삼성전기 주가 하락 중",
-        "삼성전기, 114만2000원까지 밀려 4.27% 하락…AI 관련주 조정 속 주가 향방은"
-      ],
-      "mentionScore": 92.7,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-11-03T01:00:23.646Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
+      "timestamp": "Tue, 03 Nov 2026 22:00:14 GMT",
+      "symbol": "003670",
+      "name": "포스코퓨처엠",
       "changeRate": null,
-      "latestHeadline": "삼성전기 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9ibjNVcVpBd0h4QVNTTU82eXFvN1hwVzA1VlktM0h3RVFTYjJ6X1duOGZXOFBhRlpucEhXeFFhdnIxWXJ0eUZZOXRUZlJLaUtLYW9DOERlNkdFWTFM?oc=5",
-      "publishedAt": "Tue, 03 Nov 2026 00:36:22 GMT",
+      "price": null,
+      "summary": "\"20만원 돌파 기대\"…포스코퓨처엠, 증권가 목표가 줄상향 한국경제",
+      "source": "한국경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBuWUpxWndqTUYyNTVaWURSVmxXYUFMLTVVdjlva0xUTkFra1Z4c1ZjdnRFUHVDM3NBV1UwcG1lT0JwX2h2aWRpUXV6Q2NsNEJWc3hHVVcxU1lZZw?oc=5",
+      "mentionScore": 85.8,
+      "evidencePoints": [
+        "출처 한국경제 기반 기사 1건",
+        "\"20만원 돌파 기대\"…포스코퓨처엠, 증권가 목표가 줄상향"
+      ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "삼성전기 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9ibjNVcVpBd0h4QVNTTU82eXFvN1hwVzA1VlktM0h3RVFTYjJ6X1duOGZXOFBhRlpucEhXeFFhdnIxWXJ0eUZZOXRUZlJLaUtLYW9DOERlNkdFWTFM?oc=5"
+          "title": "\"20만원 돌파 기대\"…포스코퓨처엠, 증권가 목표가 줄상향",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBuWUpxWndqTUYyNTVaWURSVmxXYUFMLTVVdjlva0xUTkFra1Z4c1ZjdnRFUHVDM3NBV1UwcG1lT0JwX2h2aWRpUXV6Q2NsNEJWc3hHVVcxU1lZZw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 04 Nov 2026 00:40:47 GMT",
+      "symbol": "009150",
+      "name": "삼성전기",
+      "changeRate": 1.72,
+      "price": null,
+      "summary": "삼성전기 주가 상승 중",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5obEZHSDZFajdjWFFPNkhVZV84SXpPTnBoTEdRcmpFMWZCSndtX05aLVhLcXl1OWxPMkVCdE8wUlh2QmdRLWtKSlhCZElkQXpGZlBzUXU4U0RyZi03WmFKY2dXVXYwMzlQZGF0Ukw0NGQtZw?oc=5",
+      "mentionScore": 89.7,
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 +1.7%",
+        "삼성전기 주가, 11월 4일 장중 1,124,000원 1.72% 상승",
+        "삼성전기 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가, 11월 4일 장중 1,124,000원 1.72% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5obEZHSDZFajdjWFFPNkhVZV84SXpPTnBoTEdRcmpFMWZCSndtX05aLVhLcXl1OWxPMkVCdE8wUlh2QmdRLWtKSlhCZElkQXpGZlBzUXU4U0RyZi03WmFKY2dXVXYwMzlQZGF0Ukw0NGQtZw?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "삼성전기, 114만2000원까지 밀려 4.27% 하락…AI 관련주 조정 속 주가 향방은",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1PdXRLMGxqZ3U2VFhUVGxmaGVPTjJxVnZpbG0waFRwZzNkRmlJVnRJUVdSeXdkdTk0NDBYQkJJY3FiT3lfY0xlZVBzdWEwZFpQeHJpVjBFcEtfLWxNU0tuMWJPLVdVd0Fn?oc=5"
+          "title": "삼성전기 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uRmZIUklFQUVyOWhRZ295Qmp1R1QwSENRQlNBNnYzV0hVUWYyWklfY0lGQ1drSEp2RnBaRUZYTXdNTnpxSV9McUN0RnY0SnJ0OVV3MVVuLXp1aWRm?oc=5"
         }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전기 주가 하락 중",
-      "polishedBody": "삼성전기는 114만2000원까지 밀려 4.27% 하락…AI 관련주 조정 속 이슈로 단기 변동성이 확대됐습니다. 114만2000원까지 밀려 …AI 관련주 조정 속 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+      ]
     },
     {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "“삼성전자, 목표주가 44만원”…비중 확대 유효하다는 이유는",
-      "headline": "한투증권, 삼성전자 목표가 57만→44만원…\"추가 상승동력 필요\"",
+      "timestamp": "Wed, 04 Nov 2026 00:31:13 GMT",
+      "symbol": "042700",
+      "name": "한미반도체",
+      "changeRate": null,
+      "price": null,
+      "summary": "곽동신 한미반도체 회장, 사재로 주식 100억원 추가 매수…올해 다섯 번째",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8yZ0N0N1d0anpzdnF6U3RtVUVLUlphNWpKRFpfU19OZjlTNlQ4SW9DUlhxcU1UbFpNOVFBYUZoWnRyWk8tMVd5RmJwVm1vSm5GZjYwa0lwY3ZsNXJC?oc=5",
+      "mentionScore": 87.7,
       "evidencePoints": [
-        "출처 매일경제 마켓 기반 기사 2건",
+        "출처 Chosunbiz, 아시아뉴스통신 기반 기사 2건",
         "상승/강세 키워드 우세",
-        "“삼성전자, 목표주가 44만원”…비중 확대 유효하다는 이유는",
-        "한투증권, 삼성전자 목표가 57만→44만원…\"추가 상승동력 필요\""
+        "곽동신 한미반도체 회장, 사재로 주식 100억원 추가 매수…올해 다섯 번째",
+        "한미반도체 주가 상승 중"
       ],
-      "mentionScore": 78.8,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-11-03T01:00:23.646Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "한투증권, 삼성전자 목표가 57만→44만원…\"추가 상승동력 필요\"",
-      "source": "매일경제 마켓",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1uc0ZSNmYwUkFpVGdnNTk2aUw4eXJmSUx0S01VVWs0TkVCNHhuUlhzTlBONGpQWE01V3RpeFVwWEFUY19lWjN3NVFSMnhNWTBSaFE?oc=5",
-      "publishedAt": "Mon, 02 Nov 2026 23:45:35 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "“삼성전자, 목표주가 44만원”…비중 확대 유효하다는 이유는",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TQXhaTTJmN1hBaFVZV2QwOVNmeTA5bXhDdjdhVGRUOVhCbWlfTC1PSTNxSnoydWp1RUpJWjFJZjlfZVRTRHFveEtxRE5PMW1KMUE?oc=5"
+          "title": "곽동신 한미반도체 회장, 사재로 주식 100억원 추가 매수…올해 다섯 번째",
+          "source": "Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNTFBkdEZObEJRVjl4QXVQMzNpdm0ySXVneEQwd2h4QUFuMEs4VVVOSXVORHk1a3FrR2hqOUVhclh3WV9YYjFFSE5FSkxRQktUZFRsY1luQmptWGpZbzNJdWExcDdZVzZpQWNicWZ1dUp5czRleE1pcWNpaE9HLUsyWXlB0gGWAUFVX3lxTFBYTFVTZ0Z0SGdVenV0MVVBOWVtMGNJNUpHOGUxdmo1OHBrZ05Da0x2YkxHTUZRUVVOM0RCTUFiSTNmR0g1bVpoRHpqNHdDaHBqV1MtMm1rYVJ3NXRUMDBLbmV0R1BfZUo5dUJYaEtMSXM2RGhHcjJBRWw4UURhQ3g3Q2lhcktSSUtud1NWaWJ6VjI0OTQyZw?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "한투증권, 삼성전자 목표가 57만→44만원…\"추가 상승동력 필요\"",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1uc0ZSNmYwUkFpVGdnNTk2aUw4eXJmSUx0S01VVWs0TkVCNHhuUlhzTlBONGpQWE01V3RpeFVwWEFUY19lWjN3NVFSMnhNWTBSaFE?oc=5"
+          "title": "한미반도체 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8yZ0N0N1d0anpzdnF6U3RtVUVLUlphNWpKRFpfU19OZjlTNlQ4SW9DUlhxcU1UbFpNOVFBYUZoWnRyWk8tMVd5RmJwVm1vSm5GZjYwa0lwY3ZsNXJC?oc=5"
         }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전자 57만→44만원…\"추가 상승동력 필요\"",
-      "polishedBody": "삼성전자는 목표가 57만→44만원…\"추가 상승동력 필요\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+      ]
     },
     {
-      "stockName": "유한양행",
-      "stockCode": "000100",
+      "timestamp": "Wed, 04 Nov 2026 00:35:21 GMT",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": null,
+      "price": null,
+      "summary": "iM證 “삼성전자, HBM이 바꾼 이익 구조⋯2028년 기준 56만원 가능”",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9Xb0ZZOVR5UEdRSk9NTklrRk9Ga01WQ2gtaDJYTk9rS2hOZnB1TDNzX2N4anl0TUxRQXFGWmJzLXZXdmR3ODJXa2NyR3MzaGc3SmpmVGQ3SDlTcjEyLTBYLXRidVdPbWgweUZxTE5sQ2cyOUFs?oc=5",
+      "mentionScore": 87.6,
+      "evidencePoints": [
+        "출처 아시아뉴스통신, 이투데이 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "삼성전자 주가 상승 중",
+        "iM證 “삼성전자, HBM이 바꾼 이익 구조⋯2028년 기준 56만원 가능”"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9Xb0ZZOVR5UEdRSk9NTklrRk9Ga01WQ2gtaDJYTk9rS2hOZnB1TDNzX2N4anl0TUxRQXFGWmJzLXZXdmR3ODJXa2NyR3MzaGc3SmpmVGQ3SDlTcjEyLTBYLXRidVdPbWgweUZxTE5sQ2cyOUFs?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "iM證 “삼성전자, HBM이 바꾼 이익 구조⋯2028년 기준 56만원 가능”",
+          "source": "이투데이",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBENXJyVW5heWR4TnRva2gzUHQ2VmdjUXpTS3pETGRhdVNPQ0tqUjhHMXhLYXpPRFFwbjgzWWdHdnp3dlNCLU13UGs3dmZSU2ZLZlp0Nw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 04 Nov 2026 00:34:29 GMT",
+      "symbol": "012330",
+      "name": "현대모비스",
+      "changeRate": null,
+      "price": null,
+      "summary": "현대모비스 주가 상승 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9HZUhSLXp1bk1MNEY2XzVNS1JfU00tLV8wSnlBYWpKVkJqRG5CNm0zM3ZtOFY1cUo5bHNMZWtQMHBjeXF0VVVnTktiV1ZkZEZJSVh5MlYzS1daUEZ0?oc=5",
+      "mentionScore": 61.6,
+      "evidencePoints": [
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "현대모비스 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "현대모비스 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9HZUhSLXp1bk1MNEY2XzVNS1JfU00tLV8wSnlBYWpKVkJqRG5CNm0zM3ZtOFY1cUo5bHNMZWtQMHBjeXF0VVVnTktiV1ZkZEZJSVh5MlYzS1daUEZ0?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 04 Nov 2026 00:32:11 GMT",
+      "symbol": "000100",
+      "name": "유한양행",
+      "changeRate": null,
+      "price": null,
       "summary": "유한양행 주가 상승 중 아시아뉴스통신",
-      "headline": "유한양행 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE03czd2ZjFjQUdFd1pVN2tGUGRlTFlLb3VJaGJ2eTQ2eUowaHZUQWRtM1JfUTVWamY4R0pqeDZzeTJRVmZReThabnFtU2NETDV2Q0ZPamo3MV9Dakht?oc=5",
+      "mentionScore": 61.5,
       "evidencePoints": [
         "출처 아시아뉴스통신 기반 기사 1건",
         "상승/강세 키워드 우세",
         "유한양행 주가 상승 중"
       ],
-      "mentionScore": 61.6,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-11-03T01:00:23.646Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "유한양행 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE91UUpYM0tOaFBud2xPeGlqUDVldGE3M2M1UnducjJRc2txaHNLR0U3Nl9rSURON2oydE5qbExhaFpIQmRBOWR3cU84Z2NJN1dMUkZpcFpEajFpR2tr?oc=5",
-      "publishedAt": "Tue, 03 Nov 2026 00:35:09 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
           "title": "유한양행 주가 상승 중",
           "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE91UUpYM0tOaFBud2xPeGlqUDVldGE3M2M1UnducjJRc2txaHNLR0U3Nl9rSURON2oydE5qbExhaFpIQmRBOWR3cU84Z2NJN1dMUkZpcFpEajFpR2tr?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "유한양행 주가 상승 중",
-      "polishedBody": "유한양행은 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "대우건설",
-      "stockCode": "047040",
-      "summary": "대우건설 주가 하락중 아시아뉴스통신",
-      "headline": "대우건설 주가 하락중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "대우건설 주가 하락중"
-      ],
-      "mentionScore": 61.5,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-11-03T01:00:23.646Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "대우건설 주가 하락중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA1TG80eEdjYVF2LUtuMkZQRkNnMlZNSUNZTTFnRmRSZjB1TjJOV1lEQlJVNEo5NE1uWmxrMDNMUHV6R2RKdkJFdy1uVk5ySzNudm10MVliMlBpb191?oc=5",
-      "publishedAt": "Tue, 03 Nov 2026 00:27:47 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "대우건설 주가 하락중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA1TG80eEdjYVF2LUtuMkZQRkNnMlZNSUNZTTFnRmRSZjB1TjJOV1lEQlJVNEo5NE1uWmxrMDNMUHV6R2RKdkJFdy1uVk5ySzNudm10MVliMlBpb191?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "대우건설 주가 하락중",
-      "polishedBody": "대우건설은 주가 하락중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "GS건설",
-      "stockCode": "006360",
-      "summary": "GS건설 주가 상승 중 아시아뉴스통신",
-      "headline": "GS건설 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "GS건설 주가 상승 중"
-      ],
-      "mentionScore": 61.1,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-11-03T01:00:23.646Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "GS건설 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZWnAzRFdRTU1fQS1sNF9BRkNHSjMtNEhNZkc2UmtXYmhXV1VKc1VLTU1PVlpZRmNSNVhscXhfN0xRdVVsZnJxS2xodWhrRS1qVXJrOXhhZE9iYWww?oc=5",
-      "publishedAt": "Tue, 03 Nov 2026 00:09:04 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "GS건설 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZWnAzRFdRTU1fQS1sNF9BRkNHSjMtNEhNZkc2UmtXYmhXV1VKc1VLTU1PVlpZRmNSNVhscXhfN0xRdVVsZnJxS2xodWhrRS1qVXJrOXhhZE9iYWww?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "GS건설 주가 상승 중",
-      "polishedBody": "GS건설은 주가 상승 중 아시아뉴스통신 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 상승 중 아시아뉴스통신 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "LG전자",
-      "stockCode": "066570",
-      "summary": "LG전자 주가 하락 중 아시아뉴스통신",
-      "headline": "LG전자 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "LG전자 주가 하락 중"
-      ],
-      "mentionScore": 61.1,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-11-03T01:00:23.646Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "LG전자 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9BYnlyUXVEdEhJTjFqNGZLVmhaRXhfSGtSamVrcEpjWG1nT1VjTzlBbzM0YUtrMkZNcnNKYWkxSzJFT0lRQlZITUVkYWxzQnd6VGVKUjM2RjZCLVlR?oc=5",
-      "publishedAt": "Tue, 03 Nov 2026 00:05:18 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "LG전자 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9BYnlyUXVEdEhJTjFqNGZLVmhaRXhfSGtSamVrcEpjWG1nT1VjTzlBbzM0YUtrMkZNcnNKYWkxSzJFT0lRQlZITUVkYWxzQnd6VGVKUjM2RjZCLVlR?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "LG전자 주가 하락 중",
-      "polishedBody": "LG전자는 주가 하락 중 아시아뉴스통신 이슈로 단기 변동성이 확대됐습니다. 주가 하락 중 아시아뉴스통신 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    }
-  ],
-  "items": [
-    {
-      "timestamp": "Tue, 03 Nov 2026 05:50:04 GMT",
-      "symbol": "353200",
-      "name": "대덕전자",
-      "changeRate": -13,
-      "price": null,
-      "summary": "대덕전자 주가 13%대 급락…영업이익 급증에도 10만원선 위협 CBC뉴스",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9EdDJ6NmJsSlMxZzJMMFFvMnJUNjM4M2hraXZLMG9manVYNG1neE0xblJwdmEyUnVIVkVMVGNpWWhxLVNNbGVaTzNMTEVCaV9TQUgybDU3SkpCYlhqSHo5c25UUVV5UFVa?oc=5",
-      "mentionScore": 77.4,
-      "evidencePoints": [
-        "출처 CBC뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 -13.0%",
-        "대덕전자 주가 13%대 급락…영업이익 급증에도 10만원선 위협"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "대덕전자 주가 13%대 급락…영업이익 급증에도 10만원선 위협",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9EdDJ6NmJsSlMxZzJMMFFvMnJUNjM4M2hraXZLMG9manVYNG1neE0xblJwdmEyUnVIVkVMVGNpWWhxLVNNbGVaTzNMTEVCaV9TQUgybDU3SkpCYlhqSHo5c25UUVV5UFVa?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE03czd2ZjFjQUdFd1pVN2tGUGRlTFlLb3VJaGJ2eTQ2eUowaHZUQWRtM1JfUTVWamY4R0pqeDZzeTJRVmZReThabnFtU2NETDV2Q0ZPamo3MV9Dakht?oc=5"
         }
       ]
     },
     {
-      "timestamp": "Tue, 03 Nov 2026 01:40:52 GMT",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": -4,
+      "timestamp": "Wed, 04 Nov 2026 00:24:49 GMT",
+      "symbol": "047040",
+      "name": "대우건설",
+      "changeRate": null,
       "price": null,
-      "summary": "[핫타임] 삼성전자·SK하이닉스, 장 초반 5%대 급락…실적 낙관론에도 찬바람",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5acldkb0NfQmJlc0lLYkc1VDhtT0l4bWZEMG5kcEJRei13T1B2RkxqNGhIMm8xV0E2TlgzOGJNTmpSQm9pZHExenBfeHQ5Q2tlQlFGRnVTZXJiS1NYQzZqbTJWM24zNkZiUVF4V3lPX0NPRUE?oc=5",
-      "mentionScore": 99.9,
+      "summary": "대우건설 주가 상승 중 아시아뉴스통신",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1NNWVUOHdfQ3lSZnRCOHYyQzFUc05sVUZJcDlyMFRTMHUxUlFVaXFwcTl1NnZQa0FaNU4xaUsyZ2MwYjlVckpSc3QxaFc0ZjVmNUdNVTF3dGR1dnk4?oc=5",
+      "mentionScore": 61.4,
       "evidencePoints": [
-        "출처 비즈니스포스트, 아주경제 기반 기사 2건",
-        "제목 기준 변동률 단서 -4.0%",
-        "SK하이닉스 주가 장중 4%대 내려, 'AI 수익성 우려'에 삼성전자도 3%대 하락",
-        "[핫타임] 삼성전자·SK하이닉스, 장 초반 5%대 급락…실적 낙관론에도 찬바람"
+        "출처 아시아뉴스통신 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "대우건설 주가 상승 중"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "SK하이닉스 주가 장중 4%대 내려, 'AI 수익성 우려'에 삼성전자도 3%대 하락",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5acldkb0NfQmJlc0lLYkc1VDhtT0l4bWZEMG5kcEJRei13T1B2RkxqNGhIMm8xV0E2TlgzOGJNTmpSQm9pZHExenBfeHQ5Q2tlQlFGRnVTZXJiS1NYQzZqbTJWM24zNkZiUVF4V3lPX0NPRUE?oc=5"
-        },
+          "title": "대우건설 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1NNWVUOHdfQ3lSZnRCOHYyQzFUc05sVUZJcDlyMFRTMHUxUlFVaXFwcTl1NnZQa0FaNU4xaUsyZ2MwYjlVckpSc3QxaFc0ZjVmNUdNVTF3dGR1dnk4?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 03 Nov 2026 09:47:55 GMT",
+      "symbol": "000990",
+      "name": "DB하이텍",
+      "changeRate": null,
+      "price": null,
+      "summary": "[종목상담 주식민원처리반] 삼성 8인치 파운드리 철수 따른 반사이익 기대 'DB하이텍' - 머니투데이 머니투데이",
+      "source": "머니투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBfdE9lTGN5aW45OU5BNE1NZHo2MlFqVWZnVGstR2xkclgyNVpZZ1liYXBKcVdCOElwWEYtV3g3S2NnNEoyTHBoNDJ5ZzBQa2l3VXBIWGx2SmhIQjJlc1JpbUtSTnpjSk9rODFTOXVB0gFuQVVfeXFMUF90T2VMY3lpbjk5TkE0TU1kejYyUWpVZmdUay1HbGRyWDI1WllnWWJhcEpxV0I4SXBYRi1XeDdLY2c0SjJMcGg0MnlnMFBraXdVcEhYbHZKaEhCMmVzUmltS1JOemNKT2s4MVM5dUE?oc=5",
+      "mentionScore": 46.8,
+      "evidencePoints": [
+        "출처 머니투데이 기반 기사 1건",
+        "[종목상담 주식민원처리반] 삼성 8인치 파운드리 철수 따른 반사이익 기대 'DB하이텍' - 머니투데이"
+      ],
+      "relatedPosts": [
         {
-          "label": "관련기사2",
-          "title": "[핫타임] 삼성전자·SK하이닉스, 장 초반 5%대 급락…실적 낙관론에도 찬바람",
-          "source": "아주경제",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB4ZC1UNWRvWjdrLTlHLWZSSjdlelBXYnpHc1dNbEItWnRlN1lFeDNyeDJ1VlZaeVUzdkVHX3ctZ2paMlVvMTdPa083SmduLXF1cnN4aE9HNXFTUdIBWEFVX3lxTE5aNGxyR213a3RzXy1iQkZtUXM2c1d4cENEMlR2cTlTTVVXRkphbUlLRENfWHNDLVh3c1MwS2hUZXpHX2dvUTV3bDl2VERFUDFFZWZuanhzWDE?oc=5"
+          "label": "관련기사1",
+          "title": "[종목상담 주식민원처리반] 삼성 8인치 파운드리 철수 따른 반사이익 기대 'DB하이텍' - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBfdE9lTGN5aW45OU5BNE1NZHo2MlFqVWZnVGstR2xkclgyNVpZZ1liYXBKcVdCOElwWEYtV3g3S2NnNEoyTHBoNDJ5ZzBQa2l3VXBIWGx2SmhIQjJlc1JpbUtSTnpjSk9rODFTOXVB0gFuQVVfeXFMUF90T2VMY3lpbjk5TkE0TU1kejYyUWpVZmdUay1HbGRyWDI1WllnWWJhcEpxV0I4SXBYRi1XeDdLY2c0SjJMcGg0MnlnMFBraXdVcEhYbHZKaEhCMmVzUmltS1JOemNKT2s4MVM5dUE?oc=5"
         }
       ]
     },
@@ -593,243 +1024,6 @@
           "title": "다올투자증권 “한미약품, 파브리병 신약가치 반영”…목표가 71만원으로 상향",
           "source": "에너지경제신문",
           "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA2MzFpZFVXS3M5bTY4bk1RTjVEcEkxMXp2NEsyLW5pV0prRnFnd0xJZm5ISWFuME80d3JnUEIzU3ZxQ1hNNWlPSWVfTEdDX1dfVWp1aEM5NHRJb1RqTW5zZEdRZw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 02 Nov 2026 23:17:57 GMT",
-      "symbol": "003670",
-      "name": "포스코퓨처엠",
-      "changeRate": -4.6,
-      "price": null,
-      "summary": "NH證 “포스코퓨처엠, LFP 전환 예상보다 빨라…높은 주가는 부담”",
-      "source": "연합뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1UWkxJS2RoaUhxRi1ZUkJtdDU2RkY3OGZsQTF5U3FnQ2I4b0xTemNxcFdKZWF1ZThna0hKbklweU9zS2daV0dYU1lKZjZwN1ljV000OGwyY3BtZDDSAWBBVV95cUxOZ1FHUWt2VVRTa3FSMzUtLThDZzBfWHVRNy1zVzdLblBNcjBFb01yc0JVNTZqaXZQR2w1bXFxTUtwWVBXb09pNnpFOUdDWmluV0dmSHVuZ0xhRkhwMnlGQ2M?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 연합뉴스, 팝콘뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 -4.6%",
-        "IBK증권, 포스코퓨처엠 목표가↑…\"4분기 LFP 출하 시작\"",
-        "NH證 “포스코퓨처엠, LFP 전환 예상보다 빨라…높은 주가는 부담”"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "IBK증권, 포스코퓨처엠 목표가↑…\"4분기 LFP 출하 시작\"",
-          "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1UWkxJS2RoaUhxRi1ZUkJtdDU2RkY3OGZsQTF5U3FnQ2I4b0xTemNxcFdKZWF1ZThna0hKbklweU9zS2daV0dYU1lKZjZwN1ljV000OGwyY3BtZDDSAWBBVV95cUxOZ1FHUWt2VVRTa3FSMzUtLThDZzBfWHVRNy1zVzdLblBNcjBFb01yc0JVNTZqaXZQR2w1bXFxTUtwWVBXb09pNnpFOUdDWmluV0dmSHVuZ0xhRkhwMnlGQ2M?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "NH證 “포스코퓨처엠, LFP 전환 예상보다 빨라…높은 주가는 부담”",
-          "source": "팝콘뉴스",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBpSDRTNk8zNDZWeWRxb2NURUtFczdBQ2ZQQkpwa0Y4Uk5QZlpHWjZXVV81OFdzdWs4SnlNNEVZTTQ3d1dOSnl1MlZsTGJpeDlNNGY3Q3d5MWhNSGpvc3hiMFhieUpSbDR3ckZwWXRB0gFyQVVfeXFMTlFGdW9SVExXYUJuT2tIc0F4SUVnN2xaMGtjZnliMHVmX1k2U2padWdIcHZuZFRMRzI3b2JHbTdUTTdCQVd5ZWZsRVlsN0xqd2FBNXZhNmpnM3lJMGJUUVk5MUNtbVQycWdZdExLNnNGcWpB?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 03 Nov 2026 00:40:05 GMT",
-      "symbol": "012330",
-      "name": "현대모비스",
-      "changeRate": null,
-      "price": null,
-      "summary": "현대모비스 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFByM1BSUjQxOEpVTm83Z3dmandFQkRzaGVxSUs3V3FXOGE1c2RtcTd6R2M4cTIzVlRMM25QWWk1bVNYeWswX200dFpZcVpkbWdGV0pxcm1LYndnRzRO?oc=5",
-      "mentionScore": 92.1,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "현대모비스 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "현대모비스 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFByM1BSUjQxOEpVTm83Z3dmandFQkRzaGVxSUs3V3FXOGE1c2RtcTd6R2M4cTIzVlRMM25QWWk1bVNYeWswX200dFpZcVpkbWdGV0pxcm1LYndnRzRO?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 03 Nov 2026 00:32:02 GMT",
-      "symbol": "042700",
-      "name": "한미반도체",
-      "changeRate": null,
-      "price": null,
-      "summary": "한미반도체 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5qOVhxWTJQS25zR2dJSXE4S0pCSkJxSk9fSG43V0VaVTc1LVVDVlJkbkdCRVdidnNtUkJqMTdQNmh0aFlJYUh2Rmx3SUF4WVdHdC1mLWMxUDJKS1Ax?oc=5",
-      "mentionScore": 87.5,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "한미반도체 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한미반도체 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5qOVhxWTJQS25zR2dJSXE4S0pCSkJxSk9fSG43V0VaVTc1LVVDVlJkbkdCRVdidnNtUkJqMTdQNmh0aFlJYUh2Rmx3SUF4WVdHdC1mLWMxUDJKS1Ax?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 03 Nov 2026 00:36:22 GMT",
-      "symbol": "009150",
-      "name": "삼성전기",
-      "changeRate": null,
-      "price": null,
-      "summary": "삼성전기, 114만2000원까지 밀려 4.27% 하락…AI 관련주 조정 속 주가 향방은",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9ibjNVcVpBd0h4QVNTTU82eXFvN1hwVzA1VlktM0h3RVFTYjJ6X1duOGZXOFBhRlpucEhXeFFhdnIxWXJ0eUZZOXRUZlJLaUtLYW9DOERlNkdFWTFM?oc=5",
-      "mentionScore": 92.7,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, CBC뉴스 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "삼성전기 주가 하락 중",
-        "삼성전기, 114만2000원까지 밀려 4.27% 하락…AI 관련주 조정 속 주가 향방은"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전기 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9ibjNVcVpBd0h4QVNTTU82eXFvN1hwVzA1VlktM0h3RVFTYjJ6X1duOGZXOFBhRlpucEhXeFFhdnIxWXJ0eUZZOXRUZlJLaUtLYW9DOERlNkdFWTFM?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전기, 114만2000원까지 밀려 4.27% 하락…AI 관련주 조정 속 주가 향방은",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1PdXRLMGxqZ3U2VFhUVGxmaGVPTjJxVnZpbG0waFRwZzNkRmlJVnRJUVdSeXdkdTk0NDBYQkJJY3FiT3lfY0xlZVBzdWEwZFpQeHJpVjBFcEtfLWxNU0tuMWJPLVdVd0Fn?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 02 Nov 2026 23:45:35 GMT",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "“삼성전자, 목표주가 44만원”…비중 확대 유효하다는 이유는",
-      "source": "매일경제 마켓",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1uc0ZSNmYwUkFpVGdnNTk2aUw4eXJmSUx0S01VVWs0TkVCNHhuUlhzTlBONGpQWE01V3RpeFVwWEFUY19lWjN3NVFSMnhNWTBSaFE?oc=5",
-      "mentionScore": 78.8,
-      "evidencePoints": [
-        "출처 매일경제 마켓 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "“삼성전자, 목표주가 44만원”…비중 확대 유효하다는 이유는",
-        "한투증권, 삼성전자 목표가 57만→44만원…\"추가 상승동력 필요\""
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "“삼성전자, 목표주가 44만원”…비중 확대 유효하다는 이유는",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TQXhaTTJmN1hBaFVZV2QwOVNmeTA5bXhDdjdhVGRUOVhCbWlfTC1PSTNxSnoydWp1RUpJWjFJZjlfZVRTRHFveEtxRE5PMW1KMUE?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한투증권, 삼성전자 목표가 57만→44만원…\"추가 상승동력 필요\"",
-          "source": "매일경제 마켓",
-          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1uc0ZSNmYwUkFpVGdnNTk2aUw4eXJmSUx0S01VVWs0TkVCNHhuUlhzTlBONGpQWE01V3RpeFVwWEFUY19lWjN3NVFSMnhNWTBSaFE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 03 Nov 2026 00:35:09 GMT",
-      "symbol": "000100",
-      "name": "유한양행",
-      "changeRate": null,
-      "price": null,
-      "summary": "유한양행 주가 상승 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE91UUpYM0tOaFBud2xPeGlqUDVldGE3M2M1UnducjJRc2txaHNLR0U3Nl9rSURON2oydE5qbExhaFpIQmRBOWR3cU84Z2NJN1dMUkZpcFpEajFpR2tr?oc=5",
-      "mentionScore": 61.6,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "유한양행 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "유한양행 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE91UUpYM0tOaFBud2xPeGlqUDVldGE3M2M1UnducjJRc2txaHNLR0U3Nl9rSURON2oydE5qbExhaFpIQmRBOWR3cU84Z2NJN1dMUkZpcFpEajFpR2tr?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 03 Nov 2026 00:27:47 GMT",
-      "symbol": "047040",
-      "name": "대우건설",
-      "changeRate": null,
-      "price": null,
-      "summary": "대우건설 주가 하락중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA1TG80eEdjYVF2LUtuMkZQRkNnMlZNSUNZTTFnRmRSZjB1TjJOV1lEQlJVNEo5NE1uWmxrMDNMUHV6R2RKdkJFdy1uVk5ySzNudm10MVliMlBpb191?oc=5",
-      "mentionScore": 61.5,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "대우건설 주가 하락중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "대우건설 주가 하락중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA1TG80eEdjYVF2LUtuMkZQRkNnMlZNSUNZTTFnRmRSZjB1TjJOV1lEQlJVNEo5NE1uWmxrMDNMUHV6R2RKdkJFdy1uVk5ySzNudm10MVliMlBpb191?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 03 Nov 2026 00:09:04 GMT",
-      "symbol": "006360",
-      "name": "GS건설",
-      "changeRate": null,
-      "price": null,
-      "summary": "GS건설 주가 상승 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZWnAzRFdRTU1fQS1sNF9BRkNHSjMtNEhNZkc2UmtXYmhXV1VKc1VLTU1PVlpZRmNSNVhscXhfN0xRdVVsZnJxS2xodWhrRS1qVXJrOXhhZE9iYWww?oc=5",
-      "mentionScore": 61.1,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "상승/강세 키워드 우세",
-        "GS건설 주가 상승 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "GS건설 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZWnAzRFdRTU1fQS1sNF9BRkNHSjMtNEhNZkc2UmtXYmhXV1VKc1VLTU1PVlpZRmNSNVhscXhfN0xRdVVsZnJxS2xodWhrRS1qVXJrOXhhZE9iYWww?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 03 Nov 2026 00:05:18 GMT",
-      "symbol": "066570",
-      "name": "LG전자",
-      "changeRate": null,
-      "price": null,
-      "summary": "LG전자 주가 하락 중 아시아뉴스통신",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9BYnlyUXVEdEhJTjFqNGZLVmhaRXhfSGtSamVrcEpjWG1nT1VjTzlBbzM0YUtrMkZNcnNKYWkxSzJFT0lRQlZITUVkYWxzQnd6VGVKUjM2RjZCLVlR?oc=5",
-      "mentionScore": 61.1,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 1건",
-        "하락/약세 키워드 우세",
-        "LG전자 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "LG전자 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9BYnlyUXVEdEhJTjFqNGZLVmhaRXhfSGtSamVrcEpjWG1nT1VjTzlBbzM0YUtrMkZNcnNKYWkxSzJFT0lRQlZITUVkYWxzQnd6VGVKUjM2RjZCLVlR?oc=5"
         }
       ]
     }
