@@ -1,16 +1,130 @@
 {
-  "generated_at": "2026-11-09T02:00:16.341Z",
+  "generated_at": "2026-11-09T03:00:18.919Z",
   "generated_date": "2026-11-09",
-  "slot_hour": 11,
-  "cycle_label": "KST_1100",
-  "slot_label": "11:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 11:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 9건",
+    "title": "KST 12:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 10건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼양식품",
+      "stockCode": "003230",
+      "summary": "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
+      "headline": "[특징주] 삼양식품, 3분기 영업익 증가에도 순이익 감소.. '약세'",
+      "evidencePoints": [
+        "출처 글로벌이코노믹, 연합뉴스 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "[특징주] 삼양식품, 3분기 영업익 증가에도 순이익 감소.. '약세'",
+        "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 3,
+      "updatedAt": "2026-11-09T03:00:18.919Z",
+      "cycleLabel": "KST_1200",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 삼양식품, 3분기 영업익 증가에도 순이익 감소.. '약세'",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPeDQzR21DZ2pZbERyQkN2TlhESm5FeTY5QXFNeHBrUHJVb0Z1SEpncUNNRE5ZSkNqcWJkWXhFMXVmMy04V1gyTnhZclFVN1B1eF9pME1zNGpKQlA1M0NTMlVqR3BFYmx1Umo5NXpuR204NnVhamwwZ1A1MzFTd3JKVkx1UDc5X3Nt?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 01:38:28 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼양식품, 3분기 영업익 증가에도 순이익 감소.. '약세'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPeDQzR21DZ2pZbERyQkN2TlhESm5FeTY5QXFNeHBrUHJVb0Z1SEpncUNNRE5ZSkNqcWJkWXhFMXVmMy04V1gyTnhZclFVN1B1eF9pME1zNGpKQlA1M0NTMlVqR3BFYmx1Umo5NXpuR204NnVhamwwZ1A1MzFTd3JKVkx1UDc5X3Nt?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1uSHhQOGFCSF9YQ3pZWlpLNU9RcnRDc0N0cWt3TFJXVHdrWTYtbUVOWUQ1VmFmRjRaMmJMbHNkdTlLOTZyVGlYYjAwVFpFZnlnaDJBMDBWeVlVc0HSAWBBVV95cUxQei13cEJfeHhJZDVDckUyYi1GLWxWaGRJZ3lBQzEyMC04Z2JfZlNPRXoyTXppZ2tBajVHNDR1SWJaZzF3eEpWV2FuZ2s4aDZQaFNQYWp2OGg3bU5xc1dKUnM?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "삼양식품 3분기 영업익 증가에도 순이익 감소.",
+      "polishedBody": "삼양식품은 원화 강세에 순이익 감소…장초반 6%대 하락 이슈로 단기 변동성이 확대됐습니다. 원화 강세에 순이익 감소…장초반 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 3분기 영업익 증가에도 순이익 감소 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "한미약품",
+      "stockCode": "128940",
+      "summary": "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
+      "headline": "[장중수급포착] 한미약품, 기관 9일 연속 순매수행진... 주가 +1.82%",
+      "evidencePoints": [
+        "출처 뉴스핌, 중앙신문 기반 기사 2건",
+        "[장중수급포착] 한미약품, 기관 9일 연속 순매수행진... 주가 +1.82%",
+        "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\""
+      ],
+      "mentionScore": 86.3,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-11-09T03:00:18.919Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[장중수급포착] 한미약품, 기관 9일 연속 순매수행진... 주가 +1.82%",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IRVloekhkUmNUQ1V5cW1tLU5xOGU3dWJkUEp1eHhaT0p5R2g0UVNPX3dMekg3dERaS0FKLXV1MXhWZm4zaXFXbmRQLXJCN2cySV91a0VDRGM0Sy11?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 01:16:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 한미약품, 기관 9일 연속 순매수행진... 주가 +1.82%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IRVloekhkUmNUQ1V5cW1tLU5xOGU3dWJkUEp1eHhaT0p5R2g0UVNPX3dMekg3dERaS0FKLXV1MXhWZm4zaXFXbmRQLXJCN2cySV91a0VDRGM0Sy11?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
+          "source": "중앙신문",
+          "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxNNWtqbEI3MW1UaC1walBfVjEydWFBT0p0T3dMSXpUVWUxbDlJRWlmZk10N1BNQ0UtRDUyalItZl9UMGhWREtjemFHX1J6d1VuenA3UzFwdWZCVDNKZEhxamRObFpvcHE1ejM4ZG9EMUVXbGJZZmV1NHJWaVNpTzlCVUk4Z2VWbElYekFJZEwtRkVrV0lvbVJYQU03Qjd0U0k3YzlzejBTZ2tJR0pobmZuOGpic1Z1dXhhVnNMNlg1bkRPSTZiUWgtNTBEZ29TWS1VdDhrbkh4UnZOY3FsNXNzX2pXVlhWMjUtblBVbFBNZVBlX092TEJ2bXRIbXBTUDNFSXNhLWtJMzVsX244a1ozTzN1aDdPOVZZN0Z4TWxCSjlpMG4tZEN3aFJfaUtVZmFnaW12SW5aMWd5dkRFX2lDc0ZrYTA5U21ZaVVN?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한미약품 기관 9일 연속 순매수행진..",
+      "polishedBody": "한미약품은 한국투자증권 \" 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 한국투자증권 \" 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 기관 9일 연속 순매수행진 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "PS일렉트로닉스",
+      "stockCode": "332570",
+      "summary": "[장중수급포착] PS일렉트로닉스, 외국인/기관 동시 순매수… 주가 +5.88% 뉴스핌",
+      "headline": "[장중수급포착] PS일렉트로닉스, 외국인/기관 동시 순매수… 주가 +5.88%",
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[장중수급포착] PS일렉트로닉스, 외국인/기관 동시 순매수… 주가 +5.88%"
+      ],
+      "mentionScore": 86.3,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-11-09T03:00:18.919Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[장중수급포착] PS일렉트로닉스, 외국인/기관 동시 순매수… 주가 +5.88%",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1CSWNPUWJ6TUhfQmxxWjJPd3BXVEdiTlFhTjI1cHRKWktzVDZIQkUtSUI2QjRzc3pNekcwcy1HV1RZS0RvNWNzbmVIYmJzZ21oc1Q0Si1kNHM1VFE2?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 01:20:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] PS일렉트로닉스, 외국인/기관 동시 순매수… 주가 +5.88%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1CSWNPUWJ6TUhfQmxxWjJPd3BXVEdiTlFhTjI1cHRKWktzVDZIQkUtSUI2QjRzc3pNekcwcy1HV1RZS0RvNWNzbmVIYmJzZ21oc1Q0Si1kNHM1VFE2?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "PS일렉트로닉스 외국인 기관 동시 순매수…",
+      "polishedBody": "PS일렉트로닉스는 외국인 기관 동시 순매수 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 외국인 기관 동시 순매수 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 외국인 기관 동시 순매수… 주가 +5.88% 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
     {
       "stockName": "알테오젠",
       "stockCode": "196170",
@@ -53,47 +167,6 @@
       "polishedBody": "알테오젠은 주초장 장초반부터 털썩 이슈로 단기 변동성이 확대됐습니다. 주초장 장초반부터 털썩 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 美 약가협상 규정 확정에 15% 급락…SC 전환 수익성 우려 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
-      "stockName": "삼양식품",
-      "stockCode": "003230",
-      "summary": "[리포트 브리핑]삼양식품, '계속되는 성장' 목표가 1,880,000원 - NH투자증권",
-      "headline": "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
-      "evidencePoints": [
-        "출처 연합뉴스, 뉴스핌 기반 기사 2건",
-        "제목 기준 변동률 단서 -6.0%",
-        "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
-        "[리포트 브리핑]삼양식품, '계속되는 성장' 목표가 1,880,000원 - NH투자증권"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 3,
-      "updatedAt": "2026-11-09T01:00:17.424Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": -6,
-      "latestHeadline": "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
-      "source": "연합뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1uSHhQOGFCSF9YQ3pZWlpLNU9RcnRDc0N0cWt3TFJXVHdrWTYtbUVOWUQ1VmFmRjRaMmJMbHNkdTlLOTZyVGlYYjAwVFpFZnlnaDJBMDBWeVlVc0HSAWBBVV95cUxQei13cEJfeHhJZDVDckUyYi1GLWxWaGRJZ3lBQzEyMC04Z2JfZlNPRXoyTXppZ2tBajVHNDR1SWJaZzF3eEpWV2FuZ2s4aDZQaFNQYWp2OGg3bU5xc1dKUnM?oc=5",
-      "publishedAt": "Mon, 09 Nov 2026 00:29:54 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
-          "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1uSHhQOGFCSF9YQ3pZWlpLNU9RcnRDc0N0cWt3TFJXVHdrWTYtbUVOWUQ1VmFmRjRaMmJMbHNkdTlLOTZyVGlYYjAwVFpFZnlnaDJBMDBWeVlVc0HSAWBBVV95cUxQei13cEJfeHhJZDVDckUyYi1GLWxWaGRJZ3lBQzEyMC04Z2JfZlNPRXoyTXppZ2tBajVHNDR1SWJaZzF3eEpWV2FuZ2s4aDZQaFNQYWp2OGg3bU5xc1dKUnM?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[리포트 브리핑]삼양식품, '계속되는 성장' 목표가 1,880,000원 - NH투자증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBvQTFwbHVWRFdrczg3Sll1S3lBTEJDd040a3lTUkNtamZzT19rYklHU1NlLS03U2s3ZWFhQnEzRUthUWFWSkVyeHlzNWpEd0RmWDdRVkVQc2ZOYnB4?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "삼양식품 원화 강세에 순이익 감소…장초반 6%대 하락",
-      "polishedBody": "삼양식품은 '계속되는 성장' 재료가 부각되며 단기 모멘텀을 형성했습니다. '계속되는 성장' 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 원화 강세에 순이익 감소…장초반 6%대 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
       "stockName": "씨에스윈드",
       "stockCode": "112610",
       "summary": "수주 부진 반영한 메리츠증권, 씨에스윈드 목표가 7만원",
@@ -133,47 +206,6 @@
       "hasNews": true,
       "polishedHeadline": "씨에스윈드 '실적보다 중요할 정책 변화'",
       "polishedBody": "씨에스윈드는 수주 부진 반영한 메리츠증권, 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 수주 부진 반영한 메리츠증권, 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 '실적보다 중요할 정책 변화' 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "한미약품",
-      "stockCode": "128940",
-      "summary": "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
-      "headline": "한미약품 주가 7%대 급락…국산 비만신약 '에페' 허가에도 41만8000원, 시장 반응 엇갈려",
-      "evidencePoints": [
-        "출처 중앙신문, CBC뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 -7.0%",
-        "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
-        "한미약품 주가 7%대 급락…국산 비만신약 '에페' 허가에도 41만8000원, 시장 반응 엇갈려"
-      ],
-      "mentionScore": 94.7,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-11-09T01:00:17.424Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": -7,
-      "latestHeadline": "한미약품 주가 7%대 급락…국산 비만신약 '에페' 허가에도 41만8000원, 시장 반응 엇갈려",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBkcUZzXzFmV3JoT1h1QnM2RDJwOUtaT2dGT29ydFV3cEY3bld3T0hyZWVsS095b2djRGp3NXhGY2stOEw3MGNjeW1GUk5MZnBKZFFMTm9IQ21uSmtkUm9Jd2EwWQ?oc=5",
-      "publishedAt": "Sun, 08 Nov 2026 15:06:02 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
-          "source": "중앙신문",
-          "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxQb0NnWUpESUdIMWI3N25jM1Z3dk1LNjVkMmI5eGo5cGkyeDA1b3VRTWhtVURGNUFtRDVjdm5NRkgzYXFtXzVpRGo0M2k2MmY4U1NDeEVuVkxMdktTbF9mRzlYVTd6S180NTI2VzlpaTFNVWdaNzVHcHk2U3RZd2pseExDUWZfTWx5X1E5SjFMd3JVbWJIQnFGTWRVV2NQeEFRSnJaeDNWWkxjTHlJMUNrbnptUUhUeHB2WkhsNldkQ19tM2YyZG96dDBKWk5xcXhIc3ZSTGNMQVBGQ2JpOEtfdnpPNExqMFpNY2R3RU1DMXd5ZGlIWEpxS2wzVlY2MnpvbFVQeDJuclhSNnBJYTVJMS1TcEM0V0E5N3BWcHFjQlhmdXJtX2ZyMHVMNWVEQnpxZFB1SVNrSEFGTEthV2YzT1lwN3FLZE5WcXln?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한미약품 주가 7%대 급락…국산 비만신약 '에페' 허가에도 41만8000원, 시장 반응 엇갈려",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBkcUZzXzFmV3JoT1h1QnM2RDJwOUtaT2dGT29ydFV3cEY3bld3T0hyZWVsS095b2djRGp3NXhGY2stOEw3MGNjeW1GUk5MZnBKZFFMTm9IQ21uSmtkUm9Jd2EwWQ?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한미약품 7%대 급락…국산 비만신약 '에페' 허가에도 41만8000원, 시장 반응 엇갈려",
-      "polishedBody": "한미약품은 한국투자증권 \" 이슈로 단기 변동성이 확대됐습니다. 한국투자증권 \" 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 주가 7%대 급락…국산 비만신약 '에페' 허가에도 41만8000원 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
     },
     {
       "stockName": "한진칼",
@@ -367,6 +399,90 @@
   ],
   "items": [
     {
+      "timestamp": "Mon, 09 Nov 2026 01:38:28 GMT",
+      "symbol": "003230",
+      "name": "삼양식품",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
+      "source": "글로벌이코노믹",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPeDQzR21DZ2pZbERyQkN2TlhESm5FeTY5QXFNeHBrUHJVb0Z1SEpncUNNRE5ZSkNqcWJkWXhFMXVmMy04V1gyTnhZclFVN1B1eF9pME1zNGpKQlA1M0NTMlVqR3BFYmx1Umo5NXpuR204NnVhamwwZ1A1MzFTd3JKVkx1UDc5X3Nt?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 글로벌이코노믹, 연합뉴스 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "[특징주] 삼양식품, 3분기 영업익 증가에도 순이익 감소.. '약세'",
+        "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 삼양식품, 3분기 영업익 증가에도 순이익 감소.. '약세'",
+          "source": "글로벌이코노믹",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPeDQzR21DZ2pZbERyQkN2TlhESm5FeTY5QXFNeHBrUHJVb0Z1SEpncUNNRE5ZSkNqcWJkWXhFMXVmMy04V1gyTnhZclFVN1B1eF9pME1zNGpKQlA1M0NTMlVqR3BFYmx1Umo5NXpuR204NnVhamwwZ1A1MzFTd3JKVkx1UDc5X3Nt?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
+          "source": "연합뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1uSHhQOGFCSF9YQ3pZWlpLNU9RcnRDc0N0cWt3TFJXVHdrWTYtbUVOWUQ1VmFmRjRaMmJMbHNkdTlLOTZyVGlYYjAwVFpFZnlnaDJBMDBWeVlVc0HSAWBBVV95cUxQei13cEJfeHhJZDVDckUyYi1GLWxWaGRJZ3lBQzEyMC04Z2JfZlNPRXoyTXppZ2tBajVHNDR1SWJaZzF3eEpWV2FuZ2s4aDZQaFNQYWp2OGg3bU5xc1dKUnM?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 09 Nov 2026 01:16:00 GMT",
+      "symbol": "128940",
+      "name": "한미약품",
+      "changeRate": null,
+      "price": null,
+      "summary": "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IRVloekhkUmNUQ1V5cW1tLU5xOGU3dWJkUEp1eHhaT0p5R2g0UVNPX3dMekg3dERaS0FKLXV1MXhWZm4zaXFXbmRQLXJCN2cySV91a0VDRGM0Sy11?oc=5",
+      "mentionScore": 86.3,
+      "evidencePoints": [
+        "출처 뉴스핌, 중앙신문 기반 기사 2건",
+        "[장중수급포착] 한미약품, 기관 9일 연속 순매수행진... 주가 +1.82%",
+        "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 한미약품, 기관 9일 연속 순매수행진... 주가 +1.82%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IRVloekhkUmNUQ1V5cW1tLU5xOGU3dWJkUEp1eHhaT0p5R2g0UVNPX3dMekg3dERaS0FKLXV1MXhWZm4zaXFXbmRQLXJCN2cySV91a0VDRGM0Sy11?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
+          "source": "중앙신문",
+          "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxNNWtqbEI3MW1UaC1walBfVjEydWFBT0p0T3dMSXpUVWUxbDlJRWlmZk10N1BNQ0UtRDUyalItZl9UMGhWREtjemFHX1J6d1VuenA3UzFwdWZCVDNKZEhxamRObFpvcHE1ejM4ZG9EMUVXbGJZZmV1NHJWaVNpTzlCVUk4Z2VWbElYekFJZEwtRkVrV0lvbVJYQU03Qjd0U0k3YzlzejBTZ2tJR0pobmZuOGpic1Z1dXhhVnNMNlg1bkRPSTZiUWgtNTBEZ29TWS1VdDhrbkh4UnZOY3FsNXNzX2pXVlhWMjUtblBVbFBNZVBlX092TEJ2bXRIbXBTUDNFSXNhLWtJMzVsX244a1ozTzN1aDdPOVZZN0Z4TWxCSjlpMG4tZEN3aFJfaUtVZmFnaW12SW5aMWd5dkRFX2lDc0ZrYTA5U21ZaVVN?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 09 Nov 2026 01:20:00 GMT",
+      "symbol": "332570",
+      "name": "PS일렉트로닉스",
+      "changeRate": null,
+      "price": null,
+      "summary": "[장중수급포착] PS일렉트로닉스, 외국인/기관 동시 순매수… 주가 +5.88% 뉴스핌",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1CSWNPUWJ6TUhfQmxxWjJPd3BXVEdiTlFhTjI1cHRKWktzVDZIQkUtSUI2QjRzc3pNekcwcy1HV1RZS0RvNWNzbmVIYmJzZ21oc1Q0Si1kNHM1VFE2?oc=5",
+      "mentionScore": 86.3,
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[장중수급포착] PS일렉트로닉스, 외국인/기관 동시 순매수… 주가 +5.88%"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] PS일렉트로닉스, 외국인/기관 동시 순매수… 주가 +5.88%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1CSWNPUWJ6TUhfQmxxWjJPd3BXVEdiTlFhTjI1cHRKWktzVDZIQkUtSUI2QjRzc3pNekcwcy1HV1RZS0RvNWNzbmVIYmJzZ21oc1Q0Si1kNHM1VFE2?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Mon, 09 Nov 2026 00:45:00 GMT",
       "symbol": "196170",
       "name": "알테오젠",
@@ -398,37 +514,6 @@
       ]
     },
     {
-      "timestamp": "Mon, 09 Nov 2026 00:29:54 GMT",
-      "symbol": "003230",
-      "name": "삼양식품",
-      "changeRate": -6,
-      "price": null,
-      "summary": "[리포트 브리핑]삼양식품, '계속되는 성장' 목표가 1,880,000원 - NH투자증권",
-      "source": "연합뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1uSHhQOGFCSF9YQ3pZWlpLNU9RcnRDc0N0cWt3TFJXVHdrWTYtbUVOWUQ1VmFmRjRaMmJMbHNkdTlLOTZyVGlYYjAwVFpFZnlnaDJBMDBWeVlVc0HSAWBBVV95cUxQei13cEJfeHhJZDVDckUyYi1GLWxWaGRJZ3lBQzEyMC04Z2JfZlNPRXoyTXppZ2tBajVHNDR1SWJaZzF3eEpWV2FuZ2s4aDZQaFNQYWp2OGg3bU5xc1dKUnM?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 연합뉴스, 뉴스핌 기반 기사 2건",
-        "제목 기준 변동률 단서 -6.0%",
-        "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
-        "[리포트 브리핑]삼양식품, '계속되는 성장' 목표가 1,880,000원 - NH투자증권"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 삼양식품, 원화 강세에 순이익 감소…장초반 6%대 하락",
-          "source": "연합뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1uSHhQOGFCSF9YQ3pZWlpLNU9RcnRDc0N0cWt3TFJXVHdrWTYtbUVOWUQ1VmFmRjRaMmJMbHNkdTlLOTZyVGlYYjAwVFpFZnlnaDJBMDBWeVlVc0HSAWBBVV95cUxQei13cEJfeHhJZDVDckUyYi1GLWxWaGRJZ3lBQzEyMC04Z2JfZlNPRXoyTXppZ2tBajVHNDR1SWJaZzF3eEpWV2FuZ2s4aDZQaFNQYWp2OGg3bU5xc1dKUnM?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[리포트 브리핑]삼양식품, '계속되는 성장' 목표가 1,880,000원 - NH투자증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBvQTFwbHVWRFdrczg3Sll1S3lBTEJDd040a3lTUkNtamZzT19rYklHU1NlLS03U2s3ZWFhQnEzRUthUWFWSkVyeHlzNWpEd0RmWDdRVkVQc2ZOYnB4?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Mon, 09 Nov 2026 00:14:00 GMT",
       "symbol": "112610",
       "name": "씨에스윈드",
@@ -456,37 +541,6 @@
           "title": "수주 부진 반영한 메리츠증권, 씨에스윈드 목표가 7만원",
           "source": "비건뉴스",
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE11T2NwOVZtZVRNYXZZQV9aUnNRV2NFc25DUkNMMmp3ZFI0OHVBOHotNDhhWGdJaHJGdVNzXzcxaEZnX3o3VTcwanNVTXNaUnVGLVJmZ01kTW40N3ctUF9IbERCWHA3dw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Sun, 08 Nov 2026 15:06:02 GMT",
-      "symbol": "128940",
-      "name": "한미약품",
-      "changeRate": -7,
-      "price": null,
-      "summary": "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBkcUZzXzFmV3JoT1h1QnM2RDJwOUtaT2dGT29ydFV3cEY3bld3T0hyZWVsS095b2djRGp3NXhGY2stOEw3MGNjeW1GUk5MZnBKZFFMTm9IQ21uSmtkUm9Jd2EwWQ?oc=5",
-      "mentionScore": 94.7,
-      "evidencePoints": [
-        "출처 중앙신문, CBC뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 -7.0%",
-        "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
-        "한미약품 주가 7%대 급락…국산 비만신약 '에페' 허가에도 41만8000원, 시장 반응 엇갈려"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한국투자증권 \"한미약품, MASH 치료제 3상 진입 가능성↑\"",
-          "source": "중앙신문",
-          "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxQb0NnWUpESUdIMWI3N25jM1Z3dk1LNjVkMmI5eGo5cGkyeDA1b3VRTWhtVURGNUFtRDVjdm5NRkgzYXFtXzVpRGo0M2k2MmY4U1NDeEVuVkxMdktTbF9mRzlYVTd6S180NTI2VzlpaTFNVWdaNzVHcHk2U3RZd2pseExDUWZfTWx5X1E5SjFMd3JVbWJIQnFGTWRVV2NQeEFRSnJaeDNWWkxjTHlJMUNrbnptUUhUeHB2WkhsNldkQ19tM2YyZG96dDBKWk5xcXhIc3ZSTGNMQVBGQ2JpOEtfdnpPNExqMFpNY2R3RU1DMXd5ZGlIWEpxS2wzVlY2MnpvbFVQeDJuclhSNnBJYTVJMS1TcEM0V0E5N3BWcHFjQlhmdXJtX2ZyMHVMNWVEQnpxZFB1SVNrSEFGTEthV2YzT1lwN3FLZE5WcXln?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "한미약품 주가 7%대 급락…국산 비만신약 '에페' 허가에도 41만8000원, 시장 반응 엇갈려",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBkcUZzXzFmV3JoT1h1QnM2RDJwOUtaT2dGT29ydFV3cEY3bld3T0hyZWVsS095b2djRGp3NXhGY2stOEw3MGNjeW1GUk5MZnBKZFFMTm9IQ21uSmtkUm9Jd2EwWQ?oc=5"
         }
       ]
     },
@@ -635,8 +689,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "mixed",
-    "model": "signal-polish-v1, deepseek/deepseek-v4-flash",
-    "fallbackReason": "partial_primary_failed"
+    "provider": "rule-based",
+    "model": "signal-polish-v1",
+    "fallbackReason": "primary_failed"
   }
 }
