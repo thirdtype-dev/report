@@ -1,56 +1,519 @@
 {
-  "generated_at": "2026-11-09T06:00:18.151Z",
-  "generated_date": "2026-11-09",
-  "slot_hour": 15,
-  "cycle_label": "KST_1500",
-  "slot_label": "15:00",
+  "generated_at": "2026-11-10T01:00:19.846Z",
+  "generated_date": "2026-11-10",
+  "slot_hour": 10,
+  "cycle_label": "KST_1000",
+  "slot_label": "10:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 15:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 10건",
+    "title": "KST 10:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 16건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
       "stockName": "삼양식품",
       "stockCode": "003230",
-      "summary": "삼양식품, 내년에도 강한 실적 모멘텀 지속될 것…'매수'-NH",
-      "headline": "[리포트 브리핑]삼양식품, '환 우려를 넘어선 견조한 성장' 목표가 1,900,000원 - 현대차증권",
+      "summary": "주가 뛰어도 돈 번 사람 없는 삼양식품…실적분석 해보니",
+      "headline": "삼양식품 주가 하락 중",
       "evidencePoints": [
-        "출처 뉴스핌, 이데일리 기반 기사 2건",
-        "제목 기준 변동률 단서 +0.5%",
-        "[리포트 브리핑]삼양식품, '환 우려를 넘어선 견조한 성장' 목표가 1,900,000원 - 현대차증권",
-        "삼양식품, 내년에도 강한 실적 모멘텀 지속될 것…'매수'-NH"
+        "출처 아시아뉴스통신, 한국경제, 한스경제 기반 기사 3건",
+        "하락/약세 키워드 우세",
+        "삼양식품 주가 하락 중",
+        "주가 뛰어도 돈 번 사람 없는 삼양식품…실적분석 해보니"
       ],
       "mentionScore": 99.9,
-      "sentimentLabel": "neutral",
+      "sentimentLabel": "negative",
       "channelCount": 3,
-      "updatedAt": "2026-11-09T06:00:18.151Z",
-      "cycleLabel": "KST_1500",
-      "direction": "neutral",
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "down",
       "changeRate": null,
-      "latestHeadline": "[리포트 브리핑]삼양식품, '환 우려를 넘어선 견조한 성장' 목표가 1,900,000원 - 현대차증권",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xNGxMRkdmMDkyNG9WclZUUDA0Y0RQTU5yeXJ4WXdvOHFfZ1JTZUxWOG1EWU1GSk1WemIzRHpOLV9MTExYR2dPXzBSYkxpTXkwUF9TNjJpNEJLWnln?oc=5",
-      "publishedAt": "Mon, 09 Nov 2026 04:16:00 GMT",
+      "latestHeadline": "삼양식품 주가 하락 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBDMWJQMmNHR01fYWZNTWFXc2psckxUZkJHOUVzeFpPajhEMGx0UEJvOTFtY19xQmVkUjExa213WnJGRkhOd3hTbV9zSFVINEhfaTllQW1wUXlPaV94?oc=5",
+      "publishedAt": "Tue, 10 Nov 2026 00:30:12 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "[리포트 브리핑]삼양식품, '환 우려를 넘어선 견조한 성장' 목표가 1,900,000원 - 현대차증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xNGxMRkdmMDkyNG9WclZUUDA0Y0RQTU5yeXJ4WXdvOHFfZ1JTZUxWOG1EWU1GSk1WemIzRHpOLV9MTExYR2dPXzBSYkxpTXkwUF9TNjJpNEJLWnln?oc=5"
+          "title": "삼양식품 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBDMWJQMmNHR01fYWZNTWFXc2psckxUZkJHOUVzeFpPajhEMGx0UEJvOTFtY19xQmVkUjExa213WnJGRkhOd3hTbV9zSFVINEhfaTllQW1wUXlPaV94?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "삼양식품, 내년에도 강한 실적 모멘텀 지속될 것…'매수'-NH",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOYzBYR0ZtbWwxbVNKMXUtQ1N0SWw3RHZVb0JILWJpeG8wZGtZTzg1ZWpfNEEzNGIzZkpjU2VWNDJKVzRFM1pVM3dfTUZaMmJzSFczOUtqMHRBZlIwYktuT1ZXRjdjd19qa1BxZWpTMkZMVU5xX19LV29BUzJLY2t2ZA?oc=5"
+          "title": "주가 뛰어도 돈 번 사람 없는 삼양식품…실적분석 해보니",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBwMV9ZZjlOSzdadGlvMTE3Qk9OMXdGQ3M4NU1YWlA1WUpJUWxOS095c0FObF9PZWdDazFTMlZYZVUycGxlWmY3Zkh2Mk1nTVRpVVh0dVZ6NDVUUQ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[특징주] 삼양식품, 순이익 19% 감소에 '급락'",
+          "source": "한스경제",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE52SlU5THhpLXJCZ3ZMZG9EX3psWERQeXV1MzdYV2RTMnNpTXlGSlpZYk9PME1JamNpclFNQUtodTBHeVh4dklibk43TXYweUpwTHZhWjZpQUQ3bDZQdk9yVHRydUZ5RzRLaFhN0gFvQVVfeXFMTVdRQnJLbVN2UTRQbXFYeHZ3dy1PbWhmTW8zVnRocXVmaUxVeC04ZVZFT2Q1NXBEakg4UTJ3ckZqRFF6VVdUWlJSSmRJSlpCUGlzUE82MUIzWF85V3pLR19iZnN2Ylh4Qmc1MXZuYzQw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼양식품 주가 하락, 실적 분석 결과는?",
+      "polishedBody": "삼양식품의 주가가 최근 하락세를 보이고 있습니다. 주가가 상승해도 수익을 내기 어려운 구조라는 분석이 나옵니다. 이는 실적 분석 결과 투자자들의 기대치를 충족하지 못했기 때문입니다. 향후 실적 개선 여부가 주가 향방을 결정할 핵심 변수가 될 것입니다."
+    },
+    {
+      "stockName": "삼성전기",
+      "stockCode": "009150",
+      "summary": "삼성전기 주가 상승 중",
+      "headline": "삼성전기 주가, 11월 10일 장중 880,000원 4.39% 상승",
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 +4.4%",
+        "삼성전기 주가, 11월 10일 장중 880,000원 4.39% 상승",
+        "삼성전기 주가 상승 중"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 4,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": 4.39,
+      "latestHeadline": "삼성전기 주가, 11월 10일 장중 880,000원 4.39% 상승",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBQeWxxMkxfYl9YVE5QVkRnTnA4UTdYV1lYUWNJbVdGYkJoMVlOb3hJQjVtYjByamtfSW84aHQ2NU5yUnQyQ0FXeEMzS1hqZnptVVlNRlJVNHo2NXdQdWRYRlVUazQ3Y3VlbVpxY05vZ3BvZw?oc=5",
+      "publishedAt": "Tue, 10 Nov 2026 00:47:35 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가, 11월 10일 장중 880,000원 4.39% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBQeWxxMkxfYl9YVE5QVkRnTnA4UTdYV1lYUWNJbVdGYkJoMVlOb3hJQjVtYjByamtfSW84aHQ2NU5yUnQyQ0FXeEMzS1hqZnptVVlNRlJVNHo2NXdQdWRYRlVUazQ3Y3VlbVpxY05vZ3BvZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE52cjA3R2w5SmZ0R2xnUkFXaGR1eXltTXNzZVZ5T1EzQS1vZEJUZ1JGYWtfMm5zM3hpdkg3a21aRFNNN0ZqXzhxNkZQWEx0QnBZemxHZGpHLTQ3SEtj?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "삼양식품, 환율 우려에도 견조한 성장 전망",
-      "polishedBody": "삼양식품은 환율 변동 우려가 있음에도 불구하고 견조한 실적 성장이 기대됩니다. 현대차증권은 목표가를 190만 원으로 제시하며 매수 의견을 유지했습니다. 이는 중립적인 신호로, 환율 리스크를 상쇄할 만한 내수 및 수출 성장이 예상되기 때문입니다. 향후 분기 실적 발표와 환율 추이를 주목할 필요가 있습니다."
+      "polishedHeadline": "삼성전기 주가 4.39% 상승, 장중 88만원",
+      "polishedBody": "삼성전기 주가가 장중 88만원을 기록하며 4.39% 상승했습니다. 이는 전자부품 수요 회복 기대감이 반영된 결과로 보입니다. 긍정적인 가격 움직임은 시장의 관심을 끌기에 충분합니다. 향후 실적 발표와 수주 동향이 추가 상승 여부를 가를 것입니다."
+    },
+    {
+      "stockName": "한전기술",
+      "stockCode": "052690",
+      "summary": "한전기술 3분기 실적, 시장 기대치↓…목표주가↓-한투 - 머니투데이",
+      "headline": "[모닝 리포트] \"한전기술, 원전 기대보다 실적이 문제...목표가 하향\"",
+      "evidencePoints": [
+        "출처 뉴스핌, 머니투데이 기반 기사 2건",
+        "제목 기준 변동률 단서 +40.0%",
+        "[모닝 리포트] \"한전기술, 원전 기대보다 실적이 문제...목표가 하향\"",
+        "한전기술 3분기 실적, 시장 기대치↓…목표주가↓-한투 - 머니투데이"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 3,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[모닝 리포트] \"한전기술, 원전 기대보다 실적이 문제...목표가 하향\"",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5aNjNxSVo1cVhCdzY3ck84TWJEOUt0RWlTMklWZm5JRWdyS2hWQmtENUpUOHE5Ul9XcFVOcFhWMmdEa1ctajJnN3lVY09IaGNQZFRXWGtJcmU4cm9Z?oc=5",
+      "publishedAt": "Tue, 10 Nov 2026 00:20:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[모닝 리포트] \"한전기술, 원전 기대보다 실적이 문제...목표가 하향\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5aNjNxSVo1cVhCdzY3ck84TWJEOUt0RWlTMklWZm5JRWdyS2hWQmtENUpUOHE5Ul9XcFVOcFhWMmdEa1ctajJnN3lVY09IaGNQZFRXWGtJcmU4cm9Z?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한전기술 3분기 실적, 시장 기대치↓…목표주가↓-한투 - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1qRjFwaFRNMVF0ZGZTZkFUSHNWVzFCRktyMW1ia2lPNmxzN2JEc091a25odV9QNlZsaTJkZnpLSXdLQ1hTUXFhR1pXV211WjRFdUdRWlVzMUgzYnVTYTIzQU9XT0U0SmdF0gFuQVVfeXFMT2VCSFFDc0NFUld5Mm1fbkJQWXJKZ2M4ejB6R1N3VHlrT0Rhb1VuZ3RhUUtVeWYzVzE0Ym8xTExNTU43YXh2UkRTYTY4TWNYUVlrUFB0ck1WZzlBbGx6YU9hVzBmb0RZTVB0alNKVUE?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "한전기술, 실적 부진에 목표가 하향",
+      "polishedBody": "한전기술의 3분기 실적이 시장 기대치를 밑돌았습니다. 이에 증권사는 목표주가를 하향 조정하며 부진을 반영했습니다. 원전 기대감과 달리 실적이 문제로 지목되며 중립적인 신호를 보냅니다. 향후 수주 회복과 비용 효율화가 주가 반등의 관건이 될 것입니다."
+    },
+    {
+      "stockName": "두산",
+      "stockCode": "000150",
+      "summary": "하나證 \"두산, 멀티플 조정으로 목표주가 낮췄지만 성장성 여전\"",
+      "headline": "하나증권 “두산, 목표가 127만원으로 하향…고부가 소재 수요는 견조”",
+      "evidencePoints": [
+        "출처 매일경제 마켓, 뉴시스 기반 기사 2건",
+        "제목 기준 변동률 단서 +82.4%",
+        "하나증권 “두산, 목표가 127만원으로 하향…고부가 소재 수요는 견조”",
+        "하나證 \"두산, 멀티플 조정으로 목표주가 낮췄지만 성장성 여전\""
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 3,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "하나증권 “두산, 목표가 127만원으로 하향…고부가 소재 수요는 견조”",
+      "source": "매일경제 마켓",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5HYnJtSTg3NTZ6WkhpT09wQXhoNDBxc05kWGlsMFk1alBEcS01YmRZTk9lbGs2LVZWR1dOSm40dFJvUTQwUkZPY25SVTFuTm5FMFE?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 23:41:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "하나증권 “두산, 목표가 127만원으로 하향…고부가 소재 수요는 견조”",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5HYnJtSTg3NTZ6WkhpT09wQXhoNDBxc05kWGlsMFk1alBEcS01YmRZTk9lbGs2LVZWR1dOSm40dFJvUTQwUkZPY25SVTFuTm5FMFE?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "하나證 \"두산, 멀티플 조정으로 목표주가 낮췄지만 성장성 여전\"",
+          "source": "뉴시스",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1MeDJ6UGRvQkl5RHZscFJ0SFlldjVpSGVpaXRYcXVqRE1sa3lsVmRqV09zcjloM0JPaC1rbmI1cUJJVjN1SW9GUGxwS0VuUm1CQUZuUHJJQzRjUDdyVnNkRThYMlBscUxUYU03YmNiZ3NWN0htcFdxMtIBeEFVX3lxTE1MeDJ6UGRvQkl5RHZscFJ0SFlldjVpSGVpaXRYcXVqRE1sa3lsVmRqV09zcjloM0JPaC1rbmI1cUJJVjN1SW9GUGxwS0VuUm1CQUZuUHJJQzRjUDdyVnNkRThYMlBscUxUYU03YmNiZ3NWN0htcFdxMg?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "두산 목표가 하향, 고부가 소재 수요는 견조",
+      "polishedBody": "하나증권이 두산의 목표주가를 127만원으로 낮췄습니다. 이는 멀티플 조정에 따른 결정이지만 성장성 자체는 유효하다는 평가입니다. 고부가 소재 수요가 견조해 중립적인 신호로 해석됩니다. 향후 신규 수주와 실적 개선 속도가 주가에 영향을 줄 것입니다."
+    },
+    {
+      "stockName": "카카오",
+      "stockCode": "035720",
+      "summary": "카카오뱅크 주가 상승 중",
+      "headline": "카카오 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신, 뉴스티앤티 기반 기사 3건",
+        "상승/강세 키워드 우세",
+        "카카오 주가 상승 중",
+        "카카오뱅크 주가 상승 중"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "카카오 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBlOHVQT0ppX29PaDRaWU5sVkNlLVVFSWQzM3JHdk9SNzdvRENnenZyczBqMFJUdFBhUjVaeXV6Sk5nWjIxRXBGZkpUMHpJRl8zS1NuWVhDVW5LT3J0?oc=5",
+      "publishedAt": "Tue, 10 Nov 2026 00:29:01 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "카카오 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBlOHVQT0ppX29PaDRaWU5sVkNlLVVFSWQzM3JHdk9SNzdvRENnenZyczBqMFJUdFBhUjVaeXV6Sk5nWjIxRXBGZkpUMHpJRl8zS1NuWVhDVW5LT3J0?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "카카오뱅크 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1sRmVnU0l2cHZ2eF9Xa3ZrSGdSLXEyZk4xOXlheW5SQXFFeW5jSGtzcWxlb196ejkySXdfc1p5RllsUkRia0JSRW1HVUZ3VFdtVTFDNjl2OTBkXzZZ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[특징주] 외국인 카카오·기관 삼성전자 순매수",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpQVYyQS1IRDZSS012eDlQazJzOEEtYk9aWlNWSHNGcS05Wm1wdnR0eFJURFNxdjRQMVEtSlYtaDgzOVhRaU15a0FuVGpoUF9fREsxc0h0TmtJRkFWR0dodDY4cll3b1dFSEE?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "카카오 주가 상승 중, 긍정적 흐름",
+      "polishedBody": "카카오의 주가가 최근 상승세를 보이고 있습니다. 이는 카카오뱅크 등 계열사의 긍정적 흐름이 영향을 준 것으로 보입니다. 시장에서 긍정적인 신호로 받아들여지며 투자 심리가 개선되고 있습니다. 향후 실적과 신사업 성과가 지속적인 상승을 뒷받침할지 주목됩니다."
+    },
+    {
+      "stockName": "박셀바이오",
+      "stockCode": "323990",
+      "summary": "[오늘의 특징주] 머큐리·박셀바이오 상한가…실적 개선·항암제 연구 성과에 매수세 https://www.ppss.kr/",
+      "headline": "[오늘의 특징주] 머큐리·박셀바이오 상한가…실적 개선·항암제 연구 성과에 매수세",
+      "evidencePoints": [
+        "출처 https://www.ppss.kr/ 기반 기사 1건",
+        "제목 기준 변동률 단서 +30.0%",
+        "[오늘의 특징주] 머큐리·박셀바이오 상한가…실적 개선·항암제 연구 성과에 매수세"
+      ],
+      "mentionScore": 98.6,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": 30,
+      "latestHeadline": "[오늘의 특징주] 머큐리·박셀바이오 상한가…실적 개선·항암제 연구 성과에 매수세",
+      "source": "https://www.ppss.kr/",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YYWtZUDFBZUczRkYwcWQ0TUZiS19mbHBhRlBDaDdmLUNBc1lZbXdZelItZFlOd1MyM2dfaWdDOXkxN2NjT244X0NQVGV2aHc3bWc1bGxUOWNKSFJJNXlVSGduSWY?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 07:38:46 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 특징주] 머큐리·박셀바이오 상한가…실적 개선·항암제 연구 성과에 매수세",
+          "source": "https://www.ppss.kr/",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YYWtZUDFBZUczRkYwcWQ0TUZiS19mbHBhRlBDaDdmLUNBc1lZbXdZelItZFlOd1MyM2dfaWdDOXkxN2NjT244X0NQVGV2aHc3bWc1bGxUOWNKSFJJNXlVSGduSWY?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "박셀바이오 머큐리·박셀바이오 상한가…실적 개선·항암제 연구 성과에 매수세",
+      "polishedBody": "박셀바이오는 상한가…실적 개선 재료가 부각되며 단기 모멘텀을 형성했습니다. 상한가…실적 개선 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 머큐리·상한가…실적 개선·항암제 연구 성과에 매수세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "SK하이닉스",
+      "stockCode": "000660",
+      "summary": "\"주식 열공하는데 왜 나만 잃을까\"…SK하이닉스 250층 물린 8년 차 개미의 '눈물'",
+      "headline": "삼성전자·SK하이닉스 장 초반 5~7% 강세",
+      "evidencePoints": [
+        "출처 https://www.2news.co.kr/, 뉴시스 기반 기사 2건",
+        "제목 기준 변동률 단서 +7.0%",
+        "삼성전자·SK하이닉스 장 초반 5~7% 강세",
+        "\"주식 열공하는데 왜 나만 잃을까\"…SK하이닉스 250층 물린 8년 차 개미의 '눈물'"
+      ],
+      "mentionScore": 95.6,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "up",
+      "changeRate": 7,
+      "latestHeadline": "삼성전자·SK하이닉스 장 초반 5~7% 강세",
+      "source": "https://www.2news.co.kr/",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0xbThvNFZXZFJmcjY4N2pERFJnTmZvZ0tVTkVvMlI1Nmt5eTlvV01HczNvdkg3VE42OVdZM0hqRC15cEZDaUo3dnpsZU9weExPb0VudjBlWnBBUGR6QWtqWlFTUGZ3Wmw5?oc=5",
+      "publishedAt": "Tue, 10 Nov 2026 00:15:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자·SK하이닉스 장 초반 5~7% 강세",
+          "source": "https://www.2news.co.kr/",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0xbThvNFZXZFJmcjY4N2pERFJnTmZvZ0tVTkVvMlI1Nmt5eTlvV01HczNvdkg3VE42OVdZM0hqRC15cEZDaUo3dnpsZU9weExPb0VudjBlWnBBUGR6QWtqWlFTUGZ3Wmw5?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "\"주식 열공하는데 왜 나만 잃을까\"…SK하이닉스 250층 물린 8년 차 개미의 '눈물'",
+          "source": "뉴시스",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1LeHdyZlhJWG9ob0dfSy1xb2tkaEtBUFU5M0lnRndjN3NTUmRFUjdnMUxfTTR2WE9DMHBIY25LTWZfeVVlLTlJdnc1b0pGUEMyb0RVZWI5aF82QjQ2elV0QtIBeEFVX3lxTE94em1MZndsdkhXMHR3QmN1Y21WZm5MV2Q2dXV0cWIwcGVBY0d4UFhFSVVQNnJCUEpxVGV3YmxYeFFSMk5pVXRqRlR6SjB6Yk9BSTNMY0VGaHZwS2UwYlpqMlBJVG8wU09qNXlIcTNIQ2hQME5hVDZFbQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "SK하이닉스 삼성전자·SK하이닉스 장 초반 5~7% 강세",
+      "polishedBody": "SK하이닉스는 \"주식 열공하는데 왜 나만 잃을까\"…250층 물린 8년 차 개미의 '눈물' 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 장 초반 5~7% 강세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "알테오젠",
+      "stockCode": "196170",
+      "summary": "[엄브렐라] 알테오젠, 美 약값 인하 규정에 투심 출렁…\"약값만 깎일 뿐 판매량 방어막은 건재\"",
+      "headline": "[모닝 리포트] \"알테오젠, 키트루다SC 전환 확대에 로열티 성장 지속\"",
+      "evidencePoints": [
+        "출처 뉴스핌, 알파경제 기반 기사 2건",
+        "[모닝 리포트] \"알테오젠, 키트루다SC 전환 확대에 로열티 성장 지속\"",
+        "[엄브렐라] 알테오젠, 美 약값 인하 규정에 투심 출렁…\"약값만 깎일 뿐 판매량 방어막은 건재\""
+      ],
+      "mentionScore": 87.6,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[모닝 리포트] \"알테오젠, 키트루다SC 전환 확대에 로열티 성장 지속\"",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9rcV9McUJpeG15WEk5cUJBTEVNX1VpdTVqMmJCVXREZTRHdk5LYXY5MGd0Q2djLUt6OWVPeGlFNUx4ZEIwY2NXNUd2Rk9SekJrZk1UUmRUOUxSWE43?oc=5",
+      "publishedAt": "Tue, 10 Nov 2026 00:38:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[모닝 리포트] \"알테오젠, 키트루다SC 전환 확대에 로열티 성장 지속\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9rcV9McUJpeG15WEk5cUJBTEVNX1VpdTVqMmJCVXREZTRHdk5LYXY5MGd0Q2djLUt6OWVPeGlFNUx4ZEIwY2NXNUd2Rk9SekJrZk1UUmRUOUxSWE43?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[엄브렐라] 알테오젠, 美 약값 인하 규정에 투심 출렁…\"약값만 깎일 뿐 판매량 방어막은 건재\"",
+          "source": "알파경제",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1NSVpVbkpfZk9MSWJSSjdwdDFFTHZxejIxUmZtMlJMNGQzbzBoUGFkZml5M25SWGZsTjhYM2ZUWE1uUFhqYnV3NjlWbXMzWGd5TFdIRm1FLWVTeDNiY2VCTmNRSWZrOGQxYWtHRC1B?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "알테오젠 \"알테오젠, 키트루다SC 전환 확대에 로열티 성장 지속\"",
+      "polishedBody": "알테오젠은 美 약값 인하 규정에 투심 출렁…\"약값만 깎일 뿐 판매량 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 美 약값 인하 규정에 투심 출렁…\"약값만 깎일 뿐 판매량 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 \", 키트루다SC 전환 확대에 로열티 성장 지속\" 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "한진칼",
+      "stockCode": "180640",
+      "summary": "열흘 새 주가 292% '폭등'...경영권 분쟁에 불붙은 '한진칼우' - 머니투데이",
+      "headline": "한진칼 최대주주 호반으로…0.11%p 차 '초박빙' 지분전쟁",
+      "evidencePoints": [
+        "출처 일간투데이, 머니투데이 기반 기사 2건",
+        "한진칼 최대주주 호반으로…0.11%p 차 '초박빙' 지분전쟁",
+        "열흘 새 주가 292% '폭등'...경영권 분쟁에 불붙은 '한진칼우' - 머니투데이"
+      ],
+      "mentionScore": 86.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "한진칼 최대주주 호반으로…0.11%p 차 '초박빙' 지분전쟁",
+      "source": "일간투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5NZWd1LUhTOE5RNjU4Wm01Q1ZCZk5oOGxlQmttdW16QTF0N05kSlJoT3Mta0dFY2JqZlFoXy05ZzdtRkg1czRWZ21SZERkc2ZFNDZQYktNUTQ3TGNWNVF5b3pFOERTaGN2UG1n?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 23:56:11 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한진칼 최대주주 호반으로…0.11%p 차 '초박빙' 지분전쟁",
+          "source": "일간투데이",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5NZWd1LUhTOE5RNjU4Wm01Q1ZCZk5oOGxlQmttdW16QTF0N05kSlJoT3Mta0dFY2JqZlFoXy05ZzdtRkg1czRWZ21SZERkc2ZFNDZQYktNUTQ3TGNWNVF5b3pFOERTaGN2UG1n?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "열흘 새 주가 292% '폭등'...경영권 분쟁에 불붙은 '한진칼우' - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1famlrZkVEdGRvR0hmUGsyNVNiSXNiWmxXNXU4TlMwcGpxMFF0VFY3N28zYkFiQ0JsX2YzVndkbXpUSHA4LVdpSGZGdjhTc2RsUnphdnBTcmFaMU90bGYtaGs3Zkg5R1hq0gFuQVVfeXFMT2tyaExkODVScWpVZVdXRzdENjlHSGw2UjNEc2VnNGQ4QTVld2JRdVhjVGhwRjBkdFFfWGkwRmpvc1JiT0N2bm1QZzE1SS1pbk1aelRvN0dtRmxpekF6LXdIanFTYW9ucE1rY1g4RUE?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "한진칼 최대주주 호반으로…0.11%p 차 '초박빙' 지분전쟁",
+      "polishedBody": "한진칼은 경영권 분쟁에 불붙은 '우' 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 경영권 분쟁에 불붙은 '우' 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 292% '폭등'...경영권 분쟁에 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "삼성SDI",
+      "stockCode": "006400",
+      "summary": "사흘 만에 시총 10조 증발…삼성SDI에 무슨 일이 [이런국장 저런주식] 서울경제",
+      "headline": "사흘 만에 시총 10조 증발…삼성SDI에 무슨 일이 [이런국장 저런주식]",
+      "evidencePoints": [
+        "출처 서울경제 기반 기사 1건",
+        "사흘 만에 시총 10조 증발…삼성SDI에 무슨 일이 [이런국장 저런주식]"
+      ],
+      "mentionScore": 59.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "사흘 만에 시총 10조 증발…삼성SDI에 무슨 일이 [이런국장 저런주식]",
+      "source": "서울경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE55UzkzN1YyeU5FelFmRF9hMFhidzk1dkxxZ2xVb0NkTDQxdVExUFVXNzZHVjBJczF0bHNfb2pneTN3MXdOU1ZwdmJ4SFVjNVpzNWfSAVNBVV95cUxOR2VNSVhwcnYzSk1hSXFCc2pLUE5zbEZ2RGNCVXRMS1BVVHJ6UDYza0pPSmJTcDRNNkxfbDc1eWc4d3BLc202YV9rb0ZxSndfaU54OA?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 22:52:23 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "사흘 만에 시총 10조 증발…삼성SDI에 무슨 일이 [이런국장 저런주식]",
+          "source": "서울경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE55UzkzN1YyeU5FelFmRF9hMFhidzk1dkxxZ2xVb0NkTDQxdVExUFVXNzZHVjBJczF0bHNfb2pneTN3MXdOU1ZwdmJ4SFVjNVpzNWfSAVNBVV95cUxOR2VNSVhwcnYzSk1hSXFCc2pLUE5zbEZ2RGNCVXRMS1BVVHJ6UDYza0pPSmJTcDRNNkxfbDc1eWc4d3BLc202YV9rb0ZxSndfaU54OA?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성SDI 사흘 만에 시총 10조 증발…삼성SDI에 무슨 일이",
+      "polishedBody": "삼성SDI는 사흘 만에 시총 10조 증발…에 무슨 일이 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 사흘 만에 시총 10조 증발…에 무슨 일이 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "인제니아테라퓨틱스",
+      "stockCode": "950260",
+      "summary": "[특징주] 인제니아테라퓨틱스, MSD 녹내장 옵션 미행사…연구비 반환 의무 없어 뉴스티앤티",
+      "headline": "[특징주] 인제니아테라퓨틱스, MSD 녹내장 옵션 미행사…연구비 반환 의무 없어",
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] 인제니아테라퓨틱스, MSD 녹내장 옵션 미행사…연구비 반환 의무 없어"
+      ],
+      "mentionScore": 47.5,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 인제니아테라퓨틱스, MSD 녹내장 옵션 미행사…연구비 반환 의무 없어",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9lNzY1emVRN3BldDJqVEJWaUJITEZhdEhjbWtyS3FsNW9sMHZTbmI4S09VaG5CakQyMmNPN0V4WXJxblJmUUw2b1VjenoxRndmN2xSZWlHMHVNajk2YTFUYVZxcnVidS1PVlE?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 10:28:38 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 인제니아테라퓨틱스, MSD 녹내장 옵션 미행사…연구비 반환 의무 없어",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9lNzY1emVRN3BldDJqVEJWaUJITEZhdEhjbWtyS3FsNW9sMHZTbmI4S09VaG5CakQyMmNPN0V4WXJxblJmUUw2b1VjenoxRndmN2xSZWlHMHVNajk2YTFUYVZxcnVidS1PVlE?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "MSD 녹내장 옵션 미행사, 연구비 반환 없어",
+      "polishedBody": "MSD가 인제니아테라퓨틱스의 녹내장 치료제 옵션을 행사하지 않기로 결정했습니다. 이에 따라 추가 연구비는 발생하지 않지만 기존에 받은 연구비를 반환할 의무도 없습니다. 이 소식은 회사에 즉각적인 손실을 주지 않아 중립적인 재료로 평가됩니다. 향후 MSD의 추가 임상 계획이나 다른 파이프라인 업데이트가 주목됩니다."
+    },
+    {
+      "stockName": "신한제13호스팩",
+      "stockCode": "474930",
+      "summary": "[특징주] 신한제13호스팩, 상장폐지 위기…16일까지 합병심사 신청해야 뉴스티앤티",
+      "headline": "[특징주] 신한제13호스팩, 상장폐지 위기…16일까지 합병심사 신청해야",
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] 신한제13호스팩, 상장폐지 위기…16일까지 합병심사 신청해야"
+      ],
+      "mentionScore": 47.3,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 신한제13호스팩, 상장폐지 위기…16일까지 합병심사 신청해야",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAxSXJuWHNUYlR3TFpTOEIzWDhWVkIwSGtRZXRyNThNRU8yQ1hkMnI2R0ttclY2MS0yM3o2OXQ4MFBTSnNaTDZ5dmlVZERXNmFPYVpuSEE3MlBxSDJCTjlZeFFwT2dYMFpjUnc?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 10:18:23 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 신한제13호스팩, 상장폐지 위기…16일까지 합병심사 신청해야",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAxSXJuWHNUYlR3TFpTOEIzWDhWVkIwSGtRZXRyNThNRU8yQ1hkMnI2R0ttclY2MS0yM3o2OXQ4MFBTSnNaTDZ5dmlVZERXNmFPYVpuSEE3MlBxSDJCTjlZeFFwT2dYMFpjUnc?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "상장폐지 위기, 16일까지 합병심사 신청",
+      "polishedBody": "신한제13호스팩이 상장폐지 위기에 직면했습니다. 오는 16일까지 합병심사를 신청하지 않으면 상장이 유지되기 어렵습니다. 이는 합병 기한을 넘긴 데 따른 중립적 상황으로, 투자자들은 불확실성을 인지해야 합니다. 앞으로 합병 대상 기업 발표와 심사 승인 여부가 핵심 변수입니다."
+    },
+    {
+      "stockName": "에스와이스틸텍",
+      "stockCode": "365330",
+      "summary": "[특징주] 에스와이스틸텍, 서소문빌딩 재개발 공사 수주…삼성물산과 94억7000만원 계약 뉴스티앤티",
+      "headline": "[특징주] 에스와이스틸텍, 서소문빌딩 재개발 공사 수주…삼성물산과 94억7000만원 계약",
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] 에스와이스틸텍, 서소문빌딩 재개발 공사 수주…삼성물산과 94억7000만원 계약"
+      ],
+      "mentionScore": 39.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 1,
+      "updatedAt": "2026-11-10T01:00:19.846Z",
+      "cycleLabel": "KST_1000",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[특징주] 에스와이스틸텍, 서소문빌딩 재개발 공사 수주…삼성물산과 94억7000만원 계약",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1JVUFjczBIT2dpVTBXNmZyYlNvbjI5dWRrTklNR05ySkNFeWZhMVNwZzdGTC1SZndCOHNTcEtaUkpwdG4xbzVnQWVQZ1k4UGVHc1M5UUtHcDJWelItUzY5a0t3akYxNlJkZXc?oc=5",
+      "publishedAt": "Mon, 09 Nov 2026 02:53:26 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 에스와이스틸텍, 서소문빌딩 재개발 공사 수주…삼성물산과 94억7000만원 계약",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1JVUFjczBIT2dpVTBXNmZyYlNvbjI5dWRrTklNR05ySkNFeWZhMVNwZzdGTC1SZndCOHNTcEtaUkpwdG4xbzVnQWVQZ1k4UGVHc1M5UUtHcDJWelItUzY5a0t3akYxNlJkZXc?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "서소문빌딩 재개발 공사 수주, 94.7억 계약",
+      "polishedBody": "에스와이스틸텍이 삼성물산과 94억7000만원 규모의 서소문빌딩 재개발 공사 계약을 체결했습니다. 이번 수주는 회사의 매출 증가에 긍정적인 신호로 해석됩니다. 대형 건설사와의 협력은 사업 안정성을 높여 중립 이상의 호재로 평가됩니다. 향후 추가 수주 소식과 공사 진행 상황이 주가에 영향을 줄 수 있습니다."
     },
     {
       "stockName": "한미약품",
@@ -166,267 +629,380 @@
       "hasNews": true,
       "polishedHeadline": "PS일렉트로닉스 외국인 기관 동시 순매수…",
       "polishedBody": "PS일렉트로닉스는 외국인 기관 동시 순매수 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 외국인 기관 동시 순매수 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 외국인 기관 동시 순매수… 주가 +5.88% 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "알테오젠",
-      "stockCode": "196170",
-      "summary": "[속보] 알테오젠 VI 발동, 주가 주초장 장초반부터 털썩",
-      "headline": "[특징주] 알테오젠, 美 약가협상 규정 확정에 15% 급락…SC 전환 수익성 우려",
-      "evidencePoints": [
-        "출처 Chosunbiz, CBC뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 -15.0%",
-        "[특징주] 알테오젠, 美 약가협상 규정 확정에 15% 급락…SC 전환 수익성 우려",
-        "[속보] 알테오젠 VI 발동, 주가 주초장 장초반부터 털썩"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 3,
-      "updatedAt": "2026-11-09T01:00:17.424Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": -15,
-      "latestHeadline": "[특징주] 알테오젠, 美 약가협상 규정 확정에 15% 급락…SC 전환 수익성 우려",
-      "source": "Chosunbiz",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMTBhYlNNLXJDeHgzMGQydFpzMmZjQnBLcDNvRG5NRk1pUzdvSkNfaC1DM3poUnNQYi1jd2E5a0VnSFo5cngyN3BrNWV0MGtxN2RZazBnUnZ5OWdkQUVnUURmWnpOQmJEX3FBVGFNSnluWXFuOWE1T0s3bGI5NHFkSlhSUEpBX0gy?oc=5",
-      "publishedAt": "Mon, 09 Nov 2026 00:45:00 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 알테오젠, 美 약가협상 규정 확정에 15% 급락…SC 전환 수익성 우려",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMTBhYlNNLXJDeHgzMGQydFpzMmZjQnBLcDNvRG5NRk1pUzdvSkNfaC1DM3poUnNQYi1jd2E5a0VnSFo5cngyN3BrNWV0MGtxN2RZazBnUnZ5OWdkQUVnUURmWnpOQmJEX3FBVGFNSnluWXFuOWE1T0s3bGI5NHFkSlhSUEpBX0gy?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[속보] 알테오젠 VI 발동, 주가 주초장 장초반부터 털썩",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1WNTR2LTAwbTllRG1ucjdxckpCeUgzdk9uS0VKdTFMVmF6ZTdsLVlpb1BuQzhNNjNfWkZGZzhNcTBTNGJhVk5NUXlBQTZac2JBbDlxUWxrRXJ6OVc4eG0ySHdzeG9Mb1Rk?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "알테오젠 美 약가협상 규정 확정에 15% 급락…SC 전환 수익성 우려",
-      "polishedBody": "알테오젠은 주초장 장초반부터 털썩 이슈로 단기 변동성이 확대됐습니다. 주초장 장초반부터 털썩 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 美 약가협상 규정 확정에 15% 급락…SC 전환 수익성 우려 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "한진칼",
-      "stockCode": "180640",
-      "summary": "[한진칼 지배 구조 13년 上] 순환 출자 끊자 드러난 빈틈…상속·내분에 흔들린 ‘그룹의 열쇠’",
-      "headline": "한진칼우, '3연상' 호반·조원태 지분 경쟁에 300% 폭등[특징주]",
-      "evidencePoints": [
-        "출처 이데일리, 에너지경제신문 기반 기사 2건",
-        "한진칼우, '3연상' 호반·조원태 지분 경쟁에 300% 폭등[특징주]",
-        "[한진칼 지배 구조 13년 上] 순환 출자 끊자 드러난 빈틈…상속·내분에 흔들린 ‘그룹의 열쇠’"
-      ],
-      "mentionScore": 87.3,
-      "sentimentLabel": "neutral",
-      "channelCount": 2,
-      "updatedAt": "2026-11-09T01:00:17.424Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "한진칼우, '3연상' 호반·조원태 지분 경쟁에 300% 폭등[특징주]",
-      "source": "이데일리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVDI3aThNLWZsWnVIZUJPTWlLOXdSUFI1QVo5RmJ4eDR2RUxyTWp0MW0yVHpqMFhZcXRkb3BScjBlU3lJRXcyMWZJNjZqSE9MOGFtb2F5ZVJZSnh1TlVzLVU0eWROdDJqanY2REEyTzFMX0lWNVZKZkNPRVJUaGpCSw?oc=5",
-      "publishedAt": "Mon, 09 Nov 2026 00:17:05 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한진칼우, '3연상' 호반·조원태 지분 경쟁에 300% 폭등[특징주]",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVDI3aThNLWZsWnVIZUJPTWlLOXdSUFI1QVo5RmJ4eDR2RUxyTWp0MW0yVHpqMFhZcXRkb3BScjBlU3lJRXcyMWZJNjZqSE9MOGFtb2F5ZVJZSnh1TlVzLVU0eWROdDJqanY2REEyTzFMX0lWNVZKZkNPRVJUaGpCSw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[한진칼 지배 구조 13년 上] 순환 출자 끊자 드러난 빈틈…상속·내분에 흔들린 ‘그룹의 열쇠’",
-          "source": "에너지경제신문",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9oQllQdjh2MFVBNkhRdUNEbUlvcVJhSXJiekZ4a0p2d2ZHLWdFdVJuR3Rael9xeXNqVVhwMkNpOU5fbWNrMW9rcnhnUktnMWhzNGxoeHdaWl9yaFE?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "한진칼 우, '3연상' 호반·조원태 지분 경쟁에 300% 폭등",
-      "polishedBody": "한진칼은 순환 출자 끊자 드러난 빈틈…상속·내분에 흔들린 ‘그룹의 열쇠’ 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 순환 출자 끊자 드러난 빈틈…상속·내분에 흔들린 ‘그룹의 열쇠’ 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 우, '3연상' 호반·조원태 지분 경쟁에 300% 폭등 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "SK하이닉스",
-      "stockCode": "000660",
-      "summary": "[이슈 체크] 반도체, 美 중간선거 충격에 SK하이닉스 주간 20.2%↓…악재가 적극적으로 선반영된 주가",
-      "headline": "SK하이닉스 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 버핏연구소 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "SK하이닉스 주가 하락 중",
-        "[이슈 체크] 반도체, 美 중간선거 충격에 SK하이닉스 주간 20.2%↓…악재가 적극적으로 선반영된 주가"
-      ],
-      "mentionScore": 87.1,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-11-09T01:00:17.424Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "SK하이닉스 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9qZEcyV2dDSFBmT01TdFROcW1JWW14cGU0N3JjVFhaOXhmdjM0NlNZS2dudzlHbkI4MUlRLTFfd2JTRmp0UmxUVkRTVk1qQzJMZldUNHZ0T3k5U1RJ?oc=5",
-      "publishedAt": "Mon, 09 Nov 2026 00:06:32 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "SK하이닉스 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9qZEcyV2dDSFBmT01TdFROcW1JWW14cGU0N3JjVFhaOXhmdjM0NlNZS2dudzlHbkI4MUlRLTFfd2JTRmp0UmxUVkRTVk1qQzJMZldUNHZ0T3k5U1RJ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[이슈 체크] 반도체, 美 중간선거 충격에 SK하이닉스 주간 20.2%↓…악재가 적극적으로 선반영된 주가",
-          "source": "버핏연구소",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9OYXRYbUxNZHJmX2JvQ0dmeVpCd05tbl8wWTdtam5ySzJ1OFhyalljbkpxazFZVFRXSEs4R0VMYW5aMmQ0dVBxUjVSZTh1RTFaN2YyWlFGcndjZjVoTTdZclhR?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "미 중간선거 충격에 SK하이닉스 주가 급락",
-      "polishedBody": "미국 중간선거 결과가 반도체 업황에 부정적 영향을 미치며 SK하이닉스 주가가 급락했습니다. 주간 기준으로 20.2% 하락하며 악재가 주가에 적극 반영된 모습입니다. 이는 반도체 업종 전반의 불확실성이 커진 상황에서 부정적 신호로 평가됩니다. 향후 미국의 반도체 정책 변화와 업계 수급 동향을 주목해야 합니다."
-    },
-    {
-      "stockName": "카카오",
-      "stockCode": "035720",
-      "summary": "카카오페이 주가 하락 중",
-      "headline": "카카오 주가 하락 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "카카오 주가 하락 중",
-        "카카오페이 주가 하락 중"
-      ],
-      "mentionScore": 79.5,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-11-09T01:00:17.424Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": null,
-      "latestHeadline": "카카오 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9lc0d4Y2VfMXkyZGZzMElWclZhcVlobmZLU3BwY2lOLWhYNnBoMnVyejJDYkFwZWdqTjN0UlhvWnJ2a2xsdTJEX0FmYTlQTGw2TFdGUFl2cUl3d3NX?oc=5",
-      "publishedAt": "Mon, 09 Nov 2026 00:31:47 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "카카오 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9lc0d4Y2VfMXkyZGZzMElWclZhcVlobmZLU3BwY2lOLWhYNnBoMnVyejJDYkFwZWdqTjN0UlhvWnJ2a2xsdTJEX0FmYTlQTGw2TFdGUFl2cUl3d3NX?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "카카오페이 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE14SXNnOFFoakhleTR6MmdDUnRYaXpFM3d1bjhQVlg0MlNiM1hsNWwxZEN6dkZlcTNpTHI1U0NiOHJVLXhPRHcyX3RHN2FhbTV2aDY4YW5mMkVwY0I3?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "카카오 주가 하락, 카카오페이도 동반 약세",
-      "polishedBody": "카카오와 카카오페이 주가가 동반 하락하며 투자 심리가 위축되었습니다. 별도의 변동률 수치는 제시되지 않았지만 하락 방향성이 확인되었습니다. 이는 기술주 전반의 조정 분위기 속에서 카카오의 수익성 우려가 반영된 결과로 보입니다. 향후 카카오의 실적 발표와 신사업 진행 상황을 지켜볼 필요가 있습니다."
-    },
-    {
-      "stockName": "삼성SDI",
-      "stockCode": "006400",
-      "summary": "삼성SDI 주가, 11월 9일 장중 434,000원 7.26% 하락 중앙이코노미뉴스",
-      "headline": "삼성SDI 주가, 11월 9일 장중 434,000원 7.26% 하락",
-      "evidencePoints": [
-        "출처 중앙이코노미뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 -7.3%",
-        "삼성SDI 주가, 11월 9일 장중 434,000원 7.26% 하락"
-      ],
-      "mentionScore": 70.5,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-11-09T01:00:17.424Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": -7.26,
-      "latestHeadline": "삼성SDI 주가, 11월 9일 장중 434,000원 7.26% 하락",
-      "source": "중앙이코노미뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFB3eDNiWU0tNkpRVXR0d016VEVfVGZST2tFeWtWa1B5Q3BCVExxZi1BU0ZfUlhEOXlrTjlEcXgycF9nYmlCRU8wMTNyNnFqZk9MX256ZVdnUzJMRXNPVDVmblRidE8zcnBuZTQxdjlWbGtCZw?oc=5",
-      "publishedAt": "Mon, 09 Nov 2026 00:48:12 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가, 11월 9일 장중 434,000원 7.26% 하락",
-          "source": "중앙이코노미뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB3eDNiWU0tNkpRVXR0d016VEVfVGZST2tFeWtWa1B5Q3BCVExxZi1BU0ZfUlhEOXlrTjlEcXgycF9nYmlCRU8wMTNyNnFqZk9MX256ZVdnUzJMRXNPVDVmblRidE8zcnBuZTQxdjlWbGtCZw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성SDI 장중 7.26% 하락, 434,000원 기록",
-      "polishedBody": "삼성SDI 주가가 11월 9일 장중 434,000원까지 하락하며 7.26%의 낙폭을 기록했습니다. 이는 전기차 배터리 업종의 경쟁 심화와 시장 우려가 반영된 결과입니다. 하락 폭이 크고 방향성이 명확해 단기적으로 부정적 신호로 해석됩니다. 향후 배터리 원자재 가격과 글로벌 전기차 수요 동향을 주시해야 합니다."
-    },
-    {
-      "stockName": "현대백화점",
-      "stockCode": "069960",
-      "summary": "현대백화점, 백화점·지누스 호조에 3분기 깜짝 실적…목표주가는 24%↓-대신 이데일리",
-      "headline": "현대백화점, 백화점·지누스 호조에 3분기 깜짝 실적…목표주가는 24%↓-대신",
-      "evidencePoints": [
-        "출처 이데일리 기반 기사 1건",
-        "현대백화점, 백화점·지누스 호조에 3분기 깜짝 실적…목표주가는 24%↓-대신"
-      ],
-      "mentionScore": 60.2,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-11-09T01:00:17.424Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "현대백화점, 백화점·지누스 호조에 3분기 깜짝 실적…목표주가는 24%↓-대신",
-      "source": "이데일리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNT2xMMHlBYkpYVmRBN3g0MGVIaTVLbi1wZzQ0RTc3WXp5QU9qUnZzY0x1MnE4N1dGMEhxN0ZHbXQ5M0xMX2dOMFNYOUxKblFkc2ZUREYyRC1RLVpRelRIRUFXTXlFbVE2Vklxb2pGZHcyZmhqeVZkZGszQ0FETVhQXw?oc=5",
-      "publishedAt": "Sun, 08 Nov 2026 23:12:41 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "현대백화점, 백화점·지누스 호조에 3분기 깜짝 실적…목표주가는 24%↓-대신",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNT2xMMHlBYkpYVmRBN3g0MGVIaTVLbi1wZzQ0RTc3WXp5QU9qUnZzY0x1MnE4N1dGMEhxN0ZHbXQ5M0xMX2dOMFNYOUxKblFkc2ZUREYyRC1RLVpRelRIRUFXTXlFbVE2Vklxb2pGZHcyZmhqeVZkZGszQ0FETVhQXw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "현대백화점 3분기 깜짝 실적에도 목표주가 하향",
-      "polishedBody": "현대백화점이 백화점과 지누스 부문 호조로 3분기 깜짝 실적을 기록했습니다. 그러나 대신증권은 목표주가를 24% 하향 조정하며 긍정적 실적과 상반된 평가를 내놓았습니다. 이는 실적 개선에도 불구하고 향후 성장성에 대한 회의적 시각이 존재함을 시사합니다. 향후 소비 경기 회복 속도와 추가 증권사들의 평가 변화를 확인해야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "Mon, 09 Nov 2026 04:16:00 GMT",
+      "timestamp": "Tue, 10 Nov 2026 00:30:12 GMT",
       "symbol": "003230",
       "name": "삼양식품",
       "changeRate": null,
       "price": null,
-      "summary": "삼양식품, 내년에도 강한 실적 모멘텀 지속될 것…'매수'-NH",
-      "source": "뉴스핌",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xNGxMRkdmMDkyNG9WclZUUDA0Y0RQTU5yeXJ4WXdvOHFfZ1JTZUxWOG1EWU1GSk1WemIzRHpOLV9MTExYR2dPXzBSYkxpTXkwUF9TNjJpNEJLWnln?oc=5",
+      "summary": "주가 뛰어도 돈 번 사람 없는 삼양식품…실적분석 해보니",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBDMWJQMmNHR01fYWZNTWFXc2psckxUZkJHOUVzeFpPajhEMGx0UEJvOTFtY19xQmVkUjExa213WnJGRkhOd3hTbV9zSFVINEhfaTllQW1wUXlPaV94?oc=5",
       "mentionScore": 99.9,
       "evidencePoints": [
-        "출처 뉴스핌, 이데일리 기반 기사 2건",
-        "제목 기준 변동률 단서 +0.5%",
-        "[리포트 브리핑]삼양식품, '환 우려를 넘어선 견조한 성장' 목표가 1,900,000원 - 현대차증권",
-        "삼양식품, 내년에도 강한 실적 모멘텀 지속될 것…'매수'-NH"
+        "출처 아시아뉴스통신, 한국경제, 한스경제 기반 기사 3건",
+        "하락/약세 키워드 우세",
+        "삼양식품 주가 하락 중",
+        "주가 뛰어도 돈 번 사람 없는 삼양식품…실적분석 해보니"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "[리포트 브리핑]삼양식품, '환 우려를 넘어선 견조한 성장' 목표가 1,900,000원 - 현대차증권",
-          "source": "뉴스핌",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xNGxMRkdmMDkyNG9WclZUUDA0Y0RQTU5yeXJ4WXdvOHFfZ1JTZUxWOG1EWU1GSk1WemIzRHpOLV9MTExYR2dPXzBSYkxpTXkwUF9TNjJpNEJLWnln?oc=5"
+          "title": "삼양식품 주가 하락 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBDMWJQMmNHR01fYWZNTWFXc2psckxUZkJHOUVzeFpPajhEMGx0UEJvOTFtY19xQmVkUjExa213WnJGRkhOd3hTbV9zSFVINEhfaTllQW1wUXlPaV94?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "삼양식품, 내년에도 강한 실적 모멘텀 지속될 것…'매수'-NH",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOYzBYR0ZtbWwxbVNKMXUtQ1N0SWw3RHZVb0JILWJpeG8wZGtZTzg1ZWpfNEEzNGIzZkpjU2VWNDJKVzRFM1pVM3dfTUZaMmJzSFczOUtqMHRBZlIwYktuT1ZXRjdjd19qa1BxZWpTMkZMVU5xX19LV29BUzJLY2t2ZA?oc=5"
+          "title": "주가 뛰어도 돈 번 사람 없는 삼양식품…실적분석 해보니",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBwMV9ZZjlOSzdadGlvMTE3Qk9OMXdGQ3M4NU1YWlA1WUpJUWxOS095c0FObF9PZWdDazFTMlZYZVUycGxlWmY3Zkh2Mk1nTVRpVVh0dVZ6NDVUUQ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[특징주] 삼양식품, 순이익 19% 감소에 '급락'",
+          "source": "한스경제",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE52SlU5THhpLXJCZ3ZMZG9EX3psWERQeXV1MzdYV2RTMnNpTXlGSlpZYk9PME1JamNpclFNQUtodTBHeVh4dklibk43TXYweUpwTHZhWjZpQUQ3bDZQdk9yVHRydUZ5RzRLaFhN0gFvQVVfeXFMTVdRQnJLbVN2UTRQbXFYeHZ3dy1PbWhmTW8zVnRocXVmaUxVeC04ZVZFT2Q1NXBEakg4UTJ3ckZqRFF6VVdUWlJSSmRJSlpCUGlzUE82MUIzWF85V3pLR19iZnN2Ylh4Qmc1MXZuYzQw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 10 Nov 2026 00:47:35 GMT",
+      "symbol": "009150",
+      "name": "삼성전기",
+      "changeRate": 4.39,
+      "price": null,
+      "summary": "삼성전기 주가 상승 중",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFBQeWxxMkxfYl9YVE5QVkRnTnA4UTdYV1lYUWNJbVdGYkJoMVlOb3hJQjVtYjByamtfSW84aHQ2NU5yUnQyQ0FXeEMzS1hqZnptVVlNRlJVNHo2NXdQdWRYRlVUazQ3Y3VlbVpxY05vZ3BvZw?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스, 아시아뉴스통신 기반 기사 2건",
+        "제목 기준 변동률 단서 +4.4%",
+        "삼성전기 주가, 11월 10일 장중 880,000원 4.39% 상승",
+        "삼성전기 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가, 11월 10일 장중 880,000원 4.39% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBQeWxxMkxfYl9YVE5QVkRnTnA4UTdYV1lYUWNJbVdGYkJoMVlOb3hJQjVtYjByamtfSW84aHQ2NU5yUnQyQ0FXeEMzS1hqZnptVVlNRlJVNHo2NXdQdWRYRlVUazQ3Y3VlbVpxY05vZ3BvZw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE52cjA3R2w5SmZ0R2xnUkFXaGR1eXltTXNzZVZ5T1EzQS1vZEJUZ1JGYWtfMm5zM3hpdkg3a21aRFNNN0ZqXzhxNkZQWEx0QnBZemxHZGpHLTQ3SEtj?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 10 Nov 2026 00:20:00 GMT",
+      "symbol": "052690",
+      "name": "한전기술",
+      "changeRate": null,
+      "price": null,
+      "summary": "한전기술 3분기 실적, 시장 기대치↓…목표주가↓-한투 - 머니투데이",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5aNjNxSVo1cVhCdzY3ck84TWJEOUt0RWlTMklWZm5JRWdyS2hWQmtENUpUOHE5Ul9XcFVOcFhWMmdEa1ctajJnN3lVY09IaGNQZFRXWGtJcmU4cm9Z?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌, 머니투데이 기반 기사 2건",
+        "제목 기준 변동률 단서 +40.0%",
+        "[모닝 리포트] \"한전기술, 원전 기대보다 실적이 문제...목표가 하향\"",
+        "한전기술 3분기 실적, 시장 기대치↓…목표주가↓-한투 - 머니투데이"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[모닝 리포트] \"한전기술, 원전 기대보다 실적이 문제...목표가 하향\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5aNjNxSVo1cVhCdzY3ck84TWJEOUt0RWlTMklWZm5JRWdyS2hWQmtENUpUOHE5Ul9XcFVOcFhWMmdEa1ctajJnN3lVY09IaGNQZFRXWGtJcmU4cm9Z?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "한전기술 3분기 실적, 시장 기대치↓…목표주가↓-한투 - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1qRjFwaFRNMVF0ZGZTZkFUSHNWVzFCRktyMW1ia2lPNmxzN2JEc091a25odV9QNlZsaTJkZnpLSXdLQ1hTUXFhR1pXV211WjRFdUdRWlVzMUgzYnVTYTIzQU9XT0U0SmdF0gFuQVVfeXFMT2VCSFFDc0NFUld5Mm1fbkJQWXJKZ2M4ejB6R1N3VHlrT0Rhb1VuZ3RhUUtVeWYzVzE0Ym8xTExNTU43YXh2UkRTYTY4TWNYUVlrUFB0ck1WZzlBbGx6YU9hVzBmb0RZTVB0alNKVUE?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 09 Nov 2026 23:41:00 GMT",
+      "symbol": "000150",
+      "name": "두산",
+      "changeRate": null,
+      "price": null,
+      "summary": "하나證 \"두산, 멀티플 조정으로 목표주가 낮췄지만 성장성 여전\"",
+      "source": "매일경제 마켓",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5HYnJtSTg3NTZ6WkhpT09wQXhoNDBxc05kWGlsMFk1alBEcS01YmRZTk9lbGs2LVZWR1dOSm40dFJvUTQwUkZPY25SVTFuTm5FMFE?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 매일경제 마켓, 뉴시스 기반 기사 2건",
+        "제목 기준 변동률 단서 +82.4%",
+        "하나증권 “두산, 목표가 127만원으로 하향…고부가 소재 수요는 견조”",
+        "하나證 \"두산, 멀티플 조정으로 목표주가 낮췄지만 성장성 여전\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "하나증권 “두산, 목표가 127만원으로 하향…고부가 소재 수요는 견조”",
+          "source": "매일경제 마켓",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5HYnJtSTg3NTZ6WkhpT09wQXhoNDBxc05kWGlsMFk1alBEcS01YmRZTk9lbGs2LVZWR1dOSm40dFJvUTQwUkZPY25SVTFuTm5FMFE?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "하나證 \"두산, 멀티플 조정으로 목표주가 낮췄지만 성장성 여전\"",
+          "source": "뉴시스",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1MeDJ6UGRvQkl5RHZscFJ0SFlldjVpSGVpaXRYcXVqRE1sa3lsVmRqV09zcjloM0JPaC1rbmI1cUJJVjN1SW9GUGxwS0VuUm1CQUZuUHJJQzRjUDdyVnNkRThYMlBscUxUYU03YmNiZ3NWN0htcFdxMtIBeEFVX3lxTE1MeDJ6UGRvQkl5RHZscFJ0SFlldjVpSGVpaXRYcXVqRE1sa3lsVmRqV09zcjloM0JPaC1rbmI1cUJJVjN1SW9GUGxwS0VuUm1CQUZuUHJJQzRjUDdyVnNkRThYMlBscUxUYU03YmNiZ3NWN0htcFdxMg?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 10 Nov 2026 00:29:01 GMT",
+      "symbol": "035720",
+      "name": "카카오",
+      "changeRate": null,
+      "price": null,
+      "summary": "카카오뱅크 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBlOHVQT0ppX29PaDRaWU5sVkNlLVVFSWQzM3JHdk9SNzdvRENnenZyczBqMFJUdFBhUjVaeXV6Sk5nWjIxRXBGZkpUMHpJRl8zS1NuWVhDVW5LT3J0?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 아시아뉴스통신, 뉴스티앤티 기반 기사 3건",
+        "상승/강세 키워드 우세",
+        "카카오 주가 상승 중",
+        "카카오뱅크 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "카카오 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBlOHVQT0ppX29PaDRaWU5sVkNlLVVFSWQzM3JHdk9SNzdvRENnenZyczBqMFJUdFBhUjVaeXV6Sk5nWjIxRXBGZkpUMHpJRl8zS1NuWVhDVW5LT3J0?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "카카오뱅크 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1sRmVnU0l2cHZ2eF9Xa3ZrSGdSLXEyZk4xOXlheW5SQXFFeW5jSGtzcWxlb196ejkySXdfc1p5RllsUkRia0JSRW1HVUZ3VFdtVTFDNjl2OTBkXzZZ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[특징주] 외국인 카카오·기관 삼성전자 순매수",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpQVYyQS1IRDZSS012eDlQazJzOEEtYk9aWlNWSHNGcS05Wm1wdnR0eFJURFNxdjRQMVEtSlYtaDgzOVhRaU15a0FuVGpoUF9fREsxc0h0TmtJRkFWR0dodDY4cll3b1dFSEE?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 09 Nov 2026 07:38:46 GMT",
+      "symbol": "323990",
+      "name": "박셀바이오",
+      "changeRate": 30,
+      "price": null,
+      "summary": "[오늘의 특징주] 머큐리·박셀바이오 상한가…실적 개선·항암제 연구 성과에 매수세 https://www.ppss.kr/",
+      "source": "https://www.ppss.kr/",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YYWtZUDFBZUczRkYwcWQ0TUZiS19mbHBhRlBDaDdmLUNBc1lZbXdZelItZFlOd1MyM2dfaWdDOXkxN2NjT244X0NQVGV2aHc3bWc1bGxUOWNKSFJJNXlVSGduSWY?oc=5",
+      "mentionScore": 98.6,
+      "evidencePoints": [
+        "출처 https://www.ppss.kr/ 기반 기사 1건",
+        "제목 기준 변동률 단서 +30.0%",
+        "[오늘의 특징주] 머큐리·박셀바이오 상한가…실적 개선·항암제 연구 성과에 매수세"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[오늘의 특징주] 머큐리·박셀바이오 상한가…실적 개선·항암제 연구 성과에 매수세",
+          "source": "https://www.ppss.kr/",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1YYWtZUDFBZUczRkYwcWQ0TUZiS19mbHBhRlBDaDdmLUNBc1lZbXdZelItZFlOd1MyM2dfaWdDOXkxN2NjT244X0NQVGV2aHc3bWc1bGxUOWNKSFJJNXlVSGduSWY?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 10 Nov 2026 00:15:00 GMT",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "changeRate": 7,
+      "price": null,
+      "summary": "\"주식 열공하는데 왜 나만 잃을까\"…SK하이닉스 250층 물린 8년 차 개미의 '눈물'",
+      "source": "https://www.2news.co.kr/",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0xbThvNFZXZFJmcjY4N2pERFJnTmZvZ0tVTkVvMlI1Nmt5eTlvV01HczNvdkg3VE42OVdZM0hqRC15cEZDaUo3dnpsZU9weExPb0VudjBlWnBBUGR6QWtqWlFTUGZ3Wmw5?oc=5",
+      "mentionScore": 95.6,
+      "evidencePoints": [
+        "출처 https://www.2news.co.kr/, 뉴시스 기반 기사 2건",
+        "제목 기준 변동률 단서 +7.0%",
+        "삼성전자·SK하이닉스 장 초반 5~7% 강세",
+        "\"주식 열공하는데 왜 나만 잃을까\"…SK하이닉스 250층 물린 8년 차 개미의 '눈물'"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자·SK하이닉스 장 초반 5~7% 강세",
+          "source": "https://www.2news.co.kr/",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0xbThvNFZXZFJmcjY4N2pERFJnTmZvZ0tVTkVvMlI1Nmt5eTlvV01HczNvdkg3VE42OVdZM0hqRC15cEZDaUo3dnpsZU9weExPb0VudjBlWnBBUGR6QWtqWlFTUGZ3Wmw5?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "\"주식 열공하는데 왜 나만 잃을까\"…SK하이닉스 250층 물린 8년 차 개미의 '눈물'",
+          "source": "뉴시스",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1LeHdyZlhJWG9ob0dfSy1xb2tkaEtBUFU5M0lnRndjN3NTUmRFUjdnMUxfTTR2WE9DMHBIY25LTWZfeVVlLTlJdnc1b0pGUEMyb0RVZWI5aF82QjQ2elV0QtIBeEFVX3lxTE94em1MZndsdkhXMHR3QmN1Y21WZm5MV2Q2dXV0cWIwcGVBY0d4UFhFSVVQNnJCUEpxVGV3YmxYeFFSMk5pVXRqRlR6SjB6Yk9BSTNMY0VGaHZwS2UwYlpqMlBJVG8wU09qNXlIcTNIQ2hQME5hVDZFbQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 10 Nov 2026 00:38:00 GMT",
+      "symbol": "196170",
+      "name": "알테오젠",
+      "changeRate": null,
+      "price": null,
+      "summary": "[엄브렐라] 알테오젠, 美 약값 인하 규정에 투심 출렁…\"약값만 깎일 뿐 판매량 방어막은 건재\"",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9rcV9McUJpeG15WEk5cUJBTEVNX1VpdTVqMmJCVXREZTRHdk5LYXY5MGd0Q2djLUt6OWVPeGlFNUx4ZEIwY2NXNUd2Rk9SekJrZk1UUmRUOUxSWE43?oc=5",
+      "mentionScore": 87.6,
+      "evidencePoints": [
+        "출처 뉴스핌, 알파경제 기반 기사 2건",
+        "[모닝 리포트] \"알테오젠, 키트루다SC 전환 확대에 로열티 성장 지속\"",
+        "[엄브렐라] 알테오젠, 美 약값 인하 규정에 투심 출렁…\"약값만 깎일 뿐 판매량 방어막은 건재\""
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[모닝 리포트] \"알테오젠, 키트루다SC 전환 확대에 로열티 성장 지속\"",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9rcV9McUJpeG15WEk5cUJBTEVNX1VpdTVqMmJCVXREZTRHdk5LYXY5MGd0Q2djLUt6OWVPeGlFNUx4ZEIwY2NXNUd2Rk9SekJrZk1UUmRUOUxSWE43?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[엄브렐라] 알테오젠, 美 약값 인하 규정에 투심 출렁…\"약값만 깎일 뿐 판매량 방어막은 건재\"",
+          "source": "알파경제",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1NSVpVbkpfZk9MSWJSSjdwdDFFTHZxejIxUmZtMlJMNGQzbzBoUGFkZml5M25SWGZsTjhYM2ZUWE1uUFhqYnV3NjlWbXMzWGd5TFdIRm1FLWVTeDNiY2VCTmNRSWZrOGQxYWtHRC1B?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 09 Nov 2026 23:56:11 GMT",
+      "symbol": "180640",
+      "name": "한진칼",
+      "changeRate": null,
+      "price": null,
+      "summary": "열흘 새 주가 292% '폭등'...경영권 분쟁에 불붙은 '한진칼우' - 머니투데이",
+      "source": "일간투데이",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5NZWd1LUhTOE5RNjU4Wm01Q1ZCZk5oOGxlQmttdW16QTF0N05kSlJoT3Mta0dFY2JqZlFoXy05ZzdtRkg1czRWZ21SZERkc2ZFNDZQYktNUTQ3TGNWNVF5b3pFOERTaGN2UG1n?oc=5",
+      "mentionScore": 86.9,
+      "evidencePoints": [
+        "출처 일간투데이, 머니투데이 기반 기사 2건",
+        "한진칼 최대주주 호반으로…0.11%p 차 '초박빙' 지분전쟁",
+        "열흘 새 주가 292% '폭등'...경영권 분쟁에 불붙은 '한진칼우' - 머니투데이"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "한진칼 최대주주 호반으로…0.11%p 차 '초박빙' 지분전쟁",
+          "source": "일간투데이",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5NZWd1LUhTOE5RNjU4Wm01Q1ZCZk5oOGxlQmttdW16QTF0N05kSlJoT3Mta0dFY2JqZlFoXy05ZzdtRkg1czRWZ21SZERkc2ZFNDZQYktNUTQ3TGNWNVF5b3pFOERTaGN2UG1n?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "열흘 새 주가 292% '폭등'...경영권 분쟁에 불붙은 '한진칼우' - 머니투데이",
+          "source": "머니투데이",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1famlrZkVEdGRvR0hmUGsyNVNiSXNiWmxXNXU4TlMwcGpxMFF0VFY3N28zYkFiQ0JsX2YzVndkbXpUSHA4LVdpSGZGdjhTc2RsUnphdnBTcmFaMU90bGYtaGs3Zkg5R1hq0gFuQVVfeXFMT2tyaExkODVScWpVZVdXRzdENjlHSGw2UjNEc2VnNGQ4QTVld2JRdVhjVGhwRjBkdFFfWGkwRmpvc1JiT0N2bm1QZzE1SS1pbk1aelRvN0dtRmxpekF6LXdIanFTYW9ucE1rY1g4RUE?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 09 Nov 2026 22:52:23 GMT",
+      "symbol": "006400",
+      "name": "삼성SDI",
+      "changeRate": null,
+      "price": null,
+      "summary": "사흘 만에 시총 10조 증발…삼성SDI에 무슨 일이 [이런국장 저런주식] 서울경제",
+      "source": "서울경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE55UzkzN1YyeU5FelFmRF9hMFhidzk1dkxxZ2xVb0NkTDQxdVExUFVXNzZHVjBJczF0bHNfb2pneTN3MXdOU1ZwdmJ4SFVjNVpzNWfSAVNBVV95cUxOR2VNSVhwcnYzSk1hSXFCc2pLUE5zbEZ2RGNCVXRMS1BVVHJ6UDYza0pPSmJTcDRNNkxfbDc1eWc4d3BLc202YV9rb0ZxSndfaU54OA?oc=5",
+      "mentionScore": 59.9,
+      "evidencePoints": [
+        "출처 서울경제 기반 기사 1건",
+        "사흘 만에 시총 10조 증발…삼성SDI에 무슨 일이 [이런국장 저런주식]"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "사흘 만에 시총 10조 증발…삼성SDI에 무슨 일이 [이런국장 저런주식]",
+          "source": "서울경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE55UzkzN1YyeU5FelFmRF9hMFhidzk1dkxxZ2xVb0NkTDQxdVExUFVXNzZHVjBJczF0bHNfb2pneTN3MXdOU1ZwdmJ4SFVjNVpzNWfSAVNBVV95cUxOR2VNSVhwcnYzSk1hSXFCc2pLUE5zbEZ2RGNCVXRMS1BVVHJ6UDYza0pPSmJTcDRNNkxfbDc1eWc4d3BLc202YV9rb0ZxSndfaU54OA?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 09 Nov 2026 10:28:38 GMT",
+      "symbol": "950260",
+      "name": "인제니아테라퓨틱스",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주] 인제니아테라퓨틱스, MSD 녹내장 옵션 미행사…연구비 반환 의무 없어 뉴스티앤티",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9lNzY1emVRN3BldDJqVEJWaUJITEZhdEhjbWtyS3FsNW9sMHZTbmI4S09VaG5CakQyMmNPN0V4WXJxblJmUUw2b1VjenoxRndmN2xSZWlHMHVNajk2YTFUYVZxcnVidS1PVlE?oc=5",
+      "mentionScore": 47.5,
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] 인제니아테라퓨틱스, MSD 녹내장 옵션 미행사…연구비 반환 의무 없어"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 인제니아테라퓨틱스, MSD 녹내장 옵션 미행사…연구비 반환 의무 없어",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9lNzY1emVRN3BldDJqVEJWaUJITEZhdEhjbWtyS3FsNW9sMHZTbmI4S09VaG5CakQyMmNPN0V4WXJxblJmUUw2b1VjenoxRndmN2xSZWlHMHVNajk2YTFUYVZxcnVidS1PVlE?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 09 Nov 2026 10:18:23 GMT",
+      "symbol": "474930",
+      "name": "신한제13호스팩",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주] 신한제13호스팩, 상장폐지 위기…16일까지 합병심사 신청해야 뉴스티앤티",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAxSXJuWHNUYlR3TFpTOEIzWDhWVkIwSGtRZXRyNThNRU8yQ1hkMnI2R0ttclY2MS0yM3o2OXQ4MFBTSnNaTDZ5dmlVZERXNmFPYVpuSEE3MlBxSDJCTjlZeFFwT2dYMFpjUnc?oc=5",
+      "mentionScore": 47.3,
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] 신한제13호스팩, 상장폐지 위기…16일까지 합병심사 신청해야"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 신한제13호스팩, 상장폐지 위기…16일까지 합병심사 신청해야",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAxSXJuWHNUYlR3TFpTOEIzWDhWVkIwSGtRZXRyNThNRU8yQ1hkMnI2R0ttclY2MS0yM3o2OXQ4MFBTSnNaTDZ5dmlVZERXNmFPYVpuSEE3MlBxSDJCTjlZeFFwT2dYMFpjUnc?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Mon, 09 Nov 2026 02:53:26 GMT",
+      "symbol": "365330",
+      "name": "에스와이스틸텍",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주] 에스와이스틸텍, 서소문빌딩 재개발 공사 수주…삼성물산과 94억7000만원 계약 뉴스티앤티",
+      "source": "뉴스티앤티",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1JVUFjczBIT2dpVTBXNmZyYlNvbjI5dWRrTklNR05ySkNFeWZhMVNwZzdGTC1SZndCOHNTcEtaUkpwdG4xbzVnQWVQZ1k4UGVHc1M5UUtHcDJWelItUzY5a0t3akYxNlJkZXc?oc=5",
+      "mentionScore": 39.9,
+      "evidencePoints": [
+        "출처 뉴스티앤티 기반 기사 1건",
+        "[특징주] 에스와이스틸텍, 서소문빌딩 재개발 공사 수주…삼성물산과 94억7000만원 계약"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 에스와이스틸텍, 서소문빌딩 재개발 공사 수주…삼성물산과 94억7000만원 계약",
+          "source": "뉴스티앤티",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1JVUFjczBIT2dpVTBXNmZyYlNvbjI5dWRrTklNR05ySkNFeWZhMVNwZzdGTC1SZndCOHNTcEtaUkpwdG4xbzVnQWVQZ1k4UGVHc1M5UUtHcDJWelItUzY5a0t3akYxNlJkZXc?oc=5"
         }
       ]
     },
@@ -514,176 +1090,6 @@
           "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1CSWNPUWJ6TUhfQmxxWjJPd3BXVEdiTlFhTjI1cHRKWktzVDZIQkUtSUI2QjRzc3pNekcwcy1HV1RZS0RvNWNzbmVIYmJzZ21oc1Q0Si1kNHM1VFE2?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "Mon, 09 Nov 2026 00:45:00 GMT",
-      "symbol": "196170",
-      "name": "알테오젠",
-      "changeRate": -15,
-      "price": null,
-      "summary": "[속보] 알테오젠 VI 발동, 주가 주초장 장초반부터 털썩",
-      "source": "Chosunbiz",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMTBhYlNNLXJDeHgzMGQydFpzMmZjQnBLcDNvRG5NRk1pUzdvSkNfaC1DM3poUnNQYi1jd2E5a0VnSFo5cngyN3BrNWV0MGtxN2RZazBnUnZ5OWdkQUVnUURmWnpOQmJEX3FBVGFNSnluWXFuOWE1T0s3bGI5NHFkSlhSUEpBX0gy?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 Chosunbiz, CBC뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 -15.0%",
-        "[특징주] 알테오젠, 美 약가협상 규정 확정에 15% 급락…SC 전환 수익성 우려",
-        "[속보] 알테오젠 VI 발동, 주가 주초장 장초반부터 털썩"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 알테오젠, 美 약가협상 규정 확정에 15% 급락…SC 전환 수익성 우려",
-          "source": "Chosunbiz",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMTBhYlNNLXJDeHgzMGQydFpzMmZjQnBLcDNvRG5NRk1pUzdvSkNfaC1DM3poUnNQYi1jd2E5a0VnSFo5cngyN3BrNWV0MGtxN2RZazBnUnZ5OWdkQUVnUURmWnpOQmJEX3FBVGFNSnluWXFuOWE1T0s3bGI5NHFkSlhSUEpBX0gy?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[속보] 알테오젠 VI 발동, 주가 주초장 장초반부터 털썩",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1WNTR2LTAwbTllRG1ucjdxckpCeUgzdk9uS0VKdTFMVmF6ZTdsLVlpb1BuQzhNNjNfWkZGZzhNcTBTNGJhVk5NUXlBQTZac2JBbDlxUWxrRXJ6OVc4eG0ySHdzeG9Mb1Rk?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 09 Nov 2026 00:17:05 GMT",
-      "symbol": "180640",
-      "name": "한진칼",
-      "changeRate": null,
-      "price": null,
-      "summary": "[한진칼 지배 구조 13년 上] 순환 출자 끊자 드러난 빈틈…상속·내분에 흔들린 ‘그룹의 열쇠’",
-      "source": "이데일리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVDI3aThNLWZsWnVIZUJPTWlLOXdSUFI1QVo5RmJ4eDR2RUxyTWp0MW0yVHpqMFhZcXRkb3BScjBlU3lJRXcyMWZJNjZqSE9MOGFtb2F5ZVJZSnh1TlVzLVU0eWROdDJqanY2REEyTzFMX0lWNVZKZkNPRVJUaGpCSw?oc=5",
-      "mentionScore": 87.3,
-      "evidencePoints": [
-        "출처 이데일리, 에너지경제신문 기반 기사 2건",
-        "한진칼우, '3연상' 호반·조원태 지분 경쟁에 300% 폭등[특징주]",
-        "[한진칼 지배 구조 13년 上] 순환 출자 끊자 드러난 빈틈…상속·내분에 흔들린 ‘그룹의 열쇠’"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "한진칼우, '3연상' 호반·조원태 지분 경쟁에 300% 폭등[특징주]",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNVDI3aThNLWZsWnVIZUJPTWlLOXdSUFI1QVo5RmJ4eDR2RUxyTWp0MW0yVHpqMFhZcXRkb3BScjBlU3lJRXcyMWZJNjZqSE9MOGFtb2F5ZVJZSnh1TlVzLVU0eWROdDJqanY2REEyTzFMX0lWNVZKZkNPRVJUaGpCSw?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[한진칼 지배 구조 13년 上] 순환 출자 끊자 드러난 빈틈…상속·내분에 흔들린 ‘그룹의 열쇠’",
-          "source": "에너지경제신문",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9oQllQdjh2MFVBNkhRdUNEbUlvcVJhSXJiekZ4a0p2d2ZHLWdFdVJuR3Rael9xeXNqVVhwMkNpOU5fbWNrMW9rcnhnUktnMWhzNGxoeHdaWl9yaFE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 09 Nov 2026 00:06:32 GMT",
-      "symbol": "000660",
-      "name": "SK하이닉스",
-      "changeRate": null,
-      "price": null,
-      "summary": "[이슈 체크] 반도체, 美 중간선거 충격에 SK하이닉스 주간 20.2%↓…악재가 적극적으로 선반영된 주가",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9qZEcyV2dDSFBmT01TdFROcW1JWW14cGU0N3JjVFhaOXhmdjM0NlNZS2dudzlHbkI4MUlRLTFfd2JTRmp0UmxUVkRTVk1qQzJMZldUNHZ0T3k5U1RJ?oc=5",
-      "mentionScore": 87.1,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, 버핏연구소 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "SK하이닉스 주가 하락 중",
-        "[이슈 체크] 반도체, 美 중간선거 충격에 SK하이닉스 주간 20.2%↓…악재가 적극적으로 선반영된 주가"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "SK하이닉스 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9qZEcyV2dDSFBmT01TdFROcW1JWW14cGU0N3JjVFhaOXhmdjM0NlNZS2dudzlHbkI4MUlRLTFfd2JTRmp0UmxUVkRTVk1qQzJMZldUNHZ0T3k5U1RJ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[이슈 체크] 반도체, 美 중간선거 충격에 SK하이닉스 주간 20.2%↓…악재가 적극적으로 선반영된 주가",
-          "source": "버핏연구소",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9OYXRYbUxNZHJmX2JvQ0dmeVpCd05tbl8wWTdtam5ySzJ1OFhyalljbkpxazFZVFRXSEs4R0VMYW5aMmQ0dVBxUjVSZTh1RTFaN2YyWlFGcndjZjVoTTdZclhR?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 09 Nov 2026 00:31:47 GMT",
-      "symbol": "035720",
-      "name": "카카오",
-      "changeRate": null,
-      "price": null,
-      "summary": "카카오페이 주가 하락 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9lc0d4Y2VfMXkyZGZzMElWclZhcVlobmZLU3BwY2lOLWhYNnBoMnVyejJDYkFwZWdqTjN0UlhvWnJ2a2xsdTJEX0FmYTlQTGw2TFdGUFl2cUl3d3NX?oc=5",
-      "mentionScore": 79.5,
-      "evidencePoints": [
-        "출처 아시아뉴스통신 기반 기사 2건",
-        "하락/약세 키워드 우세",
-        "카카오 주가 하락 중",
-        "카카오페이 주가 하락 중"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "카카오 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9lc0d4Y2VfMXkyZGZzMElWclZhcVlobmZLU3BwY2lOLWhYNnBoMnVyejJDYkFwZWdqTjN0UlhvWnJ2a2xsdTJEX0FmYTlQTGw2TFdGUFl2cUl3d3NX?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "카카오페이 주가 하락 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE14SXNnOFFoakhleTR6MmdDUnRYaXpFM3d1bjhQVlg0MlNiM1hsNWwxZEN6dkZlcTNpTHI1U0NiOHJVLXhPRHcyX3RHN2FhbTV2aDY4YW5mMkVwY0I3?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Mon, 09 Nov 2026 00:48:12 GMT",
-      "symbol": "006400",
-      "name": "삼성SDI",
-      "changeRate": -7.26,
-      "price": null,
-      "summary": "삼성SDI 주가, 11월 9일 장중 434,000원 7.26% 하락 중앙이코노미뉴스",
-      "source": "중앙이코노미뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTFB3eDNiWU0tNkpRVXR0d016VEVfVGZST2tFeWtWa1B5Q3BCVExxZi1BU0ZfUlhEOXlrTjlEcXgycF9nYmlCRU8wMTNyNnFqZk9MX256ZVdnUzJMRXNPVDVmblRidE8zcnBuZTQxdjlWbGtCZw?oc=5",
-      "mentionScore": 70.5,
-      "evidencePoints": [
-        "출처 중앙이코노미뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 -7.3%",
-        "삼성SDI 주가, 11월 9일 장중 434,000원 7.26% 하락"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가, 11월 9일 장중 434,000원 7.26% 하락",
-          "source": "중앙이코노미뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB3eDNiWU0tNkpRVXR0d016VEVfVGZST2tFeWtWa1B5Q3BCVExxZi1BU0ZfUlhEOXlrTjlEcXgycF9nYmlCRU8wMTNyNnFqZk9MX256ZVdnUzJMRXNPVDVmblRidE8zcnBuZTQxdjlWbGtCZw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Sun, 08 Nov 2026 23:12:41 GMT",
-      "symbol": "069960",
-      "name": "현대백화점",
-      "changeRate": null,
-      "price": null,
-      "summary": "현대백화점, 백화점·지누스 호조에 3분기 깜짝 실적…목표주가는 24%↓-대신 이데일리",
-      "source": "이데일리",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNT2xMMHlBYkpYVmRBN3g0MGVIaTVLbi1wZzQ0RTc3WXp5QU9qUnZzY0x1MnE4N1dGMEhxN0ZHbXQ5M0xMX2dOMFNYOUxKblFkc2ZUREYyRC1RLVpRelRIRUFXTXlFbVE2Vklxb2pGZHcyZmhqeVZkZGszQ0FETVhQXw?oc=5",
-      "mentionScore": 60.2,
-      "evidencePoints": [
-        "출처 이데일리 기반 기사 1건",
-        "현대백화점, 백화점·지누스 호조에 3분기 깜짝 실적…목표주가는 24%↓-대신"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "현대백화점, 백화점·지누스 호조에 3분기 깜짝 실적…목표주가는 24%↓-대신",
-          "source": "이데일리",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNT2xMMHlBYkpYVmRBN3g0MGVIaTVLbi1wZzQ0RTc3WXp5QU9qUnZzY0x1MnE4N1dGMEhxN0ZHbXQ5M0xMX2dOMFNYOUxKblFkc2ZUREYyRC1RLVpRelRIRUFXTXlFbVE2Vklxb2pGZHcyZmhqeVZkZGszQ0FETVhQXw?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -691,8 +1097,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "openrouter",
-    "model": "deepseek/deepseek-v4-flash",
-    "fallbackReason": null
+    "provider": "mixed",
+    "model": "deepseek/deepseek-v4-flash, signal-polish-v1",
+    "fallbackReason": "partial_primary_failed"
   }
 }
