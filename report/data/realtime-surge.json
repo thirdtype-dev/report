@@ -1,16 +1,63 @@
 {
-  "generated_at": "2026-11-11T04:00:16.416Z",
+  "generated_at": "2026-11-11T05:00:16.928Z",
   "generated_date": "2026-11-11",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
+    "title": "KST 14:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 14건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성SDI",
+      "stockCode": "006400",
+      "summary": "[이주의 관.종]전기차만 기다릴 수 없지…삼성SDI, ESS로 돈 번다",
+      "headline": "삼성SDI 주가, 이틀 연속 강세…장중 47만원선 오르기도",
+      "evidencePoints": [
+        "출처 CBC뉴스, 아시아경제, 비즈니스포스트 기반 기사 3건",
+        "상승/강세 키워드 우세",
+        "삼성SDI 주가, 이틀 연속 강세…장중 47만원선 오르기도",
+        "[이주의 관.종]전기차만 기다릴 수 없지…삼성SDI, ESS로 돈 번다"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 3,
+      "updatedAt": "2026-11-11T05:00:16.928Z",
+      "cycleLabel": "KST_1400",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "삼성SDI 주가, 이틀 연속 강세…장중 47만원선 오르기도",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1DQWdQYkZldnBmb1V2dUl5ZHV1MzhYT252Z1ppZGJhcjdlWUNyWVk5c29SWUtMT3hZOWo5ZXloeG11UDFGemltcnJCd3Ffd3pDcUdQblFWR2FyajdnMmw2UDBkRkktSXQz?oc=5",
+      "publishedAt": "Wed, 11 Nov 2026 04:10:07 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가, 이틀 연속 강세…장중 47만원선 오르기도",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1DQWdQYkZldnBmb1V2dUl5ZHV1MzhYT252Z1ppZGJhcjdlWUNyWVk5c29SWUtMT3hZOWo5ZXloeG11UDFGemltcnJCd3Ffd3pDcUdQblFWR2FyajdnMmw2UDBkRkktSXQz?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[이주의 관.종]전기차만 기다릴 수 없지…삼성SDI, ESS로 돈 번다",
+          "source": "아시아경제",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5QSGRfd1l5cXRvTWN3NThWbGxOck9kcmo1VFpFUENRVWd3eFFuZkNERTcwQkZ6X2ZDNUVNdjJWVVFUYVBnTDQ4OUVvdVVhZnlGZmUtR1dERTdPLWYzWXdtbXh3?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1zbklnQklkZXJNell1N0NvTDZQR3dDUmtSZTFwUl82bFcyNU8zMGY5LVgwMTBDUVhDUzE5aWtnbUJKZzdtM0RBcTZ1TU42WEd0Zlk0aFZfMGh1U0hhbkpyQVZKQ0tid2ZObGIzNVpxWERfdUk?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성SDI 주가, 이틀 연속 강세…장중 47만원선 오르기도",
+      "polishedBody": "삼성SDI는 전기차만 기다릴 수 없지 재료가 부각되며 단기 모멘텀을 형성했습니다. 전기차만 기다릴 수 없지 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 주가, 이틀 연속 강세…장중 47만원선 오르기도 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
     {
       "stockName": "디케이티",
       "stockCode": "290550",
@@ -457,40 +504,6 @@
       "polishedBody": "알테오젠 주가가 바이오 업종 전반의 약세 흐름 속에서 하락했습니다. 동종 업체인 씨젠도 함께 하락하며 업종 전반의 부진이 두드러졌습니다. 이는 업종 내 차별화된 모멘텀 부재가 주가에 부정적 영향을 미친 것으로 분석됩니다. 향후 신규 파이프라인 개발 성과와 업종 반등 시기가 주가 회복의 관건이 될 것입니다."
     },
     {
-      "stockName": "삼성SDI",
-      "stockCode": "006400",
-      "summary": "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감 비즈니스포스트",
-      "headline": "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감",
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 +9.0%",
-        "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감"
-      ],
-      "mentionScore": 56.9,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-11-11T01:00:17.383Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": 9,
-      "latestHeadline": "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1zbklnQklkZXJNell1N0NvTDZQR3dDUmtSZTFwUl82bFcyNU8zMGY5LVgwMTBDUVhDUzE5aWtnbUJKZzdtM0RBcTZ1TU42WEd0Zlk0aFZfMGh1U0hhbkpyQVZKQ0tid2ZObGIzNVpxWERfdUk?oc=5",
-      "publishedAt": "Tue, 10 Nov 2026 09:05:28 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1zbklnQklkZXJNell1N0NvTDZQR3dDUmtSZTFwUl82bFcyNU8zMGY5LVgwMTBDUVhDUzE5aWtnbUJKZzdtM0RBcTZ1TU42WEd0Zlk0aFZfMGh1U0hhbkpyQVZKQ0tid2ZObGIzNVpxWERfdUk?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성SDI 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감",
-      "polishedBody": "삼성SDI는 주가 9%대 반등 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 반등 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
       "stockName": "SK하이닉스",
       "stockCode": "000660",
       "summary": "[특징주] 삼성전자 4%·SK하이닉스 6%대 급등…시총 합산 2천조 회복(종합) 연합뉴스",
@@ -526,6 +539,43 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Wed, 11 Nov 2026 04:10:07 GMT",
+      "symbol": "006400",
+      "name": "삼성SDI",
+      "changeRate": null,
+      "price": null,
+      "summary": "[이주의 관.종]전기차만 기다릴 수 없지…삼성SDI, ESS로 돈 번다",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1DQWdQYkZldnBmb1V2dUl5ZHV1MzhYT252Z1ppZGJhcjdlWUNyWVk5c29SWUtMT3hZOWo5ZXloeG11UDFGemltcnJCd3Ffd3pDcUdQblFWR2FyajdnMmw2UDBkRkktSXQz?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 CBC뉴스, 아시아경제, 비즈니스포스트 기반 기사 3건",
+        "상승/강세 키워드 우세",
+        "삼성SDI 주가, 이틀 연속 강세…장중 47만원선 오르기도",
+        "[이주의 관.종]전기차만 기다릴 수 없지…삼성SDI, ESS로 돈 번다"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가, 이틀 연속 강세…장중 47만원선 오르기도",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1DQWdQYkZldnBmb1V2dUl5ZHV1MzhYT252Z1ppZGJhcjdlWUNyWVk5c29SWUtMT3hZOWo5ZXloeG11UDFGemltcnJCd3Ffd3pDcUdQblFWR2FyajdnMmw2UDBkRkktSXQz?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[이주의 관.종]전기차만 기다릴 수 없지…삼성SDI, ESS로 돈 번다",
+          "source": "아시아경제",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5QSGRfd1l5cXRvTWN3NThWbGxOck9kcmo1VFpFUENRVWd3eFFuZkNERTcwQkZ6X2ZDNUVNdjJWVVFUYVBnTDQ4OUVvdVVhZnlGZmUtR1dERTdPLWYzWXdtbXh3?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1zbklnQklkZXJNell1N0NvTDZQR3dDUmtSZTFwUl82bFcyNU8zMGY5LVgwMTBDUVhDUzE5aWtnbUJKZzdtM0RBcTZ1TU42WEd0Zlk0aFZfMGh1U0hhbkpyQVZKQ0tid2ZObGIzNVpxWERfdUk?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Wed, 11 Nov 2026 01:28:00 GMT",
       "symbol": "290550",
@@ -848,30 +898,6 @@
           "title": "박셀바이오 CAR-T, 고형암 완전관해 上…알테오젠·씨젠은 하락[바이오맥짚기]",
           "source": "이데일리",
           "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNaVo0YTk3akhvUnRpb1NPMHlDTEZVd3NqSHFpMjZDMHpGTjNJTTBBZGs3M1dhaTBINGhBUTRXdDFJOGhKNHIzRnI2a2Jmbk9abTFLSnk5NG5FckNfMTNXODVJS3UydTlEaGJ3NVgzTmFfZ3p4emlWdXpVZXp4S1p5Mw?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Tue, 10 Nov 2026 09:05:28 GMT",
-      "symbol": "006400",
-      "name": "삼성SDI",
-      "changeRate": 9,
-      "price": null,
-      "summary": "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감 비즈니스포스트",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1zbklnQklkZXJNell1N0NvTDZQR3dDUmtSZTFwUl82bFcyNU8zMGY5LVgwMTBDUVhDUzE5aWtnbUJKZzdtM0RBcTZ1TU42WEd0Zlk0aFZfMGh1U0hhbkpyQVZKQ0tid2ZObGIzNVpxWERfdUk?oc=5",
-      "mentionScore": 56.9,
-      "evidencePoints": [
-        "출처 비즈니스포스트 기반 기사 1건",
-        "제목 기준 변동률 단서 +9.0%",
-        "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] 삼성SDI 주가 9%대 반등, '반도체 투심 회복' 코스피 외국인·기관 순매수에 5230선 상승 마감",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1zbklnQklkZXJNell1N0NvTDZQR3dDUmtSZTFwUl82bFcyNU8zMGY5LVgwMTBDUVhDUzE5aWtnbUJKZzdtM0RBcTZ1TU42WEd0Zlk0aFZfMGh1U0hhbkpyQVZKQ0tid2ZObGIzNVpxWERfdUk?oc=5"
         }
       ]
     },
