@@ -1,16 +1,49 @@
 {
-  "generated_at": "2026-11-11T02:00:16.016Z",
+  "generated_at": "2026-11-11T03:00:21.384Z",
   "generated_date": "2026-11-11",
-  "slot_hour": 11,
-  "cycle_label": "KST_1100",
-  "slot_label": "11:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 11:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 13건",
+    "title": "KST 12:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 14건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "디케이티",
+      "stockCode": "290550",
+      "summary": "[장중수급포착] 디케이티, 외국인/기관 동시 순매수… 주가 +10.68% 뉴스핌",
+      "headline": "[장중수급포착] 디케이티, 외국인/기관 동시 순매수… 주가 +10.68%",
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[장중수급포착] 디케이티, 외국인/기관 동시 순매수… 주가 +10.68%"
+      ],
+      "mentionScore": 86.5,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-11-11T03:00:21.384Z",
+      "cycleLabel": "KST_1200",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[장중수급포착] 디케이티, 외국인/기관 동시 순매수… 주가 +10.68%",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9WRjc3SDdlSDU3ZDNTZ1lYX1JYRWl6V2dUS1ZUdXQ3V2M5NjhGTTRPbThGaVZaaFE4MW5RdjNacjNaeWxqLUNtNGhTV2o5YjhsVkdtUnZRZlNDQWVv?oc=5",
+      "publishedAt": "Wed, 11 Nov 2026 01:28:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 디케이티, 외국인/기관 동시 순매수… 주가 +10.68%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9WRjc3SDdlSDU3ZDNTZ1lYX1JYRWl6V2dUS1ZUdXQ3V2M5NjhGTTRPbThGaVZaaFE4MW5RdjNacjNaeWxqLUNtNGhTV2o5YjhsVkdtUnZRZlNDQWVv?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "디케이티 외국인 기관 동시 순매수…",
+      "polishedBody": "디케이티는 외국인 기관 동시 순매수 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 외국인 기관 동시 순매수 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 외국인 기관 동시 순매수… 주가 +10.68% 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
     {
       "stockName": "셀트리온",
       "stockCode": "068270",
@@ -494,6 +527,29 @@
   ],
   "items": [
     {
+      "timestamp": "Wed, 11 Nov 2026 01:28:00 GMT",
+      "symbol": "290550",
+      "name": "디케이티",
+      "changeRate": null,
+      "price": null,
+      "summary": "[장중수급포착] 디케이티, 외국인/기관 동시 순매수… 주가 +10.68% 뉴스핌",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9WRjc3SDdlSDU3ZDNTZ1lYX1JYRWl6V2dUS1ZUdXQ3V2M5NjhGTTRPbThGaVZaaFE4MW5RdjNacjNaeWxqLUNtNGhTV2o5YjhsVkdtUnZRZlNDQWVv?oc=5",
+      "mentionScore": 86.5,
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[장중수급포착] 디케이티, 외국인/기관 동시 순매수… 주가 +10.68%"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 디케이티, 외국인/기관 동시 순매수… 주가 +10.68%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9WRjc3SDdlSDU3ZDNTZ1lYX1JYRWl6V2dUS1ZUdXQ3V2M5NjhGTTRPbThGaVZaaFE4MW5RdjNacjNaeWxqLUNtNGhTV2o5YjhsVkdtUnZRZlNDQWVv?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Wed, 11 Nov 2026 01:26:02 GMT",
       "symbol": "068270",
       "name": "셀트리온",
@@ -849,8 +905,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "openrouter",
-    "model": "deepseek/deepseek-v4-flash",
-    "fallbackReason": null
+    "provider": "rule-based",
+    "model": "signal-polish-v1",
+    "fallbackReason": "primary_failed"
   }
 }
