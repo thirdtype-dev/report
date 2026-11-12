@@ -1,16 +1,50 @@
 {
-  "generated_at": "2026-11-12T04:00:17.588Z",
+  "generated_at": "2026-11-12T05:00:16.366Z",
   "generated_date": "2026-11-12",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 16건",
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 17건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "제이앤티씨",
+      "stockCode": "204270",
+      "summary": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승 CBC뉴스",
+      "headline": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승",
+      "evidencePoints": [
+        "출처 CBC뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +60.0%",
+        "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-12T05:00:16.366Z",
+      "cycleLabel": "KST_1400",
+      "direction": "up",
+      "changeRate": 22,
+      "latestHeadline": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE56Ym9JTzYtRkxHZHRka1pHRWFvTlJQRm1wcDhDeW1raGx6NDdyVW41dXZZMDVoemZ5clZROXdYTklTSzRGaG8ta0ZobDhnTEVhOXI4Q0duYURPbzFLNkdPZHhfVzdLcEZ4?oc=5",
+      "publishedAt": "Thu, 12 Nov 2026 04:30:33 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE56Ym9JTzYtRkxHZHRka1pHRWFvTlJQRm1wcDhDeW1raGx6NDdyVW41dXZZMDVoemZ5clZROXdYTklTSzRGaG8ta0ZobDhnTEVhOXI4Q0duYURPbzFLNkdPZHhfVzdLcEZ4?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "제이앤티씨 주가 22% 급등하며 VI 발동",
+      "polishedBody": "제이앤티씨 주가가 급등하여 변동성 완화 장치가 발동되었습니다. 22%대의 큰 상승률이 나타나며 투자자들의 관심이 집중되었습니다. 이번 급등은 긍정적인 재료나 기대감이 시장에 반영된 결과로 보입니다. 향후 추가 상승 동력과 거래량 변화를 주의 깊게 살펴볼 필요가 있습니다."
+    },
     {
       "stockName": "삼양식품",
       "stockCode": "003230",
@@ -620,6 +654,30 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Thu, 12 Nov 2026 04:30:33 GMT",
+      "symbol": "204270",
+      "name": "제이앤티씨",
+      "changeRate": 22,
+      "price": null,
+      "summary": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승 CBC뉴스",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE56Ym9JTzYtRkxHZHRka1pHRWFvTlJQRm1wcDhDeW1raGx6NDdyVW41dXZZMDVoemZ5clZROXdYTklTSzRGaG8ta0ZobDhnTEVhOXI4Q0duYURPbzFLNkdPZHhfVzdLcEZ4?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 CBC뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +60.0%",
+        "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE56Ym9JTzYtRkxHZHRka1pHRWFvTlJQRm1wcDhDeW1raGx6NDdyVW41dXZZMDVoemZ5clZROXdYTklTSzRGaG8ta0ZobDhnTEVhOXI4Q0duYURPbzFLNkdPZHhfVzdLcEZ4?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Thu, 12 Nov 2026 00:33:20 GMT",
       "symbol": "003230",
