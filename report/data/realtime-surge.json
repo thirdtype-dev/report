@@ -1,16 +1,171 @@
 {
-  "generated_at": "2026-11-13T01:00:17.023Z",
+  "generated_at": "2026-11-13T02:00:18.381Z",
   "generated_date": "2026-11-13",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 12건",
+    "title": "KST 11:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 13건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "NAVER",
+      "stockCode": "035420",
+      "summary": "[리포트 브리핑]NAVER, 'AI 수요를 믿는다면 흔들릴 필요 없다' 목표가 340,000원 - 하나증권",
+      "headline": "[리포트 브리핑]NAVER, '무거워진 AI팩토리의 어깨' 목표가 320,000원 - 유진투자증권",
+      "evidencePoints": [
+        "출처 뉴스핌, 빅터뉴스 기반 기사 3건",
+        "[리포트 브리핑]NAVER, '무거워진 AI팩토리의 어깨' 목표가 320,000원 - 유진투자증권",
+        "[리포트 브리핑]NAVER, 'AI 수요를 믿는다면 흔들릴 필요 없다' 목표가 340,000원 - 하나증권"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-11-13T02:00:18.381Z",
+      "cycleLabel": "KST_1100",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[리포트 브리핑]NAVER, '무거워진 AI팩토리의 어깨' 목표가 320,000원 - 유진투자증권",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1JcERjSlN5QUpybDVobzR0OTMyRGJhbGR4TW9qalRMU011X1k2a2E3amNUQzM0QV9CUEg3V0VtN2ZvRWp4Z2RiOGNac04xbUJuejAtVE5sbGZIdmZo?oc=5",
+      "publishedAt": "Fri, 13 Nov 2026 01:00:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]NAVER, '무거워진 AI팩토리의 어깨' 목표가 320,000원 - 유진투자증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1JcERjSlN5QUpybDVobzR0OTMyRGJhbGR4TW9qalRMU011X1k2a2E3amNUQzM0QV9CUEg3V0VtN2ZvRWp4Z2RiOGNac04xbUJuejAtVE5sbGZIdmZo?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[리포트 브리핑]NAVER, 'AI 수요를 믿는다면 흔들릴 필요 없다' 목표가 340,000원 - 하나증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBNT2dYWVFNS3JQaG5qQ2lYakVSY0lwQlJvMGVGSEhMR3ZzenFfR2hibl9qOW9aRVBpNnVVcXliWGYxZ09xNERyWnRmYXg3Wnk3cGtKb0Utd1kyVDFJ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[오늘의 특징주] NAVER·달바글로벌·에스피지",
+          "source": "빅터뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5rR3NmN3RoWWVLWllIaTdwNERGaUZYSmlZYmlDTzFTS2dUVjM4YXVvNW9qclN6ZW8tSVhqTEhJN213eDN5aW9xREtPaFNEV0hMMTRFQUFpX3pweXFlbnRCaEhGUmpGbUE?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "NAVER, AI 투자 부담 속 목표가 하향",
+      "polishedBody": "유진투자증권은 NAVER의 목표주가를 32만 원으로 낮추며 AI 인프라 투자 부담을 지적했습니다. 하나증권은 34만 원 목표가를 제시하며 AI 수요 장기 성장을 긍정적으로 평가했습니다. 이는 AI 관련 비용 증가와 수익성 우려가 혼재된 중립 신호로 해석됩니다. 향후 AI 서비스 매출 추이와 비용 효율화 계획이 주가 방향을 결정할 변수입니다."
+    },
+    {
+      "stockName": "에스텍",
+      "stockCode": "069510",
+      "summary": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접",
+      "headline": "에스텍, 주가 5일 새 60퍼센트 이상 급등해 투자경고종목 지정 예고",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 남도일보 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "에스텍, 주가 5일 새 60퍼센트 이상 급등해 투자경고종목 지정 예고",
+        "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접"
+      ],
+      "mentionScore": 77.2,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-13T02:00:18.381Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "에스텍, 주가 5일 새 60퍼센트 이상 급등해 투자경고종목 지정 예고",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE0zRHp1cTBNNXQwRjRHZkwtUXQzU1FIVmgyX2lEQjNab1FnZ0hWM05JVlJUVWs5UjRvWGF3VnlkMS1wVzNZNmY3bTFtRENKR2tWbFZVSFpFV2QtdnplSTZYMXhHSmtpaFZ0RFZIRmYtUnZPdw?oc=5",
+      "publishedAt": "Thu, 12 Nov 2026 15:13:15 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "에스텍, 주가 5일 새 60퍼센트 이상 급등해 투자경고종목 지정 예고",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0zRHp1cTBNNXQwRjRHZkwtUXQzU1FIVmgyX2lEQjNab1FnZ0hWM05JVlJUVWs5UjRvWGF3VnlkMS1wVzNZNmY3bTFtRENKR2tWbFZVSFpFV2QtdnplSTZYMXhHSmtpaFZ0RFZIRmYtUnZPdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접",
+          "source": "남도일보",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBaanN4bHQydWFCeUxCU05XeXd1TUcwTDZ0b1JQT1pSYXBMRkdZSy1BNmt5cHh2dlRnWFVWQWxRV0NmSFBsU0kwNkZSYkNRdGhoRkRQbkVUeVJrdW5iQ0VSWUE5VE5Qemxkb2NEbHlEa1PSAXBBVV95cUxQWmpzeGx0MnVhQnlMQlNOV3l3dU1HMEw2dG9SUE9aUmFwTEZHWUstQTZreXB4dnZUZ1hVVkFsUVdDZkhQbFNJMDZGUmJDUXRoaEZEUG5FVHlSa3VuYkNFUllBOVROUHpsZG9jRGx5RGtT?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "에스텍, 단기 급등으로 투자경고종목 지정",
+      "polishedBody": "에스텍 주가가 5일 만에 60% 이상 급등하며 투자경고종목 지정이 예고되었습니다. 이틀 연속 20% 이상 상승해 종가가 공개매수가 2만4천 원에 근접했습니다. 이러한 급등은 공개매수 기대감이 반영된 긍정적 재료로 볼 수 있습니다. 다음으로는 공개매수 성사 여부와 추가 변동성에 주목해야 합니다."
+    },
+    {
+      "stockName": "지니언스",
+      "stockCode": "263860",
+      "summary": "[ET특징주] '3분기 영업익 3.5배 ↑' 지니언스, 호실적에 주가 이틀째 강세 전자신문",
+      "headline": "[ET특징주] '3분기 영업익 3.5배 ↑' 지니언스, 호실적에 주가 이틀째 강세",
+      "evidencePoints": [
+        "출처 전자신문 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "[ET특징주] '3분기 영업익 3.5배 ↑' 지니언스, 호실적에 주가 이틀째 강세"
+      ],
+      "mentionScore": 87.9,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-13T02:00:18.381Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "[ET특징주] '3분기 영업익 3.5배 ↑' 지니언스, 호실적에 주가 이틀째 강세",
+      "source": "전자신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBrTDVHdUNXUDdST1N5WFpWLUlsTlVuSW5ld201UnVfQnl3SHcxM3h5M0s5eHpqVmFVRElQQkRFUEdpLTJGSHZxNlNBYzQyZw?oc=5",
+      "publishedAt": "Fri, 13 Nov 2026 01:55:52 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[ET특징주] '3분기 영업익 3.5배 ↑' 지니언스, 호실적에 주가 이틀째 강세",
+          "source": "전자신문",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBrTDVHdUNXUDdST1N5WFpWLUlsTlVuSW5ld201UnVfQnl3SHcxM3h5M0s5eHpqVmFVRElQQkRFUEdpLTJGSHZxNlNBYzQyZw?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "지니언스, 3분기 영업익 3.5배 급증",
+      "polishedBody": "지니언스는 3분기 영업이익이 전년 대비 3.5배 증가한 호실적을 발표했습니다. 이에 주가가 이틀째 강세를 보이며 시장의 긍정적 반응을 이끌어냈습니다. 실적 개선은 보안 솔루션 수요 증가에 기인한 것으로 평가됩니다. 향후 4분기 실적 전망과 신규 계약 체결 여부가 추가 상승 동력이 될 것입니다."
+    },
+    {
+      "stockName": "삼성SDI",
+      "stockCode": "006400",
+      "summary": "삼성SDI 주가, 11월 13일 장중 495,000원 4.65% 상승 중앙이코노미뉴스",
+      "headline": "삼성SDI 주가, 11월 13일 장중 495,000원 4.65% 상승",
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +4.7%",
+        "삼성SDI 주가, 11월 13일 장중 495,000원 4.65% 상승"
+      ],
+      "mentionScore": 67,
+      "sentimentLabel": "positive",
+      "channelCount": 1,
+      "updatedAt": "2026-11-13T02:00:18.381Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 4.65,
+      "latestHeadline": "삼성SDI 주가, 11월 13일 장중 495,000원 4.65% 상승",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE83VGhVb0hwRERrVHNvb1FTUFdNOVJrYmxOTGdoR3VyRFpRcks1OGZadlR0NmVJWmMwR3pUMnBaaHUxdDR4VnFfaU5xTFBJMVBqRGxjcExOeTAwYXduTmd0ZDhNVXprYW5NallQRG01RXFtZw?oc=5",
+      "publishedAt": "Fri, 13 Nov 2026 01:27:43 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가, 11월 13일 장중 495,000원 4.65% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE83VGhVb0hwRERrVHNvb1FTUFdNOVJrYmxOTGdoR3VyRFpRcks1OGZadlR0NmVJWmMwR3pUMnBaaHUxdDR4VnFfaU5xTFBJMVBqRGxjcExOeTAwYXduTmd0ZDhNVXprYW5NallQRG01RXFtZw?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성SDI, 장중 4.65% 상승하며 49만5천원",
+      "polishedBody": "삼성SDI 주가가 11월 13일 장중 49만5천 원으로 4.65% 상승했습니다. 이는 전기차 배터리 수요 회복 기대감이 반영된 것으로 보입니다. 상승 폭이 제한적이지만 긍정적 흐름을 보여주고 있습니다. 향후 배터리 가격 동향과 주요 고객사향 공급 계약이 주가에 영향을 줄 것입니다."
+    },
     {
       "stockName": "주성엔지니어링",
       "stockCode": "036930",
@@ -257,72 +412,6 @@
       "polishedBody": "지씨지놈은 췌장암 조기검사美 진출 기대에 강세 바이오타임즈 재료가 부각되며 단기 모멘텀을 형성했습니다. 췌장암 조기검사美 진출 기대 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "NAVER",
-      "stockCode": "035420",
-      "summary": "[오늘의 특징주] NAVER·달바글로벌·에스피지 빅터뉴스",
-      "headline": "[오늘의 특징주] NAVER·달바글로벌·에스피지",
-      "evidencePoints": [
-        "출처 빅터뉴스 기반 기사 1건",
-        "[오늘의 특징주] NAVER·달바글로벌·에스피지"
-      ],
-      "mentionScore": 46,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-11-13T01:00:17.023Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[오늘의 특징주] NAVER·달바글로벌·에스피지",
-      "source": "빅터뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5rR3NmN3RoWWVLWllIaTdwNERGaUZYSmlZYmlDTzFTS2dUVjM4YXVvNW9qclN6ZW8tSVhqTEhJN213eDN5aW9xREtPaFNEV0hMMTRFQUFpX3pweXFlbnRCaEhGUmpGbUE?oc=5",
-      "publishedAt": "Thu, 12 Nov 2026 08:59:48 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 특징주] NAVER·달바글로벌·에스피지",
-          "source": "빅터뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5rR3NmN3RoWWVLWllIaTdwNERGaUZYSmlZYmlDTzFTS2dUVjM4YXVvNW9qclN6ZW8tSVhqTEhJN213eDN5aW9xREtPaFNEV0hMMTRFQUFpX3pweXFlbnRCaEhGUmpGbUE?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "NAVER 달바글로벌·에스피지",
-      "polishedBody": "NAVER는 달바글로벌·에스피지 빅터뉴스 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 달바글로벌·에스피지 빅터뉴스 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 중립 구간에서는 가격 반응보다 거래량과 후속 공시의 일치 여부가 중요합니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "에스텍",
-      "stockCode": "069510",
-      "summary": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접 남도일보",
-      "headline": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접",
-      "evidencePoints": [
-        "출처 남도일보 기반 기사 1건",
-        "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접"
-      ],
-      "mentionScore": 44.2,
-      "sentimentLabel": "neutral",
-      "channelCount": 1,
-      "updatedAt": "2026-11-13T01:00:17.023Z",
-      "cycleLabel": "KST_1000",
-      "direction": "neutral",
-      "changeRate": null,
-      "latestHeadline": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접",
-      "source": "남도일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBaanN4bHQydWFCeUxCU05XeXd1TUcwTDZ0b1JQT1pSYXBMRkdZSy1BNmt5cHh2dlRnWFVWQWxRV0NmSFBsU0kwNkZSYkNRdGhoRkRQbkVUeVJrdW5iQ0VSWUE5VE5Qemxkb2NEbHlEa1PSAXBBVV95cUxQWmpzeGx0MnVhQnlMQlNOV3l3dU1HMEw2dG9SUE9aUmFwTEZHWUstQTZreXB4dnZUZ1hVVkFsUVdDZkhQbFNJMDZGUmJDUXRoaEZEUG5FVHlSa3VuYkNFUllBOVROUHpsZG9jRGx5RGtT?oc=5",
-      "publishedAt": "Thu, 12 Nov 2026 07:13:50 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접",
-          "source": "남도일보",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBaanN4bHQydWFCeUxCU05XeXd1TUcwTDZ0b1JQT1pSYXBMRkdZSy1BNmt5cHh2dlRnWFVWQWxRV0NmSFBsU0kwNkZSYkNRdGhoRkRQbkVUeVJrdW5iQ0VSWUE5VE5Qemxkb2NEbHlEa1PSAXBBVV95cUxQWmpzeGx0MnVhQnlMQlNOV3l3dU1HMEw2dG9SUE9aUmFwTEZHWUstQTZreXB4dnZUZ1hVVkFsUVdDZkhQbFNJMDZGUmJDUXRoaEZEUG5FVHlSa3VuYkNFUllBOVROUHpsZG9jRGx5RGtT?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "에스텍 이틀째 20.33% 오른 채 마감…종가",
-      "polishedBody": "에스텍은 이틀째 20.33% 오른 채 마감…종가 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 이틀째 오른 채 마감…종가 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 2만4천 원에 근접 남도일보 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
       "stockName": "한화비전",
       "stockCode": "489790",
       "summary": "[속보] 한화비전 주가 10%대 급락…오후장 VI 수차례 발동, 분기보고서 살펴보니 CBC뉴스",
@@ -389,43 +478,124 @@
       "hasNews": true,
       "polishedHeadline": "제이앤티씨 주가 22% 급등하며 VI 발동",
       "polishedBody": "제이앤티씨 주가가 급등하여 변동성 완화 장치가 발동되었습니다. 22%대의 큰 상승률이 나타나며 투자자들의 관심이 집중되었습니다. 이번 급등은 긍정적인 재료나 기대감이 시장에 반영된 결과로 보입니다. 향후 추가 상승 동력과 거래량 변화를 주의 깊게 살펴볼 필요가 있습니다."
-    },
-    {
-      "stockName": "삼성SDI",
-      "stockCode": "006400",
-      "summary": "삼성SDI 주가, 11월 12일 장중 473,500원 1.04% 하락 중앙이코노미뉴스",
-      "headline": "삼성SDI 주가, 11월 12일 장중 473,500원 1.04% 하락",
-      "evidencePoints": [
-        "출처 중앙이코노미뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 -1.0%",
-        "삼성SDI 주가, 11월 12일 장중 473,500원 1.04% 하락"
-      ],
-      "mentionScore": 62.6,
-      "sentimentLabel": "negative",
-      "channelCount": 1,
-      "updatedAt": "2026-11-12T02:00:20.408Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": -1.04,
-      "latestHeadline": "삼성SDI 주가, 11월 12일 장중 473,500원 1.04% 하락",
-      "source": "중앙이코노미뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ERUxxeTRFMkJhY1FKZnBwRnN4NUFSdFZTSUNVZzFTUzJhMnduTVFmelFRZXJ0VEFwTjl6U0lXWjU5RDZfcTc1QnlodGwxZjI5NHhQT2J1UHphVTFiZ0RxRzEtaVhTdk9wempvVmRYcGNydw?oc=5",
-      "publishedAt": "Thu, 12 Nov 2026 01:23:23 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가, 11월 12일 장중 473,500원 1.04% 하락",
-          "source": "중앙이코노미뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ERUxxeTRFMkJhY1FKZnBwRnN4NUFSdFZTSUNVZzFTUzJhMnduTVFmelFRZXJ0VEFwTjl6U0lXWjU5RDZfcTc1QnlodGwxZjI5NHhQT2J1UHphVTFiZ0RxRzEtaVhTdk9wempvVmRYcGNydw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성SDI 장중 1.04% 하락",
-      "polishedBody": "삼성SDI 주가가 11월 12일 장중 473,500원으로 1.04% 하락했습니다. 하락 폭은 크지 않지만 약세 흐름이 이어지고 있습니다. 전반적인 시장 분위기와 배터리 업종 동향이 영향을 준 것으로 보입니다. 향후 외국인 수급과 업황 회복 여부를 주목할 필요가 있습니다."
     }
   ],
   "items": [
+    {
+      "timestamp": "Fri, 13 Nov 2026 01:00:00 GMT",
+      "symbol": "035420",
+      "name": "NAVER",
+      "changeRate": null,
+      "price": null,
+      "summary": "[리포트 브리핑]NAVER, 'AI 수요를 믿는다면 흔들릴 필요 없다' 목표가 340,000원 - 하나증권",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1JcERjSlN5QUpybDVobzR0OTMyRGJhbGR4TW9qalRMU011X1k2a2E3amNUQzM0QV9CUEg3V0VtN2ZvRWp4Z2RiOGNac04xbUJuejAtVE5sbGZIdmZo?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌, 빅터뉴스 기반 기사 3건",
+        "[리포트 브리핑]NAVER, '무거워진 AI팩토리의 어깨' 목표가 320,000원 - 유진투자증권",
+        "[리포트 브리핑]NAVER, 'AI 수요를 믿는다면 흔들릴 필요 없다' 목표가 340,000원 - 하나증권"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[리포트 브리핑]NAVER, '무거워진 AI팩토리의 어깨' 목표가 320,000원 - 유진투자증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1JcERjSlN5QUpybDVobzR0OTMyRGJhbGR4TW9qalRMU011X1k2a2E3amNUQzM0QV9CUEg3V0VtN2ZvRWp4Z2RiOGNac04xbUJuejAtVE5sbGZIdmZo?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[리포트 브리핑]NAVER, 'AI 수요를 믿는다면 흔들릴 필요 없다' 목표가 340,000원 - 하나증권",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBNT2dYWVFNS3JQaG5qQ2lYakVSY0lwQlJvMGVGSEhMR3ZzenFfR2hibl9qOW9aRVBpNnVVcXliWGYxZ09xNERyWnRmYXg3Wnk3cGtKb0Utd1kyVDFJ?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[오늘의 특징주] NAVER·달바글로벌·에스피지",
+          "source": "빅터뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5rR3NmN3RoWWVLWllIaTdwNERGaUZYSmlZYmlDTzFTS2dUVjM4YXVvNW9qclN6ZW8tSVhqTEhJN213eDN5aW9xREtPaFNEV0hMMTRFQUFpX3pweXFlbnRCaEhGUmpGbUE?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Thu, 12 Nov 2026 15:13:15 GMT",
+      "symbol": "069510",
+      "name": "에스텍",
+      "changeRate": null,
+      "price": null,
+      "summary": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE0zRHp1cTBNNXQwRjRHZkwtUXQzU1FIVmgyX2lEQjNab1FnZ0hWM05JVlJUVWs5UjRvWGF3VnlkMS1wVzNZNmY3bTFtRENKR2tWbFZVSFpFV2QtdnplSTZYMXhHSmtpaFZ0RFZIRmYtUnZPdw?oc=5",
+      "mentionScore": 77.2,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 남도일보 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "에스텍, 주가 5일 새 60퍼센트 이상 급등해 투자경고종목 지정 예고",
+        "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "에스텍, 주가 5일 새 60퍼센트 이상 급등해 투자경고종목 지정 예고",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0zRHp1cTBNNXQwRjRHZkwtUXQzU1FIVmgyX2lEQjNab1FnZ0hWM05JVlJUVWs5UjRvWGF3VnlkMS1wVzNZNmY3bTFtRENKR2tWbFZVSFpFV2QtdnplSTZYMXhHSmtpaFZ0RFZIRmYtUnZPdw?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접",
+          "source": "남도일보",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBaanN4bHQydWFCeUxCU05XeXd1TUcwTDZ0b1JQT1pSYXBMRkdZSy1BNmt5cHh2dlRnWFVWQWxRV0NmSFBsU0kwNkZSYkNRdGhoRkRQbkVUeVJrdW5iQ0VSWUE5VE5Qemxkb2NEbHlEa1PSAXBBVV95cUxQWmpzeGx0MnVhQnlMQlNOV3l3dU1HMEw2dG9SUE9aUmFwTEZHWUstQTZreXB4dnZUZ1hVVkFsUVdDZkhQbFNJMDZGUmJDUXRoaEZEUG5FVHlSa3VuYkNFUllBOVROUHpsZG9jRGx5RGtT?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 13 Nov 2026 01:55:52 GMT",
+      "symbol": "263860",
+      "name": "지니언스",
+      "changeRate": null,
+      "price": null,
+      "summary": "[ET특징주] '3분기 영업익 3.5배 ↑' 지니언스, 호실적에 주가 이틀째 강세 전자신문",
+      "source": "전자신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBrTDVHdUNXUDdST1N5WFpWLUlsTlVuSW5ld201UnVfQnl3SHcxM3h5M0s5eHpqVmFVRElQQkRFUEdpLTJGSHZxNlNBYzQyZw?oc=5",
+      "mentionScore": 87.9,
+      "evidencePoints": [
+        "출처 전자신문 기반 기사 1건",
+        "상승/강세 키워드 우세",
+        "[ET특징주] '3분기 영업익 3.5배 ↑' 지니언스, 호실적에 주가 이틀째 강세"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[ET특징주] '3분기 영업익 3.5배 ↑' 지니언스, 호실적에 주가 이틀째 강세",
+          "source": "전자신문",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBrTDVHdUNXUDdST1N5WFpWLUlsTlVuSW5ld201UnVfQnl3SHcxM3h5M0s5eHpqVmFVRElQQkRFUEdpLTJGSHZxNlNBYzQyZw?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Fri, 13 Nov 2026 01:27:43 GMT",
+      "symbol": "006400",
+      "name": "삼성SDI",
+      "changeRate": 4.65,
+      "price": null,
+      "summary": "삼성SDI 주가, 11월 13일 장중 495,000원 4.65% 상승 중앙이코노미뉴스",
+      "source": "중앙이코노미뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE83VGhVb0hwRERrVHNvb1FTUFdNOVJrYmxOTGdoR3VyRFpRcks1OGZadlR0NmVJWmMwR3pUMnBaaHUxdDR4VnFfaU5xTFBJMVBqRGxjcExOeTAwYXduTmd0ZDhNVXprYW5NallQRG01RXFtZw?oc=5",
+      "mentionScore": 67,
+      "evidencePoints": [
+        "출처 중앙이코노미뉴스 기반 기사 1건",
+        "제목 기준 변동률 단서 +4.7%",
+        "삼성SDI 주가, 11월 13일 장중 495,000원 4.65% 상승"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성SDI 주가, 11월 13일 장중 495,000원 4.65% 상승",
+          "source": "중앙이코노미뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE83VGhVb0hwRERrVHNvb1FTUFdNOVJrYmxOTGdoR3VyRFpRcks1OGZadlR0NmVJWmMwR3pUMnBaaHUxdDR4VnFfaU5xTFBJMVBqRGxjcExOeTAwYXduTmd0ZDhNVXprYW5NallQRG01RXFtZw?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Fri, 13 Nov 2026 00:54:50 GMT",
       "symbol": "036930",
@@ -602,52 +772,6 @@
       ]
     },
     {
-      "timestamp": "Thu, 12 Nov 2026 08:59:48 GMT",
-      "symbol": "035420",
-      "name": "NAVER",
-      "changeRate": null,
-      "price": null,
-      "summary": "[오늘의 특징주] NAVER·달바글로벌·에스피지 빅터뉴스",
-      "source": "빅터뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5rR3NmN3RoWWVLWllIaTdwNERGaUZYSmlZYmlDTzFTS2dUVjM4YXVvNW9qclN6ZW8tSVhqTEhJN213eDN5aW9xREtPaFNEV0hMMTRFQUFpX3pweXFlbnRCaEhGUmpGbUE?oc=5",
-      "mentionScore": 46,
-      "evidencePoints": [
-        "출처 빅터뉴스 기반 기사 1건",
-        "[오늘의 특징주] NAVER·달바글로벌·에스피지"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 특징주] NAVER·달바글로벌·에스피지",
-          "source": "빅터뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5rR3NmN3RoWWVLWllIaTdwNERGaUZYSmlZYmlDTzFTS2dUVjM4YXVvNW9qclN6ZW8tSVhqTEhJN213eDN5aW9xREtPaFNEV0hMMTRFQUFpX3pweXFlbnRCaEhGUmpGbUE?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Thu, 12 Nov 2026 07:13:50 GMT",
-      "symbol": "069510",
-      "name": "에스텍",
-      "changeRate": null,
-      "price": null,
-      "summary": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접 남도일보",
-      "source": "남도일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBaanN4bHQydWFCeUxCU05XeXd1TUcwTDZ0b1JQT1pSYXBMRkdZSy1BNmt5cHh2dlRnWFVWQWxRV0NmSFBsU0kwNkZSYkNRdGhoRkRQbkVUeVJrdW5iQ0VSWUE5VE5Qemxkb2NEbHlEa1PSAXBBVV95cUxQWmpzeGx0MnVhQnlMQlNOV3l3dU1HMEw2dG9SUE9aUmFwTEZHWUstQTZreXB4dnZUZ1hVVkFsUVdDZkhQbFNJMDZGUmJDUXRoaEZEUG5FVHlSa3VuYkNFUllBOVROUHpsZG9jRGx5RGtT?oc=5",
-      "mentionScore": 44.2,
-      "evidencePoints": [
-        "출처 남도일보 기반 기사 1건",
-        "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주]에스텍, 이틀째 20.33% 오른 채 마감…종가 공개매수가 2만4천 원에 근접",
-          "source": "남도일보",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBaanN4bHQydWFCeUxCU05XeXd1TUcwTDZ0b1JQT1pSYXBMRkdZSy1BNmt5cHh2dlRnWFVWQWxRV0NmSFBsU0kwNkZSYkNRdGhoRkRQbkVUeVJrdW5iQ0VSWUE5VE5Qemxkb2NEbHlEa1PSAXBBVV95cUxQWmpzeGx0MnVhQnlMQlNOV3l3dU1HMEw2dG9SUE9aUmFwTEZHWUstQTZreXB4dnZUZ1hVVkFsUVdDZkhQbFNJMDZGUmJDUXRoaEZEUG5FVHlSa3VuYkNFUllBOVROUHpsZG9jRGx5RGtT?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Thu, 12 Nov 2026 05:24:48 GMT",
       "symbol": "489790",
       "name": "한화비전",
@@ -694,30 +818,6 @@
           "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE56Ym9JTzYtRkxHZHRka1pHRWFvTlJQRm1wcDhDeW1raGx6NDdyVW41dXZZMDVoemZ5clZROXdYTklTSzRGaG8ta0ZobDhnTEVhOXI4Q0duYURPbzFLNkdPZHhfVzdLcEZ4?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "Thu, 12 Nov 2026 01:23:23 GMT",
-      "symbol": "006400",
-      "name": "삼성SDI",
-      "changeRate": -1.04,
-      "price": null,
-      "summary": "삼성SDI 주가, 11월 12일 장중 473,500원 1.04% 하락 중앙이코노미뉴스",
-      "source": "중앙이코노미뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ERUxxeTRFMkJhY1FKZnBwRnN4NUFSdFZTSUNVZzFTUzJhMnduTVFmelFRZXJ0VEFwTjl6U0lXWjU5RDZfcTc1QnlodGwxZjI5NHhQT2J1UHphVTFiZ0RxRzEtaVhTdk9wempvVmRYcGNydw?oc=5",
-      "mentionScore": 62.6,
-      "evidencePoints": [
-        "출처 중앙이코노미뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 -1.0%",
-        "삼성SDI 주가, 11월 12일 장중 473,500원 1.04% 하락"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성SDI 주가, 11월 12일 장중 473,500원 1.04% 하락",
-          "source": "중앙이코노미뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ERUxxeTRFMkJhY1FKZnBwRnN4NUFSdFZTSUNVZzFTUzJhMnduTVFmelFRZXJ0VEFwTjl6U0lXWjU5RDZfcTc1QnlodGwxZjI5NHhQT2J1UHphVTFiZ0RxRzEtaVhTdk9wempvVmRYcGNydw?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -725,8 +825,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "mixed",
-    "model": "deepseek/deepseek-v4-flash, signal-polish-v1",
-    "fallbackReason": "partial_primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
