@@ -1,16 +1,49 @@
 {
-  "generated_at": "2026-11-13T04:00:24.378Z",
+  "generated_at": "2026-11-13T05:00:18.076Z",
   "generated_date": "2026-11-13",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
+    "title": "KST 14:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 15건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "브이엠",
+      "stockCode": "089970",
+      "summary": "[장중수급포착] 에이치브이엠, 외국인/기관 동시 순매수… 주가 +10.14% 뉴스핌",
+      "headline": "[장중수급포착] 에이치브이엠, 외국인/기관 동시 순매수… 주가 +10.14%",
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[장중수급포착] 에이치브이엠, 외국인/기관 동시 순매수… 주가 +10.14%"
+      ],
+      "mentionScore": 87.5,
+      "sentimentLabel": "neutral",
+      "channelCount": 2,
+      "updatedAt": "2026-11-13T05:00:18.076Z",
+      "cycleLabel": "KST_1400",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "[장중수급포착] 에이치브이엠, 외국인/기관 동시 순매수… 주가 +10.14%",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1vR0NRcXlGd2U2ekZLanZON2ZNUl91NnV0TTF3cXh5WjdKRmpFR3EyOWJUM2IwOUNPQXVjNGNiQ0FuS0xWRFJlLWpNVS10RExlcTJHNDMtbV9HQ1hH?oc=5",
+      "publishedAt": "Fri, 13 Nov 2026 04:33:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 에이치브이엠, 외국인/기관 동시 순매수… 주가 +10.14%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1vR0NRcXlGd2U2ekZLanZON2ZNUl91NnV0TTF3cXh5WjdKRmpFR3EyOWJUM2IwOUNPQXVjNGNiQ0FuS0xWRFJlLWpNVS10RExlcTJHNDMtbV9HQ1hH?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "외국인·기관 동시 순매수, 주가 10% 급등",
+      "polishedBody": "에이치브이엠이 외국인과 기관의 동시 순매수로 주가가 10% 이상 상승했습니다. 이는 기관과 외국인 투자자들이 동시에 매수에 나서며 수급이 강화된 신호로 해석됩니다. 이러한 수급 흐름은 긍정적인 시장 관심을 반영하며 추가 상승 가능성에 주목하게 합니다. 향후 거래량과 추가 매수세 유입 여부가 주요 관전 포인트입니다."
+    },
     {
       "stockName": "지엔씨에너지",
       "stockCode": "119850",
@@ -519,43 +552,32 @@
       "hasNews": true,
       "polishedHeadline": "한화비전 주가 10%대 급락, VI 수차례 발동",
       "polishedBody": "한화비전은 주가 10%대 급락…오후장 VI 수차례 발동 이슈로 단기 변동성이 확대됐습니다. 주가 …오후장 VI 수차례 발동 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 주가 10%대 급락…오후장 VI 수차례 발동, 분기보고서 살펴보니 CBC뉴스 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
-      "stockName": "제이앤티씨",
-      "stockCode": "204270",
-      "summary": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승 CBC뉴스",
-      "headline": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승",
-      "evidencePoints": [
-        "출처 CBC뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 +60.0%",
-        "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-11-12T05:00:16.366Z",
-      "cycleLabel": "KST_1400",
-      "direction": "up",
-      "changeRate": 22,
-      "latestHeadline": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE56Ym9JTzYtRkxHZHRka1pHRWFvTlJQRm1wcDhDeW1raGx6NDdyVW41dXZZMDVoemZ5clZROXdYTklTSzRGaG8ta0ZobDhnTEVhOXI4Q0duYURPbzFLNkdPZHhfVzdLcEZ4?oc=5",
-      "publishedAt": "Thu, 12 Nov 2026 04:30:33 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE56Ym9JTzYtRkxHZHRka1pHRWFvTlJQRm1wcDhDeW1raGx6NDdyVW41dXZZMDVoemZ5clZROXdYTklTSzRGaG8ta0ZobDhnTEVhOXI4Q0duYURPbzFLNkdPZHhfVzdLcEZ4?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "제이앤티씨 주가 22% 급등하며 VI 발동",
-      "polishedBody": "제이앤티씨 주가가 급등하여 변동성 완화 장치가 발동되었습니다. 22%대의 큰 상승률이 나타나며 투자자들의 관심이 집중되었습니다. 이번 급등은 긍정적인 재료나 기대감이 시장에 반영된 결과로 보입니다. 향후 추가 상승 동력과 거래량 변화를 주의 깊게 살펴볼 필요가 있습니다."
     }
   ],
   "items": [
+    {
+      "timestamp": "Fri, 13 Nov 2026 04:33:00 GMT",
+      "symbol": "089970",
+      "name": "브이엠",
+      "changeRate": null,
+      "price": null,
+      "summary": "[장중수급포착] 에이치브이엠, 외국인/기관 동시 순매수… 주가 +10.14% 뉴스핌",
+      "source": "뉴스핌",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1vR0NRcXlGd2U2ekZLanZON2ZNUl91NnV0TTF3cXh5WjdKRmpFR3EyOWJUM2IwOUNPQXVjNGNiQ0FuS0xWRFJlLWpNVS10RExlcTJHNDMtbV9HQ1hH?oc=5",
+      "mentionScore": 87.5,
+      "evidencePoints": [
+        "출처 뉴스핌 기반 기사 1건",
+        "[장중수급포착] 에이치브이엠, 외국인/기관 동시 순매수… 주가 +10.14%"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[장중수급포착] 에이치브이엠, 외국인/기관 동시 순매수… 주가 +10.14%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1vR0NRcXlGd2U2ekZLanZON2ZNUl91NnV0TTF3cXh5WjdKRmpFR3EyOWJUM2IwOUNPQXVjNGNiQ0FuS0xWRFJlLWpNVS10RExlcTJHNDMtbV9HQ1hH?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Fri, 13 Nov 2026 02:35:00 GMT",
       "symbol": "119850",
@@ -924,30 +946,6 @@
           "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9jbDBSd1l0eU1TNFlSdVg2NkY2ZFlJdlk2ZFV3VUd2eUltS0lrd3VsR2dLYzdTVXBHR2QyUFFiVjIyYWZydzRjMUZMbHZLNUJweXd4QmQ3clBLRmpSb01HVzcwdFFoYUpL?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "Thu, 12 Nov 2026 04:30:33 GMT",
-      "symbol": "204270",
-      "name": "제이앤티씨",
-      "changeRate": 22,
-      "price": null,
-      "summary": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승 CBC뉴스",
-      "source": "CBC뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE56Ym9JTzYtRkxHZHRka1pHRWFvTlJQRm1wcDhDeW1raGx6NDdyVW41dXZZMDVoemZ5clZROXdYTklTSzRGaG8ta0ZobDhnTEVhOXI4Q0duYURPbzFLNkdPZHhfVzdLcEZ4?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 CBC뉴스 기반 기사 1건",
-        "제목 기준 변동률 단서 +60.0%",
-        "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[속보] 제이앤티씨 VI 발동, 주가 급등…22%대 상승",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE56Ym9JTzYtRkxHZHRka1pHRWFvTlJQRm1wcDhDeW1raGx6NDdyVW41dXZZMDVoemZ5clZROXdYTklTSzRGaG8ta0ZobDhnTEVhOXI4Q0duYURPbzFLNkdPZHhfVzdLcEZ4?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -955,8 +953,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "rule-based",
-    "model": "signal-polish-v1",
-    "fallbackReason": "primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
