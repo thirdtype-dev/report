@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-11-18T07:00:46.551Z",
-  "collectedAt": "2026-11-18T07:00:46.551Z",
-  "phase": "post_market",
-  "sessionLabel": "16:00",
+  "generatedAt": "2026-11-18T23:30:47.368Z",
+  "collectedAt": "2026-11-18T23:30:47.368Z",
+  "informationAsOf": "2026-11-19T08:30:00+09:00",
+  "phase": "pre_market",
+  "sessionLabel": "08:30",
   "summary": {
     "signal": "yellow",
     "totalScore": 0,
@@ -17,7 +18,7 @@
       "change": "+1.99%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-11-18T06:30:40.000Z",
+      "updatedAt": "2026-11-18T11:05:40.000Z",
       "reason": "KOSPI 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
@@ -28,51 +29,51 @@
       "change": "+1.96%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-11-18T06:33:00.000Z",
+      "updatedAt": "2026-11-18T11:05:40.000Z",
       "reason": "KOSDAQ 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "value": "1,332.70",
-      "change": "-0.15%",
+      "value": null,
+      "change": null,
       "signal": "yellow",
-      "status": "delayed",
-      "updatedAt": "2026-11-18T07:00:24.000Z",
-      "reason": "USD/KRW 공개 지연 시세입니다.",
+      "status": "unavailable",
+      "updatedAt": null,
+      "reason": "공개 무키 소스에서 확인하지 못했습니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
       "key": "nasdaq",
       "title": "NASDAQ",
-      "value": "24,328.38",
-      "change": "-0.74%",
-      "signal": "red",
+      "value": "24,429.89",
+      "change": "+0.42%",
+      "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-11-17T22:15:59.000Z",
+      "updatedAt": "2026-11-18T22:15:59.000Z",
       "reason": "NASDAQ 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EIXIC"
     },
     {
       "key": "sp500",
       "title": "S&P 500",
-      "value": "7,340.53",
-      "change": "-1.03%",
+      "value": "7,323.63",
+      "change": "-0.23%",
       "signal": "red",
       "status": "delayed",
-      "updatedAt": "2026-11-17T21:42:12.000Z",
+      "updatedAt": "2026-11-18T21:57:25.000Z",
       "reason": "S&P 500 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EGSPC"
     },
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "value": "27,225.25",
-      "change": "+0.55%",
+      "value": "27,346.25",
+      "change": "+0.59%",
       "signal": "blue",
       "status": "delayed",
-      "updatedAt": "2026-11-18T06:50:33.000Z",
+      "updatedAt": "2026-11-18T23:20:32.000Z",
       "reason": "Nasdaq Futures 공개 지연 시세입니다.",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     },
@@ -83,18 +84,18 @@
       "change": null,
       "signal": "yellow",
       "status": "unavailable",
-      "updatedAt": "2026-11-18T16:00:46.539236+09:00",
-      "reason": "KRX 기반 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: [특징주] 외국인 '루닛·아리바이오홀딩스', 기관 '와이씨·SFA반도체' 순매수 상위권 - 뉴스티앤티 (뉴스티앤티) / [오늘의 증시] 11월 17일 코스피 5053선 하락…코스닥도 약세, 외국인 동반 순매도 - 잡포스트 (잡포스트) / [개장시황] 외국인 팔자 코스피 장중 5000선 붕괴 - 자본시장뉴스 (자본시장뉴스)",
+      "updatedAt": null,
+      "reason": "KRX 기반 정형 수급은 수집되지 않았고, investorFlowNewsCandidates 뉴스 후보를 보조 근거로 사용합니다: [마감시황] 11/18 엔비디아 호실적에 코스피 +1.99% 반등 - 네이버 프리미엄콘텐츠 (네이버 프리미엄콘텐츠) / 코스피, 하루 만에 '5천피' 탈환…기관 매수에 5거래일 만에 반등 - 산경투데이 (산경투데이) / [특징주] 원익홀딩스 외국인·기관 동반 매수…이수페타시스 수급 엇갈려 - 뉴스티앤티 (뉴스티앤티)",
       "sourceUrl": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
     },
     {
       "key": "disclosures",
       "title": "공시",
-      "value": "한국투자증권, 신규 수출 계약 불확실성에 현대로템 목표가 12만원 조정 - 데이터투자 (데이터투자) / 에코프로에이치엔, 美 아이다호서 석 달 새 세 번째 수주…온실가스 설비 수출, 이미 작년 넘어 - 데이터투자 (데이터투자) / 사이프리스 솔루션스, 3분기 매출 25% 증가… 영업흑자 전환에도 순손익은 적자 전환 - 데이터투자 (데이터투자) / 우진아이엔에스, 자사주 30만주 소각·10억원 취득 신탁계약 결의 - 디지털투데이 (디지털투데이)",
+      "value": "퍼마 파이프, 3분기 수주 6500만 달러 달성…인도 합작법인 주주간 계약 체결 - 데이터투자 (데이터투자) / 한국투자증권, 신규 수출 계약 불확실성에 현대로템 목표가 12만원 조정 - 데이터투자 (데이터투자) / 에코프로에이치엔, 美 아이다호서 석 달 새 세 번째 수주…온실가스 설비 수출, 이미 작년 넘어 - 데이터투자 (데이터투자) / 우진아이엔에스, 자사주 30만주 소각·10억원 취득 신탁계약 결의 - 디지털투데이 (디지털투데이)",
       "change": null,
       "signal": "yellow",
       "status": "news_based",
-      "updatedAt": "2026-11-18T07:00:46.551Z",
+      "updatedAt": "2026-11-18T23:30:47.368Z",
       "reason": "Google News RSS 공시 전용 후보를 보조 근거로 사용합니다.",
       "sourceUrl": "https://news.google.com/rss"
     }
@@ -108,7 +109,7 @@
       "changePercent": "+1.99%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-11-18T06:30:40.000Z",
+      "updatedAt": "2026-11-18T11:05:40.000Z",
       "sourceDate": "2026-11-18",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKS11"
     },
@@ -120,100 +121,99 @@
       "changePercent": "+1.96%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-11-18T06:33:00.000Z",
+      "updatedAt": "2026-11-18T11:05:40.000Z",
       "sourceDate": "2026-11-18",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EKQ11"
     },
     {
       "key": "usdkrw",
       "title": "USD/KRW",
-      "currentPrice": "1,332.70",
-      "change": "-2.00",
-      "changePercent": "-0.15%",
-      "trend": "down",
-      "status": "delayed",
-      "updatedAt": "2026-11-18T07:00:24.000Z",
-      "sourceDate": "2026-11-18",
+      "currentPrice": null,
+      "change": null,
+      "changePercent": null,
+      "trend": "unknown",
+      "status": "unavailable",
+      "updatedAt": null,
       "sourceUrl": "https://finance.yahoo.com/quote/KRW%3DX"
     },
     {
       "key": "nasdaq",
       "title": "NASDAQ",
-      "currentPrice": "24,328.38",
-      "change": "-181.37",
-      "changePercent": "-0.74%",
-      "trend": "down",
+      "currentPrice": "24,429.89",
+      "change": "+101.45",
+      "changePercent": "+0.42%",
+      "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-11-17T22:15:59.000Z",
-      "sourceDate": "2026-11-18",
+      "updatedAt": "2026-11-18T22:15:59.000Z",
+      "sourceDate": "2026-11-19",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EIXIC"
     },
     {
       "key": "sp500",
       "title": "S&P 500",
-      "currentPrice": "7,340.53",
-      "change": "-76.09",
-      "changePercent": "-1.03%",
+      "currentPrice": "7,323.63",
+      "change": "-16.88",
+      "changePercent": "-0.23%",
       "trend": "down",
       "status": "delayed",
-      "updatedAt": "2026-11-17T21:42:12.000Z",
-      "sourceDate": "2026-11-18",
+      "updatedAt": "2026-11-18T21:57:25.000Z",
+      "sourceDate": "2026-11-19",
       "sourceUrl": "https://finance.yahoo.com/quote/%5EGSPC"
     },
     {
       "key": "nasdaq_futures",
       "title": "Nasdaq Futures",
-      "currentPrice": "27,225.25",
-      "change": "+149.73",
-      "changePercent": "+0.55%",
+      "currentPrice": "27,346.25",
+      "change": "+159.59",
+      "changePercent": "+0.59%",
       "trend": "up",
       "status": "delayed",
-      "updatedAt": "2026-11-18T06:50:33.000Z",
-      "sourceDate": "2026-11-18",
+      "updatedAt": "2026-11-18T23:20:32.000Z",
+      "sourceDate": "2026-11-19",
       "sourceUrl": "https://finance.yahoo.com/quote/NQ%3DF"
     }
   ],
   "marketNews": [
     {
-      "title": "[개장시황] 외국인 팔자 코스피 장중 5000선 붕괴 - 자본시장뉴스",
-      "summary": "[개장시황] 외국인 팔자 코스피 장중 5000선 붕괴&nbsp;&nbsp;자본시장뉴스",
-      "source": "자본시장뉴스",
-      "publishedAt": "Tue, 17 Nov 2026 01:03:16 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE12a1g2RFpmZFZ0eUc5NXIxTlJMdEpsTlpwdDNBcnBEMDBXOG9QOWxEQWVXZUhaeVN5SjJRSXhEODQ2WDdBV3U5X2xsajFOYk1fb2dQVmlJdGFfOWMyNWdvYXd1dzRzQlU?oc=5",
-      "query": "한국 증시 외국인 기관 수급"
-    },
-    {
-      "title": "[오늘 증시 전망] 코스피 5,100선까지 급락…뉴욕 나스닥 2.49% 하락에 국내 증시 긴장 - 업코리아",
-      "summary": "[오늘 증시 전망] 코스피 5,100선까지 급락…뉴욕 나스닥 2.49% 하락에 국내 증시 긴장&nbsp;&nbsp;업코리아",
-      "source": "업코리아",
-      "publishedAt": "Tue, 17 Nov 2026 00:52:20 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1JQkxEOFhiWlhvMldwMkdJdHhEdnlSSDFtbS1iNTBZMThfTW9KZzVRdkdDM0RiQ1Q3SS1kLVUzM21XZ2xCbTVYcm0yMXA3bll4ZUQxTEZpY1JLaFJyZkZ5X0ZqcElfVTducnFTZ1pB?oc=5",
-      "query": "한국 증시 외국인 기관 수급"
-    },
-    {
-      "title": "[1116마감체크] 코스피 지수, 외국인·기관 순매도 속 3거래일 연속 하락 마감 - 인포스탁데일리",
-      "summary": "[1116마감체크] 코스피 지수, 외국인·기관 순매도 속 3거래일 연속 하락 마감&nbsp;&nbsp;인포스탁데일리",
-      "source": "인포스탁데일리",
-      "publishedAt": "Mon, 16 Nov 2026 08:07:28 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1FNDN3b2ROTkhHazgzSURvRmlnMENySmRDRTlXcWt3TnFwT2dDV1R2SWt0R01xQzV6bEdVTkc4Qk9sbHdzVmF3TUZoaGkzWVJOeExjZkNWWEZ6b2JmZVpNQndQc24tbTl1cTIySmtsblpmX1RVT0E?oc=5",
-      "query": "한국 증시 외국인 기관 수급"
-    },
-    {
-      "title": "[증시 프리즘] 외국인·기관 수급 동향·상위 매매 종목 집중도 분석 - 더페어",
-      "summary": "[증시 프리즘] 외국인·기관 수급 동향·상위 매매 종목 집중도 분석&nbsp;&nbsp;더페어",
-      "source": "더페어",
-      "publishedAt": "Sat, 14 Nov 2026 15:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5GQjdwZ3ZmQ0F1XzY5YlYxNjM3R2VsUmFMNjhnNjBybWpNRDdBczVqWTVlRkctY2tWT1FTWF9HZ21iUkE0S2lNYmN1QUVVcWVOMFZnWUFjQkZpLXU5ZUE3WU8zOHNUUUtuRHNJTThlVVDSAXRBVV95cUxPb3ltQWpxWXE5QlZoZ1ROYWpPajNhZTh4YXp2UTBpNVlyTkUwOWZTWXhqNU8zZVh3ZW9mZ3pCUVE2bVJkYlhHRUttbHo3dndpRkhpRS1WdjFMaDVSWGFCcUZXei1wNGpJUTdENldpWjhIN2daeg?oc=5",
-      "query": "한국 증시 외국인 기관 수급"
+      "title": "한국투자증권, 3분기 'IB'로 달렸다…발행어음 기업금융 13조 돌파 - 더트래커",
+      "summary": "한국투자증권, 3분기 'IB'로 달렸다…발행어음 기업금융 13조 돌파&nbsp;&nbsp;더트래커",
+      "source": "더트래커",
+      "publishedAt": "Wed, 18 Nov 2026 06:44:48 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1TNmtSSDNlYkdQNEdkMjZ0SFN4MUNBWmJSVEUtRGNhWU5iQ1hUZ2VPWFVtMHRKTzl3YV9MRzNpbDZzVnZHbUctaDBLUWQ1WHJKR18wbjRMMGY?oc=5",
+      "query": "한국 주식시장 공시 실적 유상증자 M&A"
     }
   ],
   "marketEventNewsCandidates": [
     {
-      "title": "광통신·광반도체주 희비 엇갈려…RFHIC 7% 급등, 엔비디아 급락 속 대한광통신·빛샘전자 상승 - CBC뉴스",
-      "summary": "광통신·광반도체주 희비 엇갈려…RFHIC 7% 급등, 엔비디아 급락 속 대한광통신·빛샘전자 상승&nbsp;&nbsp;CBC뉴스",
-      "source": "CBC뉴스",
-      "publishedAt": "Tue, 17 Nov 2026 00:51:39 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1OQmNUc08zdVV3VC1ZVEliY3V4Y0t4eVdkbS1Zak0zbUc2Z1ZBOVRHdEUtSFJWQjZJZVdDOHNKSFAtOVRGMUgzQll0X2FrcXZkNkVnc3dwNG9IZ0wzNnI1UjU2Y1hPb2xQ?oc=5",
+      "title": "美 반도체지수 강보합…엔비디아·마이크론·SK하닉 ADR 하락 - 뉴스1",
+      "summary": "美 반도체지수 강보합…엔비디아·마이크론·SK하닉 ADR 하락&nbsp;&nbsp;뉴스1",
+      "source": "뉴스1",
+      "publishedAt": "Wed, 18 Nov 2026 21:56:17 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1rV050SHZKSTd4cktjZUhqRDBDQTE4ektWdklObVV4blk2Z0RjZGNVTmtmaV9vSjZHRi14OExjei1CVlluYndLZ2JXQld0NWRHT0k0TVVBUmg?oc=5",
+      "query": "엔비디아 마이크론 필라델피아 반도체지수 SK하이닉스 ADR"
+    },
+    {
+      "title": "낸드 내년 공급과잉에 가격 하락 전망, 삼성전자·SK하이닉스 고부가 eSSD로 수익성 방어 집중 - 비즈니스포스트",
+      "summary": "낸드 내년 공급과잉에 가격 하락 전망, 삼성전자·SK하이닉스 고부가 eSSD로 수익성 방어 집중&nbsp;&nbsp;비즈니스포스트",
+      "source": "비즈니스포스트",
+      "publishedAt": "Wed, 18 Nov 2026 07:37:03 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9kcFdINHY4MjBIY1VTRG92OE96RkR3NkwtS29RX08tWTNLaE5TMS1lNm4wN3g4MFBJQ2VVM3UwLXJadG5JeXZFdXk1amRlTXpfcWtOZFRra2FjYVUzREVLRnpLVkl0QWZuSDY0M01MSF9qRjQ?oc=5",
+      "query": "중국 메모리 공급과잉 삼성전자 SK하이닉스 수익성"
+    },
+    {
+      "title": "美 증시 하락에도 코스피 반등···엔비디아 훈풍에 5100선 탈환 - 스마트비즈",
+      "summary": "美 증시 하락에도 코스피 반등···엔비디아 훈풍에 5100선 탈환&nbsp;&nbsp;스마트비즈",
+      "source": "스마트비즈",
+      "publishedAt": "Wed, 18 Nov 2026 00:24:12 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1PRlNtZWZvWjBWclFoaHpCMlQtZ2NLM2FkNHFjMHNadnV3S2ZLa1E0SDRORFcxYVBjb1EtLXhYTzR4dWx1MWg5Zi1Nb0ZKWU1PMWc3b3ZaZTlaWG9GVkdrYk5fY0ZfRmZ6cUpmYg?oc=5",
+      "query": "미국 증시 급등 급락 한국 증시 영향"
+    },
+    {
+      "title": "미국증시 다우 846포인트 급락…엔비디아 실적 불안에 금융주까지 매도 확산 - 톱스타뉴스",
+      "summary": "미국증시 다우 846포인트 급락…엔비디아 실적 불안에 금융주까지 매도 확산&nbsp;&nbsp;톱스타뉴스",
+      "source": "톱스타뉴스",
+      "publishedAt": "Tue, 17 Nov 2026 22:06:48 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE1HNW9DNk5ocnhpdUJJZm5iOEhGZEVlQWhTNzVsb0duZXZUeS1jUUhyYnA0b3RGay1WLVB5Rkdmd2J2amJRMGV2b2RVa3BUdzZoLWZRNzJ1ZHllVjhaUXNVM3pNUlhkT0ZsYzJnZnRGSjg1Zw?oc=5",
       "query": "미국 증시 급등 급락 한국 증시 영향"
     },
     {
@@ -343,67 +343,9 @@
       "publishedAt": "Mon, 16 Nov 2026 20:31:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5NWm5XZXh2Sy13MXhaZm8yb1B2QWxFdFluM3RyS2o2VFkyeEJ3VE52UlZjaVVRcHdFc1VUbms1a2RzOFBjM1FsVUFKam5KU09RZDljeFNqbFJhMlBFYUMyMHJUc0VPTWxvVmlqeVk2RlJjenN3Um90WktoSdIBgAFBVV95cUxNLVRNTXY0YW1GU08xM21mdzl4Z0I0WmRJcEdzaElTTGZ1ZWFBMmFUVGItSkJVTlRScS04MzFmN2VIT2Z6ejd6XzFNVkRsRFNMQjlpR1ZYWWJjQ2REWXVzOFZmcGdLZ1JJZkRfMGdNUzBlYWlNY0dDdm90N25Xa1h3OA?oc=5",
       "query": "엔비디아 마이크론 필라델피아 반도체지수 SK하이닉스 ADR"
-    },
-    {
-      "title": "[특징주] 美 반도체주 출렁…'삼전닉스' 프리마켓 동반 하락 - 뉴스핌",
-      "summary": "[특징주] 美 반도체주 출렁…'삼전닉스' 프리마켓 동반 하락&nbsp;&nbsp;뉴스핌",
-      "source": "뉴스핌",
-      "publishedAt": "Sun, 15 Nov 2026 23:33:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95RDhjaW13N25KZHpUZmJraVJtbjB2QzVyVmJHUlFMc0U2cmtxT0ZWWG1YWTNzaXlxSGVVU1dmdDNKcjYyMjd2eGMxR09veVFMS0h6VTBxS1hYZ2FU?oc=5",
-      "query": "삼성전자 SK하이닉스 프리마켓 하락 급락 약세"
-    },
-    {
-      "title": "엔비디아發 한파에 삼성전자·SK하이닉스 약세…반도체 투톱 '주춤' - 뉴시스",
-      "summary": "엔비디아發 한파에 삼성전자·SK하이닉스 약세…반도체 투톱 '주춤'&nbsp;&nbsp;뉴시스",
-      "source": "뉴시스",
-      "publishedAt": "Sun, 15 Nov 2026 23:22:04 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5jTTVHcm5VSXZuako1X192RDBJaVBSejAxc0l3WVdtMGRwSG8td19DUmdMSFNJUFRhMFd3NGhoY3RvZVg3OEdhdThOVGZtTUJxaU56UFdUc2tDYVItYzNCWDNWRC1tQ3JmekxlaFF3OWVRRzdjczhnUdIBeEFVX3lxTE5jTTVHcm5VSXZuako1X192RDBJaVBSejAxc0l3WVdtMGRwSG8td19DUmdMSFNJUFRhMFd3NGhoY3RvZVg3OEdhdThOVGZtTUJxaU56UFdUc2tDYVItYzNCWDNWRC1tQ3JmekxlaFF3OWVRRzdjczhnUQ?oc=5",
-      "query": "삼성전자 SK하이닉스 프리마켓 하락 급락 약세"
     }
   ],
   "marketEventSignals": [
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "semiconductor",
-          "label": "반도체",
-          "scope": "sector"
-        },
-        {
-          "key": "foreign_flow",
-          "label": "외국인 수급",
-          "scope": "factor"
-        },
-        {
-          "key": "domestic_market",
-          "label": "국내 증시",
-          "scope": "market"
-        }
-      ],
-      "primaryTarget": {
-        "key": "semiconductor",
-        "label": "반도체",
-        "scope": "sector"
-      },
-      "headline": "[특징주] 원익홀딩스, AI 반도체 투자 훈풍 속 외국인·기관 쌍끌이 매수에 10%대 급등 - 와이드경제",
-      "directionEvidence": null,
-      "summary": "[특징주] 원익홀딩스, AI 반도체 투자 훈풍 속 외국인·기관 쌍끌이 매수에 10%대 급등&nbsp;&nbsp;와이드경제",
-      "source": "와이드경제",
-      "publishedAt": "Wed, 18 Nov 2026 04:15:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5NWmpnVG1wMnRLeW5sNEdfUTM5WTY0LUxpT2ltQWRfb2R1MWQ2RGUxeEFETGtFMkwyTWhKbmM2Q214aC1pNHhpcjRPZ0RYaklsbGRUWm5oSHgtYXdWeHo1dzN0ejd1eDNQOVZ2SQ?oc=5",
-      "score": 21,
-      "corroboration": 5,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 원익홀딩스, AI 반도체 투자 훈풍 속 외국인·기관 쌍끌이 매수에 10%대 급등 - 와이드경제",
-        "[특징주] 두산, 엔비디아 호실적에 10%대 급등…낙폭 과대 인식도 영향 - 아주경제",
-        "[특징주] 삼성전기, 엔비디아 협력 확대 기대감에 4%대 상승 - 브릿지경제"
-      ]
-    },
     {
       "direction": "negative",
       "direct": true,
@@ -419,55 +361,24 @@
         "label": "국내 증시",
         "scope": "market"
       },
-      "headline": "[특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합) - 매일경제 마켓",
-      "directionEvidence": null,
-      "summary": "[특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합)&nbsp;&nbsp;매일경제 마켓",
-      "source": "매일경제 마켓",
-      "publishedAt": "Wed, 18 Nov 2026 06:34:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9veHNJSzdNckttM3FLdDNva3hpNUEtODFOZG5VeUtvdDZUTVg0RGJ2UXJ1cEJKUW1TbFUzTm11ZWFQQVBsaU1ENmVkRVI5SWhfZUE?oc=5",
-      "score": 19,
-      "corroboration": 3,
+      "headline": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색 - https://www.moneystorm.kr/",
+      "directionEvidence": "코스닥 상장 첫날 24% 급락",
+      "summary": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색&nbsp;&nbsp;https://www.moneystorm.kr/",
+      "source": "https://www.moneystorm.kr/",
+      "publishedAt": "Wed, 18 Nov 2026 09:12:36 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE00bWxINk44dzUzNmF0UU5uQnBkSEdPaWV2M2pvQm9Za0dJZF9JVDhVRGxIcURMU2xSdk1wOGpHbEt4SG5vUkI0NDhfODYxMDlYdUJwdzdyM0dHelF5aWNjTzRfVTBXb01EQnc?oc=5",
+      "score": 20,
+      "corroboration": 2,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합) - 매일경제 마켓",
-        "[특징주] 에이엘로봇, 코스닥 상장 첫날 '하락' - 전국매일신문",
-        "코스닥 상장사 3분기 순손실 전환…10곳 중 6곳 적자 - 아주경제"
+        "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색 - https://www.moneystorm.kr/",
+        "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓ - 비즈트리뷴"
       ]
     },
     {
-      "direction": "mixed",
-      "direct": true,
-      "targets": [
-        {
-          "key": "bio",
-          "label": "바이오·제약",
-          "scope": "sector"
-        }
-      ],
-      "primaryTarget": {
-        "key": "bio",
-        "label": "바이오·제약",
-        "scope": "sector"
-      },
-      "headline": "아리바이오랩, 알츠하이머 치료제 임상서 증상 악화 31% 지연…상한가 - 아주경제",
-      "directionEvidence": null,
-      "summary": "아리바이오랩, 알츠하이머 치료제 임상서 증상 악화 31% 지연…상한가&nbsp;&nbsp;아주경제",
-      "source": "아주경제",
-      "publishedAt": "Wed, 18 Nov 2026 05:06:32 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBhb2g2eXNOLVdYbkNqLXJIQjZRNW5YNDFXekNKb0VpTEkwWGlvaldETzExclczaWp1T3UtSWJHZnpwbmlqdGQ3dGo2bzVzQVNBLW9VR0VzYnHSAVhBVV95cUxQYW9oNnlzTi1XWG5Dai1ySEI2UTVuWDQxV3pDSm9FaUxJMFhpb2pXRE8xMXJXM2lqdU91LUliR2Z6cG5panRkN3RqNm81c0FTQS1vVUdFc2Jx?oc=5",
-      "score": 17,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "아리바이오랩, 알츠하이머 치료제 임상서 증상 악화 31% 지연…상한가 - 아주경제"
-      ]
-    },
-    {
-      "direction": "mixed",
+      "direction": "positive",
       "direct": true,
       "targets": [
         {
@@ -481,19 +392,53 @@
         "label": "반도체",
         "scope": "sector"
       },
-      "headline": "\"엔비디아가 살렸다\"…급락하던 두산 13% 반등 [특징주] - 데일리안",
-      "directionEvidence": null,
-      "summary": "\"엔비디아가 살렸다\"…급락하던 두산 13% 반등 [특징주]&nbsp;&nbsp;데일리안",
-      "source": "데일리안",
-      "publishedAt": "Wed, 18 Nov 2026 01:09:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQSkNCWlhEYlRyQ3l5QzFPME9RUmZKMWpPLUFWRDg1bHY0aTVoWDFpOFNIR3FsWmk4S1pNMkl1aU9FSzMxaWFwc3hSc2VTWXhxaVNYLW5tUXJWM19zMU1RbGVzUmk3a0Zxd1d3Z1hoZU5ILW5Oems1Z01vRXNicWJnNzE1TjQwdlkxRTM0ZXJacmlTWk13SXRjQWlrN1lKa2k5aUJxQnFzX3NjLXptSmhLNnJVU3JLUkxTOGNQQjBiZ1ZjY0otSUlucEEzUEc2ejZzR1BCbjE2X2p3MUxFY3RuY0tDek1QS05CZjNjRkRPcmVXNTVYb0pyTk5sX21NamJLT2FqMEJXbEQ4RFJRSlE?oc=5",
-      "score": 17,
-      "corroboration": 1,
+      "headline": "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합) - 코인리더스",
+      "directionEvidence": "엔비디아와 협력 강화에 7%대 상승(종합)",
+      "summary": "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합)&nbsp;&nbsp;코인리더스",
+      "source": "코인리더스",
+      "publishedAt": "Wed, 18 Nov 2026 07:00:01 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5OM0lHZWxLQVpRREVVRHZmWkZyajlHdF9XNHpUc2IwMk00azBXSF93Y3BZbXNkN1lTOEM2bHk2Z1lIN2NuRzBSb193?oc=5",
+      "score": 16,
+      "corroboration": 3,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "\"엔비디아가 살렸다\"…급락하던 두산 13% 반등 [특징주] - 데일리안"
+        "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합) - 코인리더스",
+        "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합) - 연합뉴스",
+        "[美특징주]네비우스·코어위브, 엔비디아 호실적에 개장전 동반 상승 - 이데일리"
+      ]
+    },
+    {
+      "direction": "negative",
+      "direct": true,
+      "targets": [
+        {
+          "key": "semiconductor",
+          "label": "반도체",
+          "scope": "sector"
+        }
+      ],
+      "primaryTarget": {
+        "key": "semiconductor",
+        "label": "반도체",
+        "scope": "sector"
+      },
+      "headline": "美 반도체지수 강보합…엔비디아·마이크론·SK하닉 ADR 하락 - 뉴스1",
+      "directionEvidence": "마이크론·SK하닉 ADR 하락",
+      "summary": "美 반도체지수 강보합…엔비디아·마이크론·SK하닉 ADR 하락&nbsp;&nbsp;뉴스1",
+      "source": "뉴스1",
+      "publishedAt": "Wed, 18 Nov 2026 21:56:17 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1rV050SHZKSTd4cktjZUhqRDBDQTE4ektWdklObVV4blk2Z0RjZGNVTmtmaV9vSjZHRi14OExjei1CVlluYndLZ2JXQld0NWRHT0k0TVVBUmg?oc=5",
+      "score": 15,
+      "corroboration": 3,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "美 반도체지수 강보합…엔비디아·마이크론·SK하닉 ADR 하락 - 뉴스1",
+        "[美증시 특징주] 엔비디아 5일째 하락…초월실적 보여주니 이젠 '미래 불확실' - 미디어펜",
+        "낸드 내년 공급과잉에 가격 하락 전망, 삼성전자·SK하이닉스 고부가 eSSD로 수익성 방어 집중 - 비즈니스포스트"
       ]
     },
     {
@@ -501,29 +446,29 @@
       "direct": true,
       "targets": [
         {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
+          "key": "domestic_market",
+          "label": "국내 증시",
+          "scope": "market"
         }
       ],
       "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
+        "key": "domestic_market",
+        "label": "국내 증시",
+        "scope": "market"
       },
-      "headline": "[특징주] 빅웨이브로보틱스, 로봇 테마 훈풍 속 장중 상한가 '폭발' - 와이드경제",
-      "directionEvidence": null,
-      "summary": "[특징주] 빅웨이브로보틱스, 로봇 테마 훈풍 속 장중 상한가 '폭발'&nbsp;&nbsp;와이드경제",
-      "source": "와이드경제",
-      "publishedAt": "Wed, 18 Nov 2026 05:43:47 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5tZ2IxZnEtQ0oyQVhocnFtQ3BaLU5UMGJoVHpoM1poU05Da2l4RG1fTjZzbHRqU3p4RU1QRVJLZU1YYlpfX3JYQ1YzbXZRUERBcWlVMlQ3YjItcWRFcGxVSkJld2NmUGhiOXR5WQ?oc=5",
+      "headline": "[마감시황] 11/18 엔비디아 호실적에 코스피 +1.99% 반등 - 네이버 프리미엄콘텐츠",
+      "directionEvidence": "코스피 +1.99% 반등",
+      "summary": "[마감시황] 11/18 엔비디아 호실적에 코스피 +1.99% 반등&nbsp;&nbsp;네이버 프리미엄콘텐츠",
+      "source": "네이버 프리미엄콘텐츠",
+      "publishedAt": "Wed, 18 Nov 2026 08:53:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMUYzZGc0bGpkZVY2cVdBZXFKN2hVaW93NXJrSVBQbnF4TGtsVTFGVnFQa3NyLTZGalYtTWIwT09iSF8xcUxoM29MdkJRX0Vydmkzb2dEQmZTdnlpX3prX05BRWl2ZlVUNklHZEkxVjN1QnlQVWRqdlZIaFdwbFJNcy1Cbjg3OW85STV2bWY5bEI?oc=5",
       "score": 14,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[특징주] 빅웨이브로보틱스, 로봇 테마 훈풍 속 장중 상한가 '폭발' - 와이드경제"
+        "[마감시황] 11/18 엔비디아 호실적에 코스피 +1.99% 반등 - 네이버 프리미엄콘텐츠"
       ]
     },
     {
@@ -541,19 +486,19 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "빅웨이브로보틱스 장중 상한가 1만7090원 - 비건뉴스",
+      "headline": "[특징주] 한한령 해제 기대감에 엔터·콘텐츠주 시간외 급등…에스엠·스튜디오드래곤 상한가 - https://www.moneystorm.kr/",
       "directionEvidence": null,
-      "summary": "빅웨이브로보틱스 장중 상한가 1만7090원&nbsp;&nbsp;비건뉴스",
-      "source": "비건뉴스",
-      "publishedAt": "Wed, 18 Nov 2026 04:38:58 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9CVklTS0lOUFpjVnpwZDhCXzBYZ05ZY3FlSVpGRm8wTzBCZThfVDY4LVhIUUV0TTBOMnlNeVBpRHB4MGNrM01JMlpWR2lPamNRbDM3TTZUb1A2YjFaOVlXbGl2VGZ5QQ?oc=5",
-      "score": 14,
+      "summary": "[특징주] 한한령 해제 기대감에 엔터·콘텐츠주 시간외 급등…에스엠·스튜디오드래곤 상한가&nbsp;&nbsp;https://www.moneystorm.kr/",
+      "source": "https://www.moneystorm.kr/",
+      "publishedAt": "Wed, 18 Nov 2026 09:53:39 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBhd0swMEFyX3FTQjNFX2xodEo4c2l5bWpQdzZOYVV5TVd0dk5FblRjcWpnR3lqWXd3emNZN0d2REd3X0tsNnBWaHRGRDZRS3pJT1Vib25pNExoMWxscmVsT09ucG5ZNGVMRUE?oc=5",
+      "score": 13,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "빅웨이브로보틱스 장중 상한가 1만7090원 - 비건뉴스"
+        "[특징주] 한한령 해제 기대감에 엔터·콘텐츠주 시간외 급등…에스엠·스튜디오드래곤 상한가 - https://www.moneystorm.kr/"
       ]
     },
     {
@@ -571,19 +516,169 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 연합뉴스",
+      "headline": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이",
       "directionEvidence": null,
-      "summary": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합)&nbsp;&nbsp;연합뉴스",
-      "source": "연합뉴스",
+      "summary": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이&nbsp;&nbsp;머니투데이",
+      "source": "머니투데이",
+      "publishedAt": "Wed, 18 Nov 2026 08:22:55 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1NQUxwZTFraU53WTN2SDNUc3MySEpQVUpLdTB4enBGa0R4OVJ0Q2RvZzdYMGM1RWcwd05RLVI3UUtGUTY4anVFOVdWaVIyMFY5SWlvVGNxeEdMY3Q0bFgwWVJqX1VmME1a0gFuQVVfeXFMT1diNDY0M2JKV1JObFY0WXYtcTNSY2kwUG1hY3lNTDV2VTlxcGlrcm9HclJRM3BiM0gzVDhYRk04YmszQjhFU0hUcURiQmtnUE1rM0tMZVU0clRYVF9JX1p0dFBqLWt3NjJleDBtTWc?oc=5",
+      "score": 13,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이",
+      "directionEvidence": null,
+      "summary": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이&nbsp;&nbsp;머니투데이",
+      "source": "머니투데이",
+      "publishedAt": "Wed, 18 Nov 2026 08:22:55 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9XeldDNmN3R2tvN1RCazdHYVJ2LVZwN1ZQMWVXLWs3ZDZ5STNBaGs2dC1ucDlnc2Q0OUQ0cjE0YVpPS2tDc1c4bEI0bmd1cERBbm9WWmEwbmVvaGJ5cVZtVlZ2QzdCaXVQckxDMy1LUm1qOXBOZkHSAXtBVV95cUxOaldxZXlMTkFLQ0Y0THpiaU1rWGNaYWtkUWVuVVl3ODlpc0U0djh5Tm5GRlpPSTRrcjVxb0tZVVVtdHdib0tsaXpNMGM4Yjd0Q3RqT2wzUUpyOHY5aFFocWFsT0l0dHNLTTlONk5LMTRsMnV4ZEZRclQxbW8?oc=5",
+      "score": 13,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "platform",
+          "label": "인터넷·플랫폼",
+          "scope": "sector"
+        }
+      ],
+      "primaryTarget": {
+        "key": "platform",
+        "label": "인터넷·플랫폼",
+        "scope": "sector"
+      },
+      "headline": "[미국 특징주] 스타보드 \"플로서브·라이엇플랫폼 주가 상승 여력 크다\" - 뉴스핌",
+      "directionEvidence": "플랫폼 주가 상승 여력 크다\"",
+      "summary": "[미국 특징주] 스타보드 \"플로서브·라이엇플랫폼 주가 상승 여력 크다\"&nbsp;&nbsp;뉴스핌",
+      "source": "뉴스핌",
+      "publishedAt": "Wed, 18 Nov 2026 23:11:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Tb0NfNHZKR3QzVjJ4OTdydm1ITFlRcjhXRjJibDlBcXBsRmp0VG1Gb0tXTC1jeURScmR0aW9yaWc1bXB0QWRzUGx1bk9FV0pMa2w2aTFJVkhDam1E?oc=5",
+      "score": 11,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[미국 특징주] 스타보드 \"플로서브·라이엇플랫폼 주가 상승 여력 크다\" - 뉴스핌"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "foreign_flow",
+          "label": "외국인 수급",
+          "scope": "factor"
+        }
+      ],
+      "primaryTarget": {
+        "key": "foreign_flow",
+        "label": "외국인 수급",
+        "scope": "factor"
+      },
+      "headline": "코스피, 하루 만에 '5천피' 탈환…기관 매수에 5거래일 만에 반등 - 산경투데이",
+      "directionEvidence": "기관 매수에 5거래일 만에 반등",
+      "summary": "코스피, 하루 만에 '5천피' 탈환…기관 매수에 5거래일 만에 반등&nbsp;&nbsp;산경투데이",
+      "source": "산경투데이",
+      "publishedAt": "Wed, 18 Nov 2026 07:45:50 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1KS3B1VmpjYVUxWVVtbmp0YXVqN2YzVlh5LXVJNERGY3UyckFSNHJGZHJwVFJGRTcyZ3FXUkxNQWdpV1B5MkthVEQtUTZuclUteERNRmtFdV9vR1hkVFJkQ2pEV081c3gtNm8zZkhWMWHSAXRBVV95cUxOU2I0SDBaRl9Ebi0xNERUR0ZtaEZKSU9SeUw5VUhuZ3h0OFE5Q09lTGUxRFI5elZpWDh2VTJqbUdTTGtqb0xSRkhWVnByR0NNMEhUMmZHWWtuM2tKVFRIS0Q4R1lNTFpETlNRQ0hHeExWelpqOA?oc=5",
+      "score": 11,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "코스피, 하루 만에 '5천피' 탈환…기관 매수에 5거래일 만에 반등 - 산경투데이"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 매일경제 마켓",
+      "directionEvidence": null,
+      "summary": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합)&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
       "publishedAt": "Wed, 18 Nov 2026 06:35:01 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5GaGlIdFh2NmlwZGk4d19MLVd5Rkg0a1JTY3dqeV9sakt4VDR5M084cFJnWDVVY2w4NGVmeDh1SEd1NkdPM0VlaFdhUTF5SncyUk84MFVZSWo2NHfSAWBBVV95cUxORG4wVXVuX3ZOOU9FNDJRbHJtRm1xb0FRN09zRDJLQkdVQWxsMmVxNW9hU0djT2FFNDVSNERKUXVFQUVSa3pzWnlMUEFvLXlRTHRhelVjUWNVMmluZ1Y3RFA?oc=5",
-      "score": 12,
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE83dzBXcGVfczJFWGdEVGhINl81aUZaWE0yVUpXRWplN1R3ODlzRzhGX2lPTDFVZ1YxQ3M2VTVNRXFSdHp6ZmhMal9kbTQzOGVBaVE?oc=5",
+      "score": 11,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 연합뉴스"
+        "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 매일경제 마켓"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[美특징주]아마존·알파벳, 상승…앤스로픽 기업공개 수혜주 - 이데일리",
+      "directionEvidence": null,
+      "summary": "[美특징주]아마존·알파벳, 상승…앤스로픽 기업공개 수혜주&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 16:11:06 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNdzQ4OWx5NE1pMlRMcVY5UWw0Z1ZfVERqelVYVW1peXE1VmRvaDZFYmtGLWdUcXYzUnQ3ZWZaU3pyZ2h4alM5MjdCQkMtVXZtS0NaSkQ3RUQzd3o5OWRINm9XQnNyeG1TNlVaaGhUTzZHYW5KUW81c19IVzZ0N3plSA?oc=5",
+      "score": 9,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "medium",
+      "evidenceConfidence": "medium",
+      "evidenceHeadlines": [
+        "[美특징주]아마존·알파벳, 상승…앤스로픽 기업공개 수혜주 - 이데일리"
       ]
     },
     {
@@ -601,197 +696,24 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "[특징주] 아티스트컴퍼니, 이정재 대주주 사익 추구 의혹에 4%대 하락 - 아주경제",
+      "headline": "[美특징주]금값 올해 최저치로 밀려…뉴몬트 등 광산주 동반 약세 - 이데일리",
       "directionEvidence": null,
-      "summary": "[특징주] 아티스트컴퍼니, 이정재 대주주 사익 추구 의혹에 4%대 하락&nbsp;&nbsp;아주경제",
-      "source": "아주경제",
-      "publishedAt": "Wed, 18 Nov 2026 02:17:47 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBGbnBBNDJoa3dBLUlCMkVDbHZ1UHo0Z253RXJVZFhFV0dta1p2TElmMjYwN3VnV1hFekRnbWkwc1JCZmR1ZG1zNlpUSlRCeXREMFhOOV9UbGzSAVhBVV95cUxQRm5wQTQyaGt3QS1JQjJFQ2x2dVB6NGdud0VyVWRYRVdHbWtadkxJZjI2MDd1Z1dYRXpEZ21pMHNSQmZkdWRtczZaVEpUQnl0RDBYTjlfVGxs?oc=5",
-      "score": 12,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 아티스트컴퍼니, 이정재 대주주 사익 추구 의혹에 4%대 하락 - 아주경제"
-      ]
-    },
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "[특징주] 주성엔지니어링 장중 1%대 상승 14만9600원 기록 : 기업주식정보 - 재경일보",
-      "directionEvidence": null,
-      "summary": "[특징주] 주성엔지니어링 장중 1%대 상승 14만9600원 기록 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Wed, 18 Nov 2026 01:26:43 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8yenVuMm1aQ3FkZ2ktV3hqSWgtX0FYS0F3NlpSODczZXBnUHlYcDgzVXZpWF9SNFFSNmloZjlHZzFoOVVHNVNjWkc0NA?oc=5",
-      "score": 12,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 주성엔지니어링 장중 1%대 상승 14만9600원 기록 : 기업주식정보 - 재경일보"
-      ]
-    },
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "[특징주] 원익홀딩스, 뚜렷한 공시 없이 장중 9%대 상승세 : 기업주식정보 - 재경일보",
-      "directionEvidence": null,
-      "summary": "[특징주] 원익홀딩스, 뚜렷한 공시 없이 장중 9%대 상승세 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Wed, 18 Nov 2026 01:26:27 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5GWTdMT0F3RnZmd1B2aE5xa09fUWVXRXZ1X3FYcE1kcng2aXA1d2FOdC1ndTU0aVhuOHlMZ2ZzN1ZMeWk4Q09HZjBOOA?oc=5",
-      "score": 12,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 원익홀딩스, 뚜렷한 공시 없이 장중 9%대 상승세 : 기업주식정보 - 재경일보"
-      ]
-    },
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "[특징주] 레인보우로보틱스, 장중 12%대 상승하며 38만원대 기록 : 기업주식정보 - 재경일보",
-      "directionEvidence": null,
-      "summary": "[특징주] 레인보우로보틱스, 장중 12%대 상승하며 38만원대 기록 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Wed, 18 Nov 2026 01:25:03 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE42NHRPdU5XcG0zN25KRHNUTHRmNFNkS1RHR3hBSDQzUVU5dUxjRm1Vdi11Xzl3b3ZtdjViSWV3ekYzWDlLUEJPVEU0aw?oc=5",
-      "score": 12,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 레인보우로보틱스, 장중 12%대 상승하며 38만원대 기록 : 기업주식정보 - 재경일보"
-      ]
-    },
-    {
-      "direction": "positive",
-      "direct": false,
-      "targets": [
-        {
-          "key": "shipbuilding",
-          "label": "조선",
-          "scope": "sector"
-        },
-        {
-          "key": "energy",
-          "label": "에너지",
-          "scope": "sector"
-        }
-      ],
-      "primaryTarget": {
-        "key": "shipbuilding",
-        "label": "조선",
-        "scope": "sector"
-      },
-      "headline": "에코프로에이치엔, 美 아이다호서 석 달 새 세 번째 수주…온실가스 설비 수출, 이미 작년 넘어 - 데이터투자",
-      "directionEvidence": null,
-      "summary": "에코프로에이치엔, 美 아이다호서 석 달 새 세 번째 수주…온실가스 설비 수출, 이미 작년 넘어&nbsp;&nbsp;데이터투자",
-      "source": "데이터투자",
-      "publishedAt": "Wed, 18 Nov 2026 00:07:20 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5GSWxBQkR0dU1ncnZ3VTlKSjVCZzhtUEpIdkwtQUxJRnJvZkM3VzZMb1c0bDBqeUVRZG00clNHUE5uN3Z1QjltSWJzWXhGWUpnS2FuX3hlS0hqaFNWQXRycVUxOVEwSEtPNk1nNTlxVTREVW8?oc=5",
-      "score": 7,
+      "summary": "[美특징주]금값 올해 최저치로 밀려…뉴몬트 등 광산주 동반 약세&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 15:57:28 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQeXJ3eWR3Z2VHbzB2cWFqWklhVm1tU1dXX3dnNHljVDl4bVBlNkRWOHhiQnFFd1NfQ2VFUWVoZHFBanpvQS03MVNmTmlfUWhwZjlYT29pUWVjcldkSmpwR2s5NWtPQjIwcGQtbTZpekd6N3kxd1hucDgtckE3S2tySA?oc=5",
+      "score": 9,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "medium",
       "evidenceConfidence": "medium",
       "evidenceHeadlines": [
-        "에코프로에이치엔, 美 아이다호서 석 달 새 세 번째 수주…온실가스 설비 수출, 이미 작년 넘어 - 데이터투자"
+        "[美특징주]금값 올해 최저치로 밀려…뉴몬트 등 광산주 동반 약세 - 이데일리"
       ]
     }
   ],
   "marketEventConclusions": [
     {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "semiconductor",
-          "label": "반도체",
-          "scope": "sector"
-        },
-        {
-          "key": "foreign_flow",
-          "label": "외국인 수급",
-          "scope": "factor"
-        },
-        {
-          "key": "domestic_market",
-          "label": "국내 증시",
-          "scope": "market"
-        }
-      ],
-      "primaryTarget": {
-        "key": "semiconductor",
-        "label": "반도체",
-        "scope": "sector"
-      },
-      "headline": "[특징주] 원익홀딩스, AI 반도체 투자 훈풍 속 외국인·기관 쌍끌이 매수에 10%대 급등 - 와이드경제",
-      "directionEvidence": null,
-      "summary": "[특징주] 원익홀딩스, AI 반도체 투자 훈풍 속 외국인·기관 쌍끌이 매수에 10%대 급등&nbsp;&nbsp;와이드경제",
-      "source": "와이드경제",
-      "publishedAt": "Wed, 18 Nov 2026 04:15:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5NWmpnVG1wMnRLeW5sNEdfUTM5WTY0LUxpT2ltQWRfb2R1MWQ2RGUxeEFETGtFMkwyTWhKbmM2Q214aC1pNHhpcjRPZ0RYaklsbGRUWm5oSHgtYXdWeHo1dzN0ejd1eDNQOVZ2SQ?oc=5",
-      "score": 21,
-      "corroboration": 5,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 원익홀딩스, AI 반도체 투자 훈풍 속 외국인·기관 쌍끌이 매수에 10%대 급등 - 와이드경제",
-        "[특징주] 두산, 엔비디아 호실적에 10%대 급등…낙폭 과대 인식도 영향 - 아주경제",
-        "[특징주] 삼성전기, 엔비디아 협력 확대 기대감에 4%대 상승 - 브릿지경제"
-      ],
-      "confidence": "medium",
-      "dominanceMargin": 4,
-      "resolutionReason": "dominant_direct_price",
-      "counterEvidence": [
-        "\"엔비디아가 살렸다\"…급락하던 두산 13% 반등 [특징주] - 데일리안"
-      ]
-    },
-    {
       "direction": "negative",
       "direct": true,
       "targets": [
@@ -806,55 +728,228 @@
         "label": "국내 증시",
         "scope": "market"
       },
-      "headline": "[특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합) - 매일경제 마켓",
-      "directionEvidence": null,
-      "summary": "[특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합)&nbsp;&nbsp;매일경제 마켓",
-      "source": "매일경제 마켓",
-      "publishedAt": "Wed, 18 Nov 2026 06:34:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9veHNJSzdNckttM3FLdDNva3hpNUEtODFOZG5VeUtvdDZUTVg0RGJ2UXJ1cEJKUW1TbFUzTm11ZWFQQVBsaU1ENmVkRVI5SWhfZUE?oc=5",
-      "score": 19,
-      "corroboration": 3,
+      "headline": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색 - https://www.moneystorm.kr/",
+      "directionEvidence": "코스닥 상장 첫날 24% 급락",
+      "summary": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색&nbsp;&nbsp;https://www.moneystorm.kr/",
+      "source": "https://www.moneystorm.kr/",
+      "publishedAt": "Wed, 18 Nov 2026 09:12:36 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE00bWxINk44dzUzNmF0UU5uQnBkSEdPaWV2M2pvQm9Za0dJZF9JVDhVRGxIcURMU2xSdk1wOGpHbEt4SG5vUkI0NDhfODYxMDlYdUJwdzdyM0dHelF5aWNjTzRfVTBXb01EQnc?oc=5",
+      "score": 20,
+      "corroboration": 2,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합) - 매일경제 마켓",
-        "[특징주] 에이엘로봇, 코스닥 상장 첫날 '하락' - 전국매일신문",
-        "코스닥 상장사 3분기 순손실 전환…10곳 중 6곳 적자 - 아주경제"
+        "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색 - https://www.moneystorm.kr/",
+        "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓ - 비즈트리뷴"
       ],
       "confidence": "high",
-      "dominanceMargin": null,
-      "resolutionReason": "single_direction",
-      "counterEvidence": []
+      "dominanceMargin": 6,
+      "resolutionReason": "dominant_direct_price",
+      "counterEvidence": [
+        "[마감시황] 11/18 엔비디아 호실적에 코스피 +1.99% 반등 - 네이버 프리미엄콘텐츠"
+      ]
     },
     {
       "direction": "mixed",
       "direct": true,
       "targets": [
         {
-          "key": "bio",
-          "label": "바이오·제약",
+          "key": "semiconductor",
+          "label": "반도체",
           "scope": "sector"
         }
       ],
       "primaryTarget": {
-        "key": "bio",
-        "label": "바이오·제약",
+        "key": "semiconductor",
+        "label": "반도체",
         "scope": "sector"
       },
-      "headline": "아리바이오랩, 알츠하이머 치료제 임상서 증상 악화 31% 지연…상한가 - 아주경제",
+      "headline": "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합) - 코인리더스",
+      "directionEvidence": "엔비디아와 협력 강화에 7%대 상승(종합)",
+      "summary": "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합)&nbsp;&nbsp;코인리더스",
+      "source": "코인리더스",
+      "publishedAt": "Wed, 18 Nov 2026 07:00:01 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5OM0lHZWxLQVpRREVVRHZmWkZyajlHdF9XNHpUc2IwMk00azBXSF93Y3BZbXNkN1lTOEM2bHk2Z1lIN2NuRzBSb193?oc=5",
+      "score": 16,
+      "corroboration": 3,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합) - 코인리더스",
+        "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합) - 연합뉴스",
+        "[美특징주]네비우스·코어위브, 엔비디아 호실적에 개장전 동반 상승 - 이데일리"
+      ],
+      "confidence": "medium",
+      "dominanceMargin": 1,
+      "resolutionReason": "conflicting_evidence",
+      "counterEvidence": [
+        "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합) - 코인리더스",
+        "美 반도체지수 강보합…엔비디아·마이크론·SK하닉 ADR 하락 - 뉴스1"
+      ]
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[특징주] 한한령 해제 기대감에 엔터·콘텐츠주 시간외 급등…에스엠·스튜디오드래곤 상한가 - https://www.moneystorm.kr/",
       "directionEvidence": null,
-      "summary": "아리바이오랩, 알츠하이머 치료제 임상서 증상 악화 31% 지연…상한가&nbsp;&nbsp;아주경제",
-      "source": "아주경제",
-      "publishedAt": "Wed, 18 Nov 2026 05:06:32 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBhb2g2eXNOLVdYbkNqLXJIQjZRNW5YNDFXekNKb0VpTEkwWGlvaldETzExclczaWp1T3UtSWJHZnpwbmlqdGQ3dGo2bzVzQVNBLW9VR0VzYnHSAVhBVV95cUxQYW9oNnlzTi1XWG5Dai1ySEI2UTVuWDQxV3pDSm9FaUxJMFhpb2pXRE8xMXJXM2lqdU91LUliR2Z6cG5panRkN3RqNm81c0FTQS1vVUdFc2Jx?oc=5",
-      "score": 17,
+      "summary": "[특징주] 한한령 해제 기대감에 엔터·콘텐츠주 시간외 급등…에스엠·스튜디오드래곤 상한가&nbsp;&nbsp;https://www.moneystorm.kr/",
+      "source": "https://www.moneystorm.kr/",
+      "publishedAt": "Wed, 18 Nov 2026 09:53:39 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBhd0swMEFyX3FTQjNFX2xodEo4c2l5bWpQdzZOYVV5TVd0dk5FblRjcWpnR3lqWXd3emNZN0d2REd3X0tsNnBWaHRGRDZRS3pJT1Vib25pNExoMWxscmVsT09ucG5ZNGVMRUE?oc=5",
+      "score": 13,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "아리바이오랩, 알츠하이머 치료제 임상서 증상 악화 31% 지연…상한가 - 아주경제"
+        "[특징주] 한한령 해제 기대감에 엔터·콘텐츠주 시간외 급등…에스엠·스튜디오드래곤 상한가 - https://www.moneystorm.kr/"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이",
+      "directionEvidence": null,
+      "summary": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이&nbsp;&nbsp;머니투데이",
+      "source": "머니투데이",
+      "publishedAt": "Wed, 18 Nov 2026 08:22:55 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1NQUxwZTFraU53WTN2SDNUc3MySEpQVUpLdTB4enBGa0R4OVJ0Q2RvZzdYMGM1RWcwd05RLVI3UUtGUTY4anVFOVdWaVIyMFY5SWlvVGNxeEdMY3Q0bFgwWVJqX1VmME1a0gFuQVVfeXFMT1diNDY0M2JKV1JObFY0WXYtcTNSY2kwUG1hY3lNTDV2VTlxcGlrcm9HclJRM3BiM0gzVDhYRk04YmszQjhFU0hUcURiQmtnUE1rM0tMZVU0clRYVF9JX1p0dFBqLWt3NjJleDBtTWc?oc=5",
+      "score": 13,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이",
+      "directionEvidence": null,
+      "summary": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이&nbsp;&nbsp;머니투데이",
+      "source": "머니투데이",
+      "publishedAt": "Wed, 18 Nov 2026 08:22:55 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9XeldDNmN3R2tvN1RCazdHYVJ2LVZwN1ZQMWVXLWs3ZDZ5STNBaGs2dC1ucDlnc2Q0OUQ0cjE0YVpPS2tDc1c4bEI0bmd1cERBbm9WWmEwbmVvaGJ5cVZtVlZ2QzdCaXVQckxDMy1LUm1qOXBOZkHSAXtBVV95cUxOaldxZXlMTkFLQ0Y0THpiaU1rWGNaYWtkUWVuVVl3ODlpc0U0djh5Tm5GRlpPSTRrcjVxb0tZVVVtdHdib0tsaXpNMGM4Yjd0Q3RqT2wzUUpyOHY5aFFocWFsT0l0dHNLTTlONk5LMTRsMnV4ZEZRclQxbW8?oc=5",
+      "score": 13,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이"
+      ],
+      "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "platform",
+          "label": "인터넷·플랫폼",
+          "scope": "sector"
+        }
+      ],
+      "primaryTarget": {
+        "key": "platform",
+        "label": "인터넷·플랫폼",
+        "scope": "sector"
+      },
+      "headline": "[미국 특징주] 스타보드 \"플로서브·라이엇플랫폼 주가 상승 여력 크다\" - 뉴스핌",
+      "directionEvidence": "플랫폼 주가 상승 여력 크다\"",
+      "summary": "[미국 특징주] 스타보드 \"플로서브·라이엇플랫폼 주가 상승 여력 크다\"&nbsp;&nbsp;뉴스핌",
+      "source": "뉴스핌",
+      "publishedAt": "Wed, 18 Nov 2026 23:11:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Tb0NfNHZKR3QzVjJ4OTdydm1ITFlRcjhXRjJibDlBcXBsRmp0VG1Gb0tXTC1jeURScmR0aW9yaWc1bXB0QWRzUGx1bk9FV0pMa2w2aTFJVkhDam1E?oc=5",
+      "score": 11,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "[미국 특징주] 스타보드 \"플로서브·라이엇플랫폼 주가 상승 여력 크다\" - 뉴스핌"
+      ],
+      "confidence": "high",
+      "dominanceMargin": null,
+      "resolutionReason": "single_direction",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "foreign_flow",
+          "label": "외국인 수급",
+          "scope": "factor"
+        }
+      ],
+      "primaryTarget": {
+        "key": "foreign_flow",
+        "label": "외국인 수급",
+        "scope": "factor"
+      },
+      "headline": "코스피, 하루 만에 '5천피' 탈환…기관 매수에 5거래일 만에 반등 - 산경투데이",
+      "directionEvidence": "기관 매수에 5거래일 만에 반등",
+      "summary": "코스피, 하루 만에 '5천피' 탈환…기관 매수에 5거래일 만에 반등&nbsp;&nbsp;산경투데이",
+      "source": "산경투데이",
+      "publishedAt": "Wed, 18 Nov 2026 07:45:50 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1KS3B1VmpjYVUxWVVtbmp0YXVqN2YzVlh5LXVJNERGY3UyckFSNHJGZHJwVFJGRTcyZ3FXUkxNQWdpV1B5MkthVEQtUTZuclUteERNRmtFdV9vR1hkVFJkQ2pEV081c3gtNm8zZkhWMWHSAXRBVV95cUxOU2I0SDBaRl9Ebi0xNERUR0ZtaEZKSU9SeUw5VUhuZ3h0OFE5Q09lTGUxRFI5elZpWDh2VTJqbUdTTGtqb0xSRkhWVnByR0NNMEhUMmZHWWtuM2tKVFRIS0Q4R1lNTFpETlNRQ0hHeExWelpqOA?oc=5",
+      "score": 11,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "high",
+      "evidenceConfidence": "high",
+      "evidenceHeadlines": [
+        "코스피, 하루 만에 '5천피' 탈환…기관 매수에 5거래일 만에 반등 - 산경투데이"
       ],
       "confidence": "high",
       "dominanceMargin": null,
@@ -876,87 +971,54 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "[특징주] 빅웨이브로보틱스, 로봇 테마 훈풍 속 장중 상한가 '폭발' - 와이드경제",
+      "headline": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 매일경제 마켓",
       "directionEvidence": null,
-      "summary": "[특징주] 빅웨이브로보틱스, 로봇 테마 훈풍 속 장중 상한가 '폭발'&nbsp;&nbsp;와이드경제",
-      "source": "와이드경제",
-      "publishedAt": "Wed, 18 Nov 2026 05:43:47 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5tZ2IxZnEtQ0oyQVhocnFtQ3BaLU5UMGJoVHpoM1poU05Da2l4RG1fTjZzbHRqU3p4RU1QRVJLZU1YYlpfX3JYQ1YzbXZRUERBcWlVMlQ3YjItcWRFcGxVSkJld2NmUGhiOXR5WQ?oc=5",
-      "score": 14,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 빅웨이브로보틱스, 로봇 테마 훈풍 속 장중 상한가 '폭발' - 와이드경제"
-      ],
-      "confidence": "high",
-      "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
-    },
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "빅웨이브로보틱스 장중 상한가 1만7090원 - 비건뉴스",
-      "directionEvidence": null,
-      "summary": "빅웨이브로보틱스 장중 상한가 1만7090원&nbsp;&nbsp;비건뉴스",
-      "source": "비건뉴스",
-      "publishedAt": "Wed, 18 Nov 2026 04:38:58 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9CVklTS0lOUFpjVnpwZDhCXzBYZ05ZY3FlSVpGRm8wTzBCZThfVDY4LVhIUUV0TTBOMnlNeVBpRHB4MGNrM01JMlpWR2lPamNRbDM3TTZUb1A2YjFaOVlXbGl2VGZ5QQ?oc=5",
-      "score": 14,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "빅웨이브로보틱스 장중 상한가 1만7090원 - 비건뉴스"
-      ],
-      "confidence": "high",
-      "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
-    },
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 연합뉴스",
-      "directionEvidence": null,
-      "summary": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합)&nbsp;&nbsp;연합뉴스",
-      "source": "연합뉴스",
+      "summary": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합)&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
       "publishedAt": "Wed, 18 Nov 2026 06:35:01 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5GaGlIdFh2NmlwZGk4d19MLVd5Rkg0a1JTY3dqeV9sakt4VDR5M084cFJnWDVVY2w4NGVmeDh1SEd1NkdPM0VlaFdhUTF5SncyUk84MFVZSWo2NHfSAWBBVV95cUxORG4wVXVuX3ZOOU9FNDJRbHJtRm1xb0FRN09zRDJLQkdVQWxsMmVxNW9hU0djT2FFNDVSNERKUXVFQUVSa3pzWnlMUEFvLXlRTHRhelVjUWNVMmluZ1Y3RFA?oc=5",
-      "score": 12,
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE83dzBXcGVfczJFWGdEVGhINl81aUZaWE0yVUpXRWplN1R3ODlzRzhGX2lPTDFVZ1YxQ3M2VTVNRXFSdHp6ZmhMal9kbTQzOGVBaVE?oc=5",
+      "score": 11,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "high",
       "evidenceConfidence": "high",
       "evidenceHeadlines": [
-        "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 연합뉴스"
+        "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 매일경제 마켓"
       ],
       "confidence": "high",
+      "resolutionReason": "individual_stock_only",
+      "counterEvidence": []
+    },
+    {
+      "direction": "positive",
+      "direct": true,
+      "targets": [
+        {
+          "key": "individual_stock",
+          "label": "개별 종목",
+          "scope": "stock"
+        }
+      ],
+      "primaryTarget": {
+        "key": "individual_stock",
+        "label": "개별 종목",
+        "scope": "stock"
+      },
+      "headline": "[美특징주]아마존·알파벳, 상승…앤스로픽 기업공개 수혜주 - 이데일리",
+      "directionEvidence": null,
+      "summary": "[美특징주]아마존·알파벳, 상승…앤스로픽 기업공개 수혜주&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 16:11:06 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNdzQ4OWx5NE1pMlRMcVY5UWw0Z1ZfVERqelVYVW1peXE1VmRvaDZFYmtGLWdUcXYzUnQ3ZWZaU3pyZ2h4alM5MjdCQkMtVXZtS0NaSkQ3RUQzd3o5OWRINm9XQnNyeG1TNlVaaGhUTzZHYW5KUW81c19IVzZ0N3plSA?oc=5",
+      "score": 9,
+      "corroboration": 1,
+      "directionallyAmbiguous": false,
+      "severity": "medium",
+      "evidenceConfidence": "medium",
+      "evidenceHeadlines": [
+        "[美특징주]아마존·알파벳, 상승…앤스로픽 기업공개 수혜주 - 이데일리"
+      ],
+      "confidence": "medium",
       "resolutionReason": "individual_stock_only",
       "counterEvidence": []
     },
@@ -975,310 +1037,196 @@
         "label": "개별 종목",
         "scope": "stock"
       },
-      "headline": "[특징주] 아티스트컴퍼니, 이정재 대주주 사익 추구 의혹에 4%대 하락 - 아주경제",
+      "headline": "[美특징주]금값 올해 최저치로 밀려…뉴몬트 등 광산주 동반 약세 - 이데일리",
       "directionEvidence": null,
-      "summary": "[특징주] 아티스트컴퍼니, 이정재 대주주 사익 추구 의혹에 4%대 하락&nbsp;&nbsp;아주경제",
-      "source": "아주경제",
-      "publishedAt": "Wed, 18 Nov 2026 02:17:47 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBGbnBBNDJoa3dBLUlCMkVDbHZ1UHo0Z253RXJVZFhFV0dta1p2TElmMjYwN3VnV1hFekRnbWkwc1JCZmR1ZG1zNlpUSlRCeXREMFhOOV9UbGzSAVhBVV95cUxQRm5wQTQyaGt3QS1JQjJFQ2x2dVB6NGdud0VyVWRYRVdHbWtadkxJZjI2MDd1Z1dYRXpEZ21pMHNSQmZkdWRtczZaVEpUQnl0RDBYTjlfVGxs?oc=5",
-      "score": 12,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 아티스트컴퍼니, 이정재 대주주 사익 추구 의혹에 4%대 하락 - 아주경제"
-      ],
-      "confidence": "high",
-      "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
-    },
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "[특징주] 주성엔지니어링 장중 1%대 상승 14만9600원 기록 : 기업주식정보 - 재경일보",
-      "directionEvidence": null,
-      "summary": "[특징주] 주성엔지니어링 장중 1%대 상승 14만9600원 기록 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Wed, 18 Nov 2026 01:26:43 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8yenVuMm1aQ3FkZ2ktV3hqSWgtX0FYS0F3NlpSODczZXBnUHlYcDgzVXZpWF9SNFFSNmloZjlHZzFoOVVHNVNjWkc0NA?oc=5",
-      "score": 12,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 주성엔지니어링 장중 1%대 상승 14만9600원 기록 : 기업주식정보 - 재경일보"
-      ],
-      "confidence": "high",
-      "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
-    },
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "[특징주] 원익홀딩스, 뚜렷한 공시 없이 장중 9%대 상승세 : 기업주식정보 - 재경일보",
-      "directionEvidence": null,
-      "summary": "[특징주] 원익홀딩스, 뚜렷한 공시 없이 장중 9%대 상승세 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Wed, 18 Nov 2026 01:26:27 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5GWTdMT0F3RnZmd1B2aE5xa09fUWVXRXZ1X3FYcE1kcng2aXA1d2FOdC1ndTU0aVhuOHlMZ2ZzN1ZMeWk4Q09HZjBOOA?oc=5",
-      "score": 12,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 원익홀딩스, 뚜렷한 공시 없이 장중 9%대 상승세 : 기업주식정보 - 재경일보"
-      ],
-      "confidence": "high",
-      "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
-    },
-    {
-      "direction": "positive",
-      "direct": true,
-      "targets": [
-        {
-          "key": "individual_stock",
-          "label": "개별 종목",
-          "scope": "stock"
-        }
-      ],
-      "primaryTarget": {
-        "key": "individual_stock",
-        "label": "개별 종목",
-        "scope": "stock"
-      },
-      "headline": "[특징주] 레인보우로보틱스, 장중 12%대 상승하며 38만원대 기록 : 기업주식정보 - 재경일보",
-      "directionEvidence": null,
-      "summary": "[특징주] 레인보우로보틱스, 장중 12%대 상승하며 38만원대 기록 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Wed, 18 Nov 2026 01:25:03 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE42NHRPdU5XcG0zN25KRHNUTHRmNFNkS1RHR3hBSDQzUVU5dUxjRm1Vdi11Xzl3b3ZtdjViSWV3ekYzWDlLUEJPVEU0aw?oc=5",
-      "score": 12,
-      "corroboration": 1,
-      "directionallyAmbiguous": false,
-      "severity": "high",
-      "evidenceConfidence": "high",
-      "evidenceHeadlines": [
-        "[특징주] 레인보우로보틱스, 장중 12%대 상승하며 38만원대 기록 : 기업주식정보 - 재경일보"
-      ],
-      "confidence": "high",
-      "resolutionReason": "individual_stock_only",
-      "counterEvidence": []
-    },
-    {
-      "direction": "positive",
-      "direct": false,
-      "targets": [
-        {
-          "key": "shipbuilding",
-          "label": "조선",
-          "scope": "sector"
-        },
-        {
-          "key": "energy",
-          "label": "에너지",
-          "scope": "sector"
-        }
-      ],
-      "primaryTarget": {
-        "key": "shipbuilding",
-        "label": "조선",
-        "scope": "sector"
-      },
-      "headline": "에코프로에이치엔, 美 아이다호서 석 달 새 세 번째 수주…온실가스 설비 수출, 이미 작년 넘어 - 데이터투자",
-      "directionEvidence": null,
-      "summary": "에코프로에이치엔, 美 아이다호서 석 달 새 세 번째 수주…온실가스 설비 수출, 이미 작년 넘어&nbsp;&nbsp;데이터투자",
-      "source": "데이터투자",
-      "publishedAt": "Wed, 18 Nov 2026 00:07:20 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5GSWxBQkR0dU1ncnZ3VTlKSjVCZzhtUEpIdkwtQUxJRnJvZkM3VzZMb1c0bDBqeUVRZG00clNHUE5uN3Z1QjltSWJzWXhGWUpnS2FuX3hlS0hqaFNWQXRycVUxOVEwSEtPNk1nNTlxVTREVW8?oc=5",
-      "score": 7,
+      "summary": "[美특징주]금값 올해 최저치로 밀려…뉴몬트 등 광산주 동반 약세&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 15:57:28 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQeXJ3eWR3Z2VHbzB2cWFqWklhVm1tU1dXX3dnNHljVDl4bVBlNkRWOHhiQnFFd1NfQ2VFUWVoZHFBanpvQS03MVNmTmlfUWhwZjlYT29pUWVjcldkSmpwR2s5NWtPQjIwcGQtbTZpekd6N3kxd1hucDgtckE3S2tySA?oc=5",
+      "score": 9,
       "corroboration": 1,
       "directionallyAmbiguous": false,
       "severity": "medium",
       "evidenceConfidence": "medium",
       "evidenceHeadlines": [
-        "에코프로에이치엔, 美 아이다호서 석 달 새 세 번째 수주…온실가스 설비 수출, 이미 작년 넘어 - 데이터투자"
+        "[美특징주]금값 올해 최저치로 밀려…뉴몬트 등 광산주 동반 약세 - 이데일리"
       ],
       "confidence": "medium",
-      "dominanceMargin": null,
-      "resolutionReason": "single_direction",
+      "resolutionReason": "individual_stock_only",
       "counterEvidence": []
     }
   ],
   "stockNewsCandidates": [
     {
-      "title": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 연합뉴스",
-      "summary": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합)&nbsp;&nbsp;연합뉴스",
-      "source": "연합뉴스",
-      "publishedAt": "Wed, 18 Nov 2026 06:35:01 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5GaGlIdFh2NmlwZGk4d19MLVd5Rkg0a1JTY3dqeV9sakt4VDR5M084cFJnWDVVY2w4NGVmeDh1SEd1NkdPM0VlaFdhUTF5SncyUk84MFVZSWo2NHfSAWBBVV95cUxORG4wVXVuX3ZOOU9FNDJRbHJtRm1xb0FRN09zRDJLQkdVQWxsMmVxNW9hU0djT2FFNDVSNERKUXVFQUVSa3pzWnlMUEFvLXlRTHRhelVjUWNVMmluZ1Y3RFA?oc=5",
+      "title": "[미국 특징주] 스타보드 \"플로서브·라이엇플랫폼 주가 상승 여력 크다\" - 뉴스핌",
+      "summary": "[미국 특징주] 스타보드 \"플로서브·라이엇플랫폼 주가 상승 여력 크다\"&nbsp;&nbsp;뉴스핌",
+      "source": "뉴스핌",
+      "publishedAt": "Wed, 18 Nov 2026 23:11:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Tb0NfNHZKR3QzVjJ4OTdydm1ITFlRcjhXRjJibDlBcXBsRmp0VG1Gb0tXTC1jeURScmR0aW9yaWc1bXB0QWRzUGx1bk9FV0pMa2w2aTFJVkhDam1E?oc=5",
       "query": "특징주 상승 when:1d"
     },
     {
-      "title": "[특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합) - 매일경제 마켓",
-      "summary": "[특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합)&nbsp;&nbsp;매일경제 마켓",
-      "source": "매일경제 마켓",
-      "publishedAt": "Wed, 18 Nov 2026 06:34:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9veHNJSzdNckttM3FLdDNva3hpNUEtODFOZG5VeUtvdDZUTVg0RGJ2UXJ1cEJKUW1TbFUzTm11ZWFQQVBsaU1ENmVkRVI5SWhfZUE?oc=5",
+      "title": "[美증시 특징주] 엔비디아 5일째 하락…초월실적 보여주니 이젠 '미래 불확실' - 미디어펜",
+      "summary": "[美증시 특징주] 엔비디아 5일째 하락…초월실적 보여주니 이젠 '미래 불확실'&nbsp;&nbsp;미디어펜",
+      "source": "미디어펜",
+      "publishedAt": "Wed, 18 Nov 2026 21:07:37 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9rS0NzcnMtdExFZU5DLUFWMVFNUm5QVjFzem1XWlQ5WXpPY0dmRDY0Qmt0ZWNyMkpSMURxVlh2QjY5TnBGNV8yNDFiTW1WUjhCc05vNFZNbFXSAVhBVV95cUxPa0tDc3JzLXRMRWVOQy1BVjFRTVJuUFYxc3ptV1pUOVl6T2NHZkQ2NEJrdGVjcjJKUjFEcVZYdkI2OU5wRjVfMjQxYk1tVlI4QnNObzRWTWxV?oc=5",
       "query": "특징주 하락 when:1d"
     },
     {
-      "title": "[특징주] 빅웨이브로보틱스, 로봇 테마 훈풍 속 장중 상한가 '폭발' - 와이드경제",
-      "summary": "[특징주] 빅웨이브로보틱스, 로봇 테마 훈풍 속 장중 상한가 '폭발'&nbsp;&nbsp;와이드경제",
-      "source": "와이드경제",
-      "publishedAt": "Wed, 18 Nov 2026 05:43:47 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5tZ2IxZnEtQ0oyQVhocnFtQ3BaLU5UMGJoVHpoM1poU05Da2l4RG1fTjZzbHRqU3p4RU1QRVJLZU1YYlpfX3JYQ1YzbXZRUERBcWlVMlQ3YjItcWRFcGxVSkJld2NmUGhiOXR5WQ?oc=5",
-      "query": "특징주 상한가 when:1d"
+      "title": "[美특징주]엔비디아, 정규장서 하락…네오클라우드 기업도 동반 약세 - 이데일리",
+      "summary": "[美특징주]엔비디아, 정규장서 하락…네오클라우드 기업도 동반 약세&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 16:39:10 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQRk44TXJJcHlEUWxPcnNjbzdVbTNBWUZZeXJneUZQRTF3bG9VVXp1NE4zeDg3SkZQamJoNnk4dW1FOV85MkdTZE8wTktfRnBxNTMycTJqM0h5Y29Nc0o0UmptbTVGNmJkamlXMFlzU3FrNFppQk5WQW9OSFR6eUpXLQ?oc=5",
+      "query": "특징주 하락 when:1d"
     },
     {
-      "title": "[특징주] 삼성전기, 엔비디아 협력 확대 기대감에 4%대 상승 - 브릿지경제",
-      "summary": "[특징주] 삼성전기, 엔비디아 협력 확대 기대감에 4%대 상승&nbsp;&nbsp;브릿지경제",
-      "source": "브릿지경제",
-      "publishedAt": "Wed, 18 Nov 2026 05:30:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBsUUcxeTJVX2tNVDRmRXUxWU0tanNubzhUZHNoZVIxZVVRZUFSenE4Q0lsLVNzMjdpeHhtMWNkWU9QNUlsaEF2Y3hvb3Bvd1J3TGRlMFFseDJiZw?oc=5",
+      "title": "[美특징주]아마존·알파벳, 상승…앤스로픽 기업공개 수혜주 - 이데일리",
+      "summary": "[美특징주]아마존·알파벳, 상승…앤스로픽 기업공개 수혜주&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 16:11:06 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNdzQ4OWx5NE1pMlRMcVY5UWw0Z1ZfVERqelVYVW1peXE1VmRvaDZFYmtGLWdUcXYzUnQ3ZWZaU3pyZ2h4alM5MjdCQkMtVXZtS0NaSkQ3RUQzd3o5OWRINm9XQnNyeG1TNlVaaGhUTzZHYW5KUW81c19IVzZ0N3plSA?oc=5",
       "query": "특징주 상승 when:1d"
     },
     {
-      "title": "아리바이오랩, 알츠하이머 치료제 임상서 증상 악화 31% 지연…상한가 - 아주경제",
-      "summary": "아리바이오랩, 알츠하이머 치료제 임상서 증상 악화 31% 지연…상한가&nbsp;&nbsp;아주경제",
-      "source": "아주경제",
-      "publishedAt": "Wed, 18 Nov 2026 05:06:32 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBhb2g2eXNOLVdYbkNqLXJIQjZRNW5YNDFXekNKb0VpTEkwWGlvaldETzExclczaWp1T3UtSWJHZnpwbmlqdGQ3dGo2bzVzQVNBLW9VR0VzYnHSAVhBVV95cUxQYW9oNnlzTi1XWG5Dai1ySEI2UTVuWDQxV3pDSm9FaUxJMFhpb2pXRE8xMXJXM2lqdU91LUliR2Z6cG5panRkN3RqNm81c0FTQS1vVUdFc2Jx?oc=5",
+      "title": "[美특징주]금값 올해 최저치로 밀려…뉴몬트 등 광산주 동반 약세 - 이데일리",
+      "summary": "[美특징주]금값 올해 최저치로 밀려…뉴몬트 등 광산주 동반 약세&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 15:57:28 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQeXJ3eWR3Z2VHbzB2cWFqWklhVm1tU1dXX3dnNHljVDl4bVBlNkRWOHhiQnFFd1NfQ2VFUWVoZHFBanpvQS03MVNmTmlfUWhwZjlYT29pUWVjcldkSmpwR2s5NWtPQjIwcGQtbTZpekd6N3kxd1hucDgtckE3S2tySA?oc=5",
+      "query": "특징주 하락 when:1d"
+    },
+    {
+      "title": "[美특징주]로우스, 분기 실적 발표 후 약세 - m.edaily.co.kr",
+      "summary": "[美특징주]로우스, 분기 실적 발표 후 약세&nbsp;&nbsp;m.edaily.co.kr",
+      "source": "m.edaily.co.kr",
+      "publishedAt": "Wed, 18 Nov 2026 15:38:05 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdndMdEdfYTdmbjdKZWNwTlN3YVI4THlQUTY5V1pXS3U0R0VsdmtOUWNmcjNYVE5qY2JHMkFQLTlselZVeWFvWjdZd3c5TVJfSXhudUREN0dFQ3V1SXdyV1hTM21aeWIwWXpTcEdQY2JDb29HV1ROSnBqUFl2OXlEZg?oc=5",
+      "query": "특징주 하락 when:1d"
+    },
+    {
+      "title": "[美특징주]뉴욕타임컴퍼니, 하락…씨티 투자의견 '중립' 하향 - 이데일리",
+      "summary": "[美특징주]뉴욕타임컴퍼니, 하락…씨티 투자의견 '중립' 하향&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 15:28:12 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOLVRObUgtVmRKdGo3aHRCOFpXNWZJZmpfMEFLWGdsRDZNSnJSSURIQW1xd003ZkpYbXZzMEpvVU1IenUyNVJCUy0yYmhoelNINE1kVm9UbVN0anR2OXdTamdmV0hzWFJKdk5oZGpJbEJuUFJvV09rNW5ubFJiS0xuNQ?oc=5",
+      "query": "특징주 하락 when:1d"
+    },
+    {
+      "title": "[美특징주]타겟, 예상치 웃돈 실적에도 개장전 '하락'…연간 성장률도 상향 - 이데일리",
+      "summary": "[美특징주]타겟, 예상치 웃돈 실적에도 개장전 '하락'…연간 성장률도 상향&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 12:23:15 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZ3haVTZpVzExN0dHa3pBOW95U1d5TjFZY3F4ZGxRMVVEVU5xU2Z2Unp2Vkc5SWhuU3RzRWMtZlJHcWJCNkVocFZrNE1hMVc5Q1AtamVIQ3RFSzFRYVEwd1Y5SGYyeHE1YndQUFBNS1RqU3VON1JpN3RWdW5PVEdpTw?oc=5",
+      "query": "특징주 하락 when:1d"
+    },
+    {
+      "title": "[美특징주]네비우스·코어위브, 엔비디아 호실적에 개장전 동반 상승 - 이데일리",
+      "summary": "[美특징주]네비우스·코어위브, 엔비디아 호실적에 개장전 동반 상승&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 12:14:10 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOUFptZ2tXUTlnNkluSmRES0s2Q2RmZkVrQ2Z5QWRZWUxseFZ4V3BzbDNRT1UwcEYxNmhoS0NzbVlhYkFFd1FMTkE5U3BjZDdoVzNWQUlVcjA3YzBSWmZKbFRzdkk0bTNJMXE4X3l2X2JXd0VTVWZUbHU0X1UyaTM4cg?oc=5",
+      "query": "특징주 상승 when:1d"
+    },
+    {
+      "title": "[美특징주]레이지보이, 예상치 밑돈 가이던스에 개장전↓ - 이데일리",
+      "summary": "[美특징주]레이지보이, 예상치 밑돈 가이던스에 개장전↓&nbsp;&nbsp;이데일리",
+      "source": "이데일리",
+      "publishedAt": "Wed, 18 Nov 2026 12:07:55 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOOXM5NWk4QjZhd3VjUEE3eVFvOWJWMlowWlNUdFNLZjBScUJvYmQtYlRSbzBvR2lFUlM0c2tqNVFSNFRJVEthV3BMbUFLN3JRRkxTd3pkN2xqRGNyU1FMZHZuMGRoUVc0ZkU5bzAtVmF4YzlvcS1felVTUDlXVlVHWA?oc=5",
+      "query": "특징주 하락 when:1d"
+    },
+    {
+      "title": "[특징주] 한한령 해제 기대감에 엔터·콘텐츠주 시간외 급등…에스엠·스튜디오드래곤 상한가 - https://www.moneystorm.kr/",
+      "summary": "[특징주] 한한령 해제 기대감에 엔터·콘텐츠주 시간외 급등…에스엠·스튜디오드래곤 상한가&nbsp;&nbsp;https://www.moneystorm.kr/",
+      "source": "https://www.moneystorm.kr/",
+      "publishedAt": "Wed, 18 Nov 2026 09:53:39 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBhd0swMEFyX3FTQjNFX2xodEo4c2l5bWpQdzZOYVV5TVd0dk5FblRjcWpnR3lqWXd3emNZN0d2REd3X0tsNnBWaHRGRDZRS3pJT1Vib25pNExoMWxscmVsT09ucG5ZNGVMRUE?oc=5",
       "query": "특징주 상한가 when:1d"
     },
     {
-      "title": "빅웨이브로보틱스 장중 상한가 1만7090원 - 비건뉴스",
-      "summary": "빅웨이브로보틱스 장중 상한가 1만7090원&nbsp;&nbsp;비건뉴스",
-      "source": "비건뉴스",
-      "publishedAt": "Wed, 18 Nov 2026 04:38:58 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9CVklTS0lOUFpjVnpwZDhCXzBYZ05ZY3FlSVpGRm8wTzBCZThfVDY4LVhIUUV0TTBOMnlNeVBpRHB4MGNrM01JMlpWR2lPamNRbDM3TTZUb1A2YjFaOVlXbGl2VGZ5QQ?oc=5",
-      "query": "특징주 상한가 when:1d"
-    },
-    {
-      "title": "[특징주] 원익홀딩스, AI 반도체 투자 훈풍 속 외국인·기관 쌍끌이 매수에 10%대 급등 - 와이드경제",
-      "summary": "[특징주] 원익홀딩스, AI 반도체 투자 훈풍 속 외국인·기관 쌍끌이 매수에 10%대 급등&nbsp;&nbsp;와이드경제",
-      "source": "와이드경제",
-      "publishedAt": "Wed, 18 Nov 2026 04:15:50 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5NWmpnVG1wMnRLeW5sNEdfUTM5WTY0LUxpT2ltQWRfb2R1MWQ2RGUxeEFETGtFMkwyTWhKbmM2Q214aC1pNHhpcjRPZ0RYaklsbGRUWm5oSHgtYXdWeHo1dzN0ejd1eDNQOVZ2SQ?oc=5",
+      "title": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색 - https://www.moneystorm.kr/",
+      "summary": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색&nbsp;&nbsp;https://www.moneystorm.kr/",
+      "source": "https://www.moneystorm.kr/",
+      "publishedAt": "Wed, 18 Nov 2026 09:12:36 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE00bWxINk44dzUzNmF0UU5uQnBkSEdPaWV2M2pvQm9Za0dJZF9JVDhVRGxIcURMU2xSdk1wOGpHbEt4SG5vUkI0NDhfODYxMDlYdUJwdzdyM0dHelF5aWNjTzRfVTBXb01EQnc?oc=5",
       "query": "코스닥 특징주 상승 when:1d"
     },
     {
-      "title": "코스닥 상장사 3분기 순손실 전환…10곳 중 6곳 적자 - 아주경제",
-      "summary": "코스닥 상장사 3분기 순손실 전환…10곳 중 6곳 적자&nbsp;&nbsp;아주경제",
-      "source": "아주경제",
-      "publishedAt": "Wed, 18 Nov 2026 03:00:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5PUXItT2xFVzFPaVNkR0Z4QkhOV3JmeXo4MlBXblNoYnhFYTgtZXJXNkJkRkVDTTBkOW1TejYxNXAteXdoVDNoN25IQVBsNFZ4dkQzQ1lERFrSAVhBVV95cUxOT1FyLU9sRVcxT2lTZEdGeEJITldyZnl6ODJQV25TaGJ4RWE4LWVyVzZCZEZFQ00wZDltU3o2MTVwLXl3aFQzaDduSEFQbDRWeHZEM0NZRERa?oc=5",
+      "title": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이",
+      "summary": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이&nbsp;&nbsp;머니투데이",
+      "source": "머니투데이",
+      "publishedAt": "Wed, 18 Nov 2026 08:22:55 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1NQUxwZTFraU53WTN2SDNUc3MySEpQVUpLdTB4enBGa0R4OVJ0Q2RvZzdYMGM1RWcwd05RLVI3UUtGUTY4anVFOVdWaVIyMFY5SWlvVGNxeEdMY3Q0bFgwWVJqX1VmME1a0gFuQVVfeXFMT1diNDY0M2JKV1JObFY0WXYtcTNSY2kwUG1hY3lNTDV2VTlxcGlrcm9HclJRM3BiM0gzVDhYRk04YmszQjhFU0hUcURiQmtnUE1rM0tMZVU0clRYVF9JX1p0dFBqLWt3NjJleDBtTWc?oc=5",
+      "query": "특징주 상한가 when:1d"
+    },
+    {
+      "title": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이 - 머니투데이",
+      "summary": "한·중 정상회담 '한한령 해제 기대감' 에스엠·YG PLUS 등 상한가 - 머니투데이&nbsp;&nbsp;머니투데이",
+      "source": "머니투데이",
+      "publishedAt": "Wed, 18 Nov 2026 08:22:55 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9XeldDNmN3R2tvN1RCazdHYVJ2LVZwN1ZQMWVXLWs3ZDZ5STNBaGs2dC1ucDlnc2Q0OUQ0cjE0YVpPS2tDc1c4bEI0bmd1cERBbm9WWmEwbmVvaGJ5cVZtVlZ2QzdCaXVQckxDMy1LUm1qOXBOZkHSAXtBVV95cUxOaldxZXlMTkFLQ0Y0THpiaU1rWGNaYWtkUWVuVVl3ODlpc0U0djh5Tm5GRlpPSTRrcjVxb0tZVVVtdHdib0tsaXpNMGM4Yjd0Q3RqT2wzUUpyOHY5aFFocWFsT0l0dHNLTTlONk5LMTRsMnV4ZEZRclQxbW8?oc=5",
+      "query": "코스피 특징주 상승 when:1d"
+    },
+    {
+      "title": "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합) - 코인리더스",
+      "summary": "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합)&nbsp;&nbsp;코인리더스",
+      "source": "코인리더스",
+      "publishedAt": "Wed, 18 Nov 2026 07:00:01 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5OM0lHZWxLQVpRREVVRHZmWkZyajlHdF9XNHpUc2IwMk00azBXSF93Y3BZbXNkN1lTOEM2bHk2Z1lIN2NuRzBSb193?oc=5",
+      "query": "특징주 상승 when:1d"
+    },
+    {
+      "title": "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓ - 비즈트리뷴",
+      "summary": "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓&nbsp;&nbsp;비즈트리뷴",
+      "source": "비즈트리뷴",
+      "publishedAt": "Wed, 18 Nov 2026 06:55:22 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1CNzcyMENBbmlnZ3VzOTRNaEhPdHVnT2I2bnAzTDhfX3dDc1Njb21TVXZqZTdxdlE4MzVsV3FuQmJmODZrUE1FWC1QLVkycU5sUWsyX1QwOWZ1R1c0WjhVeGMzbGtzNW9kTFBIRFhqV24?oc=5",
       "query": "코스닥 특징주 하락 when:1d"
     },
     {
-      "title": "[특징주] 아티스트컴퍼니, 이정재 대주주 사익 추구 의혹에 4%대 하락 - 아주경제",
-      "summary": "[특징주] 아티스트컴퍼니, 이정재 대주주 사익 추구 의혹에 4%대 하락&nbsp;&nbsp;아주경제",
-      "source": "아주경제",
-      "publishedAt": "Wed, 18 Nov 2026 02:17:47 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBGbnBBNDJoa3dBLUlCMkVDbHZ1UHo0Z253RXJVZFhFV0dta1p2TElmMjYwN3VnV1hFekRnbWkwc1JCZmR1ZG1zNlpUSlRCeXREMFhOOV9UbGzSAVhBVV95cUxQRm5wQTQyaGt3QS1JQjJFQ2x2dVB6NGdud0VyVWRYRVdHbWtadkxJZjI2MDd1Z1dYRXpEZ21pMHNSQmZkdWRtczZaVEpUQnl0RDBYTjlfVGxs?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[특징주] LIG디펜스앤에어로스페이스 '입찰 자격 유지' 법원 결정 영향 '상승' - 전국매일신문",
-      "summary": "[특징주] LIG디펜스앤에어로스페이스 '입찰 자격 유지' 법원 결정 영향 '상승'&nbsp;&nbsp;전국매일신문",
-      "source": "전국매일신문",
-      "publishedAt": "Wed, 18 Nov 2026 02:10:08 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1uVUVXWmFQSmJqcVZFendrNkJ0bjFDV1ljQ2pMaFkwd3U5YjR6NjBRVUF3VmFpRHc2elh3MHFFcXFxTEtqRVBTMk5hV3c2bmQtVDBMVzlLNW9GTjRpOENRd01sT3huOEkwSlhBbTFR?oc=5",
-      "query": "코스닥 특징주 상승 when:1d"
-    },
-    {
-      "title": "[특징주] 삼성전기, 엔비디아와 협력 강화 '상승' - 전국매일신문",
-      "summary": "[특징주] 삼성전기, 엔비디아와 협력 강화 '상승'&nbsp;&nbsp;전국매일신문",
-      "source": "전국매일신문",
-      "publishedAt": "Wed, 18 Nov 2026 01:50:51 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBCVFdzV3F4VW5QSHVpdHBtVlBlN1paSkhkVkJIelMxVk5nT1h5NjBSTThzVFJRcTF0Qy1fZndnX012Z0NTNVF6VFE3NjdNeEl5XzZVZVRZbHhmMEJHbk1DQVg2TzhQOW54SE8xb0lR?oc=5",
+      "title": "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합) - 연합뉴스",
+      "summary": "[특징주] 삼성전기, 엔비디아와 협력 강화에 7%대 상승(종합)&nbsp;&nbsp;연합뉴스",
+      "source": "연합뉴스",
+      "publishedAt": "Wed, 18 Nov 2026 06:41:36 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1RVlNuYkdrVWktUEJrdTI1d2JaQW5zMzg0RklsUlpsZkFZblRQaV9oNndsM3RaQnhXT254Y1h3SmU2OUNfUHpWVkxZelJpVWdCcjFmNDBjOTBHQVHSAWBBVV95cUxQTm0yVXVHYTBtV2hRTlNaWDZvMTBnTi1SRnExTGg5WHRKX2xxOXhVc3BVLTRxTW5fTlpkTEc2VTdwenRnR1JHOHdNSzhvU0lKZUdyT1RGRndfcWVHN3dJbHg?oc=5",
       "query": "특징주 상승 when:1d"
     },
     {
-      "title": "[증시 오늘(18일) 주요 특징주] 반도체 대형주 강세속 코스피 5000선 안착…이전 주도주 중심 매수세 유입 - 더페어",
-      "summary": "[증시 오늘(18일) 주요 특징주] 반도체 대형주 강세속 코스피 5000선 안착…이전 주도주 중심 매수세 유입&nbsp;&nbsp;더페어",
-      "source": "더페어",
-      "publishedAt": "Wed, 18 Nov 2026 01:43:25 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1SYnpodE1GNzR1MjBfUVN1YU1JQWowdGp4dEhLWHhyTGoxZlFHUlB1WXVMRzRTSnI5ZHhmelNhV1YxMkFWcTd3cm05ak1qY05CQWsyNzNuLXhfejhZazNYQ2lrYU9pc1FLZGhkdVZpTWjSAXRBVV95cUxNQllrZjA2NXZRM0UzN19KdEF0WGZvdkx1VjFFbDhVNzBaZ051ODd3UmtUNTB0V2ZobUJGLXBReExGVkRETkhJQ2tMc200WEMxS1RZZVNqQ1dfeGlBTkIwNTNmTmtQZGpaM3gwUFVqUldxVENBLQ?oc=5",
-      "query": "코스피 특징주 상승 when:1d"
-    },
-    {
-      "title": "[특징주] 에이엘로봇, 코스닥 상장 첫날 '하락' - 전국매일신문",
-      "summary": "[특징주] 에이엘로봇, 코스닥 상장 첫날 '하락'&nbsp;&nbsp;전국매일신문",
-      "source": "전국매일신문",
-      "publishedAt": "Wed, 18 Nov 2026 01:42:45 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0tSWVEbGprblVDa18tdThQV0JqZFBidHBlN1BUVHdEbG0xT2pMNjZOTGpva09kVmtkRWZHMUlmUTdmSERyelRvN0RFUlQ4N0l2dV9DdW1WR21kemRlNDhCZXpHc3lhRDlnRFloRVBR?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[특징주] 두산, 엔비디아 호실적에 10%대 급등…낙폭 과대 인식도 영향 - 아주경제",
-      "summary": "[특징주] 두산, 엔비디아 호실적에 10%대 급등…낙폭 과대 인식도 영향&nbsp;&nbsp;아주경제",
-      "source": "아주경제",
-      "publishedAt": "Wed, 18 Nov 2026 01:36:07 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE16eTNkcFkwM2pMWFEzRzROUkFDNGI5MldpcUJIUDRHX01VS3NRb3Bod3cwWFNEeHdzSWlZNXVwcm1haUo3MC1rZi01Wnh3a3JrN0U3R0lIOUHSAVhBVV95cUxNenkzZHBZMDNqTFhRM0c0TlJBQzRiOTJXaXFCSFA0R19NVUtzUW9waHd3MFhTRHh3c0lpWTV1cHJtYWlKNzAta2YtNVp4d2tyazdFN0dJSDlB?oc=5",
-      "query": "특징주 하락 when:1d"
-    },
-    {
-      "title": "[특징주] 주성엔지니어링 장중 1%대 상승 14만9600원 기록 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 주성엔지니어링 장중 1%대 상승 14만9600원 기록 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Wed, 18 Nov 2026 01:26:43 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8yenVuMm1aQ3FkZ2ktV3hqSWgtX0FYS0F3NlpSODczZXBnUHlYcDgzVXZpWF9SNFFSNmloZjlHZzFoOVVHNVNjWkc0NA?oc=5",
+      "title": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합) - 매일경제 마켓",
+      "summary": "[특징주] LIG D&A, '입찰 자격 유지' 법원 결정 속 1.7% 상승 마감(종합)&nbsp;&nbsp;매일경제 마켓",
+      "source": "매일경제 마켓",
+      "publishedAt": "Wed, 18 Nov 2026 06:35:01 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE83dzBXcGVfczJFWGdEVGhINl81aUZaWE0yVUpXRWplN1R3ODlzRzhGX2lPTDFVZ1YxQ3M2VTVNRXFSdHp6ZmhMal9kbTQzOGVBaVE?oc=5",
       "query": "특징주 상승 when:1d"
-    },
-    {
-      "title": "[특징주] 원익홀딩스, 뚜렷한 공시 없이 장중 9%대 상승세 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 원익홀딩스, 뚜렷한 공시 없이 장중 9%대 상승세 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Wed, 18 Nov 2026 01:26:27 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5GWTdMT0F3RnZmd1B2aE5xa09fUWVXRXZ1X3FYcE1kcng2aXA1d2FOdC1ndTU0aVhuOHlMZ2ZzN1ZMeWk4Q09HZjBOOA?oc=5",
-      "query": "코스닥 특징주 상승 when:1d"
-    },
-    {
-      "title": "[특징주] 레인보우로보틱스, 장중 12%대 상승하며 38만원대 기록 : 기업주식정보 - 재경일보",
-      "summary": "[특징주] 레인보우로보틱스, 장중 12%대 상승하며 38만원대 기록 : 기업주식정보&nbsp;&nbsp;재경일보",
-      "source": "재경일보",
-      "publishedAt": "Wed, 18 Nov 2026 01:25:03 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE42NHRPdU5XcG0zN25KRHNUTHRmNFNkS1RHR3hBSDQzUVU5dUxjRm1Vdi11Xzl3b3ZtdjViSWV3ekYzWDlLUEJPVEU0aw?oc=5",
-      "query": "특징주 상승 when:1d"
-    },
-    {
-      "title": "\"엔비디아가 살렸다\"…급락하던 두산 13% 반등 [특징주] - 데일리안",
-      "summary": "\"엔비디아가 살렸다\"…급락하던 두산 13% 반등 [특징주]&nbsp;&nbsp;데일리안",
-      "source": "데일리안",
-      "publishedAt": "Wed, 18 Nov 2026 01:09:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQSkNCWlhEYlRyQ3l5QzFPME9RUmZKMWpPLUFWRDg1bHY0aTVoWDFpOFNIR3FsWmk4S1pNMkl1aU9FSzMxaWFwc3hSc2VTWXhxaVNYLW5tUXJWM19zMU1RbGVzUmk3a0Zxd1d3Z1hoZU5ILW5Oems1Z01vRXNicWJnNzE1TjQwdlkxRTM0ZXJacmlTWk13SXRjQWlrN1lKa2k5aUJxQnFzX3NjLXptSmhLNnJVU3JLUkxTOGNQQjBiZ1ZjY0otSUlucEEzUEc2ejZzR1BCbjE2X2p3MUxFY3RuY0tDek1QS05CZjNjRkRPcmVXNTVYb0pyTk5sX21NamJLT2FqMEJXbEQ4RFJRSlE?oc=5",
-      "query": "코스피 특징주 상승 when:1d"
     }
   ],
   "investorFlowNewsCandidates": [
+    {
+      "title": "[마감시황] 11/18 엔비디아 호실적에 코스피 +1.99% 반등 - 네이버 프리미엄콘텐츠",
+      "summary": "[마감시황] 11/18 엔비디아 호실적에 코스피 +1.99% 반등&nbsp;&nbsp;네이버 프리미엄콘텐츠",
+      "source": "네이버 프리미엄콘텐츠",
+      "publishedAt": "Wed, 18 Nov 2026 08:53:00 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMUYzZGc0bGpkZVY2cVdBZXFKN2hVaW93NXJrSVBQbnF4TGtsVTFGVnFQa3NyLTZGalYtTWIwT09iSF8xcUxoM29MdkJRX0Vydmkzb2dEQmZTdnlpX3prX05BRWl2ZlVUNklHZEkxVjN1QnlQVWRqdlZIaFdwbFJNcy1Cbjg3OW85STV2bWY5bEI?oc=5",
+      "query": "코스피 외국인 기관 순매수 순매도"
+    },
+    {
+      "title": "코스피, 하루 만에 '5천피' 탈환…기관 매수에 5거래일 만에 반등 - 산경투데이",
+      "summary": "코스피, 하루 만에 '5천피' 탈환…기관 매수에 5거래일 만에 반등&nbsp;&nbsp;산경투데이",
+      "source": "산경투데이",
+      "publishedAt": "Wed, 18 Nov 2026 07:45:50 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1KS3B1VmpjYVUxWVVtbmp0YXVqN2YzVlh5LXVJNERGY3UyckFSNHJGZHJwVFJGRTcyZ3FXUkxNQWdpV1B5MkthVEQtUTZuclUteERNRmtFdV9vR1hkVFJkQ2pEV081c3gtNm8zZkhWMWHSAXRBVV95cUxOU2I0SDBaRl9Ebi0xNERUR0ZtaEZKSU9SeUw5VUhuZ3h0OFE5Q09lTGUxRFI5elZpWDh2VTJqbUdTTGtqb0xSRkhWVnByR0NNMEhUMmZHWWtuM2tKVFRIS0Q4R1lNTFpETlNRQ0hHeExWelpqOA?oc=5",
+      "query": "코스피 외국인 기관 순매수 순매도"
+    },
+    {
+      "title": "[특징주] 원익홀딩스 외국인·기관 동반 매수…이수페타시스 수급 엇갈려 - 뉴스티앤티",
+      "summary": "[특징주] 원익홀딩스 외국인·기관 동반 매수…이수페타시스 수급 엇갈려&nbsp;&nbsp;뉴스티앤티",
+      "source": "뉴스티앤티",
+      "publishedAt": "Wed, 18 Nov 2026 02:35:19 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5VcG5jYTdSLXBRTHpEcUJFVVdyWXFoRVZ6V3RCTHlEVVYxaHpOTEVWUTA3UDFzWDA1c1Y0YnlLdUpxdHZHMC1YS0Nub2dKLXpkcnZyMnJpQWg5WHBqSjBQbHJRUml4enE5dXc?oc=5",
+      "query": "증시 수급 외국인 기관 개인 순매수"
+    },
     {
       "title": "[특징주] 외국인 '루닛·아리바이오홀딩스', 기관 '와이씨·SFA반도체' 순매수 상위권 - 뉴스티앤티",
       "summary": "[특징주] 외국인 '루닛·아리바이오홀딩스', 기관 '와이씨·SFA반도체' 순매수 상위권&nbsp;&nbsp;뉴스티앤티",
@@ -1293,7 +1241,7 @@
       "source": "잡포스트",
       "publishedAt": "Tue, 17 Nov 2026 01:43:24 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBTYi1CRm1waEFzSF8tRmdFVG1DR3N3VlAxLTFWa3l6NXJDZjBaM3hJcVRLNXB5d0NKWXBXZktPRkc5emVFVjFxUmwxQTRrQkdrVjA0Sk44b0VzeDU3dW5mMVRreGJNdE92RTdNRkh30gFyQVVfeXFMTV94TFh2V0w5SDN3QW9ZMUpleGRoUTVwUl9fTWR1eTNneGFmT19yY3hveHItblY1emxvMF82b2FfYkhvWWduZDVxak1MMUpSVEtuZzMxWmlWc0lTakJERkFyVkdnTHZpamxUWFROZ0h2NFFR?oc=5",
-      "query": "코스피 외국인 기관 순매수 순매도"
+      "query": "코스닥 외국인 기관 순매수 순매도"
     },
     {
       "title": "[개장시황] 외국인 팔자 코스피 장중 5000선 붕괴 - 자본시장뉴스",
@@ -1317,7 +1265,7 @@
       "source": "증권일보",
       "publishedAt": "Mon, 16 Nov 2026 07:42:00 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5qcmlNUXFiTDJzMzVsT1g4am9ZNThLNEs4cEhwaGlST3BpYldJbkRjUTIyRGZwMWxFdHFfSmhYczRPZFBJTTA1ZFpfbEdUc2Q0Ty1EZl9td0ZCLXRqMzVuaw?oc=5",
-      "query": "코스닥 외국인 기관 순매수 순매도"
+      "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
       "title": "코스피, 외국인·기관 순매도에 5100선 턱걸이…삼성전자 4%·SK하이닉스 7%대 하락 [투자360] - 헤럴드경제",
@@ -1336,14 +1284,6 @@
       "query": "코스피 외국인 기관 순매수 순매도"
     },
     {
-      "title": "코스피, 상승 출발 1시간 37분 만에 5,140선으로 급락…외국인 9,870억 원 순매도 - https://www.ppss.kr/",
-      "summary": "코스피, 상승 출발 1시간 37분 만에 5,140선으로 급락…외국인 9,870억 원 순매도&nbsp;&nbsp;https://www.ppss.kr/",
-      "source": "https://www.ppss.kr/",
-      "publishedAt": "Mon, 16 Nov 2026 04:04:25 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE94Smc4YWMtS1N0dnVMd0tsZVZXN0F2ZlFJWXpxOUpsZDN0NDA3NW5DeDMyUl9HQV9wZ21USEgwUkxGYVVTc1ZxYl9HUVFNdEJ3cVBSU2p6WDQtU0NsM0N2SkFwYlU?oc=5",
-      "query": "코스피 외국인 기관 순매수 순매도"
-    },
-    {
       "title": "[특징주] 외국인, 삼성전자 매매 방향 전환...기관, 삼성전자·와이씨·루닛 순매수 상위 - 뉴스티앤티",
       "summary": "[특징주] 외국인, 삼성전자 매매 방향 전환...기관, 삼성전자·와이씨·루닛 순매수 상위&nbsp;&nbsp;뉴스티앤티",
       "source": "뉴스티앤티",
@@ -1358,17 +1298,17 @@
       "publishedAt": "Mon, 16 Nov 2026 00:28:30 GMT",
       "sourceUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9meXhBWFdYa2pRWFVEbWdBRE1KMWNQRUZDdGFtaTUwN2xuM2ttYzNiWjMyRVBnVDdBTlhLc2ZtLVpSXzZjeWxEUWpjNjZXVTlUdUxKQzhwQW84c0hsTWxr?oc=5",
       "query": "코스피 외국인 기관 순매수 순매도"
-    },
-    {
-      "title": "[투자자 순매수 TOP5] 외국인 수급 엇갈려…삼성전자 순매수·SK하이닉스 순매도 - SBS Biz",
-      "summary": "[투자자 순매수 TOP5] 외국인 수급 엇갈려…삼성전자 순매수·SK하이닉스 순매도&nbsp;&nbsp;SBS Biz",
-      "source": "SBS Biz",
-      "publishedAt": "Sun, 15 Nov 2026 22:48:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE05QnJ0aG5PVGtJdzNGVTRrRnRvSTdqUlRsZEs2ZkRtbjUxUm9EaE5NZm9YbWF6bUdQaXdscno0NkdhSW9SVkItdkQyU1ZlSFJVcGJz0gFYQVVfeXFMTjhyX1NMck5adTlxQnVuYlZLUEozTTZzTmZQeEVBdnVCZS1GYWlCUlB3WWZ1ekRoUUJ4TVB0UWJKMTh6T2NDaWJVeXN1U0RkRlgtM1d4WVBDTw?oc=5",
-      "query": "코스닥 외국인 기관 순매수 순매도"
     }
   ],
   "disclosureNewsCandidates": [
+    {
+      "title": "퍼마 파이프, 3분기 수주 6500만 달러 달성…인도 합작법인 주주간 계약 체결 - 데이터투자",
+      "summary": "퍼마 파이프, 3분기 수주 6500만 달러 달성…인도 합작법인 주주간 계약 체결&nbsp;&nbsp;데이터투자",
+      "source": "데이터투자",
+      "publishedAt": "Wed, 18 Nov 2026 22:01:25 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5SN3ZOU2tzV2J6eGNRT1kzRExsM2hzVTMxUFlncHhEbHM5dEduVUFUd1ZWRVgtWGlUalV5Z2lHSmV3Q2MxLUxVM2dEV2VPNTRjOGxkejBpSExYRU5zbnU3LUpPM3JOaXdkRWtoOG1GUzJ6QQ?oc=5",
+      "query": "한국 증시 주요 공시 계약 수주 공급계약"
+    },
     {
       "title": "한국투자증권, 신규 수출 계약 불확실성에 현대로템 목표가 12만원 조정 - 데이터투자",
       "summary": "한국투자증권, 신규 수출 계약 불확실성에 현대로템 목표가 12만원 조정&nbsp;&nbsp;데이터투자",
@@ -1386,14 +1326,6 @@
       "query": "한국 증시 주요 공시 계약 수주 공급계약"
     },
     {
-      "title": "사이프리스 솔루션스, 3분기 매출 25% 증가… 영업흑자 전환에도 순손익은 적자 전환 - 데이터투자",
-      "summary": "사이프리스 솔루션스, 3분기 매출 25% 증가… 영업흑자 전환에도 순손익은 적자 전환&nbsp;&nbsp;데이터투자",
-      "source": "데이터투자",
-      "publishedAt": "Tue, 17 Nov 2026 12:53:46 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ma003cnh5c2xEakh1UTFiRTQ0M3lxVWp1S2Z3X05laDBsa0hRbjItcjk2NFhGaFFIYmNPLWw4X3VzWTZ5MURUZTVrMzRLV1NaRzJGQUU5VkdiZEp4OFRYRmQzWmxnNThjRFB6YnJFUHFXXzg?oc=5",
-      "query": "한국 증시 주요 공시 계약 수주 공급계약"
-    },
-    {
       "title": "우진아이엔에스, 자사주 30만주 소각·10억원 취득 신탁계약 결의 - 디지털투데이",
       "summary": "우진아이엔에스, 자사주 30만주 소각·10억원 취득 신탁계약 결의&nbsp;&nbsp;디지털투데이",
       "source": "디지털투데이",
@@ -1402,40 +1334,15 @@
       "query": "주식 주요 공시 자사주 취득 소각 배당"
     },
     {
-      "title": "[11.17 개장 전 주요공시] 네이버클라우드, 아이크래프트에 2091억 원 주문 외 - 자본시장뉴스",
-      "summary": "[11.17 개장 전 주요공시] 네이버클라우드, 아이크래프트에 2091억 원 주문 외&nbsp;&nbsp;자본시장뉴스",
-      "source": "자본시장뉴스",
-      "publishedAt": "Mon, 16 Nov 2026 22:30:00 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9UMFdocEhRcmtURl9BZkJxRjFsUFRvWXZmdmtGdVNTbUJFRjh6SHlFSEJlSjU2UkZhY2JoRWNJQWRTWkpLcFMzSmVxRDA2RDVGWnVtMUtCZ3BpZGI1am9tZFlTbGtWNFk?oc=5",
-      "query": "한국 증시 주요 공시 계약 수주 공급계약"
-    },
-    {
-      "title": "CPI 에어로스트럭처스, 3분기 수주잔고 6억3400만 달러 기록…전년 말 대비 25.5% 증가 - 데이터투자",
-      "summary": "CPI 에어로스트럭처스, 3분기 수주잔고 6억3400만 달러 기록…전년 말 대비 25.5% 증가&nbsp;&nbsp;데이터투자",
+      "title": "셀트리온 허쥬마 브라질 연방정부 입찰 7년 연속 수주 - 데이터투자",
+      "summary": "셀트리온 허쥬마 브라질 연방정부 입찰 7년 연속 수주&nbsp;&nbsp;데이터투자",
       "source": "데이터투자",
-      "publishedAt": "Mon, 16 Nov 2026 21:55:38 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE50b1AzMlBjczZjUmpUZWFSb09FUGRsbUltOWlzTEhSLXllQVNFUHRMNTFoYUQwSFZ6YXVWaDVpOUZ0YjFPV0sybVVpYlhfUHBBSVJuRHdlYW4tV2JoM2ZQaXlpNHl1M0xSS0hHMmlvZU9pdw?oc=5",
+      "publishedAt": "Tue, 17 Nov 2026 03:34:38 GMT",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9kczN5ekpnUENZbVNiVXRNcG9sdzFKaHhNZUJrbHJ3cnBBNTVPQnY0ODk1OVMxS0xkMFJLdkhPTkhjN3JTNFl6ZWc5eGs4Z09OWWVpMmZpNUVBYjhVcnhBZVNuLVN0dnMxcFJTSVotZjRCU1E?oc=5",
       "query": "한국 증시 주요 공시 계약 수주 공급계약"
     }
   ],
-  "scheduleNewsCandidates": [
-    {
-      "title": "[오늘 증시 동향] 미국 나스닥 약세에 반도체주 부담…AI 투자 불확실성과 금리 전망 주목 - 톱뉴스",
-      "summary": "[오늘 증시 동향] 미국 나스닥 약세에 반도체주 부담…AI 투자 불확실성과 금리 전망 주목&nbsp;&nbsp;톱뉴스",
-      "source": "톱뉴스",
-      "publishedAt": "Sun, 15 Nov 2026 23:30:31 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1wcjROTGozNFg2bU9yZ1l1eHNkMlgxVGExTldGbkI2aVZDR19XWGhQZnE0ai1CZlB5UkgxXzEybFp5blN6TWh2dnhwSmp1NzVwaWNFWDdwVGtOYm9JZFB5ckdyaXpLZ29CU2pMV1k4SQ?oc=5",
-      "query": "오늘 경제지표 발표 증시 일정 한국 미국"
-    },
-    {
-      "title": "[오늘 증시 전망] 코스피 5,300선 내주고 외국인 매도 전환…16일 국내 증시 방향 주목 - 업코리아",
-      "summary": "[오늘 증시 전망] 코스피 5,300선 내주고 외국인 매도 전환…16일 국내 증시 방향 주목&nbsp;&nbsp;업코리아",
-      "source": "업코리아",
-      "publishedAt": "Sun, 15 Nov 2026 23:26:28 GMT",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBFaTVUbDU2OHJiX3R2NE1ySW13TXJ6TlBnZzNGajlFNVJQY3gxWmRHQlBzVXFBZGhEeHRuemdmUk1SU29WYXc1M0JrbjJOYnpqMWlOdHpKT0RINFV0bjNqRnFwTkRZeHVvM2xCYUR3?oc=5",
-      "query": "오늘 경제지표 발표 증시 일정 한국 미국"
-    }
-  ],
+  "scheduleNewsCandidates": [],
   "sectorThemeNewsCandidates": [
     {
       "title": "[오프로] 11월 17일 상한가 및 상승종목 - 네이버 프리미엄콘텐츠",
@@ -1488,25 +1395,16 @@
   ],
   "investorFlows": {
     "status": "unavailable",
-    "generatedAt": "2026-11-18T16:00:46.539236+09:00",
+    "generatedAt": "2026-11-19T08:30:47.357798+09:00",
     "source": "pykrx/KRX + NAVER Finance/KRX",
     "sourceUrls": [],
-    "collectionWindow": {
-      "lookbackDays": 14,
-      "end": "2026-11-18"
-    },
-    "markets": [],
-    "errors": {
-      "KOSPI": "pykrx:missing_krx_credentials; naver:HTTP Error 410: 410",
-      "KOSDAQ": "pykrx:missing_krx_credentials; naver:HTTP Error 410: 410"
-    },
-    "reason": "KOSPI:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410; KOSDAQ:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410"
+    "reason": "KOSPI:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410; KOSDAQ:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410",
+    "markets": []
   },
   "sourceStatus": {
     "yahoo:kospi": "ok",
-    "npay:kospi": "not_needed",
     "yahoo:kosdaq": "ok",
-    "yahoo:usdkrw": "ok",
+    "yahoo:usdkrw": "unavailable:index_after_information_cutoff",
     "yahoo:nasdaq": "ok",
     "yahoo:sp500": "ok",
     "yahoo:nasdaq_futures": "ok",
@@ -1515,7 +1413,7 @@
     "stockNewsCandidates": "ok",
     "investorFlowNewsCandidates": "ok",
     "disclosureNewsCandidates": "ok",
-    "scheduleNewsCandidates": "ok",
+    "scheduleNewsCandidates": "empty",
     "sectorThemeNewsCandidates": "ok",
     "investorFlows": "unavailable:KOSPI:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410; KOSDAQ:pykrx:missing_krx_credentials; naver:HTTP Error 410: 410"
   },
