@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-11-19T04:00:20.420Z",
+  "generated_at": "2026-11-19T05:00:17.438Z",
   "generated_date": "2026-11-19",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 11건",
+    "title": "KST 14:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 12건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "에이엘로봇",
+      "stockCode": "471800",
+      "summary": "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓",
+      "headline": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색",
+      "evidencePoints": [
+        "출처 https://www.moneystorm.kr/, 비즈트리뷴 기반 기사 2건",
+        "제목 기준 변동률 단서 -24.0%",
+        "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색",
+        "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓"
+      ],
+      "mentionScore": 97,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-11-19T05:00:17.438Z",
+      "cycleLabel": "KST_1400",
+      "direction": "down",
+      "changeRate": -24,
+      "latestHeadline": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색",
+      "source": "https://www.moneystorm.kr/",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE00bWxINk44dzUzNmF0UU5uQnBkSEdPaWV2M2pvQm9Za0dJZF9JVDhVRGxIcURMU2xSdk1wOGpHbEt4SG5vUkI0NDhfODYxMDlYdUJwdzdyM0dHelF5aWNjTzRfVTBXb01EQnc?oc=5",
+      "publishedAt": "Wed, 18 Nov 2026 09:12:36 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색",
+          "source": "https://www.moneystorm.kr/",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE00bWxINk44dzUzNmF0UU5uQnBkSEdPaWV2M2pvQm9Za0dJZF9JVDhVRGxIcURMU2xSdk1wOGpHbEt4SG5vUkI0NDhfODYxMDlYdUJwdzdyM0dHelF5aWNjTzRfVTBXb01EQnc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓",
+          "source": "비즈트리뷴",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1CNzcyMENBbmlnZ3VzOTRNaEhPdHVnT2I2bnAzTDhfX3dDc1Njb21TVXZqZTdxdlE4MzVsV3FuQmJmODZrUE1FWC1QLVkycU5sUWsyX1QwOWZ1R1c0WjhVeGMzbGtzNW9kTFBIRFhqV24?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "에이엘로봇, 상장 첫날 24% 급락",
+      "polishedBody": "주가가 상장 첫날 24% 급락하였습니다. 공모 당시 4조원대 증거금이 몰리며 흥행했으나 기대에 미치지 못하였습니다. 이러한 급락은 투자자들에게 부정적인 신호로 받아들여질 수 있습니다. 향후 주가 안정화 여부와 추가 공시를 주목할 필요가 있습니다."
+    },
     {
       "stockName": "파크시스템스",
       "stockCode": "140860",
@@ -465,6 +506,37 @@
   ],
   "items": [
     {
+      "timestamp": "Wed, 18 Nov 2026 09:12:36 GMT",
+      "symbol": "471800",
+      "name": "에이엘로봇",
+      "changeRate": -24,
+      "price": null,
+      "summary": "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓",
+      "source": "https://www.moneystorm.kr/",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE00bWxINk44dzUzNmF0UU5uQnBkSEdPaWV2M2pvQm9Za0dJZF9JVDhVRGxIcURMU2xSdk1wOGpHbEt4SG5vUkI0NDhfODYxMDlYdUJwdzdyM0dHelF5aWNjTzRfVTBXb01EQnc?oc=5",
+      "mentionScore": 97,
+      "evidencePoints": [
+        "출처 https://www.moneystorm.kr/, 비즈트리뷴 기반 기사 2건",
+        "제목 기준 변동률 단서 -24.0%",
+        "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색",
+        "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "[특징주] 에이엘로봇, 코스닥 상장 첫날 24% 급락…공모 흥행 무색",
+          "source": "https://www.moneystorm.kr/",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE00bWxINk44dzUzNmF0UU5uQnBkSEdPaWV2M2pvQm9Za0dJZF9JVDhVRGxIcURMU2xSdk1wOGpHbEt4SG5vUkI0NDhfODYxMDlYdUJwdzdyM0dHelF5aWNjTzRfVTBXb01EQnc?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[특징주] 에이엘로봇, 4조원대 증거금 모았지만… 코스닥 첫날 24%↓",
+          "source": "비즈트리뷴",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1CNzcyMENBbmlnZ3VzOTRNaEhPdHVnT2I2bnAzTDhfX3dDc1Njb21TVXZqZTdxdlE4MzVsV3FuQmJmODZrUE1FWC1QLVkycU5sUWsyX1QwOWZ1R1c0WjhVeGMzbGtzNW9kTFBIRFhqV24?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Thu, 19 Nov 2026 01:58:12 GMT",
       "symbol": "140860",
       "name": "파크시스템스",
@@ -811,8 +883,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "rule-based",
-    "model": "signal-polish-v1",
-    "fallbackReason": "primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
