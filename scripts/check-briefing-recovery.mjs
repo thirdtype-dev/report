@@ -74,6 +74,34 @@ function extractArticles(html) {
   }).filter((article) => /\breport-(?:pre|post)-market\b/iu.test(article.className));
 }
 
+function articleSlot(article) {
+  if (!article) return null;
+  const titleMatch = article.body.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/iu);
+  const title = stripTags(titleMatch?.[1] ?? '');
+  const phase = article.className.split(/\s+/u)
+    .find((className) => /^report-(?:pre|post)-market$/iu.test(className));
+  return title && phase ? `${phase.toLowerCase()}\n${title}` : null;
+}
+
+function validatePreviousArticlePreserved(html, previousHtml) {
+  const currentArticles = extractArticles(html);
+  const previousArticles = extractArticles(previousHtml);
+  const currentSlot = articleSlot(currentArticles[0] ?? null);
+  const expectedPrevious = previousArticles.find((article) => {
+    const slot = articleSlot(article);
+    return slot && slot !== currentSlot;
+  }) ?? null;
+
+  if (!expectedPrevious) return { ok: true, reason: 'no_earlier_distinct_briefing' };
+
+  const actualPrevious = currentArticles[1] ?? null;
+  if (!actualPrevious) return { ok: false, reason: 'previous_briefing_missing' };
+  if (actualPrevious.html !== expectedPrevious.html) {
+    return { ok: false, reason: 'previous_briefing_changed' };
+  }
+  return { ok: true, reason: 'previous_briefing_preserved' };
+}
+
 function inspectArticle(article) {
   if (!article) return { ok: false, reason: 'missing_top_article' };
   const titleMatch = article.body.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/iu);
@@ -147,16 +175,36 @@ function output(phase, result) {
   process.stdout.write(`should_recover=${result.shouldRecover}\n`);
   process.stdout.write(`recovery_reason=${result.reason}\n`);
   process.stdout.write(`article_quality=${result.articleQuality ?? ''}\n`);
+  process.stdout.write(`history_validation=${result.historyValidation ?? 'not_requested'}\n`);
 }
 
 async function main(argv = process.argv.slice(2)) {
   const phase = normalizePhase(process.env.BRIEFING_PHASE);
   const requireValid = argv.includes('--require-valid');
   const reportPath = resolve(process.env.REPORT_INDEX_PATH ?? 'report/index.html');
+  const previousPath = process.env.REPORT_PREVIOUS_INDEX_PATH
+    ? resolve(process.env.REPORT_PREVIOUS_INDEX_PATH)
+    : null;
   let result;
   try {
     const html = await readFile(reportPath, 'utf-8');
     result = validateBriefingHtml(html, phase, new Date(process.env.BRIEFING_AS_OF || (process.env.BRIEFING_TRADING_DATE ? `${process.env.BRIEFING_TRADING_DATE}T00:00:00+09:00` : Date.now())));
+    result.historyValidation = 'not_requested';
+    if (requireValid && previousPath && !result.shouldRecover) {
+      try {
+        const previousHtml = await readFile(previousPath, 'utf-8');
+        const history = validatePreviousArticlePreserved(html, previousHtml);
+        result.historyValidation = history.reason;
+        if (!history.ok) {
+          result.shouldRecover = true;
+          result.reason = history.reason;
+        }
+      } catch (error) {
+        result.shouldRecover = true;
+        result.reason = `previous_check_failed:${error.code ?? error.name ?? 'unknown'}`;
+        result.historyValidation = result.reason;
+      }
+    }
   } catch (error) {
     result = {
       topArticleClass: '',
@@ -164,7 +212,8 @@ async function main(argv = process.argv.slice(2)) {
       expectedTitle: `${dateKey()} ${PHASE_CONFIG[phase].sessionLabel}`,
       shouldRecover: true,
       reason: `check_failed:${error.code ?? error.name ?? 'unknown'}`,
-      articleQuality: 'unavailable'
+      articleQuality: 'unavailable',
+      historyValidation: 'not_run'
     };
   }
   output(phase, result);
@@ -176,4 +225,4 @@ if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.m
   await main();
 }
 
-export { extractArticles, inspectArticle, main, validateBriefingHtml };
+export { extractArticles, inspectArticle, main, validateBriefingHtml, validatePreviousArticlePreserved };

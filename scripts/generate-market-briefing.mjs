@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { promisify } from 'node:util';
 import { withDeadline } from './briefing-deadline.mjs';
 import { delayedPublicationNotice } from './briefing-slot.mjs';
+import { extractArticles as extractBriefingArticles } from './check-briefing-recovery.mjs';
 
 const OUTPUT_DIR = resolve(process.cwd(), 'public/report');
 const DATA_DIR = resolve(OUTPUT_DIR, 'data');
@@ -40,7 +41,6 @@ const INDEX_PERCENT_TOLERANCE_PP = 0.05;
 const INDEX_ROUNDED_ZERO_PERCENT_LIMIT_PP = 0.005;
 const NEWS_MAX_AGE_MS = 96 * 60 * 60 * 1000;
 const NEWS_FUTURE_TOLERANCE_MS = 10 * 60 * 1000;
-const ARTICLE_RE = /<article class="[^"]*\breport\b[^"]*\breport-(?:pre|post)-market\b[^"]*">[\s\S]*?<\/article>/g;
 const YAHOO_SYMBOLS = [
   { key: 'kospi', title: 'KOSPI', symbol: '^KS11' },
   { key: 'kosdaq', title: 'KOSDAQ', symbol: '^KQ11' },
@@ -3597,7 +3597,7 @@ function shouldPreserveExistingReports() {
 }
 
 function extractArticles(html) {
-  return html.match(ARTICLE_RE) ?? [];
+  return extractBriefingArticles(html).map((article) => article.html);
 }
 
 async function readExistingOutputArticles() {
@@ -3606,6 +3606,13 @@ async function readExistingOutputArticles() {
   } catch {
     return [];
   }
+}
+
+async function readExistingCommittedArticles() {
+  if (process.env.REPORT_PREVIOUS_INDEX_PATH) {
+    return extractArticles(await readFile(resolve(process.env.REPORT_PREVIOUS_INDEX_PATH), 'utf-8'));
+  }
+  return extractArticles(await readExistingCommittedReportHtml());
 }
 
 async function fetchPublishedArticles() {
@@ -3633,6 +3640,7 @@ async function legacyArticles(currentArticle) {
     `<h1>${escapeHtml(dateKey())} ${escapeHtml(config.sessionLabel)}</h1>`
   ];
   const articles = [
+    ...(await readExistingCommittedArticles()),
     ...(await readExistingOutputArticles()),
     ...(await fetchPublishedArticles())
   ];
