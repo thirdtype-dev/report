@@ -759,7 +759,6 @@ function validateReportShape(report) {
         ['investorFlows.institution', report.investorFlows?.institution],
         ['investorFlows.retail', report.investorFlows?.retail],
         ['sectorThemes.strong', report.sectorThemes?.strong],
-        ['sectorThemes.weak', report.sectorThemes?.weak],
         ['tomorrowStrategy.outlook', report.tomorrowStrategy?.outlook]
       ]
     : [
@@ -785,6 +784,11 @@ function validateReportShape(report) {
     .map(([label]) => label);
 
   if (PHASE === 'post_market') {
+    const hasWeakSector = isRecord(report.sectorThemes)
+      && Object.hasOwn(report.sectorThemes, 'weak');
+    if (!hasWeakSector || (report.sectorThemes.weak !== null && !isNonEmptyString(report.sectorThemes.weak))) {
+      missing.push('sectorThemes.weak');
+    }
     if (!isNonEmptyStringArray(report.notableStocks?.surging, 2)) missing.push('notableStocks.surging');
     if (!isNonEmptyStringArray(report.notableStocks?.plunging, 2)) missing.push('notableStocks.plunging');
     if (!isNonEmptyStringArray(report.tomorrowStrategy?.checklist, 3)) missing.push('tomorrowStrategy.checklist');
@@ -1608,14 +1612,18 @@ function applyPostMarketEventGuard(report, state) {
   if (positive.length > 0) {
     next.sectorThemes.strong = `${marketSignalLabels(positive).join('·')} - ${marketEventSummary(positive)}`;
   }
-  if (mixed.length > 0) {
-    next.sectorThemes.weak = `${next.sectorThemes.weak} / 혼조: ${marketSignalLabels(mixed).join('·')} - ${marketEventSummary(mixed)}`;
+  if (mixed.length > 0 && isNonEmptyString(next.sectorThemes.weak)) {
+    const mixedSuffix = ` / 혼조: ${marketSignalLabels(mixed).join('·')} - ${marketEventSummary(mixed)}`;
+    if (!next.sectorThemes.weak.endsWith(mixedSuffix)) {
+      next.sectorThemes.weak = `${next.sectorThemes.weak}${mixedSuffix}`;
+    }
   }
   if ([...negative, ...mixed].some((signal) => signalPrimaryTargetText(signal, next.sectorThemes.strong))) {
     next.sectorThemes.strong = '상대강도 확인 - 하방·혼조 결론과 분리되는 업종만 확인해야 합니다.';
   }
-  if (positive.some((signal) => signalPrimaryTargetText(signal, next.sectorThemes.weak))) {
-    next.sectorThemes.weak = '약세 업종 확인 - 상방 결론과 분리되는 업종만 확인해야 합니다.';
+  if (isNonEmptyString(next.sectorThemes.weak)
+    && positive.some((signal) => signalPrimaryTargetText(signal, next.sectorThemes.weak))) {
+    next.sectorThemes.weak = null;
   }
   return next;
 }
@@ -1992,7 +2000,7 @@ function reportSchema() {
       },
       sectorThemes: {
         strong: 'string',
-        weak: 'string'
+        weak: null
       },
       notableStocks: {
         surging: ['첫 번째 종목명, 근거에 있는 등락률과 상승 사유', '두 번째 종목명, 근거에 있는 등락률과 상승 사유'],
@@ -2035,6 +2043,9 @@ function reportSchema() {
 }
 
 function jsonSchemaFromPromptShape(value) {
+  if (value === null) {
+    return { type: ['string', 'null'] };
+  }
   if (Array.isArray(value)) {
     return {
       type: 'array',
@@ -2080,7 +2091,7 @@ function buildPrompt(marketResearch) {
     '수급 코멘트가 뉴스 기반일 때도 "뉴스 기준", "보도 기준" 같은 메타 표현은 쓰지 말고, 확인된 흐름만 자연스럽게 서술한다.',
     '장시작 기업 공시는 disclosureNewsCandidates에서 실적, 유상증자, 무상증자, 계약, 자사주, 배당, M&A 관련 뉴스를 추출해 작성한다.',
     '장시작 주요 일정은 scheduleNewsCandidates에서 신규상장, 청약, 보호예수, 주총, 경제지표, 거래정지/변경상장 일정을 추출해 작성한다.',
-    '장마감 업종별/테마별 흐름은 sectorThemeNewsCandidates와 marketNews에서 강세/약세 업종과 테마를 반드시 분리해 작성한다.',
+    '장마감 업종별/테마별 흐름은 sectorThemeNewsCandidates와 marketNews에서 강세/약세 업종과 테마를 분리해 작성한다. 단, 같은 장의 확인된 약세 업종 근거가 없으면 sectorThemes.weak에 문자열이나 회피 문구를 만들지 말고 명시적으로 null을 출력한다. 약세 근거가 있으면 비어 있지 않은 근거 기반 문자열을 출력한다.',
     '장시작/장마감의 수급, 공시, 일정, 업종/테마 섹션에서 "확인 필요", "없음", "데이터 부족", "수집 실패" 같은 회피 문구는 금지한다.',
     '장마감 주요 특징주는 stockNewsCandidates에서 뉴스 제목/요약에 직접 언급된 종목만 사용한다.',
     '장마감 notableStocks.surging과 notableStocks.plunging은 각각 최소 2개 이상 작성한다. 상승과 하락의 방향을 확인된 기사 근거에 맞게 분리한다.',
@@ -2089,7 +2100,7 @@ function buildPrompt(marketResearch) {
     '투자 권유, 매수/매도 지시, 확정적 수익 표현은 금지한다.',
     '사용자에게 노출되는 문장은 한국어 존댓말로 작성한다.',
     `아래 ${config.sessionLabel} 전용 섹션 구조와 라벨을 유지한다.`,
-    '출력 JSON은 지정된 모든 키를 반드시 포함하고, 섹션의 중첩 객체·배열 구조를 유지하며 문자열 항목과 배열 원소는 문자열로 작성한다.',
+    '출력 JSON은 지정된 모든 키를 반드시 포함하고, 섹션의 중첩 객체·배열 구조를 유지하며 문자열 항목과 배열 원소는 문자열로 작성한다. 단, 장마감 sectorThemes.weak만 같은 장의 확인된 약세 업종 근거가 없을 때 예외적으로 null이며, 키 자체를 생략해서는 안 된다.',
     '모든 출력 필드(특히 tomorrowStrategy.outlook과 checklist 포함)에서 확인 필요, 확인 불가, 확인되지 않았습니다 같은 미완성 표현을 쓰지 않는다. 전략과 체크리스트는 구체적으로 관찰할 변수와 조건을 완결된 문장으로 쓴다. 근거 없는 종목이나 수치를 만들어 항목 수를 채우지 않는다.',
     '반드시 JSON만 출력한다. 마크다운, 코드펜스, 설명 문장을 붙이지 않는다.',
     '',
@@ -3421,7 +3432,7 @@ function buildWriterRetryPrompt(prompt, error) {
   if (!error?.qualityIssues?.length && !String(error?.message ?? '').startsWith('invalid_report_shape:')) return prompt;
   const issues = error.qualityIssues?.join(',') ?? error.message;
   const fields = error.invalidFields?.length ? `\n수정이 필요한 필드: ${error.invalidFields.join(',')}` : '';
-  return `${prompt}\n\n이전 응답 검증 결과: ${issues}${fields}\n출력 스키마의 필수 항목을 모두 채우고, "확인 필요", "확인 불가", "확인되지 않았습니다" 등 미완성 문구를 쓰지 않는다. 입력의 확인된 근거만 사용하여 전체 JSON을 다시 작성한다. 근거 없는 사실이나 수치는 만들지 않는다.`;
+  return `${prompt}\n\n이전 응답 검증 결과: ${issues}${fields}\n출력 스키마의 필수 키를 모두 포함하고, "확인 필요", "확인 불가", "확인되지 않았습니다" 등 미완성 문구를 쓰지 않는다. 장마감 sectorThemes.weak는 같은 장의 확인된 약세 업종 근거가 없을 때만 명시적으로 null을 출력하며, 임의의 거부 문구를 null로 바꾸지 않는다. 입력의 확인된 근거만 사용하여 전체 JSON을 다시 작성한다. 근거 없는 사실이나 수치는 만들지 않는다.`;
 }
 
 function escapeHtml(value) {
