@@ -111,6 +111,8 @@ function walkSchema(schema, example) {
       assert.deepEqual(child.items, { type: 'string' });
     } else if (value && typeof value === 'object') {
       walkSchema(child, value);
+    } else if (value === null) {
+      assert.deepEqual(child, { type: ['string', 'null'] });
     } else {
       assert.deepEqual(child, { type: 'string' });
     }
@@ -344,6 +346,212 @@ test('null, primitive, and root-array reports fail as retryable shape errors bef
       /invalid_report_shape:root/
     );
   }
+});
+
+test('post-market weak sector is a required nullable string and pre-market schema remains unchanged', async () => {
+  const postModule = await importWriterModule('post_market');
+  const postSchema = postModule.__testReportJsonSchema();
+  const weakSchema = postSchema.properties.sectorThemes.properties.weak;
+  assert.deepEqual(weakSchema, { type: ['string', 'null'] });
+  assert.ok(postSchema.properties.sectorThemes.required.includes('weak'));
+  assert.match(postModule.__testBuildPrompt({}), /sectorThemes\.weak/);
+  assert.match(postModule.__testBuildPrompt({}), /null/);
+
+  const nullable = structuredClone(reports.post_market);
+  nullable.sectorThemes.weak = null;
+  assert.doesNotThrow(() => postModule.__testValidateReportShape(nullable));
+
+  for (const invalid of ['', '   ', 1, [], {}]) {
+    const report = structuredClone(reports.post_market);
+    report.sectorThemes.weak = invalid;
+    assert.throws(
+      () => postModule.__testValidateReportShape(report),
+      /sectorThemes\.weak/
+    );
+  }
+
+  const missing = structuredClone(reports.post_market);
+  delete missing.sectorThemes.weak;
+  assert.throws(
+    () => postModule.__testValidateReportShape(missing),
+    /sectorThemes\.weak/
+  );
+
+  const nullStrong = structuredClone(reports.post_market);
+  nullStrong.sectorThemes.strong = null;
+  assert.throws(
+    () => postModule.__testValidateReportShape(nullStrong),
+    /sectorThemes\.strong/
+  );
+
+  const preModule = await importWriterModule('pre_market');
+  assert.deepEqual(preModule.__testReportJsonSchema().properties.sectorWeather.properties.rainy, { type: 'string' });
+  assert.doesNotMatch(preModule.__testBuildPrompt({}), /sectorWeather\.rainy.*null/);
+});
+
+test('OpenRouter null weak response passes writer validation, prepare, and render without weakening other sections', async () => {
+  const module = await importWriterModule('post_market');
+  const responseReport = structuredClone(reports.post_market);
+  responseReport.sectorThemes.weak = null;
+  const marketResearch = {
+    marketEventSignals: [],
+    marketEventConclusions: [],
+    investorFlows: { status: 'unavailable', markets: [] }
+  };
+  const parsed = await module.__testCallOpenRouter('prompt', {
+    apiKey: 'test',
+    marketResearch,
+    fetchImpl: async () => response(completion('post_market', responseReport))
+  });
+  const validated = module.__testPrepareAndValidateWriterReport(marketResearch, parsed);
+  const prepared = module.__testPrepareReportForPublish(marketResearch, validated);
+  const html = module.__testRenderPostMarketReport(prepared);
+
+  assert.equal(prepared.investorFlows, null);
+  assert.equal(prepared.sectorThemes.strong, responseReport.sectorThemes.strong);
+  assert.equal(prepared.sectorThemes.weak, null);
+  assert.deepEqual(prepared.marketSummary, responseReport.marketSummary);
+  assert.deepEqual(prepared.notableStocks, responseReport.notableStocks);
+  assert.deepEqual(prepared.tomorrowStrategy, responseReport.tomorrowStrategy);
+  assert.match(html, /✅ 강세 업종/);
+  assert.doesNotMatch(html, /❌ 약세 업종|>null<|>undefined</);
+});
+
+test('mixed-only high sector evidence preserves null weak through repeated prepare and omits its row', async () => {
+  const module = await importWriterModule('post_market');
+  const report = structuredClone(reports.post_market);
+  report.sectorThemes.strong = '바이오가 강세였습니다.';
+  report.sectorThemes.weak = null;
+  const mixedSignal = {
+    direction: 'mixed',
+    severity: 'high',
+    primaryTarget: { key: 'semiconductor', label: '반도체', scope: 'sector' },
+    targets: [{ key: 'semiconductor', label: '반도체', scope: 'sector' }],
+    headline: '반도체 업종 수요 개선과 비용 부담 혼조',
+    directionEvidence: null
+  };
+  const marketResearch = {
+    marketEventSignals: [mixedSignal],
+    marketEventConclusions: [mixedSignal],
+    investorFlows: { status: 'unavailable', markets: [] }
+  };
+
+  const once = module.__testPrepareReportForPublish(marketResearch, report);
+  const twice = module.__testPrepareReportForPublish(marketResearch, once);
+  assert.match(once.marketSummary.summary, /혼조/);
+  assert.match(once.marketSummary.summary, /반도체 업종 수요 개선과 비용 부담 혼조/);
+  assert.equal(once.sectorThemes.strong, report.sectorThemes.strong);
+  assert.equal(once.sectorThemes.weak, null);
+  assert.equal(twice.sectorThemes.weak, null);
+  assert.deepEqual(twice, once);
+
+  const html = module.__testRenderPostMarketReport(twice);
+  assert.match(html, /✅ 강세 업종/);
+  assert.doesNotMatch(html, /❌ 약세 업종|>null<|>undefined</);
+});
+
+test('mixed evidence appends once to nonnull weak copy across repeated prepare', async () => {
+  const module = await importWriterModule('post_market');
+  const report = structuredClone(reports.post_market);
+  report.sectorThemes.strong = '바이오가 강세였습니다.';
+  report.sectorThemes.weak = '자동차가 약세였습니다.';
+  const mixedSignal = {
+    direction: 'mixed',
+    severity: 'high',
+    primaryTarget: { key: 'semiconductor', label: '반도체', scope: 'sector' },
+    targets: [{ key: 'semiconductor', label: '반도체', scope: 'sector' }],
+    headline: '반도체 업종 수요 개선과 비용 부담 혼조',
+    directionEvidence: null
+  };
+  const marketResearch = {
+    marketEventSignals: [mixedSignal],
+    marketEventConclusions: [mixedSignal],
+    investorFlows: { status: 'unavailable', markets: [] }
+  };
+
+  const once = module.__testPrepareReportForPublish(marketResearch, report);
+  const twice = module.__testPrepareReportForPublish(marketResearch, once);
+  assert.match(once.sectorThemes.weak, /^자동차가 약세였습니다\. \/ 혼조: 반도체 - /);
+  assert.equal(twice.sectorThemes.weak, once.sectorThemes.weak);
+  assert.equal(twice.sectorThemes.strong, report.sectorThemes.strong);
+});
+
+test('real negative evidence populates grounded weak copy from null', async () => {
+  const module = await importWriterModule('post_market');
+  const report = structuredClone(reports.post_market);
+  report.sectorThemes.weak = null;
+  const negativeSignal = {
+    direction: 'negative',
+    severity: 'high',
+    primaryTarget: { key: 'semiconductor', label: '반도체', scope: 'sector' },
+    targets: [{ key: 'semiconductor', label: '반도체', scope: 'sector' }],
+    headline: '반도체 업종 수요 둔화와 가격 약세',
+    directionEvidence: null
+  };
+  const prepared = module.__testPrepareReportForPublish({
+    marketEventSignals: [negativeSignal],
+    marketEventConclusions: [negativeSignal],
+    investorFlows: { status: 'unavailable', markets: [] }
+  }, report);
+
+  assert.match(prepared.sectorThemes.weak, /^반도체 - /);
+  assert.match(prepared.sectorThemes.weak, /반도체 업종 수요 둔화와 가격 약세/);
+});
+
+test('positive contradiction removes unsupported nonnull weak copy without changing strong behavior', async () => {
+  const module = await importWriterModule('post_market');
+  const report = structuredClone(reports.post_market);
+  report.sectorThemes.strong = '바이오가 강세였습니다.';
+  report.sectorThemes.weak = '반도체가 약세였습니다.';
+  const positiveSignal = {
+    direction: 'positive',
+    severity: 'high',
+    primaryTarget: { key: 'semiconductor', label: '반도체', scope: 'sector' },
+    targets: [{ key: 'semiconductor', label: '반도체', scope: 'sector' }],
+    headline: '반도체 업종 수요 회복과 가격 상승',
+    directionEvidence: null
+  };
+  const prepared = module.__testPrepareReportForPublish({
+    marketEventSignals: [positiveSignal],
+    marketEventConclusions: [positiveSignal],
+    investorFlows: { status: 'unavailable', markets: [] }
+  }, report);
+
+  assert.equal(prepared.sectorThemes.weak, null);
+  assert.match(prepared.sectorThemes.strong, /^반도체 - /);
+});
+
+test('post-market weak sector keeps supported strings and placeholder rejection remains fail-closed', async () => {
+  const module = await importWriterModule('post_market');
+  const grounded = structuredClone(reports.post_market);
+  assert.equal(
+    module.__testPrepareAndValidateWriterReport({
+      marketEventSignals: [],
+      marketEventConclusions: [],
+      investorFlows: { status: 'unavailable', markets: [] }
+    }, grounded).sectorThemes.weak,
+    grounded.sectorThemes.weak
+  );
+
+  const placeholder = structuredClone(reports.post_market);
+  placeholder.sectorThemes.weak = '약세 업종 확인 필요';
+  let failure;
+  try {
+    module.__testPrepareAndValidateWriterReport({
+      marketEventSignals: [],
+      marketEventConclusions: [],
+      investorFlows: { status: 'unavailable', markets: [] }
+    }, placeholder);
+  } catch (error) {
+    failure = error;
+  }
+  assert.ok(failure);
+  assert.match(failure.message, /briefing_writer_quality_failed:placeholder_copy/);
+  const retry = module.__testBuildWriterRetryPrompt('evidence', failure);
+  assert.match(retry, /sectorThemes\.weak/);
+  assert.match(retry, /근거가 없을 때만 명시적으로 null/);
+  assert.match(retry, /임의의 거부 문구를 null로 바꾸지 않는다/);
+  assert.doesNotMatch(retry, /약세 업종 확인 필요/);
 });
 
 test('writer quality rejection remains fail-closed for placeholder copy', async () => {
