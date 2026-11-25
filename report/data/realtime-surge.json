@@ -1,16 +1,63 @@
 {
-  "generated_at": "2026-11-25T04:00:16.341Z",
+  "generated_at": "2026-11-25T05:00:17.811Z",
   "generated_date": "2026-11-25",
-  "slot_hour": 13,
-  "cycle_label": "KST_1300",
-  "slot_label": "13:00",
+  "slot_hour": 14,
+  "cycle_label": "KST_1400",
+  "slot_label": "14:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 13:00 실시간 급등",
+    "title": "KST 14:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 6건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "'젠슨 황 복귀'에도 엇갈린 외국인 수급…'삼성전자' 사고 'SK하이닉스' 팔았다",
+      "headline": "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]",
+      "evidencePoints": [
+        "출처 뉴스핌, 매일경제, 비즈니스포스트 기반 기사 3건",
+        "제목 기준 변동률 단서 -7.0%",
+        "'젠슨 황 복귀'에도 엇갈린 외국인 수급…'삼성전자' 사고 'SK하이닉스' 팔았다",
+        "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 4,
+      "updatedAt": "2026-11-25T05:00:17.811Z",
+      "cycleLabel": "KST_1400",
+      "direction": "down",
+      "changeRate": -7,
+      "latestHeadline": "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]",
+      "source": "매일경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBKXzI4YjRhNmc4Tm94N0R5QjU0U05LUTJVMzlfbkpzaFdkb0ZNWDRNUGVyZEFGMTIyMEhZMTRoa3paVW1hRXJ4VHFxOXdub2ZHVkE?oc=5",
+      "publishedAt": "Wed, 25 Nov 2026 01:18:24 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "'젠슨 황 복귀'에도 엇갈린 외국인 수급…'삼성전자' 사고 'SK하이닉스' 팔았다",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBoczZIZEhkUEdKTl9TNy1IZTVyRzdPbkNGZjdacDh5NWZRdlY4dGZ2bms1SmowVE9nbnhSR3ZmSGlmbXZzdkhEc2RDX0FlOHFVNWcycGhaTTdSdXZ3?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBKXzI4YjRhNmc4Tm94N0R5QjU0U05LUTJVMzlfbkpzaFdkb0ZNWDRNUGVyZEFGMTIyMEhZMTRoa3paVW1hRXJ4VHFxOXdub2ZHVkE?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "삼성전자 SK하이닉스 주가 장중 6%대 내려, 미국 증시 하락에 반도체주 약세",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9mVUtiZlB2QUxLdmlkY0hNci1KRlExY0lWZF9UZ3FuZXNBUzFZSVBPTVVvLW5UX2xjMXJ5QW1FVlRiMkJicThEWEp4X3plRXdvT1U2SUFLUEktRlBGbUFIZVItenpSeWVjUkl1TlZHc3pzemc?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "7% 급락한 삼성전자, 초고수들은 오히려 매수",
+      "polishedBody": "삼성전자가 7%대 급락하며 주가가 크게 하락했습니다. 외국인 수급이 엇갈리는 가운데 초고수들은 오히려 순매수에 나섰습니다. 이는 단기 과매도 구간으로 판단한 투자자들이 유입된 것으로 보입니다. 향후 반도체 업황 회복 여부와 외국인 매수 전환이 주요 관전 포인트입니다."
+    },
     {
       "stockName": "두산에너빌리티",
       "stockCode": "034020",
@@ -141,53 +188,6 @@
       "polishedBody": "안랩은 장초반 VI 두 차례 발동…주가 증시 급락에도 11% '껑충' 재료가 부각되며 단기 모멘텀을 형성했습니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
-      "stockName": "삼성전자",
-      "stockCode": "005930",
-      "summary": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
-      "headline": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
-      "evidencePoints": [
-        "출처 톱스타뉴스, 공감신문, 세계일보 기반 기사 3건",
-        "제목 기준 변동률 단서 -7.6%",
-        "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
-        "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?"
-      ],
-      "mentionScore": 99.9,
-      "sentimentLabel": "negative",
-      "channelCount": 4,
-      "updatedAt": "2026-11-25T02:00:17.094Z",
-      "cycleLabel": "KST_1100",
-      "direction": "down",
-      "changeRate": -7.6,
-      "latestHeadline": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aRVZFQWlVTlFKTldDbkRaZkdVWE9la2VQQzh6R1NKeFJBRVc3Z1Q3S1N2RjhNTTZrZmNBaDBILUNkQUY0bUQ4MVhyeWp4eVF3aEZsN3oyRFlwNERwZG5uRU9hVUlVRGhBRm43alBHME93UQ?oc=5",
-      "publishedAt": "Wed, 25 Nov 2026 01:16:19 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aRVZFQWlVTlFKTldDbkRaZkdVWE9la2VQQzh6R1NKeFJBRVc3Z1Q3S1N2RjhNTTZrZmNBaDBILUNkQUY0bUQ4MVhyeWp4eVF3aEZsN3oyRFlwNERwZG5uRU9hVUlVRGhBRm43alBHME93UQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
-          "source": "공감신문",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RWYyV1RWb0RNdm55aktjX3Z0WUdUSGVnS3FqY1pFUjBsZ0taM0NhQnpac3hycFh3eEpmOVZ6REpsY1drNllKRUQ5V01LX3dvQzc3Qi15NEVfakFHamJDU3FXNWtUcDdn?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "삼성전자 1억 넣으면 3700만원 vs 1억5300만원…‘7만원·29만원 전망’ 뜯어보니 [숫자 뒤의 진실]",
-          "source": "세계일보",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5rT29JMVE2bU9abGVGcmJ6RkZISnViYm5JY1pqQ0RqTjFrWFJBWXAyMU0zbi1LLVVfVlJhbUs4LWVVQ2VUNUs3d1RHTDc0YmM0cU10VnV3bkRXU3EyeVJBRFlBdDhvLVBUeEpV0gFUQVVfeXFMT20xOXRBdlA5UzBxYnNlQ2VqMFZrNjJQTUdudWxWQzkwTUZBc3huWHFvb1pUcWtmMlVuWGs5TVkwVXA1dy1XdnoyT29EUHM1YjB5dXda?oc=5"
-        }
-      ],
-      "hasTelegram": true,
-      "hasNews": true,
-      "polishedHeadline": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
-      "polishedBody": "삼성전자는 하락, 반도체 시장에 무슨 일이 이슈로 단기 변동성이 확대됐습니다. 하락, 반도체 시장에 무슨 일이 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 주가, 11월 25일 장중 175,000원 7.60% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
-    },
-    {
       "stockName": "진에어",
       "stockCode": "272450",
       "summary": "[오늘의 증권가 콜] 목표주가 42.9% 상향한 진에어 vs 50% 떨어진 파두",
@@ -270,6 +270,43 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Wed, 25 Nov 2026 01:18:24 GMT",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": -7,
+      "price": null,
+      "summary": "'젠슨 황 복귀'에도 엇갈린 외국인 수급…'삼성전자' 사고 'SK하이닉스' 팔았다",
+      "source": "매일경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBKXzI4YjRhNmc4Tm94N0R5QjU0U05LUTJVMzlfbkpzaFdkb0ZNWDRNUGVyZEFGMTIyMEhZMTRoa3paVW1hRXJ4VHFxOXdub2ZHVkE?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 뉴스핌, 매일경제, 비즈니스포스트 기반 기사 3건",
+        "제목 기준 변동률 단서 -7.0%",
+        "'젠슨 황 복귀'에도 엇갈린 외국인 수급…'삼성전자' 사고 'SK하이닉스' 팔았다",
+        "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "'젠슨 황 복귀'에도 엇갈린 외국인 수급…'삼성전자' 사고 'SK하이닉스' 팔았다",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBoczZIZEhkUEdKTl9TNy1IZTVyRzdPbkNGZjdacDh5NWZRdlY4dGZ2bms1SmowVE9nbnhSR3ZmSGlmbXZzdkhEc2RDX0FlOHFVNWcycGhaTTdSdXZ3?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBKXzI4YjRhNmc4Tm94N0R5QjU0U05LUTJVMzlfbkpzaFdkb0ZNWDRNUGVyZEFGMTIyMEhZMTRoa3paVW1hRXJ4VHFxOXdub2ZHVkE?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "삼성전자 SK하이닉스 주가 장중 6%대 내려, 미국 증시 하락에 반도체주 약세",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9mVUtiZlB2QUxLdmlkY0hNci1KRlExY0lWZF9UZ3FuZXNBUzFZSVBPTVVvLW5UX2xjMXJ5QW1FVlRiMkJicThEWEp4X3plRXdvT1U2SUFLUEktRlBGbUFIZVItenpSeWVjUkl1TlZHc3pzemc?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Wed, 25 Nov 2026 01:31:33 GMT",
       "symbol": "034020",
@@ -366,43 +403,6 @@
           "title": "[속보] 안랩 장초반 VI 두 차례 발동…주가 증시 급락에도 11% '껑충'",
           "source": "CBC뉴스",
           "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8zZkRwMVp4bmtZRlBTeDJaZzdFMklQd2xZRWRIOVhkZUpVamNnMHp3TWRNcTNNTDFsQm1hSGpzNURUT1l4OVltQkVvUk05cDQyU1B4bldHaTM4am5MaWZOOExjY19teUlj?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Wed, 25 Nov 2026 01:16:19 GMT",
-      "symbol": "005930",
-      "name": "삼성전자",
-      "changeRate": -7.6,
-      "price": null,
-      "summary": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
-      "source": "톱스타뉴스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aRVZFQWlVTlFKTldDbkRaZkdVWE9la2VQQzh6R1NKeFJBRVc3Z1Q3S1N2RjhNTTZrZmNBaDBILUNkQUY0bUQ4MVhyeWp4eVF3aEZsN3oyRFlwNERwZG5uRU9hVUlVRGhBRm43alBHME93UQ?oc=5",
-      "mentionScore": 99.9,
-      "evidencePoints": [
-        "출처 톱스타뉴스, 공감신문, 세계일보 기반 기사 3건",
-        "제목 기준 변동률 단서 -7.6%",
-        "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
-        "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
-          "source": "톱스타뉴스",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aRVZFQWlVTlFKTldDbkRaZkdVWE9la2VQQzh6R1NKeFJBRVc3Z1Q3S1N2RjhNTTZrZmNBaDBILUNkQUY0bUQ4MVhyeWp4eVF3aEZsN3oyRFlwNERwZG5uRU9hVUlVRGhBRm43alBHME93UQ?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
-          "source": "공감신문",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RWYyV1RWb0RNdm55aktjX3Z0WUdUSGVnS3FqY1pFUjBsZ0taM0NhQnpac3hycFh3eEpmOVZ6REpsY1drNllKRUQ5V01LX3dvQzc3Qi15NEVfakFHamJDU3FXNWtUcDdn?oc=5"
-        },
-        {
-          "label": "관련기사3",
-          "title": "삼성전자 1억 넣으면 3700만원 vs 1억5300만원…‘7만원·29만원 전망’ 뜯어보니 [숫자 뒤의 진실]",
-          "source": "세계일보",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5rT29JMVE2bU9abGVGcmJ6RkZISnViYm5JY1pqQ0RqTjFrWFJBWXAyMU0zbi1LLVVfVlJhbUs4LWVVQ2VUNUs3d1RHTDc0YmM0cU10VnV3bkRXU3EyeVJBRFlBdDhvLVBUeEpV0gFUQVVfeXFMT20xOXRBdlA5UzBxYnNlQ2VqMFZrNjJQTUdudWxWQzkwTUZBc3huWHFvb1pUcWtmMlVuWGs5TVkwVXA1dy1XdnoyT29EUHM1YjB5dXda?oc=5"
         }
       ]
     },
