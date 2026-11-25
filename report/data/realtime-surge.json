@@ -1,56 +1,259 @@
 {
-  "generated_at": "2026-11-25T01:00:28.349Z",
+  "generated_at": "2026-11-25T02:00:17.094Z",
   "generated_date": "2026-11-25",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
-    "subtitle": "공개 텔레그램 채널 기반 급등 후보 3건",
+    "title": "KST 11:00 실시간 급등",
+    "subtitle": "공개 텔레그램 채널 기반 급등 후보 7건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
     {
       "stockName": "SK하이닉스",
       "stockCode": "000660",
-      "summary": "젠슨 황 복귀로 삼성전자·SK하이닉스 주가 급등, 투자자들 몰린다",
-      "headline": "젠슨 황 복귀에 美 반도체지수 급등…대신證 \"삼성전자·SK하이닉스 매수 유지\"",
+      "summary": "“110만원대까지 밀렸는데 290만원 그대로”…JP모건·씨티가 다르게 본 SK하이닉스",
+      "headline": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
       "evidencePoints": [
-        "출처 뉴스웍스, 공감신문 기반 기사 2건",
+        "출처 공감신문, 데일리25 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
+        "“110만원대까지 밀렸는데 290만원 그대로”…JP모건·씨티가 다르게 본 SK하이닉스"
+      ],
+      "mentionScore": 86.7,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-11-25T02:00:17.094Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
+      "source": "공감신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RWYyV1RWb0RNdm55aktjX3Z0WUdUSGVnS3FqY1pFUjBsZ0taM0NhQnpac3hycFh3eEpmOVZ6REpsY1drNllKRUQ5V01LX3dvQzc3Qi15NEVfakFHamJDU3FXNWtUcDdn?oc=5",
+      "publishedAt": "Wed, 25 Nov 2026 00:40:38 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
+          "source": "공감신문",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RWYyV1RWb0RNdm55aktjX3Z0WUdUSGVnS3FqY1pFUjBsZ0taM0NhQnpac3hycFh3eEpmOVZ6REpsY1drNllKRUQ5V01LX3dvQzc3Qi15NEVfakFHamJDU3FXNWtUcDdn?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "“110만원대까지 밀렸는데 290만원 그대로”…JP모건·씨티가 다르게 본 SK하이닉스",
+          "source": "데일리25",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE02U2JFSTVSdW05bkpPSm5oOEpXeGNFNks4eVpqcUNFYU55YkhnVWhtdW1xaFdtMDhFbVpiOVlTRUt6V3U4MGg5VVZUTWdiY01MOUpoSnYwQ2xOdGdTeHI5M210RVhaVks3T19BOQ?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "SK하이닉스 하락, 반도체 시장에 무슨 일이?",
+      "polishedBody": "SK하이닉스는 씨티가 다르게 본 이슈로 단기 변동성이 확대됐습니다. 씨티가 다르게 본 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 하락, 반도체 시장에 무슨 일이 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "안랩",
+      "stockCode": "053800",
+      "summary": "[속보] 안랩 장초반 VI 두 차례 발동…주가 증시 급락에도 11% '껑충'",
+      "headline": "안랩 주가, 급등세... 이유는?",
+      "evidencePoints": [
+        "출처 금강일보, CBC뉴스 기반 기사 2건",
         "상승/강세 키워드 우세",
-        "젠슨 황 복귀에 美 반도체지수 급등…대신證 \"삼성전자·SK하이닉스 매수 유지\"",
-        "젠슨 황 복귀로 삼성전자·SK하이닉스 주가 급등, 투자자들 몰린다"
+        "안랩 주가, 급등세... 이유는?",
+        "[속보] 안랩 장초반 VI 두 차례 발동…주가 증시 급락에도 11% '껑충'"
       ],
       "mentionScore": 99.9,
       "sentimentLabel": "positive",
       "channelCount": 3,
-      "updatedAt": "2026-11-24T04:00:19.026Z",
-      "cycleLabel": "KST_1300",
+      "updatedAt": "2026-11-25T02:00:17.094Z",
+      "cycleLabel": "KST_1100",
       "direction": "up",
       "changeRate": null,
-      "latestHeadline": "젠슨 황 복귀에 美 반도체지수 급등…대신證 \"삼성전자·SK하이닉스 매수 유지\"",
-      "source": "뉴스웍스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0xOVVZRElNcHRlR0UzZWlDc3VHVmUtakZMeUVXSWVPeGgweXIwMDBDYzZzXzB0TU8tTnJwem1PdThHMjdLaVJwNkc3SHNTOVQweWxReDlsSXFWandSaEJ3cTZYcjRGWDV4RUxpSVlJd9IBc0FVX3lxTE1nNFI1eDBLOUxxdkNRWU15azFWNm5ab0lXMkY4OXlvMlRQUV96c2xlUHdJNXRHakRUend2VVRCak9vMHBKOUpOVmo0TFRUZkpyWS10dFl3NVBONUJCVHhDTFEyX1JMZ3BucWthV193R2ZBSTg?oc=5",
-      "publishedAt": "Tue, 24 Nov 2026 03:11:58 GMT",
+      "latestHeadline": "안랩 주가, 급등세... 이유는?",
+      "source": "금강일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9vZ0lsOW9KNG04VUFsU2luSV9aNkhyYkdaNkstenNfWWVHTVU0cVRDeXBWVlR5aGxOcExaOVhrUVpjOW95V0dSQUtSMkFYaUNqSGk1NkpSUV9zZ3dpU2F3akpFa25CWWd5WkE?oc=5",
+      "publishedAt": "Wed, 25 Nov 2026 01:15:09 GMT",
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "젠슨 황 복귀에 美 반도체지수 급등…대신證 \"삼성전자·SK하이닉스 매수 유지\"",
-          "source": "뉴스웍스",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0xOVVZRElNcHRlR0UzZWlDc3VHVmUtakZMeUVXSWVPeGgweXIwMDBDYzZzXzB0TU8tTnJwem1PdThHMjdLaVJwNkc3SHNTOVQweWxReDlsSXFWandSaEJ3cTZYcjRGWDV4RUxpSVlJd9IBc0FVX3lxTE1nNFI1eDBLOUxxdkNRWU15azFWNm5ab0lXMkY4OXlvMlRQUV96c2xlUHdJNXRHakRUend2VVRCak9vMHBKOUpOVmo0TFRUZkpyWS10dFl3NVBONUJCVHhDTFEyX1JMZ3BucWthV193R2ZBSTg?oc=5"
+          "title": "안랩 주가, 급등세... 이유는?",
+          "source": "금강일보",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9vZ0lsOW9KNG04VUFsU2luSV9aNkhyYkdaNkstenNfWWVHTVU0cVRDeXBWVlR5aGxOcExaOVhrUVpjOW95V0dSQUtSMkFYaUNqSGk1NkpSUV9zZ3dpU2F3akpFa25CWWd5WkE?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "젠슨 황 복귀로 삼성전자·SK하이닉스 주가 급등, 투자자들 몰린다",
-          "source": "공감신문",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8yeUtKZl9YNVp5MDh2OWZLRmItZWJjZk45c1JuaUl3d25aaVliZ2pBSGhCT0FqR0k3TWt5bjJmSkkxM00yay1kVDVOemRXNk90ajd5VUN6UzhLS2ZCT3I4RW9rV0tLX3Z3?oc=5"
+          "title": "[속보] 안랩 장초반 VI 두 차례 발동…주가 증시 급락에도 11% '껑충'",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8zZkRwMVp4bmtZRlBTeDJaZzdFMklQd2xZRWRIOVhkZUpVamNnMHp3TWRNcTNNTDFsQm1hSGpzNURUT1l4OVltQkVvUk05cDQyU1B4bldHaTM4am5MaWZOOExjY19teUlj?oc=5"
         }
       ],
       "hasTelegram": true,
       "hasNews": true,
-      "polishedHeadline": "SK하이닉스 젠슨 황 복귀에 美 반도체지수 급등…대신證 \"삼성전자·SK하이닉스 매수 유지\"",
-      "polishedBody": "SK하이닉스는 젠슨 황 복귀로 삼성전자· 재료가 부각되며 단기 모멘텀을 형성했습니다. 젠슨 황 복귀로 삼성전자· 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 급등, 투자자들 몰린다 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+      "polishedHeadline": "안랩 주가, 급등세..",
+      "polishedBody": "안랩은 장초반 VI 두 차례 발동…주가 증시 급락에도 11% '껑충' 재료가 부각되며 단기 모멘텀을 형성했습니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
+    {
+      "stockName": "삼성전자",
+      "stockCode": "005930",
+      "summary": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
+      "headline": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
+      "evidencePoints": [
+        "출처 톱스타뉴스, 공감신문, 세계일보 기반 기사 3건",
+        "제목 기준 변동률 단서 -7.6%",
+        "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
+        "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "negative",
+      "channelCount": 4,
+      "updatedAt": "2026-11-25T02:00:17.094Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": -7.6,
+      "latestHeadline": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aRVZFQWlVTlFKTldDbkRaZkdVWE9la2VQQzh6R1NKeFJBRVc3Z1Q3S1N2RjhNTTZrZmNBaDBILUNkQUY0bUQ4MVhyeWp4eVF3aEZsN3oyRFlwNERwZG5uRU9hVUlVRGhBRm43alBHME93UQ?oc=5",
+      "publishedAt": "Wed, 25 Nov 2026 01:16:19 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aRVZFQWlVTlFKTldDbkRaZkdVWE9la2VQQzh6R1NKeFJBRVc3Z1Q3S1N2RjhNTTZrZmNBaDBILUNkQUY0bUQ4MVhyeWp4eVF3aEZsN3oyRFlwNERwZG5uRU9hVUlVRGhBRm43alBHME93UQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
+          "source": "공감신문",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RWYyV1RWb0RNdm55aktjX3Z0WUdUSGVnS3FqY1pFUjBsZ0taM0NhQnpac3hycFh3eEpmOVZ6REpsY1drNllKRUQ5V01LX3dvQzc3Qi15NEVfakFHamJDU3FXNWtUcDdn?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "삼성전자 1억 넣으면 3700만원 vs 1억5300만원…‘7만원·29만원 전망’ 뜯어보니 [숫자 뒤의 진실]",
+          "source": "세계일보",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5rT29JMVE2bU9abGVGcmJ6RkZISnViYm5JY1pqQ0RqTjFrWFJBWXAyMU0zbi1LLVVfVlJhbUs4LWVVQ2VUNUs3d1RHTDc0YmM0cU10VnV3bkRXU3EyeVJBRFlBdDhvLVBUeEpV0gFUQVVfeXFMT20xOXRBdlA5UzBxYnNlQ2VqMFZrNjJQTUdudWxWQzkwTUZBc3huWHFvb1pUcWtmMlVuWGs5TVkwVXA1dy1XdnoyT29EUHM1YjB5dXda?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
+      "polishedBody": "삼성전자는 하락, 반도체 시장에 무슨 일이 이슈로 단기 변동성이 확대됐습니다. 하락, 반도체 시장에 무슨 일이 부담이 완화되려면 매물 소화와 수급 안정 신호가 필요합니다. 보조 단서로는 주가, 11월 25일 장중 175,000원 7.60% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "진에어",
+      "stockCode": "272450",
+      "summary": "[오늘의 증권가 콜] 목표주가 42.9% 상향한 진에어 vs 50% 떨어진 파두",
+      "headline": "하나증권 \"진에어 목표주가 상향, 통합 시너지 효과 점진적 확대 전망\"",
+      "evidencePoints": [
+        "출처 비즈니스포스트, 한국경제 기반 기사 2건",
+        "하나증권 \"진에어 목표주가 상향, 통합 시너지 효과 점진적 확대 전망\"",
+        "[오늘의 증권가 콜] 목표주가 42.9% 상향한 진에어 vs 50% 떨어진 파두"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "neutral",
+      "channelCount": 3,
+      "updatedAt": "2026-11-25T02:00:17.094Z",
+      "cycleLabel": "KST_1100",
+      "direction": "neutral",
+      "changeRate": null,
+      "latestHeadline": "하나증권 \"진에어 목표주가 상향, 통합 시너지 효과 점진적 확대 전망\"",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBaQmhWUmg5TURXdk9aTERWR3RkMzdVaGV4clNNdHpQTDRDcEZXSy1jb1pmRFhJV1B5UFZxb0NIU2RFbktfYTRCc0ZvZlNjbkJpUjdfMW92UE9sVmEzS1dMalBDUnc2V1Nwb1JmV210SlVxUGs?oc=5",
+      "publishedAt": "Wed, 25 Nov 2026 00:43:30 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "하나증권 \"진에어 목표주가 상향, 통합 시너지 효과 점진적 확대 전망\"",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBaQmhWUmg5TURXdk9aTERWR3RkMzdVaGV4clNNdHpQTDRDcEZXSy1jb1pmRFhJV1B5UFZxb0NIU2RFbktfYTRCc0ZvZlNjbkJpUjdfMW92UE9sVmEzS1dMalBDUnc2V1Nwb1JmV210SlVxUGs?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[오늘의 증권가 콜] 목표주가 42.9% 상향한 진에어 vs 50% 떨어진 파두",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9LSk1XMGpuWGV6cUZYaXNZMXlxbE5UMGp4N3dVdzFRMFdSLWVRanQ4anduWXlrRnBHRl9JbkRLWWRIdHIzU1hVRnhFNGRUdS1IYzFtQ0hEZjlZUQ?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "진에어 상향, 통합 시너지 효과 점진적 확대 전망\"",
+      "polishedBody": "진에어는 9% 상향한 vs 50% 떨어진 파두 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 상향한 vs 떨어진 파두 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 하나증권 \"목표주가 상향 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
+    },
+    {
+      "stockName": "두산에너빌리티",
+      "stockCode": "034020",
+      "summary": "두산에너빌리티 주가 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은? CBC뉴스",
+      "headline": "두산에너빌리티 주가 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은?",
+      "evidencePoints": [
+        "출처 CBC뉴스 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "두산에너빌리티 주가 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은?"
+      ],
+      "mentionScore": 84.9,
+      "sentimentLabel": "negative",
+      "channelCount": 2,
+      "updatedAt": "2026-11-25T02:00:17.094Z",
+      "cycleLabel": "KST_1100",
+      "direction": "down",
+      "changeRate": null,
+      "latestHeadline": "두산에너빌리티 주가 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은?",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBmcHZRZVgtUmE3TkpPY0c0YWw3ZjRjRTNMLWZTeDhUZUtVdEtfT3NNS2lpR2Y2QUo3YmlxZ1Y2T3pfRTNlbnNzRUNHdmFEQTc5VzhzenU5ZF9aUE9HZEhVWkdZQURTalRD?oc=5",
+      "publishedAt": "Tue, 24 Nov 2026 15:17:00 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산에너빌리티 주가 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은?",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBmcHZRZVgtUmE3TkpPY0c0YWw3ZjRjRTNMLWZTeDhUZUtVdEtfT3NNS2lpR2Y2QUo3YmlxZ1Y2T3pfRTNlbnNzRUNHdmFEQTc5VzhzenU5ZF9aUE9HZEhVWkdZQURTalRD?oc=5"
+        }
+      ],
+      "hasTelegram": true,
+      "hasNews": true,
+      "polishedHeadline": "두산에너빌리티 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은?",
+      "polishedBody": "두산에너빌리티는 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은 이슈로 단기 변동성이 확대됐습니다. 보조 단서로는 하락 약세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 하락 폭 축소, 지지선 회복, 반대매매성 물량 출회 여부를 확인해야 합니다."
+    },
+    {
+      "stockName": "셀트리온",
+      "stockCode": "068270",
+      "summary": "[장중수급포착] 셀트리온, 기관 5일 연속 순매수행진... 주가 +2.87%",
+      "headline": "셀트리온, 증권사 목표가 상향에 강세…3.11%",
+      "evidencePoints": [
+        "출처 매일경제, 뉴스핌 기반 기사 2건",
+        "제목 기준 변동률 단서 +3.1%",
+        "셀트리온, 증권사 목표가 상향에 강세…3.11%",
+        "[장중수급포착] 셀트리온, 기관 5일 연속 순매수행진... 주가 +2.87%"
+      ],
+      "mentionScore": 91.5,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-25T02:00:17.094Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": 3.11,
+      "latestHeadline": "셀트리온, 증권사 목표가 상향에 강세…3.11%",
+      "source": "매일경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9yWjNYbnVGU05jU254VWVhc29uT2x0ci05ZS0tZkt2dHctbEF2WlozaW5nSDZJMDluT3I4bjdCS0FGR1ZxNFNEanFPcnhSeDRJY0E?oc=5",
+      "publishedAt": "Wed, 25 Nov 2026 01:44:05 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "셀트리온, 증권사 목표가 상향에 강세…3.11%",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9yWjNYbnVGU05jU254VWVhc29uT2x0ci05ZS0tZkt2dHctbEF2WlozaW5nSDZJMDluT3I4bjdCS0FGR1ZxNFNEanFPcnhSeDRJY0E?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[장중수급포착] 셀트리온, 기관 5일 연속 순매수행진... 주가 +2.87%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1wRnhJSFdXQ09lU2g1VmZ4UTZQaEk5ekdnSFVxcDFFOXJoWF9VQ3VPLXRFODNsTnZ1QmdhaHdPdUFZWURJNzYtdzl6QnBfaDBkU3pFcVQxYVJCREM1?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "셀트리온, 증권사 목표가 상향에 강세",
+      "polishedBody": "셀트리온 주가가 증권사 목표가 상향 조정으로 3.11% 상승했습니다. 기관 투자자들은 5일 연속 순매수하며 주가 상승을 뒷받침하고 있습니다. 이러한 기관의 지속적인 매수는 긍정적인 신호로 해석됩니다. 향후 추가 목표가 상향 여부와 기관 매수세 지속 여부를 주목해야 합니다."
     },
     {
       "stockName": "네오셈",
@@ -91,71 +294,190 @@
       "hasNews": true,
       "polishedHeadline": "네오셈 반도체 검사장비 공급 계약…주가 7%↑",
       "polishedBody": "네오셈은 종속회사와 142억1025만원 규모 반도체 검사장비 공급계약 체결 이슈를 중심으로 시장 관심이 붙었습니다. 방향성 판단은 종속회사와 142억1025만원 규모 반도체 검사장비 공급계약 체결 재료가 실적 또는 공시 변화로 이어지는지에 달려 있습니다. 보조 단서로는 반도체 검사장비 공급 계약…주가 7%↑ 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 새 기사보다 거래량과 호가 공백이 먼저 반응하는지 확인해야 합니다."
-    },
-    {
-      "stockName": "셀트리온",
-      "stockCode": "068270",
-      "summary": "[특징주] 셀트리온, 20만 원대 회복하며 2.97% 상승세 : 기업주식정보 재경일보",
-      "headline": "[특징주] 셀트리온, 20만 원대 회복하며 2.97% 상승세 : 기업주식정보",
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "제목 기준 변동률 단서 +3.0%",
-        "[특징주] 셀트리온, 20만 원대 회복하며 2.97% 상승세 : 기업주식정보"
-      ],
-      "mentionScore": 64.9,
-      "sentimentLabel": "positive",
-      "channelCount": 1,
-      "updatedAt": "2026-11-24T02:00:21.608Z",
-      "cycleLabel": "KST_1100",
-      "direction": "up",
-      "changeRate": 2.97,
-      "latestHeadline": "[특징주] 셀트리온, 20만 원대 회복하며 2.97% 상승세 : 기업주식정보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1qM2xoT0ExWkRFSi03VEozTVJXXzU3T3FreEFaUjluY0FKM01xRXhfLU92UkdrMWtwdXVGalhWYUxXVVB3dXdiYkNHaw?oc=5",
-      "publishedAt": "Tue, 24 Nov 2026 01:22:16 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 셀트리온, 20만 원대 회복하며 2.97% 상승세 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1qM2xoT0ExWkRFSi03VEozTVJXXzU3T3FreEFaUjluY0FKM01xRXhfLU92UkdrMWtwdXVGalhWYUxXVVB3dXdiYkNHaw?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "셀트리온, 20만 원대 회복하며 2.97% 상승",
-      "polishedBody": "셀트리온은 20만 원대 회복하며 2.97% 상승세 기업주식정보 재경일보 재료가 부각되며 단기 모멘텀을 형성했습니다. 20만 원대 회복하며 세 기업주식정보 재경일보 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 강세 지속 여부는 추격 매수보다 장중 거래대금의 질로 확인해야 합니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     }
   ],
   "items": [
     {
-      "timestamp": "Tue, 24 Nov 2026 03:11:58 GMT",
+      "timestamp": "Wed, 25 Nov 2026 00:40:38 GMT",
       "symbol": "000660",
       "name": "SK하이닉스",
       "changeRate": null,
       "price": null,
-      "summary": "젠슨 황 복귀로 삼성전자·SK하이닉스 주가 급등, 투자자들 몰린다",
-      "source": "뉴스웍스",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0xOVVZRElNcHRlR0UzZWlDc3VHVmUtakZMeUVXSWVPeGgweXIwMDBDYzZzXzB0TU8tTnJwem1PdThHMjdLaVJwNkc3SHNTOVQweWxReDlsSXFWandSaEJ3cTZYcjRGWDV4RUxpSVlJd9IBc0FVX3lxTE1nNFI1eDBLOUxxdkNRWU15azFWNm5ab0lXMkY4OXlvMlRQUV96c2xlUHdJNXRHakRUend2VVRCak9vMHBKOUpOVmo0TFRUZkpyWS10dFl3NVBONUJCVHhDTFEyX1JMZ3BucWthV193R2ZBSTg?oc=5",
-      "mentionScore": 99.9,
+      "summary": "“110만원대까지 밀렸는데 290만원 그대로”…JP모건·씨티가 다르게 본 SK하이닉스",
+      "source": "공감신문",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RWYyV1RWb0RNdm55aktjX3Z0WUdUSGVnS3FqY1pFUjBsZ0taM0NhQnpac3hycFh3eEpmOVZ6REpsY1drNllKRUQ5V01LX3dvQzc3Qi15NEVfakFHamJDU3FXNWtUcDdn?oc=5",
+      "mentionScore": 86.7,
       "evidencePoints": [
-        "출처 뉴스웍스, 공감신문 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "젠슨 황 복귀에 美 반도체지수 급등…대신證 \"삼성전자·SK하이닉스 매수 유지\"",
-        "젠슨 황 복귀로 삼성전자·SK하이닉스 주가 급등, 투자자들 몰린다"
+        "출처 공감신문, 데일리25 기반 기사 2건",
+        "하락/약세 키워드 우세",
+        "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
+        "“110만원대까지 밀렸는데 290만원 그대로”…JP모건·씨티가 다르게 본 SK하이닉스"
       ],
       "relatedPosts": [
         {
           "label": "관련기사1",
-          "title": "젠슨 황 복귀에 美 반도체지수 급등…대신證 \"삼성전자·SK하이닉스 매수 유지\"",
-          "source": "뉴스웍스",
-          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0xOVVZRElNcHRlR0UzZWlDc3VHVmUtakZMeUVXSWVPeGgweXIwMDBDYzZzXzB0TU8tTnJwem1PdThHMjdLaVJwNkc3SHNTOVQweWxReDlsSXFWandSaEJ3cTZYcjRGWDV4RUxpSVlJd9IBc0FVX3lxTE1nNFI1eDBLOUxxdkNRWU15azFWNm5ab0lXMkY4OXlvMlRQUV96c2xlUHdJNXRHakRUend2VVRCak9vMHBKOUpOVmo0TFRUZkpyWS10dFl3NVBONUJCVHhDTFEyX1JMZ3BucWthV193R2ZBSTg?oc=5"
+          "title": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
+          "source": "공감신문",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RWYyV1RWb0RNdm55aktjX3Z0WUdUSGVnS3FqY1pFUjBsZ0taM0NhQnpac3hycFh3eEpmOVZ6REpsY1drNllKRUQ5V01LX3dvQzc3Qi15NEVfakFHamJDU3FXNWtUcDdn?oc=5"
         },
         {
           "label": "관련기사2",
-          "title": "젠슨 황 복귀로 삼성전자·SK하이닉스 주가 급등, 투자자들 몰린다",
+          "title": "“110만원대까지 밀렸는데 290만원 그대로”…JP모건·씨티가 다르게 본 SK하이닉스",
+          "source": "데일리25",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE02U2JFSTVSdW05bkpPSm5oOEpXeGNFNks4eVpqcUNFYU55YkhnVWhtdW1xaFdtMDhFbVpiOVlTRUt6V3U4MGg5VVZUTWdiY01MOUpoSnYwQ2xOdGdTeHI5M210RVhaVks3T19BOQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 25 Nov 2026 01:15:09 GMT",
+      "symbol": "053800",
+      "name": "안랩",
+      "changeRate": null,
+      "price": null,
+      "summary": "[속보] 안랩 장초반 VI 두 차례 발동…주가 증시 급락에도 11% '껑충'",
+      "source": "금강일보",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9vZ0lsOW9KNG04VUFsU2luSV9aNkhyYkdaNkstenNfWWVHTVU0cVRDeXBWVlR5aGxOcExaOVhrUVpjOW95V0dSQUtSMkFYaUNqSGk1NkpSUV9zZ3dpU2F3akpFa25CWWd5WkE?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 금강일보, CBC뉴스 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "안랩 주가, 급등세... 이유는?",
+        "[속보] 안랩 장초반 VI 두 차례 발동…주가 증시 급락에도 11% '껑충'"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "안랩 주가, 급등세... 이유는?",
+          "source": "금강일보",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9vZ0lsOW9KNG04VUFsU2luSV9aNkhyYkdaNkstenNfWWVHTVU0cVRDeXBWVlR5aGxOcExaOVhrUVpjOW95V0dSQUtSMkFYaUNqSGk1NkpSUV9zZ3dpU2F3akpFa25CWWd5WkE?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[속보] 안랩 장초반 VI 두 차례 발동…주가 증시 급락에도 11% '껑충'",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8zZkRwMVp4bmtZRlBTeDJaZzdFMklQd2xZRWRIOVhkZUpVamNnMHp3TWRNcTNNTDFsQm1hSGpzNURUT1l4OVltQkVvUk05cDQyU1B4bldHaTM4am5MaWZOOExjY19teUlj?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 25 Nov 2026 01:16:19 GMT",
+      "symbol": "005930",
+      "name": "삼성전자",
+      "changeRate": -7.6,
+      "price": null,
+      "summary": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
+      "source": "톱스타뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aRVZFQWlVTlFKTldDbkRaZkdVWE9la2VQQzh6R1NKeFJBRVc3Z1Q3S1N2RjhNTTZrZmNBaDBILUNkQUY0bUQ4MVhyeWp4eVF3aEZsN3oyRFlwNERwZG5uRU9hVUlVRGhBRm43alBHME93UQ?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 톱스타뉴스, 공감신문, 세계일보 기반 기사 3건",
+        "제목 기준 변동률 단서 -7.6%",
+        "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
+        "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전자 주가, 11월 25일 장중 175,000원 7.60% 하락",
+          "source": "톱스타뉴스",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aRVZFQWlVTlFKTldDbkRaZkdVWE9la2VQQzh6R1NKeFJBRVc3Z1Q3S1N2RjhNTTZrZmNBaDBILUNkQUY0bUQ4MVhyeWp4eVF3aEZsN3oyRFlwNERwZG5uRU9hVUlVRGhBRm43alBHME93UQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전자·SK하이닉스 주가 하락, 반도체 시장에 무슨 일이?",
           "source": "공감신문",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8yeUtKZl9YNVp5MDh2OWZLRmItZWJjZk45c1JuaUl3d25aaVliZ2pBSGhCT0FqR0k3TWt5bjJmSkkxM00yay1kVDVOemRXNk90ajd5VUN6UzhLS2ZCT3I4RW9rV0tLX3Z3?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RWYyV1RWb0RNdm55aktjX3Z0WUdUSGVnS3FqY1pFUjBsZ0taM0NhQnpac3hycFh3eEpmOVZ6REpsY1drNllKRUQ5V01LX3dvQzc3Qi15NEVfakFHamJDU3FXNWtUcDdn?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "삼성전자 1억 넣으면 3700만원 vs 1억5300만원…‘7만원·29만원 전망’ 뜯어보니 [숫자 뒤의 진실]",
+          "source": "세계일보",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5rT29JMVE2bU9abGVGcmJ6RkZISnViYm5JY1pqQ0RqTjFrWFJBWXAyMU0zbi1LLVVfVlJhbUs4LWVVQ2VUNUs3d1RHTDc0YmM0cU10VnV3bkRXU3EyeVJBRFlBdDhvLVBUeEpV0gFUQVVfeXFMT20xOXRBdlA5UzBxYnNlQ2VqMFZrNjJQTUdudWxWQzkwTUZBc3huWHFvb1pUcWtmMlVuWGs5TVkwVXA1dy1XdnoyT29EUHM1YjB5dXda?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 25 Nov 2026 00:43:30 GMT",
+      "symbol": "272450",
+      "name": "진에어",
+      "changeRate": null,
+      "price": null,
+      "summary": "[오늘의 증권가 콜] 목표주가 42.9% 상향한 진에어 vs 50% 떨어진 파두",
+      "source": "비즈니스포스트",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBaQmhWUmg5TURXdk9aTERWR3RkMzdVaGV4clNNdHpQTDRDcEZXSy1jb1pmRFhJV1B5UFZxb0NIU2RFbktfYTRCc0ZvZlNjbkJpUjdfMW92UE9sVmEzS1dMalBDUnc2V1Nwb1JmV210SlVxUGs?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 비즈니스포스트, 한국경제 기반 기사 2건",
+        "하나증권 \"진에어 목표주가 상향, 통합 시너지 효과 점진적 확대 전망\"",
+        "[오늘의 증권가 콜] 목표주가 42.9% 상향한 진에어 vs 50% 떨어진 파두"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "하나증권 \"진에어 목표주가 상향, 통합 시너지 효과 점진적 확대 전망\"",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBaQmhWUmg5TURXdk9aTERWR3RkMzdVaGV4clNNdHpQTDRDcEZXSy1jb1pmRFhJV1B5UFZxb0NIU2RFbktfYTRCc0ZvZlNjbkJpUjdfMW92UE9sVmEzS1dMalBDUnc2V1Nwb1JmV210SlVxUGs?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[오늘의 증권가 콜] 목표주가 42.9% 상향한 진에어 vs 50% 떨어진 파두",
+          "source": "한국경제",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9LSk1XMGpuWGV6cUZYaXNZMXlxbE5UMGp4N3dVdzFRMFdSLWVRanQ4anduWXlrRnBHRl9JbkRLWWRIdHIzU1hVRnhFNGRUdS1IYzFtQ0hEZjlZUQ?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Tue, 24 Nov 2026 15:17:00 GMT",
+      "symbol": "034020",
+      "name": "두산에너빌리티",
+      "changeRate": null,
+      "price": null,
+      "summary": "두산에너빌리티 주가 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은? CBC뉴스",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBmcHZRZVgtUmE3TkpPY0c0YWw3ZjRjRTNMLWZTeDhUZUtVdEtfT3NNS2lpR2Y2QUo3YmlxZ1Y2T3pfRTNlbnNzRUNHdmFEQTc5VzhzenU5ZF9aUE9HZEhVWkdZQURTalRD?oc=5",
+      "mentionScore": 84.9,
+      "evidencePoints": [
+        "출처 CBC뉴스 기반 기사 1건",
+        "하락/약세 키워드 우세",
+        "두산에너빌리티 주가 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은?"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산에너빌리티 주가 껑충, 연속 하락 딛고 반등 '4만빌리티 되찾아'…25일 향방은?",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBmcHZRZVgtUmE3TkpPY0c0YWw3ZjRjRTNMLWZTeDhUZUtVdEtfT3NNS2lpR2Y2QUo3YmlxZ1Y2T3pfRTNlbnNzRUNHdmFEQTc5VzhzenU5ZF9aUE9HZEhVWkdZQURTalRD?oc=5"
+        }
+      ]
+    },
+    {
+      "timestamp": "Wed, 25 Nov 2026 01:44:05 GMT",
+      "symbol": "068270",
+      "name": "셀트리온",
+      "changeRate": 3.11,
+      "price": null,
+      "summary": "[장중수급포착] 셀트리온, 기관 5일 연속 순매수행진... 주가 +2.87%",
+      "source": "매일경제",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9yWjNYbnVGU05jU254VWVhc29uT2x0ci05ZS0tZkt2dHctbEF2WlozaW5nSDZJMDluT3I4bjdCS0FGR1ZxNFNEanFPcnhSeDRJY0E?oc=5",
+      "mentionScore": 91.5,
+      "evidencePoints": [
+        "출처 매일경제, 뉴스핌 기반 기사 2건",
+        "제목 기준 변동률 단서 +3.1%",
+        "셀트리온, 증권사 목표가 상향에 강세…3.11%",
+        "[장중수급포착] 셀트리온, 기관 5일 연속 순매수행진... 주가 +2.87%"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "셀트리온, 증권사 목표가 상향에 강세…3.11%",
+          "source": "매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9yWjNYbnVGU05jU254VWVhc29uT2x0ci05ZS0tZkt2dHctbEF2WlozaW5nSDZJMDluT3I4bjdCS0FGR1ZxNFNEanFPcnhSeDRJY0E?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "[장중수급포착] 셀트리온, 기관 5일 연속 순매수행진... 주가 +2.87%",
+          "source": "뉴스핌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1wRnhJSFdXQ09lU2g1VmZ4UTZQaEk5ekdnSFVxcDFFOXJoWF9VQ3VPLXRFODNsTnZ1QmdhaHdPdUFZWURJNzYtdzl6QnBfaDBkU3pFcVQxYVJCREM1?oc=5"
         }
       ]
     },
@@ -188,30 +510,6 @@
           "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBMYjZ1V2VsRzNscHA0bnpQbmhfTy1OTkhHUDJHYnFRMUN4aGpDa1dTVXhDU1AtTW1jUlpqb2ZKVVpoV0ZKRUhfc0NCUVF1OGdnaUFZRTNuTnVRX1ZNRi1nRS1mRXd6Y1RLa25LSEJHUUlKSFpMclJydnNyNA?oc=5"
         }
       ]
-    },
-    {
-      "timestamp": "Tue, 24 Nov 2026 01:22:16 GMT",
-      "symbol": "068270",
-      "name": "셀트리온",
-      "changeRate": 2.97,
-      "price": null,
-      "summary": "[특징주] 셀트리온, 20만 원대 회복하며 2.97% 상승세 : 기업주식정보 재경일보",
-      "source": "재경일보",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1qM2xoT0ExWkRFSi03VEozTVJXXzU3T3FreEFaUjluY0FKM01xRXhfLU92UkdrMWtwdXVGalhWYUxXVVB3dXdiYkNHaw?oc=5",
-      "mentionScore": 64.9,
-      "evidencePoints": [
-        "출처 재경일보 기반 기사 1건",
-        "제목 기준 변동률 단서 +3.0%",
-        "[특징주] 셀트리온, 20만 원대 회복하며 2.97% 상승세 : 기업주식정보"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[특징주] 셀트리온, 20만 원대 회복하며 2.97% 상승세 : 기업주식정보",
-          "source": "재경일보",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1qM2xoT0ExWkRFSi03VEozTVJXXzU3T3FreEFaUjluY0FKM01xRXhfLU92UkdrMWtwdXVGalhWYUxXVVB3dXdiYkNHaw?oc=5"
-        }
-      ]
     }
   ],
   "writer": {
@@ -219,8 +517,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "rule-based",
-    "model": "signal-polish-v1",
-    "fallbackReason": "primary_failed"
+    "provider": "mixed",
+    "model": "signal-polish-v1, deepseek/deepseek-v4-flash",
+    "fallbackReason": "partial_primary_failed"
   }
 }
