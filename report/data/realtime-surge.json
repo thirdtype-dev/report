@@ -1,16 +1,57 @@
 {
-  "generated_at": "2026-11-26T02:00:20.453Z",
+  "generated_at": "2026-11-26T03:00:22.413Z",
   "generated_date": "2026-11-26",
-  "slot_hour": 11,
-  "cycle_label": "KST_1100",
-  "slot_label": "11:00",
+  "slot_hour": 12,
+  "cycle_label": "KST_1200",
+  "slot_label": "12:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 11:00 실시간 급등",
+    "title": "KST 12:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 9건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "두산에너빌리티",
+      "stockCode": "034020",
+      "summary": "두산에너빌리티 주가 상승 중",
+      "headline": "두산에너빌리티 주가 소폭 강세…'4만빌리티' 지켜낼지 관건",
+      "evidencePoints": [
+        "출처 CBC뉴스, 아시아뉴스통신 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산에너빌리티 주가 소폭 강세…'4만빌리티' 지켜낼지 관건",
+        "두산에너빌리티 주가 상승 중"
+      ],
+      "mentionScore": 87.4,
+      "sentimentLabel": "positive",
+      "channelCount": 2,
+      "updatedAt": "2026-11-26T03:00:22.413Z",
+      "cycleLabel": "KST_1200",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "두산에너빌리티 주가 소폭 강세…'4만빌리티' 지켜낼지 관건",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE40al8zSmdBUXRDZW1wbnZ3cm9PVzlEX01ESUhXQ0pFNlZmb0NXd0x3VDl4anNXVVRmOVhBdHgtS0hkODFiZWxHYmROSGdvcVVMZGFMb1VwckVwaDBtZnFZUTd2SXJ6VUFQ?oc=5",
+      "publishedAt": "Thu, 26 Nov 2026 02:23:56 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산에너빌리티 주가 소폭 강세…'4만빌리티' 지켜낼지 관건",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE40al8zSmdBUXRDZW1wbnZ3cm9PVzlEX01ESUhXQ0pFNlZmb0NXd0x3VDl4anNXVVRmOVhBdHgtS0hkODFiZWxHYmROSGdvcVVMZGFMb1VwckVwaDBtZnFZUTd2SXJ6VUFQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산에너빌리티 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1aTl9zLW42SmhVWU1MeDQ0aEV3UGNIZFp2M3dmM3o0eXhWNXM3R185MkpFSVppZEk3enJfeFVjbTJXUnJpdmxDN050UmQwblBYN1Q5bFJDS2MwTjdy?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "두산에너빌리티 주가 소폭 강세, 4만빌리티 관건",
+      "polishedBody": "두산에너빌리티 주가가 소폭 상승하며 시장의 관심을 받고 있습니다. '4만빌리티'라는 별칭이 나올 정도로 4만원대 안착 여부가 주요 지표로 작용하고 있습니다. 이번 상승은 긍정적인 신호로 평가되며 투자자들의 기대감을 반영합니다. 향후 주가가 4만원선을 유지할 수 있을지가 추가적인 관전 포인트입니다."
+    },
     {
       "stockName": "삼성전기",
       "stockCode": "009150",
@@ -57,47 +98,6 @@
       "hasNews": true,
       "polishedHeadline": "삼성전기 주가 상승 중",
       "polishedBody": "삼성전기는 1.73조 규모 자사주 소각…증권가 \"재평가 기대\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 'AI 투심 위축' 주가 12% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
-    },
-    {
-      "stockName": "두산에너빌리티",
-      "stockCode": "034020",
-      "summary": "두산에너빌리티 주가 장중 4만원선 무너져…원전주 향방은?",
-      "headline": "두산에너빌리티 주가 상승 중",
-      "evidencePoints": [
-        "출처 아시아뉴스통신, CBC뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "두산에너빌리티 주가 상승 중",
-        "두산에너빌리티 주가 장중 4만원선 무너져…원전주 향방은?"
-      ],
-      "mentionScore": 87.4,
-      "sentimentLabel": "positive",
-      "channelCount": 2,
-      "updatedAt": "2026-11-26T01:00:19.821Z",
-      "cycleLabel": "KST_1000",
-      "direction": "up",
-      "changeRate": null,
-      "latestHeadline": "두산에너빌리티 주가 상승 중",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1aTl9zLW42SmhVWU1MeDQ0aEV3UGNIZFp2M3dmM3o0eXhWNXM3R185MkpFSVppZEk3enJfeFVjbTJXUnJpdmxDN050UmQwblBYN1Q5bFJDS2MwTjdy?oc=5",
-      "publishedAt": "Thu, 26 Nov 2026 00:24:14 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산에너빌리티 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1aTl9zLW42SmhVWU1MeDQ0aEV3UGNIZFp2M3dmM3o0eXhWNXM3R185MkpFSVppZEk3enJfeFVjbTJXUnJpdmxDN050UmQwblBYN1Q5bFJDS2MwTjdy?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산에너빌리티 주가 장중 4만원선 무너져…원전주 향방은?",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5sTnZ5dlA4R0lqZS1MbWVEZ3JiSHItV1YtaC1FZmYtRGRLUWJya3JRckxGdW5WLS1ocFlsZjZlNFBILTJvN3Z6NXZhRzhPaTB3ZDkwcVJoVmdKYnE2cGtIN1c2VlZ1eUMz?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "두산에너빌리티 주가 장중 4만원선 붕괴",
-      "polishedBody": "두산에너빌리티는 주가 장중 4만원선 무너져…원전주 향방은 재료가 부각되며 단기 모멘텀을 형성했습니다. 주가 장중 4만원선 무너져…원전주 향방은 기대가 실제 거래대금 증가와 수급 개선으로 이어지는지가 핵심입니다. 보조 단서로는 상승 강세 키워드 우세 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
     },
     {
       "stockName": "SK하이닉스",
@@ -351,6 +351,37 @@
   ],
   "items": [
     {
+      "timestamp": "Thu, 26 Nov 2026 02:23:56 GMT",
+      "symbol": "034020",
+      "name": "두산에너빌리티",
+      "changeRate": null,
+      "price": null,
+      "summary": "두산에너빌리티 주가 상승 중",
+      "source": "CBC뉴스",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE40al8zSmdBUXRDZW1wbnZ3cm9PVzlEX01ESUhXQ0pFNlZmb0NXd0x3VDl4anNXVVRmOVhBdHgtS0hkODFiZWxHYmROSGdvcVVMZGFMb1VwckVwaDBtZnFZUTd2SXJ6VUFQ?oc=5",
+      "mentionScore": 87.4,
+      "evidencePoints": [
+        "출처 CBC뉴스, 아시아뉴스통신 기반 기사 2건",
+        "상승/강세 키워드 우세",
+        "두산에너빌리티 주가 소폭 강세…'4만빌리티' 지켜낼지 관건",
+        "두산에너빌리티 주가 상승 중"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "두산에너빌리티 주가 소폭 강세…'4만빌리티' 지켜낼지 관건",
+          "source": "CBC뉴스",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE40al8zSmdBUXRDZW1wbnZ3cm9PVzlEX01ESUhXQ0pFNlZmb0NXd0x3VDl4anNXVVRmOVhBdHgtS0hkODFiZWxHYmROSGdvcVVMZGFMb1VwckVwaDBtZnFZUTd2SXJ6VUFQ?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "두산에너빌리티 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1aTl9zLW42SmhVWU1MeDQ0aEV3UGNIZFp2M3dmM3o0eXhWNXM3R185MkpFSVppZEk3enJfeFVjbTJXUnJpdmxDN050UmQwblBYN1Q5bFJDS2MwTjdy?oc=5"
+        }
+      ]
+    },
+    {
       "timestamp": "Thu, 26 Nov 2026 00:32:57 GMT",
       "symbol": "009150",
       "name": "삼성전기",
@@ -384,37 +415,6 @@
           "title": "[오늘의 주목주] 'AI 투심 위축' 삼성전기 주가 12% 하락, 코스피 6%대 내려 4690선 마감",
           "source": "비즈니스포스트",
           "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBnSUg1Q3Q2UUljd3NKZWdMUTJ1Y1Y3Ymo1aW1hQU9xNUVTSm82aWRYUU1sRm5iZjBWU21WMDFxRWVGcS1pZHpoYjB1R3IyTklYdUgySTVCT2FQV3M4Tkc0alBYc1JfRXg3MXVKaFZGbnNudWs?oc=5"
-        }
-      ]
-    },
-    {
-      "timestamp": "Thu, 26 Nov 2026 00:24:14 GMT",
-      "symbol": "034020",
-      "name": "두산에너빌리티",
-      "changeRate": null,
-      "price": null,
-      "summary": "두산에너빌리티 주가 장중 4만원선 무너져…원전주 향방은?",
-      "source": "아시아뉴스통신",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1aTl9zLW42SmhVWU1MeDQ0aEV3UGNIZFp2M3dmM3o0eXhWNXM3R185MkpFSVppZEk3enJfeFVjbTJXUnJpdmxDN050UmQwblBYN1Q5bFJDS2MwTjdy?oc=5",
-      "mentionScore": 87.4,
-      "evidencePoints": [
-        "출처 아시아뉴스통신, CBC뉴스 기반 기사 2건",
-        "상승/강세 키워드 우세",
-        "두산에너빌리티 주가 상승 중",
-        "두산에너빌리티 주가 장중 4만원선 무너져…원전주 향방은?"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "두산에너빌리티 주가 상승 중",
-          "source": "아시아뉴스통신",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1aTl9zLW42SmhVWU1MeDQ0aEV3UGNIZFp2M3dmM3o0eXhWNXM3R185MkpFSVppZEk3enJfeFVjbTJXUnJpdmxDN050UmQwblBYN1Q5bFJDS2MwTjdy?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "두산에너빌리티 주가 장중 4만원선 무너져…원전주 향방은?",
-          "source": "CBC뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5sTnZ5dlA4R0lqZS1MbWVEZ3JiSHItV1YtaC1FZmYtRGRLUWJya3JRckxGdW5WLS1ocFlsZjZlNFBILTJvN3Z6NXZhRzhPaTB3ZDkwcVJoVmdKYnE2cGtIN1c2VlZ1eUMz?oc=5"
         }
       ]
     },
@@ -603,8 +603,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "rule-based",
-    "model": "signal-polish-v1",
-    "fallbackReason": "primary_failed"
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "fallbackReason": null
   }
 }
