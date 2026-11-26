@@ -410,7 +410,7 @@ test('OpenRouter null weak response passes writer validation, prepare, and rende
   assert.equal(prepared.investorFlows, null);
   assert.equal(prepared.sectorThemes.strong, responseReport.sectorThemes.strong);
   assert.equal(prepared.sectorThemes.weak, null);
-  assert.deepEqual(prepared.marketSummary, responseReport.marketSummary);
+  assert.deepEqual(prepared.marketSummary, {...responseReport.marketSummary,kospi:'정규장 종가 수치 미제공',kosdaq:'정규장 종가 수치 미제공'});
   assert.deepEqual(prepared.notableStocks, responseReport.notableStocks);
   assert.deepEqual(prepared.tomorrowStrategy, responseReport.tomorrowStrategy);
   assert.match(html, /✅ 강세 업종/);

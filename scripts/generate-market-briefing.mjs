@@ -1,3 +1,4 @@
+import { yahooCloseEvidence } from './briefing-index-close.mjs';
 import { finalizeEvidenceCopy, finalCopyIssues } from './briefing-evidence-boundary.mjs';
 import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
@@ -889,7 +890,7 @@ function hasCurrentPostMarketInvestorFlows(investorFlows) {
 }
 
 function briefingQualityIssues(marketResearch, report) {
-  const issues = [...finalCopyIssues(report)];
+  const issues = [];
 
   if (reportContainsPlaceholderCopy(report)) {
     issues.push('placeholder_copy');
@@ -917,7 +918,7 @@ function briefingQualityIssues(marketResearch, report) {
     }
   }
 
-  return [...issues, ...briefingSourceIssues(marketResearch)];
+  return [...issues, ...finalCopyIssues(report, marketResearch, { phase: PHASE, tradingDate: dateKey(), informationAsOf: PHASE === 'pre_market' ? PRE_MARKET_INFORMATION_AS_OF : (BRIEFING_AS_OF || marketResearch.collectedAt) }), ...briefingSourceIssues(marketResearch)];
 }
 
 function briefingSourceIssues(marketResearch) {
@@ -1966,6 +1967,7 @@ function prepareReportBeforeEvidenceBoundary(marketResearch, report) {
 function prepareReportForPublish(marketResearch, report) {
   return finalizeEvidenceCopy(prepareReportBeforeEvidenceBoundary(marketResearch, report), marketResearch, {
     phase: PHASE,
+    tradingDate: dateKey(),
     informationAsOf: PHASE === 'pre_market' ? PRE_MARKET_INFORMATION_AS_OF : (BRIEFING_AS_OF || marketResearch.collectedAt)
   });
 }
@@ -1973,6 +1975,7 @@ function prepareReportForPublish(marketResearch, report) {
 const WRITER_REJECTED_QUALITY_ISSUES = new Set([
   'placeholder_copy',
   'unfinished_editorial_copy',
+  'unbound_closing_copy',
   'stale_investor_flow_copy',
   'unavailable_investor_flow_copy',
   'unverified_investor_flow_copy',
@@ -2592,7 +2595,8 @@ function normalizeYahooIndex({ key, title, symbol }, json) {
     sourceDate: meta.regularMarketTime
       ? dateKey(new Date(meta.regularMarketTime * 1000))
       : null,
-    sourceUrl: `https://finance.yahoo.com/quote/${encodeURIComponent(symbol)}`
+    sourceUrl: `https://finance.yahoo.com/quote/${encodeURIComponent(symbol)}`,
+    closeEvidence: yahooCloseEvidence(key, json)
   };
 
   if (Number.isFinite(change) && Number.isFinite(changePercent) && !isCoherentIndex(normalized)) {
@@ -3732,6 +3736,15 @@ ${articles}
 `;
 }
 
+async function writePreparedReportArtifacts(marketResearch, inputReport, writer) {
+  const report = prepareAndValidateWriterReport(marketResearch, inputReport);
+  await mkdir(DATA_DIR, { recursive: true });
+  await writeFile(resolve(DATA_DIR, 'market-research.json'), JSON.stringify(marketResearch, null, 2), 'utf-8');
+  await writeFile(resolve(DATA_DIR, 'report.json'), JSON.stringify({ report, writer }, null, 2), 'utf-8');
+  await writeFile(resolve(OUTPUT_DIR, 'index.html'), await renderHtml(marketResearch, report, writer), 'utf-8');
+  return report;
+}
+
 async function main() {
   if (BRIEFING_TRADING_DATE && (!/^\d{4}-\d{2}-\d{2}$/.test(BRIEFING_TRADING_DATE)
       || !Number.isFinite(Date.parse(`${BRIEFING_TRADING_DATE}T00:00:00Z`))
@@ -3747,6 +3760,7 @@ async function main() {
   const marketResearch = process.env.REPORT_LLM_MOCK === '1' ? mockMarketResearch() : await collectPublicMarketResearch();
   console.info('[market-briefing] source coverage', {
     phase: PHASE,
+    tradingDate: dateKey(),
     informationAsOf: marketResearch.informationAsOf ?? BRIEFING_AS_OF ?? marketResearch.generatedAt,
     generatedAt: marketResearch.generatedAt,
     collectedAt: marketResearch.collectedAt ?? null,
@@ -3783,10 +3797,7 @@ async function main() {
     return;
   }
 
-  await mkdir(DATA_DIR, { recursive: true });
-  await writeFile(resolve(DATA_DIR, 'market-research.json'), JSON.stringify(marketResearch, null, 2), 'utf-8');
-  await writeFile(resolve(DATA_DIR, 'report.json'), JSON.stringify({ report, writer }, null, 2), 'utf-8');
-  await writeFile(resolve(OUTPUT_DIR, 'index.html'), await renderHtml(marketResearch, report, writer), 'utf-8');
+  await writePreparedReportArtifacts(marketResearch, report, writer);
 
   console.log('[market-briefing] report generated', {
     output: resolve(OUTPUT_DIR, 'index.html'),
@@ -3796,7 +3807,7 @@ async function main() {
   });
 }
 
-main().catch((error) => {
+export const __testMainCompleted = main().catch((error) => {
   console.error('[market-briefing] failed', error);
   process.exit(1);
 });
@@ -3849,3 +3860,5 @@ export const __testMarketNewsFallbackQueries = MARKET_NEWS_FALLBACK_QUERIES;
 export const __testSectorThemeFallbackQueries = SECTOR_THEME_FALLBACK_QUERIES;
 
 export const __testInvestorFlowFailureKinds = investorFlowFailureKinds;
+
+export const __testWritePreparedReportArtifacts = writePreparedReportArtifacts;

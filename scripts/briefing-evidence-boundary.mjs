@@ -1,3 +1,4 @@
+import { indexCloseRows, seoulTradingDate } from './briefing-index-close.mjs';
 // This boundary runs AFTER all editorial/event guards. Headline snippets are
 // context, never proof of an official close or the stage of a policy action.
 const EDITORIAL = /지배 방향이 확정되지 않은 업종만|상위 하방·혼조 사건과 분리되는|상방·혼조 결론과 분리되는|하방·혼조 결론과 분리되는/u;
@@ -20,24 +21,34 @@ export function policyEvidence(research, cutoff) {
   }).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt))[0] ?? null;
 }
 export function hasStockCloseEvidence(text, research, cutoff) {
-  const day = String(cutoff ?? '').slice(0,10);
+  const day = seoulTradingDate(cutoff);
   const limit = Date.parse(cutoff);
   const records = research?.stockCloseEvidence ?? [];
   const mentioned = records.filter(row => typeof row.name === 'string' && text.includes(row.name));
-  if (!mentioned.length || !Number.isFinite(limit)) return false;
-  const percentages = [...text.matchAll(/[-+]?\d+(?:\.\d+)?%/gu)].map(m=>m[0]);
-  return percentages.length === mentioned.length && mentioned.every(row => {
+  if (!mentioned.length || !Number.isFinite(limit) || new Set(mentioned.map(row=>row.name)).size!==mentioned.length
+      || /%\s*대|퍼센트/u.test(text)) return false;
+  const percentages = [...text.matchAll(/[-+]?\d+(?:\.\d+)?%/gu)];
+  if (percentages.length !== mentioned.length) return false;
+  return mentioned.every(row => {
     try {
       const url = new URL(row.sourceUrl);
+      const marketTime = Date.parse(row.marketTime);
+      const escaped = row.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const match = text.match(new RegExp(`${escaped}\\s+([+-]?)(\\d+(?:\\.\\d+)?)%([^,/]*)`, 'u'));
+      if (!match || !Number.isFinite(row.changePercent)) return false;
+      const down = /하락|급락|▼/u.test(match[3]);
+      const up = /상승|급등|▲/u.test(match[3]);
+      if (down && up || match[1]==='-' && up || match[1]==='+' && down) return false;
+      const sign = match[1]==='-' || down ? -1 : match[1]==='+' || up ? 1 : 0;
+      if (sign === 0 && Number(match[2]) !== 0) return false;
       return row.tradingDate === day && row.session === 'regular_close' && row.status === 'official_close'
-        && url.protocol === 'https:' && ['data.krx.co.kr','data-dbg.krx.co.kr'].includes(url.hostname)
-        && Number.isFinite(Date.parse(row.marketTime)) && Date.parse(row.marketTime) <= limit
-        && row.marketTime.startsWith(day) && percentages.includes(`${row.changePercent}%`)
-        && text.includes(`${row.name} ${row.changePercent}%`);
+        && url.protocol === 'https:' && !url.username && !url.password && ['data.krx.co.kr','data-dbg.krx.co.kr'].includes(url.hostname)
+        && Number.isFinite(marketTime) && marketTime <= limit && seoulTradingDate(row.marketTime)===day
+        && Number((sign*Number(match[2])).toFixed(2)) === Number(row.changePercent.toFixed(2));
     } catch { return false; }
   });
 }
-export function finalizeEvidenceCopy(report, research, { phase, informationAsOf } = {}) {
+export function finalizeEvidenceCopy(report, research, { phase, informationAsOf, tradingDate } = {}) {
   const event = policyEvidence(research, informationAsOf);
   const walk = value => {
     if (typeof value === 'string') {
@@ -56,22 +67,29 @@ export function finalizeEvidenceCopy(report, research, { phase, informationAsOf 
   };
   const next = walk(report);
   if (phase === 'post_market') {
-    for (const field of ['surging','plunging']) {
-      if (Array.isArray(next.notableStocks?.[field])) next.notableStocks[field] = next.notableStocks[field].map(text => {
-        if (!/%|퍼센트/u.test(text) || hasStockCloseEvidence(text, research, informationAsOf)) return text;
-        const names = text.split(',')[0];
-        return /[%\d]/u.test(names) ? '개별 종목의 공시와 수급 변화를 점검합니다.' : `${names} - 종목별 공시와 수급 변화를 점검합니다.`;
-      });
-    }
-    // Do not turn article percentages (including yesterday/intraday numbers)
-    // into a close. The separately rendered structured index values are retained.
-    for (const [section, field] of [['marketSummary','summary'],['tomorrowStrategy','outlook']]) {
-      if (/%|퍼센트/u.test(next?.[section]?.[field] ?? '')) next[section][field] = '시장 지수는 위에 표시된 기준 시점의 수치로 확인하고, 업종별 수급과 다음 거래일 변동성을 점검합니다.';
-    }
+    const rows = indexCloseRows(research, informationAsOf, tradingDate);
+    const closingWalk = (value, path = '') => {
+      if (typeof value === 'string') {
+        // Keep existing fail-closed placeholder diagnostics; never wash them away.
+        if (/(수집되지 않았습니다|뉴스 수집 실패|fetch_failed_\d+|재분류해야 합니다|확인되지 않았습니다|확인 불가|확인\s*필요)/u.test(value)) return value;
+        if (path === 'marketSummary.kospi' || path === 'marketSummary.kosdaq') return rows[path.split('.')[1]];
+        if (/%|퍼센트/u.test(value) && ((tradingDate && seoulTradingDate(informationAsOf)!==tradingDate) || !hasStockCloseEvidence(value, research, informationAsOf))) {
+          return '종목별 공시와 수급 변화, 업종별 흐름을 점검합니다.';
+        }
+        return value;
+      }
+      if (Array.isArray(value)) return value.map((entry,i)=>closingWalk(entry, `${path}.${i}`));
+      if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,closingWalk(v,path ? `${path}.${k}` : k)]));
+      return value;
+    };
+    const closed = closingWalk(next);
+    return closed;
   }
   return next;
 }
-export function finalCopyIssues(report) {
+export function finalCopyIssues(report, research, options = {}) {
   const text = JSON.stringify(report ?? {});
-  return EDITORIAL.test(text) || FRAGMENT.test(text) ? ['unfinished_editorial_copy'] : [];
+  const issues = EDITORIAL.test(text) || FRAGMENT.test(text) ? ['unfinished_editorial_copy'] : [];
+  if (options.phase === 'post_market' && JSON.stringify(finalizeEvidenceCopy(report, research, options)) !== text) issues.push('unbound_closing_copy');
+  return issues;
 }
