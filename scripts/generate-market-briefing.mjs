@@ -1976,6 +1976,7 @@ const WRITER_REJECTED_QUALITY_ISSUES = new Set([
   'placeholder_copy',
   'unfinished_editorial_copy',
   'unbound_closing_copy',
+  'unbound_rate_decision_copy',
   'stale_investor_flow_copy',
   'unavailable_investor_flow_copy',
   'unverified_investor_flow_copy',
