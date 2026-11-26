@@ -1,16 +1,63 @@
 {
-  "generated_at": "2026-11-26T01:00:19.821Z",
+  "generated_at": "2026-11-26T02:00:20.453Z",
   "generated_date": "2026-11-26",
-  "slot_hour": 10,
-  "cycle_label": "KST_1000",
-  "slot_label": "10:00",
+  "slot_hour": 11,
+  "cycle_label": "KST_1100",
+  "slot_label": "11:00",
   "state": "loaded",
   "summary": {
-    "title": "KST 10:00 실시간 급등",
+    "title": "KST 11:00 실시간 급등",
     "subtitle": "공개 텔레그램 채널 기반 급등 후보 9건",
     "basedOn": "public telegram channel mentions with market news backfill"
   },
   "signals": [
+    {
+      "stockName": "삼성전기",
+      "stockCode": "009150",
+      "summary": "삼성전기, 1.73조 규모 자사주 소각…증권가 \"재평가 기대\" [주가동향]",
+      "headline": "삼성전기 주가 상승 중",
+      "evidencePoints": [
+        "출처 아시아뉴스통신, 조세일보, 비즈니스포스트, 빅터뉴스 기반 기사 4건",
+        "상승/강세 키워드 우세",
+        "삼성전기 주가 상승 중",
+        "삼성전기, 1.73조 규모 자사주 소각…증권가 \"재평가 기대\" [주가동향]"
+      ],
+      "mentionScore": 99.9,
+      "sentimentLabel": "positive",
+      "channelCount": 4,
+      "updatedAt": "2026-11-26T02:00:20.453Z",
+      "cycleLabel": "KST_1100",
+      "direction": "up",
+      "changeRate": null,
+      "latestHeadline": "삼성전기 주가 상승 중",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Zb2wxRTRHUVRqUDhyampNNTI4Y3RFaEpxOW1yZUJiWEQ5MUxFWTZ3RVNTMElUM2pYa25qTHJYM2xVV1dEeV9pVV9xcWo2R1J0VUNoUFFvU1ZhT3VO?oc=5",
+      "publishedAt": "Thu, 26 Nov 2026 00:32:57 GMT",
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Zb2wxRTRHUVRqUDhyampNNTI4Y3RFaEpxOW1yZUJiWEQ5MUxFWTZ3RVNTMElUM2pYa25qTHJYM2xVV1dEeV9pVV9xcWo2R1J0VUNoUFFvU1ZhT3VO?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기, 1.73조 규모 자사주 소각…증권가 \"재평가 기대\" [주가동향]",
+          "source": "조세일보",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9DQkMtb080c0gzdFlVMjZaSFR6SkhRamVQVjVSR1loV2pVUVplVXhRVmd2X2gxdlNuNnRuU2lLX2VUWUhNNi0zSUxlM3Bqb0xDQlBvZ1prTVRkQVh4TWpn?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[오늘의 주목주] 'AI 투심 위축' 삼성전기 주가 12% 하락, 코스피 6%대 내려 4690선 마감",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBnSUg1Q3Q2UUljd3NKZWdMUTJ1Y1Y3Ymo1aW1hQU9xNUVTSm82aWRYUU1sRm5iZjBWU21WMDFxRWVGcS1pZHpoYjB1R3IyTklYdUgySTVCT2FQV3M4Tkc0alBYc1JfRXg3MXVKaFZGbnNudWs?oc=5"
+        }
+      ],
+      "hasTelegram": false,
+      "hasNews": true,
+      "polishedHeadline": "삼성전기 주가 상승 중",
+      "polishedBody": "삼성전기는 1.73조 규모 자사주 소각…증권가 \"재평가 기대\" 재료가 부각되며 단기 모멘텀을 형성했습니다. 보조 단서로는 'AI 투심 위축' 주가 12% 하락 내용이 더해져 해석 범위를 넓혔습니다. 장중에는 고점 유지, 거래대금 확대, 외국인 또는 기관 매수 전환을 함께 봐야 합니다."
+    },
     {
       "stockName": "두산에너빌리티",
       "stockCode": "034020",
@@ -234,47 +281,6 @@
       "polishedBody": "CIA 해킹 소식이 전해지며 보안주에 대한 관심이 집중되었습니다. 파수AI는 이날 상한가를 기록하며 급락장에서도 강한 상승세를 보였습니다. 보안 수요 증가 기대감이 주가를 끌어올린 긍정적인 신호로 평가됩니다. 향후 추가 보안 이슈나 실적 발표가 주가 향방을 결정할 변수입니다."
     },
     {
-      "stockName": "삼성전기",
-      "stockCode": "009150",
-      "summary": "[오늘의 특징주] 삼성전기·안랩·삼성전자",
-      "headline": "[오늘의 주목주] 'AI 투심 위축' 삼성전기 주가 12% 하락, 코스피 6%대 내려 4690선 마감",
-      "evidencePoints": [
-        "출처 비즈니스포스트, 빅터뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 -12.0%",
-        "[오늘의 주목주] 'AI 투심 위축' 삼성전기 주가 12% 하락, 코스피 6%대 내려 4690선 마감",
-        "[오늘의 특징주] 삼성전기·안랩·삼성전자"
-      ],
-      "mentionScore": 86.2,
-      "sentimentLabel": "negative",
-      "channelCount": 2,
-      "updatedAt": "2026-11-26T01:00:19.821Z",
-      "cycleLabel": "KST_1000",
-      "direction": "down",
-      "changeRate": -12,
-      "latestHeadline": "[오늘의 주목주] 'AI 투심 위축' 삼성전기 주가 12% 하락, 코스피 6%대 내려 4690선 마감",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBnSUg1Q3Q2UUljd3NKZWdMUTJ1Y1Y3Ymo1aW1hQU9xNUVTSm82aWRYUU1sRm5iZjBWU21WMDFxRWVGcS1pZHpoYjB1R3IyTklYdUgySTVCT2FQV3M4Tkc0alBYc1JfRXg3MXVKaFZGbnNudWs?oc=5",
-      "publishedAt": "Wed, 25 Nov 2026 08:46:31 GMT",
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] 'AI 투심 위축' 삼성전기 주가 12% 하락, 코스피 6%대 내려 4690선 마감",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBnSUg1Q3Q2UUljd3NKZWdMUTJ1Y1Y3Ymo1aW1hQU9xNUVTSm82aWRYUU1sRm5iZjBWU21WMDFxRWVGcS1pZHpoYjB1R3IyTklYdUgySTVCT2FQV3M4Tkc0alBYc1JfRXg3MXVKaFZGbnNudWs?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[오늘의 특징주] 삼성전기·안랩·삼성전자",
-          "source": "빅터뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE40NGRXaHlCTzRkODFnR1ZCZ29fOHNlQ0pTWnhVSVp2QW5SZ1poQ2dHYWY4dVpEWmhudDNJTmdEV0tEczVWNkkxRU1OUFg4LVg5cFFnS01tZ1VKZEpaZVFpUHZ2aHVfOEE?oc=5"
-        }
-      ],
-      "hasTelegram": false,
-      "hasNews": true,
-      "polishedHeadline": "삼성전기, AI 투심 위축에 12% 급락",
-      "polishedBody": "AI 관련 투자 심리가 위축되며 삼성전기 주가가 12% 하락했습니다. 코스피 지수도 6%대 하락하며 4690선으로 마감해 전반적인 약세장을 반영했습니다. 이는 AI 업종 전반의 조정 국면에서 동반 하락한 것으로 위험 신호로 볼 수 있습니다. 향후 AI 수요 회복 여부와 실적 전망이 주가 반등의 핵심 관전 포인트입니다."
-    },
-    {
       "stockName": "뷰노",
       "stockCode": "338220",
       "summary": "[특징주] 뷰노, 브라질 안저 AI 진출 소식에 22.07% 급등 바이오타임즈",
@@ -344,6 +350,43 @@
     }
   ],
   "items": [
+    {
+      "timestamp": "Thu, 26 Nov 2026 00:32:57 GMT",
+      "symbol": "009150",
+      "name": "삼성전기",
+      "changeRate": null,
+      "price": null,
+      "summary": "삼성전기, 1.73조 규모 자사주 소각…증권가 \"재평가 기대\" [주가동향]",
+      "source": "아시아뉴스통신",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Zb2wxRTRHUVRqUDhyampNNTI4Y3RFaEpxOW1yZUJiWEQ5MUxFWTZ3RVNTMElUM2pYa25qTHJYM2xVV1dEeV9pVV9xcWo2R1J0VUNoUFFvU1ZhT3VO?oc=5",
+      "mentionScore": 99.9,
+      "evidencePoints": [
+        "출처 아시아뉴스통신, 조세일보, 비즈니스포스트, 빅터뉴스 기반 기사 4건",
+        "상승/강세 키워드 우세",
+        "삼성전기 주가 상승 중",
+        "삼성전기, 1.73조 규모 자사주 소각…증권가 \"재평가 기대\" [주가동향]"
+      ],
+      "relatedPosts": [
+        {
+          "label": "관련기사1",
+          "title": "삼성전기 주가 상승 중",
+          "source": "아시아뉴스통신",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1Zb2wxRTRHUVRqUDhyampNNTI4Y3RFaEpxOW1yZUJiWEQ5MUxFWTZ3RVNTMElUM2pYa25qTHJYM2xVV1dEeV9pVV9xcWo2R1J0VUNoUFFvU1ZhT3VO?oc=5"
+        },
+        {
+          "label": "관련기사2",
+          "title": "삼성전기, 1.73조 규모 자사주 소각…증권가 \"재평가 기대\" [주가동향]",
+          "source": "조세일보",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9DQkMtb080c0gzdFlVMjZaSFR6SkhRamVQVjVSR1loV2pVUVplVXhRVmd2X2gxdlNuNnRuU2lLX2VUWUhNNi0zSUxlM3Bqb0xDQlBvZ1prTVRkQVh4TWpn?oc=5"
+        },
+        {
+          "label": "관련기사3",
+          "title": "[오늘의 주목주] 'AI 투심 위축' 삼성전기 주가 12% 하락, 코스피 6%대 내려 4690선 마감",
+          "source": "비즈니스포스트",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBnSUg1Q3Q2UUljd3NKZWdMUTJ1Y1Y3Ymo1aW1hQU9xNUVTSm82aWRYUU1sRm5iZjBWU21WMDFxRWVGcS1pZHpoYjB1R3IyTklYdUgySTVCT2FQV3M4Tkc0alBYc1JfRXg3MXVKaFZGbnNudWs?oc=5"
+        }
+      ]
+    },
     {
       "timestamp": "Thu, 26 Nov 2026 00:24:14 GMT",
       "symbol": "034020",
@@ -507,37 +550,6 @@
       ]
     },
     {
-      "timestamp": "Wed, 25 Nov 2026 08:46:31 GMT",
-      "symbol": "009150",
-      "name": "삼성전기",
-      "changeRate": -12,
-      "price": null,
-      "summary": "[오늘의 특징주] 삼성전기·안랩·삼성전자",
-      "source": "비즈니스포스트",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBnSUg1Q3Q2UUljd3NKZWdMUTJ1Y1Y3Ymo1aW1hQU9xNUVTSm82aWRYUU1sRm5iZjBWU21WMDFxRWVGcS1pZHpoYjB1R3IyTklYdUgySTVCT2FQV3M4Tkc0alBYc1JfRXg3MXVKaFZGbnNudWs?oc=5",
-      "mentionScore": 86.2,
-      "evidencePoints": [
-        "출처 비즈니스포스트, 빅터뉴스 기반 기사 2건",
-        "제목 기준 변동률 단서 -12.0%",
-        "[오늘의 주목주] 'AI 투심 위축' 삼성전기 주가 12% 하락, 코스피 6%대 내려 4690선 마감",
-        "[오늘의 특징주] 삼성전기·안랩·삼성전자"
-      ],
-      "relatedPosts": [
-        {
-          "label": "관련기사1",
-          "title": "[오늘의 주목주] 'AI 투심 위축' 삼성전기 주가 12% 하락, 코스피 6%대 내려 4690선 마감",
-          "source": "비즈니스포스트",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBnSUg1Q3Q2UUljd3NKZWdMUTJ1Y1Y3Ymo1aW1hQU9xNUVTSm82aWRYUU1sRm5iZjBWU21WMDFxRWVGcS1pZHpoYjB1R3IyTklYdUgySTVCT2FQV3M4Tkc0alBYc1JfRXg3MXVKaFZGbnNudWs?oc=5"
-        },
-        {
-          "label": "관련기사2",
-          "title": "[오늘의 특징주] 삼성전기·안랩·삼성전자",
-          "source": "빅터뉴스",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE40NGRXaHlCTzRkODFnR1ZCZ29fOHNlQ0pTWnhVSVp2QW5SZ1poQ2dHYWY4dVpEWmhudDNJTmdEV0tEczVWNkkxRU1OUFg4LVg5cFFnS01tZ1VKZEpaZVFpUHZ2aHVfOEE?oc=5"
-        }
-      ]
-    },
-    {
       "timestamp": "Wed, 25 Nov 2026 09:22:47 GMT",
       "symbol": "338220",
       "name": "뷰노",
@@ -591,8 +603,8 @@
     "model": "rule-based-scraper-v1"
   },
   "polishWriter": {
-    "provider": "openrouter",
-    "model": "deepseek/deepseek-v4-flash",
-    "fallbackReason": null
+    "provider": "rule-based",
+    "model": "signal-polish-v1",
+    "fallbackReason": "primary_failed"
   }
 }
