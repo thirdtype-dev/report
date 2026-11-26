@@ -1,3 +1,4 @@
+import { finalCopyIssues } from './briefing-evidence-boundary.mjs';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -118,6 +119,9 @@ function inspectArticle(article) {
       topArticleTitle,
       placeholder: false
     };
+  }
+  if (finalCopyIssues(visibleBody).length) {
+    return { ok: false, reason: 'unfinished_editorial_copy', topArticleTitle, placeholder: true };
   }
   if (placeholder) {
     return {
