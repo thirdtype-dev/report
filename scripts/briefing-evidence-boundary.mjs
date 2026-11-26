@@ -4,16 +4,26 @@ import { indexCloseRows, seoulTradingDate } from './briefing-index-close.mjs';
 const EDITORIAL = /지배 방향이 확정되지 않은 업종만|상위 하방·혼조 사건과 분리되는|상방·혼조 결론과 분리되는|하방·혼조 결론과 분리되는/u;
 const FRAGMENT = /(?:급락|급등|하락|상승)에(?:가|도?(?:\s*\/|\s*$))|급락에도(?:\s*\/|\s*$)/u;
 const TARIFF_STAGE = /관세/u;
-const STAGE_CLAIM = /발표\s*(?:여부|예정|확정|했|됐)|시행|발효|부과|인상안|효력|조치안|의견수렴/u;
+// Match action stems and Korean active/passive/future inflections, not an
+// exact sentence. '공식 발표 내용/시각을 확인' is not a stage assertion.
+const ANNOUNCEMENT_CLAIM = /(?:발표|공개)\s*(?:[가를]\s*)?(?:예정|여부|확정|앞두|[되됐된될됩하했할합])/u;
+const STAGE_CLAIM = /시행|발효|부과|인상안|효력|조치안|의견수렴/u;
+const hasTariffStage = text => TARIFF_STAGE.test(text) && (ANNOUNCEMENT_CLAIM.test(text) || STAGE_CLAIM.test(text));
 // There is no supported collector of exact BOK decision text + availability
 // time yet. RSS titles and arbitrary officialEvents must not authorize a rate
 // or a stage claim, even if their URL/provider looks official. Keep macro
 // context without misclassifying it as an unsupported stock close percentage.
-const BOK_CONTEXT = /한국은행|금통위|금융통화위원회/u;
-const RATE_CONTEXT = /기준\s*금리|정책\s*금리/u;
+const BOK_CONTEXT = /한국은행|한은|금통위|금융통화위원회/u;
+const OTHER_RATE = /(?:예금|예적금|적금|수신|대출|여신|채권|국채|시장|조달|주담대)\s*금리/gu;
+const RATE_CONTEXT = /기준\s*금리|정책\s*금리|(?<![가-힣])금리(?:를|의|는|가)?\s*(?:결정|동결|인상|인하)/u;
+const RATE_CLAIM = /동결|인상|인하|미정|예정|확정|[%]|퍼센트|fetch_failed_\d+|확인\s*(?:불가|필요)|확인되지 않았습니다/u;
 const NEUTRAL_BOK = '한국은행 기준금리 결정은 공식 원문과 발표 시각의 검증 전까지 수치와 진행 단계 판단을 보류합니다.';
 function unboundBokCopy(value) {
-  if (typeof value === 'string') return value !== NEUTRAL_BOK && BOK_CONTEXT.test(value) && RATE_CONTEXT.test(value);
+  if (typeof value === 'string') {
+    const policyText = value.replace(OTHER_RATE, '비정책금융조건');
+    return value !== NEUTRAL_BOK && BOK_CONTEXT.test(value) && RATE_CONTEXT.test(policyText)
+      && (ANNOUNCEMENT_CLAIM.test(policyText) || RATE_CLAIM.test(policyText));
+  }
   if (Array.isArray(value)) return value.some(unboundBokCopy);
   return value && typeof value === 'object' ? Object.values(value).some(unboundBokCopy) : false;
 }
@@ -70,7 +80,7 @@ export function finalizeEvidenceCopy(report, research, { phase, informationAsOf,
         return NEUTRAL_BOK;
       }
       if (EDITORIAL.test(value) || FRAGMENT.test(value)) return '장 초반 업종별 등락과 거래대금, 수급 변화를 함께 점검합니다.';
-      if (TARIFF_STAGE.test(value) && STAGE_CLAIM.test(value)) {
+      if (hasTariffStage(value)) {
         if (!event) return NEUTRAL_POLICY;
         return event.stage === 'proposed'
           ? 'USTR의 관세 조치안은 제안·의견수렴 단계이며 시행 확정과 구분해 적용 범위와 후속 절차를 점검합니다.'
@@ -104,10 +114,16 @@ export function finalizeEvidenceCopy(report, research, { phase, informationAsOf,
   }
   return next;
 }
+function unboundTariffCopy(value, research, options) {
+  if (typeof value === 'string') return hasTariffStage(value) && finalizeEvidenceCopy(value, research, {...options, phase: 'pre_market'}) !== value;
+  if (Array.isArray(value)) return value.some(v => unboundTariffCopy(v, research, options));
+  return value && typeof value === 'object' ? Object.values(value).some(v => unboundTariffCopy(v, research, options)) : false;
+}
 export function finalCopyIssues(report, research, options = {}) {
   const text = JSON.stringify(report ?? {});
   const issues = EDITORIAL.test(text) || FRAGMENT.test(text) ? ['unfinished_editorial_copy'] : [];
   if (['pre_market', 'post_market'].includes(options.phase) && unboundBokCopy(report)) issues.push('unbound_rate_decision_copy');
+  if (['pre_market', 'post_market'].includes(options.phase) && unboundTariffCopy(report, research, options)) issues.push('unbound_policy_stage_copy');
   if (options.phase === 'post_market' && JSON.stringify(finalizeEvidenceCopy(report, research, options)) !== text) issues.push('unbound_closing_copy');
   return issues;
 }

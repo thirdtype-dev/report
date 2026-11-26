@@ -57,7 +57,12 @@ test('final preparation keeps BOK context in app JSON and both HTML paths withou
    delete process.env.BRIEFING_AS_OF;delete process.env.BRIEFING_TRADING_DATE;
    const mod=await import(${JSON.stringify(moduleUrl)});
    await mod.__testMainCompleted;
-   for(const text of ${JSON.stringify([decision,upcoming,decision+' SK하이닉스 9%대 하락'])}) {
+   for(const [text,expected] of ${JSON.stringify([
+     ...[decision,upcoming,decision+' SK하이닉스 9%대 하락','한은 기준금리 결정 결과가 발표될 예정입니다','한국은행 금리 결정 결과가 발표될 예정입니다','한은 금리 결정 발표 예정'].map(text=>[text,neutral]),
+     ['미국의 새 관세가 발표될 예정입니다','통상 정책의 공식 발표 내용과 적용 범위·절차를 확인하며 업종별 영향을 점검합니다.'],
+     ['한국은행 대출금리 동향을 점검합니다','한국은행 대출금리 동향을 점검합니다'],
+     ['한은 금리 결정의 공식 원문과 발표 시각을 확인합니다','한은 금리 결정의 공식 원문과 발표 시각을 확인합니다']
+    ])}) {
     const report={marketSummary:{kospi:'지수 확인',kosdaq:'지수 확인',summary:text},sectorThemes:{weak:text,strong:'자동차 거래대금 증가'},notableStocks:{surging:['A 상승','B 상승'],plunging:['C 하락','D 하락']},tomorrowStrategy:{outlook:text,checklist:[text]}};
     await mod.__testWritePreparedReportArtifacts({collectedAt:'2026-11-26T16:00:00+09:00',majorIndices:[]},report,{provider:'test',model:'test'});
     await fs.mkdir('report/data',{recursive:true});
@@ -65,12 +70,12 @@ test('final preparation keeps BOK context in app JSON and both HTML paths withou
     await fs.copyFile('public/report/index.html','report/index.html');
     await fs.copyFile('public/report/data/report.json','report/data/report.json');
     const app=JSON.parse(await fs.readFile('report/data/report.json','utf8')).report;
-    for(const value of [app.marketSummary.summary,app.sectorThemes.weak,app.tomorrowStrategy.outlook,...app.tomorrowStrategy.checklist]) assert.equal(value,${JSON.stringify(neutral)});
+    for(const value of [app.marketSummary.summary,app.sectorThemes.weak,app.tomorrowStrategy.outlook,...app.tomorrowStrategy.checklist]) assert.equal(value,expected);
     assert.doesNotMatch(JSON.stringify(app),/3\\.25|9%대|발표될 예정/);
     for(const file of ['index.html','report/index.html']) {
      const html=await fs.readFile(file,'utf8');
      const articles=[...html.matchAll(/<article\\b[^>]*>[\\s\\S]*?<\\/article>/gu)].filter(m=>m[0].includes('report-post-market')).map(m=>m[0]).join('');
-     assert.ok(articles.includes(${JSON.stringify(neutral)}));
+     assert.ok(articles.includes(expected));
      assert.doesNotMatch(articles,/3\\.25|9%대|발표될 예정/);
     }
    }
