@@ -32,3 +32,19 @@ correct earlier upcoming text is not retrospectively invalidated. Actual final
 artifact-writer tests cover app JSON and the workflow copies to both HTML paths,
 with repository artifacts checked byte-for-byte unchanged. No cards, raw research,
 schedules, recovery rules, authentication or publication dispatch are modified.
+
+## Entity/event aliases and stage conjugations
+
+The boundary recognizes 한국은행/한은/금통위/금융통화위원회 and
+기준금리/정책금리/plain 금리 결정·동결·인상·인하 contexts. Deposit,
+loan, bond and other non-policy rate terms are excluded from the policy event
+match. A rate context also needs an asserted stage or number: neutral commentary
+about impacts or checking an official original/publication time remains intact.
+Announcement claims share an action-stem matcher for 발표/공개 and Korean
+active/passive/future forms (including 발표될 예정, 발표됩니다, 발표됐습니다).
+Existing tariff-stage handling uses the same matcher; no feed or evidence
+contract changes. Both morning and closing contextual gates catch unbound tariff
+claims reintroduced after preparation. Context-free historical-card checks are
+unchanged. Tables cover aliases, conjugations, unrelated rate commentary, final
+app/HTML artifacts and supported pre-cutoff proposed tariff wording. This remains
+a conservative fallback, not official rate-number collection.
