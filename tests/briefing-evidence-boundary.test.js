@@ -29,7 +29,7 @@ test('intraday and previous-day percentages are not promoted into closing prose'
  for(const text of ['코스피 장중 -5.65%','전일 +6.32%','코스피 -6.16%로 마감']) {
   const r={marketSummary:{kospi:'4,697.51 (-6.16%)',summary:text},tomorrowStrategy:{outlook:text}};
   const fixed=finalizeEvidenceCopy(r,{},{phase:'post_market'});
-  assert.equal(fixed.marketSummary.kospi,r.marketSummary.kospi);
+  assert.equal(fixed.marketSummary.kospi,'정규장 종가 수치 미제공');
   assert.doesNotMatch(fixed.marketSummary.summary,/%/);
   assert.doesNotMatch(fixed.tomorrowStrategy.outlook,/%/);
  }
