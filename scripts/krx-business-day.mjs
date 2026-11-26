@@ -1,3 +1,6 @@
+import { resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
+
 const SEOUL_DATE_FORMATTER = new Intl.DateTimeFormat('en-CA', {
   timeZone: 'Asia/Seoul',
   year: 'numeric',
@@ -101,7 +104,7 @@ function getManualHolidays() {
   );
 }
 
-function evaluateTradingDay(targetDate = getTargetDate()) {
+export function evaluateTradingDay(targetDate = getTargetDate()) {
   if (isWeekend(targetDate)) {
     return { ...targetDate, isTradingDay: false, reason: 'weekend' };
   }
@@ -124,12 +127,14 @@ function evaluateTradingDay(targetDate = getTargetDate()) {
   return { ...targetDate, isTradingDay: true, reason: 'business_day' };
 }
 
-try {
-  const result = evaluateTradingDay();
-  process.stdout.write(`is_trading_day=${result.isTradingDay}\n`);
-  process.stdout.write(`trading_date=${result.ymd}\n`);
-  process.stdout.write(`skip_reason=${result.reason}\n`);
-} catch (error) {
-  console.error('[krx-business-day] failed', error);
-  process.exitCode = 1;
+if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) {
+  try {
+    const result = evaluateTradingDay();
+    process.stdout.write(`is_trading_day=${result.isTradingDay}\n`);
+    process.stdout.write(`trading_date=${result.ymd}\n`);
+    process.stdout.write(`skip_reason=${result.reason}\n`);
+  } catch (error) {
+    console.error('[krx-business-day] failed', error);
+    process.exitCode = 1;
+  }
 }
