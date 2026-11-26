@@ -1,3 +1,4 @@
+import { krxCashCloseEpoch } from './krx-cash-session.mjs';
 // Evidence comes from the existing Yahoo daily chart response, not writer text.
 // A delayed quote alone, Npay date row, or collection time is NOT a closing bar.
 const SYMBOLS = { kospi: '^KS11', kosdaq: '^KQ11' };
@@ -30,13 +31,14 @@ export function verifiedIndexClose(index, key, cutoff) {
   const e = index?.closeEvidence;
   const limit = Date.parse(cutoff)/1000;
   const day = seoulTradingDate(cutoff);
+  const cashClose = krxCashCloseEpoch(day, key);
   const date = seconds=>Number.isFinite(seconds) ? seoulTradingDate(new Date(seconds*1000).toISOString()) : null;
-  if (!e || e.kind !== 'yahoo_completed_daily_bar' || e.symbol !== SYMBOLS[key] || e.timeZone !== 'Asia/Seoul'
+  if (cashClose === null || !e || e.kind !== 'yahoo_completed_daily_bar' || e.symbol !== SYMBOLS[key] || e.timeZone !== 'Asia/Seoul'
       || index.status === 'unavailable' || index.key !== key || index.sourceUrl !== `https://finance.yahoo.com/quote/${encodeURIComponent(SYMBOLS[key])}`
       || !Number.isFinite(limit) || ![e.sessionStart,e.sessionEnd,e.quoteTime,e.quotePrice,e.barTime,e.close,e.previousBarTime,e.previousClose].every(Number.isFinite)
       || e.close<=0 || e.previousClose<=0 || e.sessionStart>=e.sessionEnd
       || e.barTime<e.sessionStart || e.barTime>=e.sessionEnd || e.previousBarTime>=e.sessionStart
-      || e.quoteTime<e.sessionEnd || e.quoteTime>limit || e.sessionEnd>limit
+      || e.quoteTime<Math.max(e.sessionEnd,cashClose) || e.quoteTime>limit || Math.max(e.sessionEnd,cashClose)>limit
       || date(e.sessionStart)!==day || date(e.sessionEnd)!==day || date(e.quoteTime)!==day
       || date(e.barTime)!==day || date(e.previousBarTime)>=day || index.sourceDate!==day
       || Math.abs(e.quotePrice-e.close)>0.005) return null;
