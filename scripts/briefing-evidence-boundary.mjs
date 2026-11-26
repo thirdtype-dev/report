@@ -5,6 +5,18 @@ const EDITORIAL = /지배 방향이 확정되지 않은 업종만|상위 하방�
 const FRAGMENT = /(?:급락|급등|하락|상승)에(?:가|도?(?:\s*\/|\s*$))|급락에도(?:\s*\/|\s*$)/u;
 const TARIFF_STAGE = /관세/u;
 const STAGE_CLAIM = /발표\s*(?:여부|예정|확정|했|됐)|시행|발효|부과|인상안|효력|조치안|의견수렴/u;
+// There is no supported collector of exact BOK decision text + availability
+// time yet. RSS titles and arbitrary officialEvents must not authorize a rate
+// or a stage claim, even if their URL/provider looks official. Keep macro
+// context without misclassifying it as an unsupported stock close percentage.
+const BOK_CONTEXT = /한국은행|금통위|금융통화위원회/u;
+const RATE_CONTEXT = /기준\s*금리|정책\s*금리/u;
+const NEUTRAL_BOK = '한국은행 기준금리 결정은 공식 원문과 발표 시각의 검증 전까지 수치와 진행 단계 판단을 보류합니다.';
+function unboundBokCopy(value) {
+  if (typeof value === 'string') return value !== NEUTRAL_BOK && BOK_CONTEXT.test(value) && RATE_CONTEXT.test(value);
+  if (Array.isArray(value)) return value.some(unboundBokCopy);
+  return value && typeof value === 'object' ? Object.values(value).some(unboundBokCopy) : false;
+}
 const NEUTRAL_POLICY = '통상 정책의 공식 발표 내용과 적용 범위·절차를 확인하며 업종별 영향을 점검합니다.';
 export function policyEvidence(research, cutoff) {
   const limit = Date.parse(cutoff);
@@ -52,6 +64,11 @@ export function finalizeEvidenceCopy(report, research, { phase, informationAsOf,
   const event = policyEvidence(research, informationAsOf);
   const walk = value => {
     if (typeof value === 'string') {
+      if (unboundBokCopy(value)) {
+        // Preserve collection/placeholder failures for the existing quality gate.
+        if (/(수집되지 않았습니다|뉴스 수집 실패|fetch_failed_\d+|재분류해야 합니다|확인되지 않았습니다|확인 불가|확인\s*필요)/u.test(value)) return value;
+        return NEUTRAL_BOK;
+      }
       if (EDITORIAL.test(value) || FRAGMENT.test(value)) return '장 초반 업종별 등락과 거래대금, 수급 변화를 함께 점검합니다.';
       if (TARIFF_STAGE.test(value) && STAGE_CLAIM.test(value)) {
         if (!event) return NEUTRAL_POLICY;
@@ -90,6 +107,7 @@ export function finalizeEvidenceCopy(report, research, { phase, informationAsOf,
 export function finalCopyIssues(report, research, options = {}) {
   const text = JSON.stringify(report ?? {});
   const issues = EDITORIAL.test(text) || FRAGMENT.test(text) ? ['unfinished_editorial_copy'] : [];
+  if (['pre_market', 'post_market'].includes(options.phase) && unboundBokCopy(report)) issues.push('unbound_rate_decision_copy');
   if (options.phase === 'post_market' && JSON.stringify(finalizeEvidenceCopy(report, research, options)) !== text) issues.push('unbound_closing_copy');
   return issues;
 }
