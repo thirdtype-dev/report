@@ -2391,8 +2391,8 @@ test('post-market general event guard reflects semiconductor downside without st
   const prepared = module.__testPrepareReportForPublish(marketResearch, report);
 
   assert.equal(prepared.investorFlows, null);
-  assert.match(prepared.marketSummary.summary, /반도체.*중국발 반도체 우려/);
-  assert.match(prepared.sectorThemes.weak, /반도체.*중국발 반도체 우려/);
+  assert.match(prepared.marketSummary.summary, /반도체.*관련 보도와 수급 변화/);
+  assert.match(prepared.sectorThemes.weak, /반도체.*관련 보도와 수급 변화/);
   assert.equal(prepared.sectorThemes.strong.includes('반도체'), false);
   assert.deepEqual(prepared.notableStocks.plunging, ['대한전선 하락', '이수페타시스 하락']);
   assert.match(module.__testRenderPostMarketReport(prepared), /급락 종목/);
@@ -2459,4 +2459,18 @@ test('investor flow diagnostics emit categories without raw collector details', 
   assert.deepEqual(module.__testInvestorFlowFailureKinds({ status: 'unavailable', reason: "No module named 'pykrx'; HTTP Error 503; secret-example-value" }), ['pykrx_unavailable', 'http_error']);
   assert.deepEqual(module.__testInvestorFlowFailureKinds({ status: 'unavailable', reason: 'secret-example-value' }), ['source_unavailable']);
   assert.deepEqual(module.__testInvestorFlowFailureKinds({ status: 'ok', markets: [{}] }), []);
+});
+
+test('final preparation rejects editorial leakage after repeated guards, using the November 26 failure shape', async () => {
+  const module = await importBriefingModule('pre_market');
+  const report = {
+    openingStrategy: {keywords:'반도체',oneLineStrategy:'반도체 급락에가 확인돼',expectedOpen:'변동성 점검'},
+    sectorWeather: {sunny:'업종별 흐름',cloudy:'지배 방향이 확정되지 않은 업종만 확인해야 합니다.',rainy:'반도체 급락에'},
+    disclosuresAndNews: {majorNews:'반도체 급락에',corporateDisclosure:null,schedule:null},
+    watchlist: {leaders:'업종별 흐름',technicals:'수급 점검',eventDriven:'미국 관세 인상안 발표 여부'}
+  };
+  const prepared = module.__testPrepareAndValidateWriterReport({},report);
+  const twice = module.__testPrepareAndValidateWriterReport({},prepared);
+  assert.doesNotMatch(JSON.stringify(twice),/급락에가|지배 방향|발표 여부/);
+  assert.deepEqual(prepared,twice);
 });

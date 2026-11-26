@@ -1,3 +1,4 @@
+import { finalizeEvidenceCopy, finalCopyIssues } from './briefing-evidence-boundary.mjs';
 import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
 import { resolve } from 'node:path';
@@ -888,7 +889,7 @@ function hasCurrentPostMarketInvestorFlows(investorFlows) {
 }
 
 function briefingQualityIssues(marketResearch, report) {
-  const issues = [];
+  const issues = [...finalCopyIssues(report)];
 
   if (reportContainsPlaceholderCopy(report)) {
     issues.push('placeholder_copy');
@@ -1490,9 +1491,12 @@ function cleanMarketEventHeadline(value) {
 }
 
 function marketEventSummary(signals) {
-  return signals.map((signal) => (
-    `${signal.primaryTarget?.label ?? '시장'}: ${cleanMarketEventHeadline(signal.directionEvidence ?? signal.headline)}`
-  )).join(' / ');
+  return signals.map(signal => {
+    const label = signal.primaryTarget?.label ?? '시장';
+    const headline = cleanMarketEventHeadline(signal.directionEvidence ?? signal.headline);
+    const unsafe = /%|퍼센트|(?:급락|급등|하락|상승)에(?:도)?$|관세.*(?:발표|시행|부과|인상안)/u.test(headline);
+    return `${label}: ${unsafe ? '관련 보도와 수급 변화' : headline}`;
+  }).join(' / ');
 }
 
 function signalTargetsText(signal, text) {
@@ -1930,7 +1934,7 @@ function repairPreMarketWriterReport(marketResearch, report) {
   return repaired;
 }
 
-function prepareReportForPublish(marketResearch, report) {
+function prepareReportBeforeEvidenceBoundary(marketResearch, report) {
   const prepared = sanitizeBriefingCopy(report);
   const eventState = marketEventState(marketResearch);
   const riskGuarded = PHASE === 'pre_market'
@@ -1959,8 +1963,16 @@ function prepareReportForPublish(marketResearch, report) {
   return riskGuarded;
 }
 
+function prepareReportForPublish(marketResearch, report) {
+  return finalizeEvidenceCopy(prepareReportBeforeEvidenceBoundary(marketResearch, report), marketResearch, {
+    phase: PHASE,
+    informationAsOf: PHASE === 'pre_market' ? PRE_MARKET_INFORMATION_AS_OF : (BRIEFING_AS_OF || marketResearch.collectedAt)
+  });
+}
+
 const WRITER_REJECTED_QUALITY_ISSUES = new Set([
   'placeholder_copy',
+  'unfinished_editorial_copy',
   'stale_investor_flow_copy',
   'unavailable_investor_flow_copy',
   'unverified_investor_flow_copy',
@@ -3756,7 +3768,7 @@ async function main() {
     return;
   }
   const { report: generatedReport, writer } = await writeReport(marketResearch);
-  const report = prepareReportForPublish(marketResearch, generatedReport);
+  const report = prepareAndValidateWriterReport(marketResearch, generatedReport);
   const publishPlan = resolveBriefingPublishPlan({
     marketResearch,
     report,
