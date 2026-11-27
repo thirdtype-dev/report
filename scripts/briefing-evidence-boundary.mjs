@@ -119,9 +119,17 @@ function unboundTariffCopy(value, research, options) {
   if (Array.isArray(value)) return value.some(v => unboundTariffCopy(v, research, options));
   return value && typeof value === 'object' ? Object.values(value).some(v => unboundTariffCopy(v, research, options)) : false;
 }
+// Check individual prose fields so a trailing source boundary is not hidden
+// by JSON punctuation. Internal separators (e.g. 'KOSPI | KOSDAQ') stay valid.
+function hasDanglingSourceSeparator(value) {
+  if (typeof value === 'string') return /[|｜]\s*(?:$|\/|[이가은는을를](?=\s|$))/u.test(value);
+  if (Array.isArray(value)) return value.some(hasDanglingSourceSeparator);
+  return value && typeof value === 'object' ? Object.values(value).some(hasDanglingSourceSeparator) : false;
+}
 export function finalCopyIssues(report, research, options = {}) {
   const text = JSON.stringify(report ?? {});
   const issues = EDITORIAL.test(text) || FRAGMENT.test(text) ? ['unfinished_editorial_copy'] : [];
+  if (hasDanglingSourceSeparator(report)) issues.push('dangling_source_separator');
   if (['pre_market', 'post_market'].includes(options.phase) && unboundBokCopy(report)) issues.push('unbound_rate_decision_copy');
   if (['pre_market', 'post_market'].includes(options.phase) && unboundTariffCopy(report, research, options)) issues.push('unbound_policy_stage_copy');
   if (options.phase === 'post_market' && JSON.stringify(finalizeEvidenceCopy(report, research, options)) !== text) issues.push('unbound_closing_copy');
