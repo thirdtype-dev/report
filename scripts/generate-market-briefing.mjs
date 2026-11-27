@@ -1488,6 +1488,7 @@ function cleanMarketEventHeadline(value) {
   return normalizeRepairEvidence(value)
     .replace(/^\[[^\]]+\]\s*/u, '')
     .replace(/\s+-\s+[^-]{1,40}$/u, '')
+    .replace(/\s*[|｜]+\s*$/u, '')
     .trim();
 }
 
@@ -1541,7 +1542,7 @@ function applyPreMarketEventGuard(report, state) {
     next.openingStrategy = {
       ...next.openingStrategy,
       keywords: `${labels.join(', ')} 하방 위험, 변동성 확대`,
-      oneLineStrategy: `${summary}가 확인돼 ${broadRisk ? '국내 증시' : '관련 업종'}의 하방 위험과 장 초반 변동성을 우선 점검해야 합니다.`,
+      oneLineStrategy: `${summary} 등의 흐름이 나타나 ${broadRisk ? '국내 증시' : '관련 업종'}의 하방 위험과 장 초반 변동성을 우선 점검해야 합니다.`,
       expectedOpen: broadRisk
         ? '하락 출발 가능성과 높은 변동성 경계'
         : `${labels.join('·')} 중심 약세와 높은 변동성 경계`
@@ -1978,6 +1979,7 @@ const WRITER_REJECTED_QUALITY_ISSUES = new Set([
   'unbound_closing_copy',
   'unbound_rate_decision_copy',
   'unbound_policy_stage_copy',
+  'dangling_source_separator',
   'stale_investor_flow_copy',
   'unavailable_investor_flow_copy',
   'unverified_investor_flow_copy',
@@ -3864,3 +3866,5 @@ export const __testSectorThemeFallbackQueries = SECTOR_THEME_FALLBACK_QUERIES;
 export const __testInvestorFlowFailureKinds = investorFlowFailureKinds;
 
 export const __testWritePreparedReportArtifacts = writePreparedReportArtifacts;
+
+export const __testCleanMarketEventHeadline = cleanMarketEventHeadline;
